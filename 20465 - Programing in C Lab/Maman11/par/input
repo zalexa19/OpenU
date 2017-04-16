@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+main()
+
+	int c;
+	int char line[MAXLINE];
+		printf("at EOF we have: %d\n",EOF );
+	while ((c=getchar())!=EOF){
+		/*putchar(c);*/
+		printf("%d\n",c );
+		exampleFunction(int array[, int number);
+		function2(int anotherArray[);
+	}
+
+	printf("at EOF we have: %d\n",c );
+}
+
+void function(int number){
+	int n=234]234;	
+}

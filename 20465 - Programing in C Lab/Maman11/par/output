@@ -1,0 +1,24 @@
+
+Validating file:
+
+line 1 is valid
+line 3 is valid
+line 5 is valid
+line 6 is valid
+line 7 is valid
+line 8 is valid
+line 9 is valid
+line 10 is valid
+Line 11 is invalid. Unexpected char received: ')'.
+		exampleFunction(int array[, int number);
+Line 12 is invalid. Unexpected char received: ')'.
+		function2(int anotherArray[);
+line 13 is valid
+line 15 is valid
+line 16 is valid
+line 18 is valid
+Line 19 is invalid. Unexpected char received: ']'.
+	int n=234]234;	
+line 20 is valid
+Curly Brackets are not balanced: missing openning bracket
+Done
