@@ -1,8 +1,8 @@
 import javax.swing.*;
 
 /**
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  * Maman14 Question2
  */
 public class Program {

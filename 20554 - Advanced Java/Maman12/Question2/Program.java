@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 /**
- * Alex Zablotsky
- * 324494964
+ * Alex Z
+ * 
  * Maman 12 Q2
  */
 public class Program {

@@ -1,8 +1,8 @@
 /**
  * Created by alexz
  * Maman11 Q1B
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  */
 import java.util.Scanner;
 

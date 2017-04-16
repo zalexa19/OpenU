@@ -1,5 +1,5 @@
 ﻿--Question C
---Alex Zablotsky 314494964
+--AlexZ
 
 insert into customer
 	values 

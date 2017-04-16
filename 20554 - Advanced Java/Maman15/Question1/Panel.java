@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 
 
 /**
- * Created by Alex Zablotsky
- * 314494964
+ * Created by Alex Z
+ * 
  * Maman15
  * Exercise1
  */

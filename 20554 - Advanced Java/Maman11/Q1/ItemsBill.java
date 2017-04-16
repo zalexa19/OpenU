@@ -1,8 +1,8 @@
 /**
  * Created by alexz on 11/3/16.
  *  * Maman11 Q1A
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  * This method holds the items for a client's bill
  */
 public class ItemsBill

@@ -1,5 +1,5 @@
 ﻿/*Question D
---Alex Zablotsky* - 3144949464*/
+--AlexZ*/
 
 create or replace function times (frequency varchar) returns float as $$
 DECLARE times_sent float;

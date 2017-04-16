@@ -3,8 +3,8 @@ import java.util.*;
 /**
  * Created by alexz on 11/3/16.
  * Maman11 Q1A
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  * This is the cash register class.
  * This class initializes a dynamic array that expends if additional items are added to the bill.
  */

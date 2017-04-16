@@ -1,6 +1,6 @@
 /**
- * Alex Zablotsky
- * 314494964
+ * Alex z
+ * 
  * Maman14 Question2
  */
 import java.util.*;

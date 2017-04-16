@@ -1,8 +1,8 @@
 import java.awt.*;
 
 /**
- ** Maman 18 - Alex Zablotsky
- * 314494964
+ ** Maman 18 - AlexZ
+ * 
  */
 public class RedBlackTree {
     public static final TreeNode Neil = new TreeNode();

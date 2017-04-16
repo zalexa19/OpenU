@@ -1,6 +1,6 @@
 
 /**
- * Alex Zablotsky- 314494964 - Maman14
+ * Alex Z-  - Maman14
  * This class represents each item. Includes a reference to the object, and the priority
  */
 

@@ -4,8 +4,8 @@ import java.util.Collections;
 
 
 /**
- * Alex Zablotsky
- * 324494964
+ * Alex Z
+ * 
  * Maman 12 Q2
  */
 

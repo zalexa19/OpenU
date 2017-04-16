@@ -1,7 +1,7 @@
 import java.util.Iterator;
 
 /**
- * Alex Zablotsky- 314494964 - Maman14
+ * Alex Z-  - Maman14
  * Created by alexz on 1/10/17.
  */
 public class CustomerApplication {

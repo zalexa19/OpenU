@@ -1,5 +1,5 @@
 /**
- * Alex Zablotsky, 314494964, Maman11
+ * Alex z, , Maman11
  */
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

@@ -1,5 +1,5 @@
 /**
- * Alex Zablotsky- 314494964 - Maman14
+ * Alex Z-  - Maman14
  * Tested for Integer class
  */
 public class IntegerTester {

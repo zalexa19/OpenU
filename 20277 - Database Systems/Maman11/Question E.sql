@@ -1,5 +1,5 @@
 ﻿--Question E
---Alex Zablotsky 314494964
+--AlexZ
 
 --E1
 select m.title, m.publisher, m. frequency, m.url from pricing p natural join magazine m where p.period = '36';

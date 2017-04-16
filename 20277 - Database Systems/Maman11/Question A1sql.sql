@@ -1,5 +1,5 @@
 ﻿--Question A
---Alex Zablotsky, 314494964
+--Alex Z
 
 create table customer
 	(cid numeric(5,0),

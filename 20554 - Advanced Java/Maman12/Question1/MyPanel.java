@@ -1,6 +1,6 @@
 /**
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  * Maman12 - Question 1, A+B
  */
 

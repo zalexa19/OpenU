@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 
 /**
- *Alex Zablotsky- 314494964 - Maman14
+ *Alex Z-  - Maman14
  */
 public class Queue <T> {
     private final int MINIMUMPRIORITY = 1;

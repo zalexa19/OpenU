@@ -1,7 +1,7 @@
 /**
  *
- * Maman 18 - Alex Zablotsky
- * 314494964
+ * Maman 18 - AlexZ
+ * 
  * This class is the controller of all the databases in use.
  */
 public class Bank  {

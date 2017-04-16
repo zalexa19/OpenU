@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 
- * Alex Zablotsky, 314494964, Maman11
+ * Alex Z, Maman11
  */
 public class Shapes extends JPanel {
     private int choice;

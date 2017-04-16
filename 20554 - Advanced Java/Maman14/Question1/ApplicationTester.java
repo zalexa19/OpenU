@@ -1,7 +1,7 @@
 import java.util.Iterator;
 
 /**
- * Alex Zablotsky- 314494964 - Maman14
+ * Alex Z-  - Maman14
  *This is the tested for the class CustomerApplication
  */
 public class ApplicationTester {

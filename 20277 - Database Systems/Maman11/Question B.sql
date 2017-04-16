@@ -1,4 +1,4 @@
-﻿--Question B - Alex Zablotsky 314494964
+﻿--Question B - Alex Z
 
 create or replace function offer_f() returns trigger as $$
 begin

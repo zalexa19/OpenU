@@ -1,7 +1,7 @@
 
 /**
- * Alex Zablotsky
- * 314494964
+ * Alex Z
+ * 
  * Maman15, Exercise2
  */
 
