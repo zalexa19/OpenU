@@ -1,0 +1,2 @@
+Maman12-A.c is my prev version - initial array size is 1 and
+realloc adds only 1 sizeof(int) memory eaches time.
