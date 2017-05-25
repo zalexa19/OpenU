@@ -67,8 +67,6 @@ int main() {
 		addToList(&listHead,&listTail,inputChar);
 	}
 
-	printf("Your input was:\n");
-
 	printList(listHead);
 	freeList(&listHead);
 	listTail=listHead;
