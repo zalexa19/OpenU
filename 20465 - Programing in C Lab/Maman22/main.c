@@ -82,10 +82,14 @@ int main() {
 	read_comp(-5.5,10.3,&C);
 	print_comp(mult_comp_real(2.5,C));
 
-	printf("\nmult_comp_img\n");
-	printf("Test#1: EXPECTED: (-56.65 + 30.25)i, RESULT: ");
-	read_comp(5.5,10.3,&C);
-	print_comp(mult_comp_real(5.5,C));
+	printf("\nmult_comp_comp\n");
+	printf("Test#1: EXPECTED: (-25.26 + 45.28)i, RESULT: ");
+	read_comp(10.4,-4.2,&A);
+	read_comp(-3.6,2.9,&B);
+	print_comp(mult_comp_comp(A,B));
+
+
+
 	return 0;
 }
 

@@ -83,11 +83,11 @@ complex mult_comp_real(double real_number,complex complex_number){
 
 complex mult_comp_img(double real_number, complex complex_number){
 	complex result;
-
+/*FIX THIS*/
 	double tmpa = complex_number.a*real_number;
 	double tmpb = complex_number.b*real_number;
 
-	tempb = tempb * -1.0;
+	tmpb = tmpb * -1.0;
 
 	result.a=tmpa;
 	result.b=tmpb;
@@ -97,6 +97,20 @@ complex mult_comp_img(double real_number, complex complex_number){
 	return result;
 }
 
+complex mult_comp_comp(complex number,complex other_number){
+	complex result;
+
+	double a=number.a;
+	double b=number.b;
+	double c=other_number.a;
+	double d=other_number.b;
+
+	result.a= (a*c)-(b*d);
+	result.b= (a*d)+(b*c);
+
+	return result;
+
+}
 
 
 void printI(){
