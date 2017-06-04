@@ -38,20 +38,7 @@ int main() {
 	F.b=0;
 
 
-	a=0.5666;
-	b=1.5;
-	read_comp(a,b,&A);
-	print_comp(A);
-	c=1.0;
-	d=-2.5;
-	printf("\nB=1.0+2.5i\n");
-	read_comp(c,d,&B);
-	print_comp(B);
-
-	printf("\nA=10.5-3.9i\n");
-	read_comp(10.5,-3.9,&A);
-	print_comp(A);
-
+	printf("\nadd_comp\n");
 	printf("Test#1: EXPECTED: (14 + 7.1i), RESULT: ");
 	read_comp(10.4,4.2,&A);
 	read_comp(3.6,2.9,&B);
@@ -69,7 +56,36 @@ int main() {
 	read_comp(-3.6,-2.9,&B);
 	print_comp(	add_comp(A,B));
 
+	printf("\nsub_comp\n");
+	printf("Test#1: EXPECTED: (6.8+7.1i), RESULT: ");
+	read_comp(10.4,4.2,&A);
+	read_comp(3.6,2.9,&B);
+	print_comp(sub_comp(A,B));
+	printf("Test#2: EXPECTED: (6.8 + 7.1)i, RESULT: ");
+	read_comp(10.4,4.2,&A);
+	read_comp(3.6,-2.9,&B);
+	print_comp(sub_comp(A,B));
 
+	printf("Test#3: EXPECTED: (14 - 7.1)i, RESULT: ");
+	read_comp(10.4,-4.2,&A);
+	read_comp(-3.6,2.9,&B);
+	print_comp(sub_comp(A,B));
+
+	printf("\nmult_comp_real\n");
+	printf("Test#1: EXPECTED: (11+20.6)i, RESULT: ");
+	read_comp(5.5,10.3,&C);
+	print_comp(mult_comp_real(2.0,C));
+	printf("Test#2: EXPECTED: (13.75+25.75)i, RESULT: ");
+	read_comp(5.5,10.3,&C);
+	print_comp(mult_comp_real(2.5,C));
+	printf("Test#3: EXPECTED: (-13.75+25.75)i, RESULT: ");
+	read_comp(-5.5,10.3,&C);
+	print_comp(mult_comp_real(2.5,C));
+
+	printf("\nmult_comp_img\n");
+	printf("Test#1: EXPECTED: (-56.65 + 30.25)i, RESULT: ");
+	read_comp(5.5,10.3,&C);
+	print_comp(mult_comp_real(5.5,C));
 	return 0;
 }
 
