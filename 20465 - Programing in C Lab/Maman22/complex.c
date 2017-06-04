@@ -107,7 +107,16 @@ complex mult_comp_comp(complex number,complex other_number){
 
 }
 
+complex abs_comp(complex complex_number){
+	complex result;
+	double a=complex_number.a;
+	double b=complex_number.b;
+	double real_number;
+	a=pow(a,2.0);
+	b=pow(b,2.0);
+	real_number=sqrt(a+b);
 
-void printI(){
-	printf("This is my i");
+	result.a=real_number;
+	result.b=0;
+	return result;
 }
