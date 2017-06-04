@@ -82,9 +82,19 @@ int main() {
 	read_comp(-5.5,10.3,&C);
 	print_comp(mult_comp_real(2.5,C));
 
+	printf("\nmult_comp_img\n");
+	printf("Test#1: EXPECTED: (-25.75-13.75)i, RESULT: ");
+	print_comp(mult_comp_img(2.5,C));
+	printf("Test#2: EXPECTED: (-1+0)i, RESULT: ");
+	read_comp(0,1.0,&C);
+	print_comp(mult_comp_img(1,C));
 	printf("\nmult_comp_comp\n");
 	printf("Test#1: EXPECTED: (-25.26 + 45.28)i, RESULT: ");
 	read_comp(10.4,-4.2,&A);
+	read_comp(-3.6,2.9,&B);
+	print_comp(mult_comp_comp(A,B));
+	printf("Test#2: EXPECTED: (49.62 - 15.04)i, RESULT: ");
+	read_comp(-10.4,-4.2,&A);
 	read_comp(-3.6,2.9,&B);
 	print_comp(mult_comp_comp(A,B));
 
