@@ -14,6 +14,7 @@
 #include "complex.h"
 #define MAXLINELENGTH 100
 #define INITIALMATRIXSIZE 4
+enum functions {READ_COMP};
 typedef char * array;
 
 
@@ -23,15 +24,17 @@ array fix_spaces(char []);
 array read_user_input();
 array * create_substrings(array);
 array copy_sub_string(char src[], int point1, int point2);
+int get_command(array);
 
 
 
 
 int main() {
 	int close_indicator=0;
-	array orig_line;
-	array trimmed_line;
-	array * matrix;
+	array orig_line; /*Original User Input*/
+	array trimmed_line; /*User input after removing irrelevant spaces*/
+	array * matrix;/*Array of strings - each input substring is stored in a different cell*/
+	int command=0;
 
 	complex A,B,C,D,E,F;
 	A.a=0;
@@ -84,7 +87,9 @@ int main() {
 	matrix = create_substrings(trimmed_line);
 	print_matrix(matrix,INITIALMATRIXSIZE);
 
+	printf("\n\nTesting recognition\n");
 
+	get_command(matrix[0]);
 
 
 
@@ -306,6 +311,7 @@ void print_matrix(array * matrix, int size){
 			printf("%c", matrix[i][j]);
 		}
 
+		printf(" ");
 	}
 
 
@@ -327,4 +333,24 @@ array copy_sub_string(char src[], int point1, int point2){
 
 	result[i]='\0';
 	return result;
+}
+
+
+
+int get_command(array input){
+	int i; /*used as index*/
+	int length=strlen(input);
+	char lower_case[length];
+
+
+	for (i=0; i<=length;i++){
+		lower_case[i] = tolower(input[i]);
+	}
+
+	if (strcmp(input, "read_comp")==0){
+		printf("Found command: read_com\n");
+	}
+
+	return 1;
+
 }
