@@ -45,11 +45,19 @@ int main() {
 	trimmed_line=removeBlanks(orig_line);
 	printf(trimmed_line);
 
-	printf("Test#1\n");
+	printf("\n\nTest#2\n");
 	orig_line=read_user_input();
 	print_line(orig_line);
 	trimmed_line=removeBlanks(orig_line);
-	printf(trimmed_line);
+	print_line(trimmed_line);
+
+
+	printf("\n\nTest#3\n");
+	orig_line=read_user_input();
+	print_line(orig_line);
+	trimmed_line=removeBlanks(orig_line);
+	print_line(trimmed_line);
+
 
 
 
@@ -128,7 +136,7 @@ array removeBlanks(array orig){
 		char c=orig[i];
 
 		if (c ==' '){
-			if ( (i != 0) && (result[counter-1] != ' ') ){
+			if ( (counter != 0) && (result[counter-1] != ' ') ){
 				result[counter]=c;
 				counter++;
 			}
