@@ -13,7 +13,7 @@
 #include <string.h>
 #include "complex.h"
 #define MAXLINELENGTH 100
-#define INITIALMATRIXSIZE 2
+#define INITIALMATRIXSIZE 4
 typedef char * array;
 
 
