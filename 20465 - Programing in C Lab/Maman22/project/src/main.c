@@ -45,6 +45,24 @@ int main() {
 	trimmed_line=removeBlanks(orig_line);
 	printf(trimmed_line);
 
+	printf("Test#1\n");
+	orig_line=read_user_input();
+	print_line(orig_line);
+	trimmed_line=removeBlanks(orig_line);
+	printf(trimmed_line);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	if (close_indicator==1){
 		printf("You wished to stop the program. Byes!\n");
