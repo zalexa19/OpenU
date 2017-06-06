@@ -344,7 +344,7 @@ int get_command(array input){
 
 
 	for (i=0; i<=length;i++){
-		lower_case[i] = tolower(input[i]);
+		lower_case[i] = ((unsigned char)input[i]);
 	}
 
 	if (strcmp(input, "read_comp")==0){
