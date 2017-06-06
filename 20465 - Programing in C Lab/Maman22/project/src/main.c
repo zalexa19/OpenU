@@ -37,6 +37,7 @@ int main() {
 	array * matrix;/*Array of strings - each input substring is stored in a different cell*/
 	int mat_size;
 	int i;
+	int command=-1;
 
 	char a[]="hello";
 	char b[]="next";
@@ -143,6 +144,9 @@ int main() {
 	print_matrix(matrix,mat_size);
 
 */
+
+	command=(int)strcmp(matrix[0],"read_comp");
+	printf("Comparison: %d",command);
 
 
 
