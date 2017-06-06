@@ -1,10 +1,33 @@
 /*
  ============================================================================
  Name        : main.c
- Author      : 
+ Author      : Alex Zablotsky 314494964
  Version     :
  Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Description : Disclaimer -
+ I'm sorry but I wasn't able to finish the parser in time.
+ Therefore - main is not looping, input cannot be parsed and I didn't make any tests.
+
+ My whole idea was:
+
+ 1. receive the user input and store it in an array
+ 2. clear  unwanted spaces and tabs
+ 3. create an array of strings, then split the input using strtok with delim (" ,"). Every token should be stored
+ Separately in the matrix.
+ This way i'd expect to have the commend in matrix[i], then the parameters in i+2..n;
+ 4. Validate the input using this matrix - for example, i'd expect to recieve 3 parameters (double, double, complex name) for read_comp
+ 5. compare the first cell (command) against a string array which holds the command names
+ 6. execute the relevant function.
+
+ function create_substrings is not working. I think it has something to do with result[i] = token
+
+ Will appreciate it if you could explain why my matrix is wrong.
+
+
+
+Thanks in advance
+
+
  ============================================================================
  */
 
@@ -19,13 +42,12 @@ typedef char * array;
 
 
 
-void print_matrix(array *, int);
-void print_line(array);
-array fix_spaces(char []);
-array read_user_input();
-int create_substrings(array ,array **);
-array copy_sub_string(char src[], int point1, int point2);
-int get_command(array);
+void print_matrix(array *, int); /*Prints the matrix*/
+void print_line(array); /*prints a simple array (char *) */
+array fix_spaces(char []); /*removes spaces and tabs*/
+array read_user_input(); /*saves user's command with the parameters as a string*/
+int create_substrings(array ,array **); /*breaks the string to substrings*/
+int get_command(array *); /*translates the command string*/
 
 
 
@@ -35,39 +57,19 @@ int main() {
 	array orig_line; /*Original User Input*/
 	array trimmed_line; /*User input after removing irrelevant spaces*/
 	array * matrix;/*Array of strings - each input substring is stored in a different cell*/
-	int mat_size;
+	int mat_size; /*stores matrix row size as recieved from create_substring*/
 	int i;
 	int command=-1;
-
-	char a[]="hello";
-	char b[]="next";
-	char* p;
-	p= a;
-
 
 
 	matrix = (array*)malloc(ROWS*sizeof(array));
 
-
-
-	for (i=0;i<ROWS;++i){
-		matrix[i]=(array)malloc(COLS*sizeof(char));
-		if (!matrix[i]){
-			printf("memory error");
-		}
-	}
-
-
-
-
-
-
-/*	complex A,B, C,D,E,F;
+	complex A,B, C,D,E,F;
 	A.a=0;
 	A.b=0;
 	B.a=0;
 	B.b=0;
-		C.a=0;
+	C.a=0;
 	C.b=0;
 	D.a=0;
 	D.b=0;
@@ -75,78 +77,16 @@ int main() {
 	E.b=0;
 	F.a=0;
 	F.b=0;
-*/
 
-	printf("\nTrimming spaces tests\n");
-	printf("Test#1\n");
+
+	printf("Hello. please enter your command:\n ");
 	orig_line=read_user_input();
-	print_line(orig_line);
+	printf("Your input was: ");
 	trimmed_line=fix_spaces(orig_line);
 	print_line(trimmed_line);
-/*
-	printf("\n\nTest#2\n");
-	orig_line=read_user_input();
-	print_line(orig_line);
-	trimmed_line=removeBlanks(orig_line);
-	print_line(trimmed_line);
 
-
-	printf("\n\nTest#3\n");
-	orig_line=read_user_input();
-	print_line(orig_line);
-	trimmed_line=removeBlanks(orig_line);
-	print_line(trimmed_line);
-
-	printf("\n\nTest#4\n");
-	orig_line=read_user_input();
-	print_line(orig_line);
-	trimmed_line=removeBlanks(orig_line);
-	print_line(trimmed_line);
-
-	printf("\n\nTest#5\n");
-	orig_line=read_user_input();
-	print_line(orig_line);
-	trimmed_line=removeBlanks(orig_line);
-	print_line(trimmed_line);
-*/
-	printf("\n\nTesting Split\n");
-
-	/*for (i=0;i<5;i++){
-		char * tmp ={"Hello"};
-		matrix[i]=tmp;
-
-	}*/
-
-	/*print_matrix(matrix, COLS); */
-
-/*	mat_size=create_substrings(trimmed_line,&matrix);
-	print_matrix(matrix,mat_size);
-*/
-	printf("Test #2:\n");
-	orig_line=read_user_input();
-	trimmed_line=fix_spaces(orig_line);
 	mat_size=create_substrings(trimmed_line,&matrix);
-	print_matrix(matrix,mat_size);
-
-/*
-	printf("Test #3:\n");
-	orig_line=read_user_input();
-	trimmed_line=fix_spaces(orig_line);
-	mat_size=create_substrings(trimmed_line,&matrix);
-	print_matrix(matrix,mat_size);
-
-	printf("Test #4:\n");
-	orig_line=read_user_input();
-	print_line(orig_line);
-	trimmed_line=fix_spaces(orig_line);
-	print_line(trimmed_line);
-	mat_size=create_substrings(trimmed_line,&matrix);
-	print_matrix(matrix,mat_size);
-
-*/
-
-	command=(int)strcmp(matrix[0],"read_comp");
-	printf("Comparison: %d",command);
+	printf("mat_size is %d\n",mat_size);
 
 
 
@@ -154,12 +94,6 @@ int main() {
 
 
 
-
-
-
-	if (close_indicator==1){
-		printf("You wished to stop the program. Byes!\n");
-	}
 
 	printf("\n*** END ***\n");
 	return 0;
@@ -167,17 +101,21 @@ int main() {
 
 
 
-
+/*
+ *print a simple string array
+ * recieves a char array
+ */
 void print_line(array line){
-	int i=0;
-	int tmp=strlen(line);
 
-	for ( i=0; i<=tmp; i++){
+	printf("%s\n",line);
 
-		printf("%c",line[i]);
-	}
-	printf("\n");
 }
+
+/*
+ * Gets user input and saves it as a string.
+ * returns the string as char *
+ *
+ */
 
 array read_user_input(){
 	array input;
@@ -199,7 +137,7 @@ array read_user_input(){
 		else{
 			array tmp = (char*)realloc(input,sizeof(MAXLINELENGTH)*2);
 			if (!tmp){
-				printf("issue with memo");
+				printf("trouble with memory allocation");
 				exit(0);
 			}
 			else {
@@ -211,16 +149,24 @@ array read_user_input(){
 	return input;
 }
 
-
+/*
+ * removes irrelevant spaces and tabs.
+ * Receives: the orig string
+ * returns: a new string
+ * at first, removes all spaces before the command (the first loop). then, it leaves only one space (between the command and the first
+ * parameter) and deletes all other spaces/tabs. this is done by keeping track of the last character entered into the result array.
+ *
+ *
+ */
 array fix_spaces(array orig){
 
 	int orig_size=strlen(orig);
 	array result = (char *)malloc(orig_size);
 	int i;
-	int counter=0;
-	int allowed_space=0;
+	int counter=0; /*keeps track of the result*/
+	int allowed_space=0; /*turned on when the first spaces is added*/
 	int t=0;
-	char c;
+	char c; /*holds the character, for easier code reading*/
 
 	c=orig[t];
 	while ((c == ' ') ||(c == '\t')){
@@ -255,10 +201,6 @@ array fix_spaces(array orig){
 
 		}
 
-		/*else if (c==','){
-			result[counter]= ' ';
-			counter++;
-		}*/
 
 		else{
 			result[counter]=c;
@@ -272,101 +214,70 @@ array fix_spaces(array orig){
 }
 
 
-/*Split the line into substrings*/
-
 /*
-array * create_substrings(array line){
-	int i;
-	array * matrix;
-	int mat_size=4;
-	int size=strlen(line);
-	array sub;
-	int point1=0;
-	int point2=0;
-	char c;
-	int mat_counter=0;
-	matrix=(array *) malloc(mat_size* sizeof(array));
-
-	for(i=0;i<=size;i++){
-		c=line[i];
-		if (c==' '){
-			point2=i;
-
-			sub=(array)malloc(point2*sizeof(char));
-			memmove(sub,line,point2);
-			matrix[mat_counter]=sub;
-			mat_counter++;
-
-			point1=point2;
-		}
-
-
-		if (c==','){
-			point2=i;
-			sub=copy_sub_string(line,point1,point2);
-		}
-
-	}
-
-	return matrix;
-}
-
-*/
-
+ * craetes substrings by using strtok.
+ * recieves: user input (without spaces), pointer to the matrix
+ * returns: void. i wanted it to update the matrix on the fly. didn't work :(
+ * at first we make a copy of the line (so strtok could distort it)
+ * then allocate memory to result;
+ * using while (token != NULL), for each i, I allocate memory in the size of a token, then make result[i]=token.
+ *
+ * when function ends running, the matrix should consist of: matrix[0] = "command", matrix[1]="parameter", matrix[2]="parameter" and so on
+ */
 
 
 int create_substrings(array line, array ** matrix){
-	int n;
-	int size;
-	array * mat=*matrix;
-	array token;
-	int token_size;
-
-	int i=0;
+	array * result;
 	int line_size;
+	int i=0;
+	array line_copy;
+	array token;
+	int length;
+
+	printf("\n~entered create_substrings\n ");
 	line_size=strlen(line);
-	char line_copy[line_size];
 
 
-	/*Making a copy of the array*/
-	for (n=0;n<line_size;n++){
-		line_copy[n]=line[n];
-	}
+	printf("~copied array\n");
+	result=(array *)malloc (5*sizeof(array));
 
-	printf("\nReceived: %s\n",line_copy);
-
-	token=strtok(line_copy," ,");
-
-
+	token=strtok(line," ,");
 	while (token != NULL){
-		token_size=0;
-		token_size=strlen(token);
-		printf("token: %s size:%d\n",token,token_size);
-
-		/*mat[i]=(array)malloc(token_size*sizeof(char));*/
-		mat[i]=token;
-
-		/**printf("Token in index %d: %s\n",i,mat[i]);**/
+		length=strlen(token);
+		result[i]=(array)malloc(length*sizeof(char));
+		result[i]=token;
 		i++;
+		printf("token should be: %s. ",token);
 
-		token=strtok(NULL, " ,");
-
+		token=strtok(NULL," ,");
+		printf("entered - %s to %d\n",result[i],i);
 	}
 
-	print_matrix(mat,COLS);
+	printf("finished product: ");
+	print_matrix(result,i+1);
 
-	return i;
+
+	return -1;
 }
 
 
 
 
 
-
+/*
+ * prints the matrix
+ * recieves the matrix and number of rows to go over
+ */
 
 void print_matrix(array * matrix, int size){
 	int i;
 
+	for(i=0;i<size;i++){
+		printf("%s\n",matrix[i]);
+
+	}
+
+	/*
 	for (i=0;i<size;i++){
 		int in_size=strlen(matrix[i]);
 		int j;
@@ -379,50 +290,44 @@ void print_matrix(array * matrix, int size){
 	}
 
 	printf("\n");
-}
-
-array copy_sub_string(char src[], int point1, int point2){
-	int size=(point2-point1)+2;
-	int i;
-
-	array result=(array)malloc(size*sizeof(char));
-	if (!result){
-		printf("issue with memory\n");
-		exit(0);
-	}
-
-	for (i=0;i<size;i++){
-		result[i]=src[i];
-	}
-
-	result[i]='\0';
-	return result;
+	*/
+	printf("**Finished printing matrix");
 }
 
 
-
-int get_command(array input){
-	int i; /*used as index*/
-	int length=strlen(input);
-	char lower_case[length];
-	char functions[]={"read_comp"};
-	int result;
 /*
-	for (i=0; i<=length;i++){
-		lower_case[i] = ((unsigned char)input[i]);
+ * Supposed to compre the command in matrix[0], with funcs[], when funcs[] holds the names of the functions as strings.
+ * didn't work for me, becuase of the matrix issue (i think)
+ * returns an int which i wanted to use to invoke the required function later on (don't have that code yet)
+ */
+int get_command(array * input){
+	int i=0;
+	int result=-1;
+	array funcs[9];
+	funcs[0]="read_comp";
+	funcs[1]="print_comp";
+	funcs[2]="add_comp";
+	funcs[3]="sub_comp";
+	funcs[4]="mult_comp_real";
+	funcs[5]="mult_comp_img";
+	funcs[6]="mult_comp_comp";
+	funcs[7]="abs_comp";
+	funcs[8]="halt";
+
+
+	printf("Checking the command\n");
+	printf("%s\n",input[0]);
+	for (i=0;i<9;i++){
+		printf("");
+		if ((strcmp(input[0],funcs[i]) == 0)){
+			result=i;
+		}
 	}
-*/
-	length=strlen(functions);
-
-	for (i=0; i<=length;i++){
-		print_line(input);
-		result=(int)strcmp(input,"read_comp");
-		printf("%d\n",result);
-
-	}
 
 
 
-return 0;
+return -1;
 
 }
+
+/*Thank you for readning this, although my assignment is not complete*/

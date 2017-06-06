@@ -1,30 +1,37 @@
 /*
  ============================================================================
  Name        : complex.c
- Author      :
+ Author      :Alex Zablotsky 314494964
  Version     :
  Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Description :
+
+functions are defined as described in the maman description
  ============================================================================
  */
 #include <stdio.h>
 #include <math.h>
 #include "complex.h"
 
-
+/*
+ * 	Receives: 2 doubles and a reference to a complex struct
+ * 	returns: void
+ * 	This function simply takes the received doubles and puts them into the struct
+ *
+ */
 void read_comp(double newA, double newB, complex * name ){
 	name->a=newA;
 	name->b=newB;
 }
 
-
 /*
- * This method prints the complex number
+ * this function prints the complex number by getting the doubles stored in the struct,
+ * and then adding the "i"
+ * recieves: a complex number
  */
-
 void print_comp(complex comp){
-	double a=comp.a;
-	double b=comp.b;
+	double a=comp.a; /*holds the first double*/
+	double b=comp.b;/*holds the second double*/
 
 	printf("(%g ",a);
 
@@ -39,6 +46,9 @@ void print_comp(complex comp){
 }
 /*
  * This function adds to complex numbers
+ * receives: complex numbers
+ * returns: a new complex number
+ *
  */
 complex add_comp(complex number, complex other_number){
 	complex result;
@@ -49,7 +59,10 @@ complex add_comp(complex number, complex other_number){
 }
 
 /*
- * This function subtracts complex numbers
+ * This function subtructs to complex numbers
+ * receives: complex numbers
+ * returns: a new complex number
+ *
  */
 
 complex sub_comp(complex number ,complex other_number){
@@ -64,6 +77,8 @@ complex sub_comp(complex number ,complex other_number){
 
 /*
  * This function multiplies a complex number by a real number
+ * receives: complex number and a double
+ * returns: a new complex number
  */
 
 complex mult_comp_real(double real_number,complex complex_number){
@@ -79,18 +94,29 @@ complex mult_comp_real(double real_number,complex complex_number){
 
 /*
  * This function multiplies an imaginary number i by real and complex numbers
+ * this method creates a new temporary complex 0+real_numberi and uses mult_comp_comp
+ * for the calculation
+ * receives: complex number and a double.
+ * returns: a new complex number
  */
 
 complex mult_comp_img(double real_number, complex complex_number){
 	complex result;
 
-	complex temp;
+	complex temp; /*new temp complex for creating (0+real_number)i*/
 	temp.a=0;
 	temp.b=real_number;
 
 	result=mult_comp_comp(temp,complex_number);
 	return result;
 }
+
+/*
+ * This function multiplies two complex numbers.
+ * As described in the maman
+ * receives: complex number and a double.
+ * returns: a new complex number
+ */
 
 complex mult_comp_comp(complex number,complex other_number){
 	complex result;
@@ -106,6 +132,12 @@ complex mult_comp_comp(complex number,complex other_number){
 	return result;
 
 }
+
+/*
+ * Calculates the absolute value
+ * receives a complex number
+ * returns a complex number
+ */
 
 complex abs_comp(complex complex_number){
 	complex result;
