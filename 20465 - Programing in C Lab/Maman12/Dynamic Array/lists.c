@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : lists-Dynamic array
- Author      : Alex Zablotsky, 314494964
+ Author      : Alex Z
  Version     :
  Copyright   : Your copyright notice
  Description :
