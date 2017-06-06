@@ -13,8 +13,8 @@
 #include <string.h>
 #include "complex.h"
 #define MAXLINELENGTH 100
-#define INITIALMATRIXROW 20
-#define INITIALMATRIXCOL 20
+#define ROWS 20
+#define COLS 20
 typedef char * array;
 
 
@@ -23,7 +23,7 @@ void print_matrix(array *, int);
 void print_line(array);
 array fix_spaces(char []);
 array read_user_input();
-void create_substrings(array ,array **);
+int create_substrings(array ,array **);
 array copy_sub_string(char src[], int point1, int point2);
 int get_command(array);
 
@@ -35,21 +35,31 @@ int main() {
 	array orig_line; /*Original User Input*/
 	array trimmed_line; /*User input after removing irrelevant spaces*/
 	array * matrix;/*Array of strings - each input substring is stored in a different cell*/
+	int mat_size;
 	int i;
-	char *p = {"hello"};
 
-	matrix = (array *)malloc(sizeof(array *)*INITIALMATRIXROW);
+	char a[]="hello";
+	char b[]="next";
+	char* p;
+	p= a;
 
-	printf("%s\n",matrix[9]);
-	for (i=0;i<INITIALMATRIXROW;i++){
-		matrix[i]=(array)malloc(INITIALMATRIXCOL);
+
+
+	matrix = (array*)malloc(ROWS*sizeof(array));
+
+
+
+	for (i=0;i<ROWS;++i){
+		matrix[i]=(array)malloc(COLS*sizeof(char));
 		if (!matrix[i]){
 			printf("memory error");
 		}
 	}
 
-	matrix[9]=p;
-	printf("%s",matrix[9][2]);
+
+
+
+
 
 /*	complex A,B, C,D,E,F;
 	A.a=0;
@@ -106,16 +116,33 @@ int main() {
 
 	}*/
 
-	print_matrix(matrix, INITIALMATRIXCOL);
+	/*print_matrix(matrix, COLS); */
 
-	create_substrings(trimmed_line,&matrix);
-	printf("inside the matrix:\n");
-	print_matrix(matrix,INITIALMATRIXCOL);
+/*	mat_size=create_substrings(trimmed_line,&matrix);
+	print_matrix(matrix,mat_size);
+*/
+	printf("Test #2:\n");
+	orig_line=read_user_input();
+	trimmed_line=fix_spaces(orig_line);
+	mat_size=create_substrings(trimmed_line,&matrix);
+	print_matrix(matrix,mat_size);
 
+/*
+	printf("Test #3:\n");
+	orig_line=read_user_input();
+	trimmed_line=fix_spaces(orig_line);
+	mat_size=create_substrings(trimmed_line,&matrix);
+	print_matrix(matrix,mat_size);
 
+	printf("Test #4:\n");
+	orig_line=read_user_input();
+	print_line(orig_line);
+	trimmed_line=fix_spaces(orig_line);
+	print_line(trimmed_line);
+	mat_size=create_substrings(trimmed_line,&matrix);
+	print_matrix(matrix,mat_size);
 
-
-
+*/
 
 
 
@@ -284,15 +311,17 @@ array * create_substrings(array line){
 
 
 
-void create_substrings(array line, array ** matrix){
-	int n,k; 							/*Used as an index for a loop*/
-	array token; 					/*used for splitting*/
-	int token_size; 				/*used for calculating size when allocating memory for substrings*/
+int create_substrings(array line, array ** matrix){
+	int n;
+	int size;
+	array * mat=*matrix;
+	array token;
+	int token_size;
 
-	int i=0; 						/*Used as an index in the matrix*/
+	int i=0;
 	int line_size;
-	line_size=strlen(line); /*Line length for creation of a regular array*/
-	char line_copy[line_size]; 		/*Temporary array for strtok*/
+	line_size=strlen(line);
+	char line_copy[line_size];
 
 
 	/*Making a copy of the array*/
@@ -300,32 +329,29 @@ void create_substrings(array line, array ** matrix){
 		line_copy[n]=line[n];
 	}
 
-
-	for(k=0;k<4;k++){
-		char * test={"sup"};
-		*matrix[k]=test;
-		printf("%s\n",*matrix[k]);
-	}
+	printf("\nReceived: %s\n",line_copy);
 
 	token=strtok(line_copy," ,");
 
+
 	while (token != NULL){
+		token_size=0;
+		token_size=strlen(token);
+		printf("token: %s size:%d\n",token,token_size);
 
-		/*token_size=strlen(token);
-		printf("\ntoken size:%d\n",token_size);*/
+		/*mat[i]=(array)malloc(token_size*sizeof(char));*/
+		mat[i]=token;
 
-		*matrix[i]=token;
-
-		printf("Token in index %d: %s\n",i,*matrix[i]);
+		/**printf("Token in index %d: %s\n",i,mat[i]);**/
 		i++;
 
 		token=strtok(NULL, " ,");
+
 	}
-	printf("i'm in the splitter\n");
-	/*print_matrix(*matrix,INITIALMATRIXROW);*/
 
+	print_matrix(mat,COLS);
 
-
+	return i;
 }
 
 
