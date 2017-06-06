@@ -5,17 +5,14 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/complex.c \
-../src/list.c \
 ../src/main.c 
 
 OBJS += \
 ./src/complex.o \
-./src/list.o \
 ./src/main.o 
 
 C_DEPS += \
 ./src/complex.d \
-./src/list.d \
 ./src/main.d 
 
 

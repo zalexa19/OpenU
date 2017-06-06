@@ -13,16 +13,17 @@
 #include <string.h>
 #include "complex.h"
 #define MAXLINELENGTH 100
-#define INITIALMATRIXSIZE 4
-enum functions {READ_COMP};
+#define INITIALMATRIXROW 20
+#define INITIALMATRIXCOL 20
 typedef char * array;
+
 
 
 void print_matrix(array *, int);
 void print_line(array);
 array fix_spaces(char []);
 array read_user_input();
-array * create_substrings(array);
+void create_substrings(array ,array **);
 array copy_sub_string(char src[], int point1, int point2);
 int get_command(array);
 
@@ -34,14 +35,28 @@ int main() {
 	array orig_line; /*Original User Input*/
 	array trimmed_line; /*User input after removing irrelevant spaces*/
 	array * matrix;/*Array of strings - each input substring is stored in a different cell*/
-	int command=0;
+	int i;
+	char *p = {"hello"};
 
-	complex A,B,C,D,E,F;
+	matrix = (array *)malloc(sizeof(array *)*INITIALMATRIXROW);
+
+	printf("%s\n",matrix[9]);
+	for (i=0;i<INITIALMATRIXROW;i++){
+		matrix[i]=(array)malloc(INITIALMATRIXCOL);
+		if (!matrix[i]){
+			printf("memory error");
+		}
+	}
+
+	matrix[9]=p;
+	printf("%s",matrix[9][2]);
+
+/*	complex A,B, C,D,E,F;
 	A.a=0;
 	A.b=0;
 	B.a=0;
 	B.b=0;
-	C.a=0;
+		C.a=0;
 	C.b=0;
 	D.a=0;
 	D.b=0;
@@ -49,7 +64,7 @@ int main() {
 	E.b=0;
 	F.a=0;
 	F.b=0;
-
+*/
 
 	printf("\nTrimming spaces tests\n");
 	printf("Test#1\n");
@@ -84,12 +99,20 @@ int main() {
 	print_line(trimmed_line);
 */
 	printf("\n\nTesting Split\n");
-	matrix = create_substrings(trimmed_line);
-	print_matrix(matrix,INITIALMATRIXSIZE);
 
-	printf("\n\nTesting recognition\n");
+	/*for (i=0;i<5;i++){
+		char * tmp ={"Hello"};
+		matrix[i]=tmp;
 
-	get_command(matrix[0]);
+	}*/
+
+	print_matrix(matrix, INITIALMATRIXCOL);
+
+	create_substrings(trimmed_line,&matrix);
+	printf("inside the matrix:\n");
+	print_matrix(matrix,INITIALMATRIXCOL);
+
+
 
 
 
@@ -261,14 +284,16 @@ array * create_substrings(array line){
 
 
 
-array * create_substrings(array line){
-	int line_size=strlen(line); /*Line length for creation of a regular array*/
-	int n; /*Used as an index for a loop*/
-	array * matrix; /*Final array*/
-	int i=0; /*Used as an index in the matrix*/
-	array token; /*used for splitting*/
-	int token_size; /*used for calculating size when allocating memory for substrings*/
-	char line_copy[line_size+1]; /*Temporary array for strtok*/
+void create_substrings(array line, array ** matrix){
+	int n,k; 							/*Used as an index for a loop*/
+	array token; 					/*used for splitting*/
+	int token_size; 				/*used for calculating size when allocating memory for substrings*/
+
+	int i=0; 						/*Used as an index in the matrix*/
+	int line_size;
+	line_size=strlen(line); /*Line length for creation of a regular array*/
+	char line_copy[line_size]; 		/*Temporary array for strtok*/
+
 
 	/*Making a copy of the array*/
 	for (n=0;n<line_size;n++){
@@ -276,21 +301,30 @@ array * create_substrings(array line){
 	}
 
 
-
-	matrix=(array*)malloc (INITIALMATRIXSIZE*sizeof(array));
-	printf("%s\n",line_copy);
-
-	token=strtok(line_copy," ,");
-	while (token != NULL){
-		token_size=strlen(token);
-		matrix[i]=(array)malloc(sizeof(char)*token_size);
-		matrix[i]=token;
-		i++;
-		token=strtok(NULL, " ,");
+	for(k=0;k<4;k++){
+		char * test={"sup"};
+		*matrix[k]=test;
+		printf("%s\n",*matrix[k]);
 	}
 
+	token=strtok(line_copy," ,");
 
-	return matrix;
+	while (token != NULL){
+
+		/*token_size=strlen(token);
+		printf("\ntoken size:%d\n",token_size);*/
+
+		*matrix[i]=token;
+
+		printf("Token in index %d: %s\n",i,*matrix[i]);
+		i++;
+
+		token=strtok(NULL, " ,");
+	}
+	printf("i'm in the splitter\n");
+	/*print_matrix(*matrix,INITIALMATRIXROW);*/
+
+
 
 }
 
@@ -314,7 +348,7 @@ void print_matrix(array * matrix, int size){
 		printf(" ");
 	}
 
-
+	printf("\n");
 }
 
 array copy_sub_string(char src[], int point1, int point2){
@@ -341,16 +375,24 @@ int get_command(array input){
 	int i; /*used as index*/
 	int length=strlen(input);
 	char lower_case[length];
-
-
+	char functions[]={"read_comp"};
+	int result;
+/*
 	for (i=0; i<=length;i++){
 		lower_case[i] = ((unsigned char)input[i]);
 	}
+*/
+	length=strlen(functions);
 
-	if (strcmp(input, "read_comp")==0){
-		printf("Found command: read_com\n");
+	for (i=0; i<=length;i++){
+		print_line(input);
+		result=(int)strcmp(input,"read_comp");
+		printf("%d\n",result);
+
 	}
 
-	return 1;
+
+
+return 0;
 
 }

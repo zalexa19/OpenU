@@ -7,6 +7,7 @@ typedef struct {
 
 
 
+
 void read_comp(double newA, double newB, complex * name );
 void print_comp(complex comp);
 complex add_comp(complex number, complex other_number);
