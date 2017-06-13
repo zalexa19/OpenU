@@ -1,0 +1,5 @@
+git add .
+git commit -m "random note"
+git push
+cd /home/student/Desktop/AllWorkspaces/src
+

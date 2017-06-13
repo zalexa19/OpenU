@@ -1,0 +1,6 @@
+cp -R /home/alexz/workspace/Maman22/* /home/alexz/Desktop/OpenU/20465\ -\ Programing\ in\ C\ Lab/Maman22/project/
+
+cd /home/alexz/Desktop/OpenU/20465\ -\ Programing\ in\ C\ Lab/Maman22
+sh pushtogit
+
+

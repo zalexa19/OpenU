@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Maman12
- Author      : Alex Zablotsky, 314494964
+ Author      : Alex Z
  Version     :
  Copyright   : Your copyright notice
  Description : This is Question #2: Implementation of a double linked list.
