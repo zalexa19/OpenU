@@ -4,7 +4,7 @@
  Author      : Alex Zablotsky, 314494964
  Version     :
  Copyright   : Your copyright notice
- Description :
+ Description : Question #1.
 
  In this implementation, characters are saved one by one in a dynamic array.
  At first, I allocate memory for 5 integers using malloc.

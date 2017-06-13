@@ -1,2 +1,0 @@
-mylist:list.c
-	gcc -g -Wall -ansi -pedantic list.c -o mylist
