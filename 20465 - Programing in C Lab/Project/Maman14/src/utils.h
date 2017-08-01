@@ -20,5 +20,4 @@ String allocate_mem_string(int);
 
 
 
-
 #endif /* UTILS_H_ */

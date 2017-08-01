@@ -12,9 +12,7 @@
 String allocate_mem_string (int size){
 	char* str = (char*)malloc (size * sizeof(char));
 	if (!str){
-		/*
-		 * PRINT TO LOG
-		 */
+		fprintf(stderr,"Unable to allocate memory\n");
 	}
 	return str;
 }
