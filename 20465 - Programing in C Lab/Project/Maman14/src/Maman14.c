@@ -18,22 +18,29 @@ int main(void) {
 	*/
 
 	FILE * fd;
+	FILE * temp_file;
 	String buff;
-	char character;
-	int i=0;
 
+	buff=allocate_mem_string(100);
 	/*END OF DECLERATIONS*/
-	puts("!!!Hello World!!!\n"); /* prints !!!Hello World!!! */
+	puts("!!!Starting tests!!!\n"); /* prints !!!Hello World!!! */
 
 
 	/*Opens the file*/
-	if (!(fd = fopen("assembly_input.txt","w"))){
+
+	temp_file = fopen("test.txt","w");
+
+
+	if (!(fd = fopen("assembly_input.txt","r"))){
 		fprintf(stderr, "cannot create file\n");
 		exit(0);
 	}
+	buff="empty array";
+
+	fputs(buff,temp_file);
+
 
 	while ( !feof(fd)){
-
 		fgets(buff,199,fd);
 		puts(buff);
 	}
