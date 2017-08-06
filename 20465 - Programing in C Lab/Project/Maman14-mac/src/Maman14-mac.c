@@ -10,6 +10,7 @@
 
 #include "utils.h"
 #define ARRAYSIZE 200
+#define MAXMEM 100
 
 int main(void) {
 	/*String name = allocate_mem_string(4);
@@ -17,28 +18,42 @@ int main(void) {
 	printf("%s\n",name);
 	*/
 
-	FILE * fd;
+	FILE * file_dir;
 	FILE * temp_file;
 	String buff;
 
 	buff=allocate_mem_string(100);
+
+
+
+
 	/*END OF DECLERATIONS*/
 	puts("!!!Starting tests!!!\n"); /* prints !!!Hello World!!! */
 
-
 	/*Opens the file*/
-	temp_file = fopen("test.txt","w");
-
-
-	if (!(fd = fopen("assembly_input.txt","r"))){
-		fprintf(stderr, "cannot create file\n");
+	if (!(temp_file = fopen("src/test.txt","w"))){
+		fprintf(stderr,"cannot create temp");
 		exit(0);
 	}
 
-	buff="empty array";
 
-	fputs(buff,temp_file);
-	puts(buff);
+	fclose(temp_file);
+
+	/*Open the second file*/
+	if (!(file_dir = fopen("assembly_input.txt","r"))){
+		fprintf(stderr, "unable to find assembly file");
+		exit(0);
+	}
+
+
+	while ((fgets(buff,MAXMEM,file_dir)) != NULL){
+
+		puts(buff);
+
+	}
+
+	fclose(file_dir);
+
 
 /*
 	while ( !feof(fd)){
@@ -47,7 +62,5 @@ int main(void) {
 	}
 
 */
-	fclose(temp_file);
-	fclose(fd);
 	return EXIT_SUCCESS;
 }
