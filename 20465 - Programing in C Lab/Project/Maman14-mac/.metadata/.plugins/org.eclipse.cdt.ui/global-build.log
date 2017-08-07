@@ -1,0 +1,2427 @@
+12:02:15 **** Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:02:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:02:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+05:34:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+05:41:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+05:48:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+05:49:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+06:37:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: unknown type name ‘parsed_array’
+ void allocate_mem_struct (int , parsed_array); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~~~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:24:2: error: unknown type name ‘parsed_array’
+  parsed_array structs_array;
+  ^~~~~~~~~~~~
+../src/Maman14-mac.c:58:16: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  structs_array=parse_file(input_file);
+                ^~~~~~~~~~
+../src/Maman14-mac.c:60:9: error: ‘file_dir’ undeclared (first use in this function)
+  fclose(file_dir);
+         ^~~~~~~~
+../src/Maman14-mac.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:24:15: warning: variable ‘structs_array’ set but not used [-Wunused-but-set-variable]
+  parsed_array structs_array;
+               ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:37:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: unknown type name ‘parsed_array’
+ void allocate_mem_struct (int , parsed_array); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~~~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  s_array structs_array;
+  ^~~~~~~
+../src/Maman14-mac.c:23:10: error: expected ‘;’ before ‘structs_array’
+  s_array structs_array;
+          ^~~~~~~~~~~~~
+../src/Maman14-mac.c:58:2: error: ‘structs_array’ undeclared (first use in this function)
+  structs_array=parse_file(input_file);
+  ^~~~~~~~~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:16: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  structs_array=parse_file(input_file);
+                ^~~~~~~~~~
+../src/Maman14-mac.c:60:9: error: ‘file_dir’ undeclared (first use in this function)
+  fclose(file_dir);
+         ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:39:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: unknown type name ‘parsed_array’
+ void allocate_mem_struct (int , parsed_array); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~~~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  s_array structs;
+  ^~~~~~~
+../src/Maman14-mac.c:23:10: error: expected ‘;’ before ‘structs’
+  s_array structs;
+          ^~~~~~~
+../src/Maman14-mac.c:58:2: error: ‘structs’ undeclared (first use in this function)
+  structs=parse_file(input_file);
+  ^~~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:10: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  structs=parse_file(input_file);
+          ^~~~~~~~~~
+../src/Maman14-mac.c:60:9: error: ‘file_dir’ undeclared (first use in this function)
+  fclose(file_dir);
+         ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:40:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: error: unknown type name ‘s_array’
+  s_array structs;
+  ^~~~~~~
+../src/Maman14-mac.c:58:10: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  structs=parse_file(input_file);
+          ^~~~~~~~~~
+../src/Maman14-mac.c:60:9: error: ‘file_dir’ undeclared (first use in this function)
+  fclose(file_dir);
+         ^~~~~~~~
+../src/Maman14-mac.c:60:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:23:10: warning: variable ‘structs’ set but not used [-Wunused-but-set-variable]
+  s_array structs;
+          ^~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:41:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘structs’ undeclared (first use in this function)
+  structs=parse_file(input_file);
+  ^~~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:10: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  structs=parse_file(input_file);
+          ^~~~~~~~~~
+../src/Maman14-mac.c:60:9: error: ‘file_dir’ undeclared (first use in this function)
+  fclose(file_dir);
+         ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:41:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘parsed’ undeclared (first use in this function)
+  parsed=parse_file(input_file);
+  ^~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:42:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘parsed’ undeclared (first use in this function)
+  parsed=parse_file(input_file);
+  ^~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:42:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘parsed’ undeclared (first use in this function)
+  parsed=parse_file(input_file);
+  ^~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:43:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘parsed’ undeclared (first use in this function)
+  parsed=parse_file(input_file);
+  ^~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+06:43:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:44:33: error: expected declaration specifiers or ‘...’ before ‘bodies’
+ void allocate_mem_struct (int , bodies); /*dynamically allocates memory for a struct array*/
+                                 ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: warning: statement with no effect [-Wunused-value]
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:23:9: error: expected ‘;’ before ‘parsed’
+  bodies parsed;
+         ^~~~~~
+../src/Maman14-mac.c:58:2: error: ‘parsed’ undeclared (first use in this function)
+  parsed=parse_file(input_file);
+  ^~~~~~
+../src/Maman14-mac.c:58:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:52:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: error: unknown type name ‘bodies’
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:23:9: warning: variable ‘parsed’ set but not used [-Wunused-but-set-variable]
+  bodies parsed;
+         ^~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:54:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:2: error: unknown type name ‘bodies’
+  bodies parsed;
+  ^~~~~~
+../src/Maman14-mac.c:58:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:23:9: warning: variable ‘parsed’ set but not used [-Wunused-but-set-variable]
+  bodies parsed;
+         ^~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:55:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:31:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:19:9: warning: unused variable ‘temp_file’ [-Wunused-variable]
+  FILE * temp_file;
+         ^~~~~~~~~
+../src/Maman14-mac.c: At top level:
+../src/Maman14-mac.c:48:5: warning: "/*" within comment [-Wcomment]
+  *  /*String name = allocate_mem_string(4);
+      
+../src/Maman14-mac.c:54:1: error: expected identifier or ‘(’ before ‘if’
+ if (!(temp_file = fopen("src/test.txt","w"))){
+ ^~
+../src/Maman14-mac.c:60:1: warning: data definition has no type or storage class
+ fclose(temp_file);
+ ^~~~~~
+../src/Maman14-mac.c:60:1: warning: type defaults to ‘int’ in declaration of ‘fclose’ [-Wimplicit-int]
+../src/Maman14-mac.c:60:1: warning: parameter names (without types) in function declaration
+../src/Maman14-mac.c:61:2: error: expected identifier or ‘(’ before ‘/’ token
+ */
+  ^
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:55:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:31:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:19:9: warning: unused variable ‘temp_file’ [-Wunused-variable]
+  FILE * temp_file;
+         ^~~~~~~~~
+../src/Maman14-mac.c: At top level:
+../src/Maman14-mac.c:49:5: warning: "/*" within comment [-Wcomment]
+  *  /*String name = allocate_mem_string(4);
+      
+../src/Maman14-mac.c:55:1: error: expected identifier or ‘(’ before ‘if’
+ if (!(temp_file = fopen("src/test.txt","w"))){
+ ^~
+../src/Maman14-mac.c:61:1: warning: data definition has no type or storage class
+ fclose(temp_file);
+ ^~~~~~
+../src/Maman14-mac.c:61:1: warning: type defaults to ‘int’ in declaration of ‘fclose’ [-Wimplicit-int]
+../src/Maman14-mac.c:61:1: warning: parameter names (without types) in function declaration
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+06:57:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:31:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:19:9: warning: unused variable ‘temp_file’ [-Wunused-variable]
+  FILE * temp_file;
+         ^~~~~~~~~
+../src/Maman14-mac.c: At top level:
+../src/Maman14-mac.c:49:5: warning: "/*" within comment [-Wcomment]
+  *  /*String name = allocate_mem_string(4);
+      
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:31:2: warning: ‘parsed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:1: error: unknown type name ‘s_array’
+ s_array parse_file (FILE * file){
+ ^~~~~~~
+../src/parser.c:12:9: error: conflicting types for ‘parse_file’
+ s_array parse_file (FILE * file){
+         ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:21:6: note: previous declaration of ‘parse_file’ was here
+ void parse_file (FILE *fp, body *);
+      ^~~~~~~~~~
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:13:2: error: unknown type name ‘s_array’
+  s_array result_array;
+  ^~~~~~~
+../src/parser.c:18:43: warning: passing argument 2 of ‘allocate_mem_struct’ makes pointer from integer without a cast [-Wint-conversion]
+  allocate_mem_struct(INITIAL_SARRAY_SIZE, result_array);
+                                           ^~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: expected ‘bodyArray {aka struct parsed_line *}’ but argument is of type ‘int’
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+06:58:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c: At top level:
+../src/Maman14-mac.c:48:5: warning: "/*" within comment [-Wcomment]
+  *  /*String name = allocate_mem_string(4);
+      
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:2: warning: ‘parsed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:1: error: unknown type name ‘s_array’
+ s_array parse_file (FILE * file){
+ ^~~~~~~
+../src/parser.c:12:9: error: conflicting types for ‘parse_file’
+ s_array parse_file (FILE * file){
+         ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:21:6: note: previous declaration of ‘parse_file’ was here
+ void parse_file (FILE *fp, body *);
+      ^~~~~~~~~~
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:13:2: error: unknown type name ‘s_array’
+  s_array result_array;
+  ^~~~~~~
+../src/parser.c:18:43: warning: passing argument 2 of ‘allocate_mem_struct’ makes pointer from integer without a cast [-Wint-conversion]
+  allocate_mem_struct(INITIAL_SARRAY_SIZE, result_array);
+                                           ^~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: expected ‘bodyArray {aka struct parsed_line *}’ but argument is of type ‘int’
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+06:59:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:30:2: warning: ‘parsed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:1: error: unknown type name ‘s_array’
+ s_array parse_file (FILE * file){
+ ^~~~~~~
+../src/parser.c:12:9: error: conflicting types for ‘parse_file’
+ s_array parse_file (FILE * file){
+         ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:21:6: note: previous declaration of ‘parse_file’ was here
+ void parse_file (FILE *fp, body *);
+      ^~~~~~~~~~
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:13:2: error: unknown type name ‘s_array’
+  s_array result_array;
+  ^~~~~~~
+../src/parser.c:18:43: warning: passing argument 2 of ‘allocate_mem_struct’ makes pointer from integer without a cast [-Wint-conversion]
+  allocate_mem_struct(INITIAL_SARRAY_SIZE, result_array);
+                                           ^~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: expected ‘bodyArray {aka struct parsed_line *}’ but argument is of type ‘int’
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+06:59:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:2: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:30:2: warning: ‘parsed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  parse_file(input_file,parsed);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:1: error: unknown type name ‘s_array’
+ s_array parse_file (FILE * file){
+ ^~~~~~~
+../src/parser.c:12:9: error: conflicting types for ‘parse_file’
+ s_array parse_file (FILE * file){
+         ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:21:6: note: previous declaration of ‘parse_file’ was here
+ void parse_file (FILE *fp, body *);
+      ^~~~~~~~~~
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:13:2: error: unknown type name ‘s_array’
+  s_array result_array;
+  ^~~~~~~
+../src/parser.c:18:43: warning: passing argument 2 of ‘allocate_mem_struct’ makes pointer from integer without a cast [-Wint-conversion]
+  allocate_mem_struct(INITIAL_SARRAY_SIZE, result_array);
+                                           ^~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: expected ‘bodyArray {aka struct parsed_line *}’ but argument is of type ‘int’
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+07:01:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:19:12: warning: variable ‘parsed’ set but not used [-Wunused-but-set-variable]
+  bodyArray parsed;
+            ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:18:43: warning: passing argument 2 of ‘allocate_mem_struct’ from incompatible pointer type [-Wincompatible-pointer-types]
+  allocate_mem_struct(INITIAL_SARRAY_SIZE, &result_array);
+                                           ^
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: expected ‘bodyArray {aka struct parsed_line *}’ but argument is of type ‘body ** {aka struct parsed_line **}’
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:17:2: warning: ‘line’ is used uninitialized in this function [-Wuninitialized]
+  allocate_mem_string(MAXMEM,line);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/parser.c:22:13: warning: ‘result_size’ is used uninitialized in this function [-Wuninitialized]
+  result_size++;
+  ~~~~~~~~~~~^~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+07:02:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c:13:8: error: conflicting types for ‘allocate_mem_string’
+ String allocate_mem_string (int size){
+        ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.c:8:0:
+../src/utils.h:51:6: note: previous declaration of ‘allocate_mem_string’ was here
+ void allocate_mem_string(int, String);
+      ^~~~~~~~~~~~~~~~~~~
+../src/utils.c:23:11: error: conflicting types for ‘allocate_mem_struct’
+ bodyArray allocate_mem_struct (int size){
+           ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.c:8:0:
+../src/utils.h:44:6: note: previous declaration of ‘allocate_mem_struct’ was here
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+07:02:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:17:7: error: too few arguments to function ‘allocate_mem_string’
+  line=allocate_mem_string(MAXMEM);
+       ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:51:6: note: declared here
+ void allocate_mem_string(int, String);
+      ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:18:15: error: too few arguments to function ‘allocate_mem_struct’
+  result_array=allocate_mem_struct(INITIAL_SARRAY_SIZE);
+               ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:8:
+../src/utils.h:44:6: note: declared here
+ void allocate_mem_struct (int , bodyArray); /*dynamically allocates memory for a struct array*/
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+07:03:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:19:12: warning: variable ‘parsed’ set but not used [-Wunused-but-set-variable]
+  bodyArray parsed;
+            ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:22:13: warning: ‘result_size’ is used uninitialized in this function [-Wuninitialized]
+  result_size++;
+  ~~~~~~~~~~~^~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+07:05:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:19:12: warning: variable ‘parsed’ set but not used [-Wunused-but-set-variable]
+  bodyArray parsed;
+            ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:22:13: warning: ‘result_size’ is used uninitialized in this function [-Wuninitialized]
+  result_size++;
+  ~~~~~~~~~~~^~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+07:07:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:51:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper1\toper3\oper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:51:9: warning: unknown escape sequence: '\o'
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+07:07:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+07:09:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:51:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+07:10:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+07:10:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+07:16:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:24:27: error: incompatible types when assigning to type ‘body {aka struct parsed_line}’ from type ‘String {aka char *}’
+  result_array[result_size]=line;
+                           ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+07:16:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:24:27: error: incompatible types when assigning to type ‘body {aka struct parsed_line}’ from type ‘String {aka char *}’
+  result_array[result_size]=line;
+                           ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:24:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:50:20: error: ‘String’ redeclared as different kind of symbol
+ struct parse_line (String);
+                    ^~~~~~
+../src/utils.h:17:15: note: previous declaration of ‘String’ was here
+ typedef char* String;
+               ^~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+In file included from ../src/Maman14-mac.c:11:0:
+../src/Maman14-mac.c: At top level:
+../src/utils.h:50:20: error: storage size of ‘String’ isn’t known
+ struct parse_line (String);
+                    ^~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+09:25:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+../src/parser.c:24:27: error: incompatible types when assigning to type ‘body {aka struct parsed_line}’ from type ‘String {aka char *}’
+  result_array[result_size]=line;
+                           ^
+make: *** [src/parser.o] Error 1
+09:26:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘parse_line’:
+../src/utils.c:54:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/utils.c:53:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/utils.c:53:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:71:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:26:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘parse_line’:
+../src/utils.c:54:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/utils.c:53:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/utils.c:53:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:71:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:26:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:27:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:54:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:29:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:40:2: error: too few arguments to function ‘strtok’
+  strtok()
+  ^~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:343:14: note: declared here
+ extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+              ^~~~~~
+../src/parser.c:41:2: error: expected ‘;’ before ‘printf’
+  printf("%s",line);
+  ^~~~~~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+../src/parser.c:34:20: warning: unused variable ‘copy’ [-Wunused-variable]
+  char line[MAXMEM],copy[MAXMEM];
+                    ^~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:31:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:41:20: error: expected expression before ‘:’ token
+  token=strtok(copy,:);
+                    ^
+../src/parser.c:37:9: warning: variable ‘token’ set but not used [-Wunused-but-set-variable]
+  char * token;
+         ^~~~~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:31:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:37:9: warning: variable ‘token’ set but not used [-Wunused-but-set-variable]
+  char * token;
+         ^~~~~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:35:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:35:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:35:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:36:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+../src/parser.c:34:20: warning: unused variable ‘copy’ [-Wunused-variable]
+  char line[MAXMEM],copy[MAXMEM];
+                    ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:36:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:36:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:36:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:37:9: warning: variable ‘token’ set but not used [-Wunused-but-set-variable]
+  char * token;
+         ^~~~~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:36:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:37:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:37:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:37:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:37:9: warning: variable ‘token’ set but not used [-Wunused-but-set-variable]
+  char * token;
+         ^~~~~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:37:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:39:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:9: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   result->label=token;
+         ^~
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+09:39:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:9: error: subscripted value is neither array nor pointer nor vector
+   result[1]->label=token;
+         ^
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:39:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:9: error: subscripted value is neither array nor pointer nor vector
+   result[1]->label=token;
+         ^
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+09:41:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:16: error: subscripted value is neither array nor pointer nor vector
+   strcpy(result[1]->label,token);
+                ^
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:41:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:16: error: subscripted value is neither array nor pointer nor vector
+   strcpy(result[1]->label,token);
+                ^
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:42:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:46:16: error: subscripted value is neither array nor pointer nor vector
+   strcpy(result[0]->label,token);
+                ^
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:42:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:43:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:34:14: error: expected ‘:’, ‘,’, ‘;’, ‘}’ or ‘__attribute__’ before ‘=’ token
+  String label=NULL;
+              ^
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+09:46:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:36:9: warning: unused variable ‘tmp’ [-Wunused-variable]
+  String tmp[MAXMEM];
+         ^~~
+../src/parser.c:35:8: warning: unused variable ‘i’ [-Wunused-variable]
+  int c,i;
+        ^
+../src/parser.c:35:6: warning: unused variable ‘c’ [-Wunused-variable]
+  int c,i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:54:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:50:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘get_label’:
+../src/parser.c:12:35: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ bodyArray parse_file (FILE * file){
+                                   ^
+../src/parser.c:32:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ body parse_line (String str){
+                             ^
+../src/parser.c:48:31: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ String get_label (char * line){
+                               ^
+../src/parser.c:60:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/parser.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:51:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘get_label’:
+../src/parser.c:12:35: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ bodyArray parse_file (FILE * file){
+                                   ^
+../src/parser.c:32:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ body parse_line (String str){
+                             ^
+../src/parser.c:47:31: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ String get_label (char * line){
+                               ^
+../src/parser.c:59:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/parser.c:59:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+09:52:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:52:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:15:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size=0;
+      ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:54:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:54:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:54:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:54:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:55:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:55:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+09:56:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:54:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:56:48: error: ‘i’ undeclared (first use in this function)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                ^
+../src/utils.c:56:48: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+09:56:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:58:50: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                  ^~
+../src/utils.c:58:66: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                  ^~
+../src/utils.c:58:88: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                                        ^~
+../src/utils.c:58:109: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                                                             ^~
+../src/utils.c:58:129: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                                                                                 ^~
+../src/utils.c:58:148: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                                                                                                    ^~
+../src/utils.c:58:167: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i]->label,array[i]->instruction,array[i]->operantion,array[i]->openrand1,array[i]->operand2,array[i]->operand3,array[i]->operand4);
+                                                                                                                                                                       ^~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+09:57:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+09:57:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+11:29:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:31: error: expected declaration specifiers or ‘...’ before ‘*’ token
+ void parse_file (FILE * file, * bodyArray result){
+                               ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:42:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:31: error: expected declaration specifiers or ‘...’ before ‘*’ token
+ void parse_file (FILE * file, * bodyArray result){
+                               ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:45:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:11: error: two or more data types in declaration specifiers
+ bodyArray void parse_file (FILE * file){
+           ^~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:45:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:11: error: two or more data types in declaration specifiers
+ bodyArray void parse_file (FILE * file){
+           ^~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:45:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:12:11: error: two or more data types in declaration specifiers
+ bodyArray void parse_file (FILE * file){
+           ^~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:45:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i].label,array[i].instruction,array[i].operantion,array[i].openrand1,array[i].operand2,array[i].operand3,array[i].operand4);
+  ^~~~~~
+../src/utils.c:58:47: error: dereferencing pointer to incomplete type ‘struct body’
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i].label,array[i].instruction,array[i].operantion,array[i].openrand1,array[i].operand2,array[i].operand3,array[i].operand4);
+                                               ^
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+  printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t\n",array[i].label,array[i].instruction,array[i].operantion,array[i].openrand1,array[i].operand2,array[i].operand3,array[i].operand4);
+  ^~~~~~
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+../src/utils.c:58:2: error: invalid use of undefined type ‘struct body’
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+11:52:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:25:2: error: invalid use of undefined type ‘struct body’
+  result[cell_counter]= parse_line(line);
+  ^~~~~~
+../src/parser.c:25:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[cell_counter]= parse_line(line);
+        ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:42:22: warning: implicit declaration of function ‘get_label’ [-Wimplicit-function-declaration]
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+../src/parser.c:42:22: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:49:8: error: conflicting types for ‘get_label’
+ String get_label (char * line){
+        ^~~~~~~~~
+../src/parser.c:42:22: note: previous implicit declaration of ‘get_label’ was here
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:52:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:25:2: error: invalid use of undefined type ‘struct body’
+  result[cell_counter]= parse_line(line);
+  ^~~~~~
+../src/parser.c:25:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[cell_counter]= parse_line(line);
+        ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:42:22: warning: implicit declaration of function ‘get_label’ [-Wimplicit-function-declaration]
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+../src/parser.c:42:22: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:49:8: error: conflicting types for ‘get_label’
+ String get_label (char * line){
+        ^~~~~~~~~
+../src/parser.c:42:22: note: previous implicit declaration of ‘get_label’ was here
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:54:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  strcpy(result[cell_counter],parse_line(line));
+  ^~~~~~
+../src/parser.c:26:15: error: dereferencing pointer to incomplete type ‘struct body’
+  strcpy(result[cell_counter],parse_line(line));
+               ^
+../src/parser.c:26:30: error: incompatible type for argument 2 of ‘strcpy’
+  strcpy(result[cell_counter],parse_line(line));
+                              ^~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘body {aka struct parsed_line}’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:43:22: warning: implicit declaration of function ‘get_label’ [-Wimplicit-function-declaration]
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+../src/parser.c:43:22: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:50:8: error: conflicting types for ‘get_label’
+ String get_label (char * line){
+        ^~~~~~~~~
+../src/parser.c:43:22: note: previous implicit declaration of ‘get_label’ was here
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:55:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  strcpy(result[cell_counter],parse_line(line).);
+  ^~~~~~
+../src/parser.c:26:15: error: dereferencing pointer to incomplete type ‘struct body’
+  strcpy(result[cell_counter],parse_line(line).);
+               ^
+../src/parser.c:26:47: error: expected identifier before ‘)’ token
+  strcpy(result[cell_counter],parse_line(line).);
+                                               ^
+../src/parser.c:27:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:44:22: warning: implicit declaration of function ‘get_label’ [-Wimplicit-function-declaration]
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+../src/parser.c:44:22: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:51:8: error: conflicting types for ‘get_label’
+ String get_label (char * line){
+        ^~~~~~~~~
+../src/parser.c:44:22: note: previous implicit declaration of ‘get_label’ was here
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:55:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c:26:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[0] = parse_line(line);
+        ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:43:22: warning: implicit declaration of function ‘get_label’ [-Wimplicit-function-declaration]
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+../src/parser.c:43:22: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:50:8: error: conflicting types for ‘get_label’
+ String get_label (char * line){
+        ^~~~~~~~~
+../src/parser.c:43:22: note: previous implicit declaration of ‘get_label’ was here
+  strcpy(result.label,get_label(line));
+                      ^~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:55:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c:26:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[0] = parse_line(line);
+        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:00:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c:26:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[0] = parse_line(line);
+        ^
+../src/parser.c: At top level:
+../src/parser.c:33:6: error: conflicting types for ‘parse_line’
+ body parse_line (String str){
+      ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:31:8: note: previous declaration of ‘parse_line’ was here
+ body * parse_line (String str);
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:00:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c:26:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[0] = parse_line(line);
+        ^
+../src/parser.c: At top level:
+../src/parser.c:33:7: error: conflicting types for ‘parse_line’
+ body  parse_line (String str){
+       ^~~~~~~~~~
+In file included from ../src/parser.c:8:0:
+../src/parser.h:31:8: note: previous declaration of ‘parse_line’ was here
+ body * parse_line (String str);
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:01:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:26:2: error: invalid use of undefined type ‘struct body’
+  result[0] = parse_line(line);
+  ^~~~~~
+../src/parser.c:26:8: error: dereferencing pointer to incomplete type ‘struct body’
+  result[0] = parse_line(line);
+        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:02:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:03:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:61:21: error: ‘array’ is a pointer; did you mean to use ‘->’?
+  printf("%s\n",array.label);
+                     ^
+                     ->
+../src/utils.c:53:6: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+  int i;
+      ^
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+12:03:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:56:9: warning: unknown escape sequence: '\o'
+  printf("label\tinstruction\toperation\tpoer1\t\oper2\toper3\toper4\t\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/utils.c:53:6: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+  int i;
+      ^
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:03:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:53:6: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+  int i;
+      ^
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:03:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:06:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:08:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:14:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:27:31: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  printf("stas- %s\n",result[0]->label);
+                               ^~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:15:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:15:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:53:6: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+  int i;
+      ^
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:15:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:16:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:20:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:31:11: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘bodyArray {aka struct parsed_line *}’ [-Wformat=]
+  printf("%d",parsed);
+           ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:21:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:21:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:31:15: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘bodyArray {aka struct parsed_line *}’ [-Wformat=]
+  printf("aaa %d",parsed);
+               ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:22:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:9: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=parse_file(input_file);
+         ^~~~~~~~~~
+../src/Maman14-mac.c:30:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  parsed=parse_file(input_file);
+        ^
+../src/Maman14-mac.c:31:15: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘bodyArray {aka struct parsed_line *}’ [-Wformat=]
+  printf("aaa %d",parsed);
+               ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:23:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:20: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=(bodyArray)parse_file(input_file);
+                    ^~~~~~~~~~
+../src/Maman14-mac.c:30:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  parsed=(bodyArray)parse_file(input_file);
+         ^
+../src/Maman14-mac.c:31:15: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘bodyArray {aka struct parsed_line *}’ [-Wformat=]
+  printf("aaa %d",parsed);
+               ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:23:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:20: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=(bodyArray)parse_file(input_file);
+                    ^~~~~~~~~~
+../src/Maman14-mac.c:30:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  parsed=(bodyArray)parse_file(input_file);
+         ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:23:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:20: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=(bodyArray)parse_file(input_file);
+                    ^~~~~~~~~~
+../src/Maman14-mac.c:30:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  parsed=(bodyArray)parse_file(input_file);
+         ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:24:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:30:20: warning: implicit declaration of function ‘parse_file’ [-Wimplicit-function-declaration]
+  parsed=(bodyArray)parse_file(input_file);
+                    ^~~~~~~~~~
+../src/Maman14-mac.c:30:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  parsed=(bodyArray)parse_file(input_file);
+         ^
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:26:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 

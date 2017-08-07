@@ -1,0 +1,43 @@
+/*
+ * utils.c
+ *
+ *  Created on: Jul 26, 2017
+ *      Author: alex
+ */
+
+#include "utils.h"
+
+
+int structs_array_size;
+
+void allocate_mem_string (int size, String str){
+	str = (char*)malloc (size * sizeof(char));
+	if (!str){
+		fprintf(stderr,"Unable to allocate memory\n");
+	}
+}
+
+
+void allocate_mem_struct (int size, parsed_array array){
+	array= malloc(sizeof(array)*size);
+
+	if (!array){
+		fprintf(stderr,"unable to allocate memory to structs-array");
+		exit(0);
+
+	}
+
+
+}
+
+int increase_mem_struct (int size, bodies array){
+	size=size*2;
+	bodies tmp = realloc(array,sizeof(body)*size);
+	if (!tmp){
+		fprintf(stderr,"unable to increase memory to structs-array");
+		exit (0);
+	}
+
+	return size;
+
+}

@@ -1,0 +1,57 @@
+/*
+ * parser.c
+ *
+ *  Created on: Aug 3, 2017
+ *      Author: alexz
+ */
+
+#include "parser.h"
+#include "utils.h"
+#define INITIAL_SARRAY_SIZE 8000
+
+bodyArray parse_file (FILE * file){
+	bodyArray result_array;
+	String line;
+
+	line=allocate_mem_string(MAXMEM);
+	result_array=allocate_mem_struct(INITIAL_SARRAY_SIZE);
+
+	fgets(line,MAXMEM,file);
+	printf("fgets- %s\n",line);
+
+	parse_line(line);
+
+
+
+	return result_array;
+}
+
+body parse_line (String str){
+	body result;
+	char line[MAXMEM];
+
+
+	strcpy(line,str);
+
+	/*extract label*/
+	strcpy(result.label,get_label(line));
+
+
+
+	return result;
+}
+
+String get_label (char * line){
+	char * token;
+	char copy[MAXMEM];
+
+	strcpy(copy,line);
+		token = strtok(copy,":");
+
+		if (token){
+			return token;
+		}
+
+		return NULL;
+}
+
