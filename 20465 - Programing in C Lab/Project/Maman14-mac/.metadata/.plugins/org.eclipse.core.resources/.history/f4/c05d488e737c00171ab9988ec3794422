@@ -50,36 +50,33 @@ bodyArray  parse_file (FILE * file){
 body  parse_line (String str){
 	body result;
 	int result_size;
-	char * extracted_value;
+	char * tmp;
 	char line[MAXMEM];
+	char * first space;
 
-	extracted_value=allocate_mem_string(MAXMEM);
-	strcpy(line,remove_first_spaces(str));
-
-	printf("str : %s\n",str);
-	printf("line: MAIN: .ALEX test\n");
-	printf("line: %s\n",line);
-
+	tmp=allocate_mem_string(MAXMEM);
+	strcpy(line,str);
+	printf("strcpy - %s\n",line);
 
 	/*check if it's a comment*/
-	if ( line[0] == ';'){
+	if ( str[0] == ';'){
 		fprintf(stderr,"---found a comment");
 	}
 
 
 
 	/*extract label*/
-	strcpy(extracted_value,extract_label(line));
-	result_size=strlen(extracted_value) +1;
+	strcpy(tmp,extract_label(str));
+	result_size=strlen(tmp) +1;
 	result.label=allocate_mem_string(result_size);
-	strcpy(result.label,extracted_value);
+	strcpy(result.label,tmp);
 
 
 	/*extract instruction*/
-	strcpy(extracted_value,extract_instruction(line));
-	result_size=strlen(extracted_value)+1;
+	strcpy(tmp,extract_instruction(str));
+	result_size=strlen(tmp)+1;
 	result.instruction=allocate_mem_string(result_size);
-	strcpy(result.instruction,extracted_value);
+	strcpy(result.instruction,tmp);
 
 
 	/*Extract operation*/
@@ -158,12 +155,11 @@ char * extract_instruction(char * str){
 	strncpy(result,copy,size);
 	printf("in result: %s\n",result);
 
-	fprintf(stderr,"---Extraction Completed.\n");
+	fprintf(stderr,"---Extraction Completed.\n",size);
 
 	return result;
 }
 
-/*This function runs from the first cell until the first non-blank char and removes the blanks*/
 String remove_first_spaces(String str){
 	int new_size;
 	int counter=0;
@@ -173,7 +169,6 @@ String remove_first_spaces(String str){
 
 	while ( str[i]=='\t' ||  str[i]==' '){
 		counter++;
-		i++;
 	}
 	new_size=(strlen(str))-counter;
 	result=allocate_mem_string(new_size);
