@@ -1,4 +1,4 @@
-MAIN: ALEX test
+MAIN: .ALEX test
 .ENTRY LOOP
 MAIN: INC K
 	mov M1[r2][r7],W

@@ -11,6 +11,12 @@
 #include "utils.h"
 #define INITIAL_SARRAY_SIZE 8000
 /*
+ * This macro helps calculating which parts of the array need to be copied
+ */
+#define CALCSIZE(array_start, index)\
+	(index-array_start)*sizeof(char);
+
+/*
  * This macro is used when I want to reresent a string as empty.
  * It allocates 1 memory and inserts \0 as the string value.
  *
@@ -60,7 +66,7 @@ body  parse_line (String str){
 
 
 	/*extract instruction*/
-
+	extract_instruction(str);
 	/*printf("%s\n",line);
 	strcpy(result.instruction, extract_instruction(line));
 */
@@ -97,6 +103,47 @@ String extract_label (String line){
 
 char * extract_instruction(char * str){
 	String result;
+	String copy;
+	char * found_char;
+	char * found_space;
+	char * array_start;
+	char * inspection_start;
+	char * inspection_end;
+	int size;
+
+	result=allocate_mem_string(strlen(str));
+	copy=allocate_mem_string(strlen(str));
+
+	strcpy(copy,str);
+	array_start=copy;
+
+	fprintf(stderr,"---Extract_instruction: started\n");
+	fprintf(stderr,"---Extracting: dot \n");
+
+	found_char = strchr(copy,'.');
+
+	/*In which position . appears. 1 is added because we care about what's after the dot*/
+	size=CALCSIZE(result, found_space);
+	size++;
+	fprintf(stderr,"--Calculated . position:%d\n",size);
+	inspection_start=copy+size;
+	strcpy(result,inspection_start); /*Now result holds everything after the dot*/
+
+	printf("%s\n",result);
+	fprintf(stderr,"---Extracting: space \n");
+
+	found_space = strchr(result,' ');
+	/*size = (found_space - result) * sizeof(char);*/
+	size=3;
+	size=CALCSIZE(result, found_space);
+
+	free(copy);
+	copy=allocate_mem_string(size+1);
+	strncpy(copy,result,size);
+	printf("in copy: %s\n",copy);
+
+
+
 
 
 	return result;

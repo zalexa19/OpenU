@@ -37,7 +37,7 @@ int main(void) {
 
 
 
-	printf("doei!\n");
+	printf("\n---===doei!===---\n");
 	return EXIT_SUCCESS;
 }
 
