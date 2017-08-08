@@ -2425,3 +2425,1105 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
 Finished building target: Maman14
  
+12:32:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:45:10: error: assignment to expression with array type
+  chopped = get_label(line);
+          ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:32:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:32:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:33:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:33:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:41:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:47:7: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  temp=extract_instruction(line);
+       ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:6: error: assignment to expression with array type
+  temp=extract_instruction(line);
+      ^
+../src/parser.c:35:8: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]
+  char  temp[MAXMEM];
+        ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:7: note: previous implicit declaration of ‘extract_instruction’ was here
+  temp=extract_instruction(line);
+       ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:41:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:47:7: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  temp=extract_instruction(line);
+       ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:6: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  temp=extract_instruction(line);
+      ^
+../src/parser.c:35:9: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]
+  char * temp;
+         ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:7: note: previous implicit declaration of ‘extract_instruction’ was here
+  temp=extract_instruction(line);
+       ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:41:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:47:15: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  temp=(char *)extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:7: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  temp=(char *)extract_instruction(line);
+       ^
+../src/parser.c:35:9: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]
+  char * temp;
+         ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:15: note: previous implicit declaration of ‘extract_instruction’ was here
+  temp=(char *)extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:41:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:47:15: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  temp=(char *)extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:7: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  temp=(char *)extract_instruction(line);
+       ^
+../src/parser.c:35:9: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]
+  char * temp;
+         ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:47:15: note: previous implicit declaration of ‘extract_instruction’ was here
+  temp=(char *)extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:42:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:15: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:40: error: expected ‘)’ before ‘;’ token
+  strcpy(temp, extract_instruction(line);
+                                        ^
+../src/parser.c:48:15: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c:52:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c: At top level:
+../src/parser.c:70:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:15: note: previous implicit declaration of ‘extract_instruction’ was here
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:42:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:15: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:40: error: expected ‘)’ before ‘;’ token
+  strcpy(temp, extract_instruction(line);
+                                        ^
+../src/parser.c:48:15: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c:52:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c: At top level:
+../src/parser.c:70:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:15: note: previous implicit declaration of ‘extract_instruction’ was here
+  strcpy(temp, extract_instruction(line);
+               ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:43:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:29: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:54: error: expected ‘)’ before ‘;’ token
+  strcpy(result.instruction, extract_instruction(line);
+                                                      ^
+../src/parser.c:48:29: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c:52:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c:35:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+../src/parser.c: At top level:
+../src/parser.c:70:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:29: note: previous implicit declaration of ‘extract_instruction’ was here
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:52:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:44:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:29: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:54: error: expected ‘)’ before ‘;’ token
+  strcpy(result.instruction, extract_instruction(line);
+                                                      ^
+../src/parser.c:48:29: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c:51:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c:35:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:29: note: previous implicit declaration of ‘extract_instruction’ was here
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:44:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:29: warning: implicit declaration of function ‘extract_instruction’ [-Wimplicit-function-declaration]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:54: error: expected ‘)’ before ‘;’ token
+  strcpy(result.instruction, extract_instruction(line);
+                                                      ^
+../src/parser.c:48:29: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c:51:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c:35:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+../src/parser.c: At top level:
+../src/parser.c:69:8: error: conflicting types for ‘extract_instruction’
+ char * extract_instruction(char * line){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:48:29: note: previous implicit declaration of ‘extract_instruction’ was here
+  strcpy(result.instruction, extract_instruction(line);
+                             ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+12:44:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:54: error: expected ‘)’ before ‘;’ token
+  strcpy(result.instruction, extract_instruction(line);
+                                                      ^
+../src/parser.c:51:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c:35:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+../src/parser.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:44:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:48:54: error: expected ‘)’ before ‘;’ token
+  strcpy(result.instruction, extract_instruction(line);
+                                                      ^
+../src/parser.c:51:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../src/parser.c:35:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+../src/parser.c:51:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+12:50:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:51:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:51:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:51:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:51:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:51:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:52:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:53:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:53:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:53:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+12:53:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:53:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:53:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+00:12:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+00:12:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+01:45:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:71:19: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  pt = strchr(line,".");
+                   ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:8:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:78:9: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return result;
+         ^~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:46:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:78:9: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return result;
+         ^~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:49:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:77:9: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  result = strncpy(result,pt,10);
+  ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:50:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:77:17: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  strcpy(result, strncpy(result,pt,10));
+                 ^~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:50:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+01:50:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:78:17: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  strcpy(result, strncpy(result,pt,10));
+                 ^~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:50:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+01:51:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:78:17: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  strcpy(result, strncpy(result,pt,10));
+                 ^~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+01:51:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+01:59:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:00:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:20:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:25:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:32:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:63:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  result = strncmp(result,line,size);
+         ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:35:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:63:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  result = strncmp(result,line,size);
+         ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:46:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:68:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  result = (String)strncmp(result,line,size);
+           ^
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:47:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:68:2: warning: statement with no effect [-Wunused-value]
+  strncmp(result,line,size);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:47:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:68:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  result =strncmp(result,line,size);
+         ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:52:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:65:2: error: ‘result’ undeclared (first use in this function)
+  result = allocate_mem_string(size+1);
+  ^~~~~~
+../src/parser.c:65:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:53:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:55:7: error: array size missing in ‘result’
+  char result[];
+       ^~~~~~
+../src/parser.c:68:8: error: assignment to expression with array type
+  result= strncmp(result,line,size);
+        ^
+../src/parser.c:70:9: warning: function returns address of local variable [-Wreturn-local-addr]
+  return result;
+         ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:54:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:68:8: error: assignment to expression with array type
+  result= strncmp(result,line,size);
+        ^
+../src/parser.c:70:9: warning: function returns address of local variable [-Wreturn-local-addr]
+  return result;
+         ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:54:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:55:15: error: ‘size’ undeclared (first use in this function)
+  char result [size];
+               ^~~~
+../src/parser.c:55:15: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:55:7: warning: unused variable ‘result’ [-Wunused-variable]
+  char result [size];
+       ^~~~~~
+../src/parser.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:54:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:70:8: error: assignment to expression with array type
+  result= strncmp(result,line,size);
+        ^
+../src/parser.c:72:9: warning: function returns address of local variable [-Wreturn-local-addr]
+  return result;
+         ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:55:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:66:8: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  result= strncmp(result,line,size);
+        ^
+../src/parser.c:66:10: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  result= strncmp(result,line,size);
+          ^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:55:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:66:2: warning: statement with no effect [-Wunused-value]
+  strncmp(result,line,size);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/parser.c:66:2: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  strncmp(result,line,size);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:57:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:66:2: warning: statement with no effect [-Wunused-value]
+  strncmp(result,line,size);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:59:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:67:17: warning: too many arguments for format [-Wformat-extra-args]
+  fprintf(stderr,"---extract_lable: Finished\n",size);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:08:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:18:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:71:17: error: ‘RED’ undeclared (first use in this function)
+  fprintf(stderr,RED "---label length: %d\n" RESET,size);
+                 ^~~
+../src/parser.c:71:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:71:21: error: expected ‘)’ before string constant
+  fprintf(stderr,RED "---label length: %d\n" RESET,size);
+                     ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:19:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:20:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:67:9: error: ‘GREEN’ undeclared (first use in this function)
+  printf(GREEN"hi\n"RESET);
+         ^~~~~
+../src/parser.c:67:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:67:14: error: expected ‘)’ before string constant
+  printf(GREEN"hi\n"RESET);
+              ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:20:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:67:10: error: ‘GREEN’ undeclared (first use in this function)
+  printf( GREEN "Here is some text\n" RESET );
+          ^~~~~
+../src/parser.c:67:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:67:16: error: expected ‘)’ before string constant
+  printf( GREEN "Here is some text\n" RESET );
+                ^~~~~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:21:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:67:10: error: ‘GREEN’ undeclared (first use in this function)
+  printf( GREEN "Here is some text\n" RESET );
+          ^~~~~
+../src/parser.c:67:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:67:16: error: expected ‘)’ before string constant
+  printf( GREEN "Here is some text\n" RESET );
+                ^~~~~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:22:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:36:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:13:21: warning: statement with no effect [-Wunused-value]
+ #define RETURN_NULL (result)\
+                     ^
+../src/parser.c:76:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL
+   ^~~~~~~~~~~
+../src/parser.c:14:2: error: expected ‘;’ before ‘{’ token
+  {\
+  ^
+../src/parser.c:76:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL
+   ^~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+03:37:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:13:21: warning: statement with no effect [-Wunused-value]
+ #define RETURN_NULL (result)\
+                     ^
+../src/parser.c:76:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL(result)
+   ^~~~~~~~~~~
+../src/parser.c:14:2: error: expected ‘;’ before ‘{’ token
+  {\
+  ^
+../src/parser.c:76:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL(result)
+   ^~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:44:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_label’:
+../src/parser.c:13:21: warning: statement with no effect [-Wunused-value]
+ #define RETURN_NULL (result) { \
+                     ^
+../src/parser.c:75:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL(result)
+   ^~~~~~~~~~~
+../src/parser.c:13:30: error: expected ‘;’ before ‘{’ token
+ #define RETURN_NULL (result) { \
+                              ^
+../src/parser.c:75:3: note: in expansion of macro ‘RETURN_NULL’
+   RETURN_NULL(result)
+   ^~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+03:48:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:97:9: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  return result;
+         ^~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 

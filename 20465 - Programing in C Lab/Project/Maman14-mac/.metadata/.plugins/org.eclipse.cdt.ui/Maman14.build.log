@@ -1,9 +1,18 @@
-12:26:58 **** Incremental Build of configuration Debug for project Maman14 ****
+03:48:16 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
-Building file: ../src/Maman14-mac.c
+Building file: ../src/parser.c
 Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
-Finished building: ../src/Maman14-mac.c
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:97:9: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  return result;
+         ^~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
  
 Building target: Maman14
 Invoking: GCC C Linker
@@ -11,5 +20,5 @@ gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/u
 Finished building target: Maman14
  
 
-12:26:58 Build Finished (took 240ms)
+03:48:17 Build Finished (took 1s.24ms)
 

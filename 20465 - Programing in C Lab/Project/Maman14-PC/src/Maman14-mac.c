@@ -29,7 +29,6 @@ int main(void) {
 	}
 
 	parsed=(bodyArray)parse_file(input_file);
-	//printf("bbb %s",parsed[0].label);
 	fclose(input_file);
 
 

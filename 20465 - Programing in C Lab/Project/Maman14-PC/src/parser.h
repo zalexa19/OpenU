@@ -32,4 +32,8 @@ body parse_line (String str);
 
 char * get_label (char * line);
 
+char * extract_instruction(char *);
+
+String extract_label (String line);
+
 #endif /* PARSER_H_ */
