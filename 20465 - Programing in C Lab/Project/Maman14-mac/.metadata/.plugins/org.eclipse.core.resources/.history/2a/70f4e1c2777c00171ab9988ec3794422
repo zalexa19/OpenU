@@ -52,7 +52,6 @@ body  parse_line (String str){
 	int result_size;
 	char * extracted_value;
 	char line[MAXMEM];
-	char line_copy[MAXMEM];
 	char * current_pointer;
 
 	extracted_value=allocate_mem_string(MAXMEM);
@@ -79,24 +78,11 @@ body  parse_line (String str){
 	result.instruction=allocate_mem_string(result_size);
 	strcpy(result.instruction,extracted_value);
 
-	/*pointers skips the label if exists*/
 	if (strcmp(result.label,"\0") != 0){
-		current_pointer+=strlen(result.label) +1;
+		printf("sizeof label %d\n",);
+		current_pointer+=strlen(result.label);
 		printf("current pointer points to: %s\n",current_pointer);
 	}
-
-	printf("before removing spaces (current_pointer):%s \n",current_pointer);
-	strcpy(line_copy,remove_first_spaces(current_pointer));
-	printf("after removing spaces (current_pointer):%s \n",current_pointer);
-
-	if (strcmp(result.instruction,"\0") != 0){
-		current_pointer+=strlen(result.instruction);
-		printf("instruction length:%d\n",strlen(result.instruction));
-		printf("current_pointer points to:'%s' \n",current_pointer);
-
-	}
-
-
 	/*Extract operation*/
 	return result;
 }
@@ -189,9 +175,6 @@ String remove_first_spaces(String str){
 	while ( str[i]=='\t' ||  str[i]==' '){
 		counter++;
 		i++;
-	}
-	if (counter == 0){
-		return str;
 	}
 	new_size=(strlen(str))-counter;
 	result=allocate_mem_string(new_size);

@@ -1,8 +1,12 @@
-13:03:53 **** Incremental Build of configuration Debug for project Maman14 ****
+13:57:15 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:94:31: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+   printf("instruction length:%d\n",strlen(result.instruction));
+                               ^
 Finished building: ../src/parser.c
  
 Building target: Maman14
@@ -11,5 +15,5 @@ gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/u
 Finished building target: Maman14
  
 
-13:03:53 Build Finished (took 121ms)
+13:57:15 Build Finished (took 114ms)
 

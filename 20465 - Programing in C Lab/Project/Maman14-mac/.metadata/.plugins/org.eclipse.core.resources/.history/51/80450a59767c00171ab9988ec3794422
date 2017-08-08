@@ -52,12 +52,14 @@ body  parse_line (String str){
 	int result_size;
 	char * extracted_value;
 	char line[MAXMEM];
-	char line_copy[MAXMEM];
-	char * current_pointer;
 
 	extracted_value=allocate_mem_string(MAXMEM);
 	strcpy(line,remove_first_spaces(str));
-	current_pointer=line;
+
+	printf("str : %s\n",str);
+	printf("line: MAIN: .ALEX test\n");
+	printf("line: %s\n",line);
+
 
 	/*check if it's a comment*/
 	if ( line[0] == ';'){
@@ -79,23 +81,6 @@ body  parse_line (String str){
 	result.instruction=allocate_mem_string(result_size);
 	strcpy(result.instruction,extracted_value);
 
-	/*pointers skips the label if exists*/
-	if (strcmp(result.label,"\0") != 0){
-		current_pointer+=strlen(result.label) +1;
-		printf("current pointer points to: %s\n",current_pointer);
-	}
-
-	printf("before removing spaces (current_pointer):%s \n",current_pointer);
-	strcpy(line_copy,remove_first_spaces(current_pointer));
-	printf("after removing spaces (current_pointer):%s \n",current_pointer);
-
-	if (strcmp(result.instruction,"\0") != 0){
-		current_pointer+=strlen(result.instruction);
-		printf("instruction length:%d\n",strlen(result.instruction));
-		printf("current_pointer points to:'%s' \n",current_pointer);
-
-	}
-
 
 	/*Extract operation*/
 	return result;
@@ -107,7 +92,7 @@ String extract_label (String line){
 	char * array_start;
 	int size;
 
-/*	fprintf(stderr,"---Extract_lable: started\n");*/
+	fprintf(stderr,"---Extract_lable: started\n");
 
 	found_char = strchr(line,':');
 	if (!found_char){
@@ -118,11 +103,11 @@ String extract_label (String line){
 	array_start=line;
 	/*size = (found_char-array_start) * sizeof(char);*/
 	size = CALCSIZE(array_start,found_char);
-/*	fprintf(stderr,"---label length: %d\n",size);*/
+	fprintf(stderr,"---label length: %d\n",size);
 	result = allocate_mem_string(size+1);
 
 	strncpy(result,line,size);
-/*	printf(" in result:%s\n",result);*/
+	printf(" in result:%s\n",result);
 	fprintf(stderr,"---Extract_lable: Finished\n");
 	return result;
 
@@ -143,8 +128,8 @@ char * extract_instruction(char * str){
 
 	array_start=str;
 
-/*	fprintf(stderr,"---Extract_instruction: started\n");*/
-/*	fprintf(stderr,"---Extracting: dot \n");*/
+	fprintf(stderr,"---Extract_instruction: started\n");
+	fprintf(stderr,"---Extracting: dot \n");
 
 	found_char = strchr(str,'.');
 	if (!found_char){
@@ -157,11 +142,11 @@ char * extract_instruction(char * str){
 	size=CALCSIZE(array_start,found_char);
 	size++;
 
-/*	fprintf(stderr,"---Calculated dot position:%d\n",size);*/
+	fprintf(stderr,"---Calculated dot position:%d\n",size);
 	inspection_start=str+size;
 	strcpy(copy,inspection_start); /*Now copy holds everything after the dot*/
 
-/*	fprintf(stderr,"---Extracting: space \n");*/
+	fprintf(stderr,"---Extracting: space \n");
 	inspection_end = strchr(copy,' ');
 	if (!inspection_end){
 		size=strlen(copy);
@@ -171,7 +156,7 @@ char * extract_instruction(char * str){
 	size=CALCSIZE(copy, inspection_end);
 
 	strncpy(result,copy,size);
-/*	printf("in result: %s\n",result);*/
+	printf("in result: %s\n",result);
 
 	fprintf(stderr,"---Extraction Completed.\n");
 
@@ -189,9 +174,6 @@ String remove_first_spaces(String str){
 	while ( str[i]=='\t' ||  str[i]==' '){
 		counter++;
 		i++;
-	}
-	if (counter == 0){
-		return str;
 	}
 	new_size=(strlen(str))-counter;
 	result=allocate_mem_string(new_size);

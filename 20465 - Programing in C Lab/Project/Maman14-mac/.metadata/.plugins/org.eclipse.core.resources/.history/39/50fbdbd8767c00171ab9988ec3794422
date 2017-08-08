@@ -16,7 +16,7 @@ String allocate_mem_string (int size){
 		fprintf(stderr,"---Unable to allocate memory\n");
 	}
 
-/*	fprintf(stderr,"---Memory allocated successfully, size: %d\n",size);*/
+	fprintf(stderr,"---Memory allocated successfully, size: %d\n",size);
 	return str;
 }
 

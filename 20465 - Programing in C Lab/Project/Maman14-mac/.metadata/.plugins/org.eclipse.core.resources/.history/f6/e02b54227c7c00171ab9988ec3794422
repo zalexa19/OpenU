@@ -90,7 +90,7 @@ body  parse_line (String str){
 	printf("after removing spaces (current_pointer):%s \n",current_pointer);
 
 	if (strcmp(result.instruction,"\0") != 0){
-		current_pointer+=strlen(result.instruction);
+		current_pointer+=strlen(result.instruction)+1;
 		printf("instruction length:%d\n",strlen(result.instruction));
 		printf("current_pointer points to:'%s' \n",current_pointer);
 

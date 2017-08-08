@@ -92,7 +92,7 @@ body  parse_line (String str){
 	if (strcmp(result.instruction,"\0") != 0){
 		current_pointer+=strlen(result.instruction);
 		printf("instruction length:%d\n",strlen(result.instruction));
-		printf("current_pointer points to:'%s' \n",current_pointer);
+		printf("current_pointer points to: \n",current_pointer);
 
 	}
 
