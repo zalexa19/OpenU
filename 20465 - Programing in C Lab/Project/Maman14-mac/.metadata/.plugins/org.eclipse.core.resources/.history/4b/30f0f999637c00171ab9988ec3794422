@@ -62,14 +62,11 @@ body  parse_line (String str){
 	result_size=strlen(tmp) +1;
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,tmp);
+	free(tmp);
 
 
 	/*extract instruction*/
-	strcpy(tmp,extract_instruction(str));
-	result_size=strlen(tmp)+1;
-	result.instruction=allocate_mem_string(result_size);
-	strcpy(result.instruction,tmp);
-
+	extract_instruction(str);
 	/*printf("%s\n",line);
 	strcpy(result.instruction, extract_instruction(line));
 */
@@ -116,39 +113,37 @@ char * extract_instruction(char * str){
 	result=allocate_mem_string(strlen(str));
 	copy=allocate_mem_string(strlen(str));
 
-	array_start=str;
+	strcpy(copy,str);
+	array_start=copy;
 
 	fprintf(stderr,"---Extract_instruction: started\n");
 	fprintf(stderr,"---Extracting: dot \n");
 
-	found_char = strchr(str,'.');
-	if (!found_char){
-		RETURN_NULL(result)
-		return result;
-	}
+	found_char = strchr(copy,'.');
 
-	/*In which position the dot appears. 1 is added because we care about what's after the dot*/
+	/*In which position . appears. 1 is added because we care about what's after the dot*/
+
 	/*size = ((found_char - array_start) * sizeof(char))+1;*/
-	size=CALCSIZE(array_start,found_char);
-	size++;
+	size=CALCSIZE(found_char,array_start+1);
+	fprintf(stderr,"--Calculated . position:%d\n",size);
+	inspection_start=copy+size;
+	strcpy(result,inspection_start); /*Now result holds everything after the dot*/
 
-	fprintf(stderr,"---Calculated dot position:%d\n",size);
-	inspection_start=str+size;
-	strcpy(copy,inspection_start); /*Now copy holds everything after the dot*/
-
+	printf("%s\n",result);
 	fprintf(stderr,"---Extracting: space \n");
-	inspection_end = strchr(copy,' ');
-	if (!inspection_end){
-		size=strlen(copy);
-		inspection_end=copy+size; /*point to the last cell of the array*/
-	}
 
-	size=CALCSIZE(copy, inspection_end);
+	inspection_end = strchr(result,' ');
+	/*size = (found_space - result) * sizeof(char);*/
+	size=CALCSIZE(result, inspection_end);
 
-	strncpy(result,copy,size);
-	printf("in result: %s\n",result);
+	free(copy);
+	copy=allocate_mem_string(size+1);
+	strncpy(copy,result,size);
+	printf("in copy: %s\n",copy);
 
-	fprintf(stderr,"---Extraction Completed.\n",size);
+
+
+
 
 	return result;
 }

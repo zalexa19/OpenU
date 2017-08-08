@@ -148,8 +148,10 @@ char * extract_instruction(char * str){
 	strncpy(result,copy,size);
 	printf("in result: %s\n",result);
 
-	fprintf(stderr,"---Extraction Completed.\n",size);
 
+
+
+	fprintf(stderr,"---Extraction Completed.\n",size);
 	return result;
 }
 

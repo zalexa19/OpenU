@@ -1,25 +1,18 @@
-10:54:23 **** Incremental Build of configuration Debug for project Maman14 ****
+11:15:28 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
 ../src/parser.c: In function ‘extract_instruction’:
-../src/parser.c:111:9: warning: unused variable ‘inspection_end’ [-Wunused-variable]
-  char * inspection_end;
-         ^~~~~~~~~~~~~~
-../src/parser.c:109:9: warning: variable ‘array_start’ set but not used [-Wunused-but-set-variable]
-  char * array_start;
-         ^~~~~~~~~~~
-../src/parser.c:107:9: warning: variable ‘found_char’ set but not used [-Wunused-but-set-variable]
-  char * found_char;
-         ^~~~~~~~~~
-../src/parser.c:17:8: warning: ‘found_space’ is used uninitialized in this function [-Wuninitialized]
-  (index-array_start)*sizeof(char);
-        ^
-../src/parser.c:108:9: note: ‘found_space’ was declared here
-  char * found_space;
-         ^~~~~~~~~~~
+../src/parser.c:154:17: warning: too many arguments for format [-Wformat-extra-args]
+  fprintf(stderr,"---Extraction Completed.\n",size);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
  
 Building target: Maman14
 Invoking: GCC C Linker
@@ -27,5 +20,5 @@ gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/u
 Finished building target: Maman14
  
 
-10:54:23 Build Finished (took 227ms)
+11:15:29 Build Finished (took 260ms)
 

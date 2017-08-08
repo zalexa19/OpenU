@@ -62,14 +62,11 @@ body  parse_line (String str){
 	result_size=strlen(tmp) +1;
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,tmp);
+	free(tmp);
 
 
 	/*extract instruction*/
-	strcpy(tmp,extract_instruction(str));
-	result_size=strlen(tmp)+1;
-	result.instruction=allocate_mem_string(result_size);
-	strcpy(result.instruction,tmp);
-
+	extract_instruction(str);
 	/*printf("%s\n",line);
 	strcpy(result.instruction, extract_instruction(line));
 */
@@ -116,12 +113,14 @@ char * extract_instruction(char * str){
 	result=allocate_mem_string(strlen(str));
 	copy=allocate_mem_string(strlen(str));
 
+	/*strcpy(copy,str);*/
 	array_start=str;
 
 	fprintf(stderr,"---Extract_instruction: started\n");
 	fprintf(stderr,"---Extracting: dot \n");
 
 	found_char = strchr(str,'.');
+
 	if (!found_char){
 		RETURN_NULL(result)
 		return result;
@@ -136,20 +135,20 @@ char * extract_instruction(char * str){
 	inspection_start=str+size;
 	strcpy(copy,inspection_start); /*Now copy holds everything after the dot*/
 
+	printf("%s\n",copy);
 	fprintf(stderr,"---Extracting: space \n");
-	inspection_end = strchr(copy,' ');
-	if (!inspection_end){
-		size=strlen(copy);
-		inspection_end=copy+size; /*point to the last cell of the array*/
-	}
 
+	inspection_end = strchr(copy,' ');
+	/*size = (found_space - result) * sizeof(char);*/
 	size=CALCSIZE(copy, inspection_end);
 
 	strncpy(result,copy,size);
 	printf("in result: %s\n",result);
 
-	fprintf(stderr,"---Extraction Completed.\n",size);
 
+
+
+	fprintf(stderr,"---Extraction Completed.\n",size);
 	return result;
 }
 

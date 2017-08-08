@@ -116,12 +116,14 @@ char * extract_instruction(char * str){
 	result=allocate_mem_string(strlen(str));
 	copy=allocate_mem_string(strlen(str));
 
+	/*strcpy(copy,str);*/
 	array_start=str;
 
 	fprintf(stderr,"---Extract_instruction: started\n");
 	fprintf(stderr,"---Extracting: dot \n");
 
 	found_char = strchr(str,'.');
+
 	if (!found_char){
 		RETURN_NULL(result)
 		return result;
@@ -137,19 +139,23 @@ char * extract_instruction(char * str){
 	strcpy(copy,inspection_start); /*Now copy holds everything after the dot*/
 
 	fprintf(stderr,"---Extracting: space \n");
+
 	inspection_end = strchr(copy,' ');
 	if (!inspection_end){
 		size=strlen(copy);
 		inspection_end=copy+size; /*point to the last cell of the array*/
 	}
 
+	/*size = (found_space - result) * sizeof(char);*/
 	size=CALCSIZE(copy, inspection_end);
 
 	strncpy(result,copy,size);
 	printf("in result: %s\n",result);
 
-	fprintf(stderr,"---Extraction Completed.\n",size);
 
+
+
+	fprintf(stderr,"---Extraction Completed.\n",size);
 	return result;
 }
 

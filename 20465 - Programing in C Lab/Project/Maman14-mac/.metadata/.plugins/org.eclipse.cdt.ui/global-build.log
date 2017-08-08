@@ -4152,3 +4152,100 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
 Finished building target: Maman14
  
+10:56:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:111:9: warning: unused variable ‘inspection_end’ [-Wunused-variable]
+  char * inspection_end;
+         ^~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+10:59:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:108:9: warning: unused variable ‘found_space’ [-Wunused-variable]
+  char * found_space;
+         ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:01:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:01:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:13:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:69:2: error: expected ‘;’ before ‘result_size’
+  result_size=strlen(tmp)+1;
+  ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:154:17: warning: too many arguments for format [-Wformat-extra-args]
+  fprintf(stderr,"---Extraction Completed.\n",size);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:15:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:154:17: warning: too many arguments for format [-Wformat-extra-args]
+  fprintf(stderr,"---Extraction Completed.\n",size);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
