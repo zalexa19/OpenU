@@ -36,9 +36,6 @@ typedef enum {
 	UNKNOWN=3
 }line_type;
 
-typedef String* strPointer;
-
-
 /*
  * Parser  related
  */
@@ -47,7 +44,7 @@ typedef struct parsed_line {
 	String instruction;
 	String operantion;
 	String * operands;
-	int number_of_operands;
+	int number_of_operands=0;
 
 } body;
 

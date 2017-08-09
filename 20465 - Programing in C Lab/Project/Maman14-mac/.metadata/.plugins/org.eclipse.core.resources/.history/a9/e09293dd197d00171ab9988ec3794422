@@ -172,7 +172,7 @@ strPointer extract_operands (String str){
 	operand_size=CALCSIZE(str,found_char);
 	printf("found size:%d\n",operand_size);
 
-	result=(char **)allocate_mem_string(50);
+	result[n]=(char **)allocate_mem_string(operand_size);
 	printf(":)");
 
 

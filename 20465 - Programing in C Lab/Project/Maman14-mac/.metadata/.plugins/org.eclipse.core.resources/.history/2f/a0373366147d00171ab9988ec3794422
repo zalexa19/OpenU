@@ -36,9 +36,6 @@ typedef enum {
 	UNKNOWN=3
 }line_type;
 
-typedef String* strPointer;
-
-
 /*
  * Parser  related
  */

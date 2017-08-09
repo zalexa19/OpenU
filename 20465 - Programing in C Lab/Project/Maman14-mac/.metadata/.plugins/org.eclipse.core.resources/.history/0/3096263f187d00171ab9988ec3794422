@@ -167,17 +167,11 @@ strPointer extract_operands (String str){
 	printf(".\n.\n.\n");
 
 	found_char=strchr(str,',');
-	printf("str: [%s\n",str);
+
 	printf("found char: [%s\n",found_char);
 	operand_size=CALCSIZE(str,found_char);
-	printf("found size:%d\n",operand_size);
-
-	result=(char **)allocate_mem_string(50);
-	printf(":)");
-
-
-
-
+	printf("found size:%d\n",operand size);
+	result[n]=allocate_mem_string(operand_size+1);
 	strncpy(result[n],str,operand_size);
 	str+=operand_size;
 	n++;

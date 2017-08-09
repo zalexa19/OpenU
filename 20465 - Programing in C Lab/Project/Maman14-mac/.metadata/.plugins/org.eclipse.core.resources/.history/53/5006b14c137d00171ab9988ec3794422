@@ -83,9 +83,11 @@ body  parse_line (String str){
 	if ((strcmp(extracted_value,"\0")) != 0){
 		instr_exists=TRUE;
 		printf("++instr_exists=TRUE\n");
+
+
 	}
 
-/*	printf("--------After instructing instruction:'%s' \n",current_pointer);*/
+	printf("--------After instructing instruction:'%s' \n",current_pointer);
 
 	/*pointers skips the label if exists*/
 	if (label_exists==TRUE){
@@ -107,14 +109,11 @@ body  parse_line (String str){
 		/*Extract operation*/
 		strcpy(extracted_value,extract_operation(current_pointer));
 		result_size=strlen(extracted_value)+1;
-/*		printf("extracted value:%s, size: %d\n",extracted_value,result_size);*/
-		result.operantion=allocate_mem_string(result_size);
-		printf("+about to copy: [%s\n",extracted_value);
+		printf("extracted value:%s, size: %d\n",extracted_value,result_size);
 
-		strncpy(result.operantion,extracted_value,result_size);
+		memcpy(result.operantion,extracted_value,result_size);
 		current_pointer+=result_size-1;
 
-		printf("+result.operation: [%s\n",result.operantion);
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}
@@ -133,62 +132,14 @@ body  parse_line (String str){
 	}
 
 	/*PARSING OPERANDS*/
-	printf("_________________________________________________\n");
-	n_skipped_spaces=count_spaces(current_pointer);
-	current_pointer+=n_skipped_spaces;
-/*	printf("current_point: [%s\n",current_pointer);*/
-
-	extract_operands(current_pointer);
-
-
-
+	printf("------------------------------\n");
+	printf("current_point: %s\n",current_pointer);
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
 
 	return result;
 
 }
-
-/*
- * Recieves a substrings
- * Counts how many operands there are by counting ','
- * move with a pointer - count each operand, allocate memory in required size and split
- */
-strPointer extract_operands (String str){
-	strPointer result;
-	int n=0;
-	int operand_size;
-	String ptr;
-	char * found_char;
-
-	printf("---------------------------\n");
-	printf("inside extract_operands\n");
-	printf("---------------------------\n");
-	printf(".\n.\n.\n");
-
-	found_char=strchr(str,',');
-	printf("str: [%s\n",str);
-	printf("found char: [%s\n",found_char);
-	operand_size=CALCSIZE(str,found_char);
-	printf("found size:%d\n",operand_size);
-
-	result=(char **)allocate_mem_string(50);
-	printf(":)");
-
-
-
-
-	strncpy(result[n],str,operand_size);
-	str+=operand_size;
-	n++;
-
-	printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
-
-
-
-}
-
-
 
 
 String extract_label (String line){
@@ -304,6 +255,7 @@ int count_spaces (String str){
 }
 
 String extract_operation(String str){
+
 	int n_spaces;
 	int size;
 	String result;
@@ -316,7 +268,10 @@ String extract_operation(String str){
 
 
 	ptr=strchr(str,' ');
+	printf("ptr: %s\n\n",ptr);
 	size=CALCSIZE(str,ptr);
+
+	printf("str: %ssize: %d\n",str,size);
 
 	result=allocate_mem_string(size+1);
 	memcpy(result,str,size);

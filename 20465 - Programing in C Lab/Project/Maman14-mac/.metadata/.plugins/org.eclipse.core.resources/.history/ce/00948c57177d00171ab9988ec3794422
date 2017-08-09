@@ -156,37 +156,17 @@ body  parse_line (String str){
  */
 strPointer extract_operands (String str){
 	strPointer result;
-	int n=0;
-	int operand_size;
+	int number;
 	String ptr;
-	char * found_char;
 
 	printf("---------------------------\n");
 	printf("inside extract_operands\n");
 	printf("---------------------------\n");
 	printf(".\n.\n.\n");
-
-	found_char=strchr(str,',');
-	printf("str: [%s\n",str);
-	printf("found char: [%s\n",found_char);
-	operand_size=CALCSIZE(str,found_char);
-	printf("found size:%d\n",operand_size);
-
-	result=(char **)allocate_mem_string(50);
-	printf(":)");
-
-
-
-
-	strncpy(result[n],str,operand_size);
-	str+=operand_size;
-	n++;
-
-	printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
-
-
-
 }
+
+
+
 
 
 

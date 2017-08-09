@@ -20,15 +20,6 @@ String allocate_mem_string (int size){
 	return str;
 }
 
-strPointer allocate_mem_mat (int size){
-	strPointer	str = (char**)malloc (size * sizeof(char));
-	if (!str){
-		fprintf(stderr,"---Unable to allocate memory to matrix\n");
-	}
-
-/*fprintf(stderr,"---Memory allocated successfully, size: %d\n",size);*/
-	return str;
-}
 
 bodyArray allocate_mem_struct (int size){
 	bodyArray array=(bodyArray) malloc(sizeof(body)*size);
