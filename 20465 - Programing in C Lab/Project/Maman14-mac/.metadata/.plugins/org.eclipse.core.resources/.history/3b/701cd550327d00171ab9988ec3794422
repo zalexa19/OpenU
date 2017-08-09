@@ -159,15 +159,9 @@ body  parse_line (String str){
 		strcpy(result.operand2,extracted_value);
 		current_pointer+=result_size;
 
-/*		printf("++current pointer:[%s \n",current_pointer);*/
-
-		/*For non .data we expect to receive 2 operands. if more are received,
-		 * They are stored as junk to be validated by a different module, at a later stage
-		 * */
+		printf("++current pointer:[%s \n",current_pointer);
 		if (current_pointer[0] != '\n'){
-			result_size=strlen(current_pointer);
-			result.operand3=allocate_mem_string(result_size);
-			strncpy(result.operand3,current_pointer,result_size);
+			printf("++leftovers\n");
 		}
 
 	}
@@ -175,14 +169,7 @@ body  parse_line (String str){
 	/*if we are handling .data:*/
 
 	free(extracted_value);
-
-	printf("op3: %s\n",result.operand3);
-	if (strcmp(result.operand3,"\0")==0){
-		printf("operand3 is legit empty\n");
-	}
-
-	fprintf(stderr,"-------------------------------------------\n");
-	fprintf(stderr,"End of parse line\n");
+	fprintf(stderr,"---End of parse line\n");
 
 	return result;
 

@@ -1,4 +1,4 @@
-      MAIN:   ALEX op1,op2,op3 
+      MAIN:   .alex op1
 .ENTRY LOOP
 MAIN: INC K
 	mov M1[r2][r7],W

@@ -65,8 +65,6 @@ void print_structs(bodyArray array){
 	printf("INSTRUCTION  |");
 	printf("OPERATION    |");
 	printf("OPERAND1     |");
-	printf("OPERAND2     |");
-	printf("OPERAND3     |");
 	printf("\n");
 
 
@@ -98,19 +96,6 @@ void print_structs(bodyArray array){
 			printf("%s",tmp);
 		}else printf("%s",null);
 
-	if ((strcmp(array[i].operand2,"\0") ) !=0){
-	/*		printf("%s\t",array[i].operantion);*/
-			strcpy(tmp,array[i].operand2);
-			add_spaces_print(tmp);
-			printf("%s",tmp);
-		}else printf("%s",null);
-
-	if ((strcmp(array[i].operand3,"\0") ) !=0){
-	/*		printf("%s\t",array[i].operantion);*/
-			strcpy(tmp,array[i].operand3);
-			add_spaces_print(tmp);
-			printf("%s",tmp);
-		}else printf("%s",null);
 }
 
 

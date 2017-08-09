@@ -176,10 +176,7 @@ body  parse_line (String str){
 
 	free(extracted_value);
 
-	printf("op3: %s\n",result.operand3);
-	if (strcmp(result.operand3,"\0")==0){
-		printf("operand3 is legit empty\n");
-	}
+	printf("op2: %s\n",result.operand2);
 
 	fprintf(stderr,"-------------------------------------------\n");
 	fprintf(stderr,"End of parse line\n");

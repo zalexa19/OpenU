@@ -1,12 +1,15 @@
-11:21:36 **** Incremental Build of configuration Debug for project Maman14 ****
+11:54:39 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
 ../src/parser.c: In function ‘parse_line’:
-../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+../src/parser.c:60:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
   Bool oper_exists = FALSE;
        ^~~~~~~~~~~
+../src/parser.c:52:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
 Finished building: ../src/parser.c
  
 Building target: Maman14
@@ -15,5 +18,5 @@ gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/u
 Finished building target: Maman14
  
 
-11:21:37 Build Finished (took 116ms)
+11:54:39 Build Finished (took 113ms)
 
