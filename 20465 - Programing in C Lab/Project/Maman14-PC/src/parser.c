@@ -26,30 +26,35 @@
 	strcpy(result,"\0");
 
 
-bodyArray  parse_file (FILE * file){
+bodyArray  parse_file (FILE * file, int * parsed_size){
 	String line;
-	bodyArray result;
+	bodyArray parsed_file;
 	int cell_counter;
 
 	line=allocate_mem_string(MAXMEM);
-	result=allocate_mem_struct(INITIAL_SARRAY_SIZE);
+	parsed_file=allocate_mem_struct(INITIAL_SARRAY_SIZE);
 
 	cell_counter=0;
 
 
-	fgets(line,MAXMEM,file);
+	while (  (fgets(line,MAXMEM,file)) != NULL){
 
+		if (check_empty_line(line)==FALSE && line[0]!=';'){
+			printf("______________________________________________\n");
+			printf("Working on line: [%s\n",line);
 
-	result[0] = parse_line(line);
-	cell_counter = cell_counter +1;
-
-	return result;
+			parsed_file[cell_counter] = parse_line(line);
+			cell_counter++;
+		}
+		printf("struct cell 3 inst: %s\n",parsed_file[1].instruction);
+	}
+	*parsed_size=cell_counter+1;
+	return parsed_file;
 
 }
 
 body  parse_line (String str){
 	body result;
-	int i;
 	int result_size;
 	char * extracted_value;
 	char * current_pointer;
@@ -66,16 +71,20 @@ body  parse_line (String str){
 	current_pointer += n_skipped_spaces;
 
 
-	printf("|---current pointer: [%s\n\n",current_pointer);
-
 	/*extract label*/
-	strcpy(extracted_value,extract_label(current_pointer));
+/*	strcpy(extracted_value,extract_label(current_pointer)); delete this if everything works*/
+	extracted_value=extract_label(current_pointer);
+
+	/*printf("address: %p\n",(void *)&extracted_value);*/
+
+
 	result_size=strlen(extracted_value)+1;
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		label_exists=TRUE;
 	}
+	printf("extracted label: %s\n",result.label);
 
 	/*extract instruction*/
 	strcpy(extracted_value,extract_instruction(current_pointer));
@@ -84,15 +93,17 @@ body  parse_line (String str){
 	strcpy(result.instruction,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		instr_exists=TRUE;
-		printf("++instr_exists=TRUE\n");
+/*		printf("++instr_exists=TRUE\n");*/
 	}
+	printf("extracted inst: %s\n",result.instruction);
+
 
 /*	printf("--------After instructing instruction:'%s' \n",current_pointer);*/
 
 	/*pointers skips the label if exists*/
 	if (label_exists==TRUE){
 		current_pointer+=strlen(result.label) +1;
-		printf("++label exists = TRUE\n");
+/*		printf("++label exists = TRUE\n");*/
 		/*printf("--------After skipping label:'%s' \n",current_pointer);*/
 
 	}
@@ -105,13 +116,12 @@ body  parse_line (String str){
 
 	/*if instruction wasn't receive, we extract the operational*/
 	if (instr_exists == FALSE){
-		printf("++instr_exists == FALSE\n");
+/*		printf("++instr_exists == FALSE\n");*/
 		/*Extract operation*/
 		strcpy(extracted_value,extract_operation(current_pointer));
 		result_size=strlen(extracted_value)+1;
 /*		printf("extracted value:%s, size: %d\n",extracted_value,result_size);*/
 		result.operantion=allocate_mem_string(result_size);
-		printf("+about to copy: [%s\n",extracted_value);
 
 		strncpy(result.operantion,extracted_value,result_size);
 		current_pointer+=result_size-1;
@@ -123,21 +133,21 @@ body  parse_line (String str){
 	}
 	else {
 		/*advance the pointer to the next space after the instruction*/
-		printf("++ENTERED ELSE\n");
+/*		printf("++ENTERED ELSE\n");*/
 		size=strlen(result.instruction)+1;
 		current_pointer+=size;
 /*		printf("--------After skipping instruction:'%s \n",current_pointer);*/
 
 		result.operantion=allocate_mem_string(1);
 		strcpy(result.operantion,"\0");
-		printf("op: %s", result.operantion);
+		/*printf("op: %s", result.operantion);*/
 
 	}
 
 	/*PARSING OPERANDS*/
 	if (strcmp(result.instruction,"data") != 0){
 
-		printf("_________________________________________________\n");
+/*		printf("_________________________________________________\n");*/
 		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;
 	/*	printf("current_point: [%s\n",current_pointer);*/
@@ -175,14 +185,9 @@ body  parse_line (String str){
 	/*if we are handling .data:*/
 
 	free(extracted_value);
-
-	printf("op3: %s\n",result.operand3);
-	if (strcmp(result.operand3,"\0")==0){
-		printf("operand3 is legit empty\n");
-	}
-
+/*
 	fprintf(stderr,"-------------------------------------------\n");
-	fprintf(stderr,"End of parse line\n");
+	fprintf(stderr,"End of parse line\n");*/
 
 	return result;
 
@@ -199,10 +204,10 @@ String extract_operand (String str){
 	String result;
 
 
-	printf("---------------------------\n");
+/*	printf("---------------------------\n");
 	printf("inside extract_operands\n");
 	printf("---------------------------\n");
-	printf(".\n.\n.\n");
+	printf(".\n.\n.\n");*/
 
 	ptr=str;
 
@@ -211,11 +216,11 @@ String extract_operand (String str){
 	}
 
 	operand_size=CALCSIZE(str,ptr);
-	printf("calculated size:%d\n",operand_size);
+/*	printf("calculated size:%d\n",operand_size);*/
 
 	result=allocate_mem_string(operand_size+1);
 	strncpy(result,str,operand_size);
-	printf("[%s]\n",result);
+/*	printf("[%s]\n",result);*/
 
 	return result;
 
@@ -295,7 +300,7 @@ char * extract_instruction(char * str){
 	strncpy(result,inspection_start,size);
 	/*strncpy(result,copy,size);*/
 /*		printf("in result: %s\n",result);*/
-	fprintf(stderr,"---Extraction_instruction: Completed.\n");
+	/*fprintf(stderr,"---Extraction_instruction: Completed.\n");*/
 
 	return result;
 }
@@ -343,7 +348,7 @@ String extract_operation(String str){
 	String result;
 	char * ptr;
 
-	fprintf(stderr,"---Starting extract_operation\n");
+/*	fprintf(stderr,"---Starting extract_operation\n");*/
 	n_spaces= count_spaces(str);
 	str +=n_spaces;
 	/*printf("--------remove spaces again: '%s \n",str);*/
@@ -354,7 +359,25 @@ String extract_operation(String str){
 
 	result=allocate_mem_string(size+1);
 	memcpy(result,str,size);
-	fprintf(stderr,"---Extract_operation: completed\n");
+/*	fprintf(stderr,"---Extract_operation: completed\n");*/
 
 	return result;
+}
+
+Bool check_empty_line(String str){
+	int i;
+	int size;
+	Bool empty = TRUE;
+	size=strlen(str);
+
+	i=0;
+	while (i<size && empty==TRUE){
+		if (str[i]!='\t' && str[i]!='\n' && str[i]!=' '){
+			empty=FALSE;
+
+		}
+		i++;
+	}
+
+	return empty;
 }

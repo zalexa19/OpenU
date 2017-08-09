@@ -54,7 +54,7 @@ String  allocate_mem_string(int);
 
 
 /*for testing*/
-void print_structs(bodyArray);
+void print_structs(bodyArray, int);
 
 void add_spaces_print (String array);
 

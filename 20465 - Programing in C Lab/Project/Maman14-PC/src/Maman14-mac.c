@@ -17,6 +17,7 @@ int main(void) {
 
 	FILE * input_file;
 	bodyArray parsed;
+	int parsed_size;
 
 	/*END OF DECLERATIONS*/
 
@@ -27,12 +28,12 @@ int main(void) {
 		exit(0);
 	}
 
-	parsed=(bodyArray)parse_file(input_file);
+	parsed=(bodyArray)parse_file(input_file, &parsed_size);
 	fclose(input_file);
 
+	printf("sizeof structs: %d\n",parsed_size);
+	print_structs(parsed,parsed_size);
 
-
-	print_structs(parsed);
 
 
 

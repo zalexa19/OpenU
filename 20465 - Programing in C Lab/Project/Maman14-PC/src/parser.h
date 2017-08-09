@@ -18,7 +18,7 @@
  * and eventually returning an array of structs
  */
 
-bodyArray parse_file (FILE *fp);
+bodyArray parse_file (FILE *fp, int *);
 
 /*
  * This function converts a string (one line) into a struct
@@ -43,6 +43,8 @@ int count_spaces (String str);
 String extract_operation(String str);
 
 String extract_operand (String str);
+
+Bool check_empty_line(String str);
 
 
 #endif /* PARSER_H_ */
