@@ -61,6 +61,6 @@ String  allocate_mem_string(int);
 /*for testing*/
 void print_structs(bodyArray);
 
-void add_spaces_print (String array);
+void add_spaces_print (String * array);
 
 #endif /* UTILS_H_ */
