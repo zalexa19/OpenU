@@ -51,55 +51,97 @@ body  parse_line (String str){
 	body result;
 	int result_size;
 	char * extracted_value;
-	char line[MAXMEM];
-	char line_copy[MAXMEM];
 	char * current_pointer;
+	int size;
+	int n_skipped_spaces;
+	Bool label_exists = FALSE;
+	Bool instr_exists = FALSE;
+	Bool oper_exists = FALSE;
 
 	extracted_value=allocate_mem_string(MAXMEM);
-	strcpy(line,remove_first_spaces(str));
-	current_pointer=line;
+	current_pointer=str;
+	n_skipped_spaces=count_spaces(str);
+	current_pointer += n_skipped_spaces;
+
+
+	printf("---current pointer:%s\n\n",current_pointer);
+
 
 	/*check if it's a comment*/
-	if ( line[0] == ';'){
+	if ( current_pointer[0] == ';'){
 		fprintf(stderr,"---found a comment");
 	}
 
 
-
 	/*extract label*/
-	strcpy(extracted_value,extract_label(line));
+	strcpy(extracted_value,extract_label(current_pointer));
 	result_size=strlen(extracted_value) +1;
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,extracted_value);
-
+	if ((strcmp(extracted_value,"\0")) != 0){
+		label_exists=TRUE;
+	}
 
 	/*extract instruction*/
-	strcpy(extracted_value,extract_instruction(line));
+	strcpy(extracted_value,extract_instruction(current_pointer));
 	result_size=strlen(extracted_value)+1;
 	result.instruction=allocate_mem_string(result_size);
 	strcpy(result.instruction,extracted_value);
+	if ((strcmp(extracted_value,"\0")) != 0){
+		instr_exists=TRUE;
+	}
+
 
 	/*pointers skips the label if exists*/
-	if (strcmp(result.label,"\0") != 0){
+	if (label_exists==TRUE){
 		current_pointer+=strlen(result.label) +1;
-		printf("current pointer points to: %s\n",current_pointer);
-	}
-
-	printf("before removing spaces (current_pointer):%s \n",current_pointer);
-	strcpy(line_copy,remove_first_spaces(current_pointer));
-	printf("after removing spaces (current_pointer):%s \n",current_pointer);
-
-	if (strcmp(result.instruction,"\0") != 0){
-		current_pointer+=strlen(result.instruction);
-		printf("instruction length:%d\n",strlen(result.instruction));
-		printf("current_pointer points to:'%s' \n",current_pointer);
+		/*printf("--------After skipping label:'%s' \n",current_pointer);*/
 
 	}
 
 
-	/*Extract operation*/
+	n_skipped_spaces=count_spaces(current_pointer);
+	current_pointer+=n_skipped_spaces;
+	/*printf("line: %s\nn_skipped_spaces: %d\n",line,n_skipped_spaces);*/
+	/*	printf("--------After removing spaces and copying to copy:'%s \n",current_pointer);*/
+
+
+	/*if instruction wasn't receive, we extract the operational*/
+	if (instr_exists == FALSE){
+
+		/*Extract operation*/
+		strcpy(extracted_value,extract_operation(current_pointer));
+		result_size=strlen(extracted_value)+1;
+		printf("extracted value:%s, size: %d\n",extracted_value,result_size);
+
+		memcpy(result.operantion,extracted_value,result_size);
+		current_pointer+=size-1;
+
+		if ( strcmp(extracted_value,"\0") != 0 ){
+			oper_exists=TRUE;
+		}
+
+	else {
+		/*advance the pointer to the next space after the instruction*/
+		if (strcmp(result.instruction,"\0") != 0){
+			size=strlen(result.instruction)+1;
+			current_pointer+=size;
+			printf("--------After skipping instruction:'%s \n",current_pointer);
+		}
+
+		if (strcmp(result.instruction,"\0")==0){
+			fprintf(stderr,"---instruction is null\n");
+		}
+
+
+	}
+
+	free(extracted_value);
+	fprintf(stderr,"---End of parse line\n");
 	return result;
+	}
 }
+
 
 String extract_label (String line){
 	char * result;
@@ -162,16 +204,16 @@ char * extract_instruction(char * str){
 	strcpy(copy,inspection_start); /*Now copy holds everything after the dot*/
 
 /*	fprintf(stderr,"---Extracting: space \n");*/
-	inspection_end = strchr(copy,' ');
+	inspection_end = strchr(inspection_start,' ');
 	if (!inspection_end){
-		size=strlen(copy);
-		inspection_end=copy+size; /*point to the last cell of the array*/
+		size=strlen(inspection_start);
+		inspection_end=inspection_start+size; /*point to the last cell of the array*/
 	}
 
-	size=CALCSIZE(copy, inspection_end);
-
-	strncpy(result,copy,size);
-/*	printf("in result: %s\n",result);*/
+	size=CALCSIZE(inspection_start, inspection_end);
+	memcpy(result,inspection_start,size);
+	/*strncpy(result,copy,size);*/
+	/*	printf("in result: %s\n",result);*/
 
 	fprintf(stderr,"---Extraction Completed.\n");
 
@@ -190,12 +232,53 @@ String remove_first_spaces(String str){
 		counter++;
 		i++;
 	}
+
 	if (counter == 0){
 		return str;
 	}
 	new_size=(strlen(str))-counter;
 	result=allocate_mem_string(new_size);
 	strcpy(result,str+counter);
+
 	return result;
 
+}
+
+/*counts how many blank chars there are for advancing the pointer*/
+int count_spaces (String str){
+	int n=0;
+	int i=0;
+
+	while ( str[i]=='\t' ||  str[i]==' '){
+		n++;
+		i++;
+	}
+
+	return n;
+}
+
+String extract_operation(String str){
+
+	int n_spaces;
+	int size;
+	String result;
+	char * ptr;
+
+	fprintf(stderr,"---Starting extract_operation\n");
+	n_spaces= count_spaces(str);
+	str +=n_spaces;
+	/*printf("--------remove spaces again: '%s \n",str);*/
+
+
+	ptr=strchr(str,' ');
+	printf("ptr: %s\n\n",ptr);
+	size=CALCSIZE(str,ptr);
+
+	printf("str: %ssize: %d\n",str,size);
+
+	result=allocate_mem_string(size+1);
+	memcpy(result,str,size);
+	fprintf(stderr,"---Extract_operation: completed\n");
+
+	return result;
 }

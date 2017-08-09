@@ -36,6 +36,10 @@ char * extract_instruction(char *);
 
 String extract_label (String line);
 
-String remove_first_spaces(String str);
+String remove_first_spaces(String  str);
+
+int count_spaces (String str);
+
+String extract_operation(String str);
 
 #endif /* PARSER_H_ */

@@ -4644,3 +4644,1201 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
 Finished building target: Maman14
  
+01:57:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:00:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:02:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:55:7: warning: unused variable ‘line_copy’ [-Wunused-variable]
+  char line_copy[MAXMEM];
+       ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:16:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:90:19: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+  n_skipped_spaces=count_spaces(current_pointer);
+                   ^~~~~~~~~~~~
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:17:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:18:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:60:34: warning: passing argument 1 of ‘remove_first_spaces’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(line,remove_first_spaces(str));
+                                  ^~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:6: note: expected ‘char **’ but argument is of type ‘String {aka char *}’
+ void remove_first_spaces(String * str);
+      ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:60:2: error: invalid use of void expression
+  strcpy(line,remove_first_spaces(str));
+  ^~~~~~
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+../src/parser.c: At top level:
+../src/parser.c:187:8: error: conflicting types for ‘remove_first_spaces’
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:6: note: previous declaration of ‘remove_first_spaces’ was here
+ void remove_first_spaces(String * str);
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+02:18:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:60:34: warning: passing argument 1 of ‘remove_first_spaces’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(line,remove_first_spaces(str));
+                                  ^~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:8: note: expected ‘char **’ but argument is of type ‘String {aka char *}’
+ String remove_first_spaces(String * str);
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+../src/parser.c: At top level:
+../src/parser.c:187:8: error: conflicting types for ‘remove_first_spaces’
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:8: note: previous declaration of ‘remove_first_spaces’ was here
+ String remove_first_spaces(String * str);
+        ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+02:18:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:60:34: warning: passing argument 1 of ‘remove_first_spaces’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strcpy(line,remove_first_spaces(str));
+                                  ^~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:8: note: expected ‘char **’ but argument is of type ‘String {aka char *}’
+ String remove_first_spaces(String * str);
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+../src/parser.c: At top level:
+../src/parser.c:187:8: error: conflicting types for ‘remove_first_spaces’
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:39:8: note: previous declaration of ‘remove_first_spaces’ was here
+ String remove_first_spaces(String * str);
+        ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+02:18:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:18:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces);
+                                       ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:19:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:92:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces,line);
+                 ^
+../src/parser.c:92:39: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘char *’ [-Wformat=]
+  printf("line: %s\nn_skipped_spaces: %d\n",n_skipped_spaces,line);
+                                       ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:30:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:109:27: warning: implicit declaration of function ‘extract_operation’ [-Wimplicit-function-declaration]
+  strcpy(result.operantion,extract_operation(current_pointer));
+                           ^~~~~~~~~~~~~~~~~
+../src/parser.c:109:27: warning: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:125:14: note: expected ‘const char * restrict’ but argument is of type ‘int’
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:229:8: error: conflicting types for ‘extract_operation’
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:109:27: note: previous implicit declaration of ‘extract_operation’ was here
+  strcpy(result.operantion,extract_operation(current_pointer));
+                           ^~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:238:16: warning: comparison between pointer and integer
+  while (str[i] != " " && str[i] != "\t" && str[i] != '\n'){
+                ^~
+../src/parser.c:238:16: warning: comparison with string literal results in unspecified behavior [-Waddress]
+../src/parser.c:238:33: warning: comparison between pointer and integer
+  while (str[i] != " " && str[i] != "\t" && str[i] != '\n'){
+                                 ^~
+../src/parser.c:238:33: warning: comparison with string literal results in unspecified behavior [-Waddress]
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+02:30:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:238:16: warning: comparison between pointer and integer
+  while (str[i] != " " && str[i] != "\t" && str[i] != '\n'){
+                ^~
+../src/parser.c:238:16: warning: comparison with string literal results in unspecified behavior [-Waddress]
+../src/parser.c:238:33: warning: comparison between pointer and integer
+  while (str[i] != " " && str[i] != "\t" && str[i] != '\n'){
+                                 ^~
+../src/parser.c:238:33: warning: comparison with string literal results in unspecified behavior [-Waddress]
+../src/parser.c:243:2: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  strcpy(result,str+counter);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:31:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:243:2: warning: ‘result’ is used uninitialized in this function [-Wuninitialized]
+  strcpy(result,str+counter);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:32:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:34:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:44:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:48:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+02:58:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:247:2: error: too many arguments to function ‘strcpy’
+  strcpy(result,str,size);
+  ^~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:125:14: note: declared here
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:00:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:07:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:112:3: error: too few arguments to function ‘memcpy’
+   memcpy(result.operantion,extracted_value);
+   ^~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:42:14: note: declared here
+ extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+              ^~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:07:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:17:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:58:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:22:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:57:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:23:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:57:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:23:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:26:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:38:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:57:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:200:2: error: too few arguments to function ‘memccpy’
+  memccpy(result,inspection_start,size);
+  ^~~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:54:14: note: declared here
+ extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+              ^~~~~~~
+../src/parser.c:203:2: warning: implicit declaration of function ‘prinf’ [-Wimplicit-function-declaration]
+  prinf("result:%s",result);
+  ^~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+03:39:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:57:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:203:2: warning: implicit declaration of function ‘prinf’ [-Wimplicit-function-declaration]
+  prinf("result:%s",result);
+  ^~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+./src/parser.o: In function `extract_instruction':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:203: undefined reference to `prinf'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+makefile:30: recipe for target 'Maman14' failed
+03:39:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: unused variable ‘Instr_exists’ [-Wunused-variable]
+  Bool Instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:57:7: warning: unused variable ‘label_exists’ [-Wunused-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:41:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:42:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:48:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:103:2: error: expected ‘(’ before ‘n_skipped_spaces’
+  n_skipped_spaces=count_spaces(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:58:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:50:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:58:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:53:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c:122:3: error: expected identifier or ‘(’ before ‘else’
+  }else {
+   ^~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:122:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }else {
+  ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+03:53:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:282:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:282:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:261:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:226:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:176:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:148:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:00:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:02:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:112:3: error: too few arguments to function ‘memcpy’
+   memcpy(extracted_value,extract_operation(current_pointer));
+   ^~~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:42:14: note: declared here
+ extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+              ^~~~~~
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+04:03:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:03:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+04:03:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:262:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:262:1: error: expected declaration or statement at end of input
+../src/parser.c:262:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:248:5: warning: ‘count_spaces’ defined but not used [-Wunused-function]
+ int count_spaces (String str){
+     ^~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:03:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:263:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:262:6: warning: unused variable ‘n_spaces’ [-Wunused-variable]
+  int n_spaces;
+      ^~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:268:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:268:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:260:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:248:5: warning: ‘count_spaces’ defined but not used [-Wunused-function]
+ int count_spaces (String str){
+     ^~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:04:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:258:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:258:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:248:5: warning: ‘count_spaces’ defined but not used [-Wunused-function]
+ int count_spaces (String str){
+     ^~~~~~~~~~~~
+../src/parser.c:225:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:175:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:147:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:06:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/parser.c:116:3: warning: ‘size’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   memcpy(result.operantion,extracted_value,size);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+04:06:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:116:3: warning: ‘size’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   memcpy(result.operantion,extracted_value,size);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+04:08:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:2: error: unknown type name ‘Book’
+  Book oper_exists = FALSE;
+  ^~~~
+../src/parser.c:120:7: error: expected expression before ‘)’ token
+   if ()
+       ^
+../src/parser.c:59:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Book oper_exists = FALSE;
+       ^~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+04:09:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:2: error: unknown type name ‘Book’
+  Book oper_exists = FALSE;
+  ^~~~
+../src/parser.c:119:8: warning: null argument where non-null required (argument 2) [-Wnonnull]
+   if ( strcmp(extracted_value,'\0') !=0 ){
+        ^~~~~~
+../src/parser.c:291:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Book oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:267:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:232:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:182:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:154:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:09:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:2: error: unknown type name ‘Book’
+  Book oper_exists = FALSE;
+  ^~~~
+../src/parser.c:291:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Book oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:267:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:232:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:182:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:154:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+04:11:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:2: error: unknown type name ‘Book’
+  Book oper_exists = FALSE;
+  ^~~~
+../src/parser.c:289:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Book oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:289:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:265:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:230:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:180:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:152:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:11:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:289:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:289:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:265:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:230:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:180:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:152:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:12:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:290:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:266:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:231:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:181:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:153:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:14:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:282:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:282:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:258:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:223:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:173:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:145:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:15:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:282:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:282:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:258:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:223:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:173:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:145:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:17:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:259:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:223:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:173:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:145:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+04:17:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:283:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:283:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/parser.c:259:8: warning: ‘extract_operation’ defined but not used [-Wunused-function]
+ String extract_operation(String str){
+        ^~~~~~~~~~~~~~~~~
+../src/parser.c:223:8: warning: ‘remove_first_spaces’ defined but not used [-Wunused-function]
+ String remove_first_spaces(String str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:173:8: warning: ‘extract_instruction’ defined but not used [-Wunused-function]
+ char * extract_instruction(char * str){
+        ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:145:8: warning: ‘extract_label’ defined but not used [-Wunused-function]
+ String extract_label (String line){
+        ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:18:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/parser.c:118:18: warning: ‘size’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   current_pointer+=size-1;
+                  ^~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 

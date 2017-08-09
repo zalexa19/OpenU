@@ -68,9 +68,9 @@ void print_structs(bodyArray array){
 		printf(" %s\t",array[i].instruction);
 	}else printf(" null\t");
 
-	/*if ((strcmp(array[i].operantion,"\0") ) !=0){
+	if ((strcmp(array[i].operantion,"\0") ) !=0){
 		printf("%s\t",array[i].operantion);
-	}else printf(" null\t"); */
+	}else printf(" null\t");
 
 }
 
