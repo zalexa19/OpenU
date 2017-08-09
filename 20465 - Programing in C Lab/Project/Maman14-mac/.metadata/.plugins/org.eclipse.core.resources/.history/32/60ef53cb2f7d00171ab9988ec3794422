@@ -58,7 +58,6 @@ body  parse_line (String str){
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
 
-
 	extracted_value=allocate_mem_string(MAXMEM);
 	current_pointer=str;
 	n_skipped_spaces=count_spaces(str);
@@ -141,9 +140,6 @@ body  parse_line (String str){
 
 	strcpy(extracted_value,extract_operand(current_pointer));
 	result.operand1=allocate_mem_string(strlen(extracted_value)+1);
-	strcpy(result.operand1,extracted_value);
-
-
 
 
 

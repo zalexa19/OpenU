@@ -58,7 +58,6 @@ body  parse_line (String str){
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
 
-
 	extracted_value=allocate_mem_string(MAXMEM);
 	current_pointer=str;
 	n_skipped_spaces=count_spaces(str);
@@ -139,11 +138,7 @@ body  parse_line (String str){
 	current_pointer+=n_skipped_spaces;
 /*	printf("current_point: [%s\n",current_pointer);*/
 
-	strcpy(extracted_value,extract_operand(current_pointer));
-	result.operand1=allocate_mem_string(strlen(extracted_value)+1);
-	strcpy(result.operand1,extracted_value);
-
-
+	extract_operand(current_pointer);
 
 
 
@@ -180,10 +175,9 @@ String extract_operand (String str){
 	printf("calculated size:%d\n",operand_size);
 
 	result=allocate_mem_string(operand_size+1);
-	strncpy(result,str,operand_size);
-	printf("[%s]\n",result);
 
-	return result;
+
+	return ptr;
 
 
 }

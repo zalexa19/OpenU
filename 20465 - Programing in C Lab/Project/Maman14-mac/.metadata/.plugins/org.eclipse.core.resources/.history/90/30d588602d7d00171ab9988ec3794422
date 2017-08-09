@@ -27,6 +27,7 @@ typedef enum {
 	UNKNOWN=3
 }line_type;
 
+typedef String* strPointer;
 
 
 /*
@@ -50,6 +51,7 @@ bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct
 /*A function that receives a string length and allocates the required memory */
 String  allocate_mem_string(int);
 
+strPointer allocate_mem_mat (int size)
 
 
 /*for testing*/

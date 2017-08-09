@@ -42,7 +42,7 @@ int count_spaces (String str);
 
 String extract_operation(String str);
 
-String extract_operand (String str);
+strPointer extract_operands (String str);
 
 
 #endif /* PARSER_H_ */

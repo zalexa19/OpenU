@@ -58,7 +58,6 @@ body  parse_line (String str){
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
 
-
 	extracted_value=allocate_mem_string(MAXMEM);
 	current_pointer=str;
 	n_skipped_spaces=count_spaces(str);
@@ -139,11 +138,7 @@ body  parse_line (String str){
 	current_pointer+=n_skipped_spaces;
 /*	printf("current_point: [%s\n",current_pointer);*/
 
-	strcpy(extracted_value,extract_operand(current_pointer));
-	result.operand1=allocate_mem_string(strlen(extracted_value)+1);
-	strcpy(result.operand1,extracted_value);
-
-
+	extract_operands(current_pointer);
 
 
 
@@ -160,30 +155,35 @@ body  parse_line (String str){
  * move with a pointer - count each operand, allocate memory in required size and split
  */
 String extract_operand (String str){
+	strPointer result;
+	int n=0;
 	int operand_size;
 	String ptr;
-	String result;
-
+	char * found_char;
 
 	printf("---------------------------\n");
 	printf("inside extract_operands\n");
 	printf("---------------------------\n");
 	printf(".\n.\n.\n");
 
-	ptr=str;
+	found_char=strchr(str,',');
+	printf("str: [%s\n",str);
+	printf("found char: [%s\n",found_char);
+	operand_size=CALCSIZE(str,found_char);
+	printf("found size:%d\n",operand_size);
 
-	while(ptr[0]!='\n' && ptr[0]!=' ' && ptr[0]!=',' && ptr[0]!='t' && ptr[0]!='\0'){
-		ptr++;
-	}
+	result=(char **)allocate_mem_string(operand_size);
+	printf(":)");
 
-	operand_size=CALCSIZE(str,ptr);
-	printf("calculated size:%d\n",operand_size);
 
-	result=allocate_mem_string(operand_size+1);
-	strncpy(result,str,operand_size);
-	printf("[%s]\n",result);
 
-	return result;
+
+	strncpy(result[n],str,operand_size);
+	str+=operand_size;
+	n++;
+
+	printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
+
 
 
 }
@@ -314,9 +314,14 @@ String extract_operation(String str){
 	str +=n_spaces;
 	/*printf("--------remove spaces again: '%s \n",str);*/
 
+	ptr=str;
 
-	ptr=strchr(str,' ');
+	while(ptr[0]!='\n' && ptr[0]!=' ' && ptr[0]!=',' && ptr[0]!='t' && ptr[0]!='\0'){
+		ptr++;
+	}
+
 	size=CALCSIZE(str,ptr);
+	printf("calculated size:%d",size);
 
 	result=allocate_mem_string(size+1);
 	memcpy(result,str,size);

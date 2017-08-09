@@ -15,6 +15,7 @@
 
 int main(void) {
 
+
 	FILE * input_file;
 	bodyArray parsed;
 

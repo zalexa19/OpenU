@@ -6849,3 +6849,424 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
 Finished building target: Maman14
  
+11:09:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:53:1: error: unknown type name ‘strPointer’
+ strPointer allocate_mem_mat (int size)
+ ^~~~~~~~~~
+../src/Maman14-mac.c: In function ‘allocate_mem_mat’:
+../src/Maman14-mac.c:16:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int main(void) {
+                ^
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:53:12: error: old-style parameter declarations in prototyped function definition
+ strPointer allocate_mem_mat (int size)
+            ^~~~~~~~~~~~~~~~
+../src/Maman14-mac.c:42:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/Maman14-mac.c:42:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+11:10:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:158:2: error: unknown type name ‘strPointer’
+  strPointer result;
+  ^~~~~~~~~~
+../src/parser.c:175:8: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  result=(char **)allocate_mem_string(operand_size);
+        ^
+../src/parser.c:181:16: error: subscripted value is neither array nor pointer nor vector
+  strncpy(result[n],str,operand_size);
+                ^
+../src/parser.c:185:62: error: subscripted value is neither array nor pointer nor vector
+  printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
+                                                              ^
+../src/parser.c:161:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/parser.c:158:13: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
+  strPointer result;
+             ^~~~~~
+../src/parser.c:189:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:10:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:158:2: error: unknown type name ‘strPointer’
+  strPointer result;
+  ^~~~~~~~~~
+../src/parser.c:180:16: error: subscripted value is neither array nor pointer nor vector
+  strncpy(result[n],str,operand_size);
+                ^
+../src/parser.c:184:62: error: subscripted value is neither array nor pointer nor vector
+  printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
+                                                              ^
+../src/parser.c:161:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/parser.c:158:13: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
+  strPointer result;
+             ^~~~~~
+../src/parser.c:188:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:11:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+../src/parser.c: In function ‘parse_line’:
+Building file: ../src/parser.c
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:158:2: error: unknown type name ‘strPointer’
+  strPointer result;
+  ^~~~~~~~~~
+../src/parser.c:180:16: error: subscripted value is neither array nor pointer nor vector
+  strncpy(result[n],str,operand_size);
+                ^
+../src/parser.c:184:62: error: subscripted value is neither array nor pointer nor vector
+  printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
+                                                              ^
+../src/parser.c:158:13: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
+  strPointer result;
+             ^~~~~~
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:11:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:158:6: warning: unused variable ‘n’ [-Wunused-variable]
+  int n=0;
+      ^
+../src/parser.c:179:9: warning: ‘ptr’ is used uninitialized in this function [-Wuninitialized]
+  return ptr;
+         ^~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+makefile:30: recipe for target 'Maman14' failed
+./src/parser.o: In function `parse_line':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:141: undefined reference to `extract_operands'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:13:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:167:29: error: ‘found_char’ undeclared (first use in this function)
+  printf("found char: [%s\n",found_char);
+                             ^~~~~~~~~~
+../src/parser.c:167:29: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:176:10: error: ‘result’ undeclared (first use in this function)
+  strncpy(result[n],str,operand_size);
+          ^~~~~~
+../src/parser.c:176:17: error: ‘n’ undeclared (first use in this function)
+  strncpy(result[n],str,operand_size);
+                 ^
+../src/parser.c:182:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:14:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:179:10: error: ‘result’ undeclared (first use in this function)
+  strncpy(result[n],str,operand_size);
+          ^~~~~~
+../src/parser.c:179:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:160:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/parser.c:187:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:14:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:183:56: error: ‘result’ undeclared (first use in this function)
+  printf("operand size: %d, stored: [%s\n",operand_size,result[n]);
+                                                        ^~~~~~
+../src/parser.c:183:56: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:160:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/parser.c:187:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:14:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:160:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/parser.c:186:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+./src/parser.o: In function `parse_line':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:141: undefined reference to `extract_operands'
+makefile:30: recipe for target 'Maman14' failed
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:15:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:141:2: warning: implicit declaration of function ‘extract_operands’ [-Wimplicit-function-declaration]
+  extract_operands(current_pointer);
+  ^~~~~~~~~~~~~~~~
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:183:9: warning: ‘ptr’ is used uninitialized in this function [-Wuninitialized]
+  return ptr;
+         ^~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+./src/parser.o: In function `parse_line':
+makefile:30: recipe for target 'Maman14' failed
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:141: undefined reference to `extract_operands'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:15:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:183:9: warning: ‘ptr’ is used uninitialized in this function [-Wuninitialized]
+  return ptr;
+         ^~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:16:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:174:30: error: ‘size’ undeclared (first use in this function)
+  printf("calculated size:%d",size);
+                              ^~~~
+../src/parser.c:174:30: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:181:2: error: ‘n’ undeclared (first use in this function)
+  n++;
+  ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:17:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:181:2: error: ‘n’ undeclared (first use in this function)
+  n++;
+  ^
+../src/parser.c:181:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+11:17:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:18:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:160:9: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
+  String result;
+         ^~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:19:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+11:21:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
