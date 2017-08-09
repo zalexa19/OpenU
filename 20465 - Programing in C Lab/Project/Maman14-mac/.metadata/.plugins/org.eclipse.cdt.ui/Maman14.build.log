@@ -1,4 +1,4 @@
-04:18:50 **** Incremental Build of configuration Debug for project Maman14 ****
+07:21:44 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
@@ -7,18 +7,7 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parse
 ../src/parser.c:59:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
   Bool oper_exists = FALSE;
        ^~~~~~~~~~~
-../src/parser.c:143:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-../src/parser.c:118:18: warning: ‘size’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   current_pointer+=size-1;
-                  ^~
 Finished building: ../src/parser.c
- 
-Building file: ../src/utils.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
-Finished building: ../src/utils.c
  
 Building target: Maman14
 Invoking: GCC C Linker
@@ -26,5 +15,5 @@ gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/u
 Finished building target: Maman14
  
 
-04:18:50 Build Finished (took 188ms)
+07:21:44 Build Finished (took 115ms)
 

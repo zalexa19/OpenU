@@ -64,11 +64,18 @@ body  parse_line (String str){
 	current_pointer += n_skipped_spaces;
 
 
-	printf("|---current pointer: [%s\n\n",current_pointer);
+	printf("---current pointer:%s\n\n",current_pointer);
+
+
+	/*check if it's a comment*/
+	if ( current_pointer[0] == ';'){
+		fprintf(stderr,"---found a comment");
+	}
+
 
 	/*extract label*/
 	strcpy(extracted_value,extract_label(current_pointer));
-	result_size=strlen(extracted_value)+1;
+	result_size=strlen(extracted_value) +1;
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
@@ -82,17 +89,12 @@ body  parse_line (String str){
 	strcpy(result.instruction,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		instr_exists=TRUE;
-		printf("++instr_exists=TRUE\n");
-
-
 	}
 
-	printf("--------After instructing instruction:'%s' \n",current_pointer);
 
 	/*pointers skips the label if exists*/
 	if (label_exists==TRUE){
 		current_pointer+=strlen(result.label) +1;
-		printf("++label exists = TRUE\n");
 		/*printf("--------After skipping label:'%s' \n",current_pointer);*/
 
 	}
@@ -100,42 +102,44 @@ body  parse_line (String str){
 
 	n_skipped_spaces=count_spaces(current_pointer);
 	current_pointer+=n_skipped_spaces;
+	/*printf("line: %s\nn_skipped_spaces: %d\n",line,n_skipped_spaces);*/
 	/*	printf("--------After removing spaces and copying to copy:'%s \n",current_pointer);*/
 
 
 	/*if instruction wasn't receive, we extract the operational*/
 	if (instr_exists == FALSE){
-		printf("++instr_exists == FALSE\n");
+
 		/*Extract operation*/
 		strcpy(extracted_value,extract_operation(current_pointer));
 		result_size=strlen(extracted_value)+1;
 		printf("extracted value:%s, size: %d\n",extracted_value,result_size);
 
 		memcpy(result.operantion,extracted_value,result_size);
-		current_pointer+=result_size-1;
+		current_pointer+=size-1;
 
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}
-	}
+
 	else {
 		/*advance the pointer to the next space after the instruction*/
-		printf("++ENTERED ELSE\n");
-		size=strlen(result.instruction)+1;
-		current_pointer+=size;
-		printf("--------After skipping instruction:'%s \n",current_pointer);
+		if (strcmp(result.instruction,"\0") != 0){
+			size=strlen(result.instruction)+1;
+			current_pointer+=size;
+			printf("--------After skipping instruction:'%s \n",current_pointer);
+		}
 
-		result.operantion=allocate_mem_string(1);
-		strcpy(result.operantion,"\0");
-		printf("op: %s", result.operantion);
+		if (strcmp(result.instruction,"\0")==0){
+			fprintf(stderr,"---instruction is null\n");
+		}
+
 
 	}
 
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
-
 	return result;
-
+	}
 }
 
 
@@ -161,8 +165,7 @@ String extract_label (String line){
 
 	strncpy(result,line,size);
 /*	printf(" in result:%s\n",result);*/
-/*	fprintf(stderr,"---Extract_lable: Finished\n");*/
-	memset(result+size,'\0',1);
+	fprintf(stderr,"---Extract_lable: Finished\n");
 	return result;
 
 }
@@ -178,7 +181,6 @@ char * extract_instruction(char * str){
 
 	result=allocate_mem_string(strlen(str)+1);
 
-	array_start=str;
 
 /*	fprintf(stderr,"---Extract_instruction: started\n");*/
 /*	fprintf(stderr,"---Extracting: dot \n");*/
@@ -194,7 +196,7 @@ char * extract_instruction(char * str){
 	size=CALCSIZE(array_start,found_char);
 	size++;
 
-/*	fprintf(stderr,"---Calculated dot position:%d\n",size);*/
+	fprintf(stderr,"---Calculated dot position:%d\n",size);
 	inspection_start=str+size;
 /*	strcpy(copy,inspection_start); Now copy holds everything after the dot*/
 
@@ -208,7 +210,8 @@ char * extract_instruction(char * str){
 	size=CALCSIZE(inspection_start, inspection_end);
 	strncpy(result,inspection_start,size);
 	/*strncpy(result,copy,size);*/
-/*		printf("in result: %s\n",result);*/
+	/*	printf("in result: %s\n",result);*/
+	printf("Instruction: %s",result);
 	fprintf(stderr,"---Extraction_instruction: Completed.\n");
 
 	return result;

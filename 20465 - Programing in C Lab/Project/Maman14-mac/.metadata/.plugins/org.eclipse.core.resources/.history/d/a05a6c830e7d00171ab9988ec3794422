@@ -82,9 +82,6 @@ body  parse_line (String str){
 	strcpy(result.instruction,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		instr_exists=TRUE;
-		printf("++instr_exists=TRUE\n");
-
-
 	}
 
 	printf("--------After instructing instruction:'%s' \n",current_pointer);
@@ -117,10 +114,9 @@ body  parse_line (String str){
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}
-	}
+
 	else {
 		/*advance the pointer to the next space after the instruction*/
-		printf("++ENTERED ELSE\n");
 		size=strlen(result.instruction)+1;
 		current_pointer+=size;
 		printf("--------After skipping instruction:'%s \n",current_pointer);
@@ -133,7 +129,7 @@ body  parse_line (String str){
 
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
-
+	}
 	return result;
 
 }
@@ -161,7 +157,7 @@ String extract_label (String line){
 
 	strncpy(result,line,size);
 /*	printf(" in result:%s\n",result);*/
-/*	fprintf(stderr,"---Extract_lable: Finished\n");*/
+	fprintf(stderr,"---Extract_lable: Finished\n");
 	memset(result+size,'\0',1);
 	return result;
 

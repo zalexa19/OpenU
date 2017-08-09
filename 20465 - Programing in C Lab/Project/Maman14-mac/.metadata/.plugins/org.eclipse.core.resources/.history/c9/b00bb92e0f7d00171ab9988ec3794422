@@ -117,7 +117,7 @@ body  parse_line (String str){
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}
-	}
+
 	else {
 		/*advance the pointer to the next space after the instruction*/
 		printf("++ENTERED ELSE\n");
@@ -133,7 +133,7 @@ body  parse_line (String str){
 
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
-
+	}
 	return result;
 
 }

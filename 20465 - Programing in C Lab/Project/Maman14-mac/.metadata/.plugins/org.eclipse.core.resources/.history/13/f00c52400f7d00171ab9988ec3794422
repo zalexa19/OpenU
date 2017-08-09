@@ -133,7 +133,7 @@ body  parse_line (String str){
 
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
-
+	}
 	return result;
 
 }

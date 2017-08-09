@@ -67,6 +67,7 @@ body  parse_line (String str){
 	printf("|---current pointer: [%s\n\n",current_pointer);
 
 	/*extract label*/
+
 	strcpy(extracted_value,extract_label(current_pointer));
 	result_size=strlen(extracted_value)+1;
 	result.label=allocate_mem_string(result_size);
@@ -82,17 +83,12 @@ body  parse_line (String str){
 	strcpy(result.instruction,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		instr_exists=TRUE;
-		printf("++instr_exists=TRUE\n");
-
-
 	}
 
-	printf("--------After instructing instruction:'%s' \n",current_pointer);
 
 	/*pointers skips the label if exists*/
 	if (label_exists==TRUE){
 		current_pointer+=strlen(result.label) +1;
-		printf("++label exists = TRUE\n");
 		/*printf("--------After skipping label:'%s' \n",current_pointer);*/
 
 	}
@@ -100,12 +96,12 @@ body  parse_line (String str){
 
 	n_skipped_spaces=count_spaces(current_pointer);
 	current_pointer+=n_skipped_spaces;
+	/*printf("line: %s\nn_skipped_spaces: %d\n",line,n_skipped_spaces);*/
 	/*	printf("--------After removing spaces and copying to copy:'%s \n",current_pointer);*/
 
 
 	/*if instruction wasn't receive, we extract the operational*/
 	if (instr_exists == FALSE){
-		printf("++instr_exists == FALSE\n");
 		/*Extract operation*/
 		strcpy(extracted_value,extract_operation(current_pointer));
 		result_size=strlen(extracted_value)+1;
@@ -117,23 +113,17 @@ body  parse_line (String str){
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}
-	}
+
 	else {
 		/*advance the pointer to the next space after the instruction*/
-		printf("++ENTERED ELSE\n");
 		size=strlen(result.instruction)+1;
 		current_pointer+=size;
 		printf("--------After skipping instruction:'%s \n",current_pointer);
-
-		result.operantion=allocate_mem_string(1);
-		strcpy(result.operantion,"\0");
-		printf("op: %s", result.operantion);
-
 	}
 
 	free(extracted_value);
 	fprintf(stderr,"---End of parse line\n");
-
+	}
 	return result;
 
 }
@@ -161,8 +151,8 @@ String extract_label (String line){
 
 	strncpy(result,line,size);
 /*	printf(" in result:%s\n",result);*/
-/*	fprintf(stderr,"---Extract_lable: Finished\n");*/
-	memset(result+size,'\0',1);
+	fprintf(stderr,"---Extract_lable: Finished\n");
+	result[size-1]="\0";
 	return result;
 
 }
