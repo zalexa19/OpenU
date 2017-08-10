@@ -8,6 +8,7 @@
 #ifndef PARSER_H_
 #define PARSER_H_
 #include "utils.h"
+#include "validator.h"
 
 
 /*
@@ -18,7 +19,7 @@
  * and eventually returning an array of structs
  */
 
-bodyArray parse_file (FILE *fp, int *);
+bodyArray parse_file (FILE *fp, int *, int *);
 
 /*
  * This function converts a string (one line) into a struct
@@ -28,7 +29,7 @@ bodyArray parse_file (FILE *fp, int *);
  */
 
 
-body parse_line (String str);
+body parse_line (String str, int);
 
 char * get_label (char * line);
 

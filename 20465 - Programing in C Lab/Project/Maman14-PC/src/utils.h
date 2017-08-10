@@ -14,6 +14,12 @@
 
 #define MAXMEM 81
 
+#define COMPARE(a,b) strcmp(a,"b")
+
+
+
+
+
 typedef char* String;
 
 typedef enum {
@@ -33,18 +39,29 @@ typedef enum {
  * Parser  related
  */
 typedef struct parsed_line {
+	int line_number;
 	String label;
 	String instruction;
 	String operantion;
 	String operand1;
 	String operand2;
 	String operand3; /*This exists to hold additional operands (for validation)*/
+	Bool valid;
 	/*decide on how to deal with .data*/
 
 
 } body;
 
 typedef  body * bodyArray;
+
+
+
+
+
+/**********************************/
+/***********FUNCTIONS**************/
+/**********************************/
+
 
 bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct array*/
 
@@ -57,5 +74,7 @@ String  allocate_mem_string(int);
 void print_structs(bodyArray, int);
 
 void add_spaces_print (String array);
+
+void print_line(body);
 
 #endif /* UTILS_H_ */

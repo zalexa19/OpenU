@@ -1,0 +1,13 @@
+#include "utils.h"
+#include "validator.h"
+
+void validate_file(bodyArray parsed, int array_size){
+	int i;
+	body current_struct;
+
+	for (i=0;i<array_size; i++){
+		current_struct=parsed[i];
+
+	}
+
+}

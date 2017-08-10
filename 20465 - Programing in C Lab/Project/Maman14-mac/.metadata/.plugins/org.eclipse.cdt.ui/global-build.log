@@ -7961,3 +7961,772 @@ Finished building target: Maman14
 02:49:39 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 make: Nothing to be done for 'all'.
+03:04:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:71:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:05:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:72:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:06:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_file’:
+../src/parser.c:48:48: warning: passing argument 2 of ‘parse_line’ makes integer from pointer without a cast [-Wint-conversion]
+    parsed_file[cell_counter] = parse_line(line,n_lines);
+                                                ^~~~~~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:31:6: note: expected ‘int’ but argument is of type ‘int *’
+ body parse_line (String str, int);
+      ^~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:72:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+03:14:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:72:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:76:12: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+   printf("%d ");
+            ^
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o   
+Finished building target: Maman14
+ 
+04:03:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:3:21: error: unknown type name ‘bodyArray’
+ void validate_file( bodyArray parsed){
+                     ^~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:03:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:06:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:6:7: warning: variable ‘current_struct’ set but not used [-Wunused-but-set-variable]
+  body current_struct;
+       ^~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:10:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:18:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:19:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: expected expression before ‘,’ token
+ #define COMPARE (,a,b)\
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (,a,b)\
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (,a,b)\
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (,a,b)\
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:21: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (,a,b)\
+                     ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (,a,b)\
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:19:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (a,b)\
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (a,b)\
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (a,b)\
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (a,b)\
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:18:2: error: expected ‘;’ before ‘strcmp’
+  strcmp(a,"b")
+  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (a,b) \
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (a,b) \
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (a,b) \
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (a,b) \
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:18:2: error: expected ‘;’ before ‘strcmp’
+  strcmp(a,"b")
+  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (a,b) \
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (a,b) \
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (a,b) \
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (a,b) \
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:18:2: error: expected ‘;’ before ‘strcmp’
+  strcmp(a,"b");
+  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/validator.c:13:12: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+   COMPARE(a,b);
+            ^
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (a,b) strcmp(a,"b")
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (a,b) strcmp(a,"b")
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (a,b) strcmp(a,"b")
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (a,b) strcmp(a,"b")
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:23: error: expected ‘;’ before ‘strcmp’
+ #define COMPARE (a,b) strcmp(a,"b")
+                       ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:21:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/utils.h:17:18: error: ‘a’ undeclared (first use in this function)
+ #define COMPARE (a,b) strcmp(a,b)
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:18: note: each undeclared identifier is reported only once for each function it appears in
+ #define COMPARE (a,b) strcmp(a,b)
+                  ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:20: error: ‘b’ undeclared (first use in this function)
+ #define COMPARE (a,b) strcmp(a,b)
+                    ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:19: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ #define COMPARE (a,b) strcmp(a,b)
+                   ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+../src/utils.h:17:23: error: expected ‘;’ before ‘strcmp’
+ #define COMPARE (a,b) strcmp(a,b)
+                       ^
+../src/validator.c:13:3: note: in expansion of macro ‘COMPARE’
+   COMPARE(a,b);
+   ^~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:21:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:73:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:57:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:13:11: error: ‘a’ undeclared (first use in this function)
+   COMPARE(a,b);
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+../src/validator.c:13:11: note: each undeclared identifier is reported only once for each function it appears in
+   COMPARE(a,b);
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+04:21:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:13:11: error: ‘a’ undeclared (first use in this function)
+   COMPARE(a,b);
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+../src/validator.c:13:11: note: each undeclared identifier is reported only once for each function it appears in
+   COMPARE(a,b);
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+04:21:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:13:11: error: ‘a’ undeclared (first use in this function)
+   COMPARE(a,b)
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+../src/validator.c:13:11: note: each undeclared identifier is reported only once for each function it appears in
+   COMPARE(a,b)
+           ^
+../src/utils.h:17:29: note: in definition of macro ‘COMPARE’
+ #define COMPARE(a,b) strcmp(a,"b")
+                             ^
+../src/validator.c:17:2: error: expected ‘;’ before ‘}’ token
+  }
+  ^
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:23:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:25:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

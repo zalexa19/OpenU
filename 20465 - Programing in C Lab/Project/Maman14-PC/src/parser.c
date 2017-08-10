@@ -9,6 +9,7 @@
 
 #include "parser.h"
 #include "utils.h"
+
 #define INITIAL_SARRAY_SIZE 8000
 /*
  * This macro helps calculating which parts of the array need to be copied
@@ -26,7 +27,7 @@
 	strcpy(result,"\0");
 
 
-bodyArray  parse_file (FILE * file, int * parsed_size){
+bodyArray  parse_file (FILE * file, int * parsed_size, int * n_lines){
 	String line;
 	bodyArray parsed_file;
 	int cell_counter;
@@ -39,27 +40,28 @@ bodyArray  parse_file (FILE * file, int * parsed_size){
 
 
 	while (  (fgets(line,MAXMEM,file)) != NULL){
+		*n_lines+=1;
 
 		if (check_empty_line(line)==FALSE && line[0]!=';'){
 			printf("______________________________________________\n");
 			printf("Working on line: [%s\n",line);
 
-			parsed_file[cell_counter] = parse_line(line);
+			parsed_file[cell_counter] = parse_line(line,*n_lines);
 			cell_counter++;
 		}
-		printf("struct cell 3 inst: %s\n",parsed_file[1].instruction);
 	}
 
 	if (cell_counter>0){
-		*parsed_size=cell_counter+1;
+		*parsed_size=cell_counter;
 	}else{
 		*parsed_size=0;
 	}
-	return parsed_file;
 
+	printf("\n---Finished parsing file---\n");
+	return parsed_file;
 }
 
-body  parse_line (String str){
+body  parse_line (String str, int line_number){
 	body result;
 	int result_size;
 	char * extracted_value;
@@ -70,6 +72,7 @@ body  parse_line (String str){
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
 
+	result.line_number=line_number;
 
 	extracted_value=allocate_mem_string(MAXMEM);
 	current_pointer=str;
@@ -90,7 +93,7 @@ body  parse_line (String str){
 	if ((strcmp(extracted_value,"\0")) != 0){
 		label_exists=TRUE;
 	}
-	printf("extracted label: %s\n",result.label);
+/*	printf("extracted label: %s\n",result.label);*/
 
 	/*extract instruction*/
 	strcpy(extracted_value,extract_instruction(current_pointer));
@@ -101,7 +104,7 @@ body  parse_line (String str){
 		instr_exists=TRUE;
 /*		printf("++instr_exists=TRUE\n");*/
 	}
-	printf("extracted inst: %s\n",result.instruction);
+/*	printf("extracted inst: %s\n",result.instruction);*/
 
 
 /*	printf("--------After instructing instruction:'%s' \n",current_pointer);*/
@@ -132,7 +135,7 @@ body  parse_line (String str){
 		strncpy(result.operantion,extracted_value,result_size);
 		current_pointer+=result_size-1;
 
-		printf("+result.operation: [%s\n",result.operantion);
+/*		printf("+result.operation: [%s\n",result.operantion);*/
 		if ( strcmp(extracted_value,"\0") != 0 ){
 			oper_exists=TRUE;
 		}

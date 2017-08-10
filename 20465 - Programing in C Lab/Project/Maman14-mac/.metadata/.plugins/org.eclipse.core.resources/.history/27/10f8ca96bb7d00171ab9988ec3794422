@@ -1,0 +1,5 @@
+#include "utils.h"
+
+void validate_file( bodyArray parsed){
+
+}

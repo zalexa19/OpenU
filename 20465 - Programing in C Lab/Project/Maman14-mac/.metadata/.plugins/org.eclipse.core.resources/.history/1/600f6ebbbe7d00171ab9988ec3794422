@@ -1,0 +1,57 @@
+#include "utils.h"
+#include "validator.h"
+
+void validate_file(bodyArray parsed, int array_size){
+	int i;
+	body item;
+
+	for (i=0;i<array_size; i++){
+		item=parsed[i];
+		printf("current_struct:\n");
+		print_line(item);
+
+		if(strcmp(item.label,"\0") != 0){
+			printf("label exits\n");
+			validate_label(item.label);
+		}
+
+		if(strcmp(item.instruction,"\0") != 0){
+			printf("instruction exists\n");
+			validate_instruction(item.instruction);
+			validate_ins_oprands(item);
+		}
+
+		if(strcmp(item.operantion,"\0") != 0){
+			printf("operation exists;\n");
+			validate_operation(item.operantion);
+			validate_oper_operands(item);
+		}
+
+		if(strcmp(item.label,"\0") != 0){
+
+		}
+
+
+	}
+
+}
+
+void validate_label (String label){
+
+}
+
+void validate_instruction(String inst){
+
+}
+
+void validate_operation(String operation){
+
+}
+
+void validate_ins_oprands (body item){
+
+}
+
+void validate_oper_operands (body item){
+
+}

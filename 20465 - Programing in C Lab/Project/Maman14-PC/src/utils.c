@@ -60,7 +60,9 @@ void print_structs(bodyArray array, int size){
 	printf("-----------------------------------------------------------------------------\n");
 	printf("                       STRUCT PRINT:\n");
 	printf("-----------------------------------------------------------------------------\n");
+
 	printf("\n");
+	printf("Line |");
 	printf("LABEL        |");
 	printf("INSTRUCTION  |");
 	printf("OPERATION    |");
@@ -71,6 +73,7 @@ void print_structs(bodyArray array, int size){
 
 
 	for (i=0;i<size;i++){
+		printf("%d    ",array[i].line_number);
 		if ((strcmp(array[i].label,"\0") ) !=0){
 			strcpy(tmp,array[i].label);
 			add_spaces_print(tmp);
@@ -136,3 +139,7 @@ void add_spaces_print (String  array){
 }
 
 
+void print_line(body item){
+	printf("<%d %s %s %s %s %s %s  >",item.line_number,item.label,item.instruction,item.operantion,item.operand1,item.operand2,item.operand3);
+	printf("\n");
+}

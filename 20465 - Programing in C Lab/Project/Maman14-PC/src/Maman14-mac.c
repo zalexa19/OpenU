@@ -18,6 +18,7 @@ int main(void) {
 	FILE * input_file;
 	bodyArray parsed;
 	int parsed_size=-1;
+	int number_of_lines=0; /*number of lines, including comments and blanks*/
 
 	/*END OF DECLERATIONS*/
 
@@ -28,12 +29,18 @@ int main(void) {
 		exit(0);
 	}
 
-	parsed=(bodyArray)parse_file(input_file, &parsed_size);
+	parsed=(bodyArray)parse_file(input_file, &parsed_size,&number_of_lines);
 	fclose(input_file);
 
-	printf("sizeof structs: %d\n",parsed_size);
+/*	printf("sizeof structs: %d\nnumber of lines: %d\n",parsed_size,number_of_lines);*/
+
 
 	print_structs(parsed,parsed_size);
+
+	printf("starting to validate file:\n");
+	printf("_____________________________________\n");
+
+	validate_file(parsed,parsed_size);
 
 
 
