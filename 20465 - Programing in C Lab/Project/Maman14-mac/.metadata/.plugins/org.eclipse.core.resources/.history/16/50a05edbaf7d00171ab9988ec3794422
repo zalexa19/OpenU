@@ -31,7 +31,6 @@ bodyArray  parse_file (FILE * file, int * parsed_size){
 	bodyArray parsed_file;
 	int cell_counter;
 
-
 	line=allocate_mem_string(MAXMEM);
 	parsed_file=allocate_mem_struct(INITIAL_SARRAY_SIZE);
 
@@ -49,12 +48,7 @@ bodyArray  parse_file (FILE * file, int * parsed_size){
 		}
 		printf("struct cell 3 inst: %s\n",parsed_file[1].instruction);
 	}
-
-	if (cell_counter>0){
-		*parsed_size=cell_counter+1;
-	}else{
-		*parsed_size=0;
-	}
+	*parsed_size=cell_counter+1;
 	return parsed_file;
 
 }
@@ -361,11 +355,6 @@ String extract_operation(String str){
 
 
 	ptr=strchr(str,' ');
-	if (!ptr){
-		size=strlen(str)-1;
-		ptr=str+size;
-	}
-
 	size=CALCSIZE(str,ptr);
 
 	result=allocate_mem_string(size+1);

@@ -50,11 +50,7 @@ bodyArray  parse_file (FILE * file, int * parsed_size){
 		printf("struct cell 3 inst: %s\n",parsed_file[1].instruction);
 	}
 
-	if (cell_counter>0){
-		*parsed_size=cell_counter+1;
-	}else{
-		*parsed_size=0;
-	}
+	*parsed_size=cell_counter;
 	return parsed_file;
 
 }

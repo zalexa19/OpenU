@@ -17,7 +17,7 @@ int main(void) {
 
 	FILE * input_file;
 	bodyArray parsed;
-	int parsed_size=-1;
+	int parsed_size;
 
 	/*END OF DECLERATIONS*/
 

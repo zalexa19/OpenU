@@ -82,35 +82,35 @@ void print_structs(bodyArray array, int size){
 			add_spaces_print(tmp);
 			printf("%s",tmp);
 
-		}else printf("               ");
+		}else printf("%s",null);
 
 		if ((strcmp(array[i].operantion,"\0") ) !=0){
 	/*		printf("%s\t",array[i].operantion);*/
 			strcpy(tmp,array[i].operantion);
 			add_spaces_print(tmp);
 			printf("%s",tmp);
-		}else printf("               ");
+		}else printf("%s",null);
 
 		if ((strcmp(array[i].operand1,"\0") ) !=0){
 		/*		printf("%s\t",array[i].operantion);*/
 				strcpy(tmp,array[i].operand1);
 				add_spaces_print(tmp);
 				printf("%s",tmp);
-			}else printf("               ");
+			}else printf("%s",null);
 
 		if ((strcmp(array[i].operand2,"\0") ) !=0){
 		/*		printf("%s\t",array[i].operantion);*/
 				strcpy(tmp,array[i].operand2);
 				add_spaces_print(tmp);
 				printf("%s",tmp);
-			}else printf("               ");
+			}else printf("%s",null);
 
 		if ((strcmp(array[i].operand3,"\0") ) !=0){
 		/*		printf("%s\t",array[i].operantion);*/
 				strcpy(tmp,array[i].operand3);
 				add_spaces_print(tmp);
 				printf("%s",tmp);
-			}else printf("               ");
+			}else printf("%s",null);
 
 		printf("\n");
 	}
