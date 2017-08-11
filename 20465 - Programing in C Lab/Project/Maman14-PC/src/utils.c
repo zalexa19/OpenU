@@ -10,6 +10,16 @@
 
 int structs_array_size;
 
+String* allocate_mem_matrix(int size){
+	String* matrix = (String*)malloc(sizeof( String*)*size);
+	if (!matrix){
+		fprintf(stderr,"Unable to allocate memory to the matrix.\nContinuing with no operanns\n");
+		exit(0);
+	}
+	return matrix;
+}
+
+
 String allocate_mem_string (int size){
 	String	str = (char*)malloc (size * sizeof(char));
 	if (!str){
@@ -50,7 +60,6 @@ int increase_mem_struct (int size,bodyArray array){
 
 
 
-
 void print_structs(bodyArray array, int size){
 	int i;
 	char tmp[15];
@@ -85,40 +94,49 @@ void print_structs(bodyArray array, int size){
 			add_spaces_print(tmp);
 			printf("%s",tmp);
 
+			if (strcmp(array[i].instruction,"data")==0){
+				print_mat(array[i].data_string_array,array[i].data_string_array);
+			}
 		}else printf("               ");
 
+
+
+
 		if ((strcmp(array[i].operantion,"\0") ) !=0){
-	/*		printf("%s\t",array[i].operantion);*/
+/*			printf("%s\t",array[i].operantion);*/
 			strcpy(tmp,array[i].operantion);
 			add_spaces_print(tmp);
 			printf("%s",tmp);
+
+
 		}else printf("               ");
 
-		if ((strcmp(array[i].operand1,"\0") ) !=0){
-		/*		printf("%s\t",array[i].operantion);*/
-				strcpy(tmp,array[i].operand1);
-				add_spaces_print(tmp);
-				printf("%s",tmp);
-			}else printf("               ");
+		if ((strcmp(array[i].instruction,"data") !=0)){
+			if ((strcmp(array[i].operand1,"\0") ) !=0)    {
+			/*		printf("%s\t",array[i].operantion);*/
+					strcpy(tmp,array[i].operand1);
+					add_spaces_print(tmp);
+					printf("%s",tmp);
+				}else printf("               ");
 
-		if ((strcmp(array[i].operand2,"\0") ) !=0){
-		/*		printf("%s\t",array[i].operantion);*/
-				strcpy(tmp,array[i].operand2);
-				add_spaces_print(tmp);
-				printf("%s",tmp);
-			}else printf("               ");
+			if ((strcmp(array[i].operand2,"\0")) !=0){
+			/*		printf("%s\t",array[i].operantion);*/
+					strcpy(tmp,array[i].operand2);
+					add_spaces_print(tmp);
+					printf("%s",tmp);
+				}else printf("               ");
 
-		if ((strcmp(array[i].operand3,"\0") ) !=0){
-		/*		printf("%s\t",array[i].operantion);*/
-				strcpy(tmp,array[i].operand3);
-				add_spaces_print(tmp);
-				printf("%s",tmp);
-			}else printf("               ");
+			if ((strcmp(array[i].operand3,"\0")) !=0){
+			/*		printf("%s\t",array[i].operantion);*/
+					strcpy(tmp,array[i].operand3);
+					add_spaces_print(tmp);
+					printf("%s",tmp);
+				}else printf("               ");
 
-		printf("\n");
+
+		}
 	}
-
-
+	printf("\n");
 }
 
 
@@ -142,4 +160,16 @@ void add_spaces_print (String  array){
 void print_line(body item){
 	printf("<%d %s %s %s %s %s %s  >",item.line_number,item.label,item.instruction,item.operantion,item.operand1,item.operand2,item.operand3);
 	printf("\n");
+}
+
+void print_mat (String* mat, int size){
+	int i;
+
+	for (i=0;i<size;i++){
+		printf("%s ",*mat);
+		mat++;
+	}
+
+	printf("\n");
+
 }

@@ -63,11 +63,14 @@ bodyArray  parse_file (FILE * file, int * parsed_size, int * n_lines){
 
 body  parse_line (String str, int line_number){
 	body result;
+	int i;
 	int result_size;
 	char * extracted_value;
 	char * current_pointer;
 	int size;
 	int n_skipped_spaces;
+	int data_array_size=0;
+	String* datas_strings_array;
 	Bool label_exists = FALSE;
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
@@ -81,10 +84,8 @@ body  parse_line (String str, int line_number){
 
 
 	/*extract label*/
-/*	strcpy(extracted_value,extract_label(current_pointer)); delete this if everything works*/
 	extracted_value=extract_label(current_pointer);
 
-	/*printf("address: %p\n",(void *)&extracted_value);*/
 
 
 	result_size=strlen(extracted_value)+1;
@@ -154,7 +155,44 @@ body  parse_line (String str, int line_number){
 	}
 
 	/*PARSING OPERANDS*/
-	if (strcmp(result.instruction,"data") != 0){
+
+	if ((strcmp(result.instruction,"data") == 0)){
+		printf("--extracting for data\n\n");
+
+		/*Count number of operands*/
+		i=0;
+		while(current_pointer[i]!='\n'){
+			if(current_pointer[i]==','){
+				data_array_size++;
+			}
+			i++;
+		}
+		data_array_size++;
+
+
+		/*allocate memory*/
+		result.data_string_array = (String*)malloc(sizeof(String)*3);
+		if (!result.data_string_array){
+			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
+		}else {
+			datas_strings_array=extract_data_strings(current_pointer,data_array_size);
+			/*current_pointer should reach the end here*/
+/*			result.data_string_array = (String*)malloc(sizeof(String)*3);
+			result.data_string_array[0]=malloc(sizeof(char)*10);
+			result.data_string_array[1]=malloc(sizeof(char)*10);
+			result.data_string_array[2]=malloc(sizeof(char)*10);
+
+			strcpy(result.data_string_array[0],"alex");
+			strcpy(result.data_string_array[1],"writes");
+			strcpy(result.data_string_array[2],"code");*/
+
+
+		}
+
+
+
+	}
+	else{
 
 /*		printf("_________________________________________________\n");*/
 		n_skipped_spaces=count_spaces(current_pointer);
@@ -394,4 +432,30 @@ Bool check_empty_line(String str){
 	}
 
 	return empty;
+}
+
+String* extract_data_strings(char* str, int array_size){
+	String* final_array;
+	char* pointer;
+	int size;
+	int cell=0;
+
+	pointer=str;
+
+	final_array=allocate_mem_matrix(array_size);
+
+	while (strcmp(pointer,"\n")){
+		pointer=strchr(pointer,',');
+		array_size+=1;
+		size=CALCSIZE(str,pointer);
+		*final_array=allocate_mem_string(size+1);
+		strncpy(*final_array,str,size);
+		str+=size;
+	}
+
+	printf("number of ',' found: %d",array_size);
+
+
+
+	return final_array;
 }

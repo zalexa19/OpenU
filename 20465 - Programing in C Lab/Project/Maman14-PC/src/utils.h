@@ -46,6 +46,8 @@ typedef struct parsed_line {
 	String operand1;
 	String operand2;
 	String operand3; /*This exists to hold additional operands (for validation)*/
+	String* data_string_array;
+	int * data_int_values;
 	Bool valid;
 	/*decide on how to deal with .data*/
 
@@ -66,7 +68,9 @@ typedef  body * bodyArray;
 bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct array*/
 
 /*A function that receives a string length and allocates the required memory */
+String* allocate_mem_matrix(int size);
 String  allocate_mem_string(int);
+
 
 
 
@@ -76,5 +80,6 @@ void print_structs(bodyArray, int);
 void add_spaces_print (String array);
 
 void print_line(body);
+void print_mat (String*, int);
 
 #endif /* UTILS_H_ */

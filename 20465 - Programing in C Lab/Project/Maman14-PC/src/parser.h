@@ -37,6 +37,8 @@ char * extract_instruction(char *);
 
 String extract_label (String line);
 
+String* extract_data_strings(char* str, int);
+
 String remove_first_spaces(String  str);
 
 int count_spaces (String str);

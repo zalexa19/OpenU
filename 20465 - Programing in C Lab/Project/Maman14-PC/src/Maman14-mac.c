@@ -19,6 +19,8 @@ int main(void) {
 	bodyArray parsed;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
+	int ** matrix;
+	int i,j,n;
 
 	/*END OF DECLERATIONS*/
 
@@ -41,6 +43,24 @@ int main(void) {
 	printf("_____________________________________\n");
 
 	validate_file(parsed,parsed_size);
+
+	printf("TESTING MATRIX:\n");
+	printf("_____________________________________\n");
+
+	matrix=(int**)malloc(3*sizeof(int*));
+	for (i=0;i<3;i++){
+		matrix[i]=(int*)malloc(4*sizeof(int));
+	}
+
+	n=0;
+	for (i=0;i<3;i++){
+		n++;
+		for (j=0;j<4;j++){
+			matrix[i][j]=n;
+			n++;
+		}
+	}
+
 
 
 
