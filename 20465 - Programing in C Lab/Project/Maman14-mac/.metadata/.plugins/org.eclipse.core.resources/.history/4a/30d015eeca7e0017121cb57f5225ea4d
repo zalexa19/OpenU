@@ -452,12 +452,6 @@ Bool check_empty_line(String str){
 	return empty;
 }
 
-/*
- * This function extracts the parameters received for data.
- * It creates a seperated string for each section devided by ','
- * Input: a pointer to a string, which holds all the parametes as one chunk
- * Output: an array of char*, where each parameter stored in a seperated cell
- */
 String* extract_data_strings(char* str, int array_size){
 	String* final_array;
 	char* pointer;

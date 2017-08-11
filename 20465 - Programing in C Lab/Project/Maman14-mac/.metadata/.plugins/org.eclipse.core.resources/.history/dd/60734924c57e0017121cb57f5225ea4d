@@ -393,17 +393,26 @@ int count_spaces (String str){
 
 
 int reverse_count_spaces (String start, String end){
-	int size,i,n;
-	i=0;
-	size=CALCSIZE(start,end);
+	int n=0;
+	int i=0;
+	int size = (end-start) * sizeof(char);
+	printf("String: [%s\b]calculated size: %d ",start,size);
+	size-=1;
 
-	while (i<size && start[i]!=' ' && start[i]!='\t'){
-		i++;
+	i=size;
+	while ( i>=0 && (end[i]!='\t' ||  end[i]==' ' )){
+		n++;
+		i--;
 	}
 
-	n=size-i;
-
-	printf("size:%d, i:%d, calculated n: %d\n",size,i,n);
+/*	while (&start[i] <end){
+		while ( start[i] !='\t' &&  start[i]!=' '){
+			n++;
+			i++;
+		}
+		i++;
+	}*/
+	printf("calculated n: %d\n",n);
 	return n;
 }
 
@@ -452,12 +461,6 @@ Bool check_empty_line(String str){
 	return empty;
 }
 
-/*
- * This function extracts the parameters received for data.
- * It creates a seperated string for each section devided by ','
- * Input: a pointer to a string, which holds all the parametes as one chunk
- * Output: an array of char*, where each parameter stored in a seperated cell
- */
 String* extract_data_strings(char* str, int array_size){
 	String* final_array;
 	char* pointer;
@@ -466,41 +469,47 @@ String* extract_data_strings(char* str, int array_size){
 	int cell=0;
 	int n_spaces;
 
-	final_array=allocate_mem_matrix(array_size);
-
 	printf("------------------------------\n");
 	printf(" Extracting strings for data\n");
 	printf("------------------------------\n");
 	printf(" array size: %d\n",array_size);
 
+	n_spaces=count_spaces(str);
+	str+=n_spaces;
 
+	final_array=allocate_mem_matrix(array_size);
 
 	for (i=0;i<array_size; i++){
-			/*skip spaces at the start of str*/
 			n_spaces=count_spaces(str);
 			str+=n_spaces;
-
-			/*find ','*/
 			pointer=strchr(str,',');
 
 		if (pointer != NULL){
-			size=CALCSIZE(str,pointer);
-			n_spaces=reverse_count_spaces(str,pointer);
-			size-=n_spaces;
 
-			final_array[cell]=allocate_mem_string(size);
-			strncpy(final_array[cell],str,size);
-			str=pointer+1;
-/*			printf("in cell %d: [%s]\n",cell,final_array[cell]);*/
+			n_spaces=reverse_count_spaces(str,pointer);
+
+			printf("reverse returns:%d\n",reverse_count_spaces(str,pointer));
+			printf("current str: [%s]\n",str);
+			printf("current pointer: [%s]\n",pointer);
+
+			size=CALCSIZE(str,pointer);
+			printf("what SIZE %d\nCell %d\n",size,cell);
+			printf("spaces:%d\n",n_spaces);
+			final_array[cell]=allocate_mem_string(size-n_spaces);
+			strncpy(final_array[cell],str,size-n_spaces);
+
+			str+=1+size;/*1 is to ignore the found ','*/
+
+			printf("String in cell %d: [%s]\n",cell, final_array[cell]);
 			cell++;
+			pointer+=1;
+
+
 		} else {
-			n_spaces=count_spaces(str);
-			str+=n_spaces;
 			size=strlen(str);
-			str[size-1]='\0';
 			final_array[cell]=allocate_mem_string(size);
 			final_array[cell]=str;
-/*			printf("String in cell %d: [%s]\n",cell, final_array[cell]);*/
+			printf("String in cell %d: %s\n",cell, final_array[cell]);
 		}
 
 	}

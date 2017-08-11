@@ -1,4 +1,4 @@
-08:19:18 **** Incremental Build of configuration Debug for project Maman14 ****
+12:18:04 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
@@ -18,5 +18,5 @@ gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  .
 Finished building target: Maman14
  
 
-08:19:18 Build Finished (took 470ms)
+12:18:05 Build Finished (took 232ms)
 
