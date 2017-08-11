@@ -10029,3 +10029,444 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+07:17:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:441:6: warning: unused variable ‘cell’ [-Wunused-variable]
+  int cell=0;
+      ^~~~
+Finished building target: Maman14
+ 
+07:21:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:441:6: warning: unused variable ‘cell’ [-Wunused-variable]
+  int cell=0;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:22:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:443:6: warning: unused variable ‘cell’ [-Wunused-variable]
+  int cell=0;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:25:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:451:24: warning: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+  while (strcmp(pointer,'\n')!=0){
+                        ^~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:140:12: note: expected ‘const char *’ but argument is of type ‘int’
+ extern int strcmp (const char *__s1, const char *__s2)
+            ^~~~~~
+../src/parser.c:457:31: warning: statement with no effect [-Wunused-value]
+    size=CALCSIZE(str,pointer) +1;
+                               ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:38:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:444:2: error: expected expression before ‘int’
+  int cell=0;
+  ^~~
+../src/parser.c:466:30: warning: statement with no effect [-Wunused-value]
+    size=CALCSIZE(str,pointer)+1;
+                              ^
+../src/parser.c:467:16: error: ‘cell’ undeclared (first use in this function)
+    final_array[cell]=allocate_mem_string(size);
+                ^~~~
+../src/parser.c:467:16: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+07:39:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:462:30: warning: statement with no effect [-Wunused-value]
+    size=CALCSIZE(str,pointer)+1;
+                              ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:39:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:50:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘reverse_count_spaces’:
+../src/Maman14-mac.c:16:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int main(void) {
+                ^
+In file included from ../src/Maman14-mac.c:12:0:
+../src/parser.h:45:5: error: old-style parameter declarations in prototyped function definition
+ int reverse_count_spaces (String str)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/Maman14-mac.c:69:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/Maman14-mac.c:69:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+07:51:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘reverse_count_spaces’:
+../src/Maman14-mac.c:16:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int main(void) {
+                ^
+In file included from ../src/Maman14-mac.c:12:0:
+../src/parser.h:45:5: error: old-style parameter declarations in prototyped function definition
+ int reverse_count_spaces (String str)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/Maman14-mac.c:69:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/Maman14-mac.c:69:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+07:52:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:08:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:399:58: error: expected ‘)’ before ‘{’ token
+  while (( str[i] !='\t' &&  str[i]!=' '  && str[i]!='\n'){
+                                                          ^
+../src/parser.c:405:1: error: expected expression before ‘}’ token
+ }
+ ^
+../src/parser.c:396:6: warning: unused variable ‘n’ [-Wunused-variable]
+  int n=0;
+      ^
+../src/parser.c:405:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+08:09:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:14:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: At top level:
+../src/parser.c:395:5: error: conflicting types for ‘reverse_count_spaces’
+ int reverse_count_spaces (String start, String end){
+     ^~~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.c:10:0:
+../src/parser.h:46:5: note: previous declaration of ‘reverse_count_spaces’ was here
+ int reverse_count_spaces (String str);
+     ^~~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:398:22: error: invalid operands to binary * (have ‘String {aka char *}’ and ‘long unsigned int’)
+  int size=(end=start)*sizeof(char);
+           ~~~~~~~~~~~^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:477:13: error: too few arguments to function ‘reverse_count_spaces’
+    n_spaces=reverse_count_spaces(pointer-1);
+             ^~~~~~~~~~~~~~~~~~~~
+../src/parser.c:395:5: note: declared here
+ int reverse_count_spaces (String start, String end){
+     ^~~~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+08:14:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:12:0:
+../src/parser.h:46:35: error: unknown type name ‘Dtring’
+ int reverse_count_spaces (String ,Dtring);
+                                   ^~~~~~
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+08:18:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:398:22: error: invalid operands to binary * (have ‘String {aka char *}’ and ‘long unsigned int’)
+  int size=(end=start)*sizeof(char);
+           ~~~~~~~~~~~^
+../src/parser.c:402:20: warning: format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
+    printf("char: [%c]\n");
+                    ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+08:18:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:402:20: warning: format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
+    printf("char: [%c]\n");
+                    ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:19:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:400:18: warning: comparison between pointer and integer
+  while (start[1] <end){
+                  ^
+../src/parser.c:402:20: warning: format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
+    printf("char: [%c]\n");
+                    ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:19:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘reverse_count_spaces’:
+../src/parser.c:402:20: warning: format ‘%c’ expects a matching ‘int’ argument [-Wformat=]
+    printf("char: [%c]\n");
+                    ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:19:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

@@ -395,13 +395,10 @@ int count_spaces (String str){
 int reverse_count_spaces (String start, String end){
 	int n=0;
 	int i=0;
-	int size=(end-start)*sizeof(char);
+	int size=(end=start)*sizeof(char);
 
-	while (&start[1] <end){
-		while ( start[i] !='\t' &&  start[i]!=' '){
-			printf("char: [%c]\n",start[i]);
-			i++;
-		}
+	while ( start[i] !='\t' &&  start[i]!=' '  && (&start[i]!=end)){
+		i++;
 	}
 
 	n=size-i;
@@ -477,7 +474,7 @@ String* extract_data_strings(char* str, int array_size){
 			pointer=strchr(str,',');
 
 		if (pointer != NULL){
-			n_spaces=reverse_count_spaces(str,pointer);
+			n_spaces=reverse_count_spaces(pointer-1);
 			printf("current str: [%s]\n",str);
 			printf("current pointer: [%s]\n",pointer);
 			printf("number of back spaces: %d\n",n_spaces);

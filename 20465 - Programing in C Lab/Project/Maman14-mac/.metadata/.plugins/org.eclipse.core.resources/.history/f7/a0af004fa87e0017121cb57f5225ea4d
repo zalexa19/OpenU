@@ -395,11 +395,11 @@ int count_spaces (String str){
 int reverse_count_spaces (String start, String end){
 	int n=0;
 	int i=0;
-	int size=(end-start)*sizeof(char);
+	int size=(end=start)*sizeof(char);
 
-	while (&start[1] <end){
+	while (start <end){
 		while ( start[i] !='\t' &&  start[i]!=' '){
-			printf("char: [%c]\n",start[i]);
+			printf("char: [%c]\n");
 			i++;
 		}
 	}

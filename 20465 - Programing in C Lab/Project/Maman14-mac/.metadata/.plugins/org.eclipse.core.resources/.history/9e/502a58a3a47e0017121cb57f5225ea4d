@@ -42,8 +42,7 @@ String* extract_data_strings(char* str, int);
 String remove_first_spaces(String  str);
 
 int count_spaces (String str);
-
-int reverse_count_spaces (String ,String);
+int reverse_count_spaces (String str)
 
 String extract_operation(String str);
 

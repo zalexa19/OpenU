@@ -1,4 +1,4 @@
-04:43:20 **** Incremental Build of configuration Debug for project Maman14 ****
+08:19:18 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/parser.c
 Invoking: GCC C Compiler
@@ -10,32 +10,7 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parse
 ../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
   String* datas_strings_array;
           ^~~~~~~~~~~~~~~~~~~
-../src/parser.c: In function ‘extract_data_strings’:
-../src/parser.c:441:6: warning: unused variable ‘cell’ [-Wunused-variable]
-  int cell=0;
-      ^~~~
 Finished building: ../src/parser.c
- 
-Building file: ../src/utils.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
-../src/utils.c: In function ‘print_structs’:
-../src/utils.c:98:42: warning: passing argument 2 of ‘print_mat’ makes integer from pointer without a cast [-Wint-conversion]
-     print_mat(array[i].data_string_array,array[i].data_string_array);
-                                          ^~~~~
-In file included from ../src/utils.c:8:0:
-../src/utils.h:83:6: note: expected ‘int’ but argument is of type ‘char **’
- void print_mat (String*, int);
-      ^~~~~~~~~
-../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
-  char null[]="null           ";
-       ^~~~
-Finished building: ../src/utils.c
- 
-Building file: ../src/validator.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
-Finished building: ../src/validator.c
  
 Building target: Maman14
 Invoking: GCC C Linker
@@ -43,5 +18,5 @@ gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  .
 Finished building target: Maman14
  
 
-04:43:21 Build Finished (took 809ms)
+08:19:18 Build Finished (took 470ms)
 

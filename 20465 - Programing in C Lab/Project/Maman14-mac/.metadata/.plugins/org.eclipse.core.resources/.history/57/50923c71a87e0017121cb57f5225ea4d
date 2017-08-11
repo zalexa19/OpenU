@@ -399,7 +399,7 @@ int reverse_count_spaces (String start, String end){
 
 	while (&start[1] <end){
 		while ( start[i] !='\t' &&  start[i]!=' '){
-			printf("char: [%c]\n",start[i]);
+			printf("char: [%c]\n");
 			i++;
 		}
 	}
