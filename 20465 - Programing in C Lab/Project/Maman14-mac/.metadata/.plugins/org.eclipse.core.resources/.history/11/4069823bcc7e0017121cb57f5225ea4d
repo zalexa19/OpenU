@@ -19,9 +19,12 @@ int main(void) {
 	bodyArray parsed;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
+	int ** matrix;
+	int i,j,n;
 
 	/*END OF DECLERATIONS*/
 
+	puts("!!!Starting tests!!!\n"); /* prints !!!Hello World!!! */
 
 	if (!(input_file = fopen("assembly_input.txt","r"))){
 		fprintf(stderr, "unable to find assembly file");
@@ -35,7 +38,6 @@ int main(void) {
 
 
 	print_structs(parsed,parsed_size);
-
 
 	printf("starting to validate file:\n");
 	printf("____________________________________\n");

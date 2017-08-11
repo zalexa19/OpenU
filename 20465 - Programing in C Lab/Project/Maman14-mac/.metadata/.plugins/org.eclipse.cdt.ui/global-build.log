@@ -10755,3 +10755,365 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+12:29:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:508:2: error: too few arguments to function ‘print_mat’
+  print_mat(final_array);
+  ^~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:83:6: note: declared here
+ void print_mat (String*, int);
+      ^~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+12:35:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:29: error: ‘parsed’ is a pointer; did you mean to use ‘->’?
+  print_structs(parsed,parsed.data_values_number);
+                             ^
+                             ->
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+12:35:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:30: error: ‘parsed’ is a pointer; did you mean to use ‘->’?
+  print_structs(parsed,*parsed.data_values_number);
+                              ^
+                              ->
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+12:35:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:98:42: warning: passing argument 2 of ‘print_mat’ makes integer from pointer without a cast [-Wint-conversion]
+     print_mat(array[i].data_string_array,array[i].data_string_array);
+                                          ^~~~~
+In file included from ../src/utils.c:8:0:
+../src/utils.h:84:6: note: expected ‘int’ but argument is of type ‘char **’
+ void print_mat (String*, int);
+      ^~~~~~~~~
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:37:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:39:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:84:13: error: ‘size’ undeclared (first use in this function)
+  for (i=0;i<size;i++){
+             ^~~~
+../src/utils.c:84:13: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:30: recipe for target 'src/utils.o' failed
+12:40:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:2: error: too few arguments to function ‘print_structs’
+  print_structs(parsed);
+  ^~~~~~~~~~~~~
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:79:6: note: declared here
+ void print_structs(bodyArray, int size);
+      ^~~~~~~~~~~~~
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Maman14-mac.o' failed
+12:40:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: variable ‘datas_strings_array’ set but not used [-Wunused-but-set-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘allocate_mem_matrix’:
+../src/utils.c:17:10: error: expected ‘;’ before ‘l’
+   exit(0)l
+          ^
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:30: recipe for target 'src/utils.o' failed
+12:40:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:41:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:23:10: warning: unused variable ‘n’ [-Wunused-variable]
+  int i,j,n;
+          ^
+../src/Maman14-mac.c:23:8: warning: unused variable ‘j’ [-Wunused-variable]
+  int i,j,n;
+        ^
+../src/Maman14-mac.c:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i,j,n;
+      ^
+../src/Maman14-mac.c:22:9: warning: unused variable ‘matrix’ [-Wunused-variable]
+  int ** matrix;
+         ^~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:42:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:42:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.

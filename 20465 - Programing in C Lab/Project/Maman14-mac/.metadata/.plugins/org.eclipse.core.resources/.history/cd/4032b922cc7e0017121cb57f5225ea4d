@@ -40,7 +40,6 @@ typedef enum {
  */
 typedef struct parsed_line {
 	int line_number;
-	int data_values_number;
 	String label;
 	String instruction;
 	String operantion;
@@ -76,7 +75,7 @@ String  allocate_mem_string(int);
 
 
 /*for testing*/
-void print_structs(bodyArray, int size);
+void print_structs(bodyArray, int);
 
 void add_spaces_print (String array);
 

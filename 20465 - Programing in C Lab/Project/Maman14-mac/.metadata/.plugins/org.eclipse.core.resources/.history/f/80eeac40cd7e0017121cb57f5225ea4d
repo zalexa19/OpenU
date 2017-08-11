@@ -19,6 +19,8 @@ int main(void) {
 	bodyArray parsed;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
+	int ** matrix;
+	int i,j,n;
 
 	/*END OF DECLERATIONS*/
 

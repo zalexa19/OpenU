@@ -27,7 +27,7 @@
 	strcpy(result,"\0");
 
 
-bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
+bodyArray  parse_file (FILE * file, int * parsed_size, int * n_lines){
 	String line;
 	bodyArray parsed_file;
 	int cell_counter;
@@ -143,7 +143,7 @@ body  parse_line (String str, int line_number){
 	}
 	else {
 		/*advance the pointer to the next space after the instruction*/
-
+/*		printf("++ENTERED ELSE\n");*/
 		size=strlen(result.instruction)+1;
 		current_pointer+=size;
 /*		printf("--------After skipping instruction:'%s \n",current_pointer);*/
@@ -155,9 +155,6 @@ body  parse_line (String str, int line_number){
 	}
 
 	/*PARSING OPERANDS*/
-	/*
-	 * In case of .data, we invoke a specific method that breaks the string by ','
-	 */
 	if ((strcmp(result.instruction,"data") == 0)){
 		printf("--extracting for data--\n\n");
 
@@ -169,17 +166,33 @@ body  parse_line (String str, int line_number){
 			}
 			i++;
 		}
-
 		data_array_size++;
 		result.data_values_number=data_array_size;
+
+
 		/*allocate memory*/
 		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
-
 		if (result.data_string_array != NULL){
-			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
+
+			datas_strings_array=extract_data_strings(current_pointer,data_array_size);
+			/*current_pointer should reach the end here*/
+/*			result.data_string_array = (String*)malloc(sizeof(String)*3);
+			result.data_string_array[0]=malloc(sizeof(char)*10);
+			result.data_string_array[1]=malloc(sizeof(char)*10);
+			result.data_string_array[2]=malloc(sizeof(char)*10);
+
+			strcpy(result.data_string_array[0],"alex");
+			strcpy(result.data_string_array[1],"writes");
+			strcpy(result.data_string_array[2],"code");*/
+
 		}else {
+
+
 			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
 		}
+
+
+
 	}
 	else{
 

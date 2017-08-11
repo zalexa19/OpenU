@@ -1,0 +1,26 @@
+	printf("------------------------------\n");
+	printf("Printing from extract_data_st:\n");
+	printf("------------------------------\n");
+	
+	
+	
+	
+	
+	
+		printf("TESTING MATRIX:\n");
+	printf("_____________________________________\n");
+
+	matrix=(int**)malloc(3*sizeof(int*));
+	for (i=0;i<3;i++){
+		matrix[i]=(int*)malloc(4*sizeof(int));
+	}
+
+	n=0;
+	for (i=0;i<3;i++){
+		n++;
+		for (j=0;j<4;j++){
+			matrix[i][j]=n;
+			n++;
+		}
+	}
+	

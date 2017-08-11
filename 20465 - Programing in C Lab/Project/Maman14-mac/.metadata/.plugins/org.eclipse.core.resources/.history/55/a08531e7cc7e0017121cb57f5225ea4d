@@ -14,7 +14,7 @@ String* allocate_mem_matrix(int size){
 	String* matrix = (String*)malloc(sizeof( String*)*size);
 	if (!matrix){
 		fprintf(stderr,"Unable to allocate memory to the matrix.\nContinuing with no operanns\n");
-		exit(0);
+		exit(0)l
 	}
 	return matrix;
 }
@@ -95,7 +95,7 @@ void print_structs(bodyArray array, int size){
 			printf("%s",tmp);
 
 			if (strcmp(array[i].instruction,"data")==0){
-				print_mat(array[i].data_string_array,array[i].data_values_number);
+				print_mat(array[i].data_string_array,array[i].data_string_array);
 			}
 		}else printf("               ");
 
