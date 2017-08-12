@@ -11117,3 +11117,996 @@ Finished building target: Maman14
 12:42:50 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 make: Nothing to be done for 'all'.
+02:25:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: unused variable ‘datas_strings_array’ [-Wunused-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:29:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: unused variable ‘datas_strings_array’ [-Wunused-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:30:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: unused variable ‘datas_strings_array’ [-Wunused-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:34:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:73:10: warning: unused variable ‘datas_strings_array’ [-Wunused-variable]
+  String* datas_strings_array;
+          ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:35:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:42:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:45:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:48:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/parser.c:96:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN,"---Extracted label: %s\n",result.label);
+         ^~~~~~
+../src/parser.c:97:9: error: ‘KNORMAL’ undeclared (first use in this function)
+  printf(KNORMAL,"",result.label);
+         ^~~~~~~
+../src/parser.c:97:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+02:48:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/parser.c:96:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN,"---Extracted label: %s\n",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:97:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL,"",result.label);
+         ^~~~~~
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:52:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:97:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:54:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:97:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:103:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:75:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:58:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:111:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:59:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:34:7: error: ‘extract_value’ undeclared (first use in this function)
+  free(extract_value);\
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value)
+  ^~~~~~~~~~
+../src/parser.c:34:7: note: each undeclared identifier is reported only once for each function it appears in
+  free(extract_value);\
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value)
+  ^~~~~~~~~~
+../src/parser.c:35:36: warning: passing argument 1 of ‘allocate_mem_string’ makes integer from pointer without a cast [-Wint-conversion]
+  extract_value=allocate_mem_string(current_pointer);
+                                    ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value)
+  ^~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:82:9: note: expected ‘int’ but argument is of type ‘char *’
+ String  allocate_mem_string(int);
+         ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:107:12: warning: statement with no effect [-Wunused-value]
+  REALLOCATE(extracted_value)
+            ^
+../src/parser.c:111:2: error: expected ‘;’ before ‘extracted_value’
+  extracted_value=extract_instruction(current_pointer);
+  ^~~~~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+02:59:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:34:7: error: ‘extract_value’ undeclared (first use in this function)
+  free(extract_value);\
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+../src/parser.c:34:7: note: each undeclared identifier is reported only once for each function it appears in
+  free(extract_value);\
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+../src/parser.c:35:36: warning: passing argument 1 of ‘allocate_mem_string’ makes integer from pointer without a cast [-Wint-conversion]
+  extract_value=allocate_mem_string(current_pointer);
+                                    ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:82:9: note: expected ‘int’ but argument is of type ‘char *’
+ String  allocate_mem_string(int);
+         ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:107:12: warning: statement with no effect [-Wunused-value]
+  REALLOCATE(extracted_value);
+            ^
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+03:00:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:34:7: error: ‘extract_value’ undeclared (first use in this function)
+  free(extract_value); \
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+../src/parser.c:34:7: note: each undeclared identifier is reported only once for each function it appears in
+  free(extract_value); \
+       ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+../src/parser.c:35:36: warning: passing argument 1 of ‘allocate_mem_string’ makes integer from pointer without a cast [-Wint-conversion]
+  extract_value=allocate_mem_string(current_pointer);
+                                    ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:82:9: note: expected ‘int’ but argument is of type ‘char *’
+ String  allocate_mem_string(int);
+         ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:107:12: warning: statement with no effect [-Wunused-value]
+  REALLOCATE(extracted_value);
+            ^
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+03:00:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:35:38: warning: passing argument 1 of ‘allocate_mem_string’ makes integer from pointer without a cast [-Wint-conversion]
+  extracted_value=allocate_mem_string(current_pointer);
+                                      ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE’
+  REALLOCATE(extracted_value);
+  ^~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:82:9: note: expected ‘int’ but argument is of type ‘char *’
+ String  allocate_mem_string(int);
+         ^~~~~~~~~~~~~~~~~~~
+../src/parser.c:107:12: warning: statement with no effect [-Wunused-value]
+  REALLOCATE(extracted_value);
+            ^
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:00:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:01:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:35:38: warning: passing argument 1 of ‘allocate_mem_string’ makes integer from pointer without a cast [-Wint-conversion]
+  extracted_value=allocate_mem_string(current_pointer);
+                                      ^
+../src/parser.c:107:2: note: in expansion of macro ‘REALLOCATE_EXTRACTED_VALUE’
+  REALLOCATE_EXTRACTED_VALUE;
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:82:9: note: expected ‘int’ but argument is of type ‘char *’
+ String  allocate_mem_string(int);
+         ^~~~~~~~~~~~~~~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:02:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:113:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:04:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:119:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:05:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:105:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:131:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:07:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:104:10: note: in expansion of macro ‘NORMAL’
+   printf(NORMAL "",result.label);
+          ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:108:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:136:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:10:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+Finished building: ../src/linkedlist.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:106:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:122:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:10:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:106:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/utils.h:15:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/parser.c:122:9: note: in expansion of macro ‘NORMAL’
+  printf(NORMAL "",result.label);
+         ^~~~~~
+../src/parser.c:83:7: warning: variable ‘oper_exists’ set but not used [-Wunused-but-set-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:24:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:82:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:74:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c: At top level:
+../src/parser.c:194:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/parser.c:195:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("PARSING OPERANDS:\n");
+         ^~~~~~~~~~~~~~~~~~~~~
+../src/parser.c:196:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/parser.c:199:2: error: expected identifier or ‘(’ before ‘if’
+  if ((strcmp(result.instruction,"data") == 0)){
+  ^~
+../src/parser.c:225:2: error: expected identifier or ‘(’ before ‘else’
+  else{
+  ^~~~
+../src/parser.c:267:2: warning: data definition has no type or storage class
+  current_pointer=str;
+  ^~~~~~~~~~~~~~~
+../src/parser.c:267:2: warning: type defaults to ‘int’ in declaration of ‘current_pointer’ [-Wimplicit-int]
+../src/parser.c:267:18: error: ‘str’ undeclared here (not in a function)
+  current_pointer=str;
+                  ^~~
+../src/parser.c:268:2: warning: data definition has no type or storage class
+  free(extracted_value);
+  ^~~~
+../src/parser.c:268:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/parser.c:268:2: warning: parameter names (without types) in function declaration
+../src/parser.c:268:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/parser.c:269:2: error: expected identifier or ‘(’ before ‘return’
+  return result;
+  ^~~~~~
+../src/parser.c:271:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:157:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+03:25:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:82:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:26:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:82:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:08:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:82:7: warning: variable ‘instr_exists’ set but not used [-Wunused-but-set-variable]
+  Bool instr_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c: In function ‘extract_operation’:
+../src/parser.c:422:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  char * ptr;
+         ^~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:23:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:300:11: warning: unknown escape sequence: '\040'
+    printf("\ 0");
+           ^~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:23:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:28:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+../src/parser.c: In function ‘extract_operand’:
+../src/parser.c:304:14: error: ‘i’ undeclared (first use in this function)
+   while (str[i] != '\0'){
+              ^
+../src/parser.c:304:14: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+04:29:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:37:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

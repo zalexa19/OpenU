@@ -1,2 +1,3 @@
-MAIN: .data +7,   -57,  17, 9
-
+MAIN: .data +7  ,   -57,  17, 9,	50
+LABEL: .date 16,71 
+	lol	op1, op2

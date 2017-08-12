@@ -1,6 +1,22 @@
-12:42:50 **** Incremental Build of configuration Debug for project Maman14 ****
+04:37:25 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:83:7: warning: unused variable ‘oper_exists’ [-Wunused-variable]
+  Bool oper_exists = FALSE;
+       ^~~~~~~~~~~
+../src/parser.c:81:7: warning: variable ‘label_exists’ set but not used [-Wunused-but-set-variable]
+  Bool label_exists = FALSE;
+       ^~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
 
-12:42:50 Build Finished (took 78ms)
+04:37:25 Build Finished (took 203ms)
 

@@ -11,6 +11,7 @@
 #include "utils.h"
 
 #define INITIAL_SARRAY_SIZE 8000
+#define ADDEDSIZE 1
 /*
  * This macro helps calculating which parts of the array need to be copied
  */
@@ -25,6 +26,14 @@
 #define RETURN_NULL(result) \
 	result=allocate_mem_string(1); \
 	strcpy(result,"\0");
+
+/*
+ * Frees the extract_value that receives from the function
+ * Allocates new memory
+ */
+#define REALLOCATE_EXTRACTED_VALUE\
+	free(extracted_value);\
+	extracted_value=allocate_mem_string(strlen(current_pointer));
 
 
 bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
@@ -70,99 +79,125 @@ body  parse_line (String str, int line_number){
 	int size;
 	int n_skipped_spaces;
 	int data_array_size=0;
-	String* datas_strings_array;
+	int str_length;
 	Bool label_exists = FALSE;
 	Bool instr_exists = FALSE;
 	Bool oper_exists = FALSE;
 
-	result.line_number=line_number;
+	/*puts \0 instead of \n*/
+	str_length=strlen(str);
+	str[str_length-1]='\0';
 
-	extracted_value=allocate_mem_string(MAXMEM);
-	current_pointer=str;
+	result.line_number=line_number;
 	n_skipped_spaces=count_spaces(str);
-	current_pointer += n_skipped_spaces;
+	str+=n_skipped_spaces;
+	current_pointer=str;
+
+	size=strlen(str);
+	extracted_value=allocate_mem_string(size);
 
 
 	/*extract label*/
 	extracted_value=extract_label(current_pointer);
-
-
-
 	result_size=strlen(extracted_value)+1;
 	result.label=allocate_mem_string(result_size);
+	result.label=extracted_value;
 	strcpy(result.label,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		label_exists=TRUE;
+		current_pointer+=result_size; /*Advance current_pointer to point to after ':'*/
 	}
-/*	printf("extracted label: %s\n",result.label);*/
+	printf(KBLUE "---Extracted label: [%s]\n",result.label);
+	NORMALCOLOR
+	printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+	NORMALCOLOR
+	REALLOCATE_EXTRACTED_VALUE;
+
 
 	/*extract instruction*/
-	strcpy(extracted_value,extract_instruction(current_pointer));
+	n_skipped_spaces=count_spaces(current_pointer);
+	current_pointer+=n_skipped_spaces;
+
+	extracted_value=extract_instruction(current_pointer);
 	result_size=strlen(extracted_value)+1;
 	result.instruction=allocate_mem_string(result_size);
 	strcpy(result.instruction,extracted_value);
-	if ((strcmp(extracted_value,"\0")) != 0){
+
+	/*
+	 * Instruction exists:
+	 * result.Instruction should be updated
+	 * current pointer should be advanced
+	 * operation should be updated with null
+	 *
+	 */
+	if ((strcmp(extracted_value,"\0")) != 0){ /*instruction exists*/
 		instr_exists=TRUE;
-/*		printf("++instr_exists=TRUE\n");*/
-	}
-/*	printf("extracted inst: %s\n",result.instruction);*/
+		printf(KBLUE "---Extracted instruction: [%s]\n",extracted_value);
+		NORMALCOLOR
 
+		/*advance the pointer*/
+		current_pointer+=result_size;
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+		NORMALCOLOR
 
-/*	printf("--------After instructing instruction:'%s' \n",current_pointer);*/
+		REALLOCATE_EXTRACTED_VALUE;
 
-	/*pointers skips the label if exists*/
-	if (label_exists==TRUE){
-		current_pointer+=strlen(result.label) +1;
-/*		printf("++label exists = TRUE\n");*/
-		/*printf("--------After skipping label:'%s' \n",current_pointer);*/
-
-	}
-
-
-	n_skipped_spaces=count_spaces(current_pointer);
-	current_pointer+=n_skipped_spaces;
-	/*	printf("--------After removing spaces and copying to copy:'%s \n",current_pointer);*/
-
-
-	/*if instruction wasn't receive, we extract the operational*/
-	if (instr_exists == FALSE){
-/*		printf("++instr_exists == FALSE\n");*/
-		/*Extract operation*/
-		strcpy(extracted_value,extract_operation(current_pointer));
-		result_size=strlen(extracted_value)+1;
-/*		printf("extracted value:%s, size: %d\n",extracted_value,result_size);*/
-		result.operantion=allocate_mem_string(result_size);
-
-		strncpy(result.operantion,extracted_value,result_size);
-		current_pointer+=result_size-1;
-
-/*		printf("+result.operation: [%s\n",result.operantion);*/
-		if ( strcmp(extracted_value,"\0") != 0 ){
-			oper_exists=TRUE;
-		}
-	}
-	else {
-		/*advance the pointer to the next space after the instruction*/
-
-		size=strlen(result.instruction)+1;
-		current_pointer+=size;
-/*		printf("--------After skipping instruction:'%s \n",current_pointer);*/
-
+		/*Update operation=null*/
 		result.operantion=allocate_mem_string(1);
 		strcpy(result.operantion,"\0");
-		/*printf("op: %s", result.operantion);*/
 
 	}
+	/*
+	 * Instruction doesn't exist:
+	 * operation should be extracted
+	 *
+	 */
+
+	else {
+		printf(KGREEN "extracting operation:\n");
+
+		/*EXTRACT THE OPERATION*/
+		extracted_value=extract_operation(current_pointer);
+		result_size=strlen(extracted_value)+1;
+		result.operantion=allocate_mem_string(result_size);
+		strcpy(result.operantion,extracted_value);
+/*
+		if (strcmp(extracted_value,"\0") == 0 ){
+			current_pointer+=result_size-1;
+		}*/
+
+		current_pointer+=result_size;
+/*
+		if ( strcmp(extracted_value,"\0") != 0 ){
+			current_pointer+=result_size-1;
+		}
+*/
+
+		n_skipped_spaces=count_spaces(current_pointer);
+		current_pointer+=n_skipped_spaces;
+		printf(KRED"skipped_spaces: %d\n",n_skipped_spaces);
+		NORMALCOLOR
+
+	}
+
+		REALLOCATE_EXTRACTED_VALUE;
+
+		printf(KBLUE "---!Extracted operation: [%s]\n",result.operantion);
+		printf(KCYN "---sCurrent pointer: [%s]\n",current_pointer);
+		NORMALCOLOR
 
 	/*PARSING OPERANDS*/
 	/*
 	 * In case of .data, we invoke a specific method that breaks the string by ','
 	 */
-	if ((strcmp(result.instruction,"data") == 0)){
-		printf("--extracting for data--\n\n");
 
+		printf(KGREEN "Extracting Operands:\n");
+
+	if ((strcmp(result.instruction,"data") == 0)){
 		/*Count number of operands*/
 		i=0;
+		printf(KGREEN "--parsing for: .data\n");
+		NORMALCOLOR
 		while(current_pointer[i]!='\n'){
 			if(current_pointer[i]==','){
 				data_array_size++;
@@ -172,6 +207,7 @@ body  parse_line (String str, int line_number){
 
 		data_array_size++;
 		result.data_values_number=data_array_size;
+
 		/*allocate memory*/
 		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
 
@@ -180,51 +216,76 @@ body  parse_line (String str, int line_number){
 		}else {
 			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
 		}
+
 	}
-	else{
+	/*
+	 * instruction is not .data, so we need to populate operands1-3 fields
+	 */
+	else {
+		printf(KGREEN "--parsing for non data \n");
+		NORMALCOLOR
 
-/*		printf("_________________________________________________\n");*/
-		n_skipped_spaces=count_spaces(current_pointer);
-		current_pointer+=n_skipped_spaces;
-	/*	printf("current_point: [%s\n",current_pointer);*/
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
-		strcpy(extracted_value,extract_operand(current_pointer));
+/*		n_skipped_spaces=count_spaces(current_pointer);
+		current_pointer+=n_skipped_spaces;*/
+
+		printf(KGREEN "OPERAND#1: \n");
+		NORMALCOLOR
+		extracted_value=extract_operand(current_pointer);
 		result_size=strlen(extracted_value)+1;
 		result.operand1=allocate_mem_string(result_size);
 		strcpy(result.operand1,extracted_value);
-		current_pointer+=result_size;
+		NORMALCOLOR
+
+		current_pointer+=result_size+1;
+		REALLOCATE_EXTRACTED_VALUE
+
+		printf(KBLUE "---Extracted operand1: [%s]\n",result.operand1);
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 
+		printf(KGREEN "OPERAND#2: \n");
+		NORMALCOLOR
 		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;
-	/*	printf("current_point: [%s\n",current_pointer);*/
 
 		strcpy(extracted_value,extract_operand(current_pointer));
 		result_size=strlen(extracted_value)+1;
 		result.operand2=allocate_mem_string(result_size);
 		strcpy(result.operand2,extracted_value);
-		current_pointer+=result_size;
+		current_pointer+=result_size+1;
 
-/*		printf("++current pointer:[%s \n",current_pointer);*/
+		printf(KBLUE "---Extracted operand2: [%s]\n",result.operand2);
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+
 
 		/*For non .data we expect to receive 2 operands. if more are received,
 		 * They are stored as junk to be validated by a different module, at a later stage
 		 * */
+		printf(KGREEN "OPERAND#3(Leftovers): \n");
+		NORMALCOLOR
+
 		if (current_pointer[0] != '\n'){
-			result_size=strlen(current_pointer);
-			result.operand3=allocate_mem_string(result_size);
-			strncpy(result.operand3,current_pointer,result_size);
+			printf(KGREEN"--extracting leftovers\n");
+			extracted_value=extract_operand(current_pointer);
+			result_size=strlen(extracted_value);
+			result.operand3=allocate_mem_string(result_size+ADDEDSIZE);
+			strcpy(result.operand3,extracted_value);
+
+			printf(KBLUE "---Extracted operand3: [%s]\n",result.operand3);
+			printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+		} else {
+			/*Reached \n */{
+				result.operand3=allocate_mem_string(1);
+				strcpy(result.operand3,"\0");
+			}
 		}
 
 	}
 
-	/*if we are handling .data:*/
-
+	NORMALCOLOR
 	free(extracted_value);
-/*
-	fprintf(stderr,"-------------------------------------------\n");
-	fprintf(stderr,"End of parse line\n");*/
-
 	return result;
 
 }
@@ -236,30 +297,38 @@ body  parse_line (String str, int line_number){
  */
 String extract_operand (String str){
 	int operand_size;
+	int count=0;
+	int i;
+	int n_spaces;
 	String ptr;
 	String result;
 
+	printf(KMAGENTA);
 
-/*	printf("---------------------------\n");
-	printf("inside extract_operands\n");
-	printf("---------------------------\n");
-	printf(".\n.\n.\n");*/
+	n_spaces=count_spaces(str);
+	str+=n_spaces;
+	ptr=strchr(str,',');
+	i=0;
+	if (!ptr){
+		/*we are the last operand*/
+		while (str[i] != '\0'){
+			count++;
+			i++;
+		}
 
-	ptr=str;
-
-	while(ptr[0]!='\n' && ptr[0]!=' ' && ptr[0]!=',' && ptr[0]!='t' && ptr[0]!='\0'){
-		ptr++;
+		ptr=str+i;
+		printf("counted %d chars\n",count);
 	}
 
 	operand_size=CALCSIZE(str,ptr);
-/*	printf("calculated size:%d\n",operand_size);*/
+	n_spaces=reverse_count_spaces(str,ptr);
+	operand_size=operand_size-n_spaces;
 
-	result=allocate_mem_string(operand_size+1);
+	result=allocate_mem_string(operand_size+ADDEDSIZE);
 	strncpy(result,str,operand_size);
-/*	printf("[%s]\n",result);*/
-
+	printf("operand size:%d\nstr: [%sresult: [%s\n",operand_size,str,result);
+	NORMALCOLOR
 	return result;
-
 
 }
 
@@ -284,7 +353,7 @@ String extract_label (String line){
 	/*size = (found_char-array_start) * sizeof(char);*/
 	size = CALCSIZE(array_start,found_char);
 /*	fprintf(stderr,"---label length: %d\n",size);*/
-	result = allocate_mem_string(size+1);
+	result = allocate_mem_string(size+ADDEDSIZE);
 
 	strncpy(result,line,size);
 /*	printf(" in result:%s\n",result);*/
@@ -303,12 +372,8 @@ char * extract_instruction(char * str){
 	char * inspection_end;
 	int size;
 
-	result=allocate_mem_string(strlen(str)+1);
-
+	result=allocate_mem_string(strlen(str)+ADDEDSIZE);
 	array_start=str;
-
-/*	fprintf(stderr,"---Extract_instruction: started\n");*/
-/*	fprintf(stderr,"---Extracting: dot \n");*/
 
 	found_char = strchr(str,'.');
 	if (!found_char){
@@ -317,15 +382,10 @@ char * extract_instruction(char * str){
 	}
 
 	/*In which position the dot appears. 1 is added because we care about what's after the dot*/
-	/*size = ((found_char - array_start) * sizeof(char))+1;*/
 	size=CALCSIZE(array_start,found_char);
 	size++;
 
-/*	fprintf(stderr,"---Calculated dot position:%d\n",size);*/
 	inspection_start=str+size;
-/*	strcpy(copy,inspection_start); Now copy holds everything after the dot*/
-
-/*	fprintf(stderr,"---Extracting: space \n");*/
 	inspection_end = strchr(inspection_start,' ');
 	if (!inspection_end){
 		size=strlen(inspection_start);
@@ -334,12 +394,11 @@ char * extract_instruction(char * str){
 
 	size=CALCSIZE(inspection_start, inspection_end);
 	strncpy(result,inspection_start,size);
-	/*strncpy(result,copy,size);*/
-/*		printf("in result: %s\n",result);*/
-	/*fprintf(stderr,"---Extraction_instruction: Completed.\n");*/
 
 	return result;
 }
+
+
 
 /*This function runs from the first cell until the first non-blank char and removes the blanks*/
 String remove_first_spaces(String str){
@@ -396,28 +455,31 @@ int reverse_count_spaces (String start, String end){
 
 String extract_operation(String str){
 	int n_spaces;
-	int size;
+	int size=0;
 	String result;
-	char * ptr;
+	int i;
+	char c;
 
-/*	fprintf(stderr,"---Starting extract_operation\n");*/
 	n_spaces= count_spaces(str);
 	str +=n_spaces;
-	/*printf("--------remove spaces again: '%s \n",str);*/
 
+/*	printf(KMAGENTA "STR: [%s\n",str);*/
 
-	ptr=strchr(str,' ');
-	if (!ptr){
-		size=strlen(str)-1;
-		ptr=str+size;
+	i=0;
+	c=str[i];
+	while (c != ' ' && c!='\t' && c!='\n'){
+		size++;
+		i++;
+		c=str[i];
 	}
 
-	size=CALCSIZE(str,ptr);
+	result=allocate_mem_string(size+ADDEDSIZE);
 
-	result=allocate_mem_string(size+1);
-	memcpy(result,str,size);
-/*	fprintf(stderr,"---Extract_operation: completed\n");*/
+	strncpy(result,str,size);
 
+/*	printf(KMAGENTA "STR: [%s\n",str);*/
+
+	NORMALCOLOR
 	return result;
 }
 

@@ -12,6 +12,18 @@
 #include <string.h>
 
 
+#define NORMAL  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGREEN  "\x1B[32m"
+#define KYELLOW  "\x1B[33m"
+#define KBLUE  "\x1B[34m"
+#define KMAGENTA  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHITE  "\x1B[37m"
+
+#define NORMALCOLOR printf(NORMAL "");
+
+
 #define MAXMEM 81
 
 #define COMPARE(a,b) strcmp(a,"b")
