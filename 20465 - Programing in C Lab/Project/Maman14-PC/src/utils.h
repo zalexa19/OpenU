@@ -71,6 +71,17 @@ typedef  body * bodyArray;
 
 
 
+/*
+ * Linked List
+ */
+
+typedef struct node* list_item_reference;
+typedef struct node {
+	String str;
+	list_item_reference next;
+	list_item_reference prev;
+}list_item;
+
 
 
 /**********************************/
@@ -83,6 +94,17 @@ bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct
 /*A function that receives a string length and allocates the required memory */
 String* allocate_mem_matrix(int size);
 String  allocate_mem_string(int);
+
+
+/**
+ * For linked list
+ */
+
+void add_to_list(list_item_reference*,String);
+
+void print_list(list_item_reference);
+
+void free_list(list_item_reference*);
 
 
 

@@ -219,3 +219,51 @@ void print_mat (String* mat, int size){
 	printf("\n");
 
 }
+
+
+/*
+ * Linked List
+ */
+
+void add_to_list(list_item_reference * head,String str){
+	list_item_reference temp,new_item;
+
+	new_item = (list_item_reference)malloc(sizeof(list_item)*strlen(str+1));
+	if(!new_item){
+		fprintf(stderr,"unable to allocate memory to a list item. Exiting the program\n");
+		exit(0);
+	}
+
+	strcpy(new_item->str,str);
+	*head=new_item;
+	new_item->next=NULL;
+
+	if (*head == NULL){
+
+		new_item->prev=NULL;
+	}
+
+	else{
+		temp=head;
+		while (temp->next != NULL){
+			temp=temp->next;
+		}
+
+		temp->next=new_item;
+		new_item->prev=temp;
+
+	}
+
+}
+
+void print_list(list_item_reference head){
+
+	while (head->next != NULL){
+		printf("%s ==> ",head->str);
+	}
+
+}
+
+void free_list(list_item_reference *head){
+	free(*head);
+}

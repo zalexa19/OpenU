@@ -1,4 +1,4 @@
-05:37:56 **** Incremental Build of configuration Debug for project Maman14 ****
+13:35:41 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/utils.c
 Invoking: GCC C Compiler
@@ -7,13 +7,33 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.
 ../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
   char null[]="null           ";
        ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
 Finished building: ../src/utils.c
  
-Building target: Maman14
-Invoking: GCC C Linker
-gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
-Finished building target: Maman14
- 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:16:12: warning: unused variable ‘error_list_head’ [-Wunused-variable]
+  list_item error_list_head;
+            ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:86:4: error: ‘valid’ undeclared (first use in this function)
+   *valid=FALSE;
+    ^~~~~
+../src/validator.c:86:4: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
 
-05:37:56 Build Finished (took 228ms)
+13:35:41 Build Finished (took 191ms)
 

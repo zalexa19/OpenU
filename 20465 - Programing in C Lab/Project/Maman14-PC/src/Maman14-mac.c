@@ -38,7 +38,6 @@ int main(void) {
 
 
 	printf("\n\n\starting to validate file:\n");
-	printf("____________________________________\n\n\n");
 
 	validate_file(parsed,parsed_size);
 

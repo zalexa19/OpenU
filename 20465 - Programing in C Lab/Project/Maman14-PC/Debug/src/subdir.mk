@@ -5,21 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/Maman14-mac.c \
-../src/linkedlist.c \
 ../src/parser.c \
 ../src/utils.c \
 ../src/validator.c 
 
 OBJS += \
 ./src/Maman14-mac.o \
-./src/linkedlist.o \
 ./src/parser.o \
 ./src/utils.o \
 ./src/validator.o 
 
 C_DEPS += \
 ./src/Maman14-mac.d \
-./src/linkedlist.d \
 ./src/parser.d \
 ./src/utils.d \
 ./src/validator.d 

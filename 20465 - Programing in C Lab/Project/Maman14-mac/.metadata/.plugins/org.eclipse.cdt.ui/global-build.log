@@ -12345,3 +12345,1323 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+06:24:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:6:7: warning: unused variable ‘item’ [-Wunused-variable]
+  body item;
+       ^~~~
+../src/validator.c:5:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c: At top level:
+../src/validator.c:46:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:25:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:6:7: warning: unused variable ‘item’ [-Wunused-variable]
+  body item;
+       ^~~~
+../src/validator.c:5:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:25:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+06:26:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:5:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:32:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:10:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:33:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:10:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:34:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:10:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:59:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:36:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:10:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:60:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:37:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:19:6: error: redeclaration of ‘i’ with no linkage
+  int i=0;
+      ^
+../src/validator.c:10:6: note: previous declaration of ‘i’ was here
+  int i;
+      ^
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:62:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+make: *** [src/validator.o] Error 1
+06:37:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:62:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:39:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:68:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:41:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:69:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:42:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+../src/parser.c: In function ‘parse_line’:
+Building file: ../src/parser.c
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:53:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:72:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c: In function ‘is_valid_letter’:
+../src/validator.c:105:48: error: expected ‘)’ before ‘{’ token
+  if (('a'<=c && c<= 'z') || ('A'<=c && c<= 'Z'){
+                                                ^
+../src/validator.c:112:1: error: expected expression before ‘}’ token
+ }
+ ^
+../src/validator.c:112:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+06:53:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:72:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:58:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:77:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:87:14: error: ‘str’ undeclared (first use in this function)
+  size=strlen(str);
+              ^~~
+../src/validator.c:87:14: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:91:17: warning: implicit declaration of function ‘is_valid_letter’ [-Wimplicit-function-declaration]
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:122:6: error: conflicting types for ‘is_valid_letter’
+ Bool is_valid_letter(char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:91:17: note: previous implicit declaration of ‘is_valid_letter’ was here
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+06:58:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:77:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:91:17: warning: implicit declaration of function ‘is_valid_letter’ [-Wimplicit-function-declaration]
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:122:6: error: conflicting types for ‘is_valid_letter’
+ Bool is_valid_letter(char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:91:17: note: previous implicit declaration of ‘is_valid_letter’ was here
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+07:01:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:77:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:90:2: error: called object ‘is_valid_char’ is not a function or function pointer
+  is_valid_char(c);
+  ^~~~~~~~~~~~~
+../src/validator.c:74:7: note: declared here
+  Bool is_valid_char;
+       ^~~~~~~~~~~~~
+../src/validator.c:102:17: warning: implicit declaration of function ‘is_valid_letter’ [-Wimplicit-function-declaration]
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:136:6: error: conflicting types for ‘is_valid_letter’
+ Bool is_valid_letter(char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:102:17: note: previous implicit declaration of ‘is_valid_letter’ was here
+   is_valid_char=is_valid_letter(c);
+                 ^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+07:02:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:77:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:90:2: error: called object ‘is_valid_char’ is not a function or function pointer
+  is_valid_char(c);
+  ^~~~~~~~~~~~~
+../src/validator.c:74:7: note: declared here
+  Bool is_valid_char;
+       ^~~~~~~~~~~~~
+../src/validator.c: In function ‘is_valid_number’:
+../src/validator.c:149:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+07:03:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:78:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:91:2: error: called object ‘is_valid_char’ is not a function or function pointer
+  is_valid_char(c);
+  ^~~~~~~~~~~~~
+../src/validator.c:75:7: note: declared here
+  Bool is_valid_char;
+       ^~~~~~~~~~~~~
+../src/validator.c: In function ‘is_valid_number’:
+../src/validator.c:150:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+07:04:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:78:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:91:2: error: called object ‘is_valid_char’ is not a function or function pointer
+  is_valid_char(c);
+  ^~~~~~~~~~~~~
+../src/validator.c:75:7: note: declared here
+  Bool is_valid_char;
+       ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+07:05:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:78:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/linkedlist.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:19:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+../src/linkedlist.c:10:16: error: redefinition of ‘struct node’
+ typedef struct node{
+                ^~~~
+In file included from ../src/linkedlist.c:7:0:
+../src/utils.h:78:16: note: originally defined here
+ typedef struct node* list_item_reference;
+                ^~~~
+src/subdir.mk:30: recipe for target 'src/linkedlist.o' failed
+make: *** [src/linkedlist.o] Error 1
+13:19:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+../src/linkedlist.c:10:16: error: redefinition of ‘struct node’
+ typedef struct node{
+                ^~~~
+In file included from ../src/linkedlist.c:7:0:
+../src/utils.h:78:16: note: originally defined here
+ typedef struct node* list_item_reference;
+                ^~~~
+make: *** [src/linkedlist.o] Error 1
+src/subdir.mk:30: recipe for target 'src/linkedlist.o' failed
+13:19:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+src/subdir.mk:30: recipe for target 'src/linkedlist.o' failed
+../src/linkedlist.c:10:16: error: redefinition of ‘struct node’
+ typedef struct node{
+                ^~~~
+In file included from ../src/linkedlist.c:7:0:
+../src/utils.h:78:16: note: originally defined here
+ typedef struct node* list_item_reference;
+                ^~~~
+make: *** [src/linkedlist.o] Error 1
+13:33:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/linkedlist.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/linkedlist.d" -MT"src/linkedlist.d" -o "src/linkedlist.o" "../src/linkedlist.c"
+../src/linkedlist.c:10:16: error: redefinition of ‘struct node’
+ typedef struct node{
+                ^~~~
+In file included from ../src/linkedlist.c:7:0:
+../src/utils.h:78:16: note: originally defined here
+ typedef struct node* list_item_reference;
+                ^~~~
+make: *** [src/linkedlist.o] Error 1
+src/subdir.mk:30: recipe for target 'src/linkedlist.o' failed
+13:33:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:25: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s |--> ",head.str);
+                         ^
+                         ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:33:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:24: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s |-> ",head.str);
+                        ^
+                        ->
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+13:33:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:23: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s >> ",head.str);
+                       ^
+                       ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:22: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s | ",head.str);
+                      ^
+                      ->
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+13:34:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:10: warning: unknown escape sequence: '\|'
+   printf("%s \| ",head.str);
+          ^~~~~~~~
+../src/utils.c:262:23: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s \| ",head.str);
+                       ^
+                       ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:10: warning: unknown escape sequence: '\|'
+   printf("%s \| ",*head.str);
+          ^~~~~~~~
+../src/utils.c:262:24: error: ‘head’ is a pointer; did you mean to use ‘->’?
+   printf("%s \| ",*head.str);
+                        ^
+                        ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:262:10: warning: unknown escape sequence: '\|'
+   printf("%s \| ",head->str);
+          ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+13:34:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != null){
+             ^
+             ->
+../src/utils.c:261:22: error: ‘null’ undeclared (first use in this function)
+  while (head.next != null){
+                      ^~~~
+../src/utils.c:261:22: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != NULL){
+             ^
+             ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+../src/utils.c: In function ‘print_list’:
+../src/utils.c:261:13: error: ‘head’ is a pointer; did you mean to use ‘->’?
+  while (head.next != NULL){
+             ^
+             ->
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:34:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:237:17: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  strcpy(new_item.str,str);
+                 ^
+                 ->
+../src/utils.c:239:10: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+  new_item.next=NULL;
+          ^
+          ->
+../src/utils.c:243:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=NULL;
+           ^
+           ->
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+../src/utils.c:248:14: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   while (temp.next != NULL){
+              ^
+              ->
+../src/utils.c:249:13: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+    temp=temp.next;
+             ^
+             ->
+../src/utils.c:252:7: error: ‘temp’ is a pointer; did you mean to use ‘->’?
+   temp.next=new_item;
+       ^
+       ->
+../src/utils.c:253:11: error: ‘new_item’ is a pointer; did you mean to use ‘->’?
+   new_item.prev=temp;
+           ^
+           ->
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+13:35:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:16:12: warning: unused variable ‘error_list_head’ [-Wunused-variable]
+  list_item error_list_head;
+            ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:86:4: error: ‘valid’ undeclared (first use in this function)
+   *valid=FALSE;
+    ^~~~~
+../src/validator.c:86:4: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed

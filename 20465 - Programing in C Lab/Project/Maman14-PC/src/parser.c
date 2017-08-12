@@ -90,6 +90,7 @@ body  parse_line (String str, int line_number){
 	str+=n_skipped_spaces;
 	current_pointer=str;
 
+	result.valid=TRUE;
 
 
 
