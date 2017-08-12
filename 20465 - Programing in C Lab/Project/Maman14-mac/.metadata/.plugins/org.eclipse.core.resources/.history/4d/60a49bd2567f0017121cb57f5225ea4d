@@ -37,7 +37,7 @@ int main(void) {
 	print_structs(parsed,parsed_size);
 
 
-	printf("\n\n\starting to validate file:\n");
+	printf("starting to validate file:\n");
 	printf("____________________________________\n\n\n");
 
 	validate_file(parsed,parsed_size);

@@ -90,17 +90,17 @@ body  parse_line (String str, int line_number){
 	str+=n_skipped_spaces;
 	current_pointer=str;
 
-
+	size=strlen(str);
+	extracted_value=allocate_mem_string(size);
 
 
 	/*extract label*/
 	extracted_value=extract_label(current_pointer);
-
 	result_size=strlen(extracted_value)+1;
 
 	result.label=allocate_mem_string(result_size);
 	strcpy(result.label,extracted_value);
-
+	strcpy(result.label,extracted_value);
 	if ((strcmp(extracted_value,"\0")) != 0){
 		current_pointer+=result_size; /*Advance current_pointer to point to after ':'*/
 	}
@@ -194,7 +194,7 @@ body  parse_line (String str, int line_number){
 		i=0;
 		printf(KGREEN "--parsing for: .data\n");
 		NORMALCOLOR
-		while(current_pointer[i]!='\0'){
+		while(current_pointer[i]!='\n'){
 			if(current_pointer[i]==','){
 				data_array_size++;
 			}

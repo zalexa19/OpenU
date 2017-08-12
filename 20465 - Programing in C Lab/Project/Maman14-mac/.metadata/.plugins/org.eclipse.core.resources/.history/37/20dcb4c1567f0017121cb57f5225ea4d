@@ -8,7 +8,7 @@ void validate_file(bodyArray parsed, int array_size){
 	for (i=0;i<array_size; i++){
 		item=parsed[i];
 		printf("current_struct:\n");
-/*		print_line(item);*/
+		print_line(item);
 /*
 		if(strcmp(item.label,"\0") != 0){
 			printf("label exits\n");

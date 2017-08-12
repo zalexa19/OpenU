@@ -80,6 +80,9 @@ body  parse_line (String str, int line_number){
 	int n_skipped_spaces;
 	int data_array_size=0;
 	int str_length;
+	Bool label_exists = FALSE;
+	Bool instr_exists = FALSE;
+	Bool oper_exists = FALSE;
 
 	/*puts \0 instead of \n*/
 	str_length=strlen(str);
@@ -90,18 +93,18 @@ body  parse_line (String str, int line_number){
 	str+=n_skipped_spaces;
 	current_pointer=str;
 
-
+	size=strlen(str);
+	extracted_value=allocate_mem_string(size);
 
 
 	/*extract label*/
 	extracted_value=extract_label(current_pointer);
-
 	result_size=strlen(extracted_value)+1;
-
 	result.label=allocate_mem_string(result_size);
+	result.label=extracted_value;
 	strcpy(result.label,extracted_value);
-
 	if ((strcmp(extracted_value,"\0")) != 0){
+		label_exists=TRUE;
 		current_pointer+=result_size; /*Advance current_pointer to point to after ':'*/
 	}
 	printf(KBLUE "---Extracted label: [%s]\n",result.label);
@@ -128,6 +131,7 @@ body  parse_line (String str, int line_number){
 	 *
 	 */
 	if ((strcmp(extracted_value,"\0")) != 0){ /*instruction exists*/
+		instr_exists=TRUE;
 		printf(KBLUE "---Extracted instruction: [%s]\n",extracted_value);
 		NORMALCOLOR
 
@@ -194,7 +198,7 @@ body  parse_line (String str, int line_number){
 		i=0;
 		printf(KGREEN "--parsing for: .data\n");
 		NORMALCOLOR
-		while(current_pointer[i]!='\0'){
+		while(current_pointer[i]!='\n'){
 			if(current_pointer[i]==','){
 				data_array_size++;
 			}
@@ -282,9 +286,6 @@ body  parse_line (String str, int line_number){
 
 	NORMALCOLOR
 	free(extracted_value);
-
-
-	print_line(result);
 	return result;
 
 }
