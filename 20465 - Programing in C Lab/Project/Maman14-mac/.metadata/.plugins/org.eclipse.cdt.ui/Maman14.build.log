@@ -1,6 +1,19 @@
-04:21:55 **** Incremental Build of configuration Debug for project Maman14 ****
+07:51:37 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
 
-04:21:55 Build Finished (took 75ms)
+07:51:38 Build Finished (took 347ms)
 

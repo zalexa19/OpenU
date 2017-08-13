@@ -226,34 +226,41 @@ void print_mat (String* mat, int size){
  */
 
 void add_to_list(list_item_reference * head,String str){
-	list_item_reference temp,new_item;
-	new_item = (list_item_reference)malloc(sizeof(list_item)*strlen(str+1));
+	list_item_reference new_item,temp;
+
+	new_item = (list_item_reference)malloc(sizeof(list_item)*strlen(str)+1);
 	if(!new_item){
 		fprintf(stderr,"unable to allocate memory to a list item. Exiting the program\n");
 		exit(0);
 	}
 
-	strcpy(new_item->str,str);
+	printf(KGREEN "Adding to list\n");
 
+	strcpy(new_item->str,str);
 	new_item->next=NULL;
 
 	if (*head == NULL){
+		printf(KYELLOW "head= null\n");
 		new_item->prev=NULL;
 		*head=new_item;
 	}
 	else{
+		printf(KGREEN"head is not null\n");
+		NORMALCOLOR
+
 		temp=*head;
+
+
 		while (temp->next != NULL){
+			printf("advance temp\n");
 			temp=temp->next;
 		}
 
 		temp->next=new_item;
 		new_item->prev=temp;
-
 	}
 
-
-	printf("DONE ADDING TO LIST\n");
+	printf(KGREEN "Finished adding to list\n");
 }
 
 void print_list(list_item_reference head){
@@ -263,13 +270,8 @@ void print_list(list_item_reference head){
 		return;
 	}
 
-	if (head->next == NULL){
-		printf(KBLUE "%s",head->str);
-		return;
-	}
 
-
-	while (head->next != NULL){
+	while (head != NULL){
 		printf(KBLUE "%s",head->str);
 		head=head->next;
 	}

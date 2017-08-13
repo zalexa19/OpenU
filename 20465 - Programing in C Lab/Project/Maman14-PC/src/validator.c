@@ -25,13 +25,12 @@ void validate_file(bodyArray parsed, int array_size){
 
 	i=0;
 	item=parsed[i];
+	error_list_head=NULL;
 
 
 	if(strcmp(item.label,"\0") != 0){
 		/*VALIDATE LABEL*/
-		printf(KCYN "--Starting to validate label\n");
-		validate_label(item,error_list_head);
-
+		validate_label(item,&error_list_head);
 
 		if (item.valid==TRUE){
 			printf(KGREEN "Label <%s> is valid\n",item.label);
@@ -67,50 +66,60 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 */
-	}
+
+	printf(KYELLOW"------------------------------\n");
+    printf("      ERROS:        \n");
+	printf("------------------------------\n");
+
+	print_list(error_list_head);
+
+}
 
 
 
-void validate_label (body item, list_item_reference head){
+void validate_label (body item, list_item_reference*  head){
 	String label;
+	int line_number;
 	char error[MAXERRORSIZE];
+	char error2[MAXERRORSIZE];
 	int length;
 	int size;
 	int i;
 	char c;
 	Bool valid_letter;
 	Bool is_a_num;
+	char * temp[MAXERRORSIZE];
 
 	printf(KMAGENTA "validating label:\n");
-
 	label=item.label;
-
+	line_number=item.line_number;
 
 	/*validating label length*/
 	length=strlen(label);
 	if (length > MAXLABELSIZE){
 		item.valid=FALSE;
 
-		sprintf(error,"Error in line %d: Label <%s> is too long.\n",item.line_number,label);
-		printf("%s\n",error);
-
-		add_to_list(&head,error);
+		sprintf(error,"aa Error in line %d: Label <%s> is too long.\n",line_number,label);
+		add_to_list(head,error);
+		printf("added the first\n");
 
 	}
 
 
 	/*validate the first char*/
 
-/*
 	i=0;
 	c=label[i];
 	valid_letter=is_valid_letter(c);
+
 	if (valid_letter==FALSE){
-		INVALIDINPUT
-		fprintf(stderr,"Label doesn't start with a letter: %c\n",c);
+		item.valid=FALSE;
+		sprintf(error2,"bb Error in line %d: Label <%s> doesn't start with a letter (%c).\n",line_number,label,c);
+		add_to_list(head,error2);
+		printf("added the second\n");
 	}
 	i++;
-*/
+
 
 	/*validating chars:*/
 /*	size=strlen(label);
@@ -130,7 +139,6 @@ void validate_label (body item, list_item_reference head){
 	}*/
 
 
-	print_list(head);
 }
 
 void validate_instruction(String inst){
