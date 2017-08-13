@@ -236,6 +236,8 @@ void add_to_list(list_item_reference * head, String str){
 
 	new_item->str=allocate_mem_string(strlen(str)+1);
 
+	printf(KGREEN "Adding to list\n");
+	NORMALCOLOR
 	strcpy(new_item->str,str);
 	new_item->next=NULL;
 
@@ -246,7 +248,9 @@ void add_to_list(list_item_reference * head, String str){
 	else{
 		temp=*head;
 
+
 		while (temp->next != NULL){
+			printf("advance temp\n");
 			temp=temp->next;
 		}
 
@@ -254,6 +258,7 @@ void add_to_list(list_item_reference * head, String str){
 		new_item->prev=temp;
 	}
 
+	printf(KGREEN "Finished adding to list\n");
 }
 
 void print_list(list_item_reference head){

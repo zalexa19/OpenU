@@ -44,7 +44,7 @@ void validate_file(bodyArray parsed, int array_size){
 	if(strcmp(item.instruction,"\0") != 0){
 		/*VALIDATE INSTRUCTION*/
 		printf("instruction exists\n");
-		validate_instruction(&item,&error_list_head);;
+		validate_instruction(item,&error_list_head);;
 
 
 		if (item.valid==TRUE){
@@ -57,7 +57,7 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 
-		validate_ins_oprands(&item, &error_list_head);
+		validate_ins_oprands(item, &error_list_head);
 		NORMALCOLOR
 		printf("finished validating file\n");
 	}

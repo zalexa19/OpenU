@@ -32,36 +32,23 @@ void validate_file(bodyArray parsed, int array_size){
 		/*VALIDATE LABEL*/
 		validate_label(&item,&error_list_head);
 
-
-		if (item.valid==TRUE){
-			printf(KGREEN "Label <%s> is valid\n",item.label);
-		} else {
-			printf(KRED "Label <%s> is invalid\n",item.label);
-		}
-
-	}
-
-	if(strcmp(item.instruction,"\0") != 0){
-		/*VALIDATE INSTRUCTION*/
-		printf("instruction exists\n");
-		validate_instruction(&item,&error_list_head);;
-
-
-		if (item.valid==TRUE){
-			printf(KGREEN "Label <%s> is valid\n",item.label);
-		} else {
-			printf(KRED "Label <%s> is invalid\n",item.label);
-		}
-
-
-
-
-
-		validate_ins_oprands(&item, &error_list_head);
-		NORMALCOLOR
 		printf("finished validating file\n");
+		if (item.valid==TRUE){
+			printf(KGREEN "Label <%s> is valid\n",item.label);
+		} else {
+			printf(KRED "Label <%s> is invalid\n",item.label);
+		}
+
+
+
 	}
-/*
+
+/*	if(strcmp(item.instruction,"\0") != 0){
+		printf("instruction exists\n");
+		validate_instruction(item.instruction);
+		validate_ins_oprands(item);
+	}
+
 	if(strcmp(item.operantion,"\0") != 0){
 		printf("operation exists\n");
 		validate_operation(item.operantion);
@@ -70,8 +57,8 @@ void validate_file(bodyArray parsed, int array_size){
 
 	if(strcmp(item.label,"\0") != 0){
 
-	}
-*/
+	}*/
+
 
 
 
@@ -84,9 +71,6 @@ void validate_file(bodyArray parsed, int array_size){
 
 */
 
-	printf(KYELLOW"------------------------------\n");
-    printf("      ERRORS:        \n");
-	printf("------------------------------\n");
 
 	print_list(error_list_head);
 	NORMALCOLOR
@@ -162,22 +146,22 @@ void validate_label (body* item, list_item_reference*  head){
 
 }
 
-void validate_instruction(body* item, list_item_reference*  head){
-
-
-}
-
-void validate_operation(body* item, list_item_reference*  head){
+void validate_instruction(String inst){
 
 }
 
-void validate_ins_oprands (body* item, list_item_reference*  head){
+void validate_operation(String operation){
 
 }
 
-void validate_oper_operands (body* item, list_item_reference*  head){
+void validate_ins_oprands (body item){
 
 }
+
+void validate_oper_operands (body item){
+
+}
+
 
 
 Bool is_valid_letter(char c){
@@ -197,146 +181,4 @@ Bool is_valid_number (char c){
 	}
 
 	return FALSE;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-String find_command_name(String key){
-	String data="data";
-	String str="string";
-	String mat="mat";
-	String entry="entry";
-	String none="none";
-	String external="external";
-
-	String mov="mov";
-	String cmp="cmp";
-	String add="add";
-	String sub="sub";
-	String lea="lea";
-
-	String not="not";
-	String clr="clr";
-	String inc="inc";
-	String dec="dec";
-	String jmp="jmp";
-	String bne="bne";
-	String red="red";
-	String prn="prn";
-	String jsr="jsr";
-
-	String rts="rts";
-	String stop="stop";
-
-	if (strcmp(key,data)==0){
-		return data;
-	}
-	if (strcmp(key,str)==0){
-		return str;
-	}
-	if (strcmp(key,mat)==0){
-		return mat;
-	}
-	if (strcmp(key,entry)==0){
-		return entry;
-	}
-	if (strcmp(key,external)==0){
-		return external;
-	}
-
-
-
-	if (strcmp(key,mov)==0){
-		return mov;
-	}
-
-	if (strcmp(key,cmp)==0){
-		return cmp;
-	}
-
-	if (strcmp(key,add)==0){
-		return add;
-	}
-
-	if (strcmp(key,sub)==0){
-		return sub;
-	}
-
-	if (strcmp(key,lea)==0){
-		return lea;
-	}
-
-
-	if (strcmp(key,not)==0){
-		return not;
-	}
-	if (strcmp(key,clr)==0){
-		return clr;
-	}
-
-	if (strcmp(key,inc)==0){
-		return inc;
-	}
-
-	if (strcmp(key,dec)==0){
-		return dec;
-
-	}
-	if (strcmp(key,jmp)==0){
-		return jmp;
-	}
-
-	if (strcmp(key,bne)==0){
-		return bne;
-	}
-
-	if (strcmp(key,red)==0){
-		return red;
-	}
-
-	if (strcmp(key,prn)==0){
-		return prn;
-	}
-
-	if (strcmp(key,jsr)==0){
-		return jsr;
-
-
-
-	}
-	if (strcmp(key,rts)==0){
-		return rts;
-	}
-
-	if (strcmp(key,stop)==0){
-		return stop;
-	}
-
-
-	return none;
 }

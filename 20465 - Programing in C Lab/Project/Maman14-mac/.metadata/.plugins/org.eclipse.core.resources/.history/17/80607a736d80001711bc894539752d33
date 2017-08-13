@@ -12,7 +12,7 @@ void validate_ins_oprands (body* item, list_item_reference *);
 
 void validate_oper_operands (body* item, list_item_reference *);
 
-String find_command_name(String );
+String find_command_name(String key)
 
 Bool is_valid_letter(char c);
 
