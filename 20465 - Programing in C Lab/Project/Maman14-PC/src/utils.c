@@ -225,29 +225,27 @@ void print_mat (String* mat, int size){
  * Linked List
  */
 
-void add_to_list(list_item_reference * head,String str){
+void add_to_list(list_item_reference * head, String str){
 	list_item_reference new_item,temp;
 
-	new_item = (list_item_reference)malloc(sizeof(list_item)*strlen(str)+1);
-	if(!new_item){
+	if ((new_item = (list_item_reference)malloc( sizeof(list_item))) == NULL)
+	{
 		fprintf(stderr,"unable to allocate memory to a list item. Exiting the program\n");
 		exit(0);
 	}
 
-	printf(KGREEN "Adding to list\n");
+	new_item->str=allocate_mem_string(strlen(str)+1);
 
+	printf(KGREEN "Adding to list\n");
+	NORMALCOLOR
 	strcpy(new_item->str,str);
 	new_item->next=NULL;
 
 	if (*head == NULL){
-		printf(KYELLOW "head= null\n");
 		new_item->prev=NULL;
 		*head=new_item;
 	}
 	else{
-		printf(KGREEN"head is not null\n");
-		NORMALCOLOR
-
 		temp=*head;
 
 

@@ -2,7 +2,7 @@
 
 void validate_file(bodyArray, int);
 
-void validate_label (body item, list_item_reference * );
+void validate_label (body* item, list_item_reference * );
 
 void validate_instruction(String inst);
 
