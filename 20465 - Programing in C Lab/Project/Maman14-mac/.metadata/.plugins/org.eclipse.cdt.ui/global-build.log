@@ -13665,3 +13665,1772 @@ In file included from ../src/validator.c:1:0:
 ../src/validator.c:86:4: note: each undeclared identifier is reported only once for each function it appears in
 make: *** [src/validator.o] Error 1
 src/subdir.mk:27: recipe for target 'src/validator.o' failed
+02:58:56 **** Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:3: error: too few arguments to function ‘validate_label’
+   validate_label(item);
+   ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: declared here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+../src/validator.c:16:12: warning: unused variable ‘error_list_head’ [-Wunused-variable]
+  list_item error_list_head;
+            ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:71:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:90:3: error: expected ‘;’ before ‘printf’
+   printf(KRED "Label \"%s\" is too long: \"%d\" \n",label,length);
+   ^~~~~~
+../src/validator.c:111:5: error: ‘valid’ undeclared (first use in this function)
+    *valid=FALSE;
+     ^~~~~
+../src/validator.c:111:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/validator.o] Error 1
+02:59:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:3: error: too few arguments to function ‘validate_label’
+   validate_label(item);
+   ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: declared here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+../src/validator.c:16:12: warning: unused variable ‘error_list_head’ [-Wunused-variable]
+  list_item error_list_head;
+            ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:71:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:90:3: error: expected ‘;’ before ‘printf’
+   printf(KRED "Label \"%s\" is too long: \"%d\" \n",label,length);
+   ^~~~~~
+../src/validator.c:111:5: error: ‘valid’ undeclared (first use in this function)
+    *valid=FALSE;
+     ^~~~~
+../src/validator.c:111:5: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+02:59:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:3: error: too few arguments to function ‘validate_label’
+   validate_label(item);
+   ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: declared here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+../src/validator.c:16:12: warning: unused variable ‘error_list_head’ [-Wunused-variable]
+  list_item error_list_head;
+            ^~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:71:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:111:5: error: ‘valid’ undeclared (first use in this function)
+    *valid=FALSE;
+     ^~~~~
+../src/validator.c:111:5: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:11:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: error: invalid type argument of unary ‘*’ (have ‘list_item {aka struct node}’)
+   validate_label(item,* error_list_head);
+                       ^~~~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:71:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:111:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:111:4: note: each undeclared identifier is reported only once for each function it appears in
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:11:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:71:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:79:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:111:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:111:4: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:12:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:74:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:83:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:101:18: error: called object ‘is_valid_letter’ is not a function or function pointer
+  is_valid_letter=is_valid_letter(c);
+                  ^~~~~~~~~~~~~~~
+../src/validator.c:80:7: note: declared here
+  Bool is_valid_letter;
+       ^~~~~~~~~~~~~~~
+../src/validator.c:113:19: error: called object ‘is_valid_letter’ is not a function or function pointer
+   is_valid_letter=is_valid_letter(c);
+                   ^~~~~~~~~~~~~~~
+../src/validator.c:80:7: note: declared here
+  Bool is_valid_letter;
+       ^~~~~~~~~~~~~~~
+../src/validator.c:115:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:115:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:13:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:74:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:83:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:115:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:115:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:13:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:74:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:83:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:115:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:115:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:13:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:17:17: warning: too many arguments for format [-Wformat-extra-args]
+ #define KGREEN  "\x1B[32m"
+                 ^
+../src/validator.c:83:9: note: in expansion of macro ‘KGREEN’
+  printf(KGREEN, "validating label: length:\n");
+         ^~~~~~
+../src/validator.c:115:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:115:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:30:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:20:19: warning: too many arguments for format [-Wformat-extra-args]
+ #define KMAGENTA  "\x1B[35m"
+                   ^
+../src/validator.c:83:9: note: in expansion of macro ‘KMAGENTA’
+  printf(KMAGENTA, "validating label: length:\n");
+         ^~~~~~~~
+../src/validator.c:92:3: error: ‘line’ undeclared (first use in this function)
+   line=covert_int_to_string(item.line_number);
+   ^~~~
+../src/validator.c:92:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:117:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:21: warning: unused variable ‘line_s’ [-Wunused-variable]
+  String label,error,line_s;
+                     ^~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:30:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:20:19: warning: too many arguments for format [-Wformat-extra-args]
+ #define KMAGENTA  "\x1B[35m"
+                   ^
+../src/validator.c:83:9: note: in expansion of macro ‘KMAGENTA’
+  printf(KMAGENTA, "validating label: length:\n");
+         ^~~~~~~~
+../src/validator.c:117:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:117:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:21: warning: variable ‘line_s’ set but not used [-Wunused-but-set-variable]
+  String label,error,line_s;
+                     ^~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:30:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:20:19: warning: too many arguments for format [-Wformat-extra-args]
+ #define KMAGENTA  "\x1B[35m"
+                   ^
+../src/validator.c:83:9: note: in expansion of macro ‘KMAGENTA’
+  printf(KMAGENTA, "validating label: length:\n");
+         ^~~~~~~~
+../src/validator.c:118:4: error: ‘valid’ undeclared (first use in this function)
+    valid=FALSE;
+    ^~~~~
+../src/validator.c:118:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:30:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:20:19: warning: too many arguments for format [-Wformat-extra-args]
+ #define KMAGENTA  "\x1B[35m"
+                   ^
+../src/validator.c:83:9: note: in expansion of macro ‘KMAGENTA’
+  printf(KMAGENTA, "validating label: length:\n");
+         ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:95:3: warning: ‘error’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   strcpy(error,"");
+   ^~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:32:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+03:32:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: In function ‘validate_label’:
+../src/utils.h:20:19: warning: too many arguments for format [-Wformat-extra-args]
+ #define KMAGENTA  "\x1B[35m"
+                   ^
+../src/validator.c:81:9: note: in expansion of macro ‘KMAGENTA’
+  printf(KMAGENTA, "validating label: length:\n");
+         ^~~~~~~~
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:93:3: warning: ‘error’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   strcpy(error,"");
+   ^~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:35:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:21: warning: variable ‘line_s’ set but not used [-Wunused-but-set-variable]
+  String label,error,line_s;
+                     ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:40:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:41:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:93:37: error: expected ‘)’ before ‘;’ token
+   printf("%s\n",strcat(error,line_s);
+                                     ^
+../src/validator.c:101:2: error: expected ‘;’ before ‘}’ token
+  }
+  ^
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:41:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:42:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:79:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:75:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:45:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:74:7: warning: unused variable ‘intro’ [-Wunused-variable]
+  char intro[]="Error in line: ";
+       ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:46:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:46:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: variable ‘error’ set but not used [-Wunused-but-set-variable]
+  String label,line_s,error;
+                      ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:46:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: variable ‘error’ set but not used [-Wunused-but-set-variable]
+  String label,line_s,error;
+                      ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:47:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: unused variable ‘error’ [-Wunused-variable]
+  String label,line_s,error;
+                      ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:47:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: unused variable ‘error’ [-Wunused-variable]
+  String label,line_s,error;
+                      ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:52:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:52:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: variable ‘error’ set but not used [-Wunused-but-set-variable]
+  String label,line_s,error;
+                      ^~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:52:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:80:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:76:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c:73:22: warning: unused variable ‘error’ [-Wunused-variable]
+  String label,line_s,error;
+                      ^~~~~
+../src/validator.c:73:15: warning: variable ‘line_s’ set but not used [-Wunused-but-set-variable]
+  String label,line_s,error;
+               ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:58:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:86:2: error: ‘line_s’ undeclared (first use in this function)
+  line_s=covert_int_to_string(item.line_number);
+  ^~~~~~
+../src/validator.c:86:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:129:13: warning: passing argument 1 of ‘print_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+  print_list(head);
+             ^~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: expected ‘list_item_reference {aka struct node *}’ but argument is of type ‘struct node **’
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:58:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:86:2: error: ‘line_s’ undeclared (first use in this function)
+  line_s=covert_int_to_string(item.line_number);
+  ^~~~~~
+../src/validator.c:86:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:01:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:86:2: error: ‘line_s’ undeclared (first use in this function)
+  line_s=covert_int_to_string(item.line_number);
+  ^~~~~~
+../src/validator.c:86:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+04:01:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:86:2: error: ‘line_s’ undeclared (first use in this function)
+  line_s=covert_int_to_string(item.line_number);
+  ^~~~~~
+../src/validator.c:86:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:01:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:08:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:250:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from /usr/include/string.h:32:0,
+                 from ../src/utils.h:12,
+                 from ../src/validator.c:1:
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:17:28: error: invalid initializer
+  list_item error_list_head=NULL;
+                            ^
+../src/validator.c:32:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,&error_list_head);
+                       ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item * {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:81:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:79:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:78:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:77:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+04:10:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:250:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:10:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+04:10:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:248:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:11:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:33:23: warning: passing argument 2 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_label(item,error_list_head);
+                       ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void validate_label (body item, list_item_reference *);
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:33:3: warning: ‘error_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   validate_label(item,error_list_head);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:11:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:74:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference );
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:11:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:74:6: error: conflicting types for ‘validate_label’
+ void validate_label (body item, list_item_reference * head){
+      ^~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:5:6: note: previous declaration of ‘validate_label’ was here
+ void validate_label (body item, list_item_reference );
+      ^~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:11:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:97:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(head,error);
+               ^~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:133:13: error: incompatible type for argument 1 of ‘print_list’
+  print_list(*head);
+             ^
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: expected ‘list_item_reference {aka struct node *}’ but argument is of type ‘struct node’
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:12:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:97:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(head,error);
+               ^~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:33:3: warning: ‘error_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   validate_label(item,error_list_head);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:13:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+04:13:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:257:7: error: incompatible types when assigning to type ‘struct node’ from type ‘list_item_reference {aka struct node *}’
+  *head=new_item;
+       ^
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+04:13:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:33:3: warning: ‘error_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   validate_label(item,error_list_head);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:14:42 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:15:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:17:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:17:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:17:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:18:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:244:8: error: incompatible types when assigning to type ‘struct node’ from type ‘list_item_reference {aka struct node *}’
+   *head=new_item;
+        ^
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+04:18:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:19:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: At top level:
+../src/utils.c:228:6: error: conflicting types for ‘add_to_list’
+ void add_to_list(list_item_reference head,String str){
+      ^~~~~~~~~~~
+In file included from ../src/utils.c:8:0:
+../src/utils.h:103:6: note: previous declaration of ‘add_to_list’ was here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+04:19:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:247:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:82:7: warning: unused variable ‘is_a_num’ [-Wunused-variable]
+  Bool is_a_num;
+       ^~~~~~~~
+../src/validator.c:81:7: warning: unused variable ‘valid_letter’ [-Wunused-variable]
+  Bool valid_letter;
+       ^~~~~~~~~~~~
+../src/validator.c:80:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:79:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:78:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:33:3: warning: ‘error_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   validate_label(item,error_list_head);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:19:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+04:19:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘add_to_list’:
+../src/utils.c:248:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   temp=head;
+       ^
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:20:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:21:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:21:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:21:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:21:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.

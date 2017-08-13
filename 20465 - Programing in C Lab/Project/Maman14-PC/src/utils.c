@@ -227,7 +227,6 @@ void print_mat (String* mat, int size){
 
 void add_to_list(list_item_reference * head,String str){
 	list_item_reference temp,new_item;
-
 	new_item = (list_item_reference)malloc(sizeof(list_item)*strlen(str+1));
 	if(!new_item){
 		fprintf(stderr,"unable to allocate memory to a list item. Exiting the program\n");
@@ -235,16 +234,15 @@ void add_to_list(list_item_reference * head,String str){
 	}
 
 	strcpy(new_item->str,str);
-	*head=new_item;
+
 	new_item->next=NULL;
 
 	if (*head == NULL){
-
 		new_item->prev=NULL;
+		*head=new_item;
 	}
-
 	else{
-		temp=head;
+		temp=*head;
 		while (temp->next != NULL){
 			temp=temp->next;
 		}
@@ -254,16 +252,39 @@ void add_to_list(list_item_reference * head,String str){
 
 	}
 
+
+	printf("DONE ADDING TO LIST\n");
 }
 
 void print_list(list_item_reference head){
 
-	while (head->next != NULL){
-		printf("%s ==> ",head->str);
+	if (head==NULL){
+		printf("Empty list\n");
+		return;
 	}
 
+	if (head->next == NULL){
+		printf(KBLUE "%s",head->str);
+		return;
+	}
+
+
+	while (head->next != NULL){
+		printf(KBLUE "%s",head->str);
+		head=head->next;
+	}
+	printf("\n");
 }
 
 void free_list(list_item_reference *head){
 	free(*head);
+}
+
+
+String covert_int_to_string (int number){
+	int arraysize =12;
+	String result;
+	result = allocate_mem_string(arraysize);
+	sprintf(result,"%d",number);
+	return result;
 }

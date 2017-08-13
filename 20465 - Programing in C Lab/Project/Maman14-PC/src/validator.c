@@ -3,7 +3,8 @@
 #include "validator.h"
 
 
-#define MAXLABELSIZE 30
+#define MAXLABELSIZE 3
+#define MAXERRORSIZE 200
 
 
 
@@ -13,11 +14,12 @@
 void validate_file(bodyArray parsed, int array_size){
 	int i;
 	body item;
-	list_item error_list_head;
+	list_item_reference error_list_head;
 
 	printf(KYELLOW"------------------------------\n");
     printf("      VALIDATION STAGE:        \n");
 	printf("------------------------------\n");
+
 
 	NORMALCOLOR
 
@@ -27,8 +29,9 @@ void validate_file(bodyArray parsed, int array_size){
 
 	if(strcmp(item.label,"\0") != 0){
 		/*VALIDATE LABEL*/
-		printf("label exits\n");
-		validate_label(item);
+		printf(KCYN "--Starting to validate label\n");
+		validate_label(item,error_list_head);
+
 
 		if (item.valid==TRUE){
 			printf(KGREEN "Label <%s> is valid\n",item.label);
@@ -68,47 +71,55 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 
-void validate_label (body item, list_item_reference * head){
-	String label,error;
+void validate_label (body item, list_item_reference head){
+	String label;
+	char error[MAXERRORSIZE];
 	int length;
 	int size;
 	int i;
 	char c;
-	Bool is_valid_char;
+	Bool valid_letter;
+	Bool is_a_num;
 
-	printf(KGREEN, "validating label: length:\n");
+	printf(KMAGENTA "validating label:\n");
 
 	label=item.label;
+
 
 	/*validating label length*/
 	length=strlen(label);
 	if (length > MAXLABELSIZE){
 		item.valid=FALSE;
 
-		strcpy(error,"")
+		sprintf(error,"Error in line %d: Label <%s> is too long.\n",item.line_number,label);
+		printf("%s\n",error);
 
-		printf(KRED "Label \"%s\" is too long: \"%d\" \n",label,length);
+		add_to_list(&head,error);
+
 	}
 
 
 	/*validate the first char*/
+
+/*
 	i=0;
 	c=label[i];
-	is_valid_char=is_valid_letter(c);
-	if (is_valid_char==FALSE){
+	valid_letter=is_valid_letter(c);
+	if (valid_letter==FALSE){
 		INVALIDINPUT
 		fprintf(stderr,"Label doesn't start with a letter: %c\n",c);
 	}
 	i++;
+*/
 
 	/*validating chars:*/
-	size=strlen(label);
+/*	size=strlen(label);
 
 	while (i<size){
 		c=label[i];
-		is_valid_char=is_valid_letter(c);
-		if (is_valid_char==FALSE){
-			*valid=FALSE;
+		valid_letter=is_valid_letter(c);
+		if (valid_letter==FALSE){
+
 			INVALIDINPUT
 			fprintf(stderr,"Label has invalid char: %c\n",c);
 		}
@@ -116,10 +127,10 @@ void validate_label (body item, list_item_reference * head){
 
 
 		i++;
-	}
+	}*/
 
 
-
+	print_list(head);
 }
 
 void validate_instruction(String inst){
