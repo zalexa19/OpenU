@@ -283,3 +283,8 @@ String covert_int_to_string (int number){
 	sprintf(result,"%d",number);
 	return result;
 }
+
+void strncy_safe(String  dest, String  source, int size){
+	strncpy(dest,source,size);
+	dest[strlen(dest)]='\0';
+}

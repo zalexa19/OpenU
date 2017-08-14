@@ -106,6 +106,7 @@ void print_list(list_item_reference);
 
 void free_list(list_item_reference*);
 
+void strncy_safe(String  dest, String  source, int size);
 
 
 

@@ -18322,3 +18322,1438 @@ make: Nothing to be done for 'all'.
 06:53:03 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 make: Nothing to be done for 'all'.
+08:40:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:302:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+08:40:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:46:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:65:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"data")==0){
+                  ^~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+08:46:42 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:51:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:56:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:306:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error);
+               ^~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘char *’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:306:3: error: too few arguments to function ‘add_to_list’
+   add_to_list(error);
+   ^~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: declared here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:312:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error);
+               ^~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘char *’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:312:3: error: too few arguments to function ‘add_to_list’
+   add_to_list(error);
+   ^~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: declared here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:318:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error);
+               ^~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘char *’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:318:3: error: too few arguments to function ‘add_to_list’
+   add_to_list(error);
+   ^~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: declared here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+08:56:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:312:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error);
+               ^~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘char *’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:312:3: error: too few arguments to function ‘add_to_list’
+   add_to_list(error);
+   ^~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: declared here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:318:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error);
+               ^~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: expected ‘struct node **’ but argument is of type ‘char *’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c:318:3: error: too few arguments to function ‘add_to_list’
+   add_to_list(error);
+   ^~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:103:6: note: declared here
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+08:56:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:00:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:327:50: warning: format ‘%s’ expects a matching ‘char *’ argument [-Wformat=]
+   sprintf(error,"12. Error in line %d: .string <%s> is not closed with a \"\0\".\n",item->line_number);
+                                                  ^
+../src/validator.c:327:76: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+   sprintf(error,"12. Error in line %d: .string <%s> is not closed with a \"\0\".\n",item->line_number);
+                                                                            ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:01:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:327:76: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+   sprintf(error,"12. Error in line %d: .string <%s> is not closed with a \"\0\".\n",item->line_number,item->operand1);
+                                                                            ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:01:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:327:17: warning: unknown escape sequence: '\040'
+   sprintf(error,"12. Error in line %d: .string <%s> is not closed with a \ 0.\n",item->line_number,item->operand1);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:01:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:01:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:03:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:85:24: error: incompatible type for argument 1 of ‘validate_ins_string’
+    validate_ins_string(item,&error_list_head);
+                        ^~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:14:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘body {aka struct parsed_line}’
+ void validate_ins_string (body* item, list_item_reference*  head);
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+09:04:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+09:06:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:84:32: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   printf("instruction: %s",item->instruction);
+                                ^~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: At top level:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:125:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW"------------------------------\n");
+         ^~~~~~~
+../src/validator.c:126:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:127:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:129:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:129:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:129:2: warning: parameter names (without types) in function declaration
+../src/validator.c:129:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:130:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:134:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+09:06:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:84:34: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   printf("instruction: %s\n",item->instruction);
+                                  ^~
+In file included from ../src/validator.c:1:0:
+../src/validator.c: At top level:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:125:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW"------------------------------\n");
+         ^~~~~~~
+../src/validator.c:126:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:127:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:129:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:129:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:129:2: warning: parameter names (without types) in function declaration
+../src/validator.c:129:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:130:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:134:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+09:06:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:125:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW"------------------------------\n");
+         ^~~~~~~
+../src/validator.c:126:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:127:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:129:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:129:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:129:2: warning: parameter names (without types) in function declaration
+../src/validator.c:129:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:130:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:134:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+10:52:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:38:11: error: expected ‘,’ or ‘}’ before ‘;’ token
+  FALSE = 0;
+           ^
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+10:52:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:39:2: error: expected ‘,’ or ‘}’ before ‘TRUE’
+  TRUE = 1
+  ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+10:52:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:39:2: error: expected ‘,’ or ‘}’ before ‘TRUE’
+  TRUE = 1
+  ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+10:57:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:39:2: error: expected ‘,’ or ‘}’ before ‘TRUE’
+  TRUE = 1
+  ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+12:02:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+../src/Maman14-mac.c: In function ‘main’:
+Building file: ../src/Maman14-mac.c
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+                  ^
+../src/validator.c:128:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW "------------------------------\n");
+         ^~~~~~~
+../src/validator.c:129:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:130:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:133:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:135:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:135:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:135:2: warning: parameter names (without types) in function declaration
+../src/validator.c:135:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:137:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+make: *** [src/validator.o] Error 1
+12:02:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:128:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW "------------------------------\n");
+         ^~~~~~~
+../src/validator.c:129:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:130:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:133:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:135:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:135:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:135:2: warning: parameter names (without types) in function declaration
+../src/validator.c:135:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:137:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+12:03:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:128:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW "------------------------------\n");
+         ^~~~~~~
+../src/validator.c:129:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:130:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:132:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:132:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:132:2: warning: parameter names (without types) in function declaration
+../src/validator.c:132:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:133:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:135:2: warning: data definition has no type or storage class
+  free(error_list_head);
+  ^~~~
+../src/validator.c:135:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/validator.c:135:2: warning: parameter names (without types) in function declaration
+../src/validator.c:135:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/validator.c:1:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/validator.c:137:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+12:05:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:127:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW "------------------------------\n");
+         ^~~~~~~
+../src/validator.c:128:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:129:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:131:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:131:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:131:2: warning: parameter names (without types) in function declaration
+../src/validator.c:131:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:132:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:134:7: error: expected declaration specifiers or ‘...’ before ‘&’ token
+  free(&error_list_head);
+       ^
+../src/validator.c:136:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+12:05:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:18:18: error: expected declaration specifiers or ‘...’ before string constant
+ #define KYELLOW  "\x1B[33m"
+                  ^
+../src/validator.c:127:9: note: in expansion of macro ‘KYELLOW’
+  printf(KYELLOW "------------------------------\n");
+         ^~~~~~~
+../src/validator.c:128:12: error: expected declaration specifiers or ‘...’ before string constant
+     printf("      ERRORS:        \n");
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:129:9: error: expected declaration specifiers or ‘...’ before string constant
+  printf("------------------------------\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:131:2: warning: data definition has no type or storage class
+  print_list(error_list_head);
+  ^~~~~~~~~~
+../src/validator.c:131:2: warning: type defaults to ‘int’ in declaration of ‘print_list’ [-Wimplicit-int]
+../src/validator.c:131:2: warning: parameter names (without types) in function declaration
+../src/validator.c:131:2: error: conflicting types for ‘print_list’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:105:6: note: previous declaration of ‘print_list’ was here
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+ void print_list(list_item_reference);
+      ^~~~~~~~~~
+../src/utils.h:15:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:24:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/validator.c:132:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/validator.c:136:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+make: *** [src/validator.o] Error 1
+12:08:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:16:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:16:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:21:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:22:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:348:4: warning: implicit declaration of function ‘rintf’ [-Wimplicit-function-declaration]
+    rintf(KCYN "old operand 1 for srting: %s\nlength: %d\n",item->operand1,length);
+    ^~~~~
+../src/validator.c:348:4: warning: incompatible implicit declaration of built-in function ‘rintf’
+../src/validator.c:348:4: note: include ‘<math.h>’ or provide a declaration of ‘rintf’
+In file included from ../src/validator.c:1:0:
+../src/utils.h:21:15: error: incompatible type for argument 1 of ‘rintf’
+ #define KCYN  "\x1B[36m"
+               ^
+../src/validator.c:348:10: note: in expansion of macro ‘KCYN’
+    rintf(KCYN "old operand 1 for srting: %s\nlength: %d\n",item->operand1,length);
+          ^~~~
+../src/utils.h:21:15: note: expected ‘float’ but argument is of type ‘char *’
+ #define KCYN  "\x1B[36m"
+               ^
+../src/validator.c:348:10: note: in expansion of macro ‘KCYN’
+    rintf(KCYN "old operand 1 for srting: %s\nlength: %d\n",item->operand1,length);
+          ^~~~
+../src/validator.c:348:4: error: too many arguments to function ‘rintf’
+    rintf(KCYN "old operand 1 for srting: %s\nlength: %d\n",item->operand1,length);
+    ^~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+12:23:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:28:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:28:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:29:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:31:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:33:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:364:7: error: ‘item’ is a pointer; did you mean to use ‘->’?
+   item.operand1++;
+       ^
+       ->
+../src/validator.c:297:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+12:33:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:297:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:34:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:364:12: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+   printf("%s\n\n",item->operand1[length-2]);
+            ^
+../src/validator.c:297:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:34:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:364:12: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+   printf("%s\n\n",item->operand1[length-2]);
+            ^
+../src/validator.c:297:7: warning: unused variable ‘temp’ [-Wunused-variable]
+  char temp[MAXMEM];
+       ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:36:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:40:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:42:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:42:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:47:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:51:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:52:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:54:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:56:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+12:59:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h: In function ‘strncy_safe’:
+../src/utils.h:110:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/Maman14-mac.c:11:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h: In function ‘strncy_safe’:
+../src/utils.h:110:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h: In function ‘strncy_safe’:
+../src/utils.h:110:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h: In function ‘strncy_safe’:
+../src/utils.h:110:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/validator.c:1:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/parser.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+makefile:31: recipe for target 'Maman14' failed
+./src/utils.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+./src/validator.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+12:59:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h: In function ‘strncy_safe’:
+../src/utils.h:110:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/parser.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+./src/utils.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+./src/validator.o: In function `strncy_safe':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: multiple definition of `strncy_safe'
+makefile:31: recipe for target 'Maman14' failed
+./src/Maman14-mac.o:/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/utils.h:109: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+13:00:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘strncy_safe’:
+../src/utils.c:288:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:01:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_string’:
+../src/validator.c:359:15: warning: passing argument 1 of ‘strncy_safe’ from incompatible pointer type [-Wincompatible-pointer-types]
+   strncy_safe(temp,pointer,length);
+               ^~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:109:6: note: expected ‘char **’ but argument is of type ‘String {aka char *}’
+ void strncy_safe(String * dest, String * source, int size);
+      ^~~~~~~~~~~
+../src/validator.c:359:20: warning: passing argument 2 of ‘strncy_safe’ from incompatible pointer type [-Wincompatible-pointer-types]
+   strncy_safe(temp,pointer,length);
+                    ^~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:109:6: note: expected ‘char **’ but argument is of type ‘String {aka char *}’
+ void strncy_safe(String * dest, String * source, int size);
+      ^~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:01:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘strncy_safe’:
+../src/utils.c:288:10: warning: passing argument 1 of ‘strncpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strncpy(*dest,*srand,size);
+          ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘char * restrict’ but argument is of type ‘char’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c:288:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c:289:15: warning: passing argument 1 of ‘strlen’ makes pointer from integer without a cast [-Wint-conversion]
+  *dest[strlen(*dest)]='\0';
+               ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:394:15: note: expected ‘const char *’ but argument is of type ‘char’
+ extern size_t strlen (const char *__s)
+               ^~~~~~
+../src/utils.c:289:2: error: invalid type argument of unary ‘*’ (have ‘int’)
+  *dest[strlen(*dest)]='\0';
+  ^~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:01:42 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘strncy_safe’:
+../src/utils.c:288:10: warning: passing argument 1 of ‘strncpy’ makes pointer from integer without a cast [-Wint-conversion]
+  strncpy(*dest,*srand,size);
+          ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘char * restrict’ but argument is of type ‘char’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c:288:16: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(*dest,*srand,size);
+                ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c:289:15: warning: passing argument 1 of ‘strlen’ makes pointer from integer without a cast [-Wint-conversion]
+  *dest[strlen(*dest)]='\0';
+               ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:394:15: note: expected ‘const char *’ but argument is of type ‘char’
+ extern size_t strlen (const char *__s)
+               ^~~~~~
+../src/utils.c:289:2: error: invalid type argument of unary ‘*’ (have ‘int’)
+  *dest[strlen(*dest)]='\0';
+  ^~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:01:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘strncy_safe’:
+../src/utils.c:288:15: warning: passing argument 2 of ‘strncpy’ from incompatible pointer type [-Wincompatible-pointer-types]
+  strncpy(dest,srand,size);
+               ^~~~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:128:14: note: expected ‘const char * restrict’ but argument is of type ‘void (*)(unsigned int)’
+ extern char *strncpy (char *__restrict __dest,
+              ^~~~~~~
+../src/utils.c:289:15: warning: passing argument 1 of ‘strlen’ makes pointer from integer without a cast [-Wint-conversion]
+  *dest[strlen(*dest)]='\0';
+               ^
+In file included from ../src/utils.h:12:0,
+                 from ../src/utils.c:8:
+/usr/include/string.h:394:15: note: expected ‘const char *’ but argument is of type ‘char’
+ extern size_t strlen (const char *__s)
+               ^~~~~~
+../src/utils.c:289:2: error: invalid type argument of unary ‘*’ (have ‘int’)
+  *dest[strlen(*dest)]='\0';
+  ^~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+13:02:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:03:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

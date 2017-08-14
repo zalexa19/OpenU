@@ -6,6 +6,7 @@
 #define MAXLABELSIZE 30
 #define MAXERRORSIZE 200
 #define NOMATCH "none"
+#define TERMINATOR "\0"
 
 
 /*Macro that adds a log*/
@@ -48,7 +49,7 @@ void validate_file(bodyArray parsed, int array_size){
 	if(strcmp(item.instruction,"\0") != 0){
 		/*VALIDATE INSTRUCTION*/
 		printf("instruction exists\n");
-		validate_instruction(&item,&error_list_head);;
+		validate_instruction(&item,&error_list_head);
 
 
 		printf("After instruction validation:\nFile is: ");
@@ -62,12 +63,32 @@ void validate_file(bodyArray parsed, int array_size){
 		NORMALCOLOR
 
 
+		if (strcmp(item.instruction,"data")==0){
+			validate_ins_data(&item, &error_list_head);
 
-		validate_ins_data(&item, &error_list_head);
+			NORMALCOLOR
 
-		NORMALCOLOR
+			printf("Validating operands for .data: \n");
 
-		printf("After instruction -Operands validation:\nFile is: ");
+			if (item.valid==TRUE){
+				printf(KGREEN "valid\n");
+			} else {
+				printf(KRED "invalid\n");
+			}
+
+			NORMALCOLOR
+		}
+
+		printf("Validating operands for .string: \n");
+
+		printf("instruction: %s\n",item.instruction);
+
+		if (strcmp(item.instruction,"string")==0){
+			validate_ins_string(&item,&error_list_head);
+		}
+
+
+		printf("Validating operands for .string: \n");
 
 		if (item.valid==TRUE){
 			printf(KGREEN "valid\n");
@@ -76,39 +97,21 @@ void validate_file(bodyArray parsed, int array_size){
 		}
 
 		NORMALCOLOR
+
+
 		printf("finished validating file\n");
-	}
-/*
-	if(strcmp(item.operantion,"\0") != 0){
-		printf("operation exists\n");
-		validate_operation(item.operantion);
-		validate_oper_operands(item);
-	}
-
-	if(strcmp(item.label,"\0") != 0){
-
-	}
-*/
+}
 
 
 
-
-	/*
-	for (i=0;i<array_size; i++){
-		item=parsed[i];
-		printf("current_struct:\n");
-
-
-*/
-
-	printf(KYELLOW"------------------------------\n");
+	printf(KYELLOW "------------------------------\n");
     printf("      ERRORS:        \n");
 	printf("------------------------------\n");
 
 	print_list(error_list_head);
 	NORMALCOLOR
 
-	free(error_list_head);
+
 
 }
 
@@ -229,9 +232,16 @@ void validate_ins_data (body* item, list_item_reference*  head){
 	line=item->line_number;
 
 
+	if (item->data_values_number==0){
+		item->valid=FALSE;
+		sprintf(error,"8. Error in line %d: No operands received for .data.\n",line);
+		add_to_list(head,error);
+	}
+
+
 	/*check if each string has valid numbers*/
 	for(counter=0;counter<num_of_operands;counter++){
-		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);
+/*		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);*/
 
 		current=item->data_string_array[counter];
 		str_length=strlen(current);
@@ -260,23 +270,102 @@ void validate_ins_data (body* item, list_item_reference*  head){
 			return;
 		}
 
-		/*If we reached here, it means that we have valid numbers*/
-		if((item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands)) == NULL){
-			fprintf(stderr,"Unable to allocate memory to data_int_values. Continuing\n");
+	}
+
+
+	/*If we reached here, it means that we have valid numbers*/
+	if((item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands)) == NULL){
+		fprintf(stderr,"Unable to allocate memory to data_int_values. Continuing\n");
+	}
+
+
+	for (counter=0;counter<num_of_operands;counter++){
+		item->data_int_values[counter]=atoi(item->data_string_array[counter]);
+/*		printf("current cell: %s, extracted number: %d\n",item->data_string_array[counter],item->data_int_values[counter]);*/
+	}
+
+	free(item->data_string_array);
+
+
+	/*validate other*/
+
+}
+
+
+void validate_ins_string (body* item, list_item_reference*  head){
+	char error[MAXERRORSIZE];
+	String temp;
+	int length;
+	String pointer;
+
+	/*checks that the string was received with ""*/
+
+
+	/*checks if enough operands were received*/
+	if ((strcmp(item->operand2,TERMINATOR))!=0){
+		item->valid=FALSE;
+
+		sprintf(error,"10. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->operand2);
+		add_to_list(head,error);
+	}
+
+	if ((strcmp(item->operand3,TERMINATOR))!=0){
+		item->valid=FALSE;
+		sprintf(error,"11. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->operand3);
+		add_to_list(head,error);
+	}
+
+	if ((strcmp(item->operand1,TERMINATOR))==0){
+		item->valid=FALSE;
+		sprintf(error,"9. Error in line %d: Missing operands for .string.\n",item->line_number);
+		add_to_list(head,error);
+		return;
+	}
+
+
+	if (item->operand1[strlen(item->operand1)]!='\0'){
+		item->valid=FALSE;
+		sprintf(error,"12. Error in line %d: .string <%s> is not closed with a turminating char.\n",item->line_number,item->operand1);
+		add_to_list(head,error);
+	}
+
+	if(item->valid==TRUE){
+		pointer=item->operand1;
+		length=strlen(pointer);
+
+		if (pointer[length-length]!= '"'){
+			item->valid=FALSE;
+			sprintf(error,"13. Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->operand1);
+			add_to_list(head,error);
+		}else{
+			printf("advanced the pointer\n");
+			pointer++;
+			length--;
+		}
+		if (pointer[length-1] != '"'){
+			item->valid=FALSE;
+			sprintf(error,"14. Error in line %d: .string <%s> is missing closing <\">.\n",item->line_number,item->operand1);
+			add_to_list(head,error);
+		}else{
+
+			length--;
+
 		}
 
+		temp=allocate_mem_string(length);
 
-		for (counter=0;counter<num_of_operands;counter++){
-			item->data_int_values[counter]=atoi(item->data_string_array[counter]);
-			printf("current cell: %s, extracted number: %d\n",item->data_string_array[counter],item->data_int_values[counter]);
-		}
+		strncy_safe(temp,pointer,length);
 
-		free(item->data_string_array);
+		free(item->operand1);
+		item->operand1=allocate_mem_string(length+1);
+
+		strcpy(item->operand1,temp);
+
+		free(temp);
 
 	}
 
 
-void validate_ins_string (body* item, list_item_reference*  head){
 
 }
 
@@ -296,7 +385,7 @@ void validate_ins_extern(body* item, list_item_reference*  head){
 
 
 
-}
+
 
 void validate_oper_operands (body* item, list_item_reference*  head){
 
@@ -351,25 +440,6 @@ Bool is_valid_number (char c){
 
 	return FALSE;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -490,6 +560,5 @@ String find_command_name(String key){
 	}
 
 	return none;
-
 
 }
