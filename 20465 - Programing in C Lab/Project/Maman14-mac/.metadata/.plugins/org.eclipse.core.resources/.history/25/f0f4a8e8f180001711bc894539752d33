@@ -1,0 +1,23 @@
+#include "utils.h"
+
+void validate_file(bodyArray, int);
+
+void validate_label (body* item, list_item_reference * );
+
+void validate_instruction(body* item, list_item_reference *);
+
+void validate_operation(body* item, list_item_reference *);
+
+void validate_ins_oprands (body* item, list_item_reference *);
+
+void validate_oper_operands (body* item, list_item_reference *);
+
+String find_command_name(String );
+
+Bool is_valid_letter(char c);
+
+Bool is_lowcase(char c);
+
+Bool is_string_lowercase(String str);
+
+Bool is_valid_number (char c);

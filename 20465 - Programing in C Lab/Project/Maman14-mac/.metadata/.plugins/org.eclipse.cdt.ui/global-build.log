@@ -17426,3 +17426,899 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+03:52:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:164:36: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘String {aka char *}’ [-Wformat=]
+  printf("label is a special word: %d\n",find_command_name(label));
+                                    ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:59:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:12:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_instruction’:
+../src/validator.c:8:17: error: ‘none’ undeclared (first use in this function)
+ #define NOMATCH none
+                 ^
+../src/validator.c:181:13: note: in expansion of macro ‘NOMATCH’
+  if (strcmp(NOMATCH,find_command_name(item->instruction))==0){
+             ^~~~~~~
+../src/validator.c:8:17: note: each undeclared identifier is reported only once for each function it appears in
+ #define NOMATCH none
+                 ^
+../src/validator.c:181:13: note: in expansion of macro ‘NOMATCH’
+  if (strcmp(NOMATCH,find_command_name(item->instruction))==0){
+             ^~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+04:13:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_instruction’:
+../src/validator.c:183:11: warning: passing argument 1 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+   sprintf(5)
+           ^
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: expected ‘char * restrict’ but argument is of type ‘int’
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:183:3: error: too few arguments to function ‘sprintf’
+   sprintf(5)
+   ^~~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:184:2: error: expected ‘;’ before ‘}’ token
+  }
+  ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:13:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:18:13: warning: unused variable ‘error_counter’ [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_instruction’:
+../src/validator.c:184:11: warning: passing argument 1 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+   sprintf(5)
+           ^
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: expected ‘char * restrict’ but argument is of type ‘int’
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:184:3: error: too few arguments to function ‘sprintf’
+   sprintf(5)
+   ^~~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:185:2: error: expected ‘;’ before ‘}’ token
+  }
+  ^
+At top level:
+../src/validator.c:18:13: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:16:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:18:13: warning: unused variable ‘error_counter’ [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+At top level:
+../src/validator.c:18:13: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:18:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:18:13: warning: unused variable ‘error_counter’ [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:18:13: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+04:19:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘is_lowcase’:
+../src/Maman14-mac.c:16:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+ int main(void) {
+                ^
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/parser.h:11:0,
+                 from ../src/Maman14-mac.c:12:
+../src/validator.h:19:6: error: old-style parameter declarations in prototyped function definition
+ Bool is_lowcase(char c)
+      ^~~~~~~~~~
+../src/Maman14-mac.c:50:1: error: expected ‘{’ at end of input
+ }
+ ^
+../src/Maman14-mac.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+make: *** [src/Maman14-mac.o] Error 1
+04:19:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:18:13: warning: unused variable ‘error_counter’ [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:18:13: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  static int error_counter=0;
+             ^~~~~~~~~~~~~
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:19:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+04:20:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c: In function ‘find_command_name’:
+../src/validator.c:267:9: warning: unused variable ‘none’ [-Wunused-variable]
+  String none="none";
+         ^~~~
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c: In function ‘find_command_name’:
+../src/validator.c:267:9: warning: unused variable ‘none’ [-Wunused-variable]
+  String none=NOMATCH;
+         ^~~~
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:375:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:20:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:225:9: error: ‘false’ undeclared (first use in this function)
+  return false;
+         ^~~~~
+../src/validator.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:374:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:374:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:21:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_lowcase’:
+../src/validator.c:375:1: error: expected declaration or statement at end of input
+ }
+ ^
+At top level:
+../src/validator.c:262:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:227:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:21:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:24:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:25:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:26:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:46:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_oprands’:
+../src/validator.c:217:6: warning: unused variable ‘num_of_operands’ [-Wunused-variable]
+  int num_of_operands=item->data_values_number;
+      ^~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:47:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:10:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_oprands’:
+../src/validator.c:231:14: warning: ‘current’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   if (current[i]=='-' || current[i]=='+'){
+              ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:12:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:66:3: warning: implicit declaration of function ‘validate_ins_oprands’ [-Wimplicit-function-declaration]
+   validate_ins_oprands(&item, &error_list_head);
+   ^~~~~~~~~~~~~~~~~~~~
+At top level:
+../src/validator.c:255:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:251:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:247:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:243:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_file':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:66: undefined reference to `validate_ins_oprands'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+makefile:31: recipe for target 'Maman14' failed
+06:12:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:255:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:251:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:247:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:243:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:32:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:228:11: error: ‘item’ is a pointer; did you mean to use ‘->’?
+  line=item.line_number;
+           ^
+           ->
+../src/validator.c:241:12: error: ‘str’ undeclared (first use in this function)
+   while (i<str){
+            ^~~
+../src/validator.c:241:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:252:12: error: ‘error’ undeclared (first use in this function)
+    sprintf(error,"7. Error in line %d: non-numbers received in %s, for command %s.\n",line,current,item->instruction);
+            ^~~~~
+../src/validator.c:224:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+At top level:
+../src/validator.c:272:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:268:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:264:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:260:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:32:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:229:11: error: ‘item’ is a pointer; did you mean to use ‘->’?
+  line=item.line_number;
+           ^
+           ->
+../src/validator.c:242:12: error: ‘str’ undeclared (first use in this function)
+   while (i<str){
+            ^~~
+../src/validator.c:242:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:224:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+At top level:
+../src/validator.c:273:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:269:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:265:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:261:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:33:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:229:11: error: ‘item’ is a pointer; did you mean to use ‘->’?
+  line=item.line_number;
+           ^
+           ->
+../src/validator.c:242:12: error: ‘str’ undeclared (first use in this function)
+   while (i<str){
+            ^~~
+../src/validator.c:242:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:224:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+At top level:
+../src/validator.c:274:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:270:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:266:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:262:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:33:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:229:11: error: ‘item’ is a pointer; did you mean to use ‘->’?
+  line=item.line_number;
+           ^
+           ->
+At top level:
+../src/validator.c:274:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:270:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:266:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:262:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:33:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:274:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:270:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:266:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:262:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:36:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:260:27: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   if(item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands) == NULL){
+                           ^
+../src/validator.c:260:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   if(item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands) == NULL){
+   ^~
+At top level:
+../src/validator.c:280:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:276:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:272:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:268:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:36:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:280:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:276:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:272:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:268:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:43:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:284:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:280:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:276:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:272:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:44:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:285:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:281:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:277:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:273:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:48:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:287:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:283:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:279:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:275:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:50:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:291:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:287:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:283:6: warning: ‘validate_ins_mat’ defined but not used [-Wunused-function]
+ void validate_ins_mat(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~
+../src/validator.c:279:6: warning: ‘validate_ins_string’ defined but not used [-Wunused-function]
+ void validate_ins_string (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:51:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+06:53:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.

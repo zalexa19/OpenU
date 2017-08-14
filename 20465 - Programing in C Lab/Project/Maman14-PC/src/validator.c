@@ -5,7 +5,7 @@
 
 #define MAXLABELSIZE 30
 #define MAXERRORSIZE 200
-
+#define NOMATCH "none"
 
 
 /*Macro that adds a log*/
@@ -15,6 +15,7 @@ void validate_file(bodyArray parsed, int array_size){
 	int i;
 	body item;
 	list_item_reference error_list_head;
+
 
 	printf(KYELLOW"------------------------------\n");
     printf("      VALIDATION STAGE:        \n");
@@ -33,12 +34,15 @@ void validate_file(bodyArray parsed, int array_size){
 		validate_label(&item,&error_list_head);
 
 
+		printf("After label validation:\nFile is: ");
+
 		if (item.valid==TRUE){
-			printf(KGREEN "Label <%s> is valid\n",item.label);
+			printf(KGREEN "valid\n");
 		} else {
-			printf(KRED "Label <%s> is invalid\n",item.label);
+			printf(KRED "invalid\n");
 		}
 
+		NORMALCOLOR
 	}
 
 	if(strcmp(item.instruction,"\0") != 0){
@@ -47,17 +51,30 @@ void validate_file(bodyArray parsed, int array_size){
 		validate_instruction(&item,&error_list_head);;
 
 
+		printf("After instruction validation:\nFile is: ");
+
 		if (item.valid==TRUE){
-			printf(KGREEN "Label <%s> is valid\n",item.label);
+			printf(KGREEN "valid\n");
 		} else {
-			printf(KRED "Label <%s> is invalid\n",item.label);
+			printf(KRED "invalid\n");
 		}
 
+		NORMALCOLOR
 
 
 
+		validate_ins_data(&item, &error_list_head);
 
-		validate_ins_oprands(&item, &error_list_head);
+		NORMALCOLOR
+
+		printf("After instruction -Operands validation:\nFile is: ");
+
+		if (item.valid==TRUE){
+			printf(KGREEN "valid\n");
+		} else {
+			printf(KRED "invalid\n");
+		}
+
 		NORMALCOLOR
 		printf("finished validating file\n");
 	}
@@ -123,6 +140,7 @@ void validate_label (body* item, list_item_reference*  head){
 	}
 
 
+
 	/*validate the first char*/
 	i=0;
 	c=label[i];
@@ -137,7 +155,6 @@ void validate_label (body* item, list_item_reference*  head){
 
 
 	/*validating each char in the string, starting from cell #1:*/
-
 	size=strlen(label);
 	while (i<size){
 		c=label[i];
@@ -151,7 +168,6 @@ void validate_label (body* item, list_item_reference*  head){
 
 				printf("weird character\n");
 				sprintf(error,"3. Error found in line %d: invalid char <%c> found in label <%s>.\n",line_number,c,label);
-				printf("%s\n",error);
 				add_to_list(head,error);
 			}
 
@@ -160,10 +176,36 @@ void validate_label (body* item, list_item_reference*  head){
 		i++;
 	}
 
+	/*validating that the label is not a saved word*/
+	printf("label is a special word: %s\n",find_command_name(label));
+
+	if (strcmp("none",find_command_name(label)) != 0){
+		item->valid=FALSE;
+		sprintf(error,"4. Error found in line %d: label <%s> is a preserved word.\n",line_number,label);
+		add_to_list(head,error);
+	}
+
 }
 
 void validate_instruction(body* item, list_item_reference*  head){
+	int line=item->line_number;
+	String inst_value= item->instruction;
+	char error[MAXERRORSIZE];
 
+	/*Check if instruction is all lower case*/
+	if (is_string_lowercase(inst_value)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"5. Error in line %d: Instruction value <%s> has non-lowecase chars.\n",line,inst_value);
+		add_to_list(head,error);
+	}
+
+	/*check if instruction is a valid command*/
+
+	if (strcmp(NOMATCH,find_command_name(item->instruction))==0){
+		item->valid=FALSE;
+		sprintf(error,"6. Error in line %d: Instruction value <%s> is unrecognized.\n",line,inst_value);
+		add_to_list(head,error);
+	}
 
 }
 
@@ -171,7 +213,88 @@ void validate_operation(body* item, list_item_reference*  head){
 
 }
 
-void validate_ins_oprands (body* item, list_item_reference*  head){
+/*This function validates that the operands are valid numbers*/
+void validate_ins_data (body* item, list_item_reference*  head){
+	int num_of_operands;
+	int line;
+	Bool invalid_char_found=FALSE;
+	int counter;
+	String current;
+	char c;
+	int str_length;
+	int i;
+	char error[MAXERRORSIZE];
+
+	num_of_operands=item->data_values_number;
+	line=item->line_number;
+
+
+	/*check if each string has valid numbers*/
+	for(counter=0;counter<num_of_operands;counter++){
+		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);
+
+		current=item->data_string_array[counter];
+		str_length=strlen(current);
+
+	/*first char is a symbol - or +*/
+		i=0;
+		if (current[i]=='-' || current[i]=='+'){
+			i++;
+		}
+
+
+
+		while (i<str_length){
+			c=current[i];
+			if(is_valid_number(c) ==FALSE){
+				invalid_char_found=TRUE;
+			}
+			i++;
+		}
+
+
+		if (invalid_char_found==TRUE){
+			item->valid=FALSE;
+			sprintf(error,"7. Error in line %d: non-numbers received in %s, for command %s.\n",line,current,item->instruction);
+			add_to_list(head,error);
+			return;
+		}
+
+		/*If we reached here, it means that we have valid numbers*/
+		if((item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands)) == NULL){
+			fprintf(stderr,"Unable to allocate memory to data_int_values. Continuing\n");
+		}
+
+
+		for (counter=0;counter<num_of_operands;counter++){
+			item->data_int_values[counter]=atoi(item->data_string_array[counter]);
+			printf("current cell: %s, extracted number: %d\n",item->data_string_array[counter],item->data_int_values[counter]);
+		}
+
+		free(item->data_string_array);
+
+	}
+
+
+void validate_ins_string (body* item, list_item_reference*  head){
+
+}
+
+void validate_ins_mat(body* item, list_item_reference*  head){
+
+}
+
+void validate_ins_entry(body* item, list_item_reference*  head){
+
+}
+
+void validate_ins_extern(body* item, list_item_reference*  head){
+
+}
+
+
+
+
 
 }
 
@@ -190,6 +313,36 @@ Bool is_valid_letter(char c){
 
 
 }
+
+Bool is_lowcase(char c){
+	if ('a'<=c && c<='z'){
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+Bool is_string_lowercase(String str){
+	int length = strlen(str);
+	Bool lowercase=TRUE;
+	int i;
+	char c;
+	i=0;
+
+	c=str[i];
+	while(i<length && lowercase==TRUE){
+		if(is_lowcase(c)==FALSE){
+			lowercase=FALSE;
+
+		}
+
+		i++;
+		c=str[i];
+	}
+
+	return lowercase;
+}
+
 
 Bool is_valid_number (char c){
 	if(isdigit(c)){
@@ -231,7 +384,7 @@ String find_command_name(String key){
 	String str="string";
 	String mat="mat";
 	String entry="entry";
-	String none="none";
+	String none=NOMATCH;
 	String external="external";
 
 	String mov="mov";
@@ -305,8 +458,8 @@ String find_command_name(String key){
 
 	if (strcmp(key,dec)==0){
 		return dec;
-
 	}
+
 	if (strcmp(key,jmp)==0){
 		return jmp;
 	}
@@ -326,9 +479,8 @@ String find_command_name(String key){
 	if (strcmp(key,jsr)==0){
 		return jsr;
 
-
-
 	}
+
 	if (strcmp(key,rts)==0){
 		return rts;
 	}
@@ -337,6 +489,7 @@ String find_command_name(String key){
 		return stop;
 	}
 
-
 	return none;
+
+
 }

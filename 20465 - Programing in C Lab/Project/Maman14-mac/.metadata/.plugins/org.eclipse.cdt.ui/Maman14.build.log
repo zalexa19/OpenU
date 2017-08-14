@@ -1,15 +1,6 @@
-14:41:09 **** Incremental Build of configuration Debug for project Maman14 ****
+06:53:03 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
-Building file: ../src/validator.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
-Finished building: ../src/validator.c
- 
-Building target: Maman14
-Invoking: GCC C Linker
-gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
-Finished building target: Maman14
- 
+make: Nothing to be done for 'all'.
 
-14:41:09 Build Finished (took 228ms)
+06:53:03 Build Finished (took 72ms)
 
