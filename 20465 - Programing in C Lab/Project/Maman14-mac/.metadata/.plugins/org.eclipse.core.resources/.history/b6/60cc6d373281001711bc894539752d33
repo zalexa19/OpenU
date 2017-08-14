@@ -399,6 +399,7 @@ char * extract_instruction(char * str){
 	inspection_start=str+size;
 	inspection_end = str+(count_non_spaces(str));
 
+	printf("inspec end:<%s>\n",inspection_end);
 
 /*	if (!inspection_end){
 		size=strlen(inspection_start);

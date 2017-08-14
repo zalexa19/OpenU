@@ -380,7 +380,6 @@ char * extract_instruction(char * str){
 	char * array_start;
 	char * inspection_start;
 	char * inspection_end;
-	int counted_non_spaces;
 	int size;
 
 	result=allocate_mem_string(strlen(str)+ADDEDSIZE);
@@ -397,16 +396,14 @@ char * extract_instruction(char * str){
 	size++;
 
 	inspection_start=str+size;
-	inspection_end = str+(count_non_spaces(str));
-
-
-/*	if (!inspection_end){
+	inspection_end = strchr(inspection_start,' ');
+	if (!inspection_end){
 		size=strlen(inspection_start);
-		inspection_end=inspection_start+size; point to the last cell of the array
-	}*/
+		inspection_end=inspection_start+size; /*point to the last cell of the array*/
+	}
 
 	size=CALCSIZE(inspection_start, inspection_end);
-	strncy_safe(result,inspection_start,size);
+	strncpy(result,inspection_start,size);
 
 	return result;
 }
@@ -565,26 +562,4 @@ String* extract_data_strings(char* str, int array_size){
 	}
 
 	return final_array;
-}
-
-int count_non_spaces(String str){
-	int i;
-	char c;
-	Bool found_space=FALSE;
-
-	i=0;
-	while (i<strlen(str) && found_space==FALSE){
-		c=str[i];
-
-		if (c!=' ' && c!='\t'){
-			i++;
-
-		}else{
-			found_space=TRUE;
-		}
-
-	}
-
-	return i;
-
 }

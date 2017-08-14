@@ -399,14 +399,15 @@ char * extract_instruction(char * str){
 	inspection_start=str+size;
 	inspection_end = str+(count_non_spaces(str));
 
+	printf("inspec end:<%s>\n",inspection_end);
 
-/*	if (!inspection_end){
+	if (!inspection_end){
 		size=strlen(inspection_start);
-		inspection_end=inspection_start+size; point to the last cell of the array
-	}*/
+		inspection_end=inspection_start+size; /*point to the last cell of the array*/
+	}
 
 	size=CALCSIZE(inspection_start, inspection_end);
-	strncy_safe(result,inspection_start,size);
+	strncpy(result,inspection_start,size);
 
 	return result;
 }

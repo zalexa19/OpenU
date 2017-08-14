@@ -43,7 +43,7 @@ String remove_first_spaces(String  str);
 
 int count_spaces (String str);
 
-int count_non_spaces(String str);
+int count_non-spaces(String str);
 
 int reverse_count_spaces (String ,String);
 

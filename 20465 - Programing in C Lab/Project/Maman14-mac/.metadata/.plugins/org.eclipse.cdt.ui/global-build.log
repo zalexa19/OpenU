@@ -19757,3 +19757,174 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+13:23:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:23:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+13:38:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:12:0:
+../src/parser.h:46:14: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘-’ token
+ int count_non-spaces(String str);
+              ^
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/Maman14-mac.o] Error 1
+src/subdir.mk:27: recipe for target 'src/Maman14-mac.o' failed
+13:40:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:401:17: error: ‘count_non’ undeclared (first use in this function)
+  counted_spaces=count_non-spaces(str)
+                 ^~~~~~~~~
+../src/parser.c:401:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:401:27: warning: implicit declaration of function ‘spaces’ [-Wimplicit-function-declaration]
+  counted_spaces=count_non-spaces(str)
+                           ^~~~~~
+../src/parser.c:403:2: error: expected ‘;’ before ‘if’
+  if (!inspection_end){
+  ^~
+../src/parser.c:383:6: warning: variable ‘counted_spaces’ set but not used [-Wunused-but-set-variable]
+  int counted_spaces;
+      ^~~~~~~~~~~~~~
+../src/parser.c:382:9: warning: variable ‘inspection_end’ set but not used [-Wunused-but-set-variable]
+  char * inspection_end;
+         ^~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+13:43:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:401:17: error: ‘count_non’ undeclared (first use in this function)
+  counted_spaces=count_non-spaces(str)
+                 ^~~~~~~~~
+../src/parser.c:401:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:401:27: warning: implicit declaration of function ‘spaces’ [-Wimplicit-function-declaration]
+  counted_spaces=count_non-spaces(str)
+                           ^~~~~~
+../src/parser.c:403:2: error: expected ‘;’ before ‘if’
+  if (!inspection_end){
+  ^~
+../src/parser.c:383:6: warning: variable ‘counted_spaces’ set but not used [-Wunused-but-set-variable]
+  int counted_spaces;
+      ^~~~~~~~~~~~~~
+../src/parser.c:382:9: warning: variable ‘inspection_end’ set but not used [-Wunused-but-set-variable]
+  char * inspection_end;
+         ^~~~~~~~~~~~~~
+../src/parser.c: In function ‘count_non_spaces’:
+../src/parser.c:571:6: warning: unused variable ‘counter’ [-Wunused-variable]
+  int counter;
+      ^~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+13:45:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:48:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:402:2: error: expected ‘;’ before ‘printf’
+  printf("inspec end:<%s>\n",inspection_end);
+  ^~~~~~
+../src/parser.c:383:6: warning: unused variable ‘counted_non_spaces’ [-Wunused-variable]
+  int counted_non_spaces;
+      ^~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+13:48:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:402:2: error: expected ‘;’ before ‘printf’
+  printf("inspec end:<%s>\n",inspection_end);
+  ^~~~~~
+../src/parser.c:383:6: warning: unused variable ‘counted_non_spaces’ [-Wunused-variable]
+  int counted_non_spaces;
+      ^~~~~~~~~~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:27: recipe for target 'src/parser.o' failed
+13:50:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:79:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c: In function ‘extract_instruction’:
+../src/parser.c:383:6: warning: unused variable ‘counted_non_spaces’ [-Wunused-variable]
+  int counted_non_spaces;
+      ^~~~~~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
