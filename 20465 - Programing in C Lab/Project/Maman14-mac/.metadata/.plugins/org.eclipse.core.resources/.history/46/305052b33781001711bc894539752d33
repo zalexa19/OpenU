@@ -240,10 +240,12 @@ body  parse_line (String str, int line_number){
 		printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);
 		NORMALCOLOR
 
-		/*extract operands*/
-		extracted_value=extract_operand(current_pointer);
-		printf("extracted_Value: <%s>",extracted_value);
-
+		result->operand1=allocate_mem_string(1);
+		result->operand1="a";
+		result->operand2=allocate_mem_string(1);
+		result->operand1="b";
+		result->operand3=allocate_mem_string(1);
+		result->operand1="b";
 	}
 
 

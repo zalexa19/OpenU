@@ -242,7 +242,7 @@ body  parse_line (String str, int line_number){
 
 		/*extract operands*/
 		extracted_value=extract_operand(current_pointer);
-		printf("extracted_Value: <%s>",extracted_value);
+		printf("extracted_Value: %s",extracted_value);
 
 	}
 

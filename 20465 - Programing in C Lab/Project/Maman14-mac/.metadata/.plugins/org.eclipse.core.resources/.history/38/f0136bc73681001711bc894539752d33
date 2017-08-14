@@ -230,20 +230,9 @@ body  parse_line (String str, int line_number){
 	 * if we are parsing .mat:
 	 */
 
-	else if (strcmp(result.instruction,"mat")==0){
+	if (strcmp(result.instruction,"mat")==0){
 		printf(KMAGENTA "current pointer in .mat: %s\n",current_pointer);
-
-		n_skipped_spaces=count_spaces(current_pointer);
-		current_pointer+=n_skipped_spaces;
-
-		printf(KMAGENTA "spaces found: %d\n",n_skipped_spaces);
-		printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);
 		NORMALCOLOR
-
-		/*extract operands*/
-		extracted_value=extract_operand(current_pointer);
-		printf("extracted_Value: <%s>",extracted_value);
-
 	}
 
 
@@ -465,7 +454,7 @@ int count_spaces (String str){
 	int n=0;
 	int i=0;
 
-	while ( (str[i]=='\t' ||  str[i]==' ') && i<strlen(str)){
+	while ( str[i]=='\t' ||  str[i]==' '){
 		n++;
 		i++;
 	}

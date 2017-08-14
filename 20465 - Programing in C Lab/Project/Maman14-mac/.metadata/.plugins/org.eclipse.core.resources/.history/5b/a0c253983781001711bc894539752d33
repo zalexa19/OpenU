@@ -239,11 +239,6 @@ body  parse_line (String str, int line_number){
 		printf(KMAGENTA "spaces found: %d\n",n_skipped_spaces);
 		printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);
 		NORMALCOLOR
-
-		/*extract operands*/
-		extracted_value=extract_operand(current_pointer);
-		printf("extracted_Value: <%s>",extracted_value);
-
 	}
 
 
