@@ -101,12 +101,12 @@ void print_structs(bodyArray array, int size){
 		if ((strcmp(array[i].instruction,"\0") ) !=0){
 
 		}
-			strcpy(tmp,array[i].instruction);
-			add_spaces_print(tmp);
-			printf("%s",tmp);
+		strcpy(tmp,array[i].instruction);
+		add_spaces_print(tmp);
+		printf("%s",tmp);
 
-			if (strcmp(array[i].instruction,"data")==0){
-				print_mat(array[i].data_string_array,array[i].data_values_number);
+		if (strcmp(array[i].instruction,"data")==0 || strcmp(array[i].instruction,"mat")==0){
+			print_mat(array[i].data_string_array,array[i].data_values_number);
 
 		}else printf("               ");
 
@@ -118,7 +118,7 @@ void print_structs(bodyArray array, int size){
 		}else printf("               ");
 
 
-		if ((strcmp(array[i].instruction,"data") !=0)){
+		if (strcmp(array[i].instruction,"data")!=0){
 
 			if ((strcmp(array[i].operand1,"\0") ) !=0)
 			{

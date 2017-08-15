@@ -12,6 +12,7 @@
 
 #define INITIAL_SARRAY_SIZE 8000
 #define ADDEDSIZE 1
+#define MAXBRACKETS 2
 /*
  * This macro helps calculating which parts of the array need to be copied
  */
@@ -236,13 +237,48 @@ body  parse_line (String str, int line_number){
 		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;
 
-		printf(KMAGENTA "spaces found: %d\n",n_skipped_spaces);
-		printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);
+	/*	printf(KMAGENTA "spaces found: %d\n",n_skipped_spaces);
+		printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);*/
 		NORMALCOLOR
 
 		/*extract operands*/
+/*
 		extracted_value=extract_operand(current_pointer);
-		printf("extracted_Value: <%s>",extracted_value);
+		printf("extracted_Value for mat: <%s>\n",extracted_value);
+*/
+
+		/*extract mat values*/
+		REALLOCATE_EXTRACTED_VALUE
+		strcpy(extracted_value,parse_mat(current_pointer));
+
+		result_size=strlen(extracted_value);
+
+		result.operand1=allocate_mem_string(result_size+1);
+		strcpy(result.operand1,extracted_value);
+		printf("<%s>\n\n",result.operand1);
+
+
+		/*advance the pointer*/
+		current_pointer+=result_size;
+
+		i=0;
+		while(current_pointer[i]!='\0'){
+			if(current_pointer[i]==','){
+				data_array_size++;
+			}
+			i++;
+		}
+
+		result.data_string_array=extract_data_strings(current_pointer,i);
+
+		printf("operand 1 for mat: <%s>",result.operand1);
+
+
+		result.operand2=allocate_mem_string(1);
+		result.operand3=allocate_mem_string(1);
+		result.operand2="\0";
+		result.operand3="\0";
+
 
 	}
 
@@ -337,25 +373,33 @@ String extract_operand (String str){
 	String ptr;
 	String result;
 
-	printf(KMAGENTA);
-
+	printf(KCYN);
+	printf("\n\ncurrent string: <%s>\n",str);
 	n_spaces=count_spaces(str);
 	str+=n_spaces;
+
 	ptr=strchr(str,',');
 	i=0;
+	printf("ptr is: <%ptr>\n",ptr);
 	if (!ptr){
-		/*we are the last operand*/
+		/*',' was not found so we are the last operand*/
+		/*Counting how many chars are in the sting*/
+		printf("ptr is: empty\n");
+
 		while (str[i] != '\0'){
 			count++;
 			i++;
 		}
-
-		ptr=str+i;
+		ptr=str+count;
 		printf("counted %d chars\n",count);
 	}
+	printf("ptr is: <%s>\n",ptr);
+
 
 	operand_size=CALCSIZE(str,ptr);
 	n_spaces=reverse_count_spaces(str,ptr);
+	printf("oprand_size: %d\ncounted spaces: %d\n",operand_size,n_spaces);
+
 	operand_size=operand_size-n_spaces;
 
 	result=allocate_mem_string(operand_size+ADDEDSIZE);
@@ -366,6 +410,33 @@ String extract_operand (String str){
 
 }
 
+String parse_mat (String str){
+	String result;
+	int length;
+	int i;
+	int brack_counter;
+	char c;
+
+	i=0;
+	brack_counter=0;
+	c=str[i];
+	length=strlen(str);
+
+	while (i<length && brack_counter <MAXBRACKETS){
+		if (c==']'){
+			brack_counter++;
+		}
+
+
+		c=str[++i];
+	}
+
+	result=allocate_mem_string(i+1);
+	strncy_safe(result,str,i);
+
+/*	printf("PArsed mat: <%s>\n",result);*/
+	return result;
+}
 
 
 
@@ -483,9 +554,11 @@ int reverse_count_spaces (String start, String end){
 		i++;
 	}
 
+/*	printf("number of non spaces: %d\n",i);*/
 	n=size-i;
 
-/*	printf("size:%d, i:%d, calculated n: %d\n",size,i,n);*/
+/*	printf(KYELLOW "size:%d, i:%d, calculated n: %d\n",size,i,n);*/
+	NORMALCOLOR
 	return n;
 }
 
@@ -611,3 +684,5 @@ int count_non_spaces(String str){
 	return i;
 
 }
+
+

@@ -43,3 +43,5 @@ Bool is_lowcase(char c);
 Bool is_string_lowercase(String str);
 
 Bool is_valid_number (char c);
+
+

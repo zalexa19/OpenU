@@ -53,5 +53,6 @@ String extract_operand (String str);
 
 Bool check_empty_line(String str);
 
+String parse_mat (String str);
 
 #endif /* PARSER_H_ */
