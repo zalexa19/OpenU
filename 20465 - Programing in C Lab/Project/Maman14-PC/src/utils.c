@@ -8,6 +8,7 @@
 #include "utils.h"
 
 
+
 int structs_array_size;
 
 String* allocate_mem_matrix(int size){
@@ -216,7 +217,7 @@ void print_mat (String* mat, int size){
 
 	NORMALCOLOR
 
-	printf("\n");
+	printf(" ");
 
 }
 
@@ -286,5 +287,6 @@ String covert_int_to_string (int number){
 
 void strncy_safe(String  dest, String  source, int size){
 	strncpy(dest,source,size);
-	dest[strlen(dest)]='\0';
+
+	dest[size]='\0';
 }

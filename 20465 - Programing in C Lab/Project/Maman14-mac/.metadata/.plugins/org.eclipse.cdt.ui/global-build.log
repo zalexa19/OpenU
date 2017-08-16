@@ -20383,3 +20383,1664 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+01:43:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+01:44:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+01:44:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+01:45:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+01:49:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+01:49:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:06:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:40:9: warning: unknown escape sequence: '\s'
+  printf("\n\n\starting to validate file:\n");
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:18:1: warning: ISO C99 requires whitespace after the macro name
+ {\
+ ^
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:390:8: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   ptr+=count_spaces(ptr);
+        ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE;/*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:08:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:390:8: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   ptr+=count_spaces(ptr);
+        ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE;/*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:08:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:391:10: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   spaces=count_spaces(ptr);
+          ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE;/*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:08:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:09:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:10:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+02:22:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:379:6: warning: unused variable ‘length’ [-Wunused-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:377:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:376:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:375:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:373:9: warning: unused variable ‘orig’ [-Wunused-variable]
+  String orig;
+         ^~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE;/*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c:397:2: warning: ‘letter_counter’ is used uninitialized in this function [-Wuninitialized]
+  printf("counter %d letters \n",letter_counter);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:30:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:631:14: warning: ‘i’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   final_array[i]="\0";
+              ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:31:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:33:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+../src/parser.c:276:28: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+    printf("data strings: <%s>\n",result.data_string_array);
+                            ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:33:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:37:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:39:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:390:10: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   spaces=count_spaces(ptr);
+          ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE;/*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:39:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:390:10: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   spaces=count_spaces(ptr);
+          ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+02:40:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:391:10: warning: implicit declaration of function ‘count_spaces’ [-Wimplicit-function-declaration]
+   spaces=count_spaces(ptr);
+          ^~~~~~~~~~~~
+../src/validator.c:374:9: warning: unused variable ‘fixed_operand’ [-Wunused-variable]
+  String fixed_operand;
+         ^~~~~~~~~~~~~
+../src/validator.c:372:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:15:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:66:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:379:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:378:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:375:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:17:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:379:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:378:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:375:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:30:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:435:17: error: expected ‘)’ before string constant
+   sprintf(error "%Error %d found in line %d: Missing char '[' for operand: %s.\n",error_counter,line,fixed);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:435:3: error: too few arguments to function ‘sprintf’
+   sprintf(error "%Error %d found in line %d: Missing char '[' for operand: %s.\n",error_counter,line,fixed);
+   ^~~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:386:6: warning: variable ‘line’ set but not used [-Wunused-but-set-variable]
+  int line;
+      ^~~~
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:30:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:435:17: error: expected ‘)’ before string constant
+   sprintf(error "Error %d found in line %d: Missing char '[' for operand: %s.\n",error_counter,line,fixed);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:435:3: error: too few arguments to function ‘sprintf’
+   sprintf(error "Error %d found in line %d: Missing char '[' for operand: %s.\n",error_counter,line,fixed);
+   ^~~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: declared here
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:386:6: warning: variable ‘line’ set but not used [-Wunused-but-set-variable]
+  int line;
+      ^~~~
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:32:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:36:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:447:23: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   if (!(item->mat_size=(int**)malloc(sizeof(int*)*2)){
+                       ^
+../src/validator.c:447:54: error: expected ‘)’ before ‘{’ token
+   if (!(item->mat_size=(int**)malloc(sizeof(int*)*2)){
+                                                      ^
+../src/validator.c:450:2: error: expected expression before ‘}’ token
+  }
+  ^
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:36:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:447:24: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   if (! (item->mat_size=(int**)malloc(sizeof(int*)*2))){
+                        ^
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:37:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:30:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:30:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:30:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:381:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:379:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:376:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:30:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:38:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:31:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:31:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:31:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:382:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:380:9: warning: unused variable ‘ptr’ [-Wunused-variable]
+  String ptr;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:31:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:47:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:37: error: expected expression before ‘)’ token
+  if (opening_bracket !=NUMOFBRACKETS){
+                                     ^
+../src/validator.c:468:37: error: expected expression before ‘)’ token
+  if (closing_bracket !=NUMOFBRACKETS){
+                                     ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+03:47:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:38: error: expected expression before ‘)’ token
+  if (opening_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:468:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:48:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:38: error: expected expression before ‘)’ token
+  if (opening_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:468:25: error: expected expression before ‘)’ token
+  if (closing_bracket != ){
+                         ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:48:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:38: error: expected expression before ‘)’ token
+  if (opening_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:468:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:48:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:36: error: expected expression before ‘)’ token
+  if (opening_bracket!=NUMOFBRACKETS){
+                                    ^
+../src/validator.c:468:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:48:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:462:36: error: expected expression before ‘)’ token
+  if (opening_bracket!=NUMOFBRACKETS){
+                                    ^
+../src/validator.c:468:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:49:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:460:36: error: expected expression before ‘)’ token
+  if (opening_bracket!=NUMOFBRACKETS){
+                                    ^
+../src/validator.c:465:36: error: expected expression before ‘)’ token
+  if (opening_bracket!=NUMOFBRACKETS){
+                                    ^
+../src/validator.c:471:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:49:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:461:36: error: expected expression before ‘)’ token
+  if (opening_bracket==NUMOFBRACKETS){
+                                    ^
+../src/validator.c:467:38: error: expected expression before ‘)’ token
+  if (closing_bracket != NUMOFBRACKETS){
+                                      ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:49:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:2: error: multiple storage classes in declaration specifiers
+  extern static int error_counter=1;
+  ^~~~~~
+../src/validator.c:32:20: error: ‘error_counter’ has both ‘extern’ and initializer
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+../src/validator.c:32:20: warning: unused variable ‘error_counter’ [-Wunused-variable]
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:383:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:382:9: warning: unused variable ‘col’ [-Wunused-variable]
+  String col;
+         ^~~
+../src/validator.c:381:9: warning: variable ‘ptr’ set but not used [-Wunused-but-set-variable]
+  String ptr;
+         ^~~
+../src/validator.c:378:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+At top level:
+../src/validator.c:32:20: warning: ‘error_counter’ defined but not used [-Wunused-variable]
+  extern static int error_counter=1;
+                    ^~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+03:54:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:72:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:482:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:489:4: warning: implicit declaration of function ‘prinf’ [-Wimplicit-function-declaration]
+    prinf("number in matsize[0]: %d\n",item->mat_size[i]);
+    ^~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_ins_mat':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:489: undefined reference to `prinf'
+makefile:31: recipe for target 'Maman14' failed
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+03:54:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:482:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:05:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c:13:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ int structs_array_size;
+ ^~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:68:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+04:06:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c:13:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘int’
+ int structs_array_size;
+ ^~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:68:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:27: recipe for target 'src/utils.o' failed
+04:06:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:494:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:11:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:239:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:494:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:599:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:16:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:500:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:605:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:16:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:17:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+04:19:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:499:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:604:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:20:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:502:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:607:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:20:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:501:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(col)==TRUE){
+                       ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:47:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c:382:9: warning: unused variable ‘row’ [-Wunused-variable]
+  String row;
+         ^~~
+../src/validator.c:377:7: warning: unused variable ‘in_number’ [-Wunused-variable]
+  Bool in_number=FALSE; /*This bool is used to determine if we encounter a space between digits*/
+       ^~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:606:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:20:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:28:15 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:629:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+04:29:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:631:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:751:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+At top level:
+../src/validator.c:639:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:624:5: warning: ‘extract_number’ defined but not used [-Wunused-function]
+ int extract_number (String str){
+     ^~~~~~~~~~~~~~
+../src/validator.c:616:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:594:6: warning: ‘is_string_lowercase’ defined but not used [-Wunused-function]
+ Bool is_string_lowercase(String str){
+      ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+../src/validator.c:576:6: warning: ‘is_white_char’ defined but not used [-Wunused-function]
+ Bool is_white_char (char c){
+      ^~~~~~~~~~~~~
+../src/validator.c:565:6: warning: ‘is_valid_letter’ defined but not used [-Wunused-function]
+ Bool is_valid_letter(char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:560:6: warning: ‘validate_oper_operands’ defined but not used [-Wunused-function]
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:549:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:545:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+04:31:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:631:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:751:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+At top level:
+../src/validator.c:639:8: warning: ‘find_command_name’ defined but not used [-Wunused-function]
+ String find_command_name(String key){
+        ^~~~~~~~~~~~~~~~~
+../src/validator.c:624:5: warning: ‘extract_number’ defined but not used [-Wunused-function]
+ int extract_number (String str){
+     ^~~~~~~~~~~~~~
+../src/validator.c:616:6: warning: ‘is_valid_number’ defined but not used [-Wunused-function]
+ Bool is_valid_number (char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:594:6: warning: ‘is_string_lowercase’ defined but not used [-Wunused-function]
+ Bool is_string_lowercase(String str){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:576:6: warning: ‘is_white_char’ defined but not used [-Wunused-function]
+ Bool is_white_char (char c){
+      ^~~~~~~~~~~~~
+../src/validator.c:565:6: warning: ‘is_valid_letter’ defined but not used [-Wunused-function]
+ Bool is_valid_letter(char c){
+      ^~~~~~~~~~~~~~~
+../src/validator.c:560:6: warning: ‘validate_oper_operands’ defined but not used [-Wunused-function]
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c:549:6: warning: ‘validate_ins_extern’ defined but not used [-Wunused-function]
+ void validate_ins_extern(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~
+../src/validator.c:545:6: warning: ‘validate_ins_entry’ defined but not used [-Wunused-function]
+ void validate_ins_entry(body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+04:31:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:631:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

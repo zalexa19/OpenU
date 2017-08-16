@@ -5934,3 +5934,53 @@ Invalid thread id: 1
 java.lang.Exception: Invalid thread id: 1
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:926)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:755)
+
+!ENTRY org.eclipse.cdt.dsf.ui 4 0 2017-08-16 03:22:55.071
+!MESSAGE Can't view memory on &((*((c)+0)@1)[0])
+!STACK 1
+org.eclipse.debug.core.DebugException: Error evaluating memory address (ExecutionException).
+	at org.eclipse.cdt.dsf.debug.model.DsfMemoryBlockRetrieval.resolveMemoryAddress(DsfMemoryBlockRetrieval.java:532)
+	at org.eclipse.cdt.dsf.gdb.internal.memory.GdbMemoryBlockRetrieval.getMemoryBlock(GdbMemoryBlockRetrieval.java:205)
+	at org.eclipse.cdt.dsf.gdb.internal.memory.GdbMemoryBlockRetrieval.getExtendedMemoryBlock(GdbMemoryBlockRetrieval.java:133)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler.showExpressionInMemoryView(DsfViewMemoryHandler.java:196)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler.access$0(DsfViewMemoryHandler.java:178)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler$1$1$1.run(DsfViewMemoryHandler.java:237)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-var-create - * &((*((c)+0)@1)[0])
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.debug.model.DsfMemoryBlockRetrieval.resolveMemoryAddress(DsfMemoryBlockRetrieval.java:525)
+	... 6 more
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-var-create - * &((*((c)+0)@1)[0])
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+	... 8 more
+Caused by: java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:926)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:755)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 5013 2017-08-16 03:22:55.083
+!MESSAGE Error evaluating memory address (ExecutionException).
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-var-create - * &((*((c)+0)@1)[0])
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.debug.model.DsfMemoryBlockRetrieval.resolveMemoryAddress(DsfMemoryBlockRetrieval.java:525)
+	at org.eclipse.cdt.dsf.gdb.internal.memory.GdbMemoryBlockRetrieval.getMemoryBlock(GdbMemoryBlockRetrieval.java:205)
+	at org.eclipse.cdt.dsf.gdb.internal.memory.GdbMemoryBlockRetrieval.getExtendedMemoryBlock(GdbMemoryBlockRetrieval.java:133)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler.showExpressionInMemoryView(DsfViewMemoryHandler.java:196)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler.access$0(DsfViewMemoryHandler.java:178)
+	at org.eclipse.cdt.dsf.debug.internal.ui.viewmodel.actions.DsfViewMemoryHandler$1$1$1.run(DsfViewMemoryHandler.java:237)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-var-create - * &((*((c)+0)@1)[0])
+Error message from debugger back end:
+Attempt to take address of value not located in memory.
+	... 8 more
+Caused by: java.lang.Exception: Attempt to take address of value not located in memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:926)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:755)

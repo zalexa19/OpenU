@@ -40,8 +40,12 @@ Bool is_valid_letter(char c);
 
 Bool is_lowcase(char c);
 
+Bool is_white_char (char c);
+
 Bool is_string_lowercase(String str);
 
 Bool is_valid_number (char c);
+
+int extract_number (String);
 
 

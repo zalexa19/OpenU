@@ -7,10 +7,25 @@
 #define MAXERRORSIZE 200
 #define NOMATCH "none"
 #define TERMINATOR "\0"
+#define MATRIXCOLANDROW 2
+#define NUMOFBRACKETS 2
 
 
 /*Macro that adds a log*/
 #define INVALIDINPUT fprintf(stderr, "Invalid input: ");
+/*
+ * Macro for printing
+ */
+#define PRINT_PASSED_OR_FAILED \
+{\
+			if (item.valid==TRUE){\
+			printf(KGREEN "PASSED\n");\
+		} else {\
+			printf(KRED "FAILED\n");\
+		}\
+		NORMALCOLOR\
+}
+
 
 void validate_file(bodyArray parsed, int array_size){
 	int i;
@@ -35,32 +50,18 @@ void validate_file(bodyArray parsed, int array_size){
 		validate_label(&item,&error_list_head);
 
 
-		printf("After label validation:\nFile is: ");
-
-		if (item.valid==TRUE){
-			printf(KGREEN "valid\n");
-		} else {
-			printf(KRED "invalid\n");
-		}
-
-		NORMALCOLOR
+		printf(BOLDWHITE"Label validation:\nFile is: ");
+		PRINT_PASSED_OR_FAILED
 	}
 
 	if(strcmp(item.instruction,"\0") != 0){
 		/*VALIDATE INSTRUCTION*/
-		printf("instruction exists\n");
+
 		validate_instruction(&item,&error_list_head);
 
 
-		printf("After instruction validation:\nFile is: ");
-
-		if (item.valid==TRUE){
-			printf(KGREEN "valid\n");
-		} else {
-			printf(KRED "invalid\n");
-		}
-
-		NORMALCOLOR
+		printf("Instruction validation:\nFile is: ");
+		PRINT_PASSED_OR_FAILED
 
 
 		if (strcmp(item.instruction,"data")==0){
@@ -68,35 +69,32 @@ void validate_file(bodyArray parsed, int array_size){
 
 			NORMALCOLOR
 
-			printf("Validating operands for .data: \n");
-
-			if (item.valid==TRUE){
-				printf(KGREEN "valid\n");
-			} else {
-				printf(KRED "invalid\n");
-			}
-
-			NORMALCOLOR
+			printf(BOLDWHITE "data operands validation: ");
+			PRINT_PASSED_OR_FAILED
 		}
 
-		printf("Validating operands for .string: \n");
+		printf(".string operands validation: \n");
 
-		printf("instruction: %s\n",item.instruction);
 
 		if (strcmp(item.instruction,"string")==0){
 			validate_ins_string(&item,&error_list_head);
 		}
 
 
-		printf("Validating operands for .string: \n");
+		printf(BOLDWHITE "string operands validation: ");
 
-		if (item.valid==TRUE){
-			printf(KGREEN "valid\n");
-		} else {
-			printf(KRED "invalid\n");
+		PRINT_PASSED_OR_FAILED
+
+
+
+		/*mat validation*/
+		printf("mat validation:\n");
+		if (strcmp(item.instruction,"mat")==0){
+			validate_ins_mat(&item,&error_list_head);
+
+			printf(BOLDWHITE "mat operands validation: ");
+			PRINT_PASSED_OR_FAILED
 		}
-
-		NORMALCOLOR
 
 
 		printf("finished validating file\n");
@@ -369,8 +367,178 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 }
 
+/*
+ * 1.Removes all spaces. According to the forum, matrix will be recieved without unexpected spaces
+ * 2.check that operand1 includes valid numbers
+ * 3. Put the valid numbers in a special array
+ * 4. check that the other values recieved also includes valid numbers
+ */
 void validate_ins_mat(body* item, list_item_reference*  head){
+	Bool is_number=TRUE; /*This bool is used to determine if we encounter a space between digits*/
+	String orig;
+	String fixed_operand;
+	String ptr;
+	String col;
+	String row;
+	int size;
+	char error[MAXERRORSIZE];
+	int opening_bracket;
+	int closing_bracket;
+	int spaces;
+	int i,j;
+	int letter_counter;
+	int length;
+	int c;
+	int line;
 
+
+	printf(BOLDMAGENTA "Starting validation on mat operands: <%s>\n",item->operand1);
+
+	NORMALCOLOR;
+
+	/*Removing spaces*/
+	opening_bracket=0;
+	closing_bracket=0;
+	orig=item->operand1;
+	line=item->line_number;
+	length=strlen(orig);
+	letter_counter=0;
+	i=0;
+
+	while (i<length){
+		c=orig[i];
+		if (is_white_char(c) == FALSE){
+			letter_counter++;
+
+		}
+		i++;
+	}
+
+	printf("counter %d letters \n",letter_counter);
+	fixed_operand=allocate_mem_string(letter_counter+1);
+
+	/*copy into fixed without spaces*/
+	i=0;
+	j=0;
+
+	while (i<length){
+
+		c=orig[i];
+		if (is_white_char(c) == FALSE){
+			fixed_operand[j]=c;
+			j++;
+
+			if (c=='['){
+				opening_bracket++;
+			} else if (c==']'){
+				closing_bracket++;
+			}
+
+
+		}
+
+		printf("%c",fixed_operand[j]);
+		i++;
+	}
+	fixed_operand[j]='\0';
+
+	printf("fixed: <%s>\n",fixed_operand);
+
+	/*begin validation*/
+
+	if (fixed_operand[letter_counter-letter_counter] != '['){
+		item->valid=FALSE;
+		sprintf(error,"Error 15 found in line %d:operand: %s doesn't start with [.\n",line,fixed_operand);
+		add_to_list(head,error);
+	}
+
+	if (fixed_operand[letter_counter-1] != ']'){
+		item->valid=FALSE;
+		sprintf(error,"Error 16 found in line %d:operand: %s doesn't end with ].\n",line,fixed_operand);
+		add_to_list(head,error);
+	}
+
+
+	if (opening_bracket !=NUMOFBRACKETS){
+		item->valid=FALSE;
+		sprintf(error,"Error 17 found in line %d: invalid number of '[' for operand: %s.\n",line,fixed_operand);
+		add_to_list(head,error);
+	}
+
+	if (closing_bracket != NUMOFBRACKETS){
+		item->valid=FALSE;
+		sprintf(error,"Error 18 found in line %d: invalid number of ']' for operand: %s.\n",line,fixed_operand);
+		add_to_list(head,error);
+	}
+
+	else {
+
+		/*string is of form [][]*/
+		orig=fixed_operand;
+		orig+=1;
+
+		/*copy the first [value] to a seperated string*/
+		ptr=strchr(orig,']');
+		size=CALCSIZE(orig,ptr);
+		col=allocate_mem_string(size);
+
+		strncy_safe(col,orig,size);
+
+		for (j=0;j<size;j++){
+			if (is_valid_number(col[j])==FALSE){
+				is_number=FALSE;
+			}
+		}
+
+
+		orig+=size;
+		i=0;
+
+		if (is_number==TRUE){
+			/*allocate memory*/
+			if (! (item->mat_size=(int*)malloc(sizeof(int)*MATRIXCOLANDROW))  ){
+				fprintf(stderr,"Unable to allocate memory to mat_size\n.");
+			}
+
+			item->mat_size[i]=extract_number(col);
+			orig+=size;
+			i++;
+		}else {
+			item->valid=FALSE;
+				sprintf(error,"Error 19 found in line %d: operand: %s is not a number\n",line,fixed_operand);
+				add_to_list(head,error);
+			}
+
+		is_number=TRUE; /*reseting to check the other operand*/
+
+
+		/*extract row*/
+		ptr=strchr(orig,']');
+		size=CALCSIZE(orig,ptr);
+		row=allocate_mem_string(size);
+		strncy_safe(row,orig,size);
+		orig+=size;
+
+		for (j=0;j<size;j++){
+			if (is_valid_number(col[j])==FALSE){
+				is_number=FALSE;
+			}
+		}
+
+		if (is_number==TRUE){
+			/*allocate memory*/
+			item->mat_size[i]=extract_number(row);
+		}else {
+			item->valid=FALSE;
+				sprintf(error,"Error 20 found in line %d: operand: %s is not a number\n",line,fixed_operand);
+				add_to_list(head,error);
+		}
+
+
+		printf("in my matrix: col: %d, row: %d\n",item->mat_size[0],item->mat_size[1]);
+		/*Checking the other operand*/
+
+	}
 }
 
 void validate_ins_entry(body* item, list_item_reference*  head){
@@ -380,6 +548,7 @@ void validate_ins_entry(body* item, list_item_reference*  head){
 void validate_ins_extern(body* item, list_item_reference*  head){
 
 }
+
 
 
 
@@ -402,6 +571,16 @@ Bool is_valid_letter(char c){
 
 
 }
+
+Bool is_white_char (char c){
+	if (c==' ' || c=='\t' || c=='\n' || c=='\0'){
+		return TRUE;
+	}
+	return FALSE;
+}
+
+
+
 
 Bool is_lowcase(char c){
 	if ('a'<=c && c<='z'){
@@ -441,7 +620,14 @@ Bool is_valid_number (char c){
 	return FALSE;
 }
 
+int extract_number (String str){
+	int result;
 
+	result=atoi(str);
+	if (!result){
+		fprintf(stderr,"unable to parse into from string %s\n.",str);
+	}
+}
 
 
 
