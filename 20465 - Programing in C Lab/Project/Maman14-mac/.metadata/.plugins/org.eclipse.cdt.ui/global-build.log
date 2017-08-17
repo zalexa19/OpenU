@@ -22044,3 +22044,958 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+06:02:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:108:89: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   sprintf(error,"22. Error in line: %d: Operation/Instruction were not received.\n",item->line_number);
+                                                                                         ^~
+../src/validator.c:109:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error_list_head,error);
+               ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:121:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:397:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:640:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:02:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:109:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_to_list(error_list_head,error);
+               ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:1:0:
+../src/utils.h:121:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:397:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:640:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:02:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:397:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:640:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:06:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:101:7: error: expected expression before ‘if’
+   if (if (strcmp(item.instruction,"entry")==0)){
+       ^~
+../src/validator.c:116:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:117:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:410:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:653:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+06:06:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:116:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:117:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:410:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:653:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:14:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘validate_ins_entry’:
+../src/validator.c:581:11: warning: passing argument 1 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+   sprintf(*error,"Attention to line %d: label '%s' received for .entry command will be ignored.\n",line,item->label);
+           ^
+In file included from ../src/utils.h:10:0,
+                 from ../src/validator.c:1:
+/usr/include/stdio.h:366:12: note: expected ‘char * restrict’ but argument is of type ‘char’
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/validator.c:582:20: warning: passing argument 2 of ‘add_to_list’ makes pointer from integer without a cast [-Wint-conversion]
+   add_to_list(head,*error);
+                    ^
+In file included from ../src/validator.c:1:0:
+../src/utils.h:121:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:669:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:14:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘validate_ins_entry’:
+../src/validator.c:582:20: warning: passing argument 2 of ‘add_to_list’ makes pointer from integer without a cast [-Wint-conversion]
+   add_to_list(head,*error);
+                    ^
+In file included from ../src/validator.c:1:0:
+../src/utils.h:121:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:669:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:15:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:669:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:15:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:670:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:15:57 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+06:21:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘validate_ins_entry’:
+../src/validator.c:598:17: warning: too many arguments for format [-Wformat-extra-args]
+   sprintf(error,"22. Error in line %d: Missing statement for .entry command .\n",line,item->label);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:23:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:32: warning: passing argument 2 of ‘validate_oper_operands’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_oper_operands(&item,&error);
+                                ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:35:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_oper_operands (body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:694:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:26:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:418:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:26:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:3: error: too many arguments to function ‘validate_operation’
+   validate_operation(&item,&error,&error);
+   ^~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: declared here
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:418:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:26:35 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:28: warning: passing argument 2 of ‘validate_operation’ from incompatible pointer type [-Wincompatible-pointer-types]
+   validate_operation(&item,&error);
+                            ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: expected ‘struct node **’ but argument is of type ‘char (*)[200]’
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:418:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:26:40 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:125:3: error: too many arguments to function ‘validate_operation’
+   validate_operation(&item,&error_list_head,&error);
+   ^~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: declared here
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:418:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:27:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:126:3: error: too few arguments to function ‘validate_operation’
+   validate_operation()
+   ^~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: declared here
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c:129:2: error: expected ‘;’ before ‘}’ token
+  }
+  ^
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:419:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:696:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:27:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:102:46: warning: passing argument 3 of ‘validate_ins_entry’ from incompatible pointer type [-Wincompatible-pointer-types]
+    validate_ins_entry(&item,&error_list_head,&error);
+                                              ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:18:6: note: expected ‘char *’ but argument is of type ‘char (*)[200]’
+ void validate_ins_entry(body* item, list_item_reference*  head, char *);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:417:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:694:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:27:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:418:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:695:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:30:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:23:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:420:6: warning: unused variable ‘spaces’ [-Wunused-variable]
+  int spaces;
+      ^~~~~~
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:733:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:31:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘extract_number’:
+../src/validator.c:732:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:31:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:33:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_operational_command’:
+../src/validator.c:858:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:36:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/utils.h:13:0,
+                 from ../src/validator.c:1:
+../src/validator.c: In function ‘find_command_name’:
+../src/constants.h:35:13: error: expected identifier or ‘(’ before string constant
+ #define rts "rts"
+             ^
+../src/validator.c:766:9: note: in expansion of macro ‘rts’
+  String rts="rts";
+         ^~~
+../src/constants.h:36:14: error: expected identifier or ‘(’ before string constant
+ #define stop "stop"
+              ^
+../src/validator.c:767:9: note: in expansion of macro ‘stop’
+  String stop="stop";
+         ^~~~
+../src/validator.c: In function ‘is_operational_command’:
+../src/validator.c:858:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:36:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_operational_command’:
+../src/validator.c:858:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:47:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:246:6: error: conflicting types for ‘validate_operation’
+ void validate_operation(body* item, list_item_reference*  head, String error){
+      ^~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: previous declaration of ‘validate_operation’ was here
+ void validate_operation(body* item, list_item_reference *);
+      ^~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:48:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:128:3: error: too few arguments to function ‘validate_operation’
+   validate_operation(&item,&error_list_head);
+   ^~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:9:6: note: declared here
+ void validate_operation(body* item, list_item_reference *, String);
+      ^~~~~~~~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:688:6: error: conflicting types for ‘validate_oper_operands’
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:36:6: note: previous declaration of ‘validate_oper_operands’ was here
+ void validate_oper_operands (body* item, list_item_reference *, String);
+      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:49:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:688:6: error: conflicting types for ‘validate_oper_operands’
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:36:6: note: previous declaration of ‘validate_oper_operands’ was here
+ void validate_oper_operands (body* item, list_item_reference *, String);
+      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+06:50:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c:691:6: error: conflicting types for ‘validate_oper_operands’
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:36:6: note: previous declaration of ‘validate_oper_operands’ was here
+ void validate_oper_operands (body* item, list_item_reference *, String);
+      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed

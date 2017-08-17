@@ -1,0 +1,39 @@
+/*
+ * constants.h
+ *
+ *  Created on: Aug 17, 2017
+ *      Author: alexz
+ */
+
+#ifndef CONSTANTS_H_
+#define CONSTANTS_H_
+
+#define DATA "data"
+
+#define STR "string"
+#define MAT "mat"
+#define ENTRY "entry"
+#define NONE NOMATCH
+#define EXTERNAL "external"
+
+#define MOV "mov"
+#define CMP "cmp"
+#define ADD "add"
+#define SUB "sub"
+#define LEA "lea"
+
+#define NOT "not"
+#define CLR "clr"
+#define INC "inc"
+#define DEC "dec"
+#define JMP "jmp"
+#define BNE "bne"
+#define RED "red"
+#define PRN "prn"
+#define JSR "jsr"
+
+#define RTS "rts"
+#define STOP "stop"
+
+
+#endif /* CONSTANTS_H_ */

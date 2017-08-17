@@ -31,6 +31,7 @@ void validate_file(bodyArray parsed, int array_size){
 	int i;
 	body item;
 	list_item_reference error_list_head;
+	char error[MAXERRORSIZE];
 
 
 	printf(KYELLOW"------------------------------\n");
@@ -55,15 +56,17 @@ void validate_file(bodyArray parsed, int array_size){
 	}
 
 	if(strcmp(item.instruction,"\0") != 0){
-		/*VALIDATE INSTRUCTION*/
+		/***********************
+		 * VALIDATE INSTRUCTION*
+		 ***********************/
 
 		validate_instruction(&item,&error_list_head);
-
 
 		printf("Instruction validation:\nFile is: ");
 		PRINT_PASSED_OR_FAILED
 
 
+		/*DATA*/
 		if (strcmp(item.instruction,"data")==0){
 			validate_ins_data(&item, &error_list_head);
 
@@ -75,7 +78,6 @@ void validate_file(bodyArray parsed, int array_size){
 
 		printf(".string operands validation: \n");
 
-
 		if (strcmp(item.instruction,"string")==0){
 			validate_ins_string(&item,&error_list_head);
 		}
@@ -85,9 +87,7 @@ void validate_file(bodyArray parsed, int array_size){
 
 		PRINT_PASSED_OR_FAILED
 
-
-
-		/*mat validation*/
+		/*MAT*/
 		printf("mat validation:\n");
 		if (strcmp(item.instruction,"mat")==0){
 			validate_ins_mat(&item,&error_list_head);
@@ -97,10 +97,46 @@ void validate_file(bodyArray parsed, int array_size){
 		}
 
 
-		printf("finished validating file\n");
-}
+		/*ENTRY*/
+		if (strcmp(item.instruction,"entry")==0){
+			validate_ins_entry(&item,&error_list_head,error);
+
+		}
+
+		printf(BOLDWHITE "entry operands validation: ");
+		PRINT_PASSED_OR_FAILED
+
+		/*EXTERN*/
+		if (strcmp(item.instruction,"extern")==0){
+			validate_ins_extern(&item,&error_list_head,error);
+		}
+
+		printf(BOLDWHITE "extern operands validation: ");
+		PRINT_PASSED_OR_FAILED
+
+	}	else {
+		/*
+		 * Validate the operation
+		 */
+
+	if (strcmp(item.operantion,"\0")==0){
+		item.valid=FALSE;
+		sprintf(error,"22. Error in line: %d: Operation/Instruction were not received.\n",item.line_number);
+		add_to_list(&error_list_head,error);
+	} else {
+
+		validate_operation(&item,&error_list_head,error);
+
+		printf(BOLDWHITE "Operational command validation: ");
+		PRINT_PASSED_OR_FAILED
+
+	}
 
 
+
+	/*end of operation validation*/
+	}
+	printf("finished validating file\n");
 
 	printf(KYELLOW "------------------------------\n");
     printf("      ERRORS:        \n");
@@ -210,7 +246,34 @@ void validate_instruction(body* item, list_item_reference*  head){
 
 }
 
-void validate_operation(body* item, list_item_reference*  head){
+void validate_operation(body* item, list_item_reference*  head, String error){
+	String value;
+	int line;
+
+	line=item->line_number;
+	value=item->operantion;
+
+	if (strcmp(value,TERMINATOR)==0){
+		item->valid=FALSE;
+		sprintf(error,"26. Error in line %d: Operational command wasn't received.\n",line);
+		add_to_list(head,error);
+		return;
+	}
+
+	if (is_string_lowercase(value)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"27. Error in line %d: Operational value <%s> has uppercase chars.\n",line,value);
+		add_to_list(head,error);
+	}
+
+	if (is_operational_command(value)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"28. Error in line %d: Operational value <%s> is unrecognized.\n",line,value);
+		add_to_list(head,error);
+	}
+
+
+
 
 }
 
@@ -384,7 +447,6 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 	char error[MAXERRORSIZE];
 	int opening_bracket;
 	int closing_bracket;
-	int spaces;
 	int i,j;
 	int letter_counter;
 	int length;
@@ -541,11 +603,81 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 	}
 }
 
-void validate_ins_entry(body* item, list_item_reference*  head){
+void validate_ins_entry(body* item, list_item_reference*  head, char * error){
+	int line;
+
+	line=item->line_number;
+
+
+/* unreachable
+	if (is_string_lowercase(item->operantion)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"24. Error in line %d: .entry command is not written in lowercase: %s .\n",line,item->operantion);
+		add_to_list(head,error);
+	}
+*/
+
+
+
+	if (strcmp(item->label,TERMINATOR)!=0){
+		sprintf(error,"Attention to line %d: label '%s' received for .entry command will be ignored.\n",line,item->label);
+		add_to_list(head,error);
+	}
+
+	if (strcmp(item->operand1,TERMINATOR)==0){
+		item->valid=FALSE;
+		sprintf(error,"22. Error in line %d: Missing statement for .entry command .\n",line);
+		add_to_list(head,error);
+
+	}
+
+	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->operand3,TERMINATOR)!=0 ){
+		item->valid=FALSE;
+		sprintf(error,"23. Error in line %d: Too much data received for .entry command: %s %s .\n",line,item->operand2,item->operand3);
+		add_to_list(head,error);
+	}
+
+
 
 }
 
-void validate_ins_extern(body* item, list_item_reference*  head){
+void validate_ins_extern(body* item, list_item_reference*  head,String error){
+
+	int line;
+
+	line=item->line_number;
+
+
+/* unreachable
+	if (is_string_lowercase(item->operantion)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"24. Error in line %d: .extern command is not written in lowercase: %s .\n",line,item->operantion);
+		add_to_list(head,error);
+	}
+*/
+
+
+
+	if (strcmp(item->label,TERMINATOR)!=0){
+		sprintf(error,"Attention to line %d: label '%s' received for .extern command will be ignored.\n",line,item->label);
+		add_to_list(head,error);
+	}
+
+	if (strcmp(item->operand1,TERMINATOR)==0){
+		item->valid=FALSE;
+		sprintf(error,"24. Error in line %d: Missing statement for .extern command .\n",line);
+		add_to_list(head,error);
+
+	}
+
+	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->operand3,TERMINATOR)!=0 ){
+		item->valid=FALSE;
+		sprintf(error,"25. Error in line %d: Too much data received for .extern command: %s %s .\n",line,item->operand2,item->operand3);
+		add_to_list(head,error);
+	}
+
+
+
 
 }
 
@@ -624,9 +756,11 @@ int extract_number (String str){
 	int result;
 
 	result=atoi(str);
+
 	if (!result){
 		fprintf(stderr,"unable to parse into from string %s\n.",str);
 	}
+	return result;
 }
 
 
@@ -746,5 +880,78 @@ String find_command_name(String key){
 	}
 
 	return none;
+
+}
+
+Bool is_operational_command(String str){
+
+	if (strcmp(str,MOV)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,CMP)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,ADD)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,SUB)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,NOT)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,CLR)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,LEA)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,INC)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,DEC)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,JMP)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,BNE)==0){
+		return TRUE;
+	}
+
+	if (strcmp(str,RED)==0){
+		return TRUE;
+	}
+	if (strcmp(str,PRN)==0){
+			return TRUE;
+	}
+
+	if (strcmp(str,JSR)==0){
+			return TRUE;
+	}
+
+	if (strcmp(str,RTS)==0){
+			return TRUE;
+	}
+
+	if (strcmp(str,STOP)==0){
+			return TRUE;
+	}
+
+
+
+
+
+	return FALSE;
 
 }

@@ -1,23 +1,17 @@
-04:31:53 **** Incremental Build of configuration Debug for project Maman14 ****
+06:50:04 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/validator.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
-../src/validator.c: In function ‘validate_ins_mat’:
-../src/validator.c:387:6: warning: unused variable ‘spaces’ [-Wunused-variable]
-  int spaces;
-      ^~~~~~
-../src/validator.c: In function ‘extract_number’:
-../src/validator.c:631:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-Finished building: ../src/validator.c
- 
-Building target: Maman14
-Invoking: GCC C Linker
-gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
-Finished building target: Maman14
- 
+../src/validator.c:691:6: error: conflicting types for ‘validate_oper_operands’
+ void validate_oper_operands (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:36:6: note: previous declaration of ‘validate_oper_operands’ was here
+ void validate_oper_operands (body* item, list_item_reference *, String);
+      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
 
-04:31:54 Build Finished (took 189ms)
+06:50:04 Build Finished (took 123ms)
 

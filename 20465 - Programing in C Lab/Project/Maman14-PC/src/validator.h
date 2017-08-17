@@ -6,7 +6,8 @@ void validate_label (body* item, list_item_reference * );
 
 void validate_instruction(body* item, list_item_reference *);
 
-void validate_operation(body* item, list_item_reference *);
+void validate_operation(body* item, list_item_reference *, String);
+
 
 /*Validate inst operators*/
 void validate_ins_data (body* item, list_item_reference *);
@@ -15,11 +16,9 @@ void validate_ins_string (body* item, list_item_reference*  head);
 
 void validate_ins_mat(body* item, list_item_reference*  head);
 
-void validate_ins_entry(body* item, list_item_reference*  head);
+void validate_ins_entry(body* item, list_item_reference*  head, char *);
 
-void validate_ins_extern(body* item, list_item_reference*  head);
-
-
+void validate_ins_extern(body* item, list_item_reference*  head, String);
 
 
 
@@ -32,9 +31,14 @@ void validate_ins_extern(body* item, list_item_reference*  head);
 
 
 
-void validate_oper_operands (body* item, list_item_reference *);
+
+
+void validate_oper_operands (body* item, list_item_reference *, String);
 
 String find_command_name(String );
+
+
+Bool is_operational_command(String str);
 
 Bool is_valid_letter(char c);
 
