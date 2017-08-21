@@ -35,24 +35,5 @@
 #define RTS "rts"
 #define STOP "stop"
 
-#define R0 "r0"
-#define R1 "r1"
-#define R2 "r2"
-#define R3 "r3"
-#define R4 "r4"
-#define R5 "r5"
-#define R6 "r6"
-#define R7 "r7"
-
-
-
-typedef enum {
-	INTERMID=0,
-	LABLE=1,
-	MATRIX=2,
-	REGISTER=3,
-	UNRECOGNIZED=-1
-
-} Operand_type;
 
 #endif /* CONSTANTS_H_ */

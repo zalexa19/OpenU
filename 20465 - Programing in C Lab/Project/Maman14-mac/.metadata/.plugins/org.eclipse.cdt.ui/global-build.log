@@ -22999,3 +22999,1260 @@ In file included from ../src/validator.c:3:0:
       ^~~~~~~~~~~~~~~~~~~~~~
 make: *** [src/validator.o] Error 1
 src/subdir.mk:27: recipe for target 'src/validator.o' failed
+02:52:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:54:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:694:36: error: expected ‘)’ before ‘head’
+   validate_mov_command(item, head  head, error);
+                                    ^~~~
+../src/validator.c:694:3: error: too few arguments to function ‘validate_mov_command’
+   validate_mov_command(item, head  head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:38:6: note: declared here
+ void validate_mov_command(body* item, list_item_reference*  head, String error);
+      ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:965:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:964:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:963:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:962:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+make: *** [src/validator.o] Error 1
+10:59:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:964:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:963:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:962:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:961:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:00:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘is_valid_letter’:
+../src/validator.c:702:15: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+  if ( ('a'<=c && c<= 'z' || ('A'<=c && c<= 'Z')){
+        ~~~~~~~^~~~~~~~~~
+../src/validator.c:702:49: error: expected ‘)’ before ‘{’ token
+  if ( ('a'<=c && c<= 'z' || ('A'<=c && c<= 'Z')){
+                                                 ^
+../src/validator.c:709:1: error: expected expression before ‘}’ token
+ }
+ ^
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:964:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:963:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:962:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:961:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+../src/validator.c: In function ‘is_valid_letter’:
+../src/validator.c:709:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:00:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:964:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:963:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:962:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:961:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:06:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:969:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:968:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:967:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:966:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:08:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:693:15: warning: implicit declaration of function ‘get_operand_type’ [-Wimplicit-function-declaration]
+  operand_type=get_operand_type(item->operand1);
+               ^~~~~~~~~~~~~~~~
+../src/validator.c:684:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘validate_mov_command’:
+../src/validator.c:972:7: warning: unused variable ‘valid_src’ [-Wunused-variable]
+  Bool valid_src=TRUE;
+       ^~~~~~~~~
+../src/validator.c:971:7: warning: unused variable ‘valid_dest’ [-Wunused-variable]
+  Bool valid_dest=TRUE;
+       ^~~~~~~~~~
+../src/validator.c:970:9: warning: unused variable ‘src’ [-Wunused-variable]
+  String src;
+         ^~~
+../src/validator.c:969:9: warning: unused variable ‘dest’ [-Wunused-variable]
+  String dest;
+         ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_oper_operands':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:693: undefined reference to `get_operand_type'
+makefile:31: recipe for target 'Maman14' failed
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:19:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:318:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(current)==FALSE){
+                       ^~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:280:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:279:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:278:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:275:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:702:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:685:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:760:6: error: conflicting types for ‘is_valid_number’
+ Bool is_valid_number (String str){
+      ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: previous declaration of ‘is_valid_number’ was here
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:993:9: error: expected expression before ‘)’ token
+   while()
+         ^
+../src/validator.c:987:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:985:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+../src/validator.c:999:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:20:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:318:23: warning: passing argument 1 of ‘is_valid_number’ makes integer from pointer without a cast [-Wint-conversion]
+   if (is_valid_number(current)==FALSE){
+                       ^~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘char’ but argument is of type ‘String {aka char *}’
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c:280:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:279:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:278:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:275:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:702:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:685:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: At top level:
+../src/validator.c:760:6: error: conflicting types for ‘is_valid_number’
+ Bool is_valid_number (String str){
+      ^~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: previous declaration of ‘is_valid_number’ was here
+ Bool is_valid_number (char c);
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:998:9: error: expected expression before ‘)’ token
+   while()
+         ^
+../src/validator.c:992:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:990:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+../src/validator.c:1004:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:22:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:206:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:280:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:279:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:278:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:275:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:542:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:577:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:702:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:685:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1004:9: error: expected expression before ‘)’ token
+   while()
+         ^
+../src/validator.c:998:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:996:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+../src/validator.c:1010:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:27:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:206:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:280:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:279:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:278:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:275:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:542:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:577:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:702:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:685:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1012:6: error: ‘is’ undeclared (first use in this function)
+  if (is)
+      ^~
+../src/validator.c:1012:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:999:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:997:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:996:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+../src/validator.c:1020:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:30:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1018:6: error: ‘is’ undeclared (first use in this function)
+  if (is)
+      ^~
+../src/validator.c:1018:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+../src/validator.c:1026:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:31:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1018:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1018:6: error: too few arguments to function ‘validate_label’
+  if (validate_label(operand)==TRUE){
+      ^~~~~~~~~~~~~~
+../src/validator.c:159:6: note: declared here
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+make: *** [src/validator.o] Error 1
+11:31:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1018:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1018:6: error: too few arguments to function ‘validate_label’
+  if (validate_label(operand)==TRUE){
+      ^~~~~~~~~~~~~~
+../src/validator.c:159:6: note: declared here
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:35:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+                     ^
+../src/parser.c:235:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:700:15: error: too few arguments to function ‘get_operand_type’
+  operand_type=get_operand_type(item->operand1);
+               ^~~~~~~~~~~~~~~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:38:14: note: declared here
+ Operand_type get_operand_type (String operand, list_item_reference *, String);
+              ^~~~~~~~~~~~~~~~
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1020:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head, error)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1020:6: error: too many arguments to function ‘validate_label’
+  if (validate_label(operand,head, error)==TRUE){
+      ^~~~~~~~~~~~~~
+../src/validator.c:159:6: note: declared here
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1006:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1006:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+make: *** [src/validator.o] Error 1
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+11:36:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+src/subdir.mk:27: recipe for target 'src/validator.o' failed
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1020:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head, error)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1020:6: error: too many arguments to function ‘validate_label’
+  if (validate_label(operand,head, error)==TRUE){
+      ^~~~~~~~~~~~~~
+../src/validator.c:159:6: note: declared here
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1006:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1006:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+make: *** [src/validator.o] Error 1
+11:36:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1020:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1006:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1006:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_oper_operands':
+makefile:31: recipe for target 'Maman14' failed
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:708: undefined reference to `validate_mov_command'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:37:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_oper_operands':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:708: undefined reference to `validate_mov_command'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+makefile:31: recipe for target 'Maman14' failed
+11:37:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:708:3: warning: implicit declaration of function ‘validate_mov_command’ [-Wimplicit-function-declaration]
+   validate_mov_command(item, head, error);
+   ^~~~~~~~~~~~~~~~~~~~
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1020:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1006:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1006:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1005:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1003:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:1002:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/validator.o: In function `validate_oper_operands':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/validator.c:708: undefined reference to `validate_mov_command'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+makefile:31: recipe for target 'Maman14' failed
+11:38:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:690:9: warning: variable ‘commant’ set but not used [-Wunused-but-set-variable]
+  String commant;
+         ^~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1017:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1003:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1003:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1002:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1000:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:999:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:40:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_label’:
+../src/validator.c:209:29: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    is_a_num=is_valid_number(c);
+                             ^
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_data’:
+../src/validator.c:286:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/validator.c:285:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
+  int str_length;
+      ^~~~~~~~~~
+../src/validator.c:284:7: warning: unused variable ‘c’ [-Wunused-variable]
+  char c;
+       ^
+../src/validator.c:281:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
+  Bool invalid_char_found=FALSE;
+       ^~~~~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_ins_mat’:
+../src/validator.c:548:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c:583:24: warning: passing argument 1 of ‘is_valid_number’ makes pointer from integer without a cast [-Wint-conversion]
+    if (is_valid_number(col[j])==FALSE){
+                        ^~~
+In file included from ../src/validator.c:3:0:
+../src/validator.h:64:6: note: expected ‘String {aka char *}’ but argument is of type ‘char’
+ Bool is_valid_number (String );
+      ^~~~~~~~~~~~~~~
+../src/validator.c: In function ‘validate_oper_operands’:
+../src/validator.c:691:6: warning: variable ‘operand_type’ set but not used [-Wunused-but-set-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:690:9: warning: variable ‘commant’ set but not used [-Wunused-but-set-variable]
+  String commant;
+         ^~~~~~~
+../src/validator.c: In function ‘get_operand_type’:
+../src/validator.c:1017:21: warning: passing argument 1 of ‘validate_label’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if (validate_label(operand,head)==TRUE){
+                     ^~~~~~~
+../src/validator.c:159:6: note: expected ‘body * {aka struct parsed_line *}’ but argument is of type ‘String {aka char *}’
+ Bool validate_label (body* item, list_item_reference*  head){
+      ^~~~~~~~~~~~~~
+../src/validator.c:1003:12: warning: unused variable ‘t2’ [-Wunused-variable]
+  String t1,t2;
+            ^~
+../src/validator.c:1003:9: warning: unused variable ‘t1’ [-Wunused-variable]
+  String t1,t2;
+         ^~
+../src/validator.c:1002:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
+  int length;
+      ^~~~~~
+../src/validator.c:1000:6: warning: unused variable ‘operand_type’ [-Wunused-variable]
+  int operand_type;
+      ^~~~~~~~~~~~
+../src/validator.c:999:15: warning: unused variable ‘result’ [-Wunused-variable]
+  Operand_type result;
+               ^~~~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

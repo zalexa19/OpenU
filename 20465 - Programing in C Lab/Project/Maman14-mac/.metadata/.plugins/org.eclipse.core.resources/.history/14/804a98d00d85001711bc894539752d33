@@ -1002,7 +1002,7 @@ Operand_type get_operand_type (String operand, list_item_reference * head, Strin
 	int length;
 	String t1,t2;
 
-	printf("Getting the operands for operational\n");
+
 	length=strlen(operand);
 	i=0;
 

@@ -2,7 +2,7 @@
 
 void validate_file(bodyArray, int);
 
-Bool validate_label (body* item, list_item_reference * );
+void validate_label (body* item, list_item_reference * );
 
 void validate_instruction(body* item, list_item_reference *);
 
@@ -35,7 +35,7 @@ void validate_ins_extern(body* item, list_item_reference*  head, String);
 
 void validate_oper_operands (body* item, list_item_reference *, String);
 
-Operand_type get_operand_type (String operand, list_item_reference *, String);
+Operand_type get_operand_type (String operand);
 
 
 

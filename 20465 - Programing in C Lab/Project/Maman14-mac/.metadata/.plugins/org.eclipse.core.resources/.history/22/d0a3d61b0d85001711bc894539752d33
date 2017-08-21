@@ -697,13 +697,16 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 	}
 
 
-	operand_type=get_operand_type(item->operand1,head,error);
+	operand_type=get_operand_type(item->operand1);
 
 
 	/*check if a valid number of perands was received*/
 	/*check if each operand is a valid form*/
 	/*check if the operand form matches the operational command*/
 
+	if (strcmp(commant,MOV)==0){
+		validate_mov_command(item, head, error);
+	}
 
 
 }
@@ -995,14 +998,14 @@ Bool is_operational_command(String str){
 
 }
 
-Operand_type get_operand_type (String operand, list_item_reference * head, String error){
+Operand_type get_operand_type (String operand){
 	Operand_type result;
 	int operand_type;
 	int i;
 	int length;
 	String t1,t2;
 
-	printf("Getting the operands for operational\n");
+
 	length=strlen(operand);
 	i=0;
 
@@ -1014,11 +1017,9 @@ Operand_type get_operand_type (String operand, list_item_reference * head, Strin
 
 	}
 
-	if (validate_label(operand,head)==TRUE){
+	if (validate_label(operand,)==TRUE){
 		return LABLE;
 	}
-
-
 
 
 

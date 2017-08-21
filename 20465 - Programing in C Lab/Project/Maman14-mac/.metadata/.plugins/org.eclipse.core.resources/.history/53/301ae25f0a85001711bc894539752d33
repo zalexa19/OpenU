@@ -156,7 +156,7 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 
-Bool validate_label (body* item, list_item_reference*  head){
+void validate_label (body* item, list_item_reference*  head){
 	String label;
 	int line_number;
 	char error[MAXERRORSIZE];
@@ -166,7 +166,6 @@ Bool validate_label (body* item, list_item_reference*  head){
 	char c;
 	Bool valid_letter;
 	Bool is_a_num;
-	Bool valid_label=TRUE;
 
 
 	label=item->label;
@@ -179,7 +178,6 @@ Bool validate_label (body* item, list_item_reference*  head){
 		sprintf(error,"1. Error in line %d: Label <%s> is too long.\n",line_number,label);
 		add_to_list(head,error);
 		item->valid=FALSE;
-		valid_label=FALSE;
 
 	}
 
@@ -194,7 +192,6 @@ Bool validate_label (body* item, list_item_reference*  head){
 		item->valid=FALSE;
 		sprintf(error,"2. Error in line %d: Label <%s> doesn't start with a letter (%c).\n",line_number,label,c);
 		add_to_list(head,error);
-		valid_label=FALSE;
 	}
 	i++;
 
@@ -214,7 +211,6 @@ Bool validate_label (body* item, list_item_reference*  head){
 				printf("weird character\n");
 				sprintf(error,"3. Error found in line %d: invalid char <%c> found in label <%s>.\n",line_number,c,label);
 				add_to_list(head,error);
-				valid_label=FALSE;
 			}
 
 		}
@@ -229,10 +225,8 @@ Bool validate_label (body* item, list_item_reference*  head){
 		item->valid=FALSE;
 		sprintf(error,"4. Error found in line %d: label <%s> is a preserved word.\n",line_number,label);
 		add_to_list(head,error);
-		valid_label=FALSE;
 	}
 
-	return valid_label;
 }
 
 void validate_instruction(body* item, list_item_reference*  head){
@@ -305,11 +299,10 @@ void validate_ins_data (body* item, list_item_reference*  head){
 		str_length=strlen(current);
 
 	/*first char is a symbol - or +*/
-		/*i=0;
+		i=0;
 		if (current[i]=='-' || current[i]=='+'){
 			i++;
 		}
-
 
 
 
@@ -319,10 +312,10 @@ void validate_ins_data (body* item, list_item_reference*  head){
 				invalid_char_found=TRUE;
 			}
 			i++;
-		}*/
+		}
 
-		if (is_valid_number(current)==FALSE){
 
+		if (invalid_char_found==TRUE){
 			item->valid=FALSE;
 			sprintf(error,"7. Error in line %d: non-numbers received in %s, for command %s.\n",line,current,item->instruction);
 			add_to_list(head,error);
@@ -697,13 +690,16 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 	}
 
 
-	operand_type=get_operand_type(item->operand1,head,error);
+	operand_type=get_operand_type(item->operand1);
 
 
 	/*check if a valid number of perands was received*/
 	/*check if each operand is a valid form*/
 	/*check if the operand form matches the operational command*/
 
+	if (strcmp(commant,MOV)==0){
+		validate_mov_command(item, head, error);
+	}
 
 
 }
@@ -760,39 +756,12 @@ Bool is_string_lowercase(String str){
 }
 
 
-Bool is_valid_number (String str){
-	int str_length,i;
-	char c;
-
-
-
-	i=0;
-	str_length=strlen(str);
-
-	if (str_length==0){
-		return FALSE;
+Bool is_valid_number (char c){
+	if(isdigit(c)){
+		return TRUE;
 	}
 
-
-
-	if (str[i]=='-' || str[i]=='+'){
-		if (str_length==1){
-			return FALSE;
-		}
-
-		i++;
-	}
-
-
-
-	while (i<str_length){
-		if (isdigit(c)==FALSE){
-			return FALSE;
-		}
-		i++;
-	}
-
-	return TRUE;
+	return FALSE;
 }
 
 int extract_number (String str){
@@ -995,36 +964,16 @@ Bool is_operational_command(String str){
 
 }
 
-Operand_type get_operand_type (String operand, list_item_reference * head, String error){
-	Operand_type result;
-	int operand_type;
-	int i;
-	int length;
-	String t1,t2;
+void validate_mov_command(body* item, list_item_reference*  head, String error){
 
-	printf("Getting the operands for operational\n");
-	length=strlen(operand);
-	i=0;
+	String dest;
+	String src;
+	Bool valid_dest=TRUE;
+	Bool valid_src=TRUE;
 
-	if (operand[i]=='#'){
-
-		if (is_valid_number(operand+1)==TRUE){
-			return INTERMID;
-		}
-
-	}
-
-	if (validate_label(operand,head)==TRUE){
-		return LABLE;
-	}
+	/*validate destination operand*/
+;
 
 
-
-
-
-
-
-
-	return UNRECOGNIZED;
-
+	/*validate source operand*/
 }
