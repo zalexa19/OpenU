@@ -1,8 +1,42 @@
 #include "utils.h"
 
+
+#define NUM_LABEL_ERRORS 4
+/*
+ * This enum used in the function that validates the label
+ */
+typedef enum {
+	PASSED, /*Valid label*/
+	TOO_LONG, /*invalid - more than max length*/
+	FIRST_CHAR, /*invalid - label starts with invalid char*/
+	INV_CHAR, /*invalid - invalid char was found (not a letter or a number)*/
+	RESERVED /*invalid - label is command name*/
+}label_val_status;
+
+typedef struct label_status * label_status_ref;
+typedef struct label_status{
+	Bool TOO_LONG;
+	Bool INV_FIRST_CHAR;
+	Bool INV_CHAR_FOUND;
+	Bool RESERVED;
+	Bool VALID_LABEL;
+
+}label_status;
+
+
+
+
+label_status_ref initialize_label_struct();
+
+
+
+
 void validate_file(bodyArray, int);
 
-Bool validate_label (body* item, list_item_reference * );
+label_status_ref validate_label (String);
+void print_label_errors(label_status_ref, body, list_item_reference);
+
+
 
 void validate_instruction(body* item, list_item_reference *);
 
@@ -48,7 +82,7 @@ Operand_type get_operand_type (String operand, list_item_reference *, String);
 
 
 
-String find_command_name(String );
+Bool is_instructional_command(String );
 
 
 Bool is_operational_command(String str);

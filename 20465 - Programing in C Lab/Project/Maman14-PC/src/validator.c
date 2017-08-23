@@ -16,9 +16,9 @@
 /*
  * Macro for printing
  */
-#define PRINT_PASSED_OR_FAILED \
+#define PRINT_PASSED_OR_FAILED(value) \
 {\
-			if (item.valid==TRUE){\
+			if (value==TRUE){\
 			printf(KGREEN "PASSED\n");\
 		} else {\
 			printf(KRED "FAILED\n");\
@@ -32,6 +32,7 @@ void validate_file(bodyArray parsed, int array_size){
 	body item;
 	list_item_reference error_list_head;
 	char error[MAXERRORSIZE];
+	label_status_ref validated_label;
 
 
 	printf(KYELLOW"------------------------------\n");
@@ -46,13 +47,20 @@ void validate_file(bodyArray parsed, int array_size){
 	error_list_head=NULL;
 
 
-	if(strcmp(item.label,"\0") != 0){
-		/*VALIDATE LABEL*/
+	if(strcmp(item.label,TERMINATOR) != 0){
+/*
+		VALIDATE LABEL
 		validate_label(&item,&error_list_head);
 
+*/
 
-		printf(BOLDWHITE"Label validation:\nFile is: ");
-		PRINT_PASSED_OR_FAILED
+		validated_label=validate_label(item.label);
+		item.valid=validated_label->VALID_LABEL;
+		print_label_errors(validated_label,item,&error_list_head);
+
+
+		printf(BOLDWHITE"Label validation:");
+		PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)
 	}
 
 	if(strcmp(item.instruction,"\0") != 0){
@@ -63,7 +71,7 @@ void validate_file(bodyArray parsed, int array_size){
 		validate_instruction(&item,&error_list_head);
 
 		printf("Instruction validation:\nFile is: ");
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
 
 
 		/*DATA*/
@@ -73,7 +81,8 @@ void validate_file(bodyArray parsed, int array_size){
 			NORMALCOLOR
 
 			printf(BOLDWHITE "data operands validation: ");
-			PRINT_PASSED_OR_FAILED
+			PRINT_PASSED_OR_FAILED(item.valid)
+
 		}
 
 		printf(".string operands validation: \n");
@@ -85,7 +94,8 @@ void validate_file(bodyArray parsed, int array_size){
 
 		printf(BOLDWHITE "string operands validation: ");
 
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
+
 
 		/*MAT*/
 		printf("mat validation:\n");
@@ -93,7 +103,7 @@ void validate_file(bodyArray parsed, int array_size){
 			validate_ins_mat(&item,&error_list_head);
 
 			printf(BOLDWHITE "mat operands validation: ");
-			PRINT_PASSED_OR_FAILED
+			PRINT_PASSED_OR_FAILED(item.valid)
 		}
 
 
@@ -104,7 +114,7 @@ void validate_file(bodyArray parsed, int array_size){
 		}
 
 		printf(BOLDWHITE "entry operands validation: ");
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
 
 		/*EXTERN*/
 		if (strcmp(item.instruction,"extern")==0){
@@ -112,7 +122,8 @@ void validate_file(bodyArray parsed, int array_size){
 		}
 
 		printf(BOLDWHITE "extern operands validation: ");
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
+
 
 	}	else {
 		/*
@@ -128,12 +139,12 @@ void validate_file(bodyArray parsed, int array_size){
 		validate_operation(&item,&error_list_head,error);
 
 		printf(BOLDWHITE "Operational command validation: ");
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
 
 		validate_oper_operands(&item,&error_list_head,error);
 
 		printf(BOLDWHITE "Operation-Operands command validation: ");
-		PRINT_PASSED_OR_FAILED
+		PRINT_PASSED_OR_FAILED(item.valid)
 	}
 
 
@@ -156,31 +167,27 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 
-Bool validate_label (body* item, list_item_reference*  head){
-	String label;
-	int line_number;
-	char error[MAXERRORSIZE];
+/*label_val_status validate_label (body* item, list_item_reference*  head){*/
+label_status_ref validate_label (String label){
+	/*int line_number;
+	char error[MAXERRORSIZE];*/
 	int length;
-	int size;
 	int i;
 	char c;
+
+	label_status_ref validation_result;
 	Bool valid_letter;
-	Bool is_a_num;
-	Bool valid_label=TRUE;
 
 
-	label=item->label;
-	line_number=item->line_number;
 
+	validation_result=initialize_label_struct();
 
 	/*validating label length*/
 	length=strlen(label);
-	if (length > MAXLABELSIZE){
-		sprintf(error,"1. Error in line %d: Label <%s> is too long.\n",line_number,label);
-		add_to_list(head,error);
-		item->valid=FALSE;
-		valid_label=FALSE;
 
+	if (length > MAXLABELSIZE){
+		validation_result->TOO_LONG=TRUE;
+		validation_result->VALID_LABEL=FALSE;
 	}
 
 
@@ -191,30 +198,22 @@ Bool validate_label (body* item, list_item_reference*  head){
 	valid_letter=is_valid_letter(c);
 
 	if (valid_letter==FALSE){
-		item->valid=FALSE;
-		sprintf(error,"2. Error in line %d: Label <%s> doesn't start with a letter (%c).\n",line_number,label,c);
-		add_to_list(head,error);
-		valid_label=FALSE;
+		validation_result->INV_FIRST_CHAR=TRUE;
+		validation_result->VALID_LABEL=FALSE;
 	}
 	i++;
 
 
 	/*validating each char in the string, starting from cell #1:*/
-	size=strlen(label);
-	while (i<size){
+	while (i<length){
 		c=label[i];
 		valid_letter=is_valid_letter(c);
 		if (valid_letter==FALSE){
 			/*not a letter*/
-			is_a_num=is_valid_number(c);
 
-			if (is_a_num==FALSE){
-				item->valid=FALSE;
-
-				printf("weird character\n");
-				sprintf(error,"3. Error found in line %d: invalid char <%c> found in label <%s>.\n",line_number,c,label);
-				add_to_list(head,error);
-				valid_label=FALSE;
+			if (isdigit(c)==FALSE){
+				validation_result->INV_CHAR_FOUND=TRUE;
+				validation_result->VALID_LABEL=FALSE;
 			}
 
 		}
@@ -223,16 +222,16 @@ Bool validate_label (body* item, list_item_reference*  head){
 	}
 
 	/*validating that the label is not a saved word*/
-	printf("label is a special word: %s\n",find_command_name(label));
 
-	if (strcmp("none",find_command_name(label)) != 0){
-		item->valid=FALSE;
-		sprintf(error,"4. Error found in line %d: label <%s> is a preserved word.\n",line_number,label);
-		add_to_list(head,error);
-		valid_label=FALSE;
+
+	if (is_operational_command(label)==TRUE || is_instructional_command(label)==TRUE){
+		validation_result->RESERVED=TRUE;
+		validation_result->VALID_LABEL=FALSE;
+
+
 	}
 
-	return valid_label;
+	return validation_result;
 }
 
 void validate_instruction(body* item, list_item_reference*  head){
@@ -249,7 +248,7 @@ void validate_instruction(body* item, list_item_reference*  head){
 
 	/*check if instruction is a valid command*/
 
-	if (strcmp(NOMATCH,find_command_name(item->instruction))==0){
+	if (is_instructional_command(inst_value)==FALSE){
 		item->valid=FALSE;
 		sprintf(error,"6. Error in line %d: Instruction value <%s> is unrecognized.\n",line,inst_value);
 		add_to_list(head,error);
@@ -812,117 +811,26 @@ int extract_number (String str){
 
 
 
-String find_command_name(String key){
-	String data="data";
-	String str="string";
-	String mat="mat";
-	String entry="entry";
-	String none=NOMATCH;
-	String external="external";
+Bool is_instructional_command(String str){
 
-	String mov="mov";
-	String cmp="cmp";
-	String add="add";
-	String sub="sub";
-	String lea="lea";
-
-	String not="not";
-	String clr="clr";
-	String inc="inc";
-	String dec="dec";
-	String jmp="jmp";
-	String bne="bne";
-	String red="red";
-	String prn="prn";
-	String jsr="jsr";
-
-	String rts="rts";
-	String stop="stop";
-
-	if (strcmp(key,data)==0){
-		return data;
-	}
-	if (strcmp(key,str)==0){
-		return str;
-	}
-	if (strcmp(key,mat)==0){
-		return mat;
-	}
-	if (strcmp(key,entry)==0){
-		return entry;
-	}
-	if (strcmp(key,external)==0){
-		return external;
+	if (strcmp(str,DATA)==0){
+		return TRUE;
 	}
 
-
-
-	if (strcmp(key,mov)==0){
-		return mov;
+	if (strcmp(str,STR)==0){
+		return TRUE;
+	}
+	if (strcmp(str,MAT)==0){
+		return TRUE;
+	}
+	if (strcmp(str,ENTRY)==0){
+		return TRUE;
+	}
+	if (strcmp(str,EXTERNAL)==0){
+		return TRUE;
 	}
 
-	if (strcmp(key,cmp)==0){
-		return cmp;
-	}
-
-	if (strcmp(key,add)==0){
-		return add;
-	}
-
-	if (strcmp(key,sub)==0){
-		return sub;
-	}
-
-	if (strcmp(key,lea)==0){
-		return lea;
-	}
-
-
-	if (strcmp(key,not)==0){
-		return not;
-	}
-	if (strcmp(key,clr)==0){
-		return clr;
-	}
-
-	if (strcmp(key,inc)==0){
-		return inc;
-	}
-
-	if (strcmp(key,dec)==0){
-		return dec;
-	}
-
-	if (strcmp(key,jmp)==0){
-		return jmp;
-	}
-
-	if (strcmp(key,bne)==0){
-		return bne;
-	}
-
-	if (strcmp(key,red)==0){
-		return red;
-	}
-
-	if (strcmp(key,prn)==0){
-		return prn;
-	}
-
-	if (strcmp(key,jsr)==0){
-		return jsr;
-
-	}
-
-	if (strcmp(key,rts)==0){
-		return rts;
-	}
-
-	if (strcmp(key,stop)==0){
-		return stop;
-	}
-
-	return none;
+	return FALSE;
 
 }
 
@@ -1014,12 +922,9 @@ Operand_type get_operand_type (String operand, list_item_reference * head, Strin
 
 	}
 
-	if (validate_label(operand,head)==TRUE){
+	if (validate_label(operand)==PASSED){
 		return LABLE;
 	}
-
-
-
 
 
 
@@ -1028,3 +933,52 @@ Operand_type get_operand_type (String operand, list_item_reference * head, Strin
 	return UNRECOGNIZED;
 
 }
+
+
+label_status_ref initialize_label_struct(){
+
+	label_status_ref new;
+
+	if (!(new= (label_status_ref)malloc(sizeof(label_status)))){
+		fprintf(stderr,"Unable to allocate memory for struct: lable_status\n");
+	}
+
+	new->VALID_LABEL=TRUE;
+	new->INV_FIRST_CHAR=FALSE;
+	new->INV_CHAR_FOUND=FALSE;
+	new->RESERVED=FALSE;
+	new->TOO_LONG=FALSE;
+
+	return new;
+}
+
+void print_label_errors(label_status_ref status, body item, list_item_reference head){
+	String error =allocate_mem_string(MAXERRORSIZE);
+
+	if (status->TOO_LONG==TRUE){
+		sprintf(error,"1. Error in line %d: Label <%s> is too long.\n",item.line_number,item.label);
+		add_to_list(head,error);
+	}
+
+	if (status->INV_FIRST_CHAR==TRUE){
+		sprintf(error,"2. Error in line %d: Label <%s> doesn't start with a letter.\n",item.line_number,item.label);
+		add_to_list(head,error);
+
+
+	}
+
+	if (status->INV_CHAR_FOUND==TRUE){
+		sprintf(error,"3. Error found in line %d: invalid char was found in label <%s>.\n",item.line_number,item.label);
+		add_to_list(head,error);
+
+
+	}
+
+	if (status->RESERVED==TRUE){
+		sprintf(error,"4. Error found in line %d: label <%s> is a preserved word.\n",item.line_number,item.label);
+		add_to_list(head,error);
+
+
+	}
+}
+
