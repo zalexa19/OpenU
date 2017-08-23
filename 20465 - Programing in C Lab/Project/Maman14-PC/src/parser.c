@@ -250,9 +250,9 @@ body  parse_line (String str, int line_number){
 /*		printf("extracted: <%s>\n",extracted_value);*/
 		result_size=strlen(extracted_value);
 
-		result.operand1=allocate_mem_string(result_size+1);
-		strcpy(result.operand1,extracted_value);
-		printf("currently in operand1: <%s>\n\n",result.operand1);
+		result.OPERAND1=allocate_mem_string(result_size+1);
+		strcpy(result.OPERAND1,extracted_value);
+		printf("currently in operand1: <%s>\n\n",result.OPERAND1);
 
 
 		/*advance the pointer*/
@@ -284,10 +284,10 @@ body  parse_line (String str, int line_number){
 /*		printf("operand 1 for mat: <%s>\n",result.operand1);*/
 
 
-		result.operand2=allocate_mem_string(1);
-		result.operand3=allocate_mem_string(1);
-		result.operand2="\0";
-		result.operand3="\0";
+		result.OPERAND2=allocate_mem_string(1);
+		result.leftovers=allocate_mem_string(1);
+		result.OPERAND2="\0";
+		result.leftovers="\0";
 
 
 	}
@@ -311,14 +311,14 @@ body  parse_line (String str, int line_number){
 		NORMALCOLOR
 		extracted_value=extract_operand(current_pointer);
 		result_size=strlen(extracted_value)+1;
-		result.operand1=allocate_mem_string(result_size);
-		strcpy(result.operand1,extracted_value);
+		result.OPERAND1=allocate_mem_string(result_size);
+		strcpy(result.OPERAND1,extracted_value);
 		NORMALCOLOR
 
 		current_pointer+=result_size+1;
 		REALLOCATE_EXTRACTED_VALUE
 
-		printf(KBLUE "---Extracted operand1: [%s]\n",result.operand1);
+		printf(KBLUE "---Extracted operand1: [%s]\n",result.OPERAND1);
 		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 
@@ -329,11 +329,11 @@ body  parse_line (String str, int line_number){
 
 		strcpy(extracted_value,extract_operand(current_pointer));
 		result_size=strlen(extracted_value)+1;
-		result.operand2=allocate_mem_string(result_size);
-		strcpy(result.operand2,extracted_value);
+		result.OPERAND2=allocate_mem_string(result_size);
+		strcpy(result.OPERAND2,extracted_value);
 		current_pointer+=result_size+1;
 
-		printf(KBLUE "---Extracted operand2: [%s]\n",result.operand2);
+		printf(KBLUE "---Extracted operand2: [%s]\n",result.OPERAND2);
 		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 
@@ -347,15 +347,15 @@ body  parse_line (String str, int line_number){
 			printf(KGREEN"--extracting leftovers\n");
 			extracted_value=extract_operand(current_pointer);
 			result_size=strlen(extracted_value);
-			result.operand3=allocate_mem_string(result_size+ADDEDSIZE);
-			strcpy(result.operand3,extracted_value);
+			result.leftovers=allocate_mem_string(result_size+ADDEDSIZE);
+			strcpy(result.leftovers,extracted_value);
 
-			printf(KBLUE "---Extracted operand3: [%s]\n",result.operand3);
+			printf(KBLUE "---Extracted operand3: [%s]\n",result.leftovers);
 			printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 		} else {
 			/*Reached \n */{
-				result.operand3=allocate_mem_string(1);
-				strcpy(result.operand3,"\0");
+				result.leftovers=allocate_mem_string(1);
+				strcpy(result.leftovers,"\0");
 			}
 		}
 

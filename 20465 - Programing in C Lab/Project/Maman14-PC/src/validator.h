@@ -48,7 +48,8 @@ void validate_ins_data (body* item, list_item_reference *);
 
 void validate_ins_string (body* item, list_item_reference*  head);
 
-void validate_ins_mat(body* item, list_item_reference*  head);
+/*void validate_ins_mat(body* item, list_item_reference*  head);*/
+Bool validate_ins_mat(String str);
 
 void validate_ins_entry(body* item, list_item_reference*  head, char *);
 
@@ -69,13 +70,7 @@ void validate_ins_extern(body* item, list_item_reference*  head, String);
 
 void validate_oper_operands (body* item, list_item_reference *, String);
 
-Operand_type get_operand_type (String operand, list_item_reference *, String);
-
-
-
-
-
-
+Operand_type get_operand_type (String operand);
 
 
 
@@ -84,8 +79,9 @@ Operand_type get_operand_type (String operand, list_item_reference *, String);
 
 Bool is_instructional_command(String );
 
-
 Bool is_operational_command(String str);
+
+Bool is_register(String str);
 
 Bool is_valid_letter(char c);
 
@@ -96,6 +92,9 @@ Bool is_white_char (char c);
 Bool is_string_lowercase(String str);
 
 Bool is_valid_number (String );
+
+
+Bool operand_match_commad(String command, Operand_type type);
 
 int extract_number (String);
 

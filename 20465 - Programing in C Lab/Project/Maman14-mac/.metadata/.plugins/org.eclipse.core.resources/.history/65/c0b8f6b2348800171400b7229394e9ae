@@ -1,0 +1,33 @@
+/*
+ * operation_dictionary.c
+ *
+ *  Created on: Aug 23, 2017
+ *      Author: alexz
+ */
+#include "operation_dictionary.h"
+
+operation_info* create_operation_info_array(){
+	int i;
+	operation_info * operational_dictionary;
+
+	if (!(operational_dictionary= malloc(sizeof(operational_dictionary)*OPERANDS_NUMBER))){
+		fprintf(stderr,"Unable to allocate memory to operation_info \n." );
+		exit(1);
+	}
+
+	i=0;
+	operational_dictionary[i].name="mov";
+	operational_dictionary[i].num_of_operands=2;
+	operational_dictionary[i].src_intermid_allowed=TRUE;
+	operational_dictionary[i].src_label_allowed=TRUE;
+	operational_dictionary[i].src_register_allowed=TRUE;
+	operational_dictionary[i].src_matrix_allowed=TRUE;
+	operational_dictionary[i].dest_intermid_allowed=FALSE;
+	operational_dictionary[i].dest_label_allowed=TRUE;
+	operational_dictionary[i].dest_register_allowed=TRUE;
+	operational_dictionary[i].dest_matrix_allowed=TRUE;
+
+
+
+
+}

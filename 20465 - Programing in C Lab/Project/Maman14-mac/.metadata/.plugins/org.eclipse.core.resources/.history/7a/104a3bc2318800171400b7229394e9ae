@@ -1,0 +1,33 @@
+/*
+ * operation_dictionary.h
+ *
+ *  Created on: Aug 23, 2017
+ *      Author: alexz
+ */
+
+#import "utils.h"
+
+#ifndef OPERATION_DICTIONARY_H_
+#define OPERATION_DICTIONARY_H_
+
+#define OPERANDS_NUMBER 16
+
+
+
+typedef struct operation_info{
+	String name;
+	int num_of_operands;
+	Bool intermid_allowed;
+	Bool label_allowed;
+	Bool matrix_allowed;
+	Bool register_allowed;
+}operation_info;
+
+
+operation_info* create_operation_info_array();
+
+
+
+
+
+#endif /* OPERATION_DICTIONARY_H_ */

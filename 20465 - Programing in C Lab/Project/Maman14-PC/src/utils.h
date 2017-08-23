@@ -74,9 +74,9 @@ typedef struct parsed_line {
 	String label;
 	String instruction;
 	String operantion;
-	String operand1;
-	String operand2;
-	String operand3; /*This exists to hold additional operands (for validation)*/
+	String OPERAND1;
+	String OPERAND2;
+	String leftovers; /*This exists to hold additional operands (for validation)*/
 	String* data_string_array;
 	int * data_int_values;
 	int * mat_size; /*used when creating a new matrix with .mat*/

@@ -1,0 +1,11 @@
+/*
+ * operation_dictionary.c
+ *
+ *  Created on: Aug 23, 2017
+ *      Author: alexz
+ */
+#include "operation_dictionary.h"
+
+operation_info* create_operation_info_array(){
+
+}

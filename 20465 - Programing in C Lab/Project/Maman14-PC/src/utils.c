@@ -121,22 +121,22 @@ void print_structs(bodyArray array, int size){
 
 		if (strcmp(array[i].instruction,"data")!=0){
 
-			if ((strcmp(array[i].operand1,"\0") ) !=0)
+			if ((strcmp(array[i].OPERAND1,"\0") ) !=0)
 			{
-					strcpy(tmp,array[i].operand1);
+					strcpy(tmp,array[i].OPERAND1);
 					add_spaces_print(tmp);
 					printf("%s",tmp);
 			}else printf("               ");
 
 
-			if ((strcmp(array[i].operand2,"\0")) !=0){
-					strcpy(tmp,array[i].operand2);
+			if ((strcmp(array[i].OPERAND2,"\0")) !=0){
+					strcpy(tmp,array[i].OPERAND2);
 					add_spaces_print(tmp);
 					printf("%s",tmp);
 				}else printf("               ");
 
-			if ((strcmp(array[i].operand3,"\0")) !=0){
-					strcpy(tmp,array[i].operand3);
+			if ((strcmp(array[i].leftovers,"\0")) !=0){
+					strcpy(tmp,array[i].leftovers);
 					add_spaces_print(tmp);
 					printf("%s",tmp);
 				}else printf("               ");
@@ -189,18 +189,18 @@ void print_line(body item){
 
 		}
 
-		if (strcmp(item.operand1,"\0")!=0){
-			printf(" %s",item.operand1);
+		if (strcmp(item.OPERAND1,"\0")!=0){
+			printf(" %s",item.OPERAND1);
 
 		}
 
-		if (strcmp(item.operand2,"\0")!=0){
-			printf(" %s",item.operand2);
+		if (strcmp(item.OPERAND2,"\0")!=0){
+			printf(" %s",item.OPERAND2);
 
 		}
 
-		if (strcmp(item.operand3,"\0")!=0){
-			printf(" %s",item.operand3);
+		if (strcmp(item.leftovers,"\0")!=0){
+			printf(" %s",item.leftovers);
 
 		}
 	}

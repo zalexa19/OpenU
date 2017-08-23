@@ -1,6 +1,7 @@
 #include "utils.h"
 #include <ctype.h>
 #include "validator.h"
+#include "operation_dictionary.h"
 
 
 #define MAXLABELSIZE 30
@@ -56,12 +57,13 @@ void validate_file(bodyArray parsed, int array_size){
 
 		validated_label=validate_label(item.label);
 		item.valid=validated_label->VALID_LABEL;
-		print_label_errors(validated_label,item,&error_list_head);
+		print_label_errors(validated_label,item,error_list_head);
 
 
 		printf(BOLDWHITE"Label validation:");
 		PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)
 	}
+
 
 	if(strcmp(item.instruction,"\0") != 0){
 		/***********************
@@ -100,10 +102,10 @@ void validate_file(bodyArray parsed, int array_size){
 		/*MAT*/
 		printf("mat validation:\n");
 		if (strcmp(item.instruction,"mat")==0){
-			validate_ins_mat(&item,&error_list_head);
+			/*validate_ins_mat(&item,&error_list_head);
 
 			printf(BOLDWHITE "mat operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 		}
 
 
@@ -234,6 +236,9 @@ label_status_ref validate_label (String label){
 	return validation_result;
 }
 
+
+
+
 void validate_instruction(body* item, list_item_reference*  head){
 	int line=item->line_number;
 	String inst_value= item->instruction;
@@ -255,6 +260,12 @@ void validate_instruction(body* item, list_item_reference*  head){
 	}
 
 }
+
+
+
+
+
+
 
 void validate_operation(body* item, list_item_reference*  head, String error){
 	String value;
@@ -360,20 +371,20 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 
 	/*checks if enough operands were received*/
-	if ((strcmp(item->operand2,TERMINATOR))!=0){
+	if ((strcmp(item->OPERAND2,TERMINATOR))!=0){
 		item->valid=FALSE;
 
-		sprintf(error,"10. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->operand2);
+		sprintf(error,"10. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->OPERAND2);
 		add_to_list(head,error);
 	}
 
-	if ((strcmp(item->operand3,TERMINATOR))!=0){
+	if ((strcmp(item->leftovers,TERMINATOR))!=0){
 		item->valid=FALSE;
-		sprintf(error,"11. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->operand3);
+		sprintf(error,"11. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->leftovers);
 		add_to_list(head,error);
 	}
 
-	if ((strcmp(item->operand1,TERMINATOR))==0){
+	if ((strcmp(item->OPERAND1,TERMINATOR))==0){
 		item->valid=FALSE;
 		sprintf(error,"9. Error in line %d: Missing operands for .string.\n",item->line_number);
 		add_to_list(head,error);
@@ -381,19 +392,19 @@ void validate_ins_string (body* item, list_item_reference*  head){
 	}
 
 
-	if (item->operand1[strlen(item->operand1)]!='\0'){
+	if (item->OPERAND1[strlen(item->OPERAND1)]!='\0'){
 		item->valid=FALSE;
-		sprintf(error,"12. Error in line %d: .string <%s> is not closed with a turminating char.\n",item->line_number,item->operand1);
+		sprintf(error,"12. Error in line %d: .string <%s> is not closed with a turminating char.\n",item->line_number,item->OPERAND1);
 		add_to_list(head,error);
 	}
 
 	if(item->valid==TRUE){
-		pointer=item->operand1;
+		pointer=item->OPERAND1;
 		length=strlen(pointer);
 
 		if (pointer[length-length]!= '"'){
 			item->valid=FALSE;
-			sprintf(error,"13. Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->operand1);
+			sprintf(error,"13. Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->OPERAND1);
 			add_to_list(head,error);
 		}else{
 			printf("advanced the pointer\n");
@@ -402,7 +413,7 @@ void validate_ins_string (body* item, list_item_reference*  head){
 		}
 		if (pointer[length-1] != '"'){
 			item->valid=FALSE;
-			sprintf(error,"14. Error in line %d: .string <%s> is missing closing <\">.\n",item->line_number,item->operand1);
+			sprintf(error,"14. Error in line %d: .string <%s> is missing closing <\">.\n",item->line_number,item->OPERAND1);
 			add_to_list(head,error);
 		}else{
 
@@ -414,10 +425,10 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 		strncy_safe(temp,pointer,length);
 
-		free(item->operand1);
-		item->operand1=allocate_mem_string(length+1);
+		free(item->OPERAND1);
+		item->OPERAND1=allocate_mem_string(length+1);
 
-		strcpy(item->operand1,temp);
+		strcpy(item->OPERAND1,temp);
 
 		free(temp);
 
@@ -433,8 +444,11 @@ void validate_ins_string (body* item, list_item_reference*  head){
  * 3. Put the valid numbers in a special array
  * 4. check that the other values recieved also includes valid numbers
  */
+
+Bool validate_ins_mat(String str);
+/*
 void validate_ins_mat(body* item, list_item_reference*  head){
-	Bool is_number=TRUE; /*This bool is used to determine if we encounter a space between digits*/
+	Bool is_number=TRUE; This bool is used to determine if we encounter a space between digits
 	String orig;
 	String fixed_operand;
 	String ptr;
@@ -455,7 +469,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 
 	NORMALCOLOR;
 
-	/*Removing spaces*/
+	Removing spaces
 	opening_bracket=0;
 	closing_bracket=0;
 	orig=item->operand1;
@@ -476,7 +490,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 	printf("counter %d letters \n",letter_counter);
 	fixed_operand=allocate_mem_string(letter_counter+1);
 
-	/*copy into fixed without spaces*/
+	copy into fixed without spaces
 	i=0;
 	j=0;
 
@@ -503,7 +517,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 
 	printf("fixed: <%s>\n",fixed_operand);
 
-	/*begin validation*/
+	begin validation
 
 	if (fixed_operand[letter_counter-letter_counter] != '['){
 		item->valid=FALSE;
@@ -532,11 +546,11 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 
 	else {
 
-		/*string is of form [][]*/
+		string is of form [][]
 		orig=fixed_operand;
 		orig+=1;
 
-		/*copy the first [value] to a seperated string*/
+		copy the first [value] to a seperated string
 		ptr=strchr(orig,']');
 		size=CALCSIZE(orig,ptr);
 		col=allocate_mem_string(size);
@@ -554,7 +568,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 		i=0;
 
 		if (is_number==TRUE){
-			/*allocate memory*/
+			allocate memory
 			if (! (item->mat_size=(int*)malloc(sizeof(int)*MATRIXCOLANDROW))  ){
 				fprintf(stderr,"Unable to allocate memory to mat_size\n.");
 			}
@@ -568,10 +582,10 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 				add_to_list(head,error);
 			}
 
-		is_number=TRUE; /*reseting to check the other operand*/
+		is_number=TRUE; reseting to check the other operand
 
 
-		/*extract row*/
+		extract row
 		ptr=strchr(orig,']');
 		size=CALCSIZE(orig,ptr);
 		row=allocate_mem_string(size);
@@ -585,7 +599,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 		}
 
 		if (is_number==TRUE){
-			/*allocate memory*/
+			allocate memory
 			item->mat_size[i]=extract_number(row);
 		}else {
 			item->valid=FALSE;
@@ -595,10 +609,11 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 
 
 		printf("in my matrix: col: %d, row: %d\n",item->mat_size[0],item->mat_size[1]);
-		/*Checking the other operand*/
+		Checking the other operand
 
 	}
 }
+*/
 
 void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 	int line;
@@ -621,16 +636,16 @@ void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 		add_to_list(head,error);
 	}
 
-	if (strcmp(item->operand1,TERMINATOR)==0){
+	if (strcmp(item->OPERAND1,TERMINATOR)==0){
 		item->valid=FALSE;
 		sprintf(error,"22. Error in line %d: Missing statement for .entry command .\n",line);
 		add_to_list(head,error);
 
 	}
 
-	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->operand3,TERMINATOR)!=0 ){
+	if (strcmp(item->OPERAND2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
 		item->valid=FALSE;
-		sprintf(error,"23. Error in line %d: Too much data received for .entry command: %s %s .\n",line,item->operand2,item->operand3);
+		sprintf(error,"23. Error in line %d: Too much data received for .entry command: %s %s .\n",line,item->OPERAND2,item->leftovers);
 		add_to_list(head,error);
 	}
 
@@ -660,16 +675,16 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
 		add_to_list(head,error);
 	}
 
-	if (strcmp(item->operand1,TERMINATOR)==0){
+	if (strcmp(item->OPERAND1,TERMINATOR)==0){
 		item->valid=FALSE;
 		sprintf(error,"24. Error in line %d: Missing statement for .extern command .\n",line);
 		add_to_list(head,error);
 
 	}
 
-	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->operand3,TERMINATOR)!=0 ){
+	if (strcmp(item->OPERAND2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
 		item->valid=FALSE;
-		sprintf(error,"25. Error in line %d: Too much data received for .extern command: %s %s .\n",line,item->operand2,item->operand3);
+		sprintf(error,"25. Error in line %d: Too much data received for .extern command: %s %s .\n",line,item->OPERAND2,item->leftovers);
 		add_to_list(head,error);
 	}
 
@@ -686,17 +701,71 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
 
 
 void validate_oper_operands (body* item, list_item_reference*  head, String error){
-	String commant;
+	String command;
 	int operand_type;
+	int line;
+	int operand_count,expected_num_operands;
+	operation_info command_info;
 
-	commant=item->operantion;
+	line=item->line_number;
+	command=item->operantion;
 
 	if (is_operational_command(item->operantion)==FALSE){
+		sprintf(error,"Error in line %d: Unrecognized command <%s>.\n",line,command);
+		add_to_list(head,error);
+		item->valid=FALSE;
+		return;
+	}
+
+	/*count number of operands*/
+	operand_count=0;
+	if (strlen(item->OPERAND1)>0){
+		operand_count++;
+	}
+
+	if (strlen(item->OPERAND2)>0){
+		operand_count++;
+	}
+
+	if (strlen(item->leftovers)>0){
+		operand_count++;
+	}
+
+	if (operand_count>2){
+		sprintf(error,"Error in line %d: Too many operands <%s>.\n",line,item->leftovers);
+		add_to_list(head,error);
+		item->valid=FALSE;
 		return;
 	}
 
 
-	operand_type=get_operand_type(item->operand1,head,error);
+	/*Check that the number of operands received is correct*/
+
+	/* Search the struct and compare its info  */
+
+
+	command_info=get_operation_info(command);
+
+
+	if (command_info.num_of_operands!=operand_count){
+		sprintf(error,"Error in line %d: Invalid number of operands %d, expected: %d.\n",line,operand_count,command_info.num_of_operands);
+		add_to_list(head,error);
+		item->valid=FALSE;
+		return;
+	}
+
+
+	if (command_info.num_of_operands>0){
+		operand_type=get_operand_type(item->OPERAND1);
+
+		if (operand_type==UNRECOGNIZED){
+			/*ERROR*/
+		}
+
+
+	}
+
+
 
 
 	/*check if a valid number of perands was received*/
@@ -706,6 +775,14 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 
 
 }
+
+
+Bool operand_match_commad(String command, Operand_type type){
+
+
+}
+
+
 
 
 Bool is_valid_letter(char c){
@@ -903,14 +980,49 @@ Bool is_operational_command(String str){
 
 }
 
-Operand_type get_operand_type (String operand, list_item_reference * head, String error){
-	Operand_type result;
-	int operand_type;
+
+Bool is_register(String str){
+
+	if (strcasecmp(str,R0)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R1)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R2)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R3)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R4)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R5)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R6)==0){
+		return TRUE;
+	}
+
+	if (strcasecmp(str,R7)==0){
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+Operand_type get_operand_type (String operand){
 	int i;
 	int length;
-	String t1,t2;
 
-	printf("Getting the operands for operational\n");
+
 	length=strlen(operand);
 	i=0;
 
@@ -922,17 +1034,28 @@ Operand_type get_operand_type (String operand, list_item_reference * head, Strin
 
 	}
 
-	if (validate_label(operand)==PASSED){
+	if ((validate_label(operand)->VALID_LABEL)==TRUE){
 		return LABLE;
 	}
 
+/*	if ((validate_ins_mat(operand))==TRUE){
+		return MATRIX;
+	}*/
 
-
+	if (is_register(operand)==TRUE){
+		return REGISTER;
+	}
 
 
 	return UNRECOGNIZED;
 
 }
+
+
+
+
+
+
 
 
 label_status_ref initialize_label_struct(){

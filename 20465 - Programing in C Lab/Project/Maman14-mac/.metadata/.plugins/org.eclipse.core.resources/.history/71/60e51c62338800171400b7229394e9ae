@@ -1,0 +1,19 @@
+/*
+ * operation_dictionary.c
+ *
+ *  Created on: Aug 23, 2017
+ *      Author: alexz
+ */
+#include "operation_dictionary.h"
+
+operation_info* create_operation_info_array(){
+
+	operation_info * operational_dictionary;
+
+	if (!(operational_dictionary= malloc(sizeof(operational_dictionary)*OPERANDS_NUMBER))){
+		fprintf(stderr,"Unable to allocate memory to operation_info \n." );
+		exit(1);
+	}
+
+
+}
