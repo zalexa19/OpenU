@@ -108,7 +108,6 @@ body parse_line(String str, int line_number){
 		current_pointer+=extracted_value_length;/* Advance current_pointer to point to after ':'*/
 		REALLOCATE_EXTRACTED_VALUE
 	}else {
-		result.label=allocate_mem_string(1);
 		strcpy(result.label,"\0");
 	}
 

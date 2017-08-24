@@ -27,6 +27,7 @@ int main(void) {
 	create_operation_info_array();
 
 	operation_info op = get_operation_info("add");
+	printf("%s: %d",op.name, op.num_of_operands);
 
 	if (!(input_file = fopen("assembly_input.txt","r"))){
 		fprintf(stderr, "unable to find assembly file");
@@ -41,16 +42,6 @@ int main(void) {
 
 	print_structs(parsed,parsed_size);
 
-
-	printf(BOLDRED "inside the  struct1, operand 1: <%s> \n",parsed[0].OPERAND1);
-	printf(BOLDRED "inside the  struct1, operand 2: <%s> \n",parsed[0].OPERAND2);
-	printf(BOLDRED "inside the  struct1, operand 3: <%s> \n",parsed[0].leftovers);
-
-	printf(BOLDRED "inside the last struct, operand 1: <%s> \n",parsed[1].OPERAND1);
-	printf(BOLDRED "inside the last struct, operand 2: <%s> \n",parsed[1].OPERAND2);
-	printf(BOLDRED "inside the last struct, operand 3: <%s> \n",parsed[1].leftovers);
-
-	NORMALCOLOR
 
 	printf("\n\nstarting to validate file:\n");
 

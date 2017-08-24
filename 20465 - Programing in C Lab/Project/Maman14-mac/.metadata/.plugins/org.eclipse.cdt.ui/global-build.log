@@ -33162,3 +33162,675 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+04:59:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:236:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:00:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:238:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:02:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:234:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:03:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+05:06:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+05:10:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:22:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:234:10: note: in expansion of macro ‘BOLDBLACK’
+   printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+          ^~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:35:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:83:7: warning: variable ‘empty_op1_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op1_flag;
+       ^~~~~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: At top level:
+../src/utils.h:16:17: error: expected declaration specifiers or ‘...’ before string constant
+ #define NORMAL  "\x1B[0m"
+                 ^
+../src/utils.h:36:28: note: in expansion of macro ‘NORMAL’
+ #define NORMALCOLOR printf(NORMAL "");
+                            ^~~~~~
+../src/parser.c:389:2: note: in expansion of macro ‘NORMALCOLOR’
+  NORMALCOLOR
+  ^~~~~~~~~~~
+../src/parser.c:390:2: warning: data definition has no type or storage class
+  free(extracted_value);
+  ^~~~
+../src/parser.c:390:2: warning: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+../src/parser.c:390:2: warning: parameter names (without types) in function declaration
+../src/parser.c:390:2: error: conflicting types for ‘free’
+In file included from ../src/utils.h:11:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/stdlib.h:444:13: note: previous declaration of ‘free’ was here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+../src/parser.c:391:2: warning: data definition has no type or storage class
+  print_line(result);
+  ^~~~~~~~~~
+../src/parser.c:391:2: warning: type defaults to ‘int’ in declaration of ‘print_line’ [-Wimplicit-int]
+../src/parser.c:391:2: warning: parameter names (without types) in function declaration
+../src/parser.c:391:2: error: conflicting types for ‘print_line’
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:137:6: note: previous declaration of ‘print_line’ was here
+ void print_line(body);
+      ^~~~~~~~~~
+../src/parser.c:392:2: error: expected identifier or ‘(’ before ‘return’
+  return result;
+  ^~~~~~
+../src/parser.c:393:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:388:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+05:36:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:83:7: warning: variable ‘empty_op1_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op1_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c: At top level:
+../src/parser.c:389:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:388:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+05:36:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:83:7: warning: variable ‘empty_op1_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op1_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:388:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:37:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:83:7: warning: variable ‘empty_op1_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op1_flag;
+       ^~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:37:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:83:7: warning: variable ‘empty_op1_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op1_flag;
+       ^~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:38:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:24:21: warning: too many arguments for format [-Wformat-extra-args]
+ #define BOLDBLACK   "\033[1m\033[30m"
+                     ^
+../src/parser.c:244:11: note: in expansion of macro ‘BOLDBLACK’
+    printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
+           ^~~~~~~~~
+../src/parser.c:85:7: warning: variable ‘empty_op3_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op3_flag;
+       ^~~~~~~~~~~~~~
+../src/parser.c:84:7: warning: variable ‘empty_op2_flag’ set but not used [-Wunused-but-set-variable]
+  Bool empty_op2_flag;
+       ^~~~~~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:55:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:102:29: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if (strchr(current_pointer,":")!= NULL){
+                             ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:115:30: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if ((strchr(current_pointer,".")!= NULL){
+                              ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:115:42: error: expected ‘)’ before ‘{’ token
+  if ((strchr(current_pointer,".")!= NULL){
+                                          ^
+../src/parser.c:118:1: error: expected expression before ‘}’ token
+ }
+ ^
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+05:55:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:102:29: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if (strchr(current_pointer,":")!= NULL){
+                             ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:115:30: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if ((strchr(current_pointer,"."))!= NULL){
+                              ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:55:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:102:29: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if (strchr(current_pointer,":")!= NULL){
+                             ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:115:29: warning: passing argument 2 of ‘strchr’ makes integer from pointer without a cast [-Wint-conversion]
+  if (strchr(current_pointer,".")!= NULL){
+                             ^~~
+In file included from ../src/utils.h:12:0,
+                 from ../src/parser.h:10,
+                 from ../src/parser.c:10:
+/usr/include/string.h:231:14: note: expected ‘int’ but argument is of type ‘char *’
+ extern char *strchr (const char *__s, int __c)
+              ^~~~~~
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+05:56:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:102:29: error: empty character constant
+  if (strchr(current_pointer,'':')!= NULL){
+                             ^~
+../src/parser.c:102:31: error: expected ‘)’ before ‘:’ token
+  if (strchr(current_pointer,'':')!= NULL){
+                               ^
+../src/parser.c:102:32: warning: missing terminating ' character
+  if (strchr(current_pointer,'':')!= NULL){
+                                ^
+../src/parser.c:102:32: error: missing terminating ' character
+  if (strchr(current_pointer,'':')!= NULL){
+                                ^~~~~~~~~~~
+../src/parser.c:110:2: error: expected ‘)’ before ‘}’ token
+  }
+  ^
+../src/parser.c:110:2: error: expected expression before ‘}’ token
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:78:9: warning: unused variable ‘extracted_value’ [-Wunused-variable]
+  char * extracted_value;
+         ^~~~~~~~~~~~~~~
+../src/parser.c:77:6: warning: unused variable ‘result_size’ [-Wunused-variable]
+  int result_size;
+      ^~~~~~~~~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:75:7: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
+  body result;
+       ^~~~~~
+../src/parser.c: At top level:
+../src/parser.c:115:2: error: expected identifier or ‘(’ before ‘if’
+  if (strchr(current_pointer,'.')!= NULL){
+  ^~
+../src/parser.c:118:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:110:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+05:56:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:14:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+../src/parser.c:158:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:16:58 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+10:37:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:82:6: warning: unused variable ‘data_array_size’ [-Wunused-variable]
+  int data_array_size=0;
+      ^~~~~~~~~~~~~~~
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+../src/parser.c:76:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i;
+      ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:39:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:47:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:53:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:111:16: warning: missing terminating " character
+   result.label="0\";
+                ^
+../src/parser.c:111:16: error: missing terminating " character
+   result.label="0\";
+                ^~~~~
+../src/parser.c:112:2: error: expected expression before ‘}’ token
+  }
+  ^
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+10:54:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:59:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

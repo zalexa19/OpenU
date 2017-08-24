@@ -1,4 +1,4 @@
-add r2,STR
-LOOP: jmp END
+MAIN: jmp END
 prn #-5
+LABEL: mov 45 33
 

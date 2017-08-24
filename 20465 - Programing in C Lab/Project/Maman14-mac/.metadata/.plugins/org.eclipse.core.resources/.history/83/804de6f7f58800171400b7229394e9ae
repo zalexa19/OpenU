@@ -27,6 +27,7 @@ int main(void) {
 	create_operation_info_array();
 
 	operation_info op = get_operation_info("add");
+	printf("%s: %d",op.name, op.num_of_operands);
 
 	if (!(input_file = fopen("assembly_input.txt","r"))){
 		fprintf(stderr, "unable to find assembly file");

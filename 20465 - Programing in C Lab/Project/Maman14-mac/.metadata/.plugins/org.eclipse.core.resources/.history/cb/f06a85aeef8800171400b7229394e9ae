@@ -107,19 +107,11 @@ body parse_line(String str, int line_number){
 		strcpy(result.label,extracted_value);
 		current_pointer+=extracted_value_length;/* Advance current_pointer to point to after ':'*/
 		REALLOCATE_EXTRACTED_VALUE
-	}else {
-		result.label=allocate_mem_string(1);
-		strcpy(result.label,"\0");
 	}
 
 
 	/*extract instruction*/
 	if (strchr(current_pointer,'.')!= NULL){
-		/*Instruction exists:
-		result.Instruction should be updated
-		current pointer should be advanced
-		operation should be updated with null
-		*/
 		spaces=count_spaces(current_pointer);
 		current_pointer+=spaces;
 
@@ -131,107 +123,8 @@ body parse_line(String str, int line_number){
 		current_pointer+=extracted_value_length;
 		REALLOCATE_EXTRACTED_VALUE;
 
-		result.operantion=allocate_mem_string(1);
-		strcpy(result.operantion,"\0");
-
-
-	}
-	else {
-		/*
-		 * Need to extract operation.
-		 */
-		result.instruction=allocate_mem_string(1);
-		strcpy(result.instruction,"\0");
-
-		extracted_value=extract_operation(current_pointer);
-		extracted_value_length=strlen(extracted_value)+1;
-		result.operantion=allocate_mem_string(extracted_value_length);
-		strcpy(result.operantion,extracted_value);
-		current_pointer+=extracted_value_length;
-
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-		REALLOCATE_EXTRACTED_VALUE;
-
-		}
-
-
-	/*PARSING OPERANDS*/
-
-	if (strcmp(result.instruction,"data")==0){
-		/*Count number of operands*/
-		i=0;
-		while(current_pointer[i]!='\0'){
-			if(current_pointer[i]==','){
-				data_array_size++;
-			}
-			i++;
-		}
-
-		data_array_size++;
-		result.data_values_number=data_array_size;
-
-
-		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
-
-		if (result.data_string_array != NULL){
-			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
-		}else {
-			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
-		}
-
-
-	}
-	else if (strcmp(result.instruction,"mat")==0){
-
 	}
 
-	else {
-
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		/*Extractring OPERAND1*/
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND1=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND1,extracted_value);
-		NORMALCOLOR
-
-		current_pointer+=extracted_value_length;
-		REALLOCATE_EXTRACTED_VALUE
-
-
-		/*Extracting OPERAND2*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND2=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND2,extracted_value);
-
-
-		if (extracted_value_length>0){
-			current_pointer+=extracted_value_length;
-		}
-
-		REALLOCATE_EXTRACTED_VALUE
-
-		/*Extract Leftovers*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.leftovers=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.leftovers,extracted_value);
-
-
-	}
-
-
-	return result;
 
 }
 /*

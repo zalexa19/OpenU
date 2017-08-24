@@ -70,178 +70,13 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 	return parsed_file;
 }
 
-
-body parse_line(String str, int line_number){
-	body result;
-	int i;
-	int extracted_value_length;
-	char * extracted_value;
-	char * current_pointer;
-	int size;
-	int spaces;
-	int data_array_size=0;
-	int received_line_length;
-
-	printf(KYELLOW "------------------------------\n");
-    printf("      PARSING LINE:        \n");
-	printf("------------------------------\n");
-	NORMALCOLOR
-
-	received_line_length=strlen(str);
-	str[received_line_length-1]='\0'; /*replaces \n with \0*/
-	result.line_number=line_number;
-	spaces=count_spaces(str);
-	str+=spaces; /*gets rid of unwanted spaces*/
-	current_pointer=str;
-	result.valid=TRUE;
-
-	/*Extract label*/
-	/*
-	 * If ':' exists, we extract the label
-	 */
-	if (strchr(current_pointer,':')!= NULL){
-		extracted_value=extract_label(current_pointer);
-		extracted_value_length=strlen(extracted_value)+1;
-
-		result.label=allocate_mem_string(extracted_value_length);
-		strcpy(result.label,extracted_value);
-		current_pointer+=extracted_value_length;/* Advance current_pointer to point to after ':'*/
-		REALLOCATE_EXTRACTED_VALUE
-	}else {
-		result.label=allocate_mem_string(1);
-		strcpy(result.label,"\0");
-	}
-
-
-	/*extract instruction*/
-	if (strchr(current_pointer,'.')!= NULL){
-		/*Instruction exists:
-		result.Instruction should be updated
-		current pointer should be advanced
-		operation should be updated with null
-		*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_instruction(current_pointer);
-
-		extracted_value_length=strlen(extracted_value)+1;
-		result.instruction=allocate_mem_string(extracted_value_length);
-		strcpy(result.instruction,extracted_value);
-		current_pointer+=extracted_value_length;
-		REALLOCATE_EXTRACTED_VALUE;
-
-		result.operantion=allocate_mem_string(1);
-		strcpy(result.operantion,"\0");
-
-
-	}
-	else {
-		/*
-		 * Need to extract operation.
-		 */
-		result.instruction=allocate_mem_string(1);
-		strcpy(result.instruction,"\0");
-
-		extracted_value=extract_operation(current_pointer);
-		extracted_value_length=strlen(extracted_value)+1;
-		result.operantion=allocate_mem_string(extracted_value_length);
-		strcpy(result.operantion,extracted_value);
-		current_pointer+=extracted_value_length;
-
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-		REALLOCATE_EXTRACTED_VALUE;
-
-		}
-
-
-	/*PARSING OPERANDS*/
-
-	if (strcmp(result.instruction,"data")==0){
-		/*Count number of operands*/
-		i=0;
-		while(current_pointer[i]!='\0'){
-			if(current_pointer[i]==','){
-				data_array_size++;
-			}
-			i++;
-		}
-
-		data_array_size++;
-		result.data_values_number=data_array_size;
-
-
-		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
-
-		if (result.data_string_array != NULL){
-			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
-		}else {
-			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
-		}
-
-
-	}
-	else if (strcmp(result.instruction,"mat")==0){
-
-	}
-
-	else {
-
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		/*Extractring OPERAND1*/
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND1=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND1,extracted_value);
-		NORMALCOLOR
-
-		current_pointer+=extracted_value_length;
-		REALLOCATE_EXTRACTED_VALUE
-
-
-		/*Extracting OPERAND2*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND2=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND2,extracted_value);
-
-
-		if (extracted_value_length>0){
-			current_pointer+=extracted_value_length;
-		}
-
-		REALLOCATE_EXTRACTED_VALUE
-
-		/*Extract Leftovers*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.leftovers=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.leftovers,extracted_value);
-
-
-	}
-
-
-	return result;
-
-}
-/*
 body  parse_line (String str, int line_number){
 	body result;
 	int i;
 	int result_size;
 	char * extracted_value;
 	char * current_pointer;
-	int size;
+/*	int size;*/
 	int n_skipped_spaces;
 	int data_array_size=0;
 	int received_line_length;
@@ -249,24 +84,24 @@ body  parse_line (String str, int line_number){
 	Bool empty_op2_flag;
 	Bool empty_op3_flag;
 
-	printf(KYELLOW "------------------------------\n");
+/*	printf(KYELLOW "------------------------------\n");
     printf("      PARSING LINE:        \n");
 	printf("------------------------------\n");
-	NORMALCOLOR
+	NORMALCOLOR*/
 
 
 
 	received_line_length=strlen(str);
-	str[received_line_length-1]='\0'; puts \0 instead of \n
+	str[received_line_length-1]='\0';/* puts \0 instead of \n */
 	result.line_number=line_number;
 	n_skipped_spaces=count_spaces(str);
-	str+=n_skipped_spaces; gets rid of unwanted spaces
+	str+=n_skipped_spaces; /*gets rid of unwanted spaces*/
 	current_pointer=str;
 	result.valid=TRUE;
 
 
 
-	extract label
+	/*extract label*/
 	extracted_value=extract_label(current_pointer);
 	result_size=strlen(extracted_value)+1;
 
@@ -274,19 +109,20 @@ body  parse_line (String str, int line_number){
 	strcpy(result.label,extracted_value);
 
 	if ((strcmp(extracted_value,"\0")) != 0){
-		current_pointer+=result_size; Advance current_pointer to point to after ':'
+		current_pointer+=result_size; /*Advance current_pointer to point to after ':'*/
 	}
-
+/*	printf(KBLUE "---Extracted label: [%s]\n",result.label);
+	NORMALCOLOR*/
 	REALLOCATE_EXTRACTED_VALUE;
 
 
 
-	extract instruction
+	/*extract instruction*/
 	n_skipped_spaces=count_spaces(current_pointer);
 	current_pointer+=n_skipped_spaces;
 
-	printf(KGREEN "--counted spaces: %d\n",n_skipped_spaces);
-	printf(KGREEN "--current pointer: <%s>\n",current_pointer);
+/*	printf(KGREEN "--counted spaces: %d\n",n_skipped_spaces);
+	printf(KGREEN "--current pointer: <%s>\n",current_pointer);*/
 
 	extracted_value=extract_instruction(current_pointer);
 
@@ -297,70 +133,87 @@ body  parse_line (String str, int line_number){
 
 
 
-
+	/*
 	 * Instruction exists:
 	 * result.Instruction should be updated
 	 * current pointer should be advanced
 	 * operation should be updated with null
 	 *
+	 */
+	if ((strcmp(extracted_value,"\0")) != 0){ /*instruction exists*/
+/*		printf(KBLUE "---Extracted instruction: [%s]\n",extracted_value);
+		NORMALCOLOR*/
 
-	if ((strcmp(extracted_value,"\0")) != 0){ instruction exists
-		printf(KBLUE "---Extracted instruction: [%s]\n",extracted_value);
-		NORMALCOLOR
-
-		advance the pointer
+		/*advance the pointer*/
 		current_pointer+=result_size;
-		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
-		NORMALCOLOR
+/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
+/*		NORMALCOLOR*/
 
 		REALLOCATE_EXTRACTED_VALUE;
 
-		Update operation=null
+		/*Update operation=null*/
 		result.operantion=allocate_mem_string(1);
 		strcpy(result.operantion,"\0");
 
 	}
-
+	/*
 	 * Instruction doesn't exist:
 	 * operation should be extracted
 	 *
-
+	 */
 
 	else {
-		EXTRACT THE OPERATION
+/*		printf(KGREEN "extracting operation:\n");*/
+
+		/*EXTRACT THE OPERATION*/
 		extracted_value=extract_operation(current_pointer);
 		result_size=strlen(extracted_value)+1;
 		result.operantion=allocate_mem_string(result_size);
 		strcpy(result.operantion,extracted_value);
+/*
+		if (strcmp(extracted_value,"\0") == 0 ){
+			current_pointer+=result_size-1;
+		}*/
 
+		current_pointer+=result_size;
+/*
+		if ( strcmp(extracted_value,"\0") != 0 ){
+			current_pointer+=result_size-1;
+		}
+*/
 
 		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;
+/*		printf(KRED"skipped_spaces: %d\n",n_skipped_spaces);
+		NORMALCOLOR*/
+
 	}
 
 		REALLOCATE_EXTRACTED_VALUE;
 
-	PARSING OPERANDS
+/*		printf(KBLUE "---!Extracted operation: [%s]\n",result.operantion);
+		printf(KCYN "---sCurrent pointer: [%s]\n",current_pointer);
+		NORMALCOLOR*/
 
+	/*PARSING OPERANDS*/
+	/*
 	 * In case of .data, we invoke a specific method that breaks the string by ','
+	 */
 
-
-
-		printf(KGREEN "Extracting Operands:\n");
+	/*	printf(KGREEN "Extracting Operands:\n");*/
 
 	if (strlen(current_pointer)>received_line_length-1){
-		no operands received
+		/*no operands received*/
 		empty_op1_flag=TRUE;
 		empty_op2_flag=TRUE;
 		empty_op3_flag=TRUE;
 
 	}else {
 
-
 		if ((strcmp(result.instruction,"data") == 0)){
-			Count number of operands
+			/*Count number of operands*/
 			i=0;
-			printf(KGREEN "--parsing for: .data\n");
+	/*		printf(KGREEN "--parsing for: .data\n");*/
 			NORMALCOLOR
 			while(current_pointer[i]!='\0'){
 				if(current_pointer[i]==','){
@@ -372,7 +225,7 @@ body  parse_line (String str, int line_number){
 			data_array_size++;
 			result.data_values_number=data_array_size;
 
-			allocate memory
+			/*allocate memory*/
 			result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
 
 			if (result.data_string_array != NULL){
@@ -383,9 +236,9 @@ body  parse_line (String str, int line_number){
 
 		}
 
-
+		/*
 		 * if we are parsing .mat:
-
+		 */
 
 		else if (strcmp(result.instruction,"mat")==0){
 			printf(BOLDBLACK "EXTRACTING MAT\n",current_pointer);
@@ -397,13 +250,13 @@ body  parse_line (String str, int line_number){
 			printf(KMAGENTA "current pointer in .mat: <%s>\n",current_pointer);
 			NORMALCOLOR
 
-			extract operands
+			/*extract operands*/
 
-			extract mat values
+			/*extract mat values*/
 			REALLOCATE_EXTRACTED_VALUE
 			strcpy(extracted_value,parse_mat(current_pointer));
 
-			printf("extracted: <%s>\n",extracted_value);
+	/*		printf("extracted: <%s>\n",extracted_value);*/
 			result_size=strlen(extracted_value);
 
 			result.OPERAND1=allocate_mem_string(result_size+1);
@@ -411,7 +264,7 @@ body  parse_line (String str, int line_number){
 			printf("currently in operand1: <%s>\n\n",result.OPERAND1);
 
 
-			advance the pointer
+			/*advance the pointer*/
 			current_pointer+=result_size;
 
 			i=0;
@@ -425,7 +278,7 @@ body  parse_line (String str, int line_number){
 			data_array_size++;
 			result.data_values_number=data_array_size;
 
-			allocate memory
+			/*allocate memory*/
 			result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
 
 			if (result.data_string_array != NULL){
@@ -437,7 +290,7 @@ body  parse_line (String str, int line_number){
 
 			printf("test\n");
 
-			printf("operand 1 for mat: <%s>\n",result.operand1);
+	/*		printf("operand 1 for mat: <%s>\n",result.operand1);*/
 
 
 			result.OPERAND2=allocate_mem_string(1);
@@ -451,19 +304,19 @@ body  parse_line (String str, int line_number){
 
 
 
-
+		/*
 		 * instruction is not .data, so we need to populate operands1-3 fields
-
+		 */
 		else {
-			printf(KGREEN "--parsing for non data \n");
+	/*		printf(KGREEN "--parsing for non data \n");*/
 			NORMALCOLOR
 
-			printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+	/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
 
-			n_skipped_spaces=count_spaces(current_pointer);
-			current_pointer+=n_skipped_spaces;
+	/*		n_skipped_spaces=count_spaces(current_pointer);
+			current_pointer+=n_skipped_spaces;*/
 
-			printf(KGREEN "OPERAND#1: \n");
+	/*		printf(KGREEN "OPERAND#1: \n");*/
 			NORMALCOLOR
 			extracted_value=extract_operand(current_pointer);
 			result_size=strlen(extracted_value)+1;
@@ -474,11 +327,8 @@ body  parse_line (String str, int line_number){
 			current_pointer+=result_size;
 			REALLOCATE_EXTRACTED_VALUE
 
-			printf(BOLDYELLOW "extracting operand 1\n");
-			NORMALCOLOR
-
 			printf(KBLUE "---Extracted operand1: [%s]\n",result.OPERAND1);
-			printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+	/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
 
 
 
@@ -490,7 +340,7 @@ body  parse_line (String str, int line_number){
 			} else {
 
 
-				printf(KGREEN "OPERAND#2: \n");
+		/*		printf(KGREEN "OPERAND#2: \n");*/
 				NORMALCOLOR
 				n_skipped_spaces=count_spaces(current_pointer);
 				current_pointer+=n_skipped_spaces;
@@ -502,7 +352,7 @@ body  parse_line (String str, int line_number){
 				current_pointer+=result_size+1;
 
 				printf(KBLUE "---Extracted operand2: [%s]\n",result.OPERAND2);
-				printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+		/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
 
 
 
@@ -512,52 +362,35 @@ body  parse_line (String str, int line_number){
 					empty_op3_flag=TRUE;
 				} else {
 
-					For non .data we expect to receive 2 operands. if more are received,
+					/*For non .data we expect to receive 2 operands. if more are received,
 					 * They are stored as junk to be validated by a different module, at a later stage
-					 *
+					 * */
 					printf(KGREEN "OPERAND#3(Leftovers): \n");
 					NORMALCOLOR
 
 
-					printf(KGREEN"--extracting leftovers\n");
+		/*			printf(KGREEN"--extracting leftovers\n");*/
 					extracted_value=extract_operand(current_pointer);
 					result_size=strlen(extracted_value);
 					result.leftovers=allocate_mem_string(result_size+ADDEDSIZE);
 					strcpy(result.leftovers,extracted_value);
 
 					printf(KBLUE "---Extracted operand3: [%s]\n",result.leftovers);
-					printf(KCYN "---Current pointer: [%s]\n",current_pointer);
+		/*			printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
 
 					}
 
 				}
 
 			}
-
+			/**/
 		}
-
-	if (empty_op1_flag==TRUE){
-		result.OPERAND1=allocate_mem_string(1);
-		strcpy(result.OPERAND1,"\0");
-	}
-	if (empty_op2_flag==TRUE){
-		result.OPERAND2=allocate_mem_string(1);
-		strcpy(result.OPERAND2,"\0");
-	}
-	if (empty_op3_flag==TRUE){
-		result.leftovers=allocate_mem_string(1);
-		strcpy(result.leftovers,"\0");
-	}
-
-
-
 	NORMALCOLOR
 	free(extracted_value);
 	print_line(result);
 	return result;
 
 }
-*/
 
 
 /*
