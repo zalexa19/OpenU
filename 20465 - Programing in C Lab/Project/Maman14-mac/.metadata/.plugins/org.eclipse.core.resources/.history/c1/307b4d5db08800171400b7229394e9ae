@@ -21,7 +21,7 @@
 #define KMAGENTA  "\x1B[35m"
 #define KCYN  "\x1B[36m"
 #define KWHITE  "\x1B[37m"
-#define BOLDBLACK   "\033[1m\033[30m"
+/*#define BOLDBLACK   "\033[1m\033[30m"       Bold Black */
 #define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
 #define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
 #define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */

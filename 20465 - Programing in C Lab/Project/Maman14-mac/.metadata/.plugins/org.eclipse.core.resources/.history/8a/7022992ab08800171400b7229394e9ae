@@ -82,10 +82,10 @@ body  parse_line (String str, int line_number){
 	int data_array_size=0;
 	int str_length;
 
-/*	printf(KYELLOW "------------------------------\n");
+	printf(KYELLOW "------------------------------\n");
     printf("      PARSING LINE:        \n");
 	printf("------------------------------\n");
-	NORMALCOLOR*/
+	NORMALCOLOR
 
 
 	/*puts \0 instead of \n*/
@@ -199,12 +199,12 @@ body  parse_line (String str, int line_number){
 	 * In case of .data, we invoke a specific method that breaks the string by ','
 	 */
 
-	/*	printf(KGREEN "Extracting Operands:\n");*/
+		printf(KGREEN "Extracting Operands:\n");
 
 	if ((strcmp(result.instruction,"data") == 0)){
 		/*Count number of operands*/
 		i=0;
-/*		printf(KGREEN "--parsing for: .data\n");*/
+		printf(KGREEN "--parsing for: .data\n");
 		NORMALCOLOR
 		while(current_pointer[i]!='\0'){
 			if(current_pointer[i]==','){
@@ -299,15 +299,15 @@ body  parse_line (String str, int line_number){
 	 * instruction is not .data, so we need to populate operands1-3 fields
 	 */
 	else {
-/*		printf(KGREEN "--parsing for non data \n");*/
+		printf(KGREEN "--parsing for non data \n");
 		NORMALCOLOR
 
-/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 /*		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;*/
 
-/*		printf(KGREEN "OPERAND#1: \n");*/
+		printf(KGREEN "OPERAND#1: \n");
 		NORMALCOLOR
 		extracted_value=extract_operand(current_pointer);
 		result_size=strlen(extracted_value)+1;
@@ -315,14 +315,14 @@ body  parse_line (String str, int line_number){
 		strcpy(result.OPERAND1,extracted_value);
 		NORMALCOLOR
 
-		current_pointer+=result_size;
+		current_pointer+=result_size+1;
 		REALLOCATE_EXTRACTED_VALUE
 
 		printf(KBLUE "---Extracted operand1: [%s]\n",result.OPERAND1);
-/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 
-/*		printf(KGREEN "OPERAND#2: \n");*/
+		printf(KGREEN "OPERAND#2: \n");
 		NORMALCOLOR
 		n_skipped_spaces=count_spaces(current_pointer);
 		current_pointer+=n_skipped_spaces;
@@ -334,7 +334,7 @@ body  parse_line (String str, int line_number){
 		current_pointer+=result_size+1;
 
 		printf(KBLUE "---Extracted operand2: [%s]\n",result.OPERAND2);
-/*		printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
+		printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 
 
 		/*For non .data we expect to receive 2 operands. if more are received,
@@ -344,14 +344,14 @@ body  parse_line (String str, int line_number){
 		NORMALCOLOR
 
 		if (current_pointer[0] != '\n'){
-/*			printf(KGREEN"--extracting leftovers\n");*/
+			printf(KGREEN"--extracting leftovers\n");
 			extracted_value=extract_operand(current_pointer);
 			result_size=strlen(extracted_value);
 			result.leftovers=allocate_mem_string(result_size+ADDEDSIZE);
 			strcpy(result.leftovers,extracted_value);
 
 			printf(KBLUE "---Extracted operand3: [%s]\n",result.leftovers);
-/*			printf(KCYN "---Current pointer: [%s]\n",current_pointer);*/
+			printf(KCYN "---Current pointer: [%s]\n",current_pointer);
 		} else {
 			/*Reached \n */{
 				result.leftovers=allocate_mem_string(1);

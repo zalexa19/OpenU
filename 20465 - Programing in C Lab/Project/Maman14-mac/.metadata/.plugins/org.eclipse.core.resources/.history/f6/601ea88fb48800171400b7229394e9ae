@@ -786,7 +786,7 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 
 			if (is_operand2_allowed(command_info,command,operand_type)==FALSE){
 				/*ERROR*/
-				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND2,command);
+				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND1,command);
 				add_to_list(head,error);
 				item->valid=FALSE;
 			}

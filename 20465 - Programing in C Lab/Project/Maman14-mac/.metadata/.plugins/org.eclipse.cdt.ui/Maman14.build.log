@@ -1,62 +1,8 @@
-13:24:21 **** Incremental Build of configuration Debug for project Maman14 ****
+03:09:36 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/validator.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
-../src/validator.c: In function ‘validate_ins_data’:
-../src/validator.c:296:6: warning: unused variable ‘i’ [-Wunused-variable]
-  int i;
-      ^
-../src/validator.c:295:6: warning: variable ‘str_length’ set but not used [-Wunused-but-set-variable]
-  int str_length;
-      ^~~~~~~~~~
-../src/validator.c:294:7: warning: unused variable ‘c’ [-Wunused-variable]
-  char c;
-       ^
-../src/validator.c:291:7: warning: unused variable ‘invalid_char_found’ [-Wunused-variable]
-  Bool invalid_char_found=FALSE;
-       ^~~~~~~~~~~~~~~~~~
-../src/validator.c: In function ‘validate_oper_operands’:
-../src/validator.c:707:20: warning: unused variable ‘expected_num_operands’ [-Wunused-variable]
-  int operand_count,expected_num_operands;
-                    ^~~~~~~~~~~~~~~~~~~~~
-../src/validator.c: In function ‘get_operand_type’:
-../src/validator.c:1023:6: warning: variable ‘length’ set but not used [-Wunused-but-set-variable]
-  int length;
-      ^~~~~~
-../src/validator.c: In function ‘print_label_errors’:
-../src/validator.c:1083:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
-   add_to_list(head,error);
-               ^~~~
-In file included from ../src/validator.c:1:0:
-../src/utils.h:122:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
- void add_to_list(list_item_reference*,String);
-      ^~~~~~~~~~~
-../src/validator.c:1088:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
-   add_to_list(head,error);
-               ^~~~
-In file included from ../src/validator.c:1:0:
-../src/utils.h:122:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
- void add_to_list(list_item_reference*,String);
-      ^~~~~~~~~~~
-../src/validator.c:1095:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
-   add_to_list(head,error);
-               ^~~~
-In file included from ../src/validator.c:1:0:
-../src/utils.h:122:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
- void add_to_list(list_item_reference*,String);
-      ^~~~~~~~~~~
-../src/validator.c:1102:15: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
-   add_to_list(head,error);
-               ^~~~
-In file included from ../src/validator.c:1:0:
-../src/utils.h:122:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
- void add_to_list(list_item_reference*,String);
-      ^~~~~~~~~~~
-../src/validator.c: In function ‘operand_match_commad’:
-../src/validator.c:783:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 Finished building: ../src/validator.c
  
 Building target: Maman14
@@ -65,5 +11,5 @@ gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  .
 Finished building target: Maman14
  
 
-13:24:22 Build Finished (took 674ms)
+03:09:36 Build Finished (took 258ms)
 

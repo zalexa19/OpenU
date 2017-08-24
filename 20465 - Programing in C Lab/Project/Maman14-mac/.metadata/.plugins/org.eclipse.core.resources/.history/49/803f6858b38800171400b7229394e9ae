@@ -315,7 +315,7 @@ body  parse_line (String str, int line_number){
 		strcpy(result.OPERAND1,extracted_value);
 		NORMALCOLOR
 
-		current_pointer+=result_size;
+		current_pointer+=result_size+1;
 		REALLOCATE_EXTRACTED_VALUE
 
 		printf(KBLUE "---Extracted operand1: [%s]\n",result.OPERAND1);

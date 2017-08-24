@@ -34,7 +34,7 @@ label_status_ref initialize_label_struct();
 void validate_file(bodyArray, int);
 
 label_status_ref validate_label (String);
-void print_label_errors(label_status_ref, body, list_item_reference*);
+void print_label_errors(label_status_ref, body, list_item_reference);
 
 
 

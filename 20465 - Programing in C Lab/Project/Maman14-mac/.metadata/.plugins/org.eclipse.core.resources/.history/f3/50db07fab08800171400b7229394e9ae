@@ -288,8 +288,11 @@ void validate_operation(body* item, list_item_reference*  head, String error){
 void validate_ins_data (body* item, list_item_reference*  head){
 	int num_of_operands;
 	int line;
+	Bool invalid_char_found=FALSE;
 	int counter;
 	String current;
+	char c;
+	int str_length;
 
 	char error[MAXERRORSIZE];
 
@@ -309,6 +312,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 /*		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);*/
 
 		current=item->data_string_array[counter];
+		str_length=strlen(current);
 
 	/*first char is a symbol - or +*/
 		/*i=0;
@@ -784,9 +788,9 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 			}
 
 
-			if (is_operand2_allowed(command_info,command,operand_type)==FALSE){
+			if (is_operand1_allowed(command_info,command,operand_type)==FALSE){
 				/*ERROR*/
-				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND2,command);
+				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND1,command);
 				add_to_list(head,error);
 				item->valid=FALSE;
 			}
@@ -860,6 +864,7 @@ Bool is_valid_number (String str){
 	char c;
 
 
+
 	i=0;
 	str_length=strlen(str);
 
@@ -880,7 +885,6 @@ Bool is_valid_number (String str){
 
 
 	while (i<str_length){
-		c=str[i];
 		if (isdigit(c)==FALSE){
 			return FALSE;
 		}
@@ -1039,12 +1043,12 @@ Bool is_register(String str){
 
 Operand_type get_operand_type (String operand){
 	int i;
+	int length;
 
 
-	printf(BOLDCYAN "Checking for: <%s>\n",operand);
-	NORMALCOLOR
-
+	length=strlen(operand);
 	i=0;
+
 	if (operand[i]=='#'){
 
 		if (is_valid_number(operand+1)==TRUE){

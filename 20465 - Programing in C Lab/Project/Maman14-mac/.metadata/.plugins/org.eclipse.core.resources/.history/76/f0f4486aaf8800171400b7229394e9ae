@@ -57,7 +57,7 @@ void validate_file(bodyArray parsed, int array_size){
 
 		validated_label=validate_label(item.label);
 		item.valid=validated_label->VALID_LABEL;
-		print_label_errors(validated_label,item,&error_list_head);
+		print_label_errors(validated_label,item,error_list_head);
 
 
 		printf(BOLDWHITE"Label validation:");
@@ -288,9 +288,12 @@ void validate_operation(body* item, list_item_reference*  head, String error){
 void validate_ins_data (body* item, list_item_reference*  head){
 	int num_of_operands;
 	int line;
+	Bool invalid_char_found=FALSE;
 	int counter;
 	String current;
-
+	char c;
+	int str_length;
+	int i;
 	char error[MAXERRORSIZE];
 
 	num_of_operands=item->data_values_number;
@@ -309,6 +312,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 /*		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);*/
 
 		current=item->data_string_array[counter];
+		str_length=strlen(current);
 
 	/*first char is a symbol - or +*/
 		/*i=0;
@@ -693,19 +697,13 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
 
 
 
-/*
- * This function validates the operands received for an operational command.
- * At first we check the number of operands received.
- * Then, we retrieve the struct that holds info about what is allowed for each command.
- * Validation is done by comparing what is stored in the parsed line, and the info for the command
- */
+
 
 
 void validate_oper_operands (body* item, list_item_reference*  head, String error){
 	String command;
 	int operand_type;
 	int line;
-	int operand_count;
 	operation_info command_info;
 
 	line=item->line_number;
@@ -784,9 +782,9 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 			}
 
 
-			if (is_operand2_allowed(command_info,command,operand_type)==FALSE){
+			if (is_operand1_allowed(command_info,command,operand_type)==FALSE){
 				/*ERROR*/
-				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND2,command);
+				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND1,command);
 				add_to_list(head,error);
 				item->valid=FALSE;
 			}
@@ -860,6 +858,7 @@ Bool is_valid_number (String str){
 	char c;
 
 
+
 	i=0;
 	str_length=strlen(str);
 
@@ -880,7 +879,6 @@ Bool is_valid_number (String str){
 
 
 	while (i<str_length){
-		c=str[i];
 		if (isdigit(c)==FALSE){
 			return FALSE;
 		}
@@ -1039,12 +1037,12 @@ Bool is_register(String str){
 
 Operand_type get_operand_type (String operand){
 	int i;
+	int length;
 
 
-	printf(BOLDCYAN "Checking for: <%s>\n",operand);
-	NORMALCOLOR
-
+	length=strlen(operand);
 	i=0;
+
 	if (operand[i]=='#'){
 
 		if (is_valid_number(operand+1)==TRUE){
@@ -1094,13 +1092,12 @@ label_status_ref initialize_label_struct(){
 	return new;
 }
 
-void print_label_errors(label_status_ref status, body item, list_item_reference * head){
+void print_label_errors(label_status_ref status, body item, list_item_reference head){
 	String error =allocate_mem_string(MAXERRORSIZE);
 
 	if (status->TOO_LONG==TRUE){
 		sprintf(error,"1. Error in line %d: Label <%s> is too long.\n",item.line_number,item.label);
 		add_to_list(head,error);
-
 	}
 
 	if (status->INV_FIRST_CHAR==TRUE){
