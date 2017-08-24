@@ -29,7 +29,7 @@
 
 
 void validate_file(bodyArray parsed, int array_size){
-	int counter;
+	int i,counter;
 	body item;
 	list_item_reference error_list_head;
 	char error[MAXERRORSIZE];
@@ -42,13 +42,14 @@ void validate_file(bodyArray parsed, int array_size){
 
 	NORMALCOLOR
 
+	i=0;
 	error_list_head=NULL;
 
 
 	for (counter=0;counter<array_size;counter++){
 		item=parsed[counter];
 
-		printf(BOLDMAGENTA "Validating line: %d\n",item.line_number);
+		printf(BOLDMAGENTA "Validating line: %d\n",parsed->line_number);
 
 		if(strcmp(item.label,TERMINATOR) != 0){
 		/*

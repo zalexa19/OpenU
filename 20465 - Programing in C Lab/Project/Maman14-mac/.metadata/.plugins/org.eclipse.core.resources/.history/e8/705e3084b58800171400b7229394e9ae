@@ -29,7 +29,7 @@
 
 
 void validate_file(bodyArray parsed, int array_size){
-	int counter;
+	int i;
 	body item;
 	list_item_reference error_list_head;
 	char error[MAXERRORSIZE];
@@ -40,133 +40,131 @@ void validate_file(bodyArray parsed, int array_size){
     printf("      VALIDATION STAGE:        \n");
 	printf("------------------------------\n");
 
+
 	NORMALCOLOR
 
+	i=0;
+	item=parsed[i];
 	error_list_head=NULL;
 
 
-	for (counter=0;counter<array_size;counter++){
-		item=parsed[counter];
+	if(strcmp(item.label,TERMINATOR) != 0){
+/*
+		VALIDATE LABEL
+		validate_label(&item,&error_list_head);
 
-		printf(BOLDMAGENTA "Validating line: %d\n",item.line_number);
+*/
 
-		if(strcmp(item.label,TERMINATOR) != 0){
-		/*
-			VALIDATE LABEL
-			validate_label(&item,&error_list_head);
-
-		*/
-
-			validated_label=validate_label(item.label);
-			item.valid=validated_label->VALID_LABEL;
-			print_label_errors(validated_label,item,&error_list_head);
+		validated_label=validate_label(item.label);
+		item.valid=validated_label->VALID_LABEL;
+		print_label_errors(validated_label,item,&error_list_head);
 
 
-			printf(BOLDWHITE"Label validation:");
-			PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)
-		}
-
-
-		if(strcmp(item.instruction,"\0") != 0){
-			/***********************
-			 * VALIDATE INSTRUCTION*
-			 ***********************/
-
-			validate_instruction(&item,&error_list_head);
-
-			printf("Instruction validation:\nFile is: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
-
-
-			/*DATA*/
-			if (strcmp(item.instruction,"data")==0){
-				validate_ins_data(&item, &error_list_head);
-
-				NORMALCOLOR
-
-				printf(BOLDWHITE "data operands validation: ");
-				PRINT_PASSED_OR_FAILED(item.valid)
-
-			}
-
-			printf(".string operands validation: \n");
-
-			if (strcmp(item.instruction,"string")==0){
-				validate_ins_string(&item,&error_list_head);
-			}
-
-
-			printf(BOLDWHITE "string operands validation: ");
-
-			PRINT_PASSED_OR_FAILED(item.valid)
-
-
-			/*MAT*/
-			printf("mat validation:\n");
-			if (strcmp(item.instruction,"mat")==0){
-				/*validate_ins_mat(&item,&error_list_head);
-
-				printf(BOLDWHITE "mat operands validation: ");
-				PRINT_PASSED_OR_FAILED(item.valid)*/
-			}
-
-
-			/*ENTRY*/
-			if (strcmp(item.instruction,"entry")==0){
-				validate_ins_entry(&item,&error_list_head,error);
-
-			}
-
-			printf(BOLDWHITE "entry operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
-
-			/*EXTERN*/
-			if (strcmp(item.instruction,"extern")==0){
-				validate_ins_extern(&item,&error_list_head,error);
-			}
-
-			printf(BOLDWHITE "extern operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
-
-
-		}	else {
-			/*
-			 * Validate the operation
-			 */
-
-		if (strcmp(item.operantion,"\0")==0){
-			item.valid=FALSE;
-			sprintf(error,"22. Error in line: %d: Operation/Instruction were not received.\n",item.line_number);
-			add_to_list(&error_list_head,error);
-		} else {
-
-			validate_operation(&item,&error_list_head,error);
-
-			printf(BOLDWHITE "Operational command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
-
-			validate_oper_operands(&item,&error_list_head,error);
-
-			printf(BOLDWHITE "Operation-Operands command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
-		}
-
-
-
-		/*end of operation validation*/
-		}
-
-		printf("finished validating file\n");
-
-		printf(KYELLOW "------------------------------\n");
-		printf("      ERRORS:        \n");
-		printf("------------------------------\n");
-
-		print_list(error_list_head);
-		NORMALCOLOR
-
-
+		printf(BOLDWHITE"Label validation:");
+		PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)
 	}
+
+
+	if(strcmp(item.instruction,"\0") != 0){
+		/***********************
+		 * VALIDATE INSTRUCTION*
+		 ***********************/
+
+		validate_instruction(&item,&error_list_head);
+
+		printf("Instruction validation:\nFile is: ");
+		PRINT_PASSED_OR_FAILED(item.valid)
+
+
+		/*DATA*/
+		if (strcmp(item.instruction,"data")==0){
+			validate_ins_data(&item, &error_list_head);
+
+			NORMALCOLOR
+
+			printf(BOLDWHITE "data operands validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)
+
+		}
+
+		printf(".string operands validation: \n");
+
+		if (strcmp(item.instruction,"string")==0){
+			validate_ins_string(&item,&error_list_head);
+		}
+
+
+		printf(BOLDWHITE "string operands validation: ");
+
+		PRINT_PASSED_OR_FAILED(item.valid)
+
+
+		/*MAT*/
+		printf("mat validation:\n");
+		if (strcmp(item.instruction,"mat")==0){
+			/*validate_ins_mat(&item,&error_list_head);
+
+			printf(BOLDWHITE "mat operands validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
+		}
+
+
+		/*ENTRY*/
+		if (strcmp(item.instruction,"entry")==0){
+			validate_ins_entry(&item,&error_list_head,error);
+
+		}
+
+		printf(BOLDWHITE "entry operands validation: ");
+		PRINT_PASSED_OR_FAILED(item.valid)
+
+		/*EXTERN*/
+		if (strcmp(item.instruction,"extern")==0){
+			validate_ins_extern(&item,&error_list_head,error);
+		}
+
+		printf(BOLDWHITE "extern operands validation: ");
+		PRINT_PASSED_OR_FAILED(item.valid)
+
+
+	}	else {
+		/*
+		 * Validate the operation
+		 */
+
+	if (strcmp(item.operantion,"\0")==0){
+		item.valid=FALSE;
+		sprintf(error,"22. Error in line: %d: Operation/Instruction were not received.\n",item.line_number);
+		add_to_list(&error_list_head,error);
+	} else {
+
+		validate_operation(&item,&error_list_head,error);
+
+		printf(BOLDWHITE "Operational command validation: ");
+		PRINT_PASSED_OR_FAILED(item.valid)
+
+		validate_oper_operands(&item,&error_list_head,error);
+
+		printf(BOLDWHITE "Operation-Operands command validation: ");
+		PRINT_PASSED_OR_FAILED(item.valid)
+	}
+
+
+
+	/*end of operation validation*/
+	}
+
+	printf("finished validating file\n");
+
+	printf(KYELLOW "------------------------------\n");
+    printf("      ERRORS:        \n");
+	printf("------------------------------\n");
+
+	print_list(error_list_head);
+	NORMALCOLOR
+
+
+
 }
 
 

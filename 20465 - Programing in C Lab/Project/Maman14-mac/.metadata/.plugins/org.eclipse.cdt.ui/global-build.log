@@ -33081,3 +33081,84 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+03:18:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:50:24: warning: comparisons like ‘X<=Y<=Z’ do not have their mathematical meaning [-Wparentheses]
+  for (counter=0;counter<array_size<counter++){
+                 ~~~~~~~^~~~~~~~~~~
+../src/validator.c:50:43: warning: operation on ‘counter’ may be undefined [-Wsequence-point]
+  for (counter=0;counter<array_size<counter++){
+                                    ~~~~~~~^~
+../src/validator.c:50:45: error: expected ‘;’ before ‘)’ token
+  for (counter=0;counter<array_size<counter++){
+                                             ^
+make: *** [src/validator.o] Error 1
+src/subdir.mk:30: recipe for target 'src/validator.o' failed
+03:18:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:19:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:19:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_file’:
+../src/validator.c:32:6: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
+  int i,counter;
+      ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:20:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+03:21:39 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 

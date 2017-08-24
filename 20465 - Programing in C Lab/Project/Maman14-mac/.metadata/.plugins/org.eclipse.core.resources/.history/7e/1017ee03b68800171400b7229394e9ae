@@ -45,7 +45,6 @@ int main(void) {
 
 	printf("\n\nstarting to validate file:\n");
 
-	printf("number of lines read: %d\n",parsed_size);
 	validate_file(parsed,parsed_size);
 
 
