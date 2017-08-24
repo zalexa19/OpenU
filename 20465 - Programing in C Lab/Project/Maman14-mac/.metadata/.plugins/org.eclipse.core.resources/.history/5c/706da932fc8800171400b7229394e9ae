@@ -187,11 +187,6 @@ body parse_line(String str, int line_number){
 
 		current_pointer+=(i+data_array_size);
 
-
-		extracted_value_length=strlen(current_pointer);
-		result.leftovers=allocate_mem_string(extracted_value_length);
-		strcpy(result.leftovers,current_pointer);
-
 	}
 	else if (strcmp(result.instruction,"mat")==0){
 
@@ -235,10 +230,11 @@ body parse_line(String str, int line_number){
 
 		current_pointer+=(data_array_size+i);
 
+		size=CALC(current_pointer,str)
 
-		extracted_value_length=strlen(current_pointer);
-		result.leftovers=allocate_mem_string(extracted_value_length);
-		strcpy(result.leftovers,current_pointer);
+		if (){
+
+		}
 
 	}
 

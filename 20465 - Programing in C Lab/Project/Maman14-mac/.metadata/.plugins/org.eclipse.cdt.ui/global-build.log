@@ -33834,3 +33834,456 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+11:07:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:80:6: warning: unused variable ‘size’ [-Wunused-variable]
+  int size;
+      ^~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:07:09 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:20:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:583:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:28:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:577:9: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+    size=CALC(n_spaces-str);
+         ^~~~
+../src/parser.c:577:22: error: invalid operands to binary - (have ‘int’ and ‘char *’)
+    size=CALC(n_spaces-str);
+                      ^
+../src/parser.c:579:32: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                ^
+../src/parser.c:579:36: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                    ^
+../src/parser.c:579:4: error: too few arguments to function ‘strncy_safe’
+    strncy_safe(final_array[cell,str,n_spaces]);
+    ^~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:128:6: note: declared here
+ void strncy_safe(String  dest, String  source, int size);
+      ^~~~~~~~~~~
+../src/parser.c:589:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:28:52 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:577:9: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+    size=CALC(count_non_spaces(str),str);
+         ^~~~
+../src/parser.c:579:32: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                ^
+../src/parser.c:579:36: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                    ^
+../src/parser.c:579:4: error: too few arguments to function ‘strncy_safe’
+    strncy_safe(final_array[cell,str,n_spaces]);
+    ^~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:128:6: note: declared here
+ void strncy_safe(String  dest, String  source, int size);
+      ^~~~~~~~~~~
+../src/parser.c:589:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:29:20 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:577:9: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+    size=CALC(str+(count_non_spaces(str)),str);
+         ^~~~
+../src/parser.c:579:32: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                ^
+../src/parser.c:579:36: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                    ^
+../src/parser.c:579:4: error: too few arguments to function ‘strncy_safe’
+    strncy_safe(final_array[cell,str,n_spaces]);
+    ^~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:128:6: note: declared here
+ void strncy_safe(String  dest, String  source, int size);
+      ^~~~~~~~~~~
+../src/parser.c:589:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:29:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:577:9: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+    size=CALC(str+(count_non_spaces(str)),str);
+         ^~~~
+../src/parser.c:579:32: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                ^
+../src/parser.c:579:36: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    strncy_safe(final_array[cell,str,n_spaces]);
+                                    ^
+../src/parser.c:579:4: error: too few arguments to function ‘strncy_safe’
+    strncy_safe(final_array[cell,str,n_spaces]);
+    ^~~~~~~~~~~
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:128:6: note: declared here
+ void strncy_safe(String  dest, String  source, int size);
+      ^~~~~~~~~~~
+../src/parser.c:589:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:30:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:577:61: error: expected ‘)’ before ‘;’ token
+    strncy_safe(final_array[cell],str,(count_non_spaces(str));
+                                                             ^
+../src/parser.c:583:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+../src/parser.c:587:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:30:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:587:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:33:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:229:22: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+   printf("Numbers: <%s>, data array size: %d\n",result.data_string_array, data_array_size);
+                      ^
+../src/parser.c: In function ‘extract_data_strings’:
+../src/parser.c:588:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat=]
+  printf("final_array: %s\n",final_array);
+                        ^
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:42:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:233:3: error: ‘size’ undeclared (first use in this function)
+   size=CALC(current_pointer,str);
+   ^~~~
+../src/parser.c:233:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:233:8: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   size=CALC(current_pointer,str);
+        ^~~~
+../src/parser.c:235:7: error: expected expression before ‘)’ token
+   if ()
+       ^
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:42:26 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+../src/parser.c:233:3: error: ‘size’ undeclared (first use in this function)
+   size=CALC(current_pointer,str)
+   ^~~~
+../src/parser.c:233:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:233:8: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   size=CALC(current_pointer,str)
+        ^~~~
+../src/parser.c:235:3: error: expected ‘;’ before ‘if’
+   if ()
+   ^~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+11:42:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:233:3: error: ‘size’ undeclared (first use in this function)
+   size=CALC(current_pointer,str)
+   ^~~~
+../src/parser.c:233:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/parser.c:233:8: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   size=CALC(current_pointer,str)
+        ^~~~
+../src/parser.c:235:3: error: expected ‘;’ before ‘if’
+   if (){
+   ^~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:44:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:235:8: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   if ((CALC(current_pointer,str))<received_line_length){
+        ^~~~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/parser.o: In function `parse_line':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:235: undefined reference to `CALC'
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+makefile:31: recipe for target 'Maman14' failed
+11:44:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:235:8: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   if ((CALC(current_pointer,str)<received_line_length){
+        ^~~~
+../src/parser.c:235:55: error: expected ‘)’ before ‘{’ token
+   if ((CALC(current_pointer,str)<received_line_length){
+                                                       ^
+../src/parser.c:240:2: error: expected expression before ‘}’ token
+  }
+  ^
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:44:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:235:7: warning: implicit declaration of function ‘CALC’ [-Wimplicit-function-declaration]
+   if (CALC(current_pointer,str)<received_line_length){
+       ^~~~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/parser.o: In function `parse_line':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/parser.c:235: undefined reference to `CALC'
+makefile:31: recipe for target 'Maman14' failed
+collect2: error: ld returned 1 exit status
+make: *** [Maman14] Error 1
+11:44:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:48:34: error: expected ‘)’ before ‘;’ token
+  (index-array_start)*sizeof(char);
+                                  ^
+../src/parser.c:235:7: note: in expansion of macro ‘CALCSIZE’
+   if (CALCSIZE(current_pointer,str)<received_line_length){
+       ^~~~~~~~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:44:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:48:34: error: expected ‘)’ before ‘;’ token
+  (index-array_start)*sizeof(char);
+                                  ^
+../src/parser.c:235:8: note: in expansion of macro ‘CALCSIZE’
+   if ( CALCSIZE(current_pointer,str) < received_line_length){
+        ^~~~~~~~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: *** [src/parser.o] Error 1
+11:44:54 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:48:34: error: expected ‘)’ before ‘;’ token
+  (index-array_start)*sizeof(char);
+                                  ^
+../src/parser.c:235:9: note: in expansion of macro ‘CALCSIZE’
+   if ( (CALCSIZE(current_pointer,str)) < received_line_length){
+         ^~~~~~~~
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed
+11:45:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/parser.c: In function ‘parse_line’:
+../src/utils.h:48:34: error: expected ‘)’ before ‘;’ token
+  (index-array_start)*sizeof(char);
+                                  ^
+../src/parser.c:235:8: note: in expansion of macro ‘CALCSIZE’
+   if ( CALCSIZE(current_pointer,str)) < received_line_length){
+        ^~~~~~~~
+../src/parser.c:235:39: error: expected expression before ‘<’ token
+   if ( CALCSIZE(current_pointer,str)) < received_line_length){
+                                       ^
+../src/parser.c:235:3: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   if ( CALCSIZE(current_pointer,str)) < received_line_length){
+   ^~
+../src/parser.c:235:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the ‘if’
+   if ( CALCSIZE(current_pointer,str)) < received_line_length){
+                                                             ^
+../src/parser.c:235:61: error: expected statement before ‘)’ token
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+make: *** [src/parser.o] Error 1
+src/subdir.mk:30: recipe for target 'src/parser.o' failed

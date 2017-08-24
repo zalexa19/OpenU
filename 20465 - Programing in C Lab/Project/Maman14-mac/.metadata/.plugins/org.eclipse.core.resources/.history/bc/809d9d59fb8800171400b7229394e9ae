@@ -73,14 +73,13 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 
 body parse_line(String str, int line_number){
 	body result;
-	int i,num_commas;
+	int i;
 	int extracted_value_length;
 	char * extracted_value;
 	char * current_pointer;
 	int spaces;
 	int data_array_size=0;
 	int received_line_length;
-
 
 	printf(KYELLOW "------------------------------\n");
     printf("      PARSING LINE:        \n");
@@ -165,7 +164,7 @@ body parse_line(String str, int line_number){
 
 	if (strcmp(result.instruction,"data")==0){
 		/*Count number of operands*/
-		num_commas=0;
+		i=0;
 		while(current_pointer[i]!='\0'){
 			if(current_pointer[i]==','){
 				data_array_size++;
@@ -185,12 +184,6 @@ body parse_line(String str, int line_number){
 			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
 		}
 
-		current_pointer+=(i+data_array_size);
-
-
-		extracted_value_length=strlen(current_pointer);
-		result.leftovers=allocate_mem_string(extracted_value_length);
-		strcpy(result.leftovers,current_pointer);
 
 	}
 	else if (strcmp(result.instruction,"mat")==0){
@@ -233,12 +226,10 @@ body parse_line(String str, int line_number){
 			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
 		}
 
-		current_pointer+=(data_array_size+i);
+		printf("current pointer: <%s>",current_pointer);
+		current_pointer+=data_array_size;
+		printf("current pointer: <%s>\n",current_pointer);
 
-
-		extracted_value_length=strlen(current_pointer);
-		result.leftovers=allocate_mem_string(extracted_value_length);
-		strcpy(result.leftovers,current_pointer);
 
 	}
 
