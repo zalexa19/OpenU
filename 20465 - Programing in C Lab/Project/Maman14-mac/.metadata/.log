@@ -6034,3 +6034,12 @@ HandlerActivation(commandId=org.eclipse.ltk.ui.refactor.apply.refactoring.script
 HandlerActivation(commandId=org.eclipse.ltk.ui.refactor.apply.refactoring.script,
 	handler=ActionDelegateHandlerProxy(null,org.eclipse.jdt.internal.ui.refactoring.actions.ApplyRefactoringScriptAction),
 	expression=AndExpression(ActionSetExpression(org.eclipse.jdt.ui.CodingActionSet,org.eclipse.ui.internal.WorkbenchWindow@3224a577),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@3224a577)),sourcePriority=16640)
+!SESSION 2017-08-25 02:35:10.018 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-08-25 02:35:14.238
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

@@ -34,10 +34,10 @@
 
 
 #define NORMALCOLOR printf(NORMAL "");
+#define MAXERRORSIZE 200
 
 
 #define MAXMEM 81
-
 #define COMPARE(a,b) strcmp(a,"b")
 
 /*
@@ -119,6 +119,9 @@ String covert_int_to_string (int);
  * For linked list
  */
 
+/*general function for allocating memory*/
+void * allocate_mem_general(int count, int size);
+
 void add_to_list(list_item_reference*,String);
 
 void print_list(list_item_reference);
@@ -137,4 +140,5 @@ void add_spaces_print (String array);
 void print_line(body);
 void print_mat (String*, int);
 
+void print_symbol_list(symbol_ptr);
 #endif /* UTILS_H_ */

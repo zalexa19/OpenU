@@ -11,6 +11,8 @@
 #include "utils.h"
 #include "parser.h"
 #include "operation_dictionary.h"
+#include "first_scan.h"
+
 
 #define ARRAYSIZE 200
 
@@ -26,7 +28,7 @@ int main(void) {
 
 	create_operation_info_array();
 
-	operation_info op = get_operation_info("add");
+/*	operation_info op = get_operation_info("add");*/
 
 	if (!(input_file = fopen("assembly_input.txt","r"))){
 		fprintf(stderr, "unable to find assembly file");
@@ -41,6 +43,7 @@ int main(void) {
 
 	print_structs(parsed,parsed_size);
 
+/*
 
 	printf(BOLDRED "inside the  struct1, operand 1: <%s> \n",parsed[0].OPERAND1);
 	printf(BOLDRED "inside the  struct1, operand 2: <%s> \n",parsed[0].OPERAND2);
@@ -50,13 +53,17 @@ int main(void) {
 	printf(BOLDRED "inside the last struct, operand 2: <%s> \n",parsed[1].OPERAND2);
 	printf(BOLDRED "inside the last struct, operand 3: <%s> \n",parsed[1].leftovers);
 
+	printf(BOLDRED "inside the last struct4, operand 3: <%s> \n",parsed[3].leftovers);
+*/
+
+
+
 	NORMALCOLOR
 
-	printf("\n\nstarting to validate file:\n");
 
-	printf("number of lines read: %d\n",parsed_size);
 	validate_file(parsed,parsed_size);
-
+	printf("invoking first scan\n\n");
+	first_scan(parsed,parsed_size);
 
 
 

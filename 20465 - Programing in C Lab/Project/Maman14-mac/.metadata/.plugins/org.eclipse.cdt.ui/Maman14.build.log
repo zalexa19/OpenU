@@ -1,32 +1,6 @@
-11:45:23 **** Incremental Build of configuration Debug for project Maman14 ****
+11:52:47 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
-Building file: ../src/parser.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
-In file included from ../src/parser.h:10:0,
-                 from ../src/parser.c:10:
-../src/parser.c: In function ‘parse_line’:
-../src/utils.h:48:34: error: expected ‘)’ before ‘;’ token
-  (index-array_start)*sizeof(char);
-                                  ^
-../src/parser.c:235:8: note: in expansion of macro ‘CALCSIZE’
-   if ( CALCSIZE(current_pointer,str)) < received_line_length){
-        ^~~~~~~~
-../src/parser.c:235:39: error: expected expression before ‘<’ token
-   if ( CALCSIZE(current_pointer,str)) < received_line_length){
-                                       ^
-../src/parser.c:235:3: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
-   if ( CALCSIZE(current_pointer,str)) < received_line_length){
-   ^~
-../src/parser.c:235:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the ‘if’
-   if ( CALCSIZE(current_pointer,str)) < received_line_length){
-                                                             ^
-../src/parser.c:235:61: error: expected statement before ‘)’ token
-../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
-  int i,num_commas;
-        ^~~~~~~~~~
-make: *** [src/parser.o] Error 1
-src/subdir.mk:30: recipe for target 'src/parser.o' failed
+make: Nothing to be done for 'all'.
 
-11:45:23 Build Finished (took 196ms)
+11:52:47 Build Finished (took 81ms)
 

@@ -34287,3 +34287,2873 @@ In file included from ../src/parser.h:10:0,
         ^~~~~~~~~~
 make: *** [src/parser.o] Error 1
 src/subdir.mk:30: recipe for target 'src/parser.o' failed
+05:25:45 **** Clean-only build of configuration Debug for project Maman14 ****
+make clean 
+rm -rf  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.d  ./src/Maman14-mac.d ./src/operation_dictionary.d ./src/parser.d ./src/utils.d ./src/validator.d  Maman14
+ 
+05:25:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT"src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -o "src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/label_finder.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/label_finder.d" -MT"src/label_finder.d" -o "src/label_finder.o" "../src/label_finder.c"
+Finished building: ../src/label_finder.c
+ 
+Building file: ../src/operation_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/operation_dictionary.d" -MT"src/operation_dictionary.d" -o "src/operation_dictionary.o" "../src/operation_dictionary.c"
+Finished building: ../src/operation_dictionary.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_entry’:
+../src/validator.c:650:37: error: ‘validate_label(item->OPERAND1)’ is a pointer; did you mean to use ‘->’?
+  if ((validate_label(item->OPERAND1).VALID_LABEL)==FALSE){
+                                     ^
+                                     ->
+make: *** [src/validator.o] Error 1
+src/subdir.mk:33: recipe for target 'src/validator.o' failed
+05:26:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+../src/validator.c: In function ‘validate_ins_entry’:
+../src/validator.c:650:37: error: ‘validate_label(item->OPERAND1)’ is a pointer; did you mean to use ‘->’?
+  if ((validate_label(item->OPERAND1).VALID_LABEL)==FALSE){
+                                     ^
+                                     ->
+make: *** [src/validator.o] Error 1
+src/subdir.mk:33: recipe for target 'src/validator.o' failed
+05:26:16 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/label_finder.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+08:45:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:32:2: error: unknown type name ‘symbol_ptr’
+  symbol_ptr next;
+  ^~~~~~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:30: warning: comparison between pointer and integer
+  while (current_pointer->next!=NULL){
+                              ^~
+../src/first_scan.c:24:18: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   current_pointer=current_pointer->next;
+                  ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+08:46:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:32:2: error: unknown type name ‘symbol_ptr’
+  symbol_ptr next;
+  ^~~~~~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:32: warning: comparison between pointer and integer
+  while ((current_pointer->next)!=NULL){
+                                ^~
+../src/first_scan.c:24:18: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   current_pointer=current_pointer->next;
+                  ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+08:47:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:26:9: error: unknown type name ‘symbol’
+ typedef symbol* symbol_ptr;
+         ^~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:25: error: request for member ‘next’ in something not a structure or union
+  while ((current_pointer->next)!=NULL){
+                         ^~
+../src/first_scan.c:20:37: error: request for member ‘name’ in something not a structure or union
+   if (strcasecmp(key,current_pointer->name) == 0){
+                                     ^~
+../src/first_scan.c:24:34: error: request for member ‘next’ in something not a structure or union
+   current_pointer=current_pointer->next;
+                                  ^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+08:47:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+In file included from ../src/first_scan.c:8:0:
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+../src/first_scan.h:26:9: error: unknown type name ‘symbol’
+ typedef symbol* symbol_ptr;
+         ^~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:25: error: request for member ‘next’ in something not a structure or union
+  while ((current_pointer->next)!=NULL){
+                         ^~
+../src/first_scan.c:20:37: error: request for member ‘name’ in something not a structure or union
+   if (strcasecmp(key,current_pointer->name) == 0){
+                                     ^~
+../src/first_scan.c:24:34: error: request for member ‘next’ in something not a structure or union
+   current_pointer=current_pointer->next;
+                                  ^~
+make: *** [src/first_scan.o] Error 1
+08:48:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:32:2: error: unknown type name ‘symbol_ptr’
+  symbol_ptr next;
+  ^~~~~~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:32: warning: comparison between pointer and integer
+  while ((current_pointer->next)!=NULL){
+                                ^~
+../src/first_scan.c:24:18: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   current_pointer=current_pointer->next;
+                  ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+08:49:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:32:2: error: unknown type name ‘symbol_ptr’
+  symbol_ptr next;
+  ^~~~~~~~~~
+../src/first_scan.c: In function ‘search_symbol’:
+../src/first_scan.c:19:32: warning: comparison between pointer and integer
+  while ((current_pointer->next)!=NULL){
+                                ^~
+../src/first_scan.c:24:18: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   current_pointer=current_pointer->next;
+                  ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+08:49:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:55:04 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:44:12: error: ‘item’ undeclared (first use in this function)
+   current=*item[item_counter];
+            ^~~~
+../src/first_scan.c:44:12: note: each undeclared identifier is reported only once for each function it appears in
+../src/first_scan.c:38:7: warning: variable ‘current’ set but not used [-Wunused-but-set-variable]
+  body current;
+       ^~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+06:55:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:38:7: warning: variable ‘current’ set but not used [-Wunused-but-set-variable]
+  body current;
+       ^~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+06:58:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:48:3: error: expected expression before ‘}’ token
+   }
+   ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+06:59:02 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:55:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+06:59:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:04:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:51:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:04:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:53:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:09:10 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:53:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:10:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:53:8: error: too few arguments to function ‘search_symbol’
+    if (search_symbol(current.label)==FALSE)
+        ^~~~~~~~~~~~~
+../src/first_scan.c:19:12: note: declared here
+ symbol_ptr search_symbol (String key, symbol_ptr list){
+            ^~~~~~~~~~~~~
+../src/first_scan.c:55:3: error: expected expression before ‘}’ token
+   }
+   ^
+../src/first_scan.c:39:13: warning: variable ‘symbols_list_head’ set but not used [-Wunused-but-set-variable]
+  symbol_ptr symbols_list_head;
+             ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:10:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:53:8: error: too few arguments to function ‘search_symbol’
+    if (search_symbol(current.label)==FALSE)
+        ^~~~~~~~~~~~~
+../src/first_scan.c:19:12: note: declared here
+ symbol_ptr search_symbol (String key, symbol_ptr list){
+            ^~~~~~~~~~~~~
+../src/first_scan.c:55:3: error: expected expression before ‘}’ token
+   }
+   ^
+../src/first_scan.c:39:13: warning: variable ‘symbols_list_head’ set but not used [-Wunused-but-set-variable]
+  symbol_ptr symbols_list_head;
+             ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:11:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:55:3: error: expected expression before ‘}’ token
+   }
+   ^
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:12:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/operation_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/operation_dictionary.d" -MT"src/operation_dictionary.d" -o "src/operation_dictionary.o" "../src/operation_dictionary.c"
+Finished building: ../src/operation_dictionary.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:15:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/operation_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/operation_dictionary.d" -MT"src/operation_dictionary.d" -o "src/operation_dictionary.o" "../src/operation_dictionary.c"
+In file included from ../src/operation_dictionary.h:8:0,
+                 from ../src/operation_dictionary.c:7:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+Finished building: ../src/operation_dictionary.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:42:15: warning: ISO C99 requires whitespace after the macro name
+ #define ERRORS[MAXERRORSIZE]
+               ^
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:17:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:55:13: warning: passing argument 1 of ‘sprintf’ from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(errors,"label %s is a duplicate.\n",current.label);
+             ^~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/first_scan.h:8,
+                 from ../src/first_scan.c:8:
+/usr/include/stdio.h:366:12: note: expected ‘char * restrict’ but argument is of type ‘char **’
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/operation_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/operation_dictionary.d" -MT"src/operation_dictionary.d" -o "src/operation_dictionary.o" "../src/operation_dictionary.c"
+Finished building: ../src/operation_dictionary.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:18:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:55:13: warning: passing argument 1 of ‘sprintf’ from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(errors,"label %s is a duplicate.\n",current.label);
+             ^~~~~~
+In file included from ../src/utils.h:10:0,
+                 from ../src/first_scan.h:8,
+                 from ../src/first_scan.c:8:
+/usr/include/stdio.h:366:12: note: expected ‘char * restrict’ but argument is of type ‘char **’
+ extern int sprintf (char *__restrict __s,
+            ^~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:19:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:21:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:57:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+../src/first_scan.c:57:5: warning: ‘errors_list’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     add_to_list(errors_list,error);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:22:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:36:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+  int IC,DC;
+      ^~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:22:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+07:33:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:63:20: warning: implicit declaration of function ‘create_symbol’ [-Wimplicit-function-declaration]
+     current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
+                    ^~~~~~~~~~~~~
+../src/first_scan.c:63:19: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
+                   ^
+../src/first_scan.c:64:24: error: incompatible type for argument 1 of ‘add_symbol_to_list’
+     add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+                        ^~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:53:6: note: expected ‘body {aka struct parsed_line}’ but argument is of type ‘symbol_ptr {aka struct symbol *}’
+ void add_symbol_to_list(body item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+07:36:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:64:24: error: incompatible type for argument 1 of ‘add_symbol_to_list’
+     add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+                        ^~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘body {aka struct parsed_line}’ but argument is of type ‘symbol_ptr {aka struct symbol *}’
+ void add_symbol_to_list(body item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c: At top level:
+../src/first_scan.c:83:6: error: conflicting types for ‘add_symbol_to_list’
+ void add_symbol_to_list(symbol current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: previous declaration of ‘add_symbol_to_list’ was here
+ void add_symbol_to_list(body item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:36:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: At top level:
+../src/first_scan.c:83:6: error: conflicting types for ‘add_symbol_to_list’
+ void add_symbol_to_list(symbol current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: previous declaration of ‘add_symbol_to_list’ was here
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:36:49 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+./src/first_scan.o: In function `first_scan':
+/home/alexz/Desktop/OpenU/20465 - Programing in C Lab/Project/Maman14-PC/Debug/../src/first_scan.c:66: undefined reference to `calc_new_ic'
+collect2: error: ld returned 1 exit status
+makefile:31: recipe for target 'Maman14' failed
+make: *** [Maman14] Error 1
+07:37:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:50:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:83:2: error: conversion to non-scalar type requested
+  sym=(symbol)allocate_mem_general(1,sizeof(sym));
+  ^~~
+../src/first_scan.c:84:59: warning: implicit declaration of function ‘sizof’ [-Wimplicit-function-declaration]
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                           ^~~~~
+../src/first_scan.c:84:65: error: expected expression before ‘char’
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                                 ^~~~
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:50:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:83:5: error: incompatible types when assigning to type ‘symbol {aka struct symbol}’ from type ‘symbol * {aka struct symbol *}’
+  sym=(symbol*)allocate_mem_general(1,sizeof(sym));
+     ^
+../src/first_scan.c:84:59: warning: implicit declaration of function ‘sizof’ [-Wimplicit-function-declaration]
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                           ^~~~~
+../src/first_scan.c:84:65: error: expected expression before ‘char’
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                                 ^~~~
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:50:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:84:5: error: ‘sym’ is a pointer; did you mean to use ‘->’?
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+     ^
+     ->
+../src/first_scan.c:84:59: warning: implicit declaration of function ‘sizof’ [-Wimplicit-function-declaration]
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                           ^~~~~
+../src/first_scan.c:84:65: error: expected expression before ‘char’
+  sym.name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                                 ^~~~
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+07:50:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:84:60: warning: implicit declaration of function ‘sizof’ [-Wimplicit-function-declaration]
+  sym->name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                            ^~~~~
+../src/first_scan.c:84:66: error: expected expression before ‘char’
+  sym->name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                                  ^~~~
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:51:24 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:84:60: warning: implicit declaration of function ‘sizof’ [-Wimplicit-function-declaration]
+  sym->name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                            ^~~~~
+../src/first_scan.c:84:66: error: expected expression before ‘char’
+  sym->name=(String)allocate_mem_general(strlen(item.label),sizof(char));
+                                                                  ^~~~
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:51:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:90:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+07:53:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:85:12: error: ‘sym’ is a pointer; did you mean to use ‘->’?
+  strcpy(sym.name,item.label);
+            ^
+            ->
+../src/first_scan.c:91:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+07:53:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:91:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:45:56 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:91:17: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  if (strlen(item->operantion)==0){
+                 ^~
+../src/first_scan.c:93:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"data")==0 ||
+                  ^~
+../src/first_scan.c:94:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"mat")==0||
+               ^~
+../src/first_scan.c:95:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"string")==0){
+               ^~
+../src/first_scan.c:100:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"extern")==0){
+                  ^~
+../src/first_scan.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+10:46:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:91:17: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+  if (strlen(item->operantion)==0)){
+                 ^~
+../src/first_scan.c:91:34: error: expected statement before ‘)’ token
+  if (strlen(item->operantion)==0)){
+                                  ^
+../src/first_scan.c:91:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  if (strlen(item->operantion)==0)){
+  ^~
+../src/first_scan.c:91:35: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the ‘if’
+  if (strlen(item->operantion)==0)){
+                                   ^
+../src/first_scan.c:93:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"data")==0 ||
+                  ^~
+../src/first_scan.c:94:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"mat")==0||
+               ^~
+../src/first_scan.c:95:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"string")==0){
+               ^~
+../src/first_scan.c:100:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"extern")==0){
+                  ^~
+../src/first_scan.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+10:47:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:91:33: error: expected statement before ‘)’ token
+  if (strlen(item.operantion)==0)){
+                                 ^
+../src/first_scan.c:91:2: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  if (strlen(item.operantion)==0)){
+  ^~
+../src/first_scan.c:91:34: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the ‘if’
+  if (strlen(item.operantion)==0)){
+                                  ^
+../src/first_scan.c:93:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"data")==0 ||
+                  ^~
+../src/first_scan.c:94:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"mat")==0||
+               ^~
+../src/first_scan.c:95:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"string")==0){
+               ^~
+../src/first_scan.c:100:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"extern")==0){
+                  ^~
+../src/first_scan.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+10:48:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:94:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"data")==0 ||
+                  ^~
+../src/first_scan.c:95:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"mat")==0||
+               ^~
+../src/first_scan.c:96:15: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    strcmp(item->instruction,"string")==0){
+               ^~
+../src/first_scan.c:100:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"extern")==0){
+                  ^~
+../src/first_scan.c:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+10:48:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:100:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+   if (strcmp(item->instruction,"extern")==0){
+                  ^~
+../src/first_scan.c:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+10:48:27 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:50:03 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c: At top level:
+../src/first_scan.c:114:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:109:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+10:50:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+10:57:11 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:02:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: At top level:
+../src/utils.c:307:24: error: unknown type name ‘symbol_ptr’
+ void print_symbol_list(symbol_ptr head){
+                        ^~~~~~~~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:33: recipe for target 'src/utils.o' failed
+11:02:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: At top level:
+../src/utils.c:307:24: error: unknown type name ‘symbol_ptr’
+ void print_symbol_list(symbol_ptr head){
+                        ^~~~~~~~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:33: recipe for target 'src/utils.o' failed
+11:02:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘print_symbol_list’:
+../src/utils.c:329:16: error: ‘pointer’ is a pointer; did you mean to use ‘->’?
+  while (pointer.next != NULL){
+                ^
+                ->
+../src/utils.c:330:10: error: ‘lable’ undeclared (first use in this function)
+   printf(lable);
+          ^~~~~
+../src/utils.c:330:10: note: each undeclared identifier is reported only once for each function it appears in
+../src/utils.c:308:13: warning: variable ‘pointer’ set but not used [-Wunused-but-set-variable]
+  symbol_ptr pointer;
+             ^~~~~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:33: recipe for target 'src/utils.o' failed
+11:09:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘print_symbol_list’:
+../src/utils.c:319:16: error: ‘pointer’ is a pointer; did you mean to use ‘->’?
+  while (pointer.next != NULL){
+                ^
+                ->
+../src/utils.c:320:20: warning: unknown conversion type character ‘>’ in format [-Wformat=]
+   printf("label: <%>,linked to: ",pointer->name);
+                    ^
+../src/utils.c:320:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("label: <%>,linked to: ",pointer->name);
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/utils.o] Error 1
+src/subdir.mk:33: recipe for target 'src/utils.o' failed
+11:09:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘print_symbol_list’:
+../src/utils.c:319:16: error: ‘pointer’ is a pointer; did you mean to use ‘->’?
+  while (pointer.next != NULL){
+                ^
+                ->
+../src/utils.c:320:20: warning: unknown conversion type character ‘>’ in format [-Wformat=]
+   printf("label: <%>,linked to: ",pointer->name);
+                    ^
+../src/utils.c:320:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("label: <%>,linked to: ",pointer->name);
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:33: recipe for target 'src/utils.o' failed
+make: *** [src/utils.o] Error 1
+11:09:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+../src/utils.c: In function ‘print_symbol_list’:
+../src/utils.c:320:20: warning: unknown conversion type character ‘>’ in format [-Wformat=]
+   printf("label: <%>,linked to: ",pointer->name);
+                    ^
+../src/utils.c:320:10: warning: too many arguments for format [-Wformat-extra-args]
+   printf("label: <%>,linked to: ",pointer->name);
+          ^~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:09:42 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:12:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:67:5: warning: implicit declaration of function ‘print_symbol_list’ [-Wimplicit-function-declaration]
+     print_symbol_list(symbols_list_head);
+     ^~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:14:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:67:5: warning: implicit declaration of function ‘print_symbol_list’ [-Wimplicit-function-declaration]
+     print_symbol_list(symbols_list_head);
+     ^~~~~~~~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:133:7: error: ‘list’ is a pointer; did you mean to use ‘->’?
+   list.next=NULL;
+       ^
+       ->
+../src/first_scan.c:138:10: error: ‘p’ is a pointer; did you mean to use ‘->’?
+  while (p.next != NULL){
+          ^
+          ->
+../src/first_scan.c:139:6: error: ‘p’ is a pointer; did you mean to use ‘->’?
+   p=p.next;
+      ^
+      ->
+../src/first_scan.c:142:3: error: ‘p’ is a pointer; did you mean to use ‘->’?
+  p.next=current;
+   ^
+   ->
+../src/first_scan.c:143:3: error: ‘p’ is a pointer; did you mean to use ‘->’?
+  p.next.next=NULL;
+   ^
+   ->
+../src/first_scan.c:128:13: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+  symbol_ptr p;
+             ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:14:19 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:67:5: warning: implicit declaration of function ‘print_symbol_list’ [-Wimplicit-function-declaration]
+     print_symbol_list(symbols_list_head);
+     ^~~~~~~~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:142:3: error: ‘p’ is a pointer; did you mean to use ‘->’?
+  p.next=current;
+   ^
+   ->
+../src/first_scan.c:143:3: error: ‘p’ is a pointer; did you mean to use ‘->’?
+  p.next.next=NULL;
+   ^
+   ->
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:14:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+../src/first_scan.c:67:5: warning: implicit declaration of function ‘print_symbol_list’ [-Wimplicit-function-declaration]
+     print_symbol_list(symbols_list_head);
+     ^~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:15:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:63:2: warning: implicit declaration of function ‘first_scan’ [-Wimplicit-function-declaration]
+  first_scan(parsed,parsed_size);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:17: warning: passing argument 1 of ‘add_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+     add_to_list(errors_list,error);
+                 ^~~~~~~~~~~
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:125:6: note: expected ‘struct node **’ but argument is of type ‘list_item_reference {aka struct node *}’
+ void add_to_list(list_item_reference*,String);
+      ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/operation_dictionary.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/operation_dictionary.d" -MT"src/operation_dictionary.d" -o "src/operation_dictionary.o" "../src/operation_dictionary.c"
+In file included from ../src/operation_dictionary.h:8:0,
+                 from ../src/operation_dictionary.c:7:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/operation_dictionary.c
+ 
+Building file: ../src/parser.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parser.d" -MT"src/parser.d" -o "src/parser.o" "../src/parser.c"
+In file included from ../src/parser.h:10:0,
+                 from ../src/parser.c:10:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/parser.c: In function ‘parse_line’:
+../src/parser.c:76:8: warning: variable ‘num_commas’ set but not used [-Wunused-but-set-variable]
+  int i,num_commas;
+        ^~~~~~~~~~
+Finished building: ../src/parser.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building file: ../src/validator.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/validator.d" -MT"src/validator.d" -o "src/validator.o" "../src/validator.c"
+In file included from ../src/validator.c:1:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/validator.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:16:59 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:17:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:64:2: warning: implicit declaration of function ‘first_scan’ [-Wimplicit-function-declaration]
+  first_scan(parsed,parsed_size);
+  ^~~~~~~~~~
+../src/Maman14-mac.c:29:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:18:06 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:31:17: warning: unused variable ‘op’ [-Wunused-variable]
+  operation_info op = get_operation_info("add");
+                 ^~
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:18:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:18:55 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:19:44 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:23:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c:80:2: warning: data definition has no type or storage class
+  print_symbol_list(symbols_list_head);
+  ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:80:2: warning: type defaults to ‘int’ in declaration of ‘print_symbol_list’ [-Wimplicit-int]
+../src/first_scan.c:80:2: warning: parameter names (without types) in function declaration
+../src/first_scan.c:80:2: error: conflicting types for ‘print_symbol_list’
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:6: note: previous declaration of ‘print_symbol_list’ was here
+ void print_symbol_list(symbol_ptr);
+      ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:82:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+../src/first_scan.c: In function ‘create_symbol’:
+../src/first_scan.c:108:18: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+    sym->name=item->OPERAND1;
+                  ^~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:23:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c:80:2: warning: data definition has no type or storage class
+  print_symbol_list(symbols_list_head);
+  ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:80:2: warning: type defaults to ‘int’ in declaration of ‘print_symbol_list’ [-Wimplicit-int]
+../src/first_scan.c:80:2: warning: parameter names (without types) in function declaration
+../src/first_scan.c:80:2: error: conflicting types for ‘print_symbol_list’
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:6: note: previous declaration of ‘print_symbol_list’ was here
+ void print_symbol_list(symbol_ptr);
+      ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:82:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:23:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c:80:2: warning: data definition has no type or storage class
+  print_symbol_list(symbols_list_head);
+  ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:80:2: warning: type defaults to ‘int’ in declaration of ‘print_symbol_list’ [-Wimplicit-int]
+../src/first_scan.c:80:2: warning: parameter names (without types) in function declaration
+../src/first_scan.c:80:2: error: conflicting types for ‘print_symbol_list’
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:6: note: previous declaration of ‘print_symbol_list’ was here
+ void print_symbol_list(symbol_ptr);
+      ^~~~~~~~~~~~~~~~~
+../src/first_scan.c:82:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:23:18 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:24:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:155:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:42:7: warning: unused variable ‘error_found’ [-Wunused-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+At top level:
+../src/first_scan.c:153:5: warning: ‘calc_new_dc’ defined but not used [-Wunused-function]
+ int calc_new_dc(){
+     ^~~~~~~~~~~
+../src/first_scan.c:150:5: warning: ‘calc_new_ic’ defined but not used [-Wunused-function]
+ int calc_new_ic(){
+     ^~~~~~~~~~~
+../src/first_scan.c:130:6: warning: ‘add_symbol_to_list’ defined but not used [-Wunused-function]
+ void add_symbol_to_list(symbol_ptr current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:84:12: warning: ‘create_symbol’ defined but not used [-Wunused-function]
+ symbol_ptr create_symbol(body item,int ic, int dc){
+            ^~~~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:25:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:156:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+At top level:
+../src/first_scan.c:154:5: warning: ‘calc_new_dc’ defined but not used [-Wunused-function]
+ int calc_new_dc(){
+     ^~~~~~~~~~~
+../src/first_scan.c:151:5: warning: ‘calc_new_ic’ defined but not used [-Wunused-function]
+ int calc_new_ic(){
+     ^~~~~~~~~~~
+../src/first_scan.c:131:6: warning: ‘add_symbol_to_list’ defined but not used [-Wunused-function]
+ void add_symbol_to_list(symbol_ptr current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:85:12: warning: ‘create_symbol’ defined but not used [-Wunused-function]
+ symbol_ptr create_symbol(body item,int ic, int dc){
+            ^~~~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:27:23 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:156:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+At top level:
+../src/first_scan.c:154:5: warning: ‘calc_new_dc’ defined but not used [-Wunused-function]
+ int calc_new_dc(){
+     ^~~~~~~~~~~
+../src/first_scan.c:151:5: warning: ‘calc_new_ic’ defined but not used [-Wunused-function]
+ int calc_new_ic(){
+     ^~~~~~~~~~~
+../src/first_scan.c:131:6: warning: ‘add_symbol_to_list’ defined but not used [-Wunused-function]
+ void add_symbol_to_list(symbol_ptr current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:85:12: warning: ‘create_symbol’ defined but not used [-Wunused-function]
+ symbol_ptr create_symbol(body item,int ic, int dc){
+            ^~~~~~~~~~~~~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:28:01 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:149:1: error: expected declaration or statement at end of input
+ }
+ ^
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+At top level:
+../src/first_scan.c:131:6: warning: ‘add_symbol_to_list’ defined but not used [-Wunused-function]
+ void add_symbol_to_list(symbol_ptr current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:85:12: warning: ‘create_symbol’ defined but not used [-Wunused-function]
+ symbol_ptr create_symbol(body item,int ic, int dc){
+            ^~~~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:28:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:29:51 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+                                     ^~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘struct symbol **’ but argument is of type ‘symbol_ptr {aka struct symbol *}’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr*);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: At top level:
+../src/first_scan.c:125:6: error: conflicting types for ‘add_symbol_to_list’
+ void add_symbol_to_list(symbol_ptr current,symbol_ptr list){
+      ^~~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: previous declaration of ‘add_symbol_to_list’ was here
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr*);
+      ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:29:53 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:129:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   list=(symbol_ptr)allocate_mem_general(1,sizeof(symbol_ptr));
+       ^
+../src/first_scan.c:130:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   list=current;
+       ^
+../src/first_scan.c:131:7: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   list->next=NULL;
+       ^~
+       ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:30:00 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:130:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   list=current;
+       ^
+../src/first_scan.c:131:7: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   list->next=NULL;
+       ^~
+       ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:30:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:7: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   list->next=NULL;
+       ^~
+       ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:30:28 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:8: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   *list->next=NULL;
+        ^~
+        ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:30:30 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:8: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   *list->next=NULL;
+        ^~
+        ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:30:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:7: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   list->next=NULL;
+       ^~
+       ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:30:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:7: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   list->next=NULL;
+       ^~
+       ->
+../src/first_scan.c:135:3: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  p=list;
+   ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:31:12 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
+                                     ^
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘symbol_ptr {aka struct symbol *}’ but argument is of type ‘struct symbol **’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:31:41 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
+                                     ^
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘symbol_ptr {aka struct symbol *}’ but argument is of type ‘struct symbol **’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:128:32: error: stray ‘\’ in program
+  printf("adding to symbol list"\n);
+                                ^
+../src/first_scan.c:128:33: error: expected ‘)’ before ‘n’
+  printf("adding to symbol list"\n);
+                                 ^
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:32:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
+                                     ^
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘symbol_ptr {aka struct symbol *}’ but argument is of type ‘struct symbol **’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:128:11: error: invalid operands to binary == (have ‘struct symbol’ and ‘void *’)
+  if (*list==NULL){
+      ~~~~~^~
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+make: *** [src/first_scan.o] Error 1
+11:32:46 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
+                                     ^
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘symbol_ptr {aka struct symbol *}’ but argument is of type ‘struct symbol **’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:33:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:33:29 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:35:42 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:8: error: incompatible types when assigning to type ‘struct symbol’ from type ‘symbol_ptr {aka struct symbol *}’
+   *list=current;
+        ^
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:35:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:36:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+11:39:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:41:22 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:21: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘symbol_ptr {aka struct symbol *}’ [-Wformat=]
+   printf("current: %d\n",current);
+                     ^
+../src/first_scan.c:132:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘symbol_ptr {aka struct symbol *}’ [-Wformat=]
+   printf("list: %d\n",list);
+                  ^
+../src/first_scan.c:135:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘symbol_ptr {aka struct symbol *}’ [-Wformat=]
+   printf("list: %d\n",list);
+                  ^
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:43:07 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:64:18: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘symbol_ptr {aka struct symbol *}’ [-Wformat=]
+   printf("head: %d\n",symbols_list_head);
+                  ^
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:44:25 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:63:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+                                     ^~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘struct symbol **’ but argument is of type ‘symbol_ptr {aka struct symbol *}’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr *);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c: In function ‘add_symbol_to_list’:
+../src/first_scan.c:131:8: error: ‘*list’ is a pointer; did you mean to use ‘->’?
+   *list->next=NULL;
+        ^~
+        ->
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:44:37 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:63:37: warning: passing argument 2 of ‘add_symbol_to_list’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+                                     ^~~~~~~~~~~~~~~~~
+In file included from ../src/first_scan.c:8:0:
+../src/first_scan.h:55:6: note: expected ‘struct symbol **’ but argument is of type ‘symbol_ptr {aka struct symbol *}’
+ void add_symbol_to_list(symbol_ptr item,symbol_ptr *);
+      ^~~~~~~~~~~~~~~~~~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+../src/first_scan.c:54:8: warning: ‘symbols_list_head’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if (search_symbol(current.label,symbols_list_head) != NULL){
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:45:05 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:46:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:46:45 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:47:43 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:48:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:65:40: error: ‘symbols_list_head’ is a pointer; did you mean to use ‘->’?
+   printf("head: %s\n",symbols_list_head.name);
+                                        ^
+                                        ->
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+11:48:34 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:49:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:51:33 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:51:38 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:52:13 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+11:52:47 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.

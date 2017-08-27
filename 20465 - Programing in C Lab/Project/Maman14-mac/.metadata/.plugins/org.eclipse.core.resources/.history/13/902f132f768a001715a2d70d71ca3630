@@ -1,0 +1,47 @@
+/*
+ * label_finder.h
+ *
+ *  Created on: Aug 25, 2017
+ *      Author: alexz
+ */
+
+#include "utils.h"
+
+
+
+#ifndef LABEL_FINDER_H_
+#define LABEL_FINDER_H_
+
+typedef enum{
+	instructional=0,
+	operational=1
+}label_type;
+
+typedef enum{
+	internal=0,
+	external=1
+}declared;
+
+
+
+typedef struct symbol{
+	String name;
+	label_type command_type;
+	declared declaration_type;
+	int address;
+	symbol_ptr next;
+}symbol;
+
+typedef symbol* symbol_ptr;
+
+
+
+symbol_ptr search_symbol (String, symbol_ptr);
+
+
+
+
+
+
+
+#endif /* LABEL_FINDER_H_ */

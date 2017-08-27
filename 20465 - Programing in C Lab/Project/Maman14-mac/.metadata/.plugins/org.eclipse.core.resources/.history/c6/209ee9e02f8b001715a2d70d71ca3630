@@ -1,0 +1,55 @@
+/*
+ * label_finder.c
+ *
+ *  Created on: Aug 25, 2017
+ *      Author: alexz
+ */
+
+#include "first_scan.h"
+
+
+
+
+
+
+
+/*
+ * Searches and returns a symbol for a given key (a label in a list of labels)
+ */
+symbol_ptr search_symbol (String key, symbol_ptr list){
+	symbol_ptr current_pointer=list;
+
+	while ((current_pointer->next)!=NULL){
+		if (strcasecmp(key,current_pointer->name) == 0){
+			return current_pointer;
+
+		}
+		current_pointer=current_pointer->next;
+	}
+
+	return NULL;
+}
+
+
+void first_scan(bodyArray items, int bodyarray_size){
+
+	int IC,DC;
+	int item_counter;
+	body current;
+
+
+	IC=DC=0;
+
+	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
+		current=items[item_counter];
+
+		if (strlen(current.label) != 0){
+			if (strcasecmp(current.instruction,EXTERNAL)==1)
+		}
+
+
+
+
+	}
+
+}

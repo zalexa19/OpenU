@@ -6,7 +6,7 @@
  */
 
 #include "utils.h"
-
+#include "first_scan.h"
 
 
 int structs_array_size;
@@ -289,4 +289,86 @@ void strncy_safe(String  dest, String  source, int size){
 	strncpy(dest,source,size);
 
 	dest[size]='\0';
+}
+
+
+void * allocate_mem_general(int count, int size){
+
+	void * p = malloc(size*count);
+	if (!p){
+		fprintf(stderr,"Unable to allocate memory. exiting thr program\n.");
+		exit(1);
+	}
+
+	return p;
+}
+
+
+void print_symbol_list(symbol_ptr head){
+	symbol_ptr pointer;
+
+	pointer=head;
+	printf(BOLDYELLOW"\n-----------------------------------------------");
+	printf("-----------------------------------------------\n");
+	printf("                       SYMBOLS PRINT:\n");
+	printf("\n-----------------------------------------------");
+	printf("-----------------------------------------------\n");
+	NORMALCOLOR
+
+
+	if (head==NULL){
+		printf("EMPTY LIST\n");
+		return;
+	}
+
+
+
+	while (pointer->next != NULL){
+		printf("label: <%s>,linked to: ",pointer->name);
+		if (pointer->command_type == instructional){
+			printf("instructional, ");
+		}
+		if (pointer->command_type == operational){
+			printf("operational, ");
+		}else {
+			printf("unkown, ");
+		}
+		printf("declared: ");
+		if (pointer->declaration_type == internal){
+			printf("internally, ");
+		}
+		else {
+			printf("external, ");
+
+		}
+
+		printf("address: %d.\n ",pointer->address);
+
+		pointer=pointer->next;
+	}
+
+	if (!pointer->next){
+		printf("label: <%s>,linked to: ",pointer->name);
+		if (pointer->command_type == instructional){
+			printf("instructional, ");
+		}
+		if (pointer->command_type == operational){
+			printf("operational, ");
+		}else {
+			printf("unknown, ");
+		}
+		printf("declared: ");
+		if (pointer->declaration_type == internal){
+			printf("internally, ");
+		}
+		else {
+			printf("external, ");
+
+		}
+
+		printf("address: %d.\n ",pointer->address);
+
+	}
+
+
 }

@@ -1,0 +1,92 @@
+/*
+ * label_finder.c
+ *
+ *  Created on: Aug 25, 2017
+ *      Author: alexz
+ */
+
+#include "first_scan.h"
+
+
+
+
+
+
+
+/*
+ * Searches and returns a symbol for a given key (a label in a list of labels)
+ */
+symbol_ptr search_symbol (String key, symbol_ptr list){
+	symbol_ptr current_pointer=list;
+
+	while ((current_pointer->next)!=NULL){
+		if (strcasecmp(key,current_pointer->name) == 0){
+			return current_pointer;
+
+		}
+		current_pointer=current_pointer->next;
+	}
+
+	return NULL;
+}
+
+
+void first_scan(bodyArray items, int bodyarray_size){
+
+	int IC,DC;
+	int item_counter;
+	body current;
+	symbol_ptr symbols_list_head;
+	char error[MAXERRORSIZE];
+	symbol_ptr current_symbol;
+	list_item_reference errors_list=NULL;
+
+
+	symbols_list_head=NULL;
+
+	IC=DC=0;
+
+	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
+		current=items[item_counter];
+
+		/*Label exists*/
+		if (strlen(current.label) != 0){
+			/*check if it already exists*/
+
+			if (search_symbol(current.label,symbols_list_head) != NULL){
+				sprintf(error,"label %s is a duplicate.\n",current.label);
+				add_to_list(errors_list,error);
+			}
+
+			else {
+				/*New label, needs to be added*/
+				current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
+				add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+
+				IC+=calc_new_ic();/*advance ic*/
+				DC+=calc_new_dc();/*advance dc*/
+
+
+
+			}
+		}
+
+
+	}
+}
+
+
+symbol_ptr create_symbol(body item,int ic, int dc){
+
+}
+
+void add_symbol_to_list(symbol current,symbol_ptr list){
+
+}
+
+int calc_new_id(){
+	return 0;
+}
+int calc_new_dc(){
+	return 0;
+}

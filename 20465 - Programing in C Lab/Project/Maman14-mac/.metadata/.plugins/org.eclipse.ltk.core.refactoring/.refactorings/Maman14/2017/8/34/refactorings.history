@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Maman14/src/label_finder.c&apos; to &apos;first_scan.c&apos;" description="Rename resource &apos;label_finder.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/label_finder.c" name="first_scan.c" stamp="1503761480354" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Maman14/src/label_finder.h&apos; to &apos;first_scan.h&apos;" description="Rename resource &apos;label_finder.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/label_finder.h" name="first_scan.h" stamp="1503761490023" updateReferences="true"/>
+</session>

@@ -5,7 +5,6 @@
 
 
 #define MAXLABELSIZE 30
-#define MAXERRORSIZE 200
 #define NOMATCH "none"
 #define TERMINATOR "\0"
 #define MATRIXCOLANDROW 2
@@ -647,6 +646,11 @@ void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 		add_to_list(head,error);
 	}
 
+	if ((validate_label(item->OPERAND1)->VALID_LABEL)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"24. Error in line %d: Invalid label received in operand1: %s .\n",line,item->OPERAND1);
+		add_to_list(head,error);
+	}
 
 
 }
@@ -687,7 +691,11 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
 	}
 
 
-
+	if ((validate_label(item->OPERAND1)->VALID_LABEL)==FALSE){
+		item->valid=FALSE;
+		sprintf(error,"26. Error in line %d: Invalid label received in operand1: %s .\n",line,item->OPERAND1);
+		add_to_list(head,error);
+	}
 
 }
 
