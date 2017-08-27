@@ -1,2 +1,1 @@
-.extern w
-add r2, STR
+MYARRAY: .data 1,2,3,4,5

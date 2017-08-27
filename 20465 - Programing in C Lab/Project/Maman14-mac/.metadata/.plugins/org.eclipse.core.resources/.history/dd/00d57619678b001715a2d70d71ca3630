@@ -115,7 +115,7 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 	/*Address*/
 	if (strlen(item.operantion)==0){ /*is operation was not received*/
 		/*instructions*/
-		if (strcmp(item.instruction,"data")==0 ||
+		if (strcmp(item.operantion,"data")==0 ||
 			strcmp(item.instruction,"mat")==0||
 			strcmp(item.instruction,"string")==0){
 			sym->address=dc;

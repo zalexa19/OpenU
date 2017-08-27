@@ -37419,3 +37419,182 @@ Invoking: GCC C Linker
 gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
 Finished building target: Maman14
  
+13:04:08 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:58:12: error: invalid type argument of ‘->’ (have ‘body {aka struct parsed_line}’)
+     current->valid=FALSE;
+            ^~
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+make: *** [src/first_scan.o] Error 1
+src/subdir.mk:33: recipe for target 'src/first_scan.o' failed
+13:04:14 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:29:17 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:42:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/utils.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/utils.d" -MT"src/utils.d" -o "src/utils.o" "../src/utils.c"
+In file included from ../src/utils.c:8:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/utils.c: In function ‘print_structs’:
+../src/utils.c:67:7: warning: unused variable ‘null’ [-Wunused-variable]
+  char null[]="null           ";
+       ^~~~
+Finished building: ../src/utils.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:31:21 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:47:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:31:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:36 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:51:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
+13:32:48 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:50 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+13:33:31 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+make: Nothing to be done for 'all'.
+13:46:32 **** Incremental Build of configuration Debug for project Maman14 ****
+make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+Finished building: ../src/Maman14-mac.c
+ 
+Building file: ../src/first_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/first_scan.d" -MT"src/first_scan.d" -o "src/first_scan.o" "../src/first_scan.c"
+In file included from ../src/first_scan.h:8:0,
+                 from ../src/first_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/first_scan.c: In function ‘first_scan’:
+../src/first_scan.c:51:7: warning: variable ‘error_found’ set but not used [-Wunused-but-set-variable]
+  Bool error_found=FALSE;
+       ^~~~~~~~~~~
+Finished building: ../src/first_scan.c
+ 
+Building file: ../src/second_scan.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/second_scan.d" -MT"src/second_scan.d" -o "src/second_scan.o" "../src/second_scan.c"
+In file included from ../src/second_scan.h:11:0,
+                 from ../src/second_scan.c:8:
+../src/utils.h:143:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/second_scan.c:11:54: error: unknown type name ‘symbol_ptr’
+ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr symbols){
+                                                      ^~~~~~~~~~
+make: *** [src/second_scan.o] Error 1
+src/subdir.mk:36: recipe for target 'src/second_scan.o' failed

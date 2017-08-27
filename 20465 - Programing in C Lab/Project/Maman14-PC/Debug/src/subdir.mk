@@ -8,6 +8,7 @@ C_SRCS += \
 ../src/first_scan.c \
 ../src/operation_dictionary.c \
 ../src/parser.c \
+../src/second_scan.c \
 ../src/utils.c \
 ../src/validator.c 
 
@@ -16,6 +17,7 @@ OBJS += \
 ./src/first_scan.o \
 ./src/operation_dictionary.o \
 ./src/parser.o \
+./src/second_scan.o \
 ./src/utils.o \
 ./src/validator.o 
 
@@ -24,6 +26,7 @@ C_DEPS += \
 ./src/first_scan.d \
 ./src/operation_dictionary.d \
 ./src/parser.d \
+./src/second_scan.d \
 ./src/utils.d \
 ./src/validator.d 
 

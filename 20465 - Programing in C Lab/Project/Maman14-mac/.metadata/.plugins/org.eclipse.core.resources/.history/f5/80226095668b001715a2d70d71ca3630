@@ -19,21 +19,12 @@
 symbol_ptr search_symbol (String key, symbol_ptr list){
 	symbol_ptr current_pointer=list;
 
-	if (!list){
-		return NULL;
-	}
-
 	while ((current_pointer->next)!=NULL){
 		if (strcasecmp(key,current_pointer->name) == 0){
 			return current_pointer;
 
 		}
 		current_pointer=current_pointer->next;
-	}
-
-
-	if (strcmp(current_pointer->name,key)==0){
-		return current_pointer;
 	}
 
 	return NULL;
@@ -115,7 +106,7 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 	/*Address*/
 	if (strlen(item.operantion)==0){ /*is operation was not received*/
 		/*instructions*/
-		if (strcmp(item.instruction,"data")==0 ||
+		if (strcmp(item.operantion,"data")==0 ||
 			strcmp(item.instruction,"mat")==0||
 			strcmp(item.instruction,"string")==0){
 			sym->address=dc;

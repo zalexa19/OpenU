@@ -12,7 +12,7 @@
 #include "parser.h"
 #include "operation_dictionary.h"
 #include "first_scan.h"
-#include "second_scan.h"
+
 
 #define ARRAYSIZE 200
 

@@ -334,13 +334,13 @@ void print_symbol_list(symbol_ptr head){
 		if (pointer->command_type == instructional){
 			printf("%-15s|","instructional");
 		}
-		else if (pointer->command_type == operational){
+		if (pointer->command_type == operational){
 			printf("%-15s|","operational");
 		}else {
 			printf("%-15s|","unknown");
 		}
 		if (pointer->declaration_type == internal){
-			printf("%-15s|","internal");
+			printf("%-15s|","internally");
 		}
 		else {
 			printf("%-15s|","external");
@@ -360,13 +360,13 @@ void print_symbol_list(symbol_ptr head){
 		if (pointer->command_type == instructional){
 			printf("%-15s|","instructional");
 		}
-		else if (pointer->command_type == operational){
+		if (pointer->command_type == operational){
 			printf("%-15s|","operational");
 		}else {
 			printf("%-15s|","unknown");
 		}
 		if (pointer->declaration_type == internal){
-			printf("%-15s|","internal");
+			printf("%-15s|","internally");
 		}
 		else {
 			printf("%-15s|","external");
