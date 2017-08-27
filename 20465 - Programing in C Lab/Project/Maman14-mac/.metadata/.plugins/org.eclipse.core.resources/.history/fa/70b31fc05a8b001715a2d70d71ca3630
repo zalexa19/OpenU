@@ -55,8 +55,8 @@ symbol_ptr create_symbol(body item,int, int);
 
 void add_symbol_to_list(symbol_ptr item,symbol_ptr *);
 
-int calc_new_ic(body);
-int calc_new_dc(body);
+int calc_new_ic();
+int calc_new_dc();
 
 
 

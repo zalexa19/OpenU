@@ -321,13 +321,12 @@ void print_symbol_list(symbol_ptr head){
 		return;
 	}
 
-	printf(BOLDWHITE"\n");
+	printf("\n");
 	printf("%-15s|","LABEL");
 	printf("%-15s|","DECLARED AS");
 	printf("%-15s|","LINKED TO");
 	printf("%-15s|","ADDRESS");
 	printf("\n");
-	NORMALCOLOR
 
 	while (pointer->next != NULL){
 		printf("%-15s|",pointer->name);
@@ -352,8 +351,6 @@ void print_symbol_list(symbol_ptr head){
 
 		pointer=pointer->next;
 	}
-	printf("\n");
-
 
 	if (!pointer->next){
 		printf("%-15s|",pointer->name);
@@ -376,7 +373,7 @@ void print_symbol_list(symbol_ptr head){
 		printf("%-15d|",pointer->address);
 
 	}
-	printf("\n");
 
+	printf("\n");
 
 }

@@ -321,62 +321,59 @@ void print_symbol_list(symbol_ptr head){
 		return;
 	}
 
-	printf(BOLDWHITE"\n");
-	printf("%-15s|","LABEL");
-	printf("%-15s|","DECLARED AS");
-	printf("%-15s|","LINKED TO");
-	printf("%-15s|","ADDRESS");
 	printf("\n");
-	NORMALCOLOR
+	printf("LABEL        |");
+	printf("ADDRESS  	|");
+	printf("LINKED TO COMMAND 	|");
+	printf("DECLARED AS  	|");
+	printf("\n");
 
 	while (pointer->next != NULL){
-		printf("%-15s|",pointer->name);
+		printf("<%s>,linked to: ",pointer->name);
 		if (pointer->command_type == instructional){
-			printf("%-15s|","instructional");
+			printf("instructional, ");
 		}
 		if (pointer->command_type == operational){
-			printf("%-15s|","operational");
+			printf("operational, ");
 		}else {
-			printf("%-15s|","unknown");
+			printf("unkown, ");
 		}
+		printf("declared: ");
 		if (pointer->declaration_type == internal){
-			printf("%-15s|","internally");
+			printf("internally, ");
 		}
 		else {
-			printf("%-15s|","external");
+			printf("external, ");
 
 		}
 
-		printf("%-15d|",pointer->address);
-
+		printf("address: %d.\n",pointer->address);
 
 		pointer=pointer->next;
 	}
-	printf("\n");
-
 
 	if (!pointer->next){
-		printf("%-15s|",pointer->name);
+		printf("%9.*s,linked to: ",pointer->name);
 		if (pointer->command_type == instructional){
-			printf("%-15s|","instructional");
+			printf("instructional, ");
 		}
 		if (pointer->command_type == operational){
-			printf("%-15s|","operational");
+			printf("operational, ");
 		}else {
-			printf("%-15s|","unknown");
+			printf("unknown, ");
 		}
+		printf("declared: ");
 		if (pointer->declaration_type == internal){
-			printf("%-15s|","internally");
+			printf("internally, ");
 		}
 		else {
-			printf("%-15s|","external");
+			printf("external, ");
 
 		}
 
-		printf("%-15d|",pointer->address);
+		printf("address: %d.\n ",pointer->address);
 
 	}
-	printf("\n");
 
 
 }

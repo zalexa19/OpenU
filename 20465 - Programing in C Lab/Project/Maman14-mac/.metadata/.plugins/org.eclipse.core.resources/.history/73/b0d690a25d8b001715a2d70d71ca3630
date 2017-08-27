@@ -62,13 +62,9 @@ void first_scan(bodyArray items, int bodyarray_size){
 		current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
 		add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
 
-		printf(KMAGENTA" finished adding to list\n");
-		NORMALCOLOR
 
 		IC+=calc_new_ic(current);/*advance ic*/
 		DC+=calc_new_dc(current);/*advance dc*/
-
-/*		printf(KMAGENTA "New IC: %d, new DC: %d\n",IC,DC);*/
 
 
 	}
@@ -161,7 +157,6 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 int calc_new_ic(body item){
 	int n;
 
-	printf("calulating IC\n");
 	n=0;
 	if (strlen(item.operantion)==0){
 		/*dealing with instruction*/
@@ -196,7 +191,7 @@ int calc_new_dc(body item){
 	n=0;
 
 	/*if it's instructional*/
-	if (strlen(item.operantion)==0){
+	if (strlen(operational)==0){
 		if (strcmp(item.instruction,MAT)==0){
 			printf("Handle mat in calc_new_dc\n");
 			return n;

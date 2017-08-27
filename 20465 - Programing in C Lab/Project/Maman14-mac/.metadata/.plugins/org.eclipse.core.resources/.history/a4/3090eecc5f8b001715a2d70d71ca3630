@@ -68,7 +68,7 @@ void first_scan(bodyArray items, int bodyarray_size){
 		IC+=calc_new_ic(current);/*advance ic*/
 		DC+=calc_new_dc(current);/*advance dc*/
 
-/*		printf(KMAGENTA "New IC: %d, new DC: %d\n",IC,DC);*/
+		printf(KMAGENTA "New IC: %d, new DC: %d\n",IC,DC);
 
 
 	}

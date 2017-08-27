@@ -254,9 +254,6 @@ body parse_line(String str, int line_number){
 		NORMALCOLOR
 
 		current_pointer+=extracted_value_length;
-		if (extracted_value_length>0){
-			current_pointer+=1;/*skip the first ','*/
-		}
 		REALLOCATE_EXTRACTED_VALUE
 
 
@@ -332,6 +329,7 @@ String extract_operand (String str){
 
 	result=allocate_mem_string(operand_size+ADDEDSIZE);
 	strncpy(result,str,operand_size);
+	str+=1;/*advance 1 for skipping the ','*/
 
 	return result;
 

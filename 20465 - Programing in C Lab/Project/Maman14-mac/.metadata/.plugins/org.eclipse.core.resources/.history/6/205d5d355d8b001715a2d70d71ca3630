@@ -62,13 +62,9 @@ void first_scan(bodyArray items, int bodyarray_size){
 		current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
 		add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
 
-		printf(KMAGENTA" finished adding to list\n");
-		NORMALCOLOR
 
 		IC+=calc_new_ic(current);/*advance ic*/
 		DC+=calc_new_dc(current);/*advance dc*/
-
-/*		printf(KMAGENTA "New IC: %d, new DC: %d\n",IC,DC);*/
 
 
 	}
@@ -150,7 +146,7 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 
 
 /*
- * This function calculates how much memory to reserve for IC.
+ * This function calculates how much memory to reserve.
  * Receives:
  * Returns: The calculated number.
  * If the command is .extern, we reserve 1 memory;
@@ -161,14 +157,13 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 int calc_new_ic(body item){
 	int n;
 
-	printf("calulating IC\n");
 	n=0;
 	if (strlen(item.operantion)==0){
 		/*dealing with instruction*/
 		if (strcmp(item.instruction,EXTERNAL)==0){
-			return ++n;
+			return 1;
 		}
-		return n; /*if we're mat,string,data,entry*/
+		return 0; /*if we're mat,string,data,entry*/
 	}
 	/*if operand*/
 	n++;/*for the command itsef*/
@@ -182,35 +177,6 @@ int calc_new_ic(body item){
 	return n;
 }
 
-
-
-/*
- * This function calculates how much memory to reserve for DC.
- * Receives:
- * Returns: The calculated number.
- * The number depends on the number of received chars as data
- */
-
 int calc_new_dc(body item){
-	int n;
-	n=0;
-
-	/*if it's instructional*/
-	if (strlen(item.operantion)==0){
-		if (strcmp(item.instruction,MAT)==0){
-			printf("Handle mat in calc_new_dc\n");
-			return n;
-		}
-		if (strcmp(item.instruction,DATA)==0){
-			return item.data_values_number;
-		}
-
-		if (strcmp(item.instruction,STR)==0){
-			/*string*/
-			n=strlen(item.OPERAND1);
-		}
-	}
-
-
-	return n;
+	return 0;
 }
