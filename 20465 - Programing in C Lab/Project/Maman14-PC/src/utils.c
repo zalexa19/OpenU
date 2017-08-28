@@ -64,7 +64,6 @@ int increase_mem_struct (int size,bodyArray array){
 void print_structs(bodyArray array, int size){
 	int i;
 	char tmp[15];
-	char null[]="null           ";
 
 	i=0;
 	printf("\n--------------------------------------------------------");

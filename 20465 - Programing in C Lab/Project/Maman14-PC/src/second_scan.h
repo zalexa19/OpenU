@@ -10,8 +10,10 @@
 
 #include "utils.h"
 #include "operation_dictionary.h"
+#include "first_scan.h"
 
 
+Bool second_scan (bodyArray,int,symbol_ptr*,int );
 
 
 #endif /* SECOND_SCAN_H_ */

@@ -40,18 +40,18 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 }
 
 
-void first_scan(bodyArray items, int bodyarray_size){
-	int IC,DC;
+Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC){
+	int DC;
 	int item_counter;
 	body current;
-	symbol_ptr symbols_list_head=NULL;
 	char error[MAXERRORSIZE];
 	symbol_ptr current_symbol;
 	list_item_reference errors_list=NULL;
-	Bool error_found=FALSE;
+	Bool valid_file=TRUE;
 
 
-	IC=DC=0;
+	*IC=DC=0;
+
 
 	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
 		current=items[item_counter];
@@ -60,17 +60,30 @@ void first_scan(bodyArray items, int bodyarray_size){
 		if (strlen(current.label) != 0){
 			/*check if it already exists*/
 
-			if (search_symbol(current.label,symbols_list_head) != NULL){
-				sprintf(error,"label %s is a duplicate.\n",current.label);
-				add_to_list(&errors_list,error);
-				error_found=TRUE;
+			if (search_symbol(current.label,*symbols_list_head) != NULL){
+
+				if (search_symbol(current.label,*symbols_list_head)->declaration_type ==external){
+					sprintf(error,KBLUE"Error is line %d: label %s was declared as .extern and declared in this file.\n",current.line_number, current.label);
+					add_to_list(&errors_list,error);
+				}
+
+				else {
+					sprintf(error,KBLUE"Error is line %d: label %s is a duplicate.\n",current.line_number, current.label);
+					add_to_list(&errors_list,error);
+				}
+
+				valid_file=FALSE;
 				current.valid=FALSE;
+
+
+
+
 			}
 
 			else {
-				current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
-				add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
-				IC+=calc_new_ic(current);/*advance ic*/
+				current_symbol=create_symbol(current,*IC,DC); /*create new symbol*/
+				add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+				*IC+=calc_new_ic(current);/*advance ic*/
 				DC+=calc_new_dc(current);/*advance dc*/
 
 			}
@@ -79,13 +92,13 @@ void first_scan(bodyArray items, int bodyarray_size){
 		}
 		/*Label was not recieved*/
 		else if (strcmp(current.instruction,EXTERNAL)==0){
-			current_symbol=create_symbol(current,IC,DC); /*create new symbol*/
-			add_symbol_to_list(current_symbol,&symbols_list_head);/*adds to list of symbols*/
+			current_symbol=create_symbol(current,*IC,DC); /*create new symbol*/
+			add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
 
 		}
 
 		else {
-			IC+=calc_new_ic(current);/*advance ic*/
+			*IC+=calc_new_ic(current);/*advance ic*/
 
 		}
 
@@ -96,7 +109,11 @@ void first_scan(bodyArray items, int bodyarray_size){
 
 
 
-	print_symbol_list(symbols_list_head);
+	printf("current DC:%d\ncurrent IC: %d\n",DC,*IC);
+
+	NORMALCOLOR
+	print_list(errors_list);
+	return valid_file;
 
 }
 
@@ -140,7 +157,8 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 
 
 
-	printf("finished with the symbol creation\n");
+	printf(KMAGENTA"finished with the symbol creation\n");
+	NORMALCOLOR
 	return sym;
 
 }
@@ -238,4 +256,24 @@ int calc_new_dc(body item){
 
 
 	return n;
+}
+
+
+void update_data_addresses(symbol_ptr* symbols,int IC){
+	symbol_ptr current;
+
+/*printf("IC: %d\n");*/
+
+	current=*symbols;
+	while (current->next != NULL){
+		if (current->command_type==instructional && current->declaration_type==internal){
+			current->address=current->address+IC;
+		}
+		current=current->next;
+	}
+
+	if (current->command_type==instructional && current->declaration_type==internal){
+		current->address=current->address+IC;
+	}
+
 }

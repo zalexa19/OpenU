@@ -81,11 +81,13 @@ body parse_line(String str, int line_number){
 	int data_array_size=0;
 	int received_line_length;
 
+/*
 
 	printf(KYELLOW "------------------------------\n");
     printf("      PARSING LINE:        \n");
 	printf("------------------------------\n");
 	NORMALCOLOR
+*/
 
 	received_line_length=strlen(str);
 	str[received_line_length-1]='\0'; /*replaces \n with \0*/

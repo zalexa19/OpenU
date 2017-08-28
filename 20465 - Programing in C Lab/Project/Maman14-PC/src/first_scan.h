@@ -45,7 +45,7 @@ typedef struct symbol{
 
 
 
-void first_scan(bodyArray items, int);
+Bool first_scan(bodyArray items, int, symbol_ptr*, int *);
 
 
 
@@ -58,8 +58,7 @@ void add_symbol_to_list(symbol_ptr item,symbol_ptr *);
 int calc_new_ic(body);
 int calc_new_dc(body);
 
-
-
+void update_data_addresses(symbol_ptr*,int);
 
 
 #endif /* LABEL_FINDER_H_ */

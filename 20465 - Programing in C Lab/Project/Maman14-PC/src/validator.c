@@ -34,10 +34,12 @@ void validate_file(bodyArray parsed, int array_size){
 	char error[MAXERRORSIZE];
 	label_status_ref validated_label;
 
+/*
 
 	printf(KYELLOW"------------------------------\n");
     printf("      VALIDATION STAGE:        \n");
 	printf("------------------------------\n");
+*/
 
 	NORMALCOLOR
 
@@ -652,7 +654,8 @@ void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 		add_to_list(head,error);
 	}
 
-
+	/*remove the received label*/
+	strcpy(item->label,"\0");
 }
 
 void validate_ins_extern(body* item, list_item_reference*  head,String error){
@@ -696,6 +699,9 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
 		sprintf(error,"26. Error in line %d: Invalid label received in operand1: %s .\n",line,item->OPERAND1);
 		add_to_list(head,error);
 	}
+
+	/*remove the received label*/
+	strcpy(item->label,"\0");
 
 }
 

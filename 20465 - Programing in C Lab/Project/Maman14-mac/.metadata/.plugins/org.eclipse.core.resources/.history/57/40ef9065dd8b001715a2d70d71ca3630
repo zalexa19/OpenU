@@ -1,0 +1,52 @@
+/*
+ * second_scan.c
+ *
+ *  Created on: Aug 27, 2017
+ *      Author: alexz
+ */
+
+#include "second_scan.h"
+#include "first_scan.h"
+
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr symbols){
+	int IC,DC,i;
+	body current;
+	Bool valid_file=TRUE;
+
+
+	IC=DC=0;
+
+/*	validate that each label recieved as an operand appears in the symbol table. if not, return false*/
+
+	for (i=0;i<parsed_size;i++){
+		current=parsed[i];
+
+		if (strlen(current.label)>0){
+			if (!search_symbol(current.label,symbols)){ /*label is not found*/
+				fprintf(stderr, "Error in line %d: Label %s is undefiend\n",current.line_number,current.label);
+				valid_file=FALSE;
+			}
+		}
+
+		if (strcmp(current.instruction,EXTERNAL)==0){
+			if (!search_symbol(current.OPERAND1,symbols)){
+				fprintf(stderr, "Error in line %d: Label %s received as exter, undefined\n",current.line_number,current.label);
+				valid_file=FALSE;
+			}
+		}
+
+
+
+
+	}
+
+	return valid_file;
+}
+
+
+/*
+int code = 0; // 0000000000000
+int fifthBit = 1 << 5; //100000
+
+code = 2; // 0000010
+code = code << 4 //00000100000*/

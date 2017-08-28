@@ -21,11 +21,15 @@ int main(void) {
 
 	FILE * input_file;
 	bodyArray parsed;
+	int ic;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
+	symbol_ptr symbols=NULL;
+
+
 
 	/*END OF DECLERATIONS*/
-
+	ic=0;
 	create_operation_info_array();
 
 /*	operation_info op = get_operation_info("add");*/
@@ -63,10 +67,34 @@ int main(void) {
 
 	validate_file(parsed,parsed_size);
 	printf("invoking first scan\n\n");
-	first_scan(parsed,parsed_size);
+	if (!first_scan(parsed,parsed_size,&symbols,&ic)){
+		fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
+		NORMALCOLOR
+	}
+	else
+	{
+		/*update the addresses of the .mat, .string .data*/
+		printf("current IC (main): %d\n",ic);
+
+		update_data_addresses(&symbols,ic);
 
 
 
+
+		printf(KGREEN "Entering second scan\n");
+		NORMALCOLOR
+
+		if (second_scan(parsed,parsed_size,&symbols,ic)==FALSE ){
+			fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
+			NORMALCOLOR
+		}
+		else {
+			/*generate files*/
+		}
+
+	}
+
+	print_symbol_list(symbols);
 
 	printf("\n\n---===doei!===---\n");
 	return EXIT_SUCCESS;
