@@ -1,0 +1,206 @@
+/*
+ * second_scan.c
+ *
+ *  Created on: Aug 27, 2017
+ *      Author: alexz
+ */
+
+#include "second_scan.h"
+#define WORD_SIZE 10
+#define OPCODE_SIZE 4
+#define OPER_SIZE 2
+#define ABSOLUTE_VALUE 0
+#define EXTERNAL_VALUE 1
+#define RELLOCATABLE_VALUE 2
+
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic){
+	int IC,DC,i;
+	int result,counter;
+	int * coded_array[MAXMEM];
+	body current;
+	int opcode,dest,src;
+	String operand_value;
+	Operand_type op1_type,op2_type;
+	Bool valid_file=TRUE;
+
+
+	IC=DC=0;
+	counter=0;
+
+
+	/*Check if the label is valid*/
+	for (i=0;i<parsed_size;i++){
+		current=parsed[i];
+		if (strlen(current.label)>0){
+			if (!search_symbol(current.label,*symbols)){ /*label is not found*/
+				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
+				valid_file=FALSE;
+			}
+		}
+	}
+
+
+	if (valid_file==FALSE){
+		return FALSE;
+	}
+
+	/*ALL LABELS ARE VALID*/
+
+	for (i=0;i<parsed_size;i++){
+		current=parsed[i];
+
+		if (strlen(current.operantion)>0){
+			opcode=get_opcode(current.operantion);
+		}
+		else {
+			opcode=get_opcode(current.instruction);
+		}
+
+		if ( strcmp(current.instruction,DATA) !=0  &&  strcmp(current.instruction,MAT) !=0){
+			op1_type=get_operand_type(current.OPERAND1);
+			op2_type=get_operand_type(current.OPERAND2);
+			/*THis function should extract the operands for operational commands as well*/
+		}
+		else {
+			/*treat mat and data*/
+		}
+		printf("op1=%d\n",op1_type);
+
+		result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
+
+	}
+		printf("---End of Second Scan\n");
+		return TRUE;
+}
+
+
+/*
+int code = 0; // 0000000000000
+int fifthBit = 1 << 5; //100000
+
+code = 2; // 0000010
+code = code << 4 //00000100000*/
+
+
+int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
+	int op1,op2
+	int result=0;
+
+	result=opcode;
+	result<<=WORD_SIZE-OPCODE_SIZE;
+	printf("result: ");
+	print_bin(result);
+		printf(KCYN"received opcode: %d\n",opcode);
+		print_bin(result);
+
+		if (opcode <4 || opcode==6 ){
+			/*src exists*/
+			}
+
+		else { /*opcode is4,5, or >6*/
+			src=0; /*no source for these commands*/
+			printf(KCYN"when source =0\n");
+			print_bin(result);
+			NORMALCOLOR
+
+			/*handle dest*/
+
+			dest=get_operand_type(item.OPERAND1);
+			if (dest==INTERMID){
+				result<<=OPER_SIZE;
+			}
+			else {
+
+				result|=(dest<<OPER_SIZE);
+			}
+			printf(KCYN "Extracted operand_type:%d, result: ",dest);
+			print_bin(result);
+			NORMALCOLOR
+
+		}
+
+
+		/*EXTRACT THE LAST BITS*/
+
+		}
+
+
+
+
+	NORMALCOLOR
+	return result;
+
+
+
+}
+
+
+
+
+
+
+
+
+int get_opcode(String command){
+
+	if (strcmp(command,CMP) ==0 ){
+		return 1;
+	}
+
+	if (strcmp(command,ADD) ==0 ){
+		return 2;
+	}
+
+	if (strcmp(command,SUB) ==0 ){
+		return 3;
+	}
+
+
+	if (strcmp(command,NOT) ==0 ){
+		return 4;
+	}
+
+	if (strcmp(command,CLR) ==0 ){
+		return 5;
+	}
+	if (strcmp(command,LEA) ==0 ){
+		return 6;
+	}
+
+	if (strcmp(command,INC)==0){
+		return 7;
+	}
+
+	if (strcmp(command,DEC)==0){
+		return 8;
+	}
+
+	if (strcmp(command,JMP)==0){
+		return 9;
+	}
+
+	if (strcmp(command,BNE)==0){
+		return 10;
+	}
+
+	if (strcmp(command,RED)==0){
+		return 11;
+	}
+	if (strcmp(command,PRN)==0){
+		return 12;
+	}
+
+	if (strcmp(command,JSR)==0){
+		return 13;
+	}
+
+	if (strcmp(command,RTS)==0){
+		return 14;
+	}
+
+	if (strcmp(command,STOP)==0){
+		return 15;
+	}
+	return 0;
+
+}

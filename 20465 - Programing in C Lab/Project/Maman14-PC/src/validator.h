@@ -2,10 +2,12 @@
 
 
 #define NUM_LABEL_ERRORS 4
+
 /*
  * This enum used in the function that validates the label
  */
-typedef enum {
+
+typedef enum{
 	PASSED, /*Valid label*/
 	TOO_LONG, /*invalid - more than max length*/
 	FIRST_CHAR, /*invalid - label starts with invalid char*/
@@ -14,13 +16,13 @@ typedef enum {
 }label_val_status;
 
 typedef struct label_status * label_status_ref;
+
 typedef struct label_status{
 	Bool TOO_LONG;
 	Bool INV_FIRST_CHAR;
 	Bool INV_CHAR_FOUND;
 	Bool RESERVED;
 	Bool VALID_LABEL;
-
 }label_status;
 
 

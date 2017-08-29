@@ -39,7 +39,7 @@ operation_info get_operation_info(String);
 
 Bool is_operand1_allowed(operation_info,String,Operand_type);
 Bool is_operand2_allowed(operation_info,String,Operand_type);
-
+Operand_type get_operand_type (String operand);
 
 
 #endif /* OPERATION_DICTIONARY_H_ */

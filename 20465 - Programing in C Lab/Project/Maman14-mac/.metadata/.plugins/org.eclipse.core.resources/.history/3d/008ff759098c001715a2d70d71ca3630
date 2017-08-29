@@ -1,0 +1,24 @@
+/*
+ * tester_functions.c
+ *
+ *  Created on: Aug 28, 2017
+ *      Author: alexz
+ */
+
+
+void print_bin(int);
+
+
+
+void print_bin(int n){
+	while (n) {
+	    if (n & 1)
+	        printf("1");
+	    else
+	        printf("0");
+
+	    n >>= 1;
+	}
+	printf("\n");
+}
+

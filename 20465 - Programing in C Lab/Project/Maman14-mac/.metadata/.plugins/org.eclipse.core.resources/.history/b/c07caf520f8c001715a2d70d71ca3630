@@ -1,0 +1,177 @@
+/*
+ * second_scan.c
+ *
+ *  Created on: Aug 27, 2017
+ *      Author: alexz
+ */
+
+#include "second_scan.h"
+
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic){
+	int IC,DC,i,mem_counter,result;
+	body current;
+	int opcode,src,dest;
+	String operand_value;
+	Operand_type op_type;
+	Bool valid_file=TRUE;
+
+
+
+
+	IC=DC=0;
+	mem_counter=0;/*how many lines are required*/
+
+	/*Check if the label is valid*/
+	for (i=0;i<parsed_size;i++){
+		current=parsed[i];
+		if (strlen(current.label)>0){
+			if (!search_symbol(current.label,*symbols)){ /*label is not found*/
+				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
+				valid_file=FALSE;
+			}
+		}
+	}
+
+	if (valid_file==FALSE){
+		return FALSE;
+	}
+
+	/*ALL LABELS ARE VALID*/
+
+		/*get the command*/
+		if (strlen(current.operantion)>0){
+			opcode=get_opcode(current.operantion);
+			printf(KCYN "opcode:%d\n",opcode);
+			print_bin(opcode);
+
+
+			if (opcode <4 || opcode==6 ){
+				/*src exists*/
+
+
+				if (strlen(current.OPERAND1)>0){
+					operand_value=current.OPERAND1;
+					if (get_operand_type(operand_value)==INTERMID){
+						src=INTERMID;
+
+					}
+					if (get_operand_type(operand_value)==LABLE){
+						src=LABLE;
+						printf("label");
+						print_bin(src);
+					}
+					if (get_operand_type(operand_value)==MATRIX){
+
+					}
+					if (get_operand_type(operand_value)==REGISTER){
+
+					}
+
+
+
+				}
+
+			}
+
+
+
+			else {
+				src=0;
+				result=opcode;
+				result<<=2;
+			}
+
+
+			print_bin(result);
+
+
+
+
+			if (strlen(current.OPERAND2)>0){
+
+			}
+
+
+
+		}
+
+
+
+
+
+
+	return TRUE;
+}
+
+
+/*
+int code = 0; // 0000000000000
+int fifthBit = 1 << 5; //100000
+
+code = 2; // 0000010
+code = code << 4 //00000100000*/
+
+
+int get_opcode(String command){
+
+	if (strcmp(command,CMP) ==0 ){
+		return 1;
+	}
+
+	if (strcmp(command,ADD) ==0 ){
+		return 2;
+	}
+
+	if (strcmp(command,SUB) ==0 ){
+		return 3;
+	}
+
+
+	if (strcmp(command,NOT) ==0 ){
+		return 4;
+	}
+
+	if (strcmp(command,CLR) ==0 ){
+		return 5;
+	}
+	if (strcmp(command,LEA) ==0 ){
+		return 6;
+	}
+
+	if (strcmp(command,INC)==0){
+		return 7;
+	}
+
+	if (strcmp(command,DEC)==0){
+		return 8;
+	}
+
+	if (strcmp(command,JMP)==0){
+		return 9;
+	}
+
+	if (strcmp(command,BNE)==0){
+		return 10;
+	}
+
+	if (strcmp(command,RED)==0){
+		return 11;
+	}
+	if (strcmp(command,PRN)==0){
+		return 12;
+	}
+
+	if (strcmp(command,JSR)==0){
+		return 13;
+	}
+
+	if (strcmp(command,RTS)==0){
+		return 14;
+	}
+
+	if (strcmp(command,STOP)==0){
+		return 15;
+	}
+	return 0;
+
+}

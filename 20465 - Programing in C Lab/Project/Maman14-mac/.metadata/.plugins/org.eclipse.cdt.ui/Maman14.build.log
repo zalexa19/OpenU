@@ -1,4 +1,4 @@
-06:02:54 **** Incremental Build of configuration Debug for project Maman14 ****
+03:54:28 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/second_scan.c
 Invoking: GCC C Compiler
@@ -9,9 +9,19 @@ In file included from ../src/second_scan.h:11:0,
  void print_symbol_list(symbol_ptr);
  ^~~~
 ../src/second_scan.c: In function ‘second_scan’:
-../src/second_scan.c:11:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
+../src/second_scan.c:21:18: warning: unused variable ‘src’ [-Wunused-variable]
+  int opcode,dest,src;
+                  ^~~
+../src/second_scan.c:21:13: warning: unused variable ‘dest’ [-Wunused-variable]
+  int opcode,dest,src;
+             ^~~~
+../src/second_scan.c:17:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
   int IC,DC,i;
       ^~
+../src/second_scan.c: In function ‘code_command_line’:
+../src/second_scan.c:91:16: warning: unused variable ‘op2_coded’ [-Wunused-variable]
+  int op1_coded,op2_coded;
+                ^~~~~~~~~
 Finished building: ../src/second_scan.c
  
 Building target: Maman14
@@ -20,5 +30,5 @@ gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  .
 Finished building target: Maman14
  
 
-06:02:55 Build Finished (took 256ms)
+03:54:28 Build Finished (took 249ms)
 

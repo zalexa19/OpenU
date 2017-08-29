@@ -1,3 +1,2 @@
-MYARRAY: .extern EXTERNAL
-ALEX: add r3, r5
-LOOP: mov r2, r3
+LOOP: jmp END
+

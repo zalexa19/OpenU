@@ -133,3 +133,6 @@ Bool is_operand2_allowed(operation_info info,String command,Operand_type type){
 
 	return FALSE;
 }
+
+
+

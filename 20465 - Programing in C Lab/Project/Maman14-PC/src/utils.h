@@ -142,4 +142,8 @@ void print_line(body);
 void print_mat (String*, int);
 
 void print_symbol_list(symbol_ptr);
+
+void print_bin(int);
+void print_binary_array(int array[], int size);
+
 #endif /* UTILS_H_ */

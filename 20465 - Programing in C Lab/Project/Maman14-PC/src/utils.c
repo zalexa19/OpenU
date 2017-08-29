@@ -381,3 +381,46 @@ void print_symbol_list(symbol_ptr head){
 
 
 }
+
+
+
+void print_bin(int n){
+	char result[32];
+	int i = 0;
+
+	if(n==0) {
+		printf("0\n");
+		return;
+	}
+
+	while (n) {
+	    if (n & 1)
+	        result[i++]='1';
+	    else
+	        result[i++]='0';
+
+	    n >>= 1;
+	}
+
+	while((--i)>=0) {
+		printf("%c",result[i]);
+	}
+	printf("\n");
+}
+
+
+void print_binary_array(int array[], int size){
+	int i;
+
+	printf(BOLDYELLOW"\n-----------------------------------------------");
+	printf("-----------------------------------------------\n");
+	printf("                       BINARY PRINT:\n");
+	printf("\n-----------------------------------------------");
+	printf("-----------------------------------------------\n");
+	NORMALCOLOR
+
+	for (i=0;i<size;i++){
+		print_bin(array[i]);
+	}
+}
+
