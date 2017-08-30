@@ -25,8 +25,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 	int *  commands_array;
 	int data_array[MAX_DATA_ARR_SIZE];
 	int * result_pointer;
-
-	encoded_ptr encoded_node;
+	encoded_ptr list=*encoded_list,encoded_node;
 	symbol_ptr found_symbol;
 	Bool valid_file=TRUE;
 
@@ -36,10 +35,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 	DC=0;
 	general_counter=data_counter=counter=0;
 	address_helper=0;
-	*encoded_list = NULL;
 
-/*	commands_array=(int *)allocate_mem_general(MAX_DATA_ARR_SIZE,sizeof(int));*/
-
+	commands_array=(int *)allocate_mem_general(MAX_DATA_ARR_SIZE,sizeof(int));
 
 	printf("Checking labels\n");
 	/*Check if the label is valid*/
@@ -85,7 +82,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
-/*		printf(BOLDRED"current line: %d\n",current.line_number);*/
+		printf("current line: %d\n",current.line_number);
 		if (strlen(current.operantion)>0){
 			opcode=get_opcode(current.operantion);
 			op1_type=get_operand_type(current.OPERAND1);
@@ -95,9 +92,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 			result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
 
 			encoded_node=create_encoded_struct(address_helper,result);
-			add_encoded_struct_to_list(encoded_list,encoded_node);
+			add_to_list(encoded_list,encoded_node);
 			address_helper++;
-/*			printf("address:%d, value: %d\n",encoded_node->address,encoded_node->value);*/
 
 /*			commands_array[counter]=result;*/
 			counter++;
@@ -108,7 +104,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 				result=encode_register(current.OPERAND1,current.OPERAND2);
 
 				encoded_node=create_encoded_struct(address_helper,result);
-				add_encoded_struct_to_list(encoded_list,encoded_node);
+				add_to_list(encoded_list,encoded_node);
 				address_helper++;
 
 /*				commands_array[counter]=result;*/
@@ -125,7 +121,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
 					}
 					encoded_node=create_encoded_struct(address_helper,result);
-					add_encoded_struct_to_list(encoded_list,encoded_node);
+					add_to_list(encoded_list,encoded_node);
 					address_helper++;
 /*//					commands_array[counter]=result;*/
 					counter++;
@@ -134,7 +130,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 				if (op2_type!=UNRECOGNIZED){
 					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
 					encoded_node=create_encoded_struct(address_helper,result);
-					add_encoded_struct_to_list(encoded_list,encoded_node);
+					add_to_list(encoded_list,encoded_node);
 					address_helper++;
 /*					commands_array[counter]=result;*/
 					counter++;
@@ -165,12 +161,12 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 				}
 
 
-/*				printf("after inserting data values:\n");
+				printf("after inserting data values:\n");
 				for(j=0;j<general_counter;j++){
 					printf("%d",data_array[j]);
 					printf("\n");
 
-				}*/
+				}
 
 
 				/*convert operatn*/
@@ -179,6 +175,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 
 			if (strcmp(current.instruction,STR)==0){
 				length=strlen(current.OPERAND1);
+				printf(KRED"length: %d\n",length);
 
 
 				for(j=0;j<length;j++){
@@ -189,11 +186,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 				NORMALCOLOR
 				printf("\n");
 
-/*				printf("after inserting string values:\n");
+				printf("after inserting string values:\n");
 				for(j=0;j<general_counter;j++){
 					printf("%d",data_array[j]);
 					printf("\n");
-				}*/
+				}
 			}
 
 		}
@@ -207,13 +204,31 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 	/*adding the data array to the struct*/
 	for (j=0;j<data_counter;j++){
 		encoded_node=create_encoded_struct(address_helper,data_array[j]);
-		add_encoded_struct_to_list(encoded_list,encoded_node);
+		add_to_list(encoded_list,encoded_node);
 		address_helper++;
 	}
 
+/*
+	result_pointer=(int*)allocate_mem_general(general_counter+counter,sizeof(int));
+	*result_size=general_counter+counter;
 
 
-	*result_size=address_helper;
+	printf(BOLDBLUE"Combining to one array:\n");
+		c=0;
+		for (i=0;i<counter;i++){
+			(result_pointer)[i]=commands_array[i];
+			c++;
+		}
+
+
+		for (j=0;j<data_counter;j++){
+			result_pointer[c]=data_array[j];
+			c++;
+		}
+
+		NORMALCOLOR
+
+		*result_array=result_pointer;*/
 		printf("---End of Second Scan\n");
 		return TRUE;
 }
@@ -419,56 +434,5 @@ encoded_ptr create_encoded_struct(int address,int value){
 	encoded_struct->next=NULL;
 
 	return encoded_struct;
-
-}
-
-void print_encoded_struct(encoded_ptr s){
-	int n;
-	char result[32];
-	int i = 0;
-	int j = 0;
-
-
-	encoded_ptr pointer;
-
-	printf(BOLDWHITE"\n");
-	printf("%-15s|","ADDRESS");
-	printf("%-15s|","VALUE");
-	printf("\n");
-	NORMALCOLOR
-
-	pointer=s;
-	while (pointer->next != NULL){
-/*		n=pointer->address;*/
-		print_bin(pointer->value);
-
-		pointer=pointer->next;
-	}
-
-/*	printf("%-15d|",s->address);
-	printf("%-15d|",s->value);*/
-/*	print_bin(s->address);*/
-	print_bin(s->value);
-
-	printf("\n");
-}
-
-void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
-	encoded_ptr p;
-
-
-	if (*list==NULL){
-		*list=item;
-		(*list)->next=NULL;
-		return;
-	}
-
-	p=*list;
-
-	while (p->next != NULL){
-		p=p->next;
-	}
-
-	p->next=item;
 
 }

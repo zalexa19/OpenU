@@ -408,7 +408,7 @@ void print_bin(int n){
 		printf("0");
 	}
 	while((--i)>=0) {
-		if((i-1)%4==0) {
+		if(i%4==0) {
 			printf("-");
 		}
 		printf("%c",result[i]);

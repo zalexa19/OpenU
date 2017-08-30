@@ -1,5 +1,21 @@
-08:06:07 **** Incremental Build of configuration Debug for project Maman14 ****
+08:44:15 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
+Building file: ../src/Maman14-mac.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Maman14-mac.d" -MT"src/Maman14-mac.d" -o "src/Maman14-mac.o" "../src/Maman14-mac.c"
+In file included from ../src/Maman14-mac.c:11:0:
+../src/utils.h:144:1: warning: parameter names (without types) in function declaration
+ void print_symbol_list(symbol_ptr);
+ ^~~~
+../src/Maman14-mac.c: In function ‘main’:
+../src/Maman14-mac.c:27:7: warning: unused variable ‘binary_result’ [-Wunused-variable]
+  int* binary_result;
+       ^~~~~~~~~~~~~
+../src/Maman14-mac.c:23:20: warning: unused variable ‘i’ [-Wunused-variable]
+  int ic,array_size,i;
+                    ^
+Finished building: ../src/Maman14-mac.c
+ 
 Building file: ../src/second_scan.c
 Invoking: GCC C Compiler
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/second_scan.d" -MT"src/second_scan.d" -o "src/second_scan.o" "../src/second_scan.c"
@@ -8,25 +24,38 @@ In file included from ../src/second_scan.h:11:0,
 ../src/utils.h:144:1: warning: parameter names (without types) in function declaration
  void print_symbol_list(symbol_ptr);
  ^~~~
-../src/second_scan.c:19:6: error: conflicting types for ‘second_scan’
- Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic,int** result_array,int* result_size){
-      ^~~~~~~~~~~
-In file included from ../src/second_scan.c:8:0:
-../src/second_scan.h:26:6: note: previous declaration of ‘second_scan’ was here
- Bool second_scan (bodyArray,int,symbol_ptr*,int, encoded_ptr *, int *);
-      ^~~~~~~~~~~
 ../src/second_scan.c: In function ‘second_scan’:
+../src/second_scan.c:29:13: warning: unused variable ‘found_symbol’ [-Wunused-variable]
+  symbol_ptr found_symbol;
+             ^~~~~~~~~~~~
+../src/second_scan.c:28:14: warning: unused variable ‘list’ [-Wunused-variable]
+  encoded_ptr list=*encoded_list,encoded_node;
+              ^~~~
+../src/second_scan.c:27:8: warning: unused variable ‘result_pointer’ [-Wunused-variable]
+  int * result_pointer;
+        ^~~~~~~~~~~~~~
+../src/second_scan.c:25:9: warning: unused variable ‘commands_array’ [-Wunused-variable]
+  int *  commands_array;
+         ^~~~~~~~~~~~~~
 ../src/second_scan.c:23:18: warning: unused variable ‘src’ [-Wunused-variable]
   int opcode,dest,src;
                   ^~~
 ../src/second_scan.c:23:13: warning: unused variable ‘dest’ [-Wunused-variable]
   int opcode,dest,src;
              ^~~~
+../src/second_scan.c:20:37: warning: unused variable ‘c’ [-Wunused-variable]
+  int DC,i,j, length,general_counter,c,address_helper;
+                                     ^
 ../src/second_scan.c:20:6: warning: variable ‘DC’ set but not used [-Wunused-but-set-variable]
-  int DC,i,j, length,general_counter,c;
+  int DC,i,j, length,general_counter,c,address_helper;
       ^~
-make: *** [src/second_scan.o] Error 1
-src/subdir.mk:42: recipe for target 'src/second_scan.o' failed
+Finished building: ../src/second_scan.c
+ 
+Building target: Maman14
+Invoking: GCC C Linker
+gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/output.o ./src/parser.o ./src/second_scan.o ./src/tester_functions.o ./src/utils.o ./src/validator.o   
+Finished building target: Maman14
+ 
 
-08:06:08 Build Finished (took 140ms)
+08:44:15 Build Finished (took 440ms)
 
