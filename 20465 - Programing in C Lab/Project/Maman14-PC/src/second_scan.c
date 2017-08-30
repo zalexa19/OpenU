@@ -12,32 +12,64 @@
 #define ABSOLUTE_VALUE 0
 #define EXTERNAL_VALUE 1
 #define RELLOCATABLE_VALUE 2
+#define ARRAYSIZE 200
+#define MAX_DATA_ARR_SIZE 10000
 
-Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic){
-	int IC,DC,i;
-	int result,counter;
-	int coded_array[MAXMEM];
+
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic,int** result_array,int* result_size){
+	int DC,i,j, length,general_counter,c;
+	int result,counter,data_counter;
 	body current;
 	int opcode,dest,src;
 	Operand_type op1_type,op2_type;
+	int *  commands_array;
+	int data_array[MAX_DATA_ARR_SIZE];
+	int * result_pointer;
 	Bool valid_file=TRUE;
 
 
-	IC=DC=0;
-	counter=0;
 
 
+	DC=0;
+	general_counter=data_counter=counter=0;
+
+	commands_array=(int *)allocate_mem_general(MAX_DATA_ARR_SIZE,sizeof(int));
+
+	printf("Checking labels\n");
 	/*Check if the label is valid*/
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
 		if (strlen(current.label)>0){
-			if (!search_symbol(current.label,*symbols)){ /*label is not found*/
+			if (! search_symbol(current.label,*symbols)){ /*label is not found*/
 				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
 				valid_file=FALSE;
 			}
 		}
-	}
 
+		if (strcmp(current.instruction,EXTERNAL)!=0 &&
+			strcmp(current.instruction,STR) !=0 &&
+			strcmp(current.instruction,DATA) !=0 &&
+			strcmp(current.instruction,MAT) !=0){
+			/*for everything that is not .extern*/
+			printf("working on line: %d. ",current.line_number);
+			if (get_operand_type(current.OPERAND1)==LABLE){
+				if (!search_symbol(current.OPERAND1,*symbols)){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
+					valid_file=FALSE;
+				}
+
+			}
+
+			if (get_operand_type(current.OPERAND2)==LABLE){
+				if (!search_symbol(current.OPERAND2,*symbols)){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
+					valid_file=FALSE;
+				}
+
+			}
+
+		}
+	}
 
 	if (valid_file==FALSE){
 		return FALSE;
@@ -47,33 +79,129 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
-
+		printf("current line: %d\n",current.line_number);
 		if (strlen(current.operantion)>0){
 			opcode=get_opcode(current.operantion);
-		}
-		else {
-			opcode=get_opcode(current.instruction);
-		}
 
-		if ( strcmp(current.instruction,DATA) !=0  &&  strcmp(current.instruction,MAT) !=0){
+
 			op1_type=get_operand_type(current.OPERAND1);
 			op2_type=get_operand_type(current.OPERAND2);
-			/*THis function should extract the operands for operational commands as well*/
+
+			result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
+			commands_array[counter]=result;
+			counter++;
+
+
+			/*encode operands*/
+			if (op1_type==op2_type && op1_type==REGISTER){
+				result=encode_register(current.OPERAND1,current.OPERAND2);
+
+				commands_array[counter]=result;
+				counter++;
+
+			} else {
+
+				if (op1_type != UNRECOGNIZED){
+					if(op2_type==UNRECOGNIZED){
+						result=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
+					}
+					else {
+						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
+					}
+					commands_array[counter]=result;
+					counter++;
+				}
+
+				if (op2_type!=UNRECOGNIZED){
+					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
+					commands_array[counter]=result;
+					counter++;
+				}
+
+			}
+
+
+		}
+		else {
+			printf("Entered instruction condition\n");
+
+		if ( strcmp(current.instruction,DATA) !=0  &&  strcmp(current.instruction,MAT) !=0 && strcmp(current.instruction,STR)){
+
+
+
 		}
 		else {
 			/*treat mat and data*/
-		}
-		printf("op1=%d\n",op1_type);
 
-		result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
-		coded_array[counter]=result;
-		counter++;
+			if (strcmp(current.instruction,DATA)==0){
+				length=current.data_values_number;
+
+				for(j=0;j<length;j++){
+					data_array[data_counter]=current.data_int_values[j];
+					data_counter++;
+					general_counter++;
+				}
+
+
+				printf("after inserting data values:\n");
+				for(j=0;j<general_counter;j++){
+					printf("%d",data_array[j]);
+					printf("\n");
+
+				}
+
+
+				/*convert operatn*/
+
+			}
+
+			if (strcmp(current.instruction,STR)==0){
+				length=strlen(current.OPERAND1);
+				printf(KRED"length: %d\n",length);
+
+
+				for(j=0;j<length;j++){
+					data_array[data_counter]=current.OPERAND1[j];
+					data_counter++;
+					general_counter++;
+				}
+				NORMALCOLOR
+				printf("\n");
+
+				printf("after inserting string values:\n");
+				for(j=0;j<general_counter;j++){
+					printf("%d",data_array[j]);
+					printf("\n");
+				}
+			}
+
+		}
+		}
+
+
 
 	}
 
+	result_pointer=(int*)allocate_mem_general(general_counter+counter,sizeof(int));
+	*result_size=general_counter+counter;
 
 
-		print_binary_array(coded_array,counter);
+	printf(BOLDBLUE"Combining to one array:\n");
+		c=0;
+		for (i=0;i<counter;i++){
+			(result_pointer)[i]=commands_array[i];
+			c++;
+		}
+
+
+		for (j=0;j<data_counter;j++){
+			result_pointer[c]=data_array[j];
+			c++;
+		}
+
+		NORMALCOLOR
+
+		*result_array=result_pointer;
 		printf("---End of Second Scan\n");
 		return TRUE;
 }
@@ -95,16 +223,26 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 	result=opcode;
 	result<<=WORD_SIZE-OPCODE_SIZE;
-	printf("result: ");
-	print_bin(result);
+/*	printf("opcode received: %d result: ",opcode);*/
+
+
+
 	if (opcode <4 || opcode==6 ){
 		/*src exists*/
+
+		op1_coded=op1<<OPER_SIZE*2;
+		op2_coded=op2<<OPER_SIZE;
+
+		result|=op1_coded;
+		result|=op2_coded;
+
+		printf("operand1: %d\n",op1);
+
+
 	}
 
 	else { /*opcode is4,5, or >6*/
 		/*no source for these commands*/
-
-
 
 		op1_coded=op1<<OPER_SIZE;
 
@@ -121,9 +259,9 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 
 
-
+/*
 	printf("result: ");
-	print_bin(result);
+	print_bin(result);*/
 	NORMALCOLOR
 
 	return result;
@@ -197,5 +335,75 @@ int get_opcode(String command){
 		return 15;
 	}
 	return 0;
+
+}
+
+
+int encode_register(String op1,String op2){
+	int op1_n,op2_n;
+	int result;
+
+	/*first char is r, second is num of register*/
+	op1_n=(op1[1])-'0';
+	op2_n=(op2[1])-'0';
+
+	result=0;
+
+	result=op1_n<<(WORD_SIZE-OPCODE_SIZE);
+	result|=(op2_n<<OPER_SIZE);
+	/*last two bits are 00 (because it's absolute*/
+
+
+	return result;
+}
+
+
+int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_source){
+	int result;
+
+	result=0;
+	if (type==INTERMID){
+		op+=1;
+		result=atoi(op);
+		result<<=OPER_SIZE;
+		return result;
+	}
+
+	if (type==LABLE){
+
+		result=search_symbol(op,symbols)->address;
+		result<<=OPER_SIZE;
+		result|=RELLOCATABLE_VALUE;
+		return result;
+	}
+
+	if (type==REGISTER){
+		result=(op[1])-'0';
+		if (is_source==TRUE){
+			result<<=(WORD_SIZE-OPCODE_SIZE);
+			return result;
+		}else{
+			result<<=OPER_SIZE;
+			return result;
+
+		}
+
+	}
+
+	/*MATRIX*/
+
+	return result;
+}
+
+encoded_ptr create_encoded_struct(int address,int value){
+	encoded_ptr encoded_struct;
+
+	encoded_struct=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
+
+	encoded_struct->address=address;
+	encoded_struct->value=value;
+	encoded_struct->next=NULL;
+
+	return encoded_struct;
 
 }

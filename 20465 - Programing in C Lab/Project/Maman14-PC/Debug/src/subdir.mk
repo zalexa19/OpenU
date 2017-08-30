@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/Maman14-mac.c \
 ../src/first_scan.c \
 ../src/operation_dictionary.c \
+../src/output.c \
 ../src/parser.c \
 ../src/second_scan.c \
 ../src/tester_functions.c \
@@ -17,6 +18,7 @@ OBJS += \
 ./src/Maman14-mac.o \
 ./src/first_scan.o \
 ./src/operation_dictionary.o \
+./src/output.o \
 ./src/parser.o \
 ./src/second_scan.o \
 ./src/tester_functions.o \
@@ -27,6 +29,7 @@ C_DEPS += \
 ./src/Maman14-mac.d \
 ./src/first_scan.d \
 ./src/operation_dictionary.d \
+./src/output.d \
 ./src/parser.d \
 ./src/second_scan.d \
 ./src/tester_functions.d \

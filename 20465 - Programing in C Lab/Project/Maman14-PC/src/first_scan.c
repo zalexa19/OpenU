@@ -202,7 +202,6 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 int calc_new_ic(body item){
 	int n;
 
-	printf("calulating IC\n");
 	n=0;
 
 	if (strlen(item.operantion)==0){
@@ -213,11 +212,16 @@ int calc_new_ic(body item){
 		return n; /*if we're mat,string,data,entry*/
 	}
 
-	n++;/*for the command itsef*/
+
+	n++;
+	/*for the command itsef*/
 	if (strlen(item.OPERAND1)>0){
 		n++;
 	}
 	if (strlen(item.OPERAND2)>0){
+		if (get_operand_type(item.OPERAND1)==REGISTER && get_operand_type(item.OPERAND2)==REGISTER){
+			return n;
+		}
 		n++;
 	}
 
@@ -265,6 +269,10 @@ void update_data_addresses(symbol_ptr* symbols,int IC){
 /*printf("IC: %d\n");*/
 
 	current=*symbols;
+
+	if (current==NULL){
+		return;
+	}
 	while (current->next != NULL){
 		if (current->command_type==instructional && current->declaration_type==internal){
 			current->address=current->address+IC;

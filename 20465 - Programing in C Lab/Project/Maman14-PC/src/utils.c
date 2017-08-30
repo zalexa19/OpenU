@@ -387,6 +387,7 @@ void print_symbol_list(symbol_ptr head){
 void print_bin(int n){
 	char result[32];
 	int i = 0;
+	int j = 0;
 
 	if(n==0) {
 		printf("0\n");
@@ -402,7 +403,14 @@ void print_bin(int n){
 	    n >>= 1;
 	}
 
+	/* leading zeros */
+	for(j=10; j>i; j--) {
+		printf("0");
+	}
 	while((--i)>=0) {
+		if((i-1)%4==0) {
+			printf("-");
+		}
 		printf("%c",result[i]);
 	}
 	printf("\n");
@@ -418,6 +426,9 @@ void print_binary_array(int array[], int size){
 	printf("\n-----------------------------------------------");
 	printf("-----------------------------------------------\n");
 	NORMALCOLOR
+
+
+
 
 	for (i=0;i<size;i++){
 		print_bin(array[i]);

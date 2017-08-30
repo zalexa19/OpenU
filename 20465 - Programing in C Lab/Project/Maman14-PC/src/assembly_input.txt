@@ -1,3 +1,5 @@
+END: inc LOOP
 LOOP: jmp END
-MAIN: jmp LOL
+STR: .string "abcdef"
+Length: .data 6,9,15
 

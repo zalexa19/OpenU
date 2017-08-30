@@ -153,9 +153,10 @@ void validate_file(bodyArray parsed, int array_size){
 		}
 
 
-
 		/*end of operation validation*/
 		}
+
+		parsed[counter] = item;
 
 		printf("finished validating file\n");
 
@@ -342,7 +343,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 
 
 	/*If we reached here, it means that we have valid numbers*/
-	if((item->data_int_values=(int*)malloc(sizeof(int)*num_of_operands)) == NULL){
+	if((item->data_int_values=(int*)malloc(sizeof(int)*item->data_values_number)) == NULL){
 		fprintf(stderr,"Unable to allocate memory to data_int_values. Continuing\n");
 	}
 
@@ -352,7 +353,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 /*		printf("current cell: %s, extracted number: %d\n",item->data_string_array[counter],item->data_int_values[counter]);*/
 	}
 
-	free(item->data_string_array);
+/*	free(item->data_string_array);*/
 
 
 	/*validate other*/
@@ -1057,7 +1058,7 @@ Operand_type get_operand_type (String operand){
 	int i;
 
 
-	printf(BOLDCYAN "Checking for: <%s>\n",operand);
+	printf(KCYN "Checking label: <%s>\n",operand);
 	NORMALCOLOR
 
 	i=0;
@@ -1069,9 +1070,7 @@ Operand_type get_operand_type (String operand){
 
 	}
 
-	if ((validate_label(operand)->VALID_LABEL)==TRUE){
-		return LABLE;
-	}
+
 
 /*	if ((validate_ins_mat(operand))==TRUE){
 		return MATRIX;
@@ -1081,6 +1080,9 @@ Operand_type get_operand_type (String operand){
 		return REGISTER;
 	}
 
+	if ((validate_label(operand)->VALID_LABEL)==TRUE){
+		return LABLE;
+	}
 
 	return UNRECOGNIZED;
 

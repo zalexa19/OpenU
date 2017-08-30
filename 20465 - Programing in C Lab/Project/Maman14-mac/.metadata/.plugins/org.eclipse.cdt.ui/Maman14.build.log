@@ -1,4 +1,4 @@
-03:54:28 **** Incremental Build of configuration Debug for project Maman14 ****
+08:06:07 **** Incremental Build of configuration Debug for project Maman14 ****
 make all 
 Building file: ../src/second_scan.c
 Invoking: GCC C Compiler
@@ -8,27 +8,25 @@ In file included from ../src/second_scan.h:11:0,
 ../src/utils.h:144:1: warning: parameter names (without types) in function declaration
  void print_symbol_list(symbol_ptr);
  ^~~~
+../src/second_scan.c:19:6: error: conflicting types for ‘second_scan’
+ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic,int** result_array,int* result_size){
+      ^~~~~~~~~~~
+In file included from ../src/second_scan.c:8:0:
+../src/second_scan.h:26:6: note: previous declaration of ‘second_scan’ was here
+ Bool second_scan (bodyArray,int,symbol_ptr*,int, encoded_ptr *, int *);
+      ^~~~~~~~~~~
 ../src/second_scan.c: In function ‘second_scan’:
-../src/second_scan.c:21:18: warning: unused variable ‘src’ [-Wunused-variable]
+../src/second_scan.c:23:18: warning: unused variable ‘src’ [-Wunused-variable]
   int opcode,dest,src;
                   ^~~
-../src/second_scan.c:21:13: warning: unused variable ‘dest’ [-Wunused-variable]
+../src/second_scan.c:23:13: warning: unused variable ‘dest’ [-Wunused-variable]
   int opcode,dest,src;
              ^~~~
-../src/second_scan.c:17:6: warning: variable ‘IC’ set but not used [-Wunused-but-set-variable]
-  int IC,DC,i;
+../src/second_scan.c:20:6: warning: variable ‘DC’ set but not used [-Wunused-but-set-variable]
+  int DC,i,j, length,general_counter,c;
       ^~
-../src/second_scan.c: In function ‘code_command_line’:
-../src/second_scan.c:91:16: warning: unused variable ‘op2_coded’ [-Wunused-variable]
-  int op1_coded,op2_coded;
-                ^~~~~~~~~
-Finished building: ../src/second_scan.c
- 
-Building target: Maman14
-Invoking: GCC C Linker
-gcc  -o "Maman14"  ./src/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./src/Maman14-mac.o ./src/first_scan.o ./src/operation_dictionary.o ./src/parser.o ./src/second_scan.o ./src/tester_functions.o ./src/utils.o ./src/validator.o   
-Finished building target: Maman14
- 
+make: *** [src/second_scan.o] Error 1
+src/subdir.mk:42: recipe for target 'src/second_scan.o' failed
 
-03:54:28 Build Finished (took 249ms)
+08:06:08 Build Finished (took 140ms)
 

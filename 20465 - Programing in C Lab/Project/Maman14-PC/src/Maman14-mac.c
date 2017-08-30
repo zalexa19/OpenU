@@ -14,24 +14,24 @@
 #include "first_scan.h"
 #include "second_scan.h"
 
-#define ARRAYSIZE 200
 
 
 int main(void) {
 
 	FILE * input_file;
 	bodyArray parsed;
-	int ic;
+	int ic,array_size,i;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
 	symbol_ptr symbols=NULL;
+	int* binary_result;
+	encoded_ptr encoded_list_head;
 
 
 
 	/*END OF DECLERATIONS*/
 	ic=0;
 	create_operation_info_array();
-
 /*	operation_info op = get_operation_info("add");*/
 
 	if (!(input_file = fopen("assembly_input.txt","r"))){
@@ -76,6 +76,7 @@ int main(void) {
 		/*update the addresses of the .mat, .string .data*/
 		printf("current IC (main): %d\n",ic);
 
+
 		update_data_addresses(&symbols,ic);
 
 
@@ -84,12 +85,19 @@ int main(void) {
 		printf(KGREEN "Entering second scan\n");
 		NORMALCOLOR
 
-		if (second_scan(parsed,parsed_size,&symbols,ic)==FALSE ){
+		if (second_scan(parsed,parsed_size,&symbols,ic,&encoded_list_head,&array_size)==FALSE ){
 			fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
 			NORMALCOLOR
 		}
 		else {
 			/*generate files*/
+			/*printf("result in main:\n");
+			print_binary_array(binary_result,array_size);*/
+
+
+			/*prints the coded array*/
+			print_binary_array(binary_result,array_size);
+
 		}
 
 	}
