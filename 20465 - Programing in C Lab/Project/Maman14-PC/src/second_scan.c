@@ -52,12 +52,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 			}
 		}
 
-		if (strcmp(current.instruction,EXTERNAL)!=0 &&
+		if (strcmp(current.instruction,EXTERN)!=0 &&
 			strcmp(current.instruction,STR) !=0 &&
 			strcmp(current.instruction,DATA) !=0 &&
 			strcmp(current.instruction,MAT) !=0){
 			/*for everything that is not .extern*/
-			printf("working on line: %d. ",current.line_number);
 			if (get_operand_type(current.OPERAND1)==LABLE){
 				if (!search_symbol(current.OPERAND1,*symbols)){ /*label is not found*/
 					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
@@ -147,13 +146,17 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 		else {
 			printf("Entered instruction condition\n");
 
-		if ( strcmp(current.instruction,DATA) !=0  &&  strcmp(current.instruction,MAT) !=0 && strcmp(current.instruction,STR)){
+			if (strcmp(current.instruction,ENTRY)==0 ) {
 
+				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
 
+			}
 
-		}
-		else {
-			/*treat mat and data*/
+			if (strcmp(current.instruction,EXTERN)){
+
+			}
+
+				/*treat mat and data*/
 
 			if (strcmp(current.instruction,DATA)==0){
 				length=current.data_values_number;
@@ -196,7 +199,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 				}*/
 			}
 
-		}
+
 		}
 
 
@@ -372,6 +375,8 @@ int encode_register(String op1,String op2){
 
 int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_source){
 	int result;
+	symbol_ptr symbol_found;
+
 
 	result=0;
 	if (type==INTERMID){
@@ -383,7 +388,13 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 
 	if (type==LABLE){
 
-		result=search_symbol(op,symbols)->address;
+		symbol_found=search_symbol(op,symbols);
+		if ((symbol_found->declared_as)==external){
+			result=EXTERNAL_VALUE;
+			return result;
+		}
+
+		result=symbol_found->address;
 		result<<=OPER_SIZE;
 		result|=RELLOCATABLE_VALUE;
 		return result;

@@ -29,8 +29,9 @@ typedef struct symbol* symbol_ptr;
 typedef struct symbol{
 	String name;
 	label_type command_type;
-	declared declaration_type;
+	declared declared_as;
 	int address;
+	Bool is_entry;
 	symbol_ptr next;
 }symbol;
 

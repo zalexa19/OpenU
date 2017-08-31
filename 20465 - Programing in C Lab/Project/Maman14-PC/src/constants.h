@@ -14,7 +14,7 @@
 #define MAT "mat"
 #define ENTRY "entry"
 #define NONE NOMATCH
-#define EXTERNAL "extern"
+#define EXTERN "extern"
 
 #define MOV "mov"
 #define CMP "cmp"

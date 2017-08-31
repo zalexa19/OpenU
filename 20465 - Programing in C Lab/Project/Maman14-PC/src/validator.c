@@ -939,7 +939,7 @@ Bool is_instructional_command(String str){
 	if (strcmp(str,ENTRY)==0){
 		return TRUE;
 	}
-	if (strcmp(str,EXTERNAL)==0){
+	if (strcmp(str,EXTERN)==0){
 		return TRUE;
 	}
 

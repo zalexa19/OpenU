@@ -338,7 +338,7 @@ void print_symbol_list(symbol_ptr head){
 		}else {
 			printf("%-15s|","unknown");
 		}
-		if (pointer->declaration_type == internal){
+		if (pointer->declared_as == internal){
 			printf("%-15s|","internal");
 		}
 		else {
@@ -364,7 +364,7 @@ void print_symbol_list(symbol_ptr head){
 		}else {
 			printf("%-15s|","unknown");
 		}
-		if (pointer->declaration_type == internal){
+		if (pointer->declared_as == internal){
 			printf("%-15s|","internal");
 		}
 		else {

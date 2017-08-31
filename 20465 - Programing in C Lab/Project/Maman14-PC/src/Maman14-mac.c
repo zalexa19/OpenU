@@ -113,6 +113,7 @@ int main(int argc, char** argv) {
 				printf("starting to write to file\n");
 
 				create_obj_file(encoded_list_head,obj_file_name,IC,DC);
+				create_entry_file(symbols,obj_file_name);
 
 			}
 

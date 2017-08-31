@@ -16,7 +16,7 @@
 
 void create_obj_file(encoded_ptr encoded_list,String file_name, int, int);
 
-void_create_entry_file(encoded_ptr symbols);
+void_create_entry_file(symbol_ptr symbols,String file_name);
 
 
 void create_extern_file(encoded_ptr symbols);

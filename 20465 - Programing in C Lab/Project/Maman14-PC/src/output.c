@@ -24,7 +24,6 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 
 	full_name=allocate_mem_string(MAXMEM);
 	strcpy(full_name,file_name);
-
 	strcat(full_name,".ob");
 	printf(BOLDBLUE"file name: %s\n",full_name);
 
@@ -53,13 +52,49 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	}
 
 
-
-
+	printf("finished creating obj\n");
+	fclose(file);
 }
 
 
-void_create_entry_file(encoded_ptr symbols){
+void create_entry_file(symbol_ptr symbols,String file_name){
+	FILE * file=NULL;
+	String full_name;
+	symbol_ptr pointer;
 
+
+	full_name=allocate_mem_string(MAXMEM);
+	strcpy(full_name,file_name);
+	strcat(full_name,".ent");
+
+	printf(KMAGENTA "strcat - passed\n");
+
+	printf("File opened-passed\n");
+
+	pointer=symbols;
+	while (pointer != NULL){
+		printf("Trying to access pointer\n");
+		printf("pointer: %s\n",pointer->name);
+
+		if((pointer->is_entry)==TRUE){
+			if(file == NULL) {
+				if (!(file = fopen(full_name,"w"))){
+					fprintf(stderr, "unable to find file: %s\n",file_name);
+					exit(1);
+				}
+			}
+			fprintf(file,"%s \t %s\n",pointer->name,convert_to_base4((pointer->address)+INITIAL_ADDRESS,0));
+			printf("FOund entry\n");
+
+		}
+		pointer=pointer->next;
+	}
+
+	printf("finished creating ent\n");
+
+	if(file!=NULL) {
+		fclose(file);
+	}
 }
 
 void create_extern_file(encoded_ptr symbols){
@@ -111,46 +146,4 @@ String convert_to_base4(unsigned int number, int length){
 
 	return result;
 }
-
-/*String convert_to_base4_sums(unsigned int number){
-	int BASE = 4;
-	int i,j;
-	char temp;
-	int temp_n;
-
-	char digits[] = {'A','B','C','D'};
-	int n_digits;
-	String result;
-
-	calculate how binary size
-	n_digits=0;
-	temp_n=number;
-
-	while (temp_n>0){
-		temp_n/=4;
-		n_digits++;
-	}
-
-
-	result=allocate_mem_string(n_digits);
-
-	printf("binary size: %d, for number:%d ,",n_digits,number);
-	 encode
-	i = 0;
-	while (number > 0 ) {
-		result[i++] = digits[number % BASE];
-		number/=4;
-	}
-
-
-	 reverse array
-	i--;
-	for(j=0; j<i; j++,i--) {
-		temp = result[j];
-		result[j]=result[i];
-		result[i] = temp;
-	}
-
-	return result;
-}*/
 

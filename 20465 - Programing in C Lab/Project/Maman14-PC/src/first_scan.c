@@ -19,6 +19,7 @@
 symbol_ptr search_symbol (String key, symbol_ptr list){
 	symbol_ptr current_pointer=list;
 
+	printf("searching symbol (search_symbol)\n");
 	if (!list){
 		return NULL;
 	}
@@ -59,7 +60,7 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 
 			if (search_symbol(current.label,*symbols_list_head) != NULL){
 
-				if (search_symbol(current.label,*symbols_list_head)->declaration_type ==external){
+				if (search_symbol(current.label,*symbols_list_head)->declared_as ==external){
 					sprintf(error,KBLUE"Error is line %d: label %s was declared as .extern and declared in this file.\n",current.line_number, current.label);
 					add_to_list(&errors_list,error);
 				}
@@ -88,7 +89,7 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 
 		}
 		/*Label was not recieved*/
-		else if (strcmp(current.instruction,EXTERNAL)==0){
+		else if (strcmp(current.instruction,EXTERN)==0){
 			current_symbol=create_symbol(current,*IC,*DC); /*create new symbol*/
 			add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
 
@@ -132,21 +133,22 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 			strcmp(item.instruction,"mat")==0||
 			strcmp(item.instruction,"string")==0){
 			sym->address=dc;
-			sym->declaration_type=internal;
+			sym->declared_as=internal;
 			sym->command_type=instructional;
 		}
 
 		if (strcmp(item.instruction,"extern")==0){
 			sym->name=item.OPERAND1;
 			sym->address=0;
-			sym->declaration_type=external;
+			sym->declared_as=external;
 			sym->command_type=unknown;
 		}
+
 	}
 	else{
 		/*Operational Command*/
 		sym->address=ic;
-		sym->declaration_type=internal;
+		sym->declared_as=internal;
 		sym->command_type=operational;
 
 	}
@@ -202,7 +204,7 @@ int calc_new_ic(body item){
 
 	if (strlen(item.operantion)==0){
 		/*dealing with instruction*/
-		if (strcmp(item.instruction,EXTERNAL)==0){
+		if (strcmp(item.instruction,EXTERN)==0){
 			return n;
 		}
 		return n; /*if we're mat,string,data,entry*/
@@ -270,13 +272,13 @@ void update_data_addresses(symbol_ptr* symbols,int IC){
 		return;
 	}
 	while (current->next != NULL){
-		if (current->command_type==instructional && current->declaration_type==internal){
+		if (current->command_type==instructional && current->declared_as==internal){
 			current->address=current->address+IC;
 		}
 		current=current->next;
 	}
 
-	if (current->command_type==instructional && current->declaration_type==internal){
+	if (current->command_type==instructional && current->declared_as==internal){
 		current->address=current->address+IC;
 	}
 
