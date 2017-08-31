@@ -1,3 +1,2 @@
 clear
-make && ./application
-
+make && ./application assembly_input

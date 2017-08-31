@@ -16,11 +16,12 @@
 #include "output.h"
 
 
-int main(void) {
+int main(int argc, char** argv) {
 
 	FILE * input_file;
+	String file_name;
 	bodyArray parsed;
-	int ic,array_size,i;
+	int IC,DC,array_size,i,j;
 	int parsed_size=-1;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
 	symbol_ptr symbols=NULL;
@@ -31,76 +32,95 @@ int main(void) {
 
 
 	/*END OF DECLERATIONS*/
-	ic=0;
+
+	DC=IC=0;
 	create_operation_info_array();
 
 
-	if (!(input_file = fopen("assembly_input.txt","r"))){
-		fprintf(stderr, "unable to find assembly file");
-		exit(0);
+	if (argc==1){
+		fprintf(stderr, "File name was not received.\n");
 	}
 
 
-	parsed=(bodyArray)parse_file(input_file, &parsed_size,&number_of_lines);
-	fclose(input_file);
+	for (j=1;j<argc;j++){
+
+		file_name=allocate_mem_string(strlen(argv[j]+3));
+		file_name=argv[j];
+		strcpy(file_name,argv[j]);
+		strcat(file_name,AS);
 
 
 
-	print_structs(parsed,parsed_size);
-	NORMALCOLOR
+		obj_file_name=allocate_mem_string(strlen(argv[j]));
+		strcpy(obj_file_name,file_name);
 
 
-	validate_file(parsed,parsed_size);
-	printf("invoking first scan\n\n");
-	if (!first_scan(parsed,parsed_size,&symbols,&ic)){
-		fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
-		NORMALCOLOR
-	}
-	else
-	{
-		/*update the addresses of the .mat, .string .data*/
-		printf("current IC (main): %d\n",ic);
+		printf("argv[%d]: %s\n",j,argv[j]);
+		if (!(input_file = fopen(file_name,"r"))){
+			fprintf(stderr, "unable to find assembly file");
+			exit(0);
+		}
 
 
-		update_data_addresses(&symbols,ic);
-		print_symbol_list(symbols);
+		parsed=(bodyArray)parse_file(input_file, &parsed_size,&number_of_lines);
+		fclose(input_file);
 
 
 
-
-		printf(KGREEN "Entering second scan\n");
+		print_structs(parsed,parsed_size);
 		NORMALCOLOR
 
-		if (second_scan(parsed,parsed_size,&symbols,ic,&encoded_list_head,&array_size)==FALSE ){
-			fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
+
+		validate_file(parsed,parsed_size);
+		printf("invoking first scan\n\n");
+		if (!first_scan(parsed,parsed_size,&symbols,&IC,&DC)){
+			fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
 			NORMALCOLOR
 		}
-		else {
-			/*generate files*/
-			/*printf("result in main:\n");
-			print_binary_array(binary_result,array_size);*/
+		else
+		{
+			/*update the addresses of the .mat, .string .data*/
+			printf("current DC (main): %d\n",DC);
 
 
-			/*prints the coded array*/
-
-/*			print_encoded_struct(encoded_list_head);*/
-/*			print_binary_array(binary_result,array_size);*/
+			update_data_addresses(&symbols,IC);
+			print_symbol_list(symbols);
 
 
 
-			/*Create obj file*/
-			printf("starting to write to file\n");
-			obj_file_name=allocate_mem_string(5);
-			obj_file_name="alex";
-			create_obj_file(encoded_list_head,obj_file_name);
+
+			printf(KGREEN "Entering second scan\n");
+			NORMALCOLOR
+
+			if (second_scan(parsed,parsed_size,&symbols,IC,&encoded_list_head,&array_size)==FALSE ){
+				fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
+				NORMALCOLOR
+			}
+			else {
+				/*generate files*/
+				/*printf("result in main:\n");
+				print_binary_array(binary_result,array_size);*/
+
+
+				/*prints the coded array*/
+
+	/*			print_encoded_struct(encoded_list_head);*/
+	/*			print_binary_array(binary_result,array_size);*/
+
+
+
+				/*Create obj file*/
+				printf("starting to write to file\n");
+
+				create_obj_file(encoded_list_head,obj_file_name,IC,DC);
+
+			}
 
 		}
-
 	}
 
-
 	printf("\n\n---===doei!===---\n");
-	return EXIT_SUCCESS;
+	return 0;
 }
 
 

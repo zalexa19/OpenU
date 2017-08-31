@@ -40,8 +40,7 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 }
 
 
-Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC){
-	int DC;
+Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC){
 	int item_counter;
 	body current;
 	char error[MAXERRORSIZE];
@@ -49,8 +48,6 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 	list_item_reference errors_list=NULL;
 	Bool valid_file=TRUE;
 
-
-	*IC=DC=0;
 
 
 	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
@@ -81,10 +78,10 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 			}
 
 			else {
-				current_symbol=create_symbol(current,*IC,DC); /*create new symbol*/
+				current_symbol=create_symbol(current,*IC,*DC); /*create new symbol*/
 				add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
 				*IC+=calc_new_ic(current);/*advance ic*/
-				DC+=calc_new_dc(current);/*advance dc*/
+				*DC+=calc_new_dc(current);/*advance dc*/
 
 			}
 
@@ -92,7 +89,7 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 		}
 		/*Label was not recieved*/
 		else if (strcmp(current.instruction,EXTERNAL)==0){
-			current_symbol=create_symbol(current,*IC,DC); /*create new symbol*/
+			current_symbol=create_symbol(current,*IC,*DC); /*create new symbol*/
 			add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
 
 		}
@@ -109,7 +106,6 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 
 
 
-	printf("current DC:%d\ncurrent IC: %d\n",DC,*IC);
 
 	NORMALCOLOR
 	print_list(errors_list);

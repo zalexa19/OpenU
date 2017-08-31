@@ -17,7 +17,6 @@ typedef struct encoded* encoded_ptr;
 typedef struct encoded{
 	int address;
 	int value;
-	char base4[5];
 	encoded_ptr next;
 
 }encoded;

@@ -45,7 +45,7 @@ typedef struct symbol{
 
 
 
-Bool first_scan(bodyArray items, int, symbol_ptr*, int *);
+Bool first_scan(bodyArray items, int, symbol_ptr*, int*, int*);
 
 
 

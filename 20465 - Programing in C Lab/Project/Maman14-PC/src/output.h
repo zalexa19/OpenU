@@ -10,9 +10,11 @@
 #include "utils.h"
 #include "second_scan.h"
 
+#define AS ".txt"
 
 
-void create_obj_file(encoded_ptr encoded_list,String file_name);
+
+void create_obj_file(encoded_ptr encoded_list,String file_name, int, int);
 
 void_create_entry_file(encoded_ptr symbols);
 
@@ -20,6 +22,6 @@ void_create_entry_file(encoded_ptr symbols);
 void create_extern_file(encoded_ptr symbols);
 
 String convert_to_base4(unsigned int, int);
-
+/*String convert_to_base4_sums(unsigned int number);*/
 
 #endif /* OUTPUT_H_ */
