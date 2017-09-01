@@ -19,18 +19,17 @@
 int main(int argc, char** argv) {
 
 	FILE * input_file;
-	int external_labels_size;
 	String file_name;
 	bodyArray parsed;
-	int IC,DC,array_size,i,j;
-	int parsed_size=-1;
+	int IC,DC,array_size,j;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
-	symbol_ptr symbols=NULL;
-	int* binary_result;
 	encoded_ptr encoded_list_head;
 	String obj_file_name;
 	external_labels_ptr external_labels_list;
-	String * external_labels;
+
+	int parsed_size=-1;
+	symbol_ptr symbols=NULL;
+
 
 
 
@@ -38,9 +37,8 @@ int main(int argc, char** argv) {
 
 	DC=IC=0;
 	create_operation_info_array();
-	external_labels=(String*)allocate_mem_general(MAXMEM,sizeof(String));
-	external_labels_size=0;
 	external_labels_list=NULL;
+
 	if (argc==1){
 		fprintf(stderr, "File name was not received.\n");
 	}
@@ -54,7 +52,6 @@ int main(int argc, char** argv) {
 		strcat(file_name,AS);
 
 
-
 		obj_file_name=allocate_mem_string(strlen(argv[j]));
 		strcpy(obj_file_name,file_name);
 
@@ -65,18 +62,14 @@ int main(int argc, char** argv) {
 		}
 
 
-		parsed=(bodyArray)parse_file(input_file, &parsed_size,&number_of_lines);
+		parsed=parse_file(input_file, &parsed_size,&number_of_lines);
 		fclose(input_file);
 
 
 
-		print_structs(parsed,parsed_size);
-		NORMALCOLOR
-
-
 		validate_file(parsed,parsed_size);
 		printf("invoking first scan\n\n");
-		if (!first_scan(parsed,parsed_size,&symbols,&IC,&DC,&external_labels_list,&external_labels_size)){
+		if (!first_scan(parsed,parsed_size,&symbols,&IC,&DC,&external_labels_list)){
 			fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
 			NORMALCOLOR
 		}
@@ -101,7 +94,6 @@ int main(int argc, char** argv) {
 				NORMALCOLOR
 			}
 			else {
-				int k;
 				external_labels_ptr p;
 
 
@@ -119,13 +111,16 @@ int main(int argc, char** argv) {
 
 
 
-				create_extern_file(symbols,obj_file_name,external_labels_list,external_labels_size);
+				create_extern_file(symbols,obj_file_name,external_labels_list);
 
 			}
 
 		}
 	}
-
+	NORMALCOLOR
+	printf("structs size %d\n",parsed_size);
+	print_structs(parsed,parsed_size);
+	NORMALCOLOR
 	printf("\n\n---===doei!===---\n");
 	return 0;
 }

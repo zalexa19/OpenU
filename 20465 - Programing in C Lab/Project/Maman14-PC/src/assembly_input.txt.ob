@@ -1,18 +1,12 @@
-bd 	 cc
+ba 	 bd
 
 bcba 	 dddda
-bcbb 	 dddda
+bcbb 	 aabba
 bcbc 	 aaaab
-bcbd 	 cbaba
-bcca 	 aaaab
-bccb 	 cbaba
-bccc 	 aaaab
-bccd 	 abcab
-bcda 	 abcac
-bcdb 	 abcad
-bcdc 	 abcba
-bcdd 	 abcbb
-bdaa 	 abcbc
-bdab 	 aaabc
-bdac 	 aaacb
-bdad 	 aaadd
+bcbd 	 aaaab
+bcca 	 abcab
+bccb 	 abcac
+bccc 	 abcad
+bccd 	 abcba
+bcda 	 abcbb
+bcdb 	 abcbc

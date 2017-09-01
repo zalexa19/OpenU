@@ -61,6 +61,29 @@ int increase_mem_struct (int size,bodyArray array){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void print_structs(bodyArray array, int size){
 	int i;
 	char tmp[15];
@@ -84,6 +107,7 @@ void print_structs(bodyArray array, int size){
 
 
 	for (i=0;i<size;i++){
+		printf(KYELLOW);
 		/*Line number*/
 		printf("%d    ",array[i].line_number);
 
@@ -98,49 +122,72 @@ void print_structs(bodyArray array, int size){
 
 
 
-		if ((strcmp(array[i].instruction,"\0") ) !=0){
+/*		if ((strcmp(array[i].instruction,"\0") ) !=0){
 
-		}
+		}*/
 		strcpy(tmp,array[i].instruction);
 		add_spaces_print(tmp);
 		printf("%s",tmp);
 
-		if (strcmp(array[i].instruction,"data")==0 || strcmp(array[i].instruction,"mat")==0){
-			print_mat(array[i].data_string_array,array[i].data_values_number);
 
-		}else printf("               ");
-
-			/*OPERATION*/
-		if ((strcmp(array[i].operantion,"\0") ) !=0){
-			strcpy(tmp,array[i].operantion);
+		if (strcmp(array[i].instruction,"mat")==0){
+			strcpy(tmp,array[i].OPERAND1);
 			add_spaces_print(tmp);
 			printf("%s",tmp);
-		}else printf("               ");
+
+			print_mat(array[i].data_string_array,array[i].data_values_number);
+
+/*
+			if (strlen(array[i].data_string_array)>0){
+				print_mat(array[i].data_string_array,array[i].data_values_number);
+			}*/
+
+			printf("\n");
+
+		}
+		else {
 
 
-		if (strcmp(array[i].instruction,"data")!=0){
+			if (strcmp(array[i].instruction,"data")==0){
+				print_mat(array[i].data_string_array,array[i].data_values_number);
 
-			if ((strcmp(array[i].OPERAND1,"\0") ) !=0)
-			{
-					strcpy(tmp,array[i].OPERAND1);
-					add_spaces_print(tmp);
-					printf("%s",tmp);
+			}else printf("               ");
+
+				/*OPERATION*/
+			if ((strcmp(array[i].operantion,"\0") ) !=0){
+				strcpy(tmp,array[i].operantion);
+				add_spaces_print(tmp);
+				printf("%s",tmp);
 			}else printf("               ");
 
 
-			if ((strcmp(array[i].OPERAND2,"\0")) !=0){
-					strcpy(tmp,array[i].OPERAND2);
-					add_spaces_print(tmp);
-					printf("%s",tmp);
-				}else printf("               ");
+			if (strcmp(array[i].instruction,"data")!=0){
 
-			if ((strcmp(array[i].leftovers,"\0")) !=0){
-					strcpy(tmp,array[i].leftovers);
-					add_spaces_print(tmp);
-					printf("%s",tmp);
+				if ((strcmp(array[i].OPERAND1,"\0") ) !=0)
+				{
+						strcpy(tmp,array[i].OPERAND1);
+						add_spaces_print(tmp);
+						printf("%s",tmp);
 				}else printf("               ");
 
 
+
+
+
+				if ((strcmp(array[i].OPERAND2,"\0")) !=0){
+						strcpy(tmp,array[i].OPERAND2);
+						add_spaces_print(tmp);
+						printf("%s",tmp);
+					}else printf("               ");
+
+				if ((strcmp(array[i].leftovers,"\0")) !=0){
+						strcpy(tmp,array[i].leftovers);
+						add_spaces_print(tmp);
+						printf("%s",tmp);
+					}else printf("               ");
+
+
+			}
 		}
 		printf("\n");
 	}

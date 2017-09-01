@@ -42,13 +42,12 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 	parsed_file=allocate_mem_struct(INITIAL_SARRAY_SIZE);
 	cell_counter=0;
 
-
+	printf(BOLDYELLOW"PARSING FILE\n");
+	NORMALCOLOR
 	while (  (fgets(line,MAXMEM,file)) != NULL){
 		*n_lines+=1;
 
 		if (check_empty_line(line)==FALSE && line[0]!=';'){
-/*			printf("______________________________________________\n");
-			printf("Working on line: [%s\n",line);*/
 
 			parsed_file[cell_counter] = parse_line(line,*n_lines);
 			cell_counter++;
@@ -197,10 +196,11 @@ body parse_line(String str, int line_number){
 	}
 	else if (strcmp(result.instruction,"mat")==0){
 
-		printf("current pointer, extracting mat: <%s>\n",current_pointer);
+		printf(KMAGENTA"current pointer, extracting mat: <%s>\n",current_pointer);
 		extracted_value=parse_mat(current_pointer);
 		extracted_value_length=strlen(extracted_value)+1;
 
+		/*EXTRACT OPERAND1*/
 		result.OPERAND1=allocate_mem_string(extracted_value_length);
 		strcpy(result.OPERAND1,extracted_value);
 		current_pointer+=extracted_value_length;
@@ -209,9 +209,11 @@ body parse_line(String str, int line_number){
 		current_pointer+=spaces;
 		REALLOCATE_EXTRACTED_VALUE;
 
+/*		printf("extracted values from OP1: <%s>\n",result.OPERAND1);*/
 
-		printf("extracted matrix: <%s>\n",result.OPERAND1);
-		/*extract operands*/
+		/*EXTRACT OPERAND2*/
+/*		printf(KMAGENTA"current pointer, before extracting OP2: <%s>\n",current_pointer);*/
+
 		/*Count number of operands*/
 		i=0;
 		while(current_pointer[i]!='\0'){
@@ -226,14 +228,9 @@ body parse_line(String str, int line_number){
 
 
 		result.data_values_number=data_array_size;
+		result.data_string_array=(String*)allocate_mem_general(data_array_size+1,sizeof(String));
 
-		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size+1);
-
-		if (result.data_string_array != NULL){
-			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
-		}else {
-			fprintf(stderr,"Unable to allocate memory to a matrix\nMoving on..\n");
-		}
+		result.data_string_array=extract_data_strings(current_pointer,data_array_size);
 
 		current_pointer+=(data_array_size+i);
 
@@ -242,6 +239,9 @@ body parse_line(String str, int line_number){
 		result.leftovers=allocate_mem_string(extracted_value_length);
 		strcpy(result.leftovers,current_pointer);
 
+/*		printf(BOLDMAGENTA"extracted matrix:\n");
+		print_mat(result.data_string_array,data_array_size);
+		NORMALCOLOR*/
 	}
 
 	else {
@@ -351,7 +351,7 @@ String parse_mat (String str){
 	c=str[i];
 	length=strlen(str);
 
-	while (i<length && brack_counter <MAXBRACKETS){
+	while (i<length && c!=' ' && c!='\t'){
 		if (c==']'){
 			brack_counter++;
 		}

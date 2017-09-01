@@ -41,7 +41,7 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 }
 
 
-Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC,external_labels_ptr* external_labels,int * external_labels_size){
+Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC,external_labels_ptr* external_labels){
 	int item_counter;
 	body current;
 	char error[MAXERRORSIZE];

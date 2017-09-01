@@ -25,6 +25,14 @@ typedef struct label_status{
 	Bool VALID_LABEL;
 }label_status;
 
+typedef struct mat_status_report * mat_status_report_ref;
+typedef struct mat_status_report{
+	Bool missing_op1;
+	Bool inv_n_brackets;
+	Bool inv_char_in_brackets;
+	Bool inv_n_of_data;
+	Bool valid_mat;
+}mat_status_report;
 
 
 
@@ -51,7 +59,7 @@ void validate_ins_data (body* item, list_item_reference *);
 void validate_ins_string (body* item, list_item_reference*  head);
 
 /*void validate_ins_mat(body* item, list_item_reference*  head);*/
-Bool validate_ins_mat(String str);
+mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head);
 
 void validate_ins_entry(body* item, list_item_reference*  head, char *);
 

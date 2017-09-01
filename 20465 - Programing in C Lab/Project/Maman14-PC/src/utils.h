@@ -66,6 +66,22 @@ typedef enum {
 
 
 
+typedef enum{
+	instructional=0,
+	operational=1,
+	unknown=2
+}label_type;
+
+typedef enum{
+	internal=0,
+	external=1
+}declared;
+
+
+
+
+
+
 /*
  * Parser  related
  */
@@ -88,6 +104,18 @@ typedef struct parsed_line {
 } body;
 
 typedef  body * bodyArray;
+
+
+typedef struct symbol* symbol_ptr;
+
+typedef struct symbol{
+	String name;
+	label_type command_type;
+	declared declared_as;
+	int address;
+	Bool is_entry;
+	symbol_ptr next;
+}symbol;
 
 
 
@@ -133,6 +161,9 @@ void strncy_safe(String  dest, String  source, int size);
 
 
 
+
+
+
 /*for testing*/
 void print_structs(bodyArray, int size);
 
@@ -141,7 +172,7 @@ void add_spaces_print (String array);
 void print_line(body);
 void print_mat (String*, int);
 
-void print_symbol_list(symbol_ptr);
+void print_symbol_list(symbol_ptr );
 
 void print_bin(int);
 void print_binary_array(int array[], int size);

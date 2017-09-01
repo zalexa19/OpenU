@@ -52,19 +52,14 @@ void validate_file(bodyArray parsed, int array_size){
 		printf(BOLDMAGENTA "Validating line: %d\n",item.line_number);
 
 		if(strcmp(item.label,TERMINATOR) != 0){
-		/*
-			VALIDATE LABEL
-			validate_label(&item,&error_list_head);
-
-		*/
 
 			validated_label=validate_label(item.label);
 			item.valid=validated_label->VALID_LABEL;
 			print_label_errors(validated_label,item,&error_list_head);
 
 
-			printf(BOLDWHITE"Label validation:");
-			PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)
+/*			printf(BOLDWHITE"Label validation:");
+			PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)*/
 		}
 
 
@@ -75,8 +70,8 @@ void validate_file(bodyArray parsed, int array_size){
 
 			validate_instruction(&item,&error_list_head);
 
-			printf("Instruction validation:\nFile is: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+/*			printf("Instruction validation:\nFile is: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 
 
 			/*DATA*/
@@ -97,9 +92,11 @@ void validate_file(bodyArray parsed, int array_size){
 			}
 
 
+/*
 			printf(BOLDWHITE "string operands validation: ");
 
 			PRINT_PASSED_OR_FAILED(item.valid)
+*/
 
 
 			/*MAT*/
@@ -109,6 +106,7 @@ void validate_file(bodyArray parsed, int array_size){
 
 				printf(BOLDWHITE "mat operands validation: ");
 				PRINT_PASSED_OR_FAILED(item.valid)*/
+				validate_ins_mat(&item,&error_list_head);
 			}
 
 
@@ -118,16 +116,16 @@ void validate_file(bodyArray parsed, int array_size){
 
 			}
 
-			printf(BOLDWHITE "entry operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+/*			printf(BOLDWHITE "entry operands validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 
 			/*EXTERN*/
 			if (strcmp(item.instruction,"extern")==0){
 				validate_ins_extern(&item,&error_list_head,error);
 			}
 
-			printf(BOLDWHITE "extern operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+/*			printf(BOLDWHITE "extern operands validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 
 
 		}	else {
@@ -143,13 +141,13 @@ void validate_file(bodyArray parsed, int array_size){
 
 			validate_operation(&item,&error_list_head,error);
 
-			printf(BOLDWHITE "Operational command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+/*			printf(BOLDWHITE "Operational command validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 
 			validate_oper_operands(&item,&error_list_head,error);
 
-			printf(BOLDWHITE "Operation-Operands command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)
+/*			printf(BOLDWHITE "Operation-Operands command validation: ");
+			PRINT_PASSED_OR_FAILED(item.valid)*/
 		}
 
 
@@ -310,26 +308,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 
 	/*check if each string has valid numbers*/
 	for(counter=0;counter<num_of_operands;counter++){
-/*		printf(KMAGENTA "working on: %s\n",item->data_string_array[counter]);*/
-
 		current=item->data_string_array[counter];
-
-	/*first char is a symbol - or +*/
-		/*i=0;
-		if (current[i]=='-' || current[i]=='+'){
-			i++;
-		}
-
-
-
-
-		while (i<str_length){
-			c=current[i];
-			if(is_valid_number(c) ==FALSE){
-				invalid_char_found=TRUE;
-			}
-			i++;
-		}*/
 
 		if (is_valid_number(current)==FALSE){
 
@@ -350,7 +329,6 @@ void validate_ins_data (body* item, list_item_reference*  head){
 
 	for (counter=0;counter<num_of_operands;counter++){
 		item->data_int_values[counter]=atoi(item->data_string_array[counter]);
-/*		printf("current cell: %s, extracted number: %d\n",item->data_string_array[counter],item->data_int_values[counter]);*/
 	}
 
 /*	free(item->data_string_array);*/
@@ -445,7 +423,46 @@ void validate_ins_string (body* item, list_item_reference*  head){
  * 4. check that the other values recieved also includes valid numbers
  */
 
-Bool validate_ins_mat(String str);
+
+
+mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head){
+	mat_status_report_ref result;
+	int i;
+	int brackets_balance=0;
+	int op1_length=strlen(item->OPERAND1);
+	char op1[op1_length];
+
+	printf(KBLUE);
+	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
+
+	result->inv_char_in_brackets=FALSE;
+	result->inv_n_brackets=FALSE;
+	result->inv_n_of_data=FALSE;
+	result->valid_mat=TRUE;
+
+	printf("parsed op1: <%s>\n",item->OPERAND1);
+	strcpy(op1,item->OPERAND1);
+
+	/*starting to check op1*/
+	for (i=0;i<op1_length;i++){
+		if (item->OPERAND1[i]=='['){
+			brackets_balance++;
+		}
+		if(item->OPERAND1[i]==']'){
+			brackets_balance--;
+		}
+	}
+
+	printf("brackets balance: %d\n",brackets_balance);
+	if (brackets_balance!=0){
+		result->inv_char_in_brackets=TRUE;
+		result->valid_mat=FALSE;
+	}
+	return result;
+}
+
+
+
 /*
 void validate_ins_mat(body* item, list_item_reference*  head){
 	Bool is_number=TRUE; This bool is used to determine if we encounter a space between digits
@@ -612,8 +629,7 @@ void validate_ins_mat(body* item, list_item_reference*  head){
 		Checking the other operand
 
 	}
-}
-*/
+}*/
 
 void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 	int line;

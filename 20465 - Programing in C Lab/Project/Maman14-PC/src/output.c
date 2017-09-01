@@ -94,13 +94,12 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 }
 
 
-void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr external_labels_list, int external_labels_size){
+void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr external_labels_list){
 	FILE * file=NULL;
 	String full_name;
 	external_labels_ptr list_pointer;
 
 
-	printf("external label size: %d",external_labels_size);
 	if (external_labels_list != NULL){
 
 		full_name=allocate_mem_string(strlen(file_name)+4);

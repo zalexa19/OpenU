@@ -17,31 +17,21 @@
 
 
 Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int* result_size,external_labels_ptr* external_labels_list){
-	int DC,i,j, length,general_counter,c,address_helper;
+	int i,j, length,general_counter,address_helper;
 	int result,counter,data_counter;
 	body current;
-	int opcode,dest,src;
+	int opcode; /*stores the opcode received*/
 	Operand_type op1_type,op2_type;
-	int *  commands_array;
 	int data_array[MAX_DATA_ARR_SIZE];
-	int * result_pointer;
-
 	encoded_ptr encoded_node;
-	symbol_ptr found_symbol;
 	Bool valid_file=TRUE;
 
 
 
-
-	DC=0;
 	general_counter=data_counter=counter=0;
 	address_helper=0;
 	*encoded_list = NULL;
 
-/*	commands_array=(int *)allocate_mem_general(MAX_DATA_ARR_SIZE,sizeof(int));*/
-
-
-	printf("Checking labels\n");
 	/*Check if the label is valid*/
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
@@ -56,6 +46,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			strcmp(current.instruction,STR) !=0 &&
 			strcmp(current.instruction,DATA) !=0 &&
 			strcmp(current.instruction,MAT) !=0){
+
 			/*for everything that is not .extern*/
 			if (get_operand_type(current.OPERAND1)==LABLE){
 				if (!search_symbol(current.OPERAND1,*symbols)){ /*label is not found*/
@@ -125,30 +116,19 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 						current_symbol=search_symbol(current.OPERAND1,*symbols);
 						if (current_symbol->declared_as==external){
 							printf(KRED"label %s is external\n",current.OPERAND1);
+							printf("current address:%d\n",address_helper+100);
 
 							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
+
 						}
 
 					}
-
-
-					if (op2_type==LABLE){
-						current_symbol=search_symbol(current.OPERAND1,*symbols);
-						if (current_symbol->declared_as==external){
-							printf(KRED"label2 %s is external\n",current.OPERAND2);
-
-							add_external_item_to_list(external_labels_list,current.OPERAND2,address_helper);
-						}
-
-					}
-
 
 
 
 					encoded_node=create_encoded_struct(address_helper,result);
 					add_encoded_struct_to_list(encoded_list,encoded_node);
 					address_helper++;
-/*//					commands_array[counter]=result;*/
 					counter++;
 				}
 
@@ -156,12 +136,23 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
 					encoded_node=create_encoded_struct(address_helper,result);
 					add_encoded_struct_to_list(encoded_list,encoded_node);
+
+					if (op2_type==LABLE){
+						current_symbol=search_symbol(current.OPERAND2,*symbols);
+						if (current_symbol->declared_as==external){
+							add_external_item_to_list(external_labels_list,current.OPERAND2,address_helper);
+							printf(KRED"label2 %s is external\n",current.OPERAND2);
+							printf("current address:%d\n",address_helper+100);
+							NORMALCOLOR
+						}
+
+					}
+
 					address_helper++;
-/*					commands_array[counter]=result;*/
 					counter++;
 				}
 
-				/*add labels to the extern list*/
+
 
 			}
 
@@ -176,15 +167,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			}
 
-			if (strcmp(current.instruction,EXTERN)){
-
-
-
-
-
-
-			}
-
 				/*treat mat and data*/
 
 			if (strcmp(current.instruction,DATA)==0){
@@ -196,16 +178,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					general_counter++;
 				}
 
-
-/*				printf("after inserting data values:\n");
-				for(j=0;j<general_counter;j++){
-					printf("%d",data_array[j]);
-					printf("\n");
-
-				}*/
-
-
-				/*convert operatn*/
 
 			}
 
@@ -463,12 +435,6 @@ encoded_ptr create_encoded_struct(int address,int value){
 }
 
 void print_encoded_struct(encoded_ptr s){
-	int n;
-	char result[32];
-	int i = 0;
-	int j = 0;
-
-
 	encoded_ptr pointer;
 
 	printf(BOLDWHITE"\n");
@@ -485,9 +451,7 @@ void print_encoded_struct(encoded_ptr s){
 		pointer=pointer->next;
 	}
 
-/*	printf("%-15d|",s->address);
-	printf("%-15d|",s->value);*/
-/*	print_bin(s->address);*/
+
 	print_bin(s->value);
 
 	printf("\n");
