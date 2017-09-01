@@ -341,27 +341,13 @@ String extract_operand (String str){
 
 String parse_mat (String str){
 	String result;
-	int length;
-	int i;
-	int brack_counter;
-	char c;
+	int op_length;
 
-	i=0;
-	brack_counter=0;
-	c=str[i];
-	length=strlen(str);
+	op_length=0;
+	op_length=count_non_spaces(str);
 
-	while (i<length && c!=' ' && c!='\t'){
-		if (c==']'){
-			brack_counter++;
-		}
-
-
-		c=str[++i];
-	}
-
-	result=allocate_mem_string(i+1);
-	strncy_safe(result,str,i);
+	result=allocate_mem_string(op_length+1);
+	strncy_safe(result,str,op_length);
 
 	return result;
 }

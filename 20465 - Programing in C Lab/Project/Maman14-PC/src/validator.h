@@ -30,7 +30,7 @@ typedef struct mat_status_report{
 	Bool missing_op1;
 	Bool inv_n_brackets;
 	Bool inv_char_in_brackets;
-	Bool inv_n_of_data;
+	Bool syntax_error;
 	Bool valid_mat;
 }mat_status_report;
 

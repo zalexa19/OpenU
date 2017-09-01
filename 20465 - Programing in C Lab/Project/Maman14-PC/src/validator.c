@@ -427,37 +427,96 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head){
 	mat_status_report_ref result;
-	int i;
+	int i,size;
 	int brackets_balance=0;
 	int op1_length=strlen(item->OPERAND1);
 	char op1[op1_length];
+	String oper1=item->OPERAND1;
+	String pointer;
+	String copy;
 
-	printf(KBLUE);
+	printf(KBLUE "VALIDATE_INS_MAT\n");
 	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
 
 	result->inv_char_in_brackets=FALSE;
 	result->inv_n_brackets=FALSE;
-	result->inv_n_of_data=FALSE;
+	result->syntax_error=FALSE;
 	result->valid_mat=TRUE;
 
 	printf("parsed op1: <%s>\n",item->OPERAND1);
 	strcpy(op1,item->OPERAND1);
 
-	/*starting to check op1*/
-	for (i=0;i<op1_length;i++){
-		if (item->OPERAND1[i]=='['){
-			brackets_balance++;
-		}
-		if(item->OPERAND1[i]==']'){
-			brackets_balance--;
-		}
-	}
 
-	printf("brackets balance: %d\n",brackets_balance);
-	if (brackets_balance!=0){
-		result->inv_char_in_brackets=TRUE;
-		result->valid_mat=FALSE;
+		if (strcmp(item->instruction,MAT)==0){
+
+		/*starting to check op1*/
+		/*check number of brackets*/
+		for (i=0;i<op1_length;i++){
+			if (item->OPERAND1[i]=='['){
+				brackets_balance++;
+			}
+			if(item->OPERAND1[i]==']'){
+				brackets_balance--;
+			}
+		}
+		if (brackets_balance!=0){
+			result->inv_n_brackets=TRUE;
+			result->valid_mat=FALSE;
+		}
+
+		/*check brackets structure is correct*/
+		if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(op1,"][")==NULL  ){
+			result->syntax_error=TRUE;
+			result->valid_mat=FALSE;
+		}
+		else {
+			/*check if all brackers appear correctly, and that the it includes only a number*/
+			oper1+=1;/*advance once to skip the first [*/
+			pointer=strchr(oper1,']');
+			size=CALCSIZE(item->OPERAND1,pointer);
+
+
+			copy=allocate_mem_string(size);
+			strncy_safe(copy,oper1,size-1);
+
+			if (is_valid_number(copy)==FALSE){
+				result->inv_char_in_brackets=TRUE;
+				result->valid_mat=FALSE;
+				printf(KRED"invalid first number\n");
+
+			}
+
+			oper1=strchr(oper1,'[');
+			oper1+=1;/*1 is to skip '['*/
+
+			printf("final pointer: %s\n\n",oper1);
+
+			pointer=strchr(oper1,']');
+			size=CALCSIZE(oper1,pointer);
+			free(copy);
+
+			copy=allocate_mem_string(size);
+			strncy_safe(copy,oper1,size);
+
+
+			if (is_valid_number(copy)==FALSE){
+				result->inv_char_in_brackets=TRUE;
+				result->valid_mat=FALSE;
+			}
+			NORMALCOLOR
+
+		}
 	}
+		/*means that we are validating an operand*/
+		else {
+
+
+		}
+
+
+
+
+
 	return result;
 }
 
