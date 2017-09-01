@@ -67,14 +67,11 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 	strcpy(full_name,file_name);
 	strcat(full_name,".ent");
 
-	printf(KMAGENTA "strcat - passed\n");
-
-	printf("File opened-passed\n");
+	printf("File name: %s\n",full_name);
 
 	pointer=symbols;
+
 	while (pointer != NULL){
-		printf("Trying to access pointer\n");
-		printf("pointer: %s\n",pointer->name);
 
 		if((pointer->is_entry)==TRUE){
 			if(file == NULL) {
@@ -84,8 +81,6 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 				}
 			}
 			fprintf(file,"%s \t %s\n",pointer->name,convert_to_base4((pointer->address)+INITIAL_ADDRESS,0));
-			printf("FOund entry\n");
-
 		}
 		pointer=pointer->next;
 	}
@@ -95,9 +90,50 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 	if(file!=NULL) {
 		fclose(file);
 	}
+	NORMALCOLOR
 }
 
-void create_extern_file(encoded_ptr symbols){
+
+void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr external_labels_list, int external_labels_size){
+	FILE * file=NULL;
+	String full_name;
+	external_labels_ptr list_pointer;
+
+
+	printf("external label size: %d",external_labels_size);
+	if (external_labels_list != NULL){
+
+		full_name=allocate_mem_string(strlen(file_name)+4);
+
+		strcpy(full_name,file_name);
+		strcat(full_name,".ext");
+
+
+		printf("EXTERN: File opened-passed\n");
+
+		list_pointer=external_labels_list;
+
+
+		while( list_pointer != NULL){
+			if(file == NULL) {
+				if (!(file = fopen(full_name,"w"))){
+					fprintf(stderr, "unable to find file: %s\n",file_name);
+					exit(1);
+				}
+			}
+			fprintf(file,"%s \t %s\n",list_pointer->value,convert_to_base4((list_pointer->address)+INITIAL_ADDRESS,0));
+			list_pointer=list_pointer->next;
+			}
+
+	}
+
+
+		printf("finished creating EXT\n");
+
+
+		if(file!=NULL) {
+			fclose(file);
+		}
 
 }
 
@@ -105,7 +141,7 @@ String convert_to_base4(unsigned int number, int length){
 	int BASE = 4;
 	int i,j,temp_n;
 	char temp;
-	char digits[] = {'A','B','C','D'};
+	char digits[] = {'a','b','c','d'};
 	String result;
 
 	/* encode */

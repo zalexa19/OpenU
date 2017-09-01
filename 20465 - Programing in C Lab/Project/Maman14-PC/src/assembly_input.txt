@@ -1,6 +1,11 @@
-END: stop  inc LOOP
-LOOP: jmp END
+END: stop
+mov LOVES
+LOOP: jmp ALEX
+jmp LOVES
 STR: .string "abcdef"
 Length: .data 6,9,15
 .entry STR
+.extern ALEX
+.extern LOVES
+
 

@@ -16,7 +16,7 @@
 #define MAX_DATA_ARR_SIZE 10000
 
 
-Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int ic,encoded_ptr* encoded_list,int* result_size){
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int* result_size,external_labels_ptr* external_labels_list){
 	int DC,i,j, length,general_counter,c,address_helper;
 	int result,counter,data_counter;
 	body current;
@@ -83,23 +83,18 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 	/*ALL LABELS ARE VALID*/
 
 	for (i=0;i<parsed_size;i++){
+		symbol_ptr current_symbol;
 		current=parsed[i];
-/*		printf(BOLDRED"current line: %d\n",current.line_number);*/
 		if (strlen(current.operantion)>0){
 			opcode=get_opcode(current.operantion);
 			op1_type=get_operand_type(current.OPERAND1);
 			op2_type=get_operand_type(current.OPERAND2);
 
-
 			result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
-
-			encoded_node=create_encoded_struct(address_helper,result);
+			encoded_node=create_encoded_struct(address_helper,result); /*address helper = counts address for operationals as well*/
 			add_encoded_struct_to_list(encoded_list,encoded_node);
 			address_helper++;
-/*			printf("address:%d, value: %d\n",encoded_node->address,encoded_node->value);*/
-
-/*			commands_array[counter]=result;*/
-			counter++;
+			counter++; /*COUNTER FOR LENGTH OF ENCODED VALUES*/
 
 
 			/*encode operands*/
@@ -122,7 +117,34 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 					}
 					else {
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
+
 					}
+
+					/*if operation uses labels that are external, we add it to the external list to export to the file*/
+					if (op1_type==LABLE){
+						current_symbol=search_symbol(current.OPERAND1,*symbols);
+						if (current_symbol->declared_as==external){
+							printf(KRED"label %s is external\n",current.OPERAND1);
+
+							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
+						}
+
+					}
+
+
+					if (op2_type==LABLE){
+						current_symbol=search_symbol(current.OPERAND1,*symbols);
+						if (current_symbol->declared_as==external){
+							printf(KRED"label2 %s is external\n",current.OPERAND2);
+
+							add_external_item_to_list(external_labels_list,current.OPERAND2,address_helper);
+						}
+
+					}
+
+
+
+
 					encoded_node=create_encoded_struct(address_helper,result);
 					add_encoded_struct_to_list(encoded_list,encoded_node);
 					address_helper++;
@@ -139,6 +161,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 					counter++;
 				}
 
+				/*add labels to the extern list*/
+
 			}
 
 
@@ -153,6 +177,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr * symbols, int i
 			}
 
 			if (strcmp(current.instruction,EXTERN)){
+
+
+
+
+
 
 			}
 
@@ -483,3 +512,5 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	p->next=item;
 
 }
+
+

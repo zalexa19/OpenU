@@ -23,7 +23,7 @@ typedef struct encoded{
 
 
 
-Bool second_scan (bodyArray,int,symbol_ptr*,int, encoded_ptr *, int *);
+Bool second_scan (bodyArray,int,symbol_ptr*,int, encoded_ptr *, int *,external_labels_ptr*);
 
 int get_opcode(String);
 
@@ -36,5 +36,4 @@ int encode_operand(Operand_type,String, symbol_ptr, Bool);
 
 void print_encoded_struct(encoded_ptr s);
 void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item);
-
 encoded_ptr create_encoded_struct(int,int);

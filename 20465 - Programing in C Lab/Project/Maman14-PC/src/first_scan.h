@@ -36,6 +36,13 @@ typedef struct symbol{
 }symbol;
 
 
+typedef struct external_labels* external_labels_ptr;
+typedef struct external_labels{
+	int address;
+	String value;
+	external_labels_ptr next;
+
+}external_labels;
 
 
 
@@ -45,8 +52,7 @@ typedef struct symbol{
 
 
 
-
-Bool first_scan(bodyArray items, int, symbol_ptr*, int*, int*);
+Bool first_scan(bodyArray items, int, symbol_ptr*, int*, int*,external_labels_ptr*, int * );
 
 
 
@@ -60,6 +66,7 @@ int calc_new_ic(body);
 int calc_new_dc(body);
 
 void update_data_addresses(symbol_ptr*,int);
+void add_external_item_to_list (external_labels_ptr* list,String value, int address);
 
 
 #endif /* LABEL_FINDER_H_ */

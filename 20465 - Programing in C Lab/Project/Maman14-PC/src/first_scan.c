@@ -41,13 +41,14 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 }
 
 
-Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC){
+Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC,external_labels_ptr* external_labels,int * external_labels_size){
 	int item_counter;
 	body current;
 	char error[MAXERRORSIZE];
 	symbol_ptr current_symbol;
 	list_item_reference errors_list=NULL;
 	Bool valid_file=TRUE;
+
 
 
 
@@ -90,8 +91,13 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 		}
 		/*Label was not recieved*/
 		else if (strcmp(current.instruction,EXTERN)==0){
-			current_symbol=create_symbol(current,*IC,*DC); /*create new symbol*/
+			current_symbol=create_symbol(current,*IC,*DC);/* create new symbol*/
+
 			add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
+
+/*			add_external_item_to_list(external_labels,current.OPERAND1,0); creates a struct
+			(*external_labels_size)++;*/
+
 
 		}
 
@@ -281,5 +287,34 @@ void update_data_addresses(symbol_ptr* symbols,int IC){
 	if (current->command_type==instructional && current->declared_as==internal){
 		current->address=current->address+IC;
 	}
+
+}
+
+
+void add_external_item_to_list (external_labels_ptr* list,String value, int address){
+	external_labels_ptr p;
+	external_labels_ptr new;
+
+	printf(KYELLOW"adding item <%s> to external\n",value);
+	new=(external_labels_ptr)allocate_mem_general(1,sizeof(external_labels));
+	new->address=address;
+	new->value=allocate_mem_string(strlen(value)+1);
+	strcpy(new->value,value);
+
+	printf("created an item\n");
+
+	if (*list==NULL){
+
+		*list=new;
+		(*list)->next=NULL;
+		return;
+	}
+
+	p=*list;
+	while(p->next!=NULL){
+		p=p->next;
+	}
+	p->next=new;
+	new->next=NULL;
 
 }
