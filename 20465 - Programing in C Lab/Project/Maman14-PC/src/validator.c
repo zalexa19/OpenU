@@ -34,12 +34,6 @@ void validate_file(bodyArray parsed, int array_size){
 	char error[MAXERRORSIZE];
 	label_status_ref validated_label;
 
-/*
-
-	printf(KYELLOW"------------------------------\n");
-    printf("      VALIDATION STAGE:        \n");
-	printf("------------------------------\n");
-*/
 
 	NORMALCOLOR
 
@@ -49,7 +43,6 @@ void validate_file(bodyArray parsed, int array_size){
 	for (counter=0;counter<array_size;counter++){
 		item=parsed[counter];
 
-		printf(BOLDMAGENTA "Validating line: %d\n",item.line_number);
 
 		if(strcmp(item.label,TERMINATOR) != 0){
 
@@ -78,14 +71,9 @@ void validate_file(bodyArray parsed, int array_size){
 			if (strcmp(item.instruction,"data")==0){
 				validate_ins_data(&item, &error_list_head);
 
-				NORMALCOLOR
-
-				printf(BOLDWHITE "data operands validation: ");
-				PRINT_PASSED_OR_FAILED(item.valid)
 
 			}
 
-			printf(".string operands validation: \n");
 
 			if (strcmp(item.instruction,"string")==0){
 				validate_ins_string(&item,&error_list_head);
@@ -100,13 +88,9 @@ void validate_file(bodyArray parsed, int array_size){
 
 
 			/*MAT*/
-			printf("mat validation:\n");
 			if (strcmp(item.instruction,"mat")==0){
-				/*validate_ins_mat(&item,&error_list_head);
-
-				printf(BOLDWHITE "mat operands validation: ");
-				PRINT_PASSED_OR_FAILED(item.valid)*/
-				validate_ins_mat(&item,&error_list_head);
+				validate_ins_data(&item,&error_list_head);
+				mat_validation_errors(validate_ins_mat(&item,&error_list_head),item);
 			}
 
 
@@ -116,16 +100,13 @@ void validate_file(bodyArray parsed, int array_size){
 
 			}
 
-/*			printf(BOLDWHITE "entry operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)*/
+
 
 			/*EXTERN*/
 			if (strcmp(item.instruction,"extern")==0){
 				validate_ins_extern(&item,&error_list_head,error);
 			}
 
-/*			printf(BOLDWHITE "extern operands validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)*/
 
 
 		}	else {
@@ -141,13 +122,10 @@ void validate_file(bodyArray parsed, int array_size){
 
 			validate_operation(&item,&error_list_head,error);
 
-/*			printf(BOLDWHITE "Operational command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)*/
+
 
 			validate_oper_operands(&item,&error_list_head,error);
 
-/*			printf(BOLDWHITE "Operation-Operands command validation: ");
-			PRINT_PASSED_OR_FAILED(item.valid)*/
 		}
 
 
@@ -157,13 +135,6 @@ void validate_file(bodyArray parsed, int array_size){
 		parsed[counter] = item;
 
 		printf("finished validating file\n");
-
-		printf(KYELLOW "------------------------------\n");
-		printf("      ERRORS:        \n");
-		printf("------------------------------\n");
-
-		print_list(error_list_head);
-		NORMALCOLOR
 
 
 	}
@@ -331,10 +302,6 @@ void validate_ins_data (body* item, list_item_reference*  head){
 		item->data_int_values[counter]=atoi(item->data_string_array[counter]);
 	}
 
-/*	free(item->data_string_array);*/
-
-
-	/*validate other*/
 
 }
 
@@ -427,12 +394,13 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head){
 	mat_status_report_ref result;
-	int i,size;
+	int i,size,r,c;
 	int brackets_balance=0;
 	int op1_length=strlen(item->OPERAND1);
 	char op1[op1_length];
 	String oper1=item->OPERAND1;
 	String pointer;
+	String* data_pointer;
 	String copy;
 
 	printf(KBLUE "VALIDATE_INS_MAT\n");
@@ -441,85 +409,253 @@ mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head){
 	result->inv_char_in_brackets=FALSE;
 	result->inv_n_brackets=FALSE;
 	result->syntax_error=FALSE;
+	result->inv_label_found=FALSE;
+	result->inv_registry_found=FALSE;
 	result->valid_mat=TRUE;
 
-	printf("parsed op1: <%s>\n",item->OPERAND1);
+
 	strcpy(op1,item->OPERAND1);
 
 
-		if (strcmp(item->instruction,MAT)==0){
-
-		/*starting to check op1*/
-		/*check number of brackets*/
-		for (i=0;i<op1_length;i++){
-			if (item->OPERAND1[i]=='['){
-				brackets_balance++;
-			}
-			if(item->OPERAND1[i]==']'){
-				brackets_balance--;
-			}
+	/*starting to check op1*/
+	/*check number of brackets*/
+	for (i=0;i<op1_length;i++){
+		if (item->OPERAND1[i]=='['){
+			brackets_balance++;
 		}
-		if (brackets_balance!=0){
-			result->inv_n_brackets=TRUE;
-			result->valid_mat=FALSE;
-		}
-
-		/*check brackets structure is correct*/
-		if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(op1,"][")==NULL  ){
-			result->syntax_error=TRUE;
-			result->valid_mat=FALSE;
-		}
-		else {
-			/*check if all brackers appear correctly, and that the it includes only a number*/
-			oper1+=1;/*advance once to skip the first [*/
-			pointer=strchr(oper1,']');
-			size=CALCSIZE(item->OPERAND1,pointer);
-
-
-			copy=allocate_mem_string(size);
-			strncy_safe(copy,oper1,size-1);
-
-			if (is_valid_number(copy)==FALSE){
-				result->inv_char_in_brackets=TRUE;
-				result->valid_mat=FALSE;
-				printf(KRED"invalid first number\n");
-
-			}
-
-			oper1=strchr(oper1,'[');
-			oper1+=1;/*1 is to skip '['*/
-
-			printf("final pointer: %s\n\n",oper1);
-
-			pointer=strchr(oper1,']');
-			size=CALCSIZE(oper1,pointer);
-			free(copy);
-
-			copy=allocate_mem_string(size);
-			strncy_safe(copy,oper1,size);
-
-
-			if (is_valid_number(copy)==FALSE){
-				result->inv_char_in_brackets=TRUE;
-				result->valid_mat=FALSE;
-			}
-			NORMALCOLOR
-
+		if(item->OPERAND1[i]==']'){
+			brackets_balance--;
 		}
 	}
-		/*means that we are validating an operand*/
-		else {
+	if (brackets_balance!=0){
+		result->inv_n_brackets=TRUE;
+		result->valid_mat=FALSE;
+	}
 
+
+
+
+
+	/*check brackets structure is correct*/
+	if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(op1,"][")==NULL  ){
+		result->syntax_error=TRUE;
+		result->valid_mat=FALSE;
+
+
+	}
+	else {
+		/*check if all brackers appear correctly, and that the it includes only a number*/
+		oper1+=1;/*advance once to skip the first [*/
+		pointer=strchr(oper1,']');
+		size=CALCSIZE(item->OPERAND1,pointer);
+
+
+		copy=allocate_mem_string(size);
+		strncy_safe(copy,oper1,size);
+
+		if (is_valid_number(copy)==FALSE){
+			result->inv_char_in_brackets=TRUE;
+			result->valid_mat=FALSE;
 
 		}
 
+		data_pointer=item->mat_params;
+		data_pointer=(String*)allocate_mem_general(2,sizeof(String));
+		data_pointer[0]=allocate_mem_string(size);
+
+
+		strncy_safe(data_pointer[0],copy,size);
+
+
+		r=atoi(copy);
+		oper1=strchr(oper1,'[');
+		oper1+=1;/*1 is to skip '['*/
+
+
+		pointer=strchr(oper1,']');
+		size=CALCSIZE(oper1,pointer);
+		free(copy);
+
+		copy=allocate_mem_string(size);
+		strncy_safe(copy,oper1,size);
+
+
+		if (is_valid_number(copy)==FALSE){
+			result->inv_char_in_brackets=TRUE;
+			result->valid_mat=FALSE;
+		}
+
+		data_pointer[0]=allocate_mem_string(size);
+		data_pointer+=1;
+
+		strncy_safe((*data_pointer),copy,size);
+		c=atoi(copy);
+
+
+		/*derive whole matrix size and set it in item*/
+		item->mat_size=r*c;
+
+	}
 
 
 
 
+
+
+	free(copy);
 	return result;
 }
 
+
+
+
+mat_status_report_ref validate_mat_as_operand(String operand){
+	mat_status_report_ref result;
+	int i,size;
+	int brackets_balance=0;
+	int op1_length=strlen(operand);
+	String pointer;
+	String copy;
+
+/*	printf(KBLUE "validate_mat_as_operand\n");*/
+	NORMALCOLOR
+	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
+
+	result->inv_char_in_brackets=FALSE;
+	result->inv_n_brackets=FALSE;
+	result->syntax_error=FALSE;
+	result->inv_label_found=FALSE;
+	result->inv_registry_found=FALSE;
+	result->valid_mat=TRUE;
+
+
+
+	/*check label*/
+	pointer=strchr(operand,'[');
+	if (pointer==NULL){
+		result->valid_mat=FALSE;
+		return result;
+	}
+
+	size=CALCSIZE(operand,pointer);
+	copy=allocate_mem_string(size);
+	strncy_safe(copy,operand,size);
+
+	if (validate_label(copy)==FALSE){
+		result->inv_label_found=TRUE;
+		result->valid_mat=FALSE;
+	}
+
+	operand+=size;
+	op1_length=strlen(operand);
+
+
+
+	/*starting to check op1*/
+	/*check number of brackets*/
+	for (i=0;i<op1_length;i++){
+		if (operand[i]=='['){
+			brackets_balance++;
+		}
+		if(operand[i]==']'){
+			brackets_balance--;
+		}
+	}
+
+	if (brackets_balance!=0){
+		result->inv_n_brackets=TRUE;
+		result->valid_mat=FALSE;
+
+	}
+
+
+
+
+	/*check brackets structure is correct*/
+
+
+
+	if( operand[0]!='['|| operand[op1_length-1]!=']' || strstr(operand,"][")==NULL  ){
+		result->syntax_error=TRUE;
+		result->valid_mat=FALSE;
+	}
+
+	/*check if all brackers appear correctly, and that the it includes only a number*/
+	operand+=1;/*advance once to skip the first [*/
+
+
+	pointer=strchr(operand,']');
+	size=CALCSIZE(operand,pointer);
+
+
+	copy=allocate_mem_string(size);
+	strncy_safe(copy,operand,size);
+
+
+
+	if (is_register(copy)==FALSE){
+		result->inv_registry_found=TRUE;
+		result->valid_mat=FALSE;
+
+	}
+
+
+	operand=strchr(operand,'[');
+	operand+=1;/*1 is to skip '['*/
+
+
+	pointer=strchr(operand,']');
+	size=CALCSIZE(operand,pointer);
+	free(copy);
+
+	copy=allocate_mem_string(size);
+	strncy_safe(copy,operand,size);
+
+
+	if (is_register(copy)==FALSE){
+		result->inv_registry_found=TRUE;
+		result->valid_mat=FALSE;
+	}
+
+
+	printf("Finished validating operand mat\n");
+	return result;
+}
+
+
+
+
+void mat_validation_errors(mat_status_report_ref errors, body item)
+{
+	int line=item.line_number;
+
+	if (errors->inv_char_in_brackets){
+		fprintf(stderr,"Error in line %d: inv char found inside mat brackets: %s\n",line,item.OPERAND1);
+	}
+
+	if (errors->inv_label_found){
+		fprintf(stderr,"Error in line %d: inv label found inside mat brackets: %s\n",line,item.OPERAND1);
+
+	}
+
+
+	if (errors->inv_n_brackets){
+		fprintf(stderr,"Error in line %d: missing brackets - %s\n",line,item.OPERAND1);
+
+	}
+
+	if (errors->inv_registry_found){
+		fprintf(stderr,"Error in line %d:in registry provided %s.\n",line,item.OPERAND1);
+
+	}
+
+	if (errors->syntax_error){
+		fprintf(stderr,"Error in line %d: invalid brackets %s.\n",line,item.OPERAND1);
+
+	}
+
+
+}
 
 
 /*
@@ -1094,35 +1230,35 @@ Bool is_operational_command(String str){
 
 Bool is_register(String str){
 
-	if (strcasecmp(str,R0)==0){
+	if (strcmp(str,R0)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R1)==0){
+	if (strcmp(str,R1)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R2)==0){
+	if (strcmp(str,R2)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R3)==0){
+	if (strcmp(str,R3)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R4)==0){
+	if (strcmp(str,R4)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R5)==0){
+	if (strcmp(str,R5)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R6)==0){
+	if (strcmp(str,R6)==0){
 		return TRUE;
 	}
 
-	if (strcasecmp(str,R7)==0){
+	if (strcmp(str,R7)==0){
 		return TRUE;
 	}
 
@@ -1132,9 +1268,6 @@ Bool is_register(String str){
 Operand_type get_operand_type (String operand){
 	int i;
 
-
-	printf(KCYN "Checking label: <%s>\n",operand);
-	NORMALCOLOR
 
 	i=0;
 	if (operand[i]=='#'){
@@ -1147,9 +1280,9 @@ Operand_type get_operand_type (String operand){
 
 
 
-/*	if ((validate_ins_mat(operand))==TRUE){
+	if ( (validate_mat_as_operand(operand)->valid_mat)==TRUE){
 		return MATRIX;
-	}*/
+	}
 
 	if (is_register(operand)==TRUE){
 		return REGISTER;

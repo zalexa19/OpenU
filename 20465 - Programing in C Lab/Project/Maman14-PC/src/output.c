@@ -38,9 +38,12 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 
 	/*print file headlines*/
 	printf("IC: %d, DC: %d\n",IC,DC);
+
+	printf("IC: %s, DC:%s\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
 	fprintf(file,"%s \t %s\n\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
 
 
+	printf("pointer: %s\n",pointer);
 
 	while(pointer!=NULL){
 		String address_base4 = convert_to_base4(pointer->address + INITIAL_ADDRESS ,CONVERTED_VALUE_LENGTH);

@@ -24,7 +24,6 @@ int main(int argc, char** argv) {
 	int IC,DC,array_size,j;
 	int number_of_lines=0; /*number of lines, including comments and blanks*/
 	encoded_ptr encoded_list_head;
-	String obj_file_name;
 	external_labels_ptr external_labels_list;
 
 	int parsed_size=-1;
@@ -47,18 +46,12 @@ int main(int argc, char** argv) {
 	for (j=1;j<argc;j++){
 
 		file_name=allocate_mem_string(strlen(argv[j]+3));
-		file_name=argv[j];
 		strcpy(file_name,argv[j]);
 		strcat(file_name,AS);
 
-
-		obj_file_name=allocate_mem_string(strlen(argv[j]));
-		strcpy(obj_file_name,file_name);
-
-
 		if (!(input_file = fopen(file_name,"r"))){
 			fprintf(stderr, "unable to find assembly file");
-			exit(0);
+			exit(1);
 		}
 
 
@@ -81,11 +74,6 @@ int main(int argc, char** argv) {
 			update_data_addresses(&symbols,IC);
 			print_symbol_list(symbols);
 
-/*			test
-			printf(BOLDRED"External labels array:\n");
-			print_mat(external_labels,external_labels_size);
-			NORMALCOLOR*/
-
 			printf(KGREEN "Entering second scan\n");
 			NORMALCOLOR
 
@@ -104,21 +92,15 @@ int main(int argc, char** argv) {
 					p=p->next;
 				}
 				/*Create obj file*/
-				printf("starting to write to file\n");
-
-				create_obj_file(encoded_list_head,obj_file_name,IC,DC);
-/*				create_entry_file(symbols,obj_file_name);*/
-
-
-
-				create_extern_file(symbols,obj_file_name,external_labels_list);
+				create_obj_file(encoded_list_head,argv[j],IC,DC);
+				create_entry_file(symbols,argv[j]);
+				create_extern_file(symbols,argv[j],external_labels_list);
 
 			}
 
 		}
 	}
 	NORMALCOLOR
-	printf("structs size %d\n",parsed_size);
 	print_structs(parsed,parsed_size);
 	NORMALCOLOR
 	printf("\n\n---===doei!===---\n");

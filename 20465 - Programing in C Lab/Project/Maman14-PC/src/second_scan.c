@@ -167,6 +167,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			}
 
+
+
 				/*treat mat and data*/
 
 			if (strcmp(current.instruction,DATA)==0){
@@ -181,9 +183,31 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			}
 
+			/*
+			 * When handling mat, we copy each number recieved into the data_array. if we received less values than matrix size,
+			 * Zeros are added
+			 */
+			if (strcmp(current.instruction,MAT)==0){
+				int m=0;
+				length=current.mat_size;
+
+				for(j=0;j<current.mat_size;j++){
+					if (m<current.data_values_number){
+						data_array[data_counter]=current.data_int_values[m];
+						data_counter++;
+						general_counter++;
+						m++;
+					}
+					else {
+						data_array[data_counter]=0;
+						data_counter++;
+						general_counter++;
+					}
+				}
+			}
+
 			if (strcmp(current.instruction,STR)==0){
 				length=strlen(current.OPERAND1);
-
 
 				for(j=0;j<length;j++){
 					data_array[data_counter]=current.OPERAND1[j];
@@ -192,25 +216,17 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				}
 				NORMALCOLOR
 				printf("\n");
-
-/*				printf("after inserting string values:\n");
-				for(j=0;j<general_counter;j++){
-					printf("%d",data_array[j]);
-					printf("\n");
-				}*/
 			}
-
-
 		}
-
-
-
 	}
 
 
 	/*adding the data array to the struct*/
 	for (j=0;j<data_counter;j++){
 		encoded_node=create_encoded_struct(address_helper,data_array[j]);
+
+		printf("addind to encodded: %d\n",data_array[j]);
+
 		add_encoded_struct_to_list(encoded_list,encoded_node);
 		address_helper++;
 	}
@@ -218,17 +234,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 
 	*result_size=address_helper;
-		printf("---End of Second Scan\n");
-		return TRUE;
+	printf("---End of Second Scan\n");
+	return TRUE;
 }
 
 
-/*
-int code = 0; // 0000000000000
-int fifthBit = 1 << 5; //100000
-
-code = 2; // 0000010
-code = code << 4 //00000100000*/
 
 
 int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){

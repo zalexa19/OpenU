@@ -42,7 +42,6 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 	parsed_file=allocate_mem_struct(INITIAL_SARRAY_SIZE);
 	cell_counter=0;
 
-	printf(BOLDYELLOW"PARSING FILE\n");
 	NORMALCOLOR
 	while (  (fgets(line,MAXMEM,file)) != NULL){
 		*n_lines+=1;
@@ -61,11 +60,6 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 		*parsed_size=0;
 	}
 
-
-
-
-
-	printf("\n---Finished parsing file---\n");
 	return parsed_file;
 }
 
@@ -80,13 +74,6 @@ body parse_line(String str, int line_number){
 	int data_array_size=0;
 	int received_line_length;
 
-/*
-
-	printf(KYELLOW "------------------------------\n");
-    printf("      PARSING LINE:        \n");
-	printf("------------------------------\n");
-	NORMALCOLOR
-*/
 
 	received_line_length=strlen(str);
 	str[received_line_length-1]='\0'; /*replaces \n with \0*/
@@ -163,10 +150,10 @@ body parse_line(String str, int line_number){
 
 
 	/*PARSING OPERANDS*/
-
-	if (strcmp(result.instruction,"data")==0){
+	if (strcmp(result.instruction,DATA)==0){
 		/*Count number of operands*/
 		num_commas=0;
+
 		while(current_pointer[i]!='\0'){
 			if(current_pointer[i]==','){
 				data_array_size++;
@@ -174,11 +161,16 @@ body parse_line(String str, int line_number){
 			i++;
 		}
 
-		data_array_size++;
+		if (data_array_size>0){
+			data_array_size++;
+		}
+
+
+
 		result.data_values_number=data_array_size;
 
 
-		result.data_string_array = (String*)malloc(sizeof(String)*data_array_size);
+		result.data_string_array =(String*)allocate_mem_general(data_array_size,sizeof(String));
 
 		if (result.data_string_array != NULL){
 			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
@@ -196,9 +188,10 @@ body parse_line(String str, int line_number){
 	}
 	else if (strcmp(result.instruction,"mat")==0){
 
-		printf(KMAGENTA"current pointer, extracting mat: <%s>\n",current_pointer);
 		extracted_value=parse_mat(current_pointer);
 		extracted_value_length=strlen(extracted_value)+1;
+
+		printf(BOLDRED"pointer after extracting parse_mat: %s\n",current_pointer);
 
 		/*EXTRACT OPERAND1*/
 		result.OPERAND1=allocate_mem_string(extracted_value_length);
@@ -209,10 +202,9 @@ body parse_line(String str, int line_number){
 		current_pointer+=spaces;
 		REALLOCATE_EXTRACTED_VALUE;
 
-/*		printf("extracted values from OP1: <%s>\n",result.OPERAND1);*/
 
 		/*EXTRACT OPERAND2*/
-/*		printf(KMAGENTA"current pointer, before extracting OP2: <%s>\n",current_pointer);*/
+
 
 		/*Count number of operands*/
 		i=0;
@@ -223,8 +215,9 @@ body parse_line(String str, int line_number){
 			i++;
 		}
 
-		data_array_size++;
-
+		if (data_array_size>0){
+			data_array_size++;
+		}
 
 
 		result.data_values_number=data_array_size;
@@ -239,9 +232,7 @@ body parse_line(String str, int line_number){
 		result.leftovers=allocate_mem_string(extracted_value_length);
 		strcpy(result.leftovers,current_pointer);
 
-/*		printf(BOLDMAGENTA"extracted matrix:\n");
-		print_mat(result.data_string_array,data_array_size);
-		NORMALCOLOR*/
+		NORMALCOLOR
 	}
 
 	else {
@@ -360,7 +351,6 @@ String extract_label (String line){
 	char * array_start;
 	int size;
 
-/*	fprintf(stderr,"---Extract_lable: started\n");*/
 
 	found_char = strchr(line,':');
 	if (!found_char){
@@ -539,11 +529,13 @@ String* extract_data_strings(char* str, int array_size){
 	int n_spaces;
 
 	final_array=allocate_mem_matrix(array_size+1);
+/*
 
 	printf("------------------------------\n");
 	printf(" Extracting strings for data\n");
 	printf("------------------------------\n");
 
+*/
 
 
 	if (strcmp(str,"\0")==0){

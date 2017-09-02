@@ -19,13 +19,12 @@
 symbol_ptr search_symbol (String key, symbol_ptr list){
 	symbol_ptr current_pointer=list;
 
-	printf("searching symbol (search_symbol)\n");
 	if (!list){
 		return NULL;
 	}
 
 	while ((current_pointer->next)!=NULL){
-		if (strcasecmp(key,current_pointer->name) == 0){
+		if (strcmp(key,current_pointer->name) == 0){
 			return current_pointer;
 
 		}
@@ -161,8 +160,7 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 
 
 
-	printf(KMAGENTA"finished with the symbol creation\n");
-	NORMALCOLOR
+
 	return sym;
 
 }
@@ -173,7 +171,6 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 	symbol_ptr p;
 
 	if (!*list){
-		printf("list is empty\n");
 
 		/*list=(symbol_ptr)allocate_mem_general(1,sizeof(symbol_ptr));*/
 		(*list)=current;
@@ -181,7 +178,6 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 		return;
 	}
 
-	printf("list is not empty\n");
 	p=*list;
 	while (p->next != NULL){
 		p=p->next;
@@ -248,7 +244,10 @@ int calc_new_dc(body item){
 	/*if it's instructional*/
 	if (strlen(item.operantion)==0){
 		if (strcmp(item.instruction,MAT)==0){
-			printf("Handle mat in calc_new_dc\n");
+
+			n=item.mat_size;
+
+			printf("n: %d\n",n);
 			return n;
 		}
 		if (strcmp(item.instruction,DATA)==0){
@@ -270,7 +269,6 @@ int calc_new_dc(body item){
 void update_data_addresses(symbol_ptr* symbols,int IC){
 	symbol_ptr current;
 
-/*printf("IC: %d\n");*/
 
 	current=*symbols;
 
