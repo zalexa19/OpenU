@@ -138,6 +138,13 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 			sym->address=dc;
 			sym->declared_as=internal;
 			sym->command_type=instructional;
+			if (strcmp(item.instruction,"mat")==0){
+				sym->is_matrix=TRUE;
+			}
+			else {
+				sym->is_matrix=FALSE;
+
+			}
 		}
 
 		if (strcmp(item.instruction,"extern")==0){
@@ -145,6 +152,8 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 			sym->address=0;
 			sym->declared_as=external;
 			sym->command_type=unknown;
+			sym->is_matrix=FALSE;
+
 		}
 
 	}
@@ -153,12 +162,9 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 		sym->address=ic;
 		sym->declared_as=internal;
 		sym->command_type=operational;
+		sym->is_matrix=FALSE;
 
 	}
-
-
-
-
 	return sym;
 
 }

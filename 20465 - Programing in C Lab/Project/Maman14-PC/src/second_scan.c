@@ -93,12 +93,13 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			if (get_operand_type(current.OPERAND1)==type_matrix){
 				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND1),*symbols);
+
 				if (!relevant_symbol){ /*label is not found*/
 					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
 					valid_file=FALSE;
 				}
 
-				if(relevant_symbol->is_matrix==FALSE){
+				else if(relevant_symbol->is_matrix==FALSE){
 					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND1);
 					valid_file=FALSE;
 				}

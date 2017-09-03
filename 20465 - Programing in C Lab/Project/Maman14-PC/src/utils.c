@@ -399,6 +399,8 @@ void print_symbol_list(symbol_ptr head){
 	printf("%-15s|","DECLARED AS");
 	printf("%-15s|","LINKED TO");
 	printf("%-15s|","ADDRESS");
+	printf("%-15s|","MATRIX?");
+
 	printf("\n");
 	NORMALCOLOR
 
@@ -449,8 +451,12 @@ void print_symbol_list(symbol_ptr head){
 		}
 
 		printf("%-15d|",pointer->address);
+		printf("%-15d|",pointer->is_matrix);
+
 
 	}
+
+
 
 
 	printf("\n");
