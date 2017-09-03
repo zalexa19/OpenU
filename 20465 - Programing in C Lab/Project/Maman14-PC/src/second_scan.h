@@ -38,4 +38,6 @@ void print_encoded_struct(encoded_ptr s);
 void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item);
 
 String extract_reg_from_mat(String);
+
+String extract_mat_label (String);
 encoded_ptr create_encoded_struct(int,int);

@@ -146,11 +146,9 @@ label_status_ref validate_label (String label){
 	Bool valid_letter;
 
 
-	printf("5.1 validating label: <%s>\n",label);
 
 	length=strlen(label);
 
-	printf("5.2. label length: <%d>\n",length);
 
 	validation_result=initialize_label_struct();
 
@@ -202,7 +200,6 @@ label_status_ref validate_label (String label){
 
 	}
 
-	printf("5.2 finished validating label\n");
 	return validation_result;
 }
 
@@ -217,7 +214,7 @@ void validate_instruction(body* item, list_item_reference*  head){
 	/*Check if instruction is all lower case*/
 	if (is_string_lowercase(inst_value)==FALSE){
 		item->valid=FALSE;
-		sprintf(error,"5. Error in line %d: Instruction value <%s> has non-lowecase chars.\n",line,inst_value);
+		sprintf(error,"Error in line %d: Instruction value <%s> has non-lowecase chars.\n",line,inst_value);
 		add_to_list(head,error);
 	}
 
@@ -399,24 +396,9 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 	printf(KBLUE "VALIDATE_INS_MAT\n");
 
-/*
-	item->data_values_number=4;
-	item->data_int_values[0]=5;
-	item->data_int_values[1]=6;
-	item->data_int_values[2]=7;
-	item->data_int_values[3]=8;
-	item->mat_label="M1";
-
-	item->mat_size=4;
-	item->mat_params=(String*)allocate_mem_general(2,sizeof(char));
-	item->mat_reg1=allocate_mem_string(3);
-	item->mat_reg2=allocate_mem_string(3);
-	strcpy(item->mat_reg1,"r3");
-	strcpy(item->mat_reg2,"r3");*/
-
 	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
 
-	printf("------------------------------------\n");
+	printf("\n------------------------------------\n");
 
 	result->inv_char_in_brackets=FALSE;
 	result->inv_n_brackets=FALSE;
@@ -468,14 +450,13 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 		/*checking if the first [] is valid*/
 		if (is_valid_number(copy)==FALSE){
-			printf("not a valid number\n");
 			result->inv_char_in_brackets=TRUE;
 			result->valid_mat=FALSE;
 			item->valid=FALSE;
 		}
 
+		item->mat_params=(String*)allocate_mem_general(2,sizeof(String));
 		data_pointer=item->mat_params;
-		data_pointer=(String*)allocate_mem_general(2,sizeof(String));
 		data_pointer[0]=allocate_mem_string(size);
 
 		strncy_safe(data_pointer[0],copy,size);
@@ -512,6 +493,7 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 /*		derive whole matrix size and set it in item*/
 		item->mat_size=r*c;
+		printf("-----------------mat size: %d\n",item->mat_size);
 
 	}
 
@@ -820,7 +802,7 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 		operand_type=get_operand_type(item->OPERAND1);
 		item->op1_type=operand_type;
 
-		if (operand_type==UNRECOGNIZED){
+		if (operand_type==type_unrecognized){
 			/*ERROR*/
 			sprintf(error,"Error in line %d: received operand <%s> in unrecognized.\n",line,item->OPERAND1);
 			add_to_list(head,error);
@@ -840,7 +822,7 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 			operand_type=get_operand_type(item->OPERAND2);
 			item->op2_type=operand_type;
 
-			if (operand_type==UNRECOGNIZED){
+			if (operand_type==type_unrecognized){
 				/*ERROR*/
 				sprintf(error,"Error in line %d: received operand2 <%s> in unrecognized.\n",line,item->OPERAND2);
 				add_to_list(head,error);
@@ -1105,33 +1087,32 @@ Operand_type get_operand_type (String operand){
 	int i;
 
 	i=0;
-	if (strlen(operand)==0){
-		return UNRECOGNIZED;
+	if (strlen(operand)==0 || operand==NULL){
+		return type_unrecognized;
 	}
 
 	if (operand[i]=='#'){
 		if (is_valid_number(operand+1)==TRUE){
-			return INTERMID;
+			return type_intermid;
 		}
 
 	}
 
 
-
 	if ( validate_mat_as_operand(operand)==TRUE ){
-		return MATRIX;
+		return type_matrix;
 	}
 
 	if (is_register(operand)==TRUE){
-		return REGISTER;
+		return type_register;
 	}
 
 
 	if ((validate_label(operand)->VALID_LABEL)==TRUE){
-		return LABLE;
+		return type_label;
 	}
 
-	return UNRECOGNIZED;
+	return type_unrecognized;
 
 }
 

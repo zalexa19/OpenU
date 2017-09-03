@@ -7,23 +7,23 @@
 #include "operation_dictionary.h"
 
 /*
- * POinter to the list of all available operations in our assembler
+ * POinter to the list of all avaitype_label operations in our assembler
  */
 static operation_info * global_operation_dictionary;
 
 
 
-#define INITIALIZE_OPERATION(name_value,number_of_operands,op1_intermid,op1_label,op1_mat,op1_register,op2_intermid,op2_label,op2_mat,op2_register)\
+#define INITIALIZE_OPERATION(name_value,number_of_operands,op1_type_intermid,op1_label,op1_mat,op1_type_register,op2_type_intermid,op2_label,op2_mat,op2_type_register)\
 	operational_dictionary[i].name=name_value;\
 	operational_dictionary[i].num_of_operands=number_of_operands;\
-	operational_dictionary[i].op1_intermid_allowed=op1_intermid;\
+	operational_dictionary[i].op1_intermid_allowed=op1_type_intermid;\
 	operational_dictionary[i].op1_label_allowed=op1_label;\
 	operational_dictionary[i].op1_matrix_allowed=op1_mat;\
-	operational_dictionary[i].op1_register_allowed=op1_register;\
-	operational_dictionary[i].op2_intermid_allowed=op2_intermid;\
+	operational_dictionary[i].op1_register_allowed=op1_type_register;\
+	operational_dictionary[i].op2_intermid_allowed=op2_type_intermid;\
 	operational_dictionary[i].op2_label_allowed=op2_label;\
 	operational_dictionary[i].op2_matrix_allowed=op2_mat;\
-	operational_dictionary[i].op2_register_allowed=op2_register;\
+	operational_dictionary[i].op2_register_allowed=op2_type_register;\
 	i++;
 
 
@@ -44,7 +44,7 @@ void create_operation_info_array(){
 	operational_dictionary[i].num_of_operands=2;
 	operational_dictionary[i].op1_intermid_allowed=TRUE;
 	operational_dictionary[i].op1_label_allowed=TRUE;
-	operational_dictionary[i].op1_register_allowed=TRUE;
+	operational_dictionary[i].op1_type_register_allowed=TRUE;
 	operational_dictionary[i].op1_matrix_allowed=TRUE;
 	operational_dictionary[i].op2_intermid_allowed=FALSE;
 	operational_dictionary[i].op2_label_allowed=TRUE;
@@ -93,19 +93,19 @@ operation_info get_operation_info(String str){
 /*This function compares the operand type extracted by the validator to the allowed one according to the command*/
 Bool is_operand1_allowed(operation_info info,String command,Operand_type type){
 
-	if ((type==INTERMID) && (info.op1_intermid_allowed==TRUE)){
+	if ((type==type_intermid) && (info.op1_intermid_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==LABLE) && (info.op1_label_allowed==TRUE)){
+	if ((type==type_label) && (info.op1_label_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==MATRIX) && (info.op1_matrix_allowed==TRUE)){
+	if ((type==type_matrix) && (info.op1_matrix_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==REGISTER) && (info.op1_register_allowed==TRUE)){
+	if ((type==type_register) && (info.op1_register_allowed==TRUE)){
 		return TRUE;
 	}
 
@@ -115,19 +115,19 @@ Bool is_operand1_allowed(operation_info info,String command,Operand_type type){
 
 Bool is_operand2_allowed(operation_info info,String command,Operand_type type){
 
-	if ((type==INTERMID) && (info.op2_intermid_allowed==TRUE)){
+	if ((type==type_intermid) && (info.op2_intermid_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==LABLE) && (info.op2_label_allowed==TRUE)){
+	if ((type==type_label) && (info.op2_label_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==MATRIX) && (info.op2_matrix_allowed==TRUE)){
+	if ((type==type_matrix) && (info.op2_matrix_allowed==TRUE)){
 		return TRUE;
 	}
 
-	if ((type==REGISTER) && (info.op2_register_allowed==TRUE)){
+	if ((type==type_register) && (info.op2_register_allowed==TRUE)){
 		return TRUE;
 	}
 

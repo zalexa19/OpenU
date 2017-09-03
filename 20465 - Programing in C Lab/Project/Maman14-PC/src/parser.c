@@ -87,14 +87,23 @@ body parse_line(String str, int line_number){
 	int data_array_size=0;
 	int received_line_length;
 
+	result.line_number=line_number;
+	result.op1_type=type_unrecognized;
+	result.op2_type=type_unrecognized;
+
+	result.valid=TRUE;
+
+
+
+
 
 	received_line_length=strlen(str);
 	str[received_line_length-1]='\0'; /*replaces \n with \0*/
-	result.line_number=line_number;
+
 	spaces=count_spaces(str);
 	str+=spaces; /*gets rid of unwanted spaces*/
 	current_pointer=str;
-	result.valid=TRUE;
+
 
 	/*Extract label*/
 	/*
@@ -206,7 +215,7 @@ body parse_line(String str, int line_number){
 	else if (strcmp(result.instruction,"mat")==0){
 
 		printf("mat\n");
-		extracted_value=parse_mat(current_pointer);
+		extracted_value=parse_mat_size(current_pointer);
 		extracted_value_length=strlen(extracted_value)+1;
 
 		printf(BOLDRED"pointer after extracting parse_mat: %s\n",current_pointer);
@@ -374,7 +383,12 @@ String extract_operand (String str){
 
 }
 
-String parse_mat (String str){
+/*
+ * This function recieves a string, and derives the following: [][]
+ * This function counts how many chars are not spaces, then copies them to a new array.
+ * Function returns the extracted value [][]
+ */
+String parse_mat_size (String str){
 	String result;
 	int op_length;
 
@@ -384,6 +398,7 @@ String parse_mat (String str){
 	result=allocate_mem_string(op_length+1);
 	strncy_safe(result,str,op_length);
 
+	printf("parsed size by parse_mat: <%s>\n",result);
 	return result;
 }
 
@@ -581,8 +596,6 @@ String* extract_data_strings(char* str, int array_size){
 
 */
 
-	printf(KRED"-------------- pointer: %s, array size: %d\n",str,array_size);
-
 	if (strcmp(str,"\0")==0){
 		final_array[0]="\0";
 		return final_array;
@@ -596,18 +609,16 @@ String* extract_data_strings(char* str, int array_size){
 
 			/*find ','*/
 			pointer=strchr(str,',');
-			printf("found ,: %s\n",pointer);
 
 		if (pointer != NULL){
 			size=CALCSIZE(str,pointer);
 			n_spaces=reverse_count_spaces(str,pointer);
 			size-=n_spaces;
 
-			final_array[cell]=allocate_mem_string(size);
+			final_array[cell]=allocate_mem_string(size+1);
 
 			strncy_safe(final_array[cell],str,size);
 			str=pointer+1;
-/*			printf("in cell %d: [%s]\n",cell,final_array[cell]);*/
 			cell++;
 		} else {
 			int non_spaces;
@@ -616,16 +627,13 @@ String* extract_data_strings(char* str, int array_size){
 			str+=n_spaces;
 			/*count how many chars until next spaces*/
 			non_spaces=count_non_spaces(str)+1;
-			printf(KRED"--------------non spaces:%d, pointer: %s\n",non_spaces,pointer);
-			printf("str:%s\n",str);
-			NORMALCOLOR
+
 			final_array[cell]=allocate_mem_string((count_non_spaces(str))+1);
 			strncy_safe(final_array[cell],str,(count_non_spaces(str)));
 			cell++;
 
 			final_array[cell]=allocate_mem_string(1);
 			final_array[cell]='\0';
-/*			printf("String in cell %d: [%s]\n",cell, final_array[cell]);*/
 		}
 
 	}

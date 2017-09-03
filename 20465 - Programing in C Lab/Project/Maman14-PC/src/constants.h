@@ -47,11 +47,11 @@
 
 
 typedef enum {
-	INTERMID=0,
-	LABLE=1,
-	MATRIX=2,
-	REGISTER=3,
-	UNRECOGNIZED=-1
+	type_intermid=0,
+	type_label=1,
+	type_matrix=2,
+	type_register=3,
+	type_unrecognized=-1
 
 } Operand_type;
 

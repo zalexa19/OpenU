@@ -9,7 +9,6 @@
 #include "output.h"
 #include "malloc.h"
 #define FILE_EX_LENGTH 4
-#define INITIAL_ADDRESS 100
 #define CONVERTED_VALUE_LENGTH 4
 #define CONVERTED_ADDRESS_LENGTH 5
 
@@ -47,7 +46,7 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	printf("pointer: %s\n",pointer);
 
 	while(pointer!=NULL){
-		String address_base4 = convert_to_base4(pointer->address + INITIAL_ADDRESS ,CONVERTED_VALUE_LENGTH);
+		String address_base4 = convert_to_base4(pointer->address ,CONVERTED_VALUE_LENGTH);
 		String value_base4 = convert_to_base4(pointer->value,CONVERTED_ADDRESS_LENGTH);
 
 		fprintf(file,"%s \t %s\n",address_base4,value_base4);
@@ -84,7 +83,7 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 					exit(1);
 				}
 			}
-			fprintf(file,"%s \t %s\n",pointer->name,convert_to_base4((pointer->address)+INITIAL_ADDRESS,0));
+			fprintf(file,"%s \t %s\n",pointer->name,convert_to_base4((pointer->address),0));
 		}
 		pointer=pointer->next;
 	}
@@ -124,7 +123,7 @@ void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr 
 					exit(1);
 				}
 			}
-			fprintf(file,"%s \t %s\n",list_pointer->value,convert_to_base4((list_pointer->address)+INITIAL_ADDRESS,0));
+			fprintf(file,"%s \t %s\n",list_pointer->value,convert_to_base4((list_pointer->address),0));
 			list_pointer=list_pointer->next;
 			}
 

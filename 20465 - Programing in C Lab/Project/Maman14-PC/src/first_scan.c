@@ -122,7 +122,8 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 
 
 	/*copy label*/
-	sym=(symbol_ptr)allocate_mem_general(1,sizeof(sym));
+	sym=(symbol_ptr)allocate_mem_general(1,sizeof(symbol));
+
 	sym->name=(String)allocate_mem_general(strlen(item.label),sizeof(char));
 	strcpy(sym->name,item.label);
 
@@ -198,7 +199,6 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
  */
 int calc_new_ic(body item){
 	int n;
-
 	n=0;
 
 	if (strlen(item.operantion)==0){
@@ -209,28 +209,23 @@ int calc_new_ic(body item){
 		return n; /*if we're mat,string,data,entry*/
 	}
 
-
 	n++;
 	/*for the command itsef*/
 	if (strlen(item.OPERAND1)>0){
-		if (item.op1_type==MATRIX){
+
+		if (item.op1_type==type_matrix){
 			n+=2;
 		}
 		else{
-			n++;
+		n++;
 		}
 	}
 	if (strlen(item.OPERAND2)>0){
-		if ((item.op1_type)==REGISTER && (item.op2_type)==REGISTER){
+		if (item.op1_type==type_register && item.op2_type==type_register){
 			return n;
 		}
 
-		if ((item.op2_type)==MATRIX){
-			n+=2;
-		}
-		else{
-			n++;
-		}
+		n++;
 	}
 
 	return n;
@@ -254,7 +249,7 @@ int calc_new_dc(body item){
 		if (strcmp(item.instruction,MAT)==0){
 
 			n=item.mat_size;
-
+			printf("n: %d\n",n);
 			return n;
 		}
 		if (strcmp(item.instruction,DATA)==0){

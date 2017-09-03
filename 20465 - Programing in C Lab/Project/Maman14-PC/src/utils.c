@@ -59,7 +59,24 @@ int increase_mem_struct (int size,bodyArray array){
 }
 
 
+/*
+ * This function retrieves the command type received in a line.
+ * It receives a struct with the parsed line and returns
+ * 0 if it's an instruction, 1 if it's an operation
+ * 2 if it's neither (when the line has invalid syntax
+ * note: unused fields in the struct are saved as '\0'
+ */
+command_type get_command_type(body item){
+	if (strlen(item.instruction)>0){
+		return instruction;
+	}
 
+	if (strlen(item.operantion)>0){
+		return operation;
+	}
+
+	return unrecognized_command;
+}
 
 
 
@@ -219,6 +236,13 @@ void print_line(body item){
 		printf("%d %s %s ",item.line_number,item.label,item.instruction);
 		print_mat(item.data_string_array,item.data_values_number);
 	}
+/*
+
+	if (strcmp(item.instruction,"mat")){
+		printf("%d %s %s ",item.line_number,item.label,item.instruction);
+		print_mat(item.data_string_array,item.data_values_number);
+	}
+*/
 
 	else {
 		printf("<%d",item.line_number);
@@ -379,7 +403,9 @@ void print_symbol_list(symbol_ptr head){
 	NORMALCOLOR
 
 	while (pointer->next != NULL){
+
 		printf("%-15s|",pointer->name);
+
 		if (pointer->command_type == instructional){
 			printf("%-15s|","instructional");
 		}

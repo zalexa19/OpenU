@@ -15,26 +15,46 @@
 #define ARRAYSIZE 200
 #define MAX_DATA_ARR_SIZE 10000
 #define REG_NAME_LENGTH 2
+#define INITIAL_ADDRESS 100
+
+
+
+#define ADD_CALCULATED_VALUE_TO_LIST\
+		encoded_item=create_encoded_struct(ic_address,calculated_memory_line);\
+		add_encoded_struct_to_list(encoded_list,encoded_item);\
+		ic_address++;
 
 
 Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
-	int i,j, length,general_counter,address_helper;
-	int result,counter,data_counter;
+	int i,j, length,general_counter;
+	int ic_address; /*tracks addresses when encoding and adding additional word memories*/
+	int combined_data_list_counter; /*counter for the combined lise*/
+	int parse_scanner;
+	int calculated_memory_line; /*stores the encoded word memory*/
+/*	int data_counter;*/
 	body current;
 	int opcode; /*stores the opcode received*/
 	Operand_type op1_type,op2_type;
-	int data_array[DC];
-	encoded_ptr encoded_node;
+/*	int data_array[DC]; *//*remove this later keeping it for the orig function*/
+/*	encoded_ptr encoded_node;*/
+	encoded_ptr encoded_item; /*item that holds info about the encoded value and it's address, to be printed by output.c*/
+	command_type command_type;
+	symbol_ptr relevant_symbol; /*stores the symbol found when using the search_symbol function*/
+	int* combined_data_list; /*array with all data received as instruction, to be added to the end of obj file*/
 	Bool valid_file=TRUE;
 
 
-
-	general_counter=data_counter=counter=0;
-	address_helper=0;
-	*encoded_list = NULL;
+	printf(KMAGENTA"SECOND SCAN STARTED\n\n");
 
 
-	/*Check if the label is valid*/
+
+	/*preparations*/
+	combined_data_list=(int*)allocate_mem_general(DC,sizeof(int));
+	combined_data_list_counter=0;
+	calculated_memory_line=0;
+	ic_address=INITIAL_ADDRESS; /*starts with 100*/
+
+	/*This loop makes sure that each label is difined*/
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
 
@@ -52,7 +72,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			strcmp(current.instruction,MAT) !=0){
 
 			/*for everything that is not .extern*/
-			if (get_operand_type(current.OPERAND1)==LABLE){
+			if (get_operand_type(current.OPERAND1)==type_label){
 				if (!search_symbol(current.OPERAND1,*symbols)){ /*label is not found*/
 					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
 					valid_file=FALSE;
@@ -62,13 +82,37 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 /*			printf("checking if op2 is a label\n");*/
 
-			if (get_operand_type(current.OPERAND2)==LABLE){
+			if (get_operand_type(current.OPERAND2)==type_label){
 
 				if (!(search_symbol(current.OPERAND2,*symbols))){ /*label is not found*/
 					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
 					valid_file=FALSE;
 				}
 
+			}
+
+			if (get_operand_type(current.OPERAND1)==type_matrix){
+				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND1),*symbols);
+				if (!relevant_symbol){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
+					valid_file=FALSE;
+				}
+
+				if(relevant_symbol->is_matrix==FALSE){
+					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND1);
+					valid_file=FALSE;
+				}
+			}
+			if (get_operand_type(current.OPERAND2)==type_matrix){
+				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND2),*symbols);
+				if (!relevant_symbol){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
+					valid_file=FALSE;
+				}
+				if(relevant_symbol->is_matrix==FALSE){
+					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND2);
+					valid_file=FALSE;
+				}
 			}
 
 		}
@@ -78,247 +122,270 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 		return FALSE;
 	}
 
-	/*ALL LABELS ARE VALID*/
-	for (i=0;i<parsed_size;i++){
-		symbol_ptr current_symbol;
-		current=parsed[i];
-		NORMALCOLOR
+	/*end of labels validation*/
 
-		printf("working on line %d\n",current.line_number);
 
-		/*Working on operation*/
-		if (strlen(current.operantion)>0){
+
+	/*this loop goes over each parsed line*/
+	for (parse_scanner=0;parse_scanner<parsed_size;parse_scanner++){
+		current=parsed[parse_scanner];
+
+		print_line(current);
+
+		/*extract info about the line*/
+		command_type=get_command_type(current);
+		if (command_type==operation){
+
 			opcode=get_opcode(current.operantion);
-			op1_type=get_operand_type(current.OPERAND1);
-			op2_type=get_operand_type(current.OPERAND2);
+			op1_type=current.op1_type;
+			op2_type=current.op2_type;
 
-			result=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
-			encoded_node=create_encoded_struct(address_helper,result); /*address helper = counts address for operationals as well*/
-			add_encoded_struct_to_list(encoded_list,encoded_node);
-			address_helper++;
-			counter++; /*COUNTER FOR LENGTH OF ENCODED VALUES*/
+			/*code the command and add it to the final list*/
+			calculated_memory_line=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
+			ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 
-			/*encode operands*/
-			/*Both operands are a register, so only one word is required*/
-			if (op1_type==op2_type && op1_type==REGISTER){
-				result=encode_register(current.OPERAND1,current.OPERAND2);
-				encoded_node=create_encoded_struct(address_helper,result);
-				add_encoded_struct_to_list(encoded_list,encoded_node);
+			/*
+			 * label:
+			 * if external, we encode address zero with last two digits to show that it's external
+			 * if internal, we encode the address of the label
+			 */
+			if (op1_type != type_unrecognized){
+				if (op1_type==type_label){
+					relevant_symbol=search_symbol(current.OPERAND1,*symbols);
 
-				address_helper++;
-				counter++;
+					if (relevant_symbol->declared_as==external){
+						calculated_memory_line=EXTERNAL_VALUE;
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
-			}
-			else {
-				if (op1_type != UNRECOGNIZED){ /*operand1 exists*/
-					/*operand exists*/
-
-					if (op1_type==LABLE){ /*if the label is external, add it to external list*/
-						current_symbol=search_symbol(current.OPERAND1,*symbols);
-						if (current_symbol->declared_as==external){
-							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
-							printf(KRED"label1 %s is external\n",current.OPERAND1);
-							NORMALCOLOR
-						}
-
-
-
-
-
-					}
-
-					if(op2_type==UNRECOGNIZED){
-						result=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
 					}
 					else {
-						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
+						calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 					}
-
-					/*if operation uses labels that are external, we add it to the external list to export to the file*/
-					if (op1_type==LABLE){
-						current_symbol=search_symbol(current.OPERAND1,*symbols);
-						if (current_symbol->declared_as==external){
-/*							printf(KRED"label %s is external\n",current.OPERAND1);*/
-
-							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
-						}
-
-					}
-
-					if (op1_type==MATRIX){
-						String derived_label,reg_searcher;
-						String reg1,reg2;
-						int label_length;
-
-						reg_searcher=current.OPERAND1;
-						reg_searcher+=label_length;
-/*						printf("reg searcher:%s\n",reg_searcher);*/
-
-						reg1=extract_reg_from_mat(reg_searcher);
-/*						printf("reg1: %s\n",reg1);*/
-
-						reg_searcher+=label_length+REG_NAME_LENGTH;
-/*						printf("reg searcher:%s\n",reg_searcher);*/
-						reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
-						/*to skip: "[r# and point to ][r#]*/
-
-
-
-						derived_label=strchr(current.OPERAND1,'[');
-
-						label_length=CALCSIZE(current.OPERAND1,derived_label);
-
-						derived_label=allocate_mem_string(label_length+1);
-						strncy_safe(derived_label,current.OPERAND1,label_length);
-
-						current_symbol=search_symbol(derived_label,*symbols);
-
-						/*encode the label address*/
-						result=encode_operand(LABLE,derived_label,*symbols,FALSE);
-
-						encoded_node=create_encoded_struct(address_helper,result);
-
-						add_encoded_struct_to_list(encoded_list,encoded_node);
-
-						address_helper++;
-						counter++;
-
-						/*encode registries*/
-
-						result=encode_register(reg1,reg2);
-
-
-						encoded_node=create_encoded_struct(address_helper,result);
-						add_encoded_struct_to_list(encoded_list,encoded_node);
-						address_helper++;
-
-						counter++;
-
-						NORMALCOLOR
-					}
-
-					else {
-						encoded_node=create_encoded_struct(address_helper,result);
-						add_encoded_struct_to_list(encoded_list,encoded_node);
-						address_helper++;
-						counter++;
-					}
+					/*end of op1==label*/
 				}
 
 
-				if (op2_type!=UNRECOGNIZED){
-					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
-					encoded_node=create_encoded_struct(address_helper,result);
+				if (op1_type==type_matrix){
+					String derived_label,reg_searcher;
+					String reg1,reg2;
+					int label_length;
 
-					add_encoded_struct_to_list(encoded_list,encoded_node);
 
-					if (op2_type==LABLE){
-						current_symbol=search_symbol(current.OPERAND2,*symbols);
-						if (current_symbol->declared_as==external){
-							add_external_item_to_list(external_labels_list,current.OPERAND2,address_helper);
-							printf(KRED"label2 %s is external\n",current.OPERAND2);
-							NORMALCOLOR
-						}
+					/*derive_label*/
+					/*reg_searcher=strchr(current.OPERAND1,'[');
+					label_length=CALCSIZE(current.OPERAND1,reg_searcher);
+					derived_label=allocate_mem_string(label_length+1);
+					strncy_safe(derived_label,current.OPERAND1,label_length);*/
+					derived_label=extract_mat_label(current.OPERAND1);
+					printf("derived matrix label: <%s>\n",derived_label);
+
+					relevant_symbol=search_symbol(derived_label,*symbols);
+					if (relevant_symbol->declared_as==external){
+						calculated_memory_line=EXTERNAL_VALUE;
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+
 					}
-					address_helper++;
-					counter++;
+					else {
+						calculated_memory_line=encode_operand(type_label,derived_label,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+					}
+
+					/*extract registers*/
+					reg1=extract_reg_from_mat(reg_searcher);
+					reg_searcher+=label_length+REG_NAME_LENGTH;
+					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
+					calculated_memory_line=encode_register(reg1,reg2);
+					ADD_CALCULATED_VALUE_TO_LIST
+
+
+
+						/*print label address*/
+					/*another memory word for the registers*/
+
+					/*end of op1_type == matrix*/
 				}
+
+				if (op1_type==type_register){
+
+					if (op2_type==type_register){
+						calculated_memory_line=encode_register(current.OPERAND1,current.OPERAND2);
+						ADD_CALCULATED_VALUE_TO_LIST
+					}
+					else {
+						calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
+						ADD_CALCULATED_VALUE_TO_LIST
+					}
+
+					/*end of op1_type == register*/
+
+				}
+
+				else{
+					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
+					ADD_CALCULATED_VALUE_TO_LIST
+
+					/*end of op1=direct*/
+				}
+
+
+				/*end of op1_type != type_unrecognized*/
 			}
+
+			if (op2_type != type_unrecognized){
+				if (op2_type==type_label){
+					relevant_symbol=search_symbol(current.OPERAND2,*symbols);
+					if (relevant_symbol->declared_as==external){
+						calculated_memory_line=EXTERNAL_VALUE;
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+
+					}
+					else {
+						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+					}
+					/*end of op2==label*/
+				}
+
+				if (op2_type==type_matrix){
+					String derived_label,reg_searcher;
+					String reg1,reg2;
+					int label_length;
+
+
+					/*derive_label*/
+					reg_searcher=strchr(current.OPERAND2,'[');
+					label_length=CALCSIZE(current.OPERAND2,reg_searcher);
+					derived_label=allocate_mem_string(label_length+1);
+					strncy_safe(derived_label,current.OPERAND2,label_length);
+
+					printf("derived matrix label: <%s>\n",derived_label);
+
+					relevant_symbol=search_symbol(derived_label,*symbols);
+					printf("found_symbol\n");
+					if (relevant_symbol->declared_as==external){
+						calculated_memory_line=EXTERNAL_VALUE;
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+
+					}
+					else {
+						calculated_memory_line=encode_operand(type_label,derived_label,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+					}
+
+					/*extract registers*/
+					reg1=extract_reg_from_mat(reg_searcher);
+					reg_searcher+=label_length+REG_NAME_LENGTH;
+					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
+					calculated_memory_line=encode_register(reg1,reg2);
+					ADD_CALCULATED_VALUE_TO_LIST
+
+
+
+						/*print label address*/
+					/*another memory word for the registers*/
+
+					/*end of op2_type == matrix*/
+				}
+
+
+				if (op2_type==type_register){
+
+					if (op1_type !=type_register){
+						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
+
+						ADD_CALCULATED_VALUE_TO_LIST
+					}
+
+
+					/*end of op2_type == register*/
+
+				}
+
+
+
+				else{
+					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
+					ADD_CALCULATED_VALUE_TO_LIST
+
+					/*end of op2=direct*/
+				}
+				/*end of op2_type != type_unrecognized*/
+			}
+
+
+			/*end of the operation*/
 		}
-		/*Instructiion was received*/
-		else {
-			if (strcmp(current.instruction,ENTRY)==0 ) {
+
+		else {/*set as instruction*/
+
+			/*mark the symbol for future printing*/
+			if (strcmp(current.instruction,ENTRY)==0){
 				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
 			}
 
-				/*treat mat and data*/
-			else if (strcmp(current.instruction,DATA)==0){
+			if (strcmp(current.instruction,DATA)==0){
 				length=current.data_values_number;
 
-				print_line(current);
 
 				for(j=0;j<length;j++){
-					data_array[data_counter]=current.data_int_values[j];
-					data_counter++;
-					general_counter++;
+					combined_data_list[combined_data_list_counter]=current.data_int_values[j];
+					combined_data_list_counter++;
 				}
-			}
-
-			/*
-			 * When handling mat, we copy each number recieved into the data_array. if we received less values than matrix size,
-			 * Zeros are added
-			 */
-
-			else if (strcmp(current.instruction,MAT)==0){
-				int m=0;
-
-				length=current.mat_size;
-
-				for(j=0;j<current.mat_size;j++){
-					if (m<current.data_values_number){
-						data_array[data_counter]=current.data_int_values[m];
-						data_counter++;
-						general_counter++;
-						m++;
-					}
-					else {
-						data_array[data_counter]=0;
-						data_counter++;
-						general_counter++;
-					}
-				}
-
-
-
-/*
-				for (j=0;j<current.mat_size; j++){
-					printf(KRED "%d ",current.data_int_values[j]);
-				}
-*/
-
-
-
+				/*end of data*/
 			}
 
 			if (strcmp(current.instruction,STR)==0){
 				length=strlen(current.OPERAND1);
+				for(j=0;j<length;j++){
+					combined_data_list[combined_data_list_counter]=current.OPERAND1[j];
+					combined_data_list_counter++;
+				}
+			/*end of STR*/
+			}
+			printf(KRED"trying to access mat params in the struct\n");
+			NORMALCOLOR
+			printf("instruction: %s\n",current.instruction);
+			if (strcmp(current.instruction,MAT)==0){
+				int m=0;
+
+				length=current.mat_size;
+
+
+				printf("mat size: %d\n",current.mat_size);
 
 				for(j=0;j<length;j++){
-					data_array[data_counter]=current.OPERAND1[j];
-					data_counter++;
-					general_counter++;
+					if (m<current.data_values_number){
+						combined_data_list[combined_data_list_counter]=current.data_int_values[m];
+						combined_data_list_counter++;
+						m++;
+					}
+					else {
+						combined_data_list[combined_data_list_counter]=0;
+						combined_data_list_counter++;
+					}
 				}
-				NORMALCOLOR
-				printf("\n");
+				/*end of MAT*/
 			}
 
+			printf("starting next line\n");
 		}
 
+		/*end of the main loop*/
 	}
 
-	/*adding the data array to the struct*/
+	printf("starting to merge the lists: \n");
+	/*combine the two lists together*/
+	for (j=0;j<combined_data_list_counter;j++){
+		calculated_memory_line=combined_data_list[j];
+		ADD_CALCULATED_VALUE_TO_LIST
 
-	for (j=0;j<data_counter;j++){
-
-		printf("linking %d to address %d\n",data_array[j],address_helper);
-
-		encoded_node=create_encoded_struct(address_helper,data_array[j]);
-
-		add_encoded_struct_to_list(encoded_list,encoded_node);
-
-		address_helper++;
 	}
 
 
-	printf("added to data_array at the end\n");
-
-/*	*result_size=address_helper;*/
-	printf(BOLDGREEN"END OF SECOND SCAN\n");
-	NORMALCOLOR
 	return TRUE;
 }
-
 
 
 
@@ -343,7 +410,7 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 		result|=op1_coded;
 		result|=op2_coded;
 
-		printf("operand1: %d\n",op1);
+/*		printf("operand1: %d\n",op1);*/
 
 	}
 
@@ -450,8 +517,6 @@ int encode_register(String op1,String op2){
 	int op1_n,op2_n;
 	int result;
 
-	printf("op1: %s, op2:%s\n");
-
 
 	/*first char is r, second is num of register*/
 	op1_n=(op1[1])-'0';
@@ -475,14 +540,14 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 
 
 	result=0;
-	if (type==INTERMID){
+	if (type==type_intermid){
 		op+=1;
 		result=atoi(op);
 		result<<=OPER_SIZE;
 		return result;
 	}
 
-	if (type==LABLE){
+	if (type==type_label){
 
 		symbol_found=search_symbol(op,symbols);
 
@@ -497,7 +562,7 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 		return result;
 	}
 
-	if (type==REGISTER){
+	if (type==type_register){
 		result=(op[1])-'0';
 		if (is_source==TRUE){
 			result<<=(WORD_SIZE-OPCODE_SIZE);
@@ -526,7 +591,6 @@ encoded_ptr create_encoded_struct(int address,int value){
 	encoded_struct->value=value;
 	encoded_struct->next=NULL;
 
-	printf("successfully created encoded_struct\n");
 	return encoded_struct;
 
 }
@@ -558,7 +622,6 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	encoded_ptr p;
 
 
-
 	if (*list==NULL){
 		*list=item;
 		(*list)->next=NULL;
@@ -587,5 +650,24 @@ String extract_reg_from_mat(String oper){
 	printf("found reg: %s\n",reg);
 	return reg;
 
+
+}
+
+/*
+ * This function receives a matrix operand (M1[r3][r2])
+ * and extracts the label M1 by calculating the length of the label, and copying it
+ * to 'result'
+ * the function the returns 'result'
+ */
+String extract_mat_label (String str){
+	String label,searcher;
+	int label_length;
+
+	searcher=strchr(str,'[');
+	label_length=CALCSIZE(str,searcher);
+	label=allocate_mem_string(label_length+1);
+	strncy_safe(label,str,label_length);
+
+	return label;
 
 }

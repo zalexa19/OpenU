@@ -38,6 +38,8 @@ int main(int argc, char** argv) {
 	create_operation_info_array();
 	external_labels_list=NULL;
 
+	encoded_list_head=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
+
 	if (argc==1){
 		fprintf(stderr, "File name was not received.\n");
 	}
@@ -67,13 +69,14 @@ int main(int argc, char** argv) {
 		else
 		{
 			printf("invoking first scan\n\n");
-
+			print_structs(parsed,parsed_size);
 			if (first_scan(parsed,parsed_size,&symbols,&IC,&DC,&external_labels_list)==FALSE){
 				fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
 				NORMALCOLOR
 			}
 			else
 			{
+
 				/*update the addresses of the .mat, .string .data*/
 				update_data_addresses(&symbols,IC);
 
@@ -98,7 +101,6 @@ int main(int argc, char** argv) {
 					create_obj_file(encoded_list_head,argv[j],IC,DC);
 					create_entry_file(symbols,argv[j]);
 					create_extern_file(symbols,argv[j],external_labels_list);
-					print_symbol_list(symbols);
 
 				}
 
