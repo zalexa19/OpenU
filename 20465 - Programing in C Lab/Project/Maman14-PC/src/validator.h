@@ -51,7 +51,7 @@ void mat_validation_errors(mat_status_report_ref errors, body item);
 
 void validate_instruction(body* item, list_item_reference *);
 
-void validate_operation(body* item, list_item_reference *, String);
+Bool validate_operation(body* item, list_item_reference *, String);
 
 
 /*Validate inst operators*/

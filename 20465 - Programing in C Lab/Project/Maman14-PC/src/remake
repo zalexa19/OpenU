@@ -1,2 +1,2 @@
 clear
-make && ./application assembly_input
+make && ./application  stas 

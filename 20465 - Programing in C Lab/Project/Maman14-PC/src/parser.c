@@ -173,9 +173,6 @@ body parse_line(String str, int line_number){
 
 	/*PARSING OPERANDS*/
 
-	printf("parsing operands\n");
-
-
 	if (strcmp(result.instruction,DATA)==0){
 		/*Count number of operands*/
 		num_commas=0;
@@ -275,12 +272,10 @@ body parse_line(String str, int line_number){
 			extracted_value=extract_operand(current_pointer);
 			extracted_value_length=strlen(extracted_value);
 
-			printf(KMAGENTA"str EXTRACTED: <%s>\n",extracted_value);
 
 			result.OPERAND1=allocate_mem_string(extracted_value_length+1);
 			strcpy(result.OPERAND1,extracted_value);
 
-			printf("str opernad: <%s>\n",result.OPERAND1);
 
 			current_pointer+=extracted_value_length;
 			if (extracted_value_length>0){
@@ -534,8 +529,6 @@ String extract_operation(String str){
 
 	n_spaces= count_spaces(str);
 	str +=n_spaces;
-
-/*	printf(KMAGENTA "STR: [%s\n",str);*/
 
 	i=0;
 	c=str[i];

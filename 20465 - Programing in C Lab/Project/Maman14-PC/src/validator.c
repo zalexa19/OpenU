@@ -26,6 +26,11 @@
 		NORMALCOLOR\
 }
 
+#define SET_ERROR_FOUND\
+		if (item.valid==FALSE){\
+		error_found=TRUE;\
+	}
+
 
 Bool validate_file(bodyArray parsed, int array_size){
 	int counter;
@@ -33,6 +38,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 	list_item_reference error_list_head;
 	char error[MAXERRORSIZE];
 	label_status_ref validated_label;
+	Bool error_found=FALSE;
 
 
 	NORMALCOLOR
@@ -49,10 +55,8 @@ Bool validate_file(bodyArray parsed, int array_size){
 			validated_label=validate_label(item.label);
 			item.valid=validated_label->VALID_LABEL;
 			print_label_errors(validated_label,item,&error_list_head);
+			SET_ERROR_FOUND
 
-
-/*			printf(BOLDWHITE"Label validation:");
-			PRINT_PASSED_OR_FAILED(validated_label->VALID_LABEL)*/
 		}
 
 
@@ -62,20 +66,22 @@ Bool validate_file(bodyArray parsed, int array_size){
 			 ***********************/
 
 			validate_instruction(&item,&error_list_head);
+			SET_ERROR_FOUND
 
-/*			printf("Instruction validation:\nFile is: ");
-			PRINT_PASSED_OR_FAILED(item.valid)*/
+
 
 
 			/*DATA*/
 			if (strcmp(item.instruction,"data")==0){
 				validate_ins_data(&item, &error_list_head);
+				SET_ERROR_FOUND
 
 			}
 
 
 			if (strcmp(item.instruction,"string")==0){
 				validate_ins_string(&item,&error_list_head);
+				SET_ERROR_FOUND
 			}
 
 			/*MAT*/
@@ -83,12 +89,14 @@ Bool validate_file(bodyArray parsed, int array_size){
 				/*validate the numbers received*/
 				validate_ins_data(&item,&error_list_head);
 				mat_validation_errors(validate_ins_mat(&item),item);
+				SET_ERROR_FOUND
 			}
 
 
 			/*ENTRY*/
 			if (strcmp(item.instruction,"entry")==0){
 				validate_ins_entry(&item,&error_list_head,error);
+				SET_ERROR_FOUND
 			}
 
 
@@ -96,6 +104,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 			/*EXTERN*/
 			if (strcmp(item.instruction,"extern")==0){
 				validate_ins_extern(&item,&error_list_head,error);
+				SET_ERROR_FOUND
 			}
 		}
 		else {
@@ -105,16 +114,17 @@ Bool validate_file(bodyArray parsed, int array_size){
 
 			if (strcmp(item.operantion,"\0")==0){
 				item.valid=FALSE;
-				sprintf(error,"22. Error in line: %d: Operation/Instruction were not received.\n",item.line_number);
+				sprintf(error,"Error in line: %d: Operation/Instruction were not received.\n",item.line_number);
 				add_to_list(&error_list_head,error);
+				SET_ERROR_FOUND
 			} else {
 
-				validate_operation(&item,&error_list_head,error);
-
-
+				if (validate_operation(&item,&error_list_head,error)==FALSE){
+					SET_ERROR_FOUND
+				}
 
 				validate_oper_operands(&item,&error_list_head,error);
-
+				SET_ERROR_FOUND
 			}
 
 
@@ -123,11 +133,15 @@ Bool validate_file(bodyArray parsed, int array_size){
 
 		parsed[counter] = item;
 
-
 	}
-	if (item.valid==FALSE){
+
+	if (error_found==TRUE){
+		print_list(error_list_head);
+
 		return FALSE;
 	}
+
+
 	printf(BOLDGREEN"finished validating file\n");
 	NORMALCOLOR
 
@@ -141,14 +155,10 @@ label_status_ref validate_label (String label){
 	int length;
 	int i;
 	char c;
-
 	label_status_ref validation_result;
 	Bool valid_letter;
 
-
-
 	length=strlen(label);
-
 
 	validation_result=initialize_label_struct();
 
@@ -222,7 +232,7 @@ void validate_instruction(body* item, list_item_reference*  head){
 
 	if (is_instructional_command(inst_value)==FALSE){
 		item->valid=FALSE;
-		sprintf(error,"6. Error in line %d: Instruction value <%s> is unrecognized.\n",line,inst_value);
+		sprintf(error,"Error in line %d: Instruction value <%s> is unrecognized.\n",line,inst_value);
 		add_to_list(head,error);
 	}
 
@@ -234,21 +244,21 @@ void validate_instruction(body* item, list_item_reference*  head){
 
 
 
-void validate_operation(body* item, list_item_reference*  head, String error){
+Bool validate_operation(body* item, list_item_reference*  head, String error){
 	String value;
 	int line;
 
 	line=item->line_number;
 	value=item->operantion;
 
-
+	printf("values to be validated: %s, status: %d\n",value,is_operational_command(value));
 	if (is_operational_command(value)==FALSE){
-		item->valid=FALSE;
-		sprintf(error,"28. Error in line %d: Operational value <%s> is unrecognized.\n",line,value);
+		sprintf(error,"Error in line %d: Operational value <%s> is unrecognized.\n",line,value);
 		add_to_list(head,error);
+		return FALSE;
 	}
 
-
+	return TRUE;
 }
 
 /*This function validates that the operands are valid numbers*/
@@ -266,7 +276,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 
 	if (item->data_values_number==0){
 		item->valid=FALSE;
-		sprintf(error,"8. Error in line %d: No operands received for .data.\n",line);
+		sprintf(error,"Error in line %d: No operands received for .data.\n",line);
 		add_to_list(head,error);
 	}
 
@@ -278,7 +288,7 @@ void validate_ins_data (body* item, list_item_reference*  head){
 		if (is_valid_number(current)==FALSE){
 
 			item->valid=FALSE;
-			sprintf(error,"7. Error in line %d: non-numbers received in %s, for command %s.\n",line,current,item->instruction);
+			sprintf(error,"Error in line %d: non-numbers received in %s, for command %s.\n",line,current,item->instruction);
 			add_to_list(head,error);
 			return;
 		}
@@ -398,7 +408,6 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
 
-	printf("\n------------------------------------\n");
 
 	result->inv_char_in_brackets=FALSE;
 	result->inv_n_brackets=FALSE;

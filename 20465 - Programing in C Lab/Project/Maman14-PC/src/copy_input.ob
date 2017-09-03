@@ -1,11 +1,11 @@
-cad 	 bcd
+bbc 	 dd
 bcba 	 aacba
-bcbb 	 cbdcc
+bcbb 	 cabbc
 bcbc 	 acbda
 bcbd 	 aaaab
 bcca 	 acdba
 bccb 	 acaaa
-bccc 	 cbadc
+bccc 	 bdccc
 bccd 	 cbaba
 bcda 	 aaaab
 bcdb 	 daaaa
@@ -13,9 +13,9 @@ bcdc 	 ddcda
 bcdd 	 addda
 bdaa 	 abbaa
 bdab 	 bdaba
-bdac 	 cbdbc
+bdac 	 cabac
 bdad 	 aacda
-bdba 	 cbdcc
+bdba 	 cabbc
 bdbb 	 adada
 bdbc 	 aaada
 bdbd 	 ccaba

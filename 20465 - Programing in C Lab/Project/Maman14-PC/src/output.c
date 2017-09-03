@@ -50,25 +50,16 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	printf("encoding now\n");*/
 
 	while(pointer!=NULL){
-
-/*		printf("pointer: %d\n",pointer->address);*/
-
-
-/*		printf("current pointer inside loop: %d\n",pointer->address);*/
 		address_base4 = convert_to_base4(pointer->address ,CONVERTED_VALUE_LENGTH);
 		value_base4 = convert_to_base4(pointer->value,CONVERTED_ADDRESS_LENGTH);
-
-/*		printf("address: %s \t value:%s\n",address_base4,value_base4);*/
-
 		fprintf(file,"%s \t %s\n",address_base4,value_base4);
-/*		printf(address_base4,value_base4);*/
 		pointer=pointer->next;
 	}
-
-
-	printf("finished creating obj\n");
 	free(full_name);
 	fclose(file);
+
+	printf("finished creating obj\n");
+
 }
 
 
@@ -80,9 +71,8 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 
 	full_name=allocate_mem_string(MAXMEM);
 	strcpy(full_name,file_name);
-	strcat(full_name,".ent");
+	strcat(full_name,ENT_FILE_NAME);
 
-	printf("File name: %s\n",full_name);
 NORMALCOLOR
 
 	pointer=symbols;
@@ -101,7 +91,7 @@ NORMALCOLOR
 		pointer=pointer->next;
 	}
 
-	printf("finished creating ent\n");
+	printf("finished creating ENT\n");
 
 	if(file!=NULL) {
 		fclose(file);

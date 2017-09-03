@@ -60,7 +60,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
 
-/*		printf("checking label: %s\n",current.label);*/
 		if (strlen(current.label)>0){
 			if (! search_symbol(current.label,*symbols)){ /*label is not found*/
 				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
@@ -82,8 +81,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			}
 
-/*			printf("checking if op2 is a label\n");*/
-
 			if (get_operand_type(current.OPERAND2)==type_label){
 
 				if (!(search_symbol(current.OPERAND2,*symbols))){ /*label is not found*/
@@ -94,6 +91,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			}
 
 			if (get_operand_type(current.OPERAND1)==type_matrix){
+				printf("current op1: %s\n",current.OPERAND1);
 				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND1),*symbols);
 
 				if (!relevant_symbol){ /*label is not found*/
@@ -133,7 +131,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 	for (parse_scanner=0;parse_scanner<parsed_size;parse_scanner++){
 		current=parsed[parse_scanner];
 
-		print_line(current);
 
 		/*extract info about the line*/
 		command_type=get_command_type(current);
@@ -147,7 +144,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			if (opcode==15 || opcode==14){
 				calculated_memory_line=opcode;
 				calculated_memory_line<<=(WORD_SIZE-OPCODE_SIZE);
-				print_bin(calculated_memory_line);
 			}
 			else {
 				calculated_memory_line=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
@@ -313,10 +309,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 
 				else if (op2_type==type_register){
-					printf("op2 is reg\n");
 
 					if (op1_type !=type_register){
-						printf("op2 is reg\n");
 						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
 
 						ADD_CALCULATED_VALUE_TO_LIST
@@ -374,16 +368,12 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				combined_data_list_counter++;
 			/*end of STR*/
 			}
-			printf(KRED"trying to access mat params in the struct\n");
-			NORMALCOLOR
-			printf("instruction: %s\n",current.instruction);
+
 			if (strcmp(current.instruction,MAT)==0){
 				int m=0;
 
 				length=current.mat_size;
 
-
-				printf("mat size: %d\n",current.mat_size);
 
 				for(j=0;j<length;j++){
 					if (m<current.data_values_number){
@@ -411,10 +401,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 	}
 
-	printf("encoded list before exiting second scan: %d\n",((*encoded_list)->address));
 	temp=*encoded_list;
 	while (temp!=NULL){
-		printf("address: %d\n",temp->address);
 		temp=temp->next;
 	}
 	return TRUE;
@@ -463,14 +451,6 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 	if(rea!=ABSOLUTE_VALUE){
 		result|=rea;
 	}
-
-
-
-/*
-	printf("result: ");
-	print_bin(result);*/
-	NORMALCOLOR
-
 	return result;
 }
 
@@ -668,7 +648,6 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 
 	p->next=item;
 
-	printf("added value %d to list\n",p->address);
 
 /*	printf(KRED"encoded to struct - item:%s, item:%s\n",p->value,item->value);*/
 }
