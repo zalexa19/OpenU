@@ -100,7 +100,6 @@ int main(int argc, char** argv) {
 					create_extern_file(symbols,argv[j],external_labels_list);
 					print_symbol_list(symbols);
 
-
 				}
 
 			}

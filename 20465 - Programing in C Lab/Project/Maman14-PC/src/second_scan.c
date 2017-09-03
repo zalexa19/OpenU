@@ -84,6 +84,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 		current=parsed[i];
 		NORMALCOLOR
 
+		printf("working on line %d\n",current.line_number);
 
 		/*Working on operation*/
 		if (strlen(current.operantion)>0){
@@ -99,26 +100,39 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 
 			/*encode operands*/
+			/*Both operands are a register, so only one word is required*/
 			if (op1_type==op2_type && op1_type==REGISTER){
 				result=encode_register(current.OPERAND1,current.OPERAND2);
-
 				encoded_node=create_encoded_struct(address_helper,result);
-
 				add_encoded_struct_to_list(encoded_list,encoded_node);
-				address_helper++;
 
-/*				commands_array[counter]=result;*/
+				address_helper++;
 				counter++;
 
 			}
 			else {
-				if (op1_type != UNRECOGNIZED){ /*is operand1 exists*/
+				if (op1_type != UNRECOGNIZED){ /*operand1 exists*/
+					/*operand exists*/
+
+					if (op1_type==LABLE){ /*if the label is external, add it to external list*/
+						current_symbol=search_symbol(current.OPERAND1,*symbols);
+						if (current_symbol->declared_as==external){
+							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
+							printf(KRED"label1 %s is external\n",current.OPERAND1);
+							NORMALCOLOR
+						}
+
+
+
+
+
+					}
+
 					if(op2_type==UNRECOGNIZED){
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
 					}
 					else {
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
-
 					}
 
 					/*if operation uses labels that are external, we add it to the external list to export to the file*/
@@ -126,10 +140,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 						current_symbol=search_symbol(current.OPERAND1,*symbols);
 						if (current_symbol->declared_as==external){
 /*							printf(KRED"label %s is external\n",current.OPERAND1);*/
-							printf("current address:%d\n",address_helper+100);
 
 							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
-
 						}
 
 					}
@@ -174,10 +186,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 						/*encode registries*/
 
-						printf(KYELLOW"----------------------------------------------------------\n");
 						result=encode_register(reg1,reg2);
 
-						printf(KYELLOW"----------------------------------------------------------\n");
 
 						encoded_node=create_encoded_struct(address_helper,result);
 						add_encoded_struct_to_list(encoded_list,encoded_node);
@@ -190,12 +200,12 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 					else {
 						encoded_node=create_encoded_struct(address_helper,result);
-
 						add_encoded_struct_to_list(encoded_list,encoded_node);
 						address_helper++;
 						counter++;
 					}
 				}
+
 
 				if (op2_type!=UNRECOGNIZED){
 					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
@@ -208,7 +218,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 						if (current_symbol->declared_as==external){
 							add_external_item_to_list(external_labels_list,current.OPERAND2,address_helper);
 							printf(KRED"label2 %s is external\n",current.OPERAND2);
-							printf("current address:%d\n",address_helper+100);
 							NORMALCOLOR
 						}
 					}
@@ -219,8 +228,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 		}
 		/*Instructiion was received*/
 		else {
-			printf("Entered instruction condition for instruction %s\n",current.instruction);
-			printf("current instruction command: <%s>\n",current.instruction);
 			if (strcmp(current.instruction,ENTRY)==0 ) {
 				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
 			}
@@ -228,18 +235,14 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				/*treat mat and data*/
 			else if (strcmp(current.instruction,DATA)==0){
 				length=current.data_values_number;
-				printf("length: %d\n",length);
 
-				printf(KCYN,"2.Working on .DATA\n");
 				print_line(current);
 
 				for(j=0;j<length;j++){
-					printf("-----------<><><<>\n");
 					data_array[data_counter]=current.data_int_values[j];
 					data_counter++;
 					general_counter++;
 				}
-				printf("%d\n",data_array[data_counter-1]);
 			}
 
 			/*
@@ -249,9 +252,6 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			else if (strcmp(current.instruction,MAT)==0){
 				int m=0;
-
-				printf("\n8. I'm in mat\n");
-				printf("mat_size %d\n", current.mat_size);
 
 				length=current.mat_size;
 
@@ -269,7 +269,16 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					}
 				}
 
-				printf("%d ",data_array[data_counter]);
+
+
+/*
+				for (j=0;j<current.mat_size; j++){
+					printf(KRED "%d ",current.data_int_values[j]);
+				}
+*/
+
+
+
 			}
 
 			if (strcmp(current.instruction,STR)==0){
@@ -336,10 +345,10 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 		printf("operand1: %d\n",op1);
 
-
 	}
 
 	else { /*opcode is4,5, or >6*/
+
 		/*no source for these commands*/
 
 		op1_coded=op1<<OPER_SIZE;
@@ -457,6 +466,7 @@ int encode_register(String op1,String op2){
 
 	return result;
 }
+
 
 
 int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_source){

@@ -125,8 +125,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 
 
 	}
-	if (item.valid==TRUE){
-		printf("VALID FILE\n");
+	if (item.valid==FALSE){
 		return FALSE;
 	}
 	printf(BOLDGREEN"finished validating file\n");
@@ -395,10 +394,11 @@ mat_status_report_ref validate_ins_mat (body* item){
 	int op1_length=strlen(item->OPERAND1);
 	String oper1=item->OPERAND1;
 	String pointer;
-	String* data_pointer;
+	String* data_pointer; /*pointer that is used for deriving matrix size*/
 	String copy;
 
 	printf(KBLUE "VALIDATE_INS_MAT\n");
+
 /*
 	item->data_values_number=4;
 	item->data_int_values[0]=5;
@@ -443,6 +443,7 @@ mat_status_report_ref validate_ins_mat (body* item){
 	if (brackets_balance!=0){
 		result->inv_n_brackets=TRUE;
 		result->valid_mat=FALSE;
+		item->valid=FALSE;
 	}
 
 
@@ -452,54 +453,55 @@ mat_status_report_ref validate_ins_mat (body* item){
 	if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(item->OPERAND1,"][")==NULL  ){
 		result->syntax_error=TRUE;
 		result->valid_mat=FALSE;
+		item->valid=FALSE;
 	}
 	else {
 /*		check if all brackets appear correctly, and that the it includes only a number*/
 		oper1+=1;	/*advance once to skip the first [*/
+
 		pointer=strchr(oper1,']');
-		size=CALCSIZE(item->OPERAND1,pointer);
+
+		size=CALCSIZE(oper1,pointer);
 
 		copy=allocate_mem_string(size+1);
 		strncy_safe(copy,oper1,size);
 
-
+		/*checking if the first [] is valid*/
 		if (is_valid_number(copy)==FALSE){
-			printf("copy is: %s",copy);
+			printf("not a valid number\n");
 			result->inv_char_in_brackets=TRUE;
 			result->valid_mat=FALSE;
-
+			item->valid=FALSE;
 		}
 
 		data_pointer=item->mat_params;
 		data_pointer=(String*)allocate_mem_general(2,sizeof(String));
 		data_pointer[0]=allocate_mem_string(size);
 
-
 		strncy_safe(data_pointer[0],copy,size);
 
 
 		r=atoi(copy);
+
+		/*checking the second []*/
 		oper1=strchr(oper1,'[');
 		oper1+=1;
-
-/*		free(copy);*/
 
 		pointer=strchr(oper1,']');
 		size=CALCSIZE(oper1,pointer);
 
 		if (size >strlen(copy)){
-			/*free(copy);*/
+			free(copy);
+			printf("freed copy\n");
 			copy=allocate_mem_string(size);
-
 		}
 
-
 		strncy_safe(copy,oper1,size);
-
 
 		if (is_valid_number(copy)==FALSE){
 			result->inv_char_in_brackets=TRUE;
 			result->valid_mat=FALSE;
+			item->valid=FALSE;
 		}
 
 		data_pointer[0]=allocate_mem_string(size);
@@ -513,10 +515,8 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 	}
 
-
-
-
-/*	free(copy);*/
+	free(copy);
+	free(data_pointer);
 	return result;
 }
 
