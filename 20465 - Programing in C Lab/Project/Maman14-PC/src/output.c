@@ -11,6 +11,9 @@
 #define FILE_EX_LENGTH 4
 #define CONVERTED_VALUE_LENGTH 4
 #define CONVERTED_ADDRESS_LENGTH 5
+#define OBJ_FILE_NAME ".ob"
+#define EXT_FILE_NAME ".ext"
+#define ENT_FILE_NAME ".ent"
 
 
 
@@ -20,10 +23,11 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	String full_name;
 	encoded_ptr pointer;
 	int i;
+	int file_name_length=(strlen(file_name)+(strlen(OBJ_FILE_NAME))+1);
 
-	full_name=allocate_mem_string(MAXMEM);
+	full_name=allocate_mem_string(file_name_length);
 	strcpy(full_name,file_name);
-	strcat(full_name,".ob");
+	strcat(full_name,OBJ_FILE_NAME);
 
 	printf(BOLDBLUE"file name: %s\n",full_name);
 
@@ -37,8 +41,6 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	pointer=encoded_list;
 
 	/*print file headlines*/
-	printf("IC: %d, DC: %d\n",IC,DC);
-
 	printf("IC: %s, DC:%s\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
 	fprintf(file,"%s \t %s\n\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
 
@@ -56,6 +58,7 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 
 
 	printf("finished creating obj\n");
+	free(full_name);
 	fclose(file);
 }
 
@@ -105,10 +108,10 @@ void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr 
 
 	if (external_labels_list != NULL){
 
-		full_name=allocate_mem_string(strlen(file_name)+4);
+		full_name=allocate_mem_string(strlen(file_name)+strlen(EXT_FILE_NAME)+1);
 
 		strcpy(full_name,file_name);
-		strcat(full_name,".ext");
+		strcat(full_name,EXT_FILE_NAME);
 
 
 		printf("EXTERN: File opened-passed\n");
@@ -136,7 +139,7 @@ void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr 
 		if(file!=NULL) {
 			fclose(file);
 		}
-
+		free(full_name);
 }
 
 String convert_to_base4(unsigned int number, int length){

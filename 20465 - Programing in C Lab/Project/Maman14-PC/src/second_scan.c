@@ -153,6 +153,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			 */
 			if (op1_type != type_unrecognized){
 				if (op1_type==type_label){
+
 					relevant_symbol=search_symbol(current.OPERAND1,*symbols);
 
 					if (relevant_symbol->declared_as==external){
@@ -168,7 +169,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				}
 
 
-				if (op1_type==type_matrix){
+				else if (op1_type==type_matrix){
 					String derived_label,reg_searcher;
 					String reg1,reg2;
 					int label_length;
@@ -180,9 +181,10 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					derived_label=allocate_mem_string(label_length+1);
 					strncy_safe(derived_label,current.OPERAND1,label_length);*/
 					derived_label=extract_mat_label(current.OPERAND1);
-					printf("derived matrix label: <%s>\n",derived_label);
 
 					relevant_symbol=search_symbol(derived_label,*symbols);
+
+					label_length=strlen(derived_label);
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
@@ -194,6 +196,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					}
 
 					/*extract registers*/
+					reg_searcher=current.OPERAND1;
 					reg1=extract_reg_from_mat(reg_searcher);
 					reg_searcher+=label_length+REG_NAME_LENGTH;
 					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
@@ -208,7 +211,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					/*end of op1_type == matrix*/
 				}
 
-				if (op1_type==type_register){
+				else if (op1_type==type_register){
 
 					if (op2_type==type_register){
 						calculated_memory_line=encode_register(current.OPERAND1,current.OPERAND2);
@@ -223,7 +226,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 				}
 
-				else{
+				else if (op1_type==type_intermid){
 					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
 					ADD_CALCULATED_VALUE_TO_LIST
 
@@ -249,17 +252,16 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					/*end of op2==label*/
 				}
 
-				if (op2_type==type_matrix){
+				else if (op2_type==type_matrix){
 					String derived_label,reg_searcher;
 					String reg1,reg2;
 					int label_length;
 
 
 					/*derive_label*/
-					reg_searcher=strchr(current.OPERAND2,'[');
-					label_length=CALCSIZE(current.OPERAND2,reg_searcher);
-					derived_label=allocate_mem_string(label_length+1);
-					strncy_safe(derived_label,current.OPERAND2,label_length);
+					derived_label=extract_mat_label(current.OPERAND2);
+					label_length=strlen(derived_label);
+
 
 					printf("derived matrix label: <%s>\n",derived_label);
 
@@ -276,6 +278,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					}
 
 					/*extract registers*/
+					reg_searcher=current.OPERAND2;
 					reg1=extract_reg_from_mat(reg_searcher);
 					reg_searcher+=label_length+REG_NAME_LENGTH;
 					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
@@ -291,9 +294,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				}
 
 
-				if (op2_type==type_register){
+				else if (op2_type==type_register){
+					printf("op2 is reg\n");
 
 					if (op1_type !=type_register){
+						printf("op2 is reg\n");
 						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
 
 						ADD_CALCULATED_VALUE_TO_LIST
@@ -306,7 +311,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 
 
-				else{
+				else if(op2_type==type_intermid){
 					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
 					ADD_CALCULATED_VALUE_TO_LIST
 
@@ -378,7 +383,9 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 	printf("starting to merge the lists: \n");
 	/*combine the two lists together*/
+	printf("combined counter: %d\n",combined_data_list_counter);
 	for (j=0;j<combined_data_list_counter;j++){
+		printf("combined_data[%d]: %d\n",j,combined_data_list[j]);
 		calculated_memory_line=combined_data_list[j];
 		ADD_CALCULATED_VALUE_TO_LIST
 

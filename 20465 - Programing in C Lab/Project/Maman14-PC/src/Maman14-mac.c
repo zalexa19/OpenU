@@ -112,7 +112,11 @@ int main(int argc, char** argv) {
 	print_symbol_list(symbols);
 
 	NORMALCOLOR
+
+	free(encoded_list_head);
+	free(file_name);
 	printf("\n\n---===doei!===---\n");
+
 	return 0;
 }
 

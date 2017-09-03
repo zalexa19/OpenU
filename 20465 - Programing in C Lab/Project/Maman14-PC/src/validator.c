@@ -358,7 +358,7 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 		}
 
-		temp=allocate_mem_string(length);
+		temp=allocate_mem_string(length+1);
 
 		strncy_safe(temp,pointer,length);
 
@@ -367,12 +367,11 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 		strcpy(item->OPERAND1,temp);
 
-		free(temp);
 
 	}
 
 
-
+	free(temp);
 }
 
 /*
@@ -474,7 +473,7 @@ mat_status_report_ref validate_ins_mat (body* item){
 		if (size >strlen(copy)){
 			free(copy);
 			printf("freed copy\n");
-			copy=allocate_mem_string(size);
+			copy=allocate_mem_string(size+1);
 		}
 
 		strncy_safe(copy,oper1,size);
@@ -515,21 +514,6 @@ Bool validate_mat_as_operand(String operand){
 	int op1_length=strlen(operand);
 	String pointer;
 	String copy;
-
-/*	printf(KBLUE "validate_mat_as_operand\n");*/
-	NORMALCOLOR
-/*	printf("Allocating...%ld",sizeof(mat_status_report));*/
-/*	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));*/
-
-
-/*
-	result->inv_char_in_brackets=FALSE;
-	result->inv_n_brackets=FALSE;
-	result->syntax_error=FALSE;
-	result->inv_label_found=FALSE;
-	result->inv_registry_found=FALSE;
-	result->valid_mat=TRUE;
-*/
 
 
 	/*check label*/
@@ -1168,5 +1152,6 @@ void print_label_errors(label_status_ref status, body item, list_item_reference 
 
 
 	}
+	free(error);
 }
 

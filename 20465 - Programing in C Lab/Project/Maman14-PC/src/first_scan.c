@@ -26,12 +26,14 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 
 		}
 		current_pointer=current_pointer->next;
+
+		if (strcmp(current_pointer->name,key)==0){
+			return current_pointer;
+		}
 	}
 
 
-	if (strcmp(current_pointer->name,key)==0){
-		return current_pointer;
-	}
+
 
 	return NULL;
 }
@@ -124,7 +126,7 @@ symbol_ptr create_symbol(body item,int ic, int dc){
 	/*copy label*/
 	sym=(symbol_ptr)allocate_mem_general(1,sizeof(symbol));
 
-	sym->name=(String)allocate_mem_general(strlen(item.label),sizeof(char));
+	sym->name=allocate_mem_string(strlen(item.label)+1);
 	strcpy(sym->name,item.label);
 
 

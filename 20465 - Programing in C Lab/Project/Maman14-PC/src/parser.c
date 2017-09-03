@@ -634,6 +634,8 @@ String* extract_data_strings(char* str, int array_size){
 
 			final_array[cell]=allocate_mem_string(1);
 			final_array[cell]='\0';
+
+
 		}
 
 	}
