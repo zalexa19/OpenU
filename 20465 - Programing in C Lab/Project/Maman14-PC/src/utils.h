@@ -97,8 +97,13 @@ typedef struct parsed_line {
 	String* data_string_array;
 	int * data_int_values;
 	int mat_size;
+	String mat_label;
 	String * mat_params; /*used when creating a new matrix with .mat*/
 	Bool valid;
+	String mat_reg1;
+	String mat_reg2;
+	Operand_type op1_type;
+	Operand_type op2_type;
 	/*decide on how to deal with .data*/
 
 

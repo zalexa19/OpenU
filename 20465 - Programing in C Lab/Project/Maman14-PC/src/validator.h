@@ -27,7 +27,6 @@ typedef struct label_status{
 
 typedef struct mat_status_report * mat_status_report_ref;
 typedef struct mat_status_report{
-	Bool missing_op1;
 	Bool inv_n_brackets;
 	Bool inv_char_in_brackets;
 	Bool syntax_error;
@@ -43,7 +42,7 @@ label_status_ref initialize_label_struct();
 
 
 
-void validate_file(bodyArray, int);
+Bool validate_file(bodyArray, int);
 
 label_status_ref validate_label (String);
 void print_label_errors(label_status_ref, body, list_item_reference*);
@@ -62,8 +61,8 @@ void validate_ins_string (body* item, list_item_reference*  head);
 
 /*void validate_ins_mat(body* item, list_item_reference*  head);*/
 
-mat_status_report_ref validate_ins_mat(body* item, list_item_reference*  head);
-mat_status_report_ref validate_mat_as_operand(String);
+mat_status_report_ref validate_ins_mat(body* item);
+Bool validate_mat_as_operand(String);
 
 void validate_ins_entry(body* item, list_item_reference*  head, char *);
 

@@ -33,6 +33,18 @@
 	extracted_value=allocate_mem_string(strlen(current_pointer));
 
 
+#define COUNT_DATA_STRINGS_SIZE\
+		i=0;\
+		while(current_pointer[i]!='\0'){\
+			if(current_pointer[i]==','){\
+				data_array_size++;\
+			}\
+			i++;\
+		}\
+		if (data_array_size>0 || i>0){\
+			data_array_size++;\
+		}
+
 bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 	String line;
 	bodyArray parsed_file;
@@ -60,6 +72,7 @@ bodyArray  parse_file (FILE * file, int* parsed_size, int * n_lines){
 		*parsed_size=0;
 	}
 
+	free(line);
 	return parsed_file;
 }
 
@@ -150,10 +163,14 @@ body parse_line(String str, int line_number){
 
 
 	/*PARSING OPERANDS*/
+
+	printf("parsing operands\n");
+
+
 	if (strcmp(result.instruction,DATA)==0){
 		/*Count number of operands*/
 		num_commas=0;
-
+		/*i=0;
 		while(current_pointer[i]!='\0'){
 			if(current_pointer[i]==','){
 				data_array_size++;
@@ -161,16 +178,16 @@ body parse_line(String str, int line_number){
 			i++;
 		}
 
-		if (data_array_size>0){
+
+		if (data_array_size>0 || i>0){
 			data_array_size++;
 		}
-
-
+*/
+		COUNT_DATA_STRINGS_SIZE
 
 		result.data_values_number=data_array_size;
-
-
 		result.data_string_array =(String*)allocate_mem_general(data_array_size,sizeof(String));
+
 
 		if (result.data_string_array != NULL){
 			result.data_string_array=extract_data_strings(current_pointer,data_array_size);
@@ -188,6 +205,7 @@ body parse_line(String str, int line_number){
 	}
 	else if (strcmp(result.instruction,"mat")==0){
 
+		printf("mat\n");
 		extracted_value=parse_mat(current_pointer);
 		extracted_value_length=strlen(extracted_value)+1;
 
@@ -207,7 +225,7 @@ body parse_line(String str, int line_number){
 
 
 		/*Count number of operands*/
-		i=0;
+		/*i=0;
 		while(current_pointer[i]!='\0'){
 			if(current_pointer[i]==','){
 				data_array_size++;
@@ -217,8 +235,9 @@ body parse_line(String str, int line_number){
 
 		if (data_array_size>0){
 			data_array_size++;
-		}
+		}*/
 
+		COUNT_DATA_STRINGS_SIZE
 
 		result.data_values_number=data_array_size;
 		result.data_string_array=(String*)allocate_mem_general(data_array_size+1,sizeof(String));
@@ -235,53 +254,77 @@ body parse_line(String str, int line_number){
 		NORMALCOLOR
 	}
 
+
+
+
 	else {
 
 
+		if (strlen(current_pointer)>0){
+			/*Extractring OPERAND1*/
 
-		/*Extractring OPERAND1*/
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND1=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND1,extracted_value);
-		NORMALCOLOR
+			extracted_value=extract_operand(current_pointer);
+			extracted_value_length=strlen(extracted_value);
 
-		current_pointer+=extracted_value_length;
-		if (extracted_value_length>0){
-			current_pointer+=1;/*skip the first ','*/
-		}
-		REALLOCATE_EXTRACTED_VALUE
+			printf(KMAGENTA"str EXTRACTED: <%s>\n",extracted_value);
 
+			result.OPERAND1=allocate_mem_string(extracted_value_length+1);
+			strcpy(result.OPERAND1,extracted_value);
 
-		/*Extracting OPERAND2*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
+			printf("str opernad: <%s>\n",result.OPERAND1);
 
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.OPERAND2=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.OPERAND2,extracted_value);
-
-
-		if (extracted_value_length>0){
 			current_pointer+=extracted_value_length;
+			if (extracted_value_length>0){
+				current_pointer+=1;/*skip the first ','*/
+			}
+			REALLOCATE_EXTRACTED_VALUE
+
+
+			if (strcmp(result.instruction,STR)!=0){
+
+
+
+				/*Extracting OPERAND2*/
+				spaces=count_spaces(current_pointer);
+				current_pointer+=spaces;
+
+				extracted_value=extract_operand(current_pointer);
+				extracted_value_length=strlen(extracted_value);
+				result.OPERAND2=allocate_mem_string(extracted_value_length+1);
+				strcpy(result.OPERAND2,extracted_value);
+
+				if (extracted_value_length>0){
+					current_pointer+=extracted_value_length;
+				}
+
+				REALLOCATE_EXTRACTED_VALUE
+
+				/*Extract Leftovers*/
+				spaces=count_spaces(current_pointer);
+				current_pointer+=spaces;
+
+				extracted_value=extract_operand(current_pointer);
+				extracted_value_length=strlen(extracted_value);
+				result.leftovers=allocate_mem_string(extracted_value_length+1);
+				strcpy(result.leftovers,extracted_value);
+
+			}
+			else {
+				/*clear garbage from operand2, when we use STR*/
+				RETURN_NULL(result.OPERAND2)
+				RETURN_NULL(result.leftovers)
+			}
 		}
+		else {
+			RETURN_NULL(result.OPERAND1)
+			RETURN_NULL(result.OPERAND2)
+			RETURN_NULL(result.leftovers)
 
-		REALLOCATE_EXTRACTED_VALUE
-
-		/*Extract Leftovers*/
-		spaces=count_spaces(current_pointer);
-		current_pointer+=spaces;
-
-		extracted_value=extract_operand(current_pointer);
-		extracted_value_length=strlen(extracted_value);
-		result.leftovers=allocate_mem_string(extracted_value_length+1);
-		strcpy(result.leftovers,extracted_value);
-
+		}
 
 	}
 
-
+	free(extracted_value);
 	return result;
 
 }
@@ -315,8 +358,8 @@ String extract_operand (String str){
 			i++;
 		}
 		ptr=str+count;
-	}
 
+	}
 
 	operand_size=CALCSIZE(str,ptr);
 	n_spaces=reverse_count_spaces(str,ptr);
@@ -324,7 +367,8 @@ String extract_operand (String str){
 	operand_size=operand_size-n_spaces;
 
 	result=allocate_mem_string(operand_size+ADDEDSIZE);
-	strncpy(result,str,operand_size);
+
+	strncy_safe(result,str,operand_size);
 
 	return result;
 
@@ -537,6 +581,7 @@ String* extract_data_strings(char* str, int array_size){
 
 */
 
+	printf(KRED"-------------- pointer: %s, array size: %d\n",str,array_size);
 
 	if (strcmp(str,"\0")==0){
 		final_array[0]="\0";
@@ -551,6 +596,7 @@ String* extract_data_strings(char* str, int array_size){
 
 			/*find ','*/
 			pointer=strchr(str,',');
+			printf("found ,: %s\n",pointer);
 
 		if (pointer != NULL){
 			size=CALCSIZE(str,pointer);
@@ -564,10 +610,15 @@ String* extract_data_strings(char* str, int array_size){
 /*			printf("in cell %d: [%s]\n",cell,final_array[cell]);*/
 			cell++;
 		} else {
+			int non_spaces;
+
 			n_spaces=count_spaces(str);
 			str+=n_spaces;
 			/*count how many chars until next spaces*/
-
+			non_spaces=count_non_spaces(str)+1;
+			printf(KRED"--------------non spaces:%d, pointer: %s\n",non_spaces,pointer);
+			printf("str:%s\n",str);
+			NORMALCOLOR
 			final_array[cell]=allocate_mem_string((count_non_spaces(str))+1);
 			strncy_safe(final_array[cell],str,(count_non_spaces(str)));
 			cell++;

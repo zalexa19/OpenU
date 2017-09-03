@@ -332,15 +332,18 @@ String covert_int_to_string (int number){
 }
 
 void strncy_safe(String  dest, String  source, int size){
-	strncpy(dest,source,size);
 
+	strncpy(dest,source,size);
 	dest[size]='\0';
 }
 
 
 void * allocate_mem_general(int count, int size){
 
-	void * p = malloc(size*count);
+	void * p;
+	p = malloc(size*count);
+
+
 	if (!p){
 		fprintf(stderr,"Unable to allocate memory. exiting thr program\n.");
 		exit(1);

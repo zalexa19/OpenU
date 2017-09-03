@@ -25,6 +25,7 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	full_name=allocate_mem_string(MAXMEM);
 	strcpy(full_name,file_name);
 	strcat(full_name,".ob");
+
 	printf(BOLDBLUE"file name: %s\n",full_name);
 
 

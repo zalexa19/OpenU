@@ -14,15 +14,16 @@
 #define RELLOCATABLE_VALUE 2
 #define ARRAYSIZE 200
 #define MAX_DATA_ARR_SIZE 10000
+#define REG_NAME_LENGTH 2
 
 
-Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int* result_size,external_labels_ptr* external_labels_list){
+Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
 	int i,j, length,general_counter,address_helper;
 	int result,counter,data_counter;
 	body current;
 	int opcode; /*stores the opcode received*/
 	Operand_type op1_type,op2_type;
-	int data_array[MAX_DATA_ARR_SIZE];
+	int data_array[DC];
 	encoded_ptr encoded_node;
 	Bool valid_file=TRUE;
 
@@ -32,9 +33,12 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 	address_helper=0;
 	*encoded_list = NULL;
 
+
 	/*Check if the label is valid*/
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
+
+/*		printf("checking label: %s\n",current.label);*/
 		if (strlen(current.label)>0){
 			if (! search_symbol(current.label,*symbols)){ /*label is not found*/
 				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
@@ -56,8 +60,11 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 			}
 
+/*			printf("checking if op2 is a label\n");*/
+
 			if (get_operand_type(current.OPERAND2)==LABLE){
-				if (!search_symbol(current.OPERAND2,*symbols)){ /*label is not found*/
+
+				if (!(search_symbol(current.OPERAND2,*symbols))){ /*label is not found*/
 					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
 					valid_file=FALSE;
 				}
@@ -72,10 +79,13 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 	}
 
 	/*ALL LABELS ARE VALID*/
-
 	for (i=0;i<parsed_size;i++){
 		symbol_ptr current_symbol;
 		current=parsed[i];
+		NORMALCOLOR
+
+
+		/*Working on operation*/
 		if (strlen(current.operantion)>0){
 			opcode=get_opcode(current.operantion);
 			op1_type=get_operand_type(current.OPERAND1);
@@ -93,18 +103,18 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				result=encode_register(current.OPERAND1,current.OPERAND2);
 
 				encoded_node=create_encoded_struct(address_helper,result);
+
 				add_encoded_struct_to_list(encoded_list,encoded_node);
 				address_helper++;
 
 /*				commands_array[counter]=result;*/
 				counter++;
 
-			} else {
-
-				if (op1_type != UNRECOGNIZED){
+			}
+			else {
+				if (op1_type != UNRECOGNIZED){ /*is operand1 exists*/
 					if(op2_type==UNRECOGNIZED){
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
-
 					}
 					else {
 						result=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
@@ -115,7 +125,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					if (op1_type==LABLE){
 						current_symbol=search_symbol(current.OPERAND1,*symbols);
 						if (current_symbol->declared_as==external){
-							printf(KRED"label %s is external\n",current.OPERAND1);
+/*							printf(KRED"label %s is external\n",current.OPERAND1);*/
 							printf("current address:%d\n",address_helper+100);
 
 							add_external_item_to_list(external_labels_list,current.OPERAND1,address_helper);
@@ -124,17 +134,73 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 					}
 
+					if (op1_type==MATRIX){
+						String derived_label,reg_searcher;
+						String reg1,reg2;
+						int label_length;
+
+						reg_searcher=current.OPERAND1;
+						reg_searcher+=label_length;
+/*						printf("reg searcher:%s\n",reg_searcher);*/
+
+						reg1=extract_reg_from_mat(reg_searcher);
+/*						printf("reg1: %s\n",reg1);*/
+
+						reg_searcher+=label_length+REG_NAME_LENGTH;
+/*						printf("reg searcher:%s\n",reg_searcher);*/
+						reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
+						/*to skip: "[r# and point to ][r#]*/
 
 
-					encoded_node=create_encoded_struct(address_helper,result);
-					add_encoded_struct_to_list(encoded_list,encoded_node);
-					address_helper++;
-					counter++;
+
+						derived_label=strchr(current.OPERAND1,'[');
+
+						label_length=CALCSIZE(current.OPERAND1,derived_label);
+
+						derived_label=allocate_mem_string(label_length+1);
+						strncy_safe(derived_label,current.OPERAND1,label_length);
+
+						current_symbol=search_symbol(derived_label,*symbols);
+
+						/*encode the label address*/
+						result=encode_operand(LABLE,derived_label,*symbols,FALSE);
+
+						encoded_node=create_encoded_struct(address_helper,result);
+
+						add_encoded_struct_to_list(encoded_list,encoded_node);
+
+						address_helper++;
+						counter++;
+
+						/*encode registries*/
+
+						printf(KYELLOW"----------------------------------------------------------\n");
+						result=encode_register(reg1,reg2);
+
+						printf(KYELLOW"----------------------------------------------------------\n");
+
+						encoded_node=create_encoded_struct(address_helper,result);
+						add_encoded_struct_to_list(encoded_list,encoded_node);
+						address_helper++;
+
+						counter++;
+
+						NORMALCOLOR
+					}
+
+					else {
+						encoded_node=create_encoded_struct(address_helper,result);
+
+						add_encoded_struct_to_list(encoded_list,encoded_node);
+						address_helper++;
+						counter++;
+					}
 				}
 
 				if (op2_type!=UNRECOGNIZED){
 					result=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
 					encoded_node=create_encoded_struct(address_helper,result);
+
 					add_encoded_struct_to_list(encoded_list,encoded_node);
 
 					if (op2_type==LABLE){
@@ -145,50 +211,48 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 							printf("current address:%d\n",address_helper+100);
 							NORMALCOLOR
 						}
-
 					}
-
 					address_helper++;
 					counter++;
 				}
-
-
-
 			}
-
-
 		}
+		/*Instructiion was received*/
 		else {
-			printf("Entered instruction condition\n");
-
+			printf("Entered instruction condition for instruction %s\n",current.instruction);
+			printf("current instruction command: <%s>\n",current.instruction);
 			if (strcmp(current.instruction,ENTRY)==0 ) {
-
 				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
-
 			}
-
-
 
 				/*treat mat and data*/
-
-			if (strcmp(current.instruction,DATA)==0){
+			else if (strcmp(current.instruction,DATA)==0){
 				length=current.data_values_number;
+				printf("length: %d\n",length);
+
+				printf(KCYN,"2.Working on .DATA\n");
+				print_line(current);
 
 				for(j=0;j<length;j++){
+					printf("-----------<><><<>\n");
 					data_array[data_counter]=current.data_int_values[j];
 					data_counter++;
 					general_counter++;
 				}
-
-
+				printf("%d\n",data_array[data_counter-1]);
 			}
 
 			/*
 			 * When handling mat, we copy each number recieved into the data_array. if we received less values than matrix size,
 			 * Zeros are added
 			 */
-			if (strcmp(current.instruction,MAT)==0){
+
+			else if (strcmp(current.instruction,MAT)==0){
 				int m=0;
+
+				printf("\n8. I'm in mat\n");
+				printf("mat_size %d\n", current.mat_size);
+
 				length=current.mat_size;
 
 				for(j=0;j<current.mat_size;j++){
@@ -204,6 +268,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 						general_counter++;
 					}
 				}
+
+				printf("%d ",data_array[data_counter]);
 			}
 
 			if (strcmp(current.instruction,STR)==0){
@@ -217,24 +283,30 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				NORMALCOLOR
 				printf("\n");
 			}
+
 		}
+
 	}
 
-
 	/*adding the data array to the struct*/
+
 	for (j=0;j<data_counter;j++){
+
+		printf("linking %d to address %d\n",data_array[j],address_helper);
+
 		encoded_node=create_encoded_struct(address_helper,data_array[j]);
 
-		printf("addind to encodded: %d\n",data_array[j]);
-
 		add_encoded_struct_to_list(encoded_list,encoded_node);
+
 		address_helper++;
 	}
 
 
+	printf("added to data_array at the end\n");
 
-	*result_size=address_helper;
-	printf("---End of Second Scan\n");
+/*	*result_size=address_helper;*/
+	printf(BOLDGREEN"END OF SECOND SCAN\n");
+	NORMALCOLOR
 	return TRUE;
 }
 
@@ -369,6 +441,9 @@ int encode_register(String op1,String op2){
 	int op1_n,op2_n;
 	int result;
 
+	printf("op1: %s, op2:%s\n");
+
+
 	/*first char is r, second is num of register*/
 	op1_n=(op1[1])-'0';
 	op2_n=(op2[1])-'0';
@@ -400,6 +475,7 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 	if (type==LABLE){
 
 		symbol_found=search_symbol(op,symbols);
+
 		if ((symbol_found->declared_as)==external){
 			result=EXTERNAL_VALUE;
 			return result;
@@ -440,6 +516,7 @@ encoded_ptr create_encoded_struct(int address,int value){
 	encoded_struct->value=value;
 	encoded_struct->next=NULL;
 
+	printf("successfully created encoded_struct\n");
 	return encoded_struct;
 
 }
@@ -471,6 +548,7 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	encoded_ptr p;
 
 
+
 	if (*list==NULL){
 		*list=item;
 		(*list)->next=NULL;
@@ -484,7 +562,20 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	}
 
 	p->next=item;
-
 }
 
 
+String extract_reg_from_mat(String oper){
+	String reg,pointer;
+
+	reg=allocate_mem_string(REG_NAME_LENGTH+1);
+	pointer=strchr(oper,'[');
+	pointer+=1; /*advancing 1 to skip the [*/
+	printf("found pointer: %s\n",pointer);
+
+	strncy_safe(reg,pointer,REG_NAME_LENGTH);
+	printf("found reg: %s\n",reg);
+	return reg;
+
+
+}

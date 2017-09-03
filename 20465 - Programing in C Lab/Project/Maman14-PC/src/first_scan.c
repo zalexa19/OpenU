@@ -10,9 +10,6 @@
 
 
 
-
-
-
 /*
  * Searches and returns a symbol for a given key (a label in a list of labels)
  */
@@ -216,13 +213,24 @@ int calc_new_ic(body item){
 	n++;
 	/*for the command itsef*/
 	if (strlen(item.OPERAND1)>0){
-		n++;
+		if (item.op1_type==MATRIX){
+			n+=2;
+		}
+		else{
+			n++;
+		}
 	}
 	if (strlen(item.OPERAND2)>0){
-		if (get_operand_type(item.OPERAND1)==REGISTER && get_operand_type(item.OPERAND2)==REGISTER){
+		if ((item.op1_type)==REGISTER && (item.op2_type)==REGISTER){
 			return n;
 		}
-		n++;
+
+		if ((item.op2_type)==MATRIX){
+			n+=2;
+		}
+		else{
+			n++;
+		}
 	}
 
 	return n;
@@ -247,7 +255,6 @@ int calc_new_dc(body item){
 
 			n=item.mat_size;
 
-			printf("n: %d\n",n);
 			return n;
 		}
 		if (strcmp(item.instruction,DATA)==0){

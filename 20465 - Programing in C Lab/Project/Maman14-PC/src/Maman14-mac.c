@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
 
 	for (j=1;j<argc;j++){
 
-		file_name=allocate_mem_string(strlen(argv[j]+3));
+		file_name=allocate_mem_string(strlen(argv[j])+3);
 		strcpy(file_name,argv[j]);
 		strcat(file_name,AS);
 
@@ -60,48 +60,56 @@ int main(int argc, char** argv) {
 
 
 
-		validate_file(parsed,parsed_size);
-		printf("invoking first scan\n\n");
-		if (!first_scan(parsed,parsed_size,&symbols,&IC,&DC,&external_labels_list)){
-			fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
-			NORMALCOLOR
+		if (validate_file(parsed,parsed_size)==FALSE){
+			fprintf(stderr, "Error found in file %s, skipping to the next file\n",file_name);
+
 		}
 		else
 		{
-			/*update the addresses of the .mat, .string .data*/
+			printf("invoking first scan\n\n");
 
-
-			update_data_addresses(&symbols,IC);
-			print_symbol_list(symbols);
-
-			printf(KGREEN "Entering second scan\n");
-			NORMALCOLOR
-
-			if (second_scan(parsed,parsed_size,&symbols,IC,&encoded_list_head,&array_size,&external_labels_list)==FALSE ){
-				fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
+			if (first_scan(parsed,parsed_size,&symbols,&IC,&DC,&external_labels_list)==FALSE){
+				fprintf(stderr,KBLUE "Error found in the first scan, skipping to the next file\n");
 				NORMALCOLOR
 			}
-			else {
-				external_labels_ptr p;
+			else
+			{
+				/*update the addresses of the .mat, .string .data*/
+				update_data_addresses(&symbols,IC);
 
+				printf(KGREEN "Entering second scan\n");
+				NORMALCOLOR
 
-				printf("printing external list:\n");
-				p=external_labels_list;
-				while (p !=NULL){
-					printf("value: %s\n",external_labels_list->value);
-					p=p->next;
+				if (second_scan(parsed,parsed_size,&symbols,IC,&encoded_list_head,DC,&external_labels_list)==FALSE ){
+					fprintf(stderr,KBLUE "Error found in the second scan, skipping to the next file\n");
+					NORMALCOLOR
 				}
-				/*Create obj file*/
-				create_obj_file(encoded_list_head,argv[j],IC,DC);
-				create_entry_file(symbols,argv[j]);
-				create_extern_file(symbols,argv[j],external_labels_list);
+				else {
+					external_labels_ptr p;
+
+
+					printf("printing external list:\n");
+					p=external_labels_list;
+					while (p !=NULL){
+						printf("value: %s\n",external_labels_list->value);
+						p=p->next;
+					}
+					/*Create obj file*/
+					create_obj_file(encoded_list_head,argv[j],IC,DC);
+					create_entry_file(symbols,argv[j]);
+					create_extern_file(symbols,argv[j],external_labels_list);
+					print_symbol_list(symbols);
+
+
+				}
 
 			}
-
 		}
 	}
 	NORMALCOLOR
 	print_structs(parsed,parsed_size);
+	print_symbol_list(symbols);
+
 	NORMALCOLOR
 	printf("\n\n---===doei!===---\n");
 	return 0;
