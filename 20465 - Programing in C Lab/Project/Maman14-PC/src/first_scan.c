@@ -50,6 +50,7 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 
 
 
+
 	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
 		current=items[item_counter];
 

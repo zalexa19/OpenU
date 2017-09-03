@@ -11,18 +11,19 @@
 
 int structs_array_size;
 
-String* allocate_mem_matrix(int size){
+/*String* allocate_mem_matrix(int size){
 	String* matrix = (String*)malloc(sizeof( String*)*size);
 	if (!matrix){
 		fprintf(stderr,"Unable to allocate memory to the matrix.\nContinuing with no operanns\n");
 		exit(0);
 	}
 	return matrix;
-}
+}*/
 
 
 String allocate_mem_string (int size){
-	String	str = (char*)malloc (size * sizeof(char));
+	String	str;
+	str= (String)malloc (size * sizeof(char));
 	if (!str){
 		fprintf(stderr,"---Unable to allocate memory\n");
 	}

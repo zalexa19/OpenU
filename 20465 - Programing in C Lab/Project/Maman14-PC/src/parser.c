@@ -587,7 +587,8 @@ String* extract_data_strings(char* str, int array_size){
 	int cell=0;
 	int n_spaces;
 
-	final_array=allocate_mem_matrix(array_size+1);
+/*	final_array=allocate_mem_matrix(array_size+1);*/
+	final_array=(String*)allocate_mem_general(array_size+1,sizeof(String));
 /*
 
 	printf("------------------------------\n");

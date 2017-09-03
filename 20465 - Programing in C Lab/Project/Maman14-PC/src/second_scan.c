@@ -15,7 +15,8 @@
 #define ARRAYSIZE 200
 #define MAX_DATA_ARR_SIZE 10000
 #define REG_NAME_LENGTH 2
-#define INITIAL_ADDRESS 100
+
+
 
 
 
@@ -26,7 +27,7 @@
 
 
 Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
-	int i,j, length,general_counter;
+	int i,j, length;
 	int ic_address; /*tracks addresses when encoding and adding additional word memories*/
 	int combined_data_list_counter; /*counter for the combined lise*/
 	int parse_scanner;
@@ -42,17 +43,18 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 	symbol_ptr relevant_symbol; /*stores the symbol found when using the search_symbol function*/
 	int* combined_data_list; /*array with all data received as instruction, to be added to the end of obj file*/
 	Bool valid_file=TRUE;
+	encoded_ptr temp;
 
 
 	printf(KMAGENTA"SECOND SCAN STARTED\n\n");
-
-
 
 	/*preparations*/
 	combined_data_list=(int*)allocate_mem_general(DC,sizeof(int));
 	combined_data_list_counter=0;
 	calculated_memory_line=0;
 	ic_address=INITIAL_ADDRESS; /*starts with 100*/
+	encoded_item=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
+
 
 	/*This loop makes sure that each label is difined*/
 	for (i=0;i<parsed_size;i++){
@@ -142,7 +144,16 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			op2_type=current.op2_type;
 
 			/*code the command and add it to the final list*/
-			calculated_memory_line=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
+			if (opcode==15 || opcode==14){
+				calculated_memory_line=opcode;
+				calculated_memory_line<<=(WORD_SIZE-OPCODE_SIZE);
+				print_bin(calculated_memory_line);
+			}
+			else {
+				calculated_memory_line=code_command_line(opcode,op1_type,op2_type,ABSOLUTE_VALUE);
+
+			}
+
 			ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 
@@ -151,13 +162,14 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			 * if external, we encode address zero with last two digits to show that it's external
 			 * if internal, we encode the address of the label
 			 */
-			if (op1_type != type_unrecognized){
+
+			 if (op1_type != type_unrecognized){
 				if (op1_type==type_label){
 
 					relevant_symbol=search_symbol(current.OPERAND1,*symbols);
 
 					if (relevant_symbol->declared_as==external){
-						calculated_memory_line=EXTERNAL_VALUE;
+						calculated_memory_line=EXTERNAL_VALUE; /*adding 0001*/
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 					}
@@ -185,6 +197,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					relevant_symbol=search_symbol(derived_label,*symbols);
 
 					label_length=strlen(derived_label);
+
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
@@ -240,6 +253,7 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			if (op2_type != type_unrecognized){
 				if (op2_type==type_label){
 					relevant_symbol=search_symbol(current.OPERAND2,*symbols);
+
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
@@ -321,6 +335,9 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 			}
 
 
+
+
+
 			/*end of the operation*/
 		}
 
@@ -348,6 +365,9 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					combined_data_list[combined_data_list_counter]=current.OPERAND1[j];
 					combined_data_list_counter++;
 				}
+
+				combined_data_list[combined_data_list_counter]='\0';
+				combined_data_list_counter++;
 			/*end of STR*/
 			}
 			printf(KRED"trying to access mat params in the struct\n");
@@ -375,23 +395,24 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 				/*end of MAT*/
 			}
 
-			printf("starting next line\n");
 		}
 
 		/*end of the main loop*/
 	}
 
-	printf("starting to merge the lists: \n");
-	/*combine the two lists together*/
-	printf("combined counter: %d\n",combined_data_list_counter);
+
 	for (j=0;j<combined_data_list_counter;j++){
-		printf("combined_data[%d]: %d\n",j,combined_data_list[j]);
 		calculated_memory_line=combined_data_list[j];
 		ADD_CALCULATED_VALUE_TO_LIST
 
 	}
 
-
+	printf("encoded list before exiting second scan: %d\n",((*encoded_list)->address));
+	temp=*encoded_list;
+	while (temp!=NULL){
+		printf("address: %d\n",temp->address);
+		temp=temp->next;
+	}
 	return TRUE;
 }
 
@@ -564,7 +585,7 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 			return result;
 		}
 
-		result=symbol_found->address;
+		result=(symbol_found->address)+INITIAL_ADDRESS;
 		result<<=OPER_SIZE;
 		result|=RELLOCATABLE_VALUE;
 		return result;
@@ -629,9 +650,8 @@ void print_encoded_struct(encoded_ptr s){
 void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	encoded_ptr p;
 
-
 	if (*list==NULL){
-		*list=item;
+		(*list)=item;
 		(*list)->next=NULL;
 		return;
 	}
@@ -643,6 +663,10 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	}
 
 	p->next=item;
+
+	printf("added value %d to list\n",p->address);
+
+/*	printf(KRED"encoded to struct - item:%s, item:%s\n",p->value,item->value);*/
 }
 
 

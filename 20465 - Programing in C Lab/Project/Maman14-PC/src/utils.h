@@ -36,7 +36,7 @@
 
 #define NORMALCOLOR printf(NORMAL "");
 #define MAXERRORSIZE 200
-
+#define INITIAL_ADDRESS 100
 
 #define MAXMEM 81
 #define COMPARE(a,b) strcmp(a,"b")
@@ -102,7 +102,7 @@ typedef struct parsed_line {
 	String* data_string_array;
 	int * data_int_values;
 	int mat_size;
-	String * mat_params; /*used when creating a new matrix with .mat*/
+/*	String * mat_params;*/ /*used when creating a new matrix with .mat*/
 	Bool valid;
 	Operand_type op1_type;
 	Operand_type op2_type;
@@ -149,7 +149,7 @@ typedef struct node {
 bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct array*/
 
 /*A function that receives a string length and allocates the required memory */
-String* allocate_mem_matrix(int size);
+/*String* allocate_mem_matrix(int size);*/
 String  allocate_mem_string(int);
 
 String covert_int_to_string (int);

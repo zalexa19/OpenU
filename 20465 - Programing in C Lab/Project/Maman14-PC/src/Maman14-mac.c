@@ -15,7 +15,6 @@
 #include "second_scan.h"
 #include "output.h"
 
-
 int main(int argc, char** argv) {
 
 	FILE * input_file;
@@ -38,7 +37,7 @@ int main(int argc, char** argv) {
 	create_operation_info_array();
 	external_labels_list=NULL;
 
-	encoded_list_head=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
+
 
 	if (argc==1){
 		fprintf(stderr, "File name was not received.\n");
@@ -50,6 +49,7 @@ int main(int argc, char** argv) {
 		file_name=allocate_mem_string(strlen(argv[j])+3);
 		strcpy(file_name,argv[j]);
 		strcat(file_name,AS);
+		encoded_list_head=NULL;
 
 		if (!(input_file = fopen(file_name,"r"))){
 			fprintf(stderr, "unable to find assembly file");
@@ -76,6 +76,7 @@ int main(int argc, char** argv) {
 			}
 			else
 			{
+				print_symbol_list(symbols);
 
 				/*update the addresses of the .mat, .string .data*/
 				update_data_addresses(&symbols,IC);
@@ -98,7 +99,11 @@ int main(int argc, char** argv) {
 						p=p->next;
 					}
 					/*Create obj file*/
+					printf("encoded_list_head: %s\n",encoded_list_head);
 					create_obj_file(encoded_list_head,argv[j],IC,DC);
+
+
+
 					create_entry_file(symbols,argv[j]);
 					create_extern_file(symbols,argv[j],external_labels_list);
 
@@ -108,8 +113,10 @@ int main(int argc, char** argv) {
 		}
 	}
 	NORMALCOLOR
-	print_structs(parsed,parsed_size);
+
+/*	print_structs(parsed,parsed_size);*/
 	print_symbol_list(symbols);
+
 
 	NORMALCOLOR
 

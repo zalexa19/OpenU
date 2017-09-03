@@ -35,7 +35,7 @@ int encode_operand(Operand_type,String, symbol_ptr, Bool);
 #endif /* SECOND_SCAN_H_ */
 
 void print_encoded_struct(encoded_ptr s);
-void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item);
+void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr  item);
 
 String extract_reg_from_mat(String);
 

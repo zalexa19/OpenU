@@ -390,8 +390,9 @@ mat_status_report_ref validate_ins_mat (body* item){
 	int op1_length=strlen(item->OPERAND1);
 	String oper1=item->OPERAND1;
 	String pointer;
-	String* data_pointer; /*pointer that is used for deriving matrix size*/
+	String extracted_n; /*pointer that is used for deriving matrix size*/
 	String copy;
+
 
 	printf(KBLUE "VALIDATE_INS_MAT\n");
 
@@ -410,6 +411,7 @@ mat_status_report_ref validate_ins_mat (body* item){
 /*	strcpy(op1,item->OPERAND1);*/
 
 /*	starting to check op1*/
+
 /*	check number of brackets*/
 
 	for (i=0;i<op1_length;i++){
@@ -454,13 +456,14 @@ mat_status_report_ref validate_ins_mat (body* item){
 			item->valid=FALSE;
 		}
 
+/*
 		item->mat_params=(String*)allocate_mem_general(2,sizeof(String));
 		data_pointer=item->mat_params;
 		data_pointer[0]=allocate_mem_string(size);
+*/
 
-		strncy_safe(data_pointer[0],copy,size);
-
-
+		extracted_n=allocate_mem_string(size+1);
+		strncy_safe(extracted_n,copy,size);
 		r=atoi(copy);
 
 		/*checking the second []*/
@@ -484,20 +487,16 @@ mat_status_report_ref validate_ins_mat (body* item){
 			item->valid=FALSE;
 		}
 
-		data_pointer[0]=allocate_mem_string(size);
+		extracted_n=allocate_mem_string(size+1);
 
-		strncy_safe((data_pointer[1]),copy,size);
+		strncy_safe((extracted_n),copy,size);
 		c=atoi(copy);
 
-
-/*		derive whole matrix size and set it in item*/
 		item->mat_size=r*c;
-		printf("-----------------mat size: %d\n",item->mat_size);
-
+		free(extracted_n);
 	}
 
 	free(copy);
-	free(data_pointer);
 	return result;
 }
 
