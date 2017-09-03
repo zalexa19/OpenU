@@ -170,7 +170,9 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE; /*adding 0001*/
+						add_external_item_to_list(external_labels_list,current.OPERAND1,ic_address);
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
+
 
 					}
 					else {
@@ -256,6 +258,8 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
+						add_external_item_to_list(external_labels_list,current.OPERAND2,ic_address);
+
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 					}
