@@ -44,7 +44,8 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	/*print file headlines*/
 /*	printf("current pointer: %d\n",pointer->address);*/
 /*	printf("converted IC and DC and printing to file: \n");*/
-	printf("IC: %s, DC:%s\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
+	printf("IC: %s,%d DC:%s,%d\n",convert_to_base4(IC,0),IC,convert_to_base4(DC,0),DC);
+
 	fprintf(file,"%s \t %s\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
 /*	printf("DONE\n");
 	printf("encoding now\n");*/

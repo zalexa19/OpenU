@@ -23,7 +23,7 @@ typedef struct encoded{
 
 
 
-Bool second_scan (bodyArray,int,symbol_ptr*,int, encoded_ptr *, int ,external_labels_ptr*);
+Bool second_scan (parsed_item_ptr,int,symbol_ptr*,int, encoded_ptr *, int ,external_labels_ptr*);
 
 int get_opcode(String);
 

@@ -34,8 +34,8 @@ String allocate_mem_string (int size){
 
 
 
-bodyArray allocate_mem_struct (int size){
-	bodyArray array=(bodyArray) malloc(sizeof(body)*size);
+parsed_item_ptr allocate_mem_struct (int size){
+	parsed_item_ptr array=(parsed_item_ptr) malloc(sizeof(parsed_item)*size);
 
 	if (!array){
 		fprintf(stderr,"---Unable to allocate memory to structs-array");
@@ -46,9 +46,9 @@ bodyArray allocate_mem_struct (int size){
 
 }
 
-int increase_mem_struct (int size,bodyArray array){
+int increase_mem_struct (int size,parsed_item_ptr array){
 	size=size*2;
-	bodyArray tmp = (bodyArray)realloc(array,sizeof(body)*size);
+	parsed_item_ptr tmp = (parsed_item_ptr)realloc(array,sizeof(parsed_item)*size);
 	if (!tmp){
 		fprintf(stderr,"unable to increase memory to structs-array");
 		exit (0);
@@ -67,7 +67,7 @@ int increase_mem_struct (int size,bodyArray array){
  * 2 if it's neither (when the line has invalid syntax
  * note: unused fields in the struct are saved as '\0'
  */
-command_type get_command_type(body item){
+command_type get_command_type(parsed_item item){
 	if (strlen(item.instruction)>0){
 		return instruction;
 	}
@@ -102,7 +102,7 @@ command_type get_command_type(body item){
 
 
 
-void print_structs(bodyArray array, int size){
+void print_structs(parsed_item_ptr array, int size){
 	int i;
 	char tmp[15];
 
@@ -231,7 +231,7 @@ void add_spaces_print (String  array){
 }
 
 
-void print_line(body item){
+void print_line(parsed_item item){
 
 	if (strcmp(item.instruction,"data")==0){
 		printf("%d %s %s ",item.line_number,item.label,item.instruction);

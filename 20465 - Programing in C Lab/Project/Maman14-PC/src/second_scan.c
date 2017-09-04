@@ -26,14 +26,14 @@
 		ic_address++;
 
 
-Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
+Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
 	int i,j, length;
 	int ic_address; /*tracks addresses when encoding and adding additional word memories*/
 	int combined_data_list_counter; /*counter for the combined lise*/
 	int parse_scanner;
 	int calculated_memory_line; /*stores the encoded word memory*/
 /*	int data_counter;*/
-	body current;
+	parsed_item current;
 	int opcode; /*stores the opcode received*/
 	Operand_type op1_type,op2_type;
 /*	int data_array[DC]; *//*remove this later keeping it for the orig function*/
@@ -99,9 +99,13 @@ Bool second_scan (bodyArray parsed, int parsed_size, symbol_ptr*symbols, int ic,
 					valid_file=FALSE;
 				}
 
-				else if(relevant_symbol->is_matrix==FALSE){
-					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND1);
-					valid_file=FALSE;
+				else if (relevant_symbol->declared_as != external){
+
+
+					 if(relevant_symbol->is_matrix==FALSE){
+						fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND1);
+						valid_file=FALSE;
+					}
 				}
 			}
 			if (get_operand_type(current.OPERAND2)==type_matrix){

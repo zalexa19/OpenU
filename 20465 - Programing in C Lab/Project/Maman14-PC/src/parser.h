@@ -19,7 +19,7 @@
  * and eventually returning an array of structs
  */
 
-bodyArray parse_file (FILE *fp, int *, int *);
+parsed_item_ptr parse_file (FILE *fp, int *, int *);
 
 /*
  * This function converts a string (one line) into a struct
@@ -29,7 +29,7 @@ bodyArray parse_file (FILE *fp, int *, int *);
  */
 
 
-body parse_line (String str, int);
+parsed_item parse_line (String str, int);
 
 char * get_label (char * line);
 

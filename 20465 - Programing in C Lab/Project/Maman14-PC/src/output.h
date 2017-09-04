@@ -10,7 +10,7 @@
 #include "utils.h"
 #include "second_scan.h"
 
-#define AS ".txt"
+#define AS ".as"
 
 
 

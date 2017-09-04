@@ -33,18 +33,18 @@ typedef struct external_labels{
 
 
 
-Bool first_scan(bodyArray items, int, symbol_ptr*, int*, int*,external_labels_ptr*);
+Bool first_scan(parsed_item_ptr items, int, symbol_ptr*, int*, int*);
 
 
 
 symbol_ptr search_symbol (String, symbol_ptr);
 
-symbol_ptr create_symbol(body item,int, int);
+symbol_ptr create_symbol(parsed_item item,int, int);
 
 void add_symbol_to_list(symbol_ptr item,symbol_ptr *);
 
-int calc_new_ic(body);
-int calc_new_dc(body);
+int calc_new_ic(parsed_item);
+int calc_new_dc(parsed_item);
 
 void update_data_addresses(symbol_ptr*,int);
 void add_external_item_to_list (external_labels_ptr* list,String value, int address);

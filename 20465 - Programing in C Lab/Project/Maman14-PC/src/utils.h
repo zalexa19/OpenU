@@ -109,9 +109,9 @@ typedef struct parsed_line {
 	/*decide on how to deal with .data*/
 
 
-} body;
+} parsed_item;
 
-typedef  body * bodyArray;
+typedef  parsed_item * parsed_item_ptr;
 
 
 typedef struct symbol* symbol_ptr;
@@ -146,7 +146,7 @@ typedef struct node {
 /**********************************/
 
 
-bodyArray allocate_mem_struct (int); /*dynamically allocates memory for a struct array*/
+parsed_item_ptr allocate_mem_struct (int); /*dynamically allocates memory for a struct array*/
 
 /*A function that receives a string length and allocates the required memory */
 /*String* allocate_mem_matrix(int size);*/
@@ -168,17 +168,17 @@ void free_list(list_item_reference*);
 
 void strncy_safe(String  dest, String  source, int size);
 
-command_type get_command_type(body);
+command_type get_command_type(parsed_item);
 
 
 
 
 /*for testing*/
-void print_structs(bodyArray, int size);
+void print_structs(parsed_item_ptr, int size);
 
 void add_spaces_print (String array);
 
-void print_line(body);
+void print_line(parsed_item);
 void print_mat (String*, int);
 
 void print_symbol_list(symbol_ptr );

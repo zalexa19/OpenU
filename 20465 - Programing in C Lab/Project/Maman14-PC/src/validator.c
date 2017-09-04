@@ -1,58 +1,54 @@
+/*
+ * in this file, each struct (that represents a line" is validated.
+ * if validation failes, the main function valudate_file return false back to main, and we skip to the next file
+ */
+
+
 #include "utils.h"
 #include <ctype.h>
 #include "validator.h"
 #include "operation_dictionary.h"
 
 
-#define MAXLABELSIZE 30
+#define MAX_LABEL_SIZE 30
 #define NOMATCH "none"
 #define TERMINATOR "\0"
-#define MATRIXCOLANDROW 2
-#define NUMOFBRACKETS 2
 
 
-/*Macro that adds a log*/
-#define INVALIDINPUT fprintf(stderr, "Invalid input: ");
-/*
- * Macro for printing
- */
-#define PRINT_PASSED_OR_FAILED(value) \
-{\
-			if (value==TRUE){\
-			printf(KGREEN "PASSED\n");\
-		} else {\
-			printf(KRED "FAILED\n");\
-		}\
-		NORMALCOLOR\
-}
-
+/*This macro simply sets a flag*/
 #define SET_ERROR_FOUND\
 		if (item.valid==FALSE){\
 		error_found=TRUE;\
 	}
 
-
-Bool validate_file(bodyArray parsed, int array_size){
+/*
+ * input: array of structs to validate, number of structs in the array
+ * output: true if validation passed, false if not (error_found=TRUE)
+ *
+ * each field of the command is validated by a specific function
+ * if a struct is invalid, it's marked as invalid and sets error_found=TRUE;
+ * this way we can check all of the structs, and find all the errors.
+ *
+ */
+Bool validate_file(parsed_item_ptr parsed, int array_size){
 	int counter;
-	body item;
+	parsed_item item; /*current item we're validating*/
 	list_item_reference error_list_head;
-	char error[MAXERRORSIZE];
+	char error[MAXERRORSIZE]; /*temp array to write an error into. used only for printing errors*/
 	label_status_ref validated_label;
 	Bool error_found=FALSE;
 
 
-	NORMALCOLOR
 
 	error_list_head=NULL;
-
 
 	for (counter=0;counter<array_size;counter++){
 		item=parsed[counter];
 
-
+		/*label exists*/
 		if(strcmp(item.label,TERMINATOR) != 0){
-
 			validated_label=validate_label(item.label);
+
 			item.valid=validated_label->VALID_LABEL;
 			print_label_errors(validated_label,item,&error_list_head);
 			SET_ERROR_FOUND
@@ -69,23 +65,20 @@ Bool validate_file(bodyArray parsed, int array_size){
 			SET_ERROR_FOUND
 
 
-
-
-			/*DATA*/
-			if (strcmp(item.instruction,"data")==0){
+			if (strcmp(item.instruction,DATA)==0){
 				validate_ins_data(&item, &error_list_head);
 				SET_ERROR_FOUND
 
 			}
 
 
-			if (strcmp(item.instruction,"string")==0){
+			if (strcmp(item.instruction,STR)==0){
 				validate_ins_string(&item,&error_list_head);
 				SET_ERROR_FOUND
 			}
 
 			/*MAT*/
-			if (strcmp(item.instruction,"mat")==0){
+			if (strcmp(item.instruction,MAT)==0){
 				/*validate the numbers received*/
 				validate_ins_data(&item,&error_list_head);
 				mat_validation_errors(validate_ins_mat(&item),item);
@@ -94,7 +87,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 
 
 			/*ENTRY*/
-			if (strcmp(item.instruction,"entry")==0){
+			if (strcmp(item.instruction,ENTRY)==0){
 				validate_ins_entry(&item,&error_list_head,error);
 				SET_ERROR_FOUND
 			}
@@ -102,7 +95,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 
 
 			/*EXTERN*/
-			if (strcmp(item.instruction,"extern")==0){
+			if (strcmp(item.instruction,EXTERN)==0){
 				validate_ins_extern(&item,&error_list_head,error);
 				SET_ERROR_FOUND
 			}
@@ -122,7 +115,7 @@ Bool validate_file(bodyArray parsed, int array_size){
 				if (validate_operation(&item,&error_list_head,error)==FALSE){
 					SET_ERROR_FOUND
 				}
-
+				/*validating the operands received for the operational command*/
 				validate_oper_operands(&item,&error_list_head,error);
 				SET_ERROR_FOUND
 			}
@@ -142,15 +135,17 @@ Bool validate_file(bodyArray parsed, int array_size){
 	}
 
 
-	printf(BOLDGREEN"finished validating file\n");
-	NORMALCOLOR
-
 	return TRUE;
 }
 
+/*
+ * label_status_ref is a struct of flags.
+ * each flag represents a different validation done to the label.
+ * This is used later on for printing, by a different function
+ *
+ *
+ */
 
-
-/*label_val_status validate_label (body* item, list_item_reference*  head){*/
 label_status_ref validate_label (String label){
 	int length;
 	int i;
@@ -163,15 +158,14 @@ label_status_ref validate_label (String label){
 	validation_result=initialize_label_struct();
 
 	/*validating label length*/
-
-	if (length > MAXLABELSIZE){
+	if (length > MAX_LABEL_SIZE){
 		validation_result->TOO_LONG=TRUE;
 		validation_result->VALID_LABEL=FALSE;
 	}
 
 
 
-	/*validate the first char*/
+	/*validate the first char - should start with a letter*/
 	i=0;
 	c=label[i];
 	valid_letter=is_valid_letter(c);
@@ -201,22 +195,22 @@ label_status_ref validate_label (String label){
 	}
 
 	/*validating that the label is not a saved word*/
-
-
 	if (is_operational_command(label)==TRUE || is_instructional_command(label)==TRUE){
 		validation_result->RESERVED=TRUE;
 		validation_result->VALID_LABEL=FALSE;
-
-
 	}
 
 	return validation_result;
 }
 
 
+/*
+ * This function validates the instruction operand
+ * head - list of errors to add a new error to
+ * it doesn't return any value - it marks the struct as invalid and adds the relevant error to the error list
+ */
 
-
-void validate_instruction(body* item, list_item_reference*  head){
+void validate_instruction(parsed_item* item, list_item_reference*  head){
 	int line=item->line_number;
 	String inst_value= item->instruction;
 	char error[MAXERRORSIZE];
@@ -229,7 +223,6 @@ void validate_instruction(body* item, list_item_reference*  head){
 	}
 
 	/*check if instruction is a valid command*/
-
 	if (is_instructional_command(inst_value)==FALSE){
 		item->valid=FALSE;
 		sprintf(error,"Error in line %d: Instruction value <%s> is unrecognized.\n",line,inst_value);
@@ -240,18 +233,21 @@ void validate_instruction(body* item, list_item_reference*  head){
 
 
 
+/*
+ * This function validates the operation
+ * it returns true if operation is valid
+ * checks if the value received matches one of the operation commands
+ */
 
 
 
-
-Bool validate_operation(body* item, list_item_reference*  head, String error){
+Bool validate_operation(parsed_item* item, list_item_reference*  head, String error){
 	String value;
 	int line;
 
 	line=item->line_number;
 	value=item->operantion;
 
-	printf("values to be validated: %s, status: %d\n",value,is_operational_command(value));
 	if (is_operational_command(value)==FALSE){
 		sprintf(error,"Error in line %d: Operational value <%s> is unrecognized.\n",line,value);
 		add_to_list(head,error);
@@ -261,13 +257,18 @@ Bool validate_operation(body* item, list_item_reference*  head, String error){
 	return TRUE;
 }
 
-/*This function validates that the operands are valid numbers*/
-void validate_ins_data (body* item, list_item_reference*  head){
+/*This function validates that the operands are valid numbers
+ * at this point, the struct has an array of string where each string has a value that might be a number
+ * so for each cell, i check that the string is indeed a number. if so, each such string converted to a number
+ * and stored in a numbers array in the struct
+ * function doesn't return a value, but updates the struck if an error was found.
+ * errors are sent to the errors list
+ */
+void validate_ins_data (parsed_item* item, list_item_reference*  head){
 	int num_of_operands;
-	int line,i;
+	int line;
 	int counter;
 	String current;
-
 	char error[MAXERRORSIZE];
 
 	num_of_operands=item->data_values_number;
@@ -297,18 +298,22 @@ void validate_ins_data (body* item, list_item_reference*  head){
 
 
 	/*If we reached here, it means that we have valid numbers*/
-	if((item->data_int_values=(int*)malloc(sizeof(int)*item->data_values_number)) == NULL){
-		fprintf(stderr,"Unable to allocate memory to data_int_values. Continuing\n");
-	}
+	item->data_int_values=(int*)allocate_mem_general(item->data_values_number,sizeof(int));
 
 
 	for (counter=0;counter<num_of_operands;counter++){
 		item->data_int_values[counter]=atoi(item->data_string_array[counter]);
 	}
+
 }
 
+/*
+ * validate if the string stored in the struct
+ * function doesn't return a value, but updates the struck if an error was found.
+ * errors are sent to the errors list
+ */
 
-void validate_ins_string (body* item, list_item_reference*  head){
+void validate_ins_string (parsed_item* item, list_item_reference*  head){
 	char error[MAXERRORSIZE];
 	String temp;
 	int length;
@@ -316,28 +321,23 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 	/*checks that the string was received with ""*/
 
-
 	/*checks if enough operands were received*/
-	if ((strcmp(item->OPERAND2,TERMINATOR))!=0){
+	if ((strcmp(item->OPERAND2,TERMINATOR))!=0 ||(strcmp(item->leftovers,TERMINATOR))!=0 ){
 		item->valid=FALSE;
 
-		sprintf(error,"10. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->OPERAND2);
+		sprintf(error,"Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->OPERAND2);
 		add_to_list(head,error);
 	}
 
-	if ((strcmp(item->leftovers,TERMINATOR))!=0){
-		item->valid=FALSE;
-		sprintf(error,"11. Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->leftovers);
-		add_to_list(head,error);
-	}
 
 	if ((strcmp(item->OPERAND1,TERMINATOR))==0){
 		item->valid=FALSE;
-		sprintf(error,"9. Error in line %d: Missing operands for .string.\n",item->line_number);
+		sprintf(error,"Error in line %d: Missing operands for .string.\n",item->line_number);
 		add_to_list(head,error);
 		return;
 	}
 
+	length=strlen(item->OPERAND1);
 
 	if (item->OPERAND1[strlen(item->OPERAND1)]!='\0'){
 		item->valid=FALSE;
@@ -354,7 +354,6 @@ void validate_ins_string (body* item, list_item_reference*  head){
 			sprintf(error,"Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->OPERAND1);
 			add_to_list(head,error);
 		}else{
-			printf("advanced the pointer\n");
 			pointer++;
 			length--;
 		}
@@ -380,20 +379,17 @@ void validate_ins_string (body* item, list_item_reference*  head){
 
 	}
 
-
 	free(temp);
 }
 
+
 /*
- * 1.Removes all spaces. According to the forum, matrix will be recieved without unexpected spaces
- * 2.check that operand1 includes valid numbers
- * 3. Put the valid numbers in a special array
- * 4. check that the other values recieved also includes valid numbers
+ *
+ * function recieves the parsed struct, returns a struct with flags regarding the validation status.
+ * These are used by a function that prints the relevant errors
  */
 
-
-
-mat_status_report_ref validate_ins_mat (body* item){
+mat_status_report_ref validate_ins_mat (parsed_item* item){
 	mat_status_report_ref result;
 	int i,size,r,c;
 	int brackets_balance=0;
@@ -404,10 +400,7 @@ mat_status_report_ref validate_ins_mat (body* item){
 	String copy;
 
 
-	printf(KBLUE "VALIDATE_INS_MAT\n");
-
 	result=(mat_status_report_ref)allocate_mem_general(1,sizeof(mat_status_report));
-
 
 	result->inv_char_in_brackets=FALSE;
 	result->inv_n_brackets=FALSE;
@@ -417,10 +410,8 @@ mat_status_report_ref validate_ins_mat (body* item){
 	result->valid_mat=TRUE;
 
 
-/*	strcpy(op1,item->OPERAND1);*/
 
 /*	starting to check op1*/
-
 /*	check number of brackets*/
 
 	for (i=0;i<op1_length;i++){
@@ -437,8 +428,6 @@ mat_status_report_ref validate_ins_mat (body* item){
 		result->valid_mat=FALSE;
 		item->valid=FALSE;
 	}
-
-
 
 
 /*	check brackets structure is correct*/
@@ -465,12 +454,6 @@ mat_status_report_ref validate_ins_mat (body* item){
 			item->valid=FALSE;
 		}
 
-/*
-		item->mat_params=(String*)allocate_mem_general(2,sizeof(String));
-		data_pointer=item->mat_params;
-		data_pointer[0]=allocate_mem_string(size);
-*/
-
 		extracted_n=allocate_mem_string(size+1);
 		strncy_safe(extracted_n,copy,size);
 		r=atoi(copy);
@@ -484,7 +467,6 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 		if (size >strlen(copy)){
 			free(copy);
-			printf("freed copy\n");
 			copy=allocate_mem_string(size+1);
 		}
 
@@ -511,12 +493,14 @@ mat_status_report_ref validate_ins_mat (body* item){
 
 
 
+/*
+ * This function is used when a matrix is received as an operand.
+ * It check that the label is valid, and that registers are received in [][]
+ * if any validation fails, function returns FALSE, else, TRUE
+ */
 
-
-/*VALIDATE MAT*/
 
 Bool validate_mat_as_operand(String operand){
-/*	mat_status_report_ref result;*/
 	int i,size;
 	int brackets_balance=0;
 	int op1_length=strlen(operand);
@@ -524,27 +508,25 @@ Bool validate_mat_as_operand(String operand){
 	String copy;
 
 
-	/*check label*/
+
 	pointer=strchr(operand,'[');
 	if (!pointer){
 		return FALSE;
 	}
 
 
-
+	/*check label*/
 	size=CALCSIZE(operand,pointer);
 	copy=allocate_mem_string(size+1);
 	strncy_safe(copy,operand,size);
 
 
 	if (validate_label(copy)==FALSE){
-
 		return FALSE;
 	}
 
 	operand+=size;
 	op1_length=strlen(operand);
-
 
 
 	/*starting to check op1*/
@@ -566,30 +548,22 @@ Bool validate_mat_as_operand(String operand){
 
 
 	/*check brackets structure is correct*/
-
-
-
 	if( operand[0]!='['|| operand[op1_length-1]!=']' || strstr(operand,"][")==NULL  ){
 		return FALSE;
 	}
 
-	/*check if all brackers appear correctly, and that the it includes only a number*/
+	/*check if all brackets appear correctly, and that the it includes only a number*/
 	operand+=1;/*advance once to skip the first [*/
-
 
 	pointer=strchr(operand,']');
 	size=CALCSIZE(operand,pointer);
-
-/*	free(copy);*/
 
 	copy=allocate_mem_string(size+1);
 	strncy_safe(copy,operand,size);
 
 
-
 	if (is_register(copy)==FALSE){
 		return FALSE;
-
 	}
 
 
@@ -600,8 +574,6 @@ Bool validate_mat_as_operand(String operand){
 	pointer=strchr(operand,']');
 	size=CALCSIZE(operand,pointer);
 
-/*	free(copy);*/
-
 	copy=allocate_mem_string(size);
 	strncy_safe(copy,operand,size);
 
@@ -611,14 +583,16 @@ Bool validate_mat_as_operand(String operand){
 	}
 
 	free(copy);
-	printf("Finished validating operand mat\n");
 	return TRUE;
 }
 
 
+/*
+ * Function recieves a truct with flags regarding a matrix validation.
+ * Prints errors accordingly
+ */
 
-
-void mat_validation_errors(mat_status_report_ref errors, body item)
+void mat_validation_errors(mat_status_report_ref errors, parsed_item item)
 {
 	int line=item.line_number;
 
@@ -650,9 +624,13 @@ void mat_validation_errors(mat_status_report_ref errors, body item)
 
 }
 
+/*
+ * function validays .entry command.
+ * recieves a parsed struct, the errors list and a string of error to write in an error
+ * if label is received, i write a warning
+ */
 
-
-void validate_ins_entry(body* item, list_item_reference*  head, char * error){
+void validate_ins_entry(parsed_item* item, list_item_reference*  head, char * error){
 	int line;
 
 	line=item->line_number;
@@ -681,18 +659,19 @@ void validate_ins_entry(body* item, list_item_reference*  head, char * error){
 		add_to_list(head,error);
 	}
 
-	/*remove the received label*/
+	/*remove the received label because it's not necessary*/
 	strcpy(item->label,"\0");
 }
 
-void validate_ins_extern(body* item, list_item_reference*  head,String error){
+/*
+ * function validays .extern command.
+ * recieves a parsed struct, the errors list and a string of error to write in an error
+ * if label is received, i write a warning
+ */
 
+void validate_ins_extern(parsed_item* item, list_item_reference*  head,String error){
 	int line;
-
 	line=item->line_number;
-
-
-
 
 	if (strcmp(item->label,TERMINATOR)!=0){
 		sprintf(error,"Attention to line %d: label '%s' received for .extern command will be ignored.\n",line,item->label);
@@ -735,8 +714,7 @@ void validate_ins_extern(body* item, list_item_reference*  head,String error){
  * Validation is done by comparing what is stored in the parsed line, and the info for the command
  */
 
-
-void validate_oper_operands (body* item, list_item_reference*  head, String error){
+void validate_oper_operands (parsed_item* item, list_item_reference*  head, String error){
 	String command;
 	int operand_type;
 	int line;
@@ -776,11 +754,8 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 
 
 	/*Check that the number of operands received is correct*/
-
 	/* Search the struct and compare its info  */
-
 	command_info=get_operation_info(command); /*return the relevant command info*/
-
 
 	if (command_info.num_of_operands!=operand_count){
 		sprintf(error,"Error in line %d: Invalid number of operands %d, expected: %d.\n",line,operand_count,command_info.num_of_operands);
@@ -789,7 +764,7 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 		return;
 	}
 
-	/*received a valid number of operands. now check that it's valid*/
+	/*received a valid number of operands. now check that it's valid, depending on the command*/
 	if (command_info.num_of_operands>0){
 		operand_type=get_operand_type(item->OPERAND1);
 		item->op1_type=operand_type;
@@ -841,7 +816,9 @@ void validate_oper_operands (body* item, list_item_reference*  head, String erro
 
 
 
-
+/*
+ * Checks if a character is valid letter by comparing the asci value
+ */
 Bool is_valid_letter(char c){
 
 	if ( ('a'<=c && c<= 'z') || ('A'<=c && c<= 'Z')){
@@ -871,6 +848,9 @@ Bool is_lowcase(char c){
 	return FALSE;
 }
 
+/*
+ * returns true when the string is all in lowercase
+ */
 Bool is_string_lowercase(String str){
 	int length = strlen(str);
 	Bool lowercase=TRUE;
@@ -893,6 +873,9 @@ Bool is_string_lowercase(String str){
 }
 
 
+/*
+ * return true when each char in the str is a digit, so that the str can be converted to a number
+ */
 Bool is_valid_number (String str){
 	int str_length,i;
 	char c;
@@ -927,6 +910,7 @@ Bool is_valid_number (String str){
 
 	return TRUE;
 }
+
 
 int extract_number (String str){
 	int result;
@@ -1075,10 +1059,16 @@ Bool is_register(String str){
 	return FALSE;
 }
 
+
+/*
+ * receives a string, and returns it's operand type
+ *
+ */
 Operand_type get_operand_type (String operand){
 	int i;
 
 	i=0;
+	/*empty string*/
 	if (strlen(operand)==0 || operand==NULL){
 		return type_unrecognized;
 	}
@@ -1109,9 +1099,10 @@ Operand_type get_operand_type (String operand){
 }
 
 
-
-
-
+/*
+ * Function creates a new struct to store info about label's validation.
+ * return a pointer to this struct (used in validate_label)
+ */
 
 
 
@@ -1131,7 +1122,12 @@ label_status_ref initialize_label_struct(){
 	return new;
 }
 
-void print_label_errors(label_status_ref status, body item, list_item_reference * head){
+
+/*
+ * receives a struct with info about label, and prints errors according to the flags
+ */
+
+void print_label_errors(label_status_ref status, parsed_item item, list_item_reference * head){
 	String error =allocate_mem_string(MAXERRORSIZE);
 
 	if (status->TOO_LONG==TRUE){

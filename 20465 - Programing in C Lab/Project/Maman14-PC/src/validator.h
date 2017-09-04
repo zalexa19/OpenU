@@ -42,33 +42,31 @@ label_status_ref initialize_label_struct();
 
 
 
-Bool validate_file(bodyArray, int);
+Bool validate_file(parsed_item_ptr, int);
 
 label_status_ref validate_label (String);
-void print_label_errors(label_status_ref, body, list_item_reference*);
+void print_label_errors(label_status_ref, parsed_item, list_item_reference*);
 
-void mat_validation_errors(mat_status_report_ref errors, body item);
+void mat_validation_errors(mat_status_report_ref errors, parsed_item item);
 
-void validate_instruction(body* item, list_item_reference *);
+void validate_instruction(parsed_item* item, list_item_reference *);
 
-Bool validate_operation(body* item, list_item_reference *, String);
+Bool validate_operation(parsed_item* item, list_item_reference *, String);
 
 
 /*Validate inst operators*/
-void validate_ins_data (body* item, list_item_reference *);
+void validate_ins_data (parsed_item* item, list_item_reference *);
 
-void validate_ins_string (body* item, list_item_reference*  head);
+void validate_ins_string (parsed_item* item, list_item_reference*  head);
 
 /*void validate_ins_mat(body* item, list_item_reference*  head);*/
 
-mat_status_report_ref validate_ins_mat(body* item);
+mat_status_report_ref validate_ins_mat(parsed_item* item);
 Bool validate_mat_as_operand(String);
 
-void validate_ins_entry(body* item, list_item_reference*  head, char *);
+void validate_ins_entry(parsed_item* item, list_item_reference*  head, char *);
 
-void validate_ins_extern(body* item, list_item_reference*  head, String);
-
-
+void validate_ins_extern(parsed_item* item, list_item_reference*  head, String);
 
 
 
@@ -81,7 +79,9 @@ void validate_ins_extern(body* item, list_item_reference*  head, String);
 
 
 
-void validate_oper_operands (body* item, list_item_reference *, String);
+
+
+void validate_oper_operands (parsed_item* item, list_item_reference *, String);
 
 Operand_type get_operand_type (String operand);
 

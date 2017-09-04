@@ -1,2 +1,2 @@
 clear
-make && ./application  stas 
+make && ./application  input2 

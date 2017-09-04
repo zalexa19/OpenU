@@ -39,9 +39,9 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 }
 
 
-Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC,external_labels_ptr* external_labels){
+Bool first_scan(parsed_item_ptr items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC){
 	int item_counter;
-	body current;
+	parsed_item current;
 	char error[MAXERRORSIZE];
 	symbol_ptr current_symbol;
 	list_item_reference errors_list=NULL;
@@ -120,7 +120,7 @@ Bool first_scan(bodyArray items, int bodyarray_size, symbol_ptr* symbols_list_he
 }
 
 
-symbol_ptr create_symbol(body item,int ic, int dc){
+symbol_ptr create_symbol(parsed_item item,int ic, int dc){
 	symbol_ptr sym;
 
 
@@ -206,7 +206,7 @@ void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
  * if the command is one of the 16 operational commands, we reserve 1 for the command itself
  * and 1 more memory for each operand received
  */
-int calc_new_ic(body item){
+int calc_new_ic(parsed_item item){
 	int n;
 	n=0;
 
@@ -249,29 +249,36 @@ int calc_new_ic(body item){
  * The number depends on the number of received chars as data
  */
 
-int calc_new_dc(body item){
+int calc_new_dc(parsed_item item){
 	int n;
 	n=0;
 
+	printf("calculating dc for: %s, %s\n",item.instruction,item.operantion);
 	/*if it's instructional*/
-	if (strlen(item.operantion)==0){
+	if (strlen(item.instruction)>0){
 		if (strcmp(item.instruction,MAT)==0){
-
 			n=item.mat_size;
-			printf("n: %d\n",n);
+			printf("-------------n for matrix: %d\n",n);
 			return n;
 		}
 		if (strcmp(item.instruction,DATA)==0){
-			return item.data_values_number;
+			n=item.data_values_number;
+			printf("-------------n for data: %d\n",n);
+
+			return n;
+
 		}
 
 		if (strcmp(item.instruction,STR)==0){
 			/*string*/
 			n=strlen(item.OPERAND1);
 			n++;/*save spaces for \0*/
+			printf("-------------n for str: %d\n",n);
+
 		}
 	}
 
+	printf("dc calculated for %s %d\n",item.instruction,n);
 
 	return n;
 }
