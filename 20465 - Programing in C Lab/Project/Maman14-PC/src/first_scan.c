@@ -37,18 +37,22 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 
 	return NULL;
 }
-
+/*
+ * for each line:
+ * if it has a label, a new symbol struct is created for the label and added to the symbol list + caluclate ic
+ * if its an operational command, we calculate ic
+ * if it's instructional command, we calculate dc
+ *
+ * this stage can fail if the a label is declared twice in the assembly file
+ */
 
 Bool first_scan(parsed_item_ptr items, int bodyarray_size, symbol_ptr* symbols_list_head, int* IC,int* DC){
-	int item_counter;
-	parsed_item current;
+	int item_counter; /*how many items are scanned*/
+	parsed_item current; /*current item*/
 	char error[MAXERRORSIZE];
 	symbol_ptr current_symbol;
 	list_item_reference errors_list=NULL;
 	Bool valid_file=TRUE;
-
-
-
 
 
 	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
@@ -61,12 +65,12 @@ Bool first_scan(parsed_item_ptr items, int bodyarray_size, symbol_ptr* symbols_l
 			if (search_symbol(current.label,*symbols_list_head) != NULL){
 
 				if (search_symbol(current.label,*symbols_list_head)->declared_as ==external){
-					sprintf(error,KBLUE"Error is line %d: label %s was declared as .extern and declared in this file.\n",current.line_number, current.label);
+					sprintf(error,"Error is line %d: label %s was declared as .extern and declared in this file.\n",current.line_number, current.label);
 					add_to_list(&errors_list,error);
 				}
 
 				else {
-					sprintf(error,KBLUE"Error is line %d: label %s is a duplicate.\n",current.line_number, current.label);
+					sprintf(error,"Error is line %d: label %s is a duplicate.\n",current.line_number, current.label);
 					add_to_list(&errors_list,error);
 				}
 
@@ -91,34 +95,22 @@ Bool first_scan(parsed_item_ptr items, int bodyarray_size, symbol_ptr* symbols_l
 		/*Label was not recieved*/
 		else if (strcmp(current.instruction,EXTERN)==0){
 			current_symbol=create_symbol(current,*IC,*DC);/* create new symbol*/
-
 			add_symbol_to_list(current_symbol,symbols_list_head);/*adds to list of symbols*/
 
-/*			add_external_item_to_list(external_labels,current.OPERAND1,0); creates a struct
-			(*external_labels_size)++;*/
-
-
 		}
-
 		else {
 			*IC+=calc_new_ic(current);/*advance ic*/
-
 		}
-
-
-
-		/*For loop*/
 	}
-
-
-
-
-	NORMALCOLOR
-	print_list(errors_list);
 	return valid_file;
-
 }
 
+
+/*
+ * this function receives the parsed line struct, ic, dc and creates a new symbol with all the required info
+ * it return a pointer of this symbol
+ * name = label
+ */
 
 symbol_ptr create_symbol(parsed_item item,int ic, int dc){
 	symbol_ptr sym;
@@ -172,7 +164,9 @@ symbol_ptr create_symbol(parsed_item item,int ic, int dc){
 
 }
 
-
+/*
+ * receives a symbol struct and adds it to the list by pointing the last node.next to the new symbol
+ */
 
 void add_symbol_to_list(symbol_ptr current,symbol_ptr* list){
 	symbol_ptr p;
@@ -258,13 +252,10 @@ int calc_new_dc(parsed_item item){
 	if (strlen(item.instruction)>0){
 		if (strcmp(item.instruction,MAT)==0){
 			n=item.mat_size;
-			printf("-------------n for matrix: %d\n",n);
 			return n;
 		}
 		if (strcmp(item.instruction,DATA)==0){
 			n=item.data_values_number;
-			printf("-------------n for data: %d\n",n);
-
 			return n;
 
 		}
@@ -273,17 +264,17 @@ int calc_new_dc(parsed_item item){
 			/*string*/
 			n=strlen(item.OPERAND1);
 			n++;/*save spaces for \0*/
-			printf("-------------n for str: %d\n",n);
-
 		}
 	}
-
-	printf("dc calculated for %s %d\n",item.instruction,n);
 
 	return n;
 }
 
-
+/*
+ * this function receives the symbols list (it's address) and update each instructional non-external address
+ * with the ic, to make sure that this info appears at the end of the ob file.
+ * this function is invoked after the first scan by the main
+ */
 void update_data_addresses(symbol_ptr* symbols,int IC){
 	symbol_ptr current;
 
@@ -306,18 +297,21 @@ void update_data_addresses(symbol_ptr* symbols,int IC){
 
 }
 
+/*
+ * whenever we encounter a command which uses an external label, we save the address and the value of this label in this list
+ * this list is later sent to the output module which creates the .ext from this.
+ * it receives the list address, the value and it's address
+ */
 
 void add_external_item_to_list (external_labels_ptr* list,String value, int address){
 	external_labels_ptr p;
 	external_labels_ptr new;
 
-	printf(KYELLOW"adding item <%s> to external\n",value);
 	new=(external_labels_ptr)allocate_mem_general(1,sizeof(external_labels));
 	new->address=address;
 	new->value=allocate_mem_string(strlen(value)+1);
 	strcpy(new->value,value);
 
-	printf("created an item\n");
 
 	if (*list==NULL){
 

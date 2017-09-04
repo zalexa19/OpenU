@@ -1,2 +1,2 @@
 clear
-make && ./application  input2 
+make && ./application  input2 assembly_input try2 copy_input

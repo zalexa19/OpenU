@@ -18,37 +18,32 @@
 
 
 
-void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
+/*
+ * This function creates the ob file.
+ * it recieve the file name and adds the extension.
+ * then it scans the encoded_list and prints it into a file
+ * if there's an issue with file, function stops and we continue to the next one
+ */
+Bool create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	FILE * file;
 	String full_name;
 	encoded_ptr pointer;
 	String address_base4,value_base4;
-	int i;
 	int file_name_length=((strlen(file_name)+(strlen(OBJ_FILE_NAME)))+1);
 
 	full_name=allocate_mem_string(file_name_length);
 	strcpy(full_name,file_name);
 	strcat(full_name,OBJ_FILE_NAME);
 
-	printf(BOLDBLUE"file name: %s\n",full_name);
-
-
 
 	if (!(file = fopen(full_name,"w"))){
 		fprintf(stderr, "unable to find file: %s\n",file_name);
-		exit(1);
+		return FALSE;
 	}
 
 	pointer=encoded_list;
 
-	/*print file headlines*/
-/*	printf("current pointer: %d\n",pointer->address);*/
-/*	printf("converted IC and DC and printing to file: \n");*/
-	printf("IC: %s,%d DC:%s,%d\n",convert_to_base4(IC,0),IC,convert_to_base4(DC,0),DC);
-
 	fprintf(file,"%s \t %s\n",convert_to_base4(IC,0),convert_to_base4(DC,0));
-/*	printf("DONE\n");
-	printf("encoding now\n");*/
 
 	while(pointer!=NULL){
 		address_base4 = convert_to_base4(pointer->address ,CONVERTED_VALUE_LENGTH);
@@ -59,12 +54,17 @@ void create_obj_file(encoded_ptr encoded_list,String file_name, int IC, int DC){
 	free(full_name);
 	fclose(file);
 
-	printf("finished creating obj\n");
-
+	return TRUE;
 }
 
 
-void create_entry_file(symbol_ptr symbols,String file_name){
+/*
+ * function prints from the symbols list into the file only label which have is_entry=TRUE;
+ * it was set in a previous stage
+ * function return false if there is an issue with creating a file.
+ */
+
+Bool create_entry_file(symbol_ptr symbols,String file_name){
 	FILE * file=NULL;
 	String full_name;
 	symbol_ptr pointer;
@@ -74,8 +74,6 @@ void create_entry_file(symbol_ptr symbols,String file_name){
 	strcpy(full_name,file_name);
 	strcat(full_name,ENT_FILE_NAME);
 
-NORMALCOLOR
-
 	pointer=symbols;
 
 	while (pointer != NULL){
@@ -84,7 +82,7 @@ NORMALCOLOR
 			if(file == NULL) {
 				if (!(file = fopen(full_name,"w"))){
 					fprintf(stderr, "unable to find file: %s\n",file_name);
-					exit(1);
+					return FALSE;
 				}
 			}
 			fprintf(file,"%s \t %s\n",pointer->name,convert_to_base4((pointer->address)+INITIAL_ADDRESS,0));
@@ -92,16 +90,20 @@ NORMALCOLOR
 		pointer=pointer->next;
 	}
 
-	printf("finished creating ENT\n");
-
 	if(file!=NULL) {
 		fclose(file);
 	}
-	NORMALCOLOR
+
+	return TRUE;
 }
 
+/*
+ * function prints from the external_labels_list list into the extern file;
+ * it was set in a previous stage
+ * function return false if there is an issue with creating a file.
+ */
 
-void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr external_labels_list){
+Bool create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr external_labels_list){
 	FILE * file=NULL;
 	String full_name;
 	external_labels_ptr list_pointer;
@@ -122,7 +124,7 @@ void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr 
 			if(file == NULL) {
 				if (!(file = fopen(full_name,"w"))){
 					fprintf(stderr, "unable to find file: %s\n",file_name);
-					exit(1);
+					return FALSE;
 				}
 			}
 			fprintf(file,"%s \t %s\n",list_pointer->value,convert_to_base4((list_pointer->address),0));
@@ -131,27 +133,24 @@ void create_extern_file(symbol_ptr symbols,String file_name,external_labels_ptr 
 
 	}
 
-
-		printf("finished creating EXT\n");
-
-
 		if(file!=NULL) {
 			fclose(file);
 		}
 		free(full_name);
+		return TRUE;
 }
 
+/*
+ * function receives a number, and converts it into a strange base 4.
+ * length specifies the format of the result. if the result length is less then received, zeros are added.
+ * function return a string of the convert result
+ */
 String convert_to_base4(unsigned int number, int length){
 	int BASE = 4;
 	int i,j,temp_n;
 	char temp;
 	char digits[] = {'a','b','c','d'};
 	String result;
-
-/*
-	printf(KGREEN"--Started convert to base 4\n");
-	printf("number: %d, length: %d\n",number,length);
-*/
 
 	/* encode */
 	i = 0;
@@ -166,33 +165,28 @@ String convert_to_base4(unsigned int number, int length){
 		}
 	}
 
-/*	printf("1\n");*/
-
 	 result= allocate_mem_string(length+1);
 
-/*	 printf("2\n");*/
+
 	while (number > 0 && i< length) {
 		result[i++] = digits[number % BASE];
 		number/=4;
 	}
-/*	printf("3\n");*/
-	/* add leading zeros (or 'A's) */
+
 	while(i<length) {
 		result[i++] = digits[0];
 	}
-/*	printf("4\n");*/
+
 	result[i] = '\0';
-/*	printf("5\n");*/
-	/* reverse array */
+
 	i--;
 	for(j=0; j<i; j++,i--) {
 		temp = result[j];
 		result[j]=result[i];
 		result[i] = temp;
 	}
-/*	printf("6\n");
-	printf(KGREEN"finished convert to base 4\n\n");*/
-	NORMALCOLOR
+
+
 	return result;
 }
 

@@ -19,25 +19,39 @@
 
 
 
-
+/*
+ * this macro simply creates struct of encoded info (address and value) and adds it to the final list with all the encoded data
+ * and advances the ic address
+ */
 #define ADD_CALCULATED_VALUE_TO_LIST\
 		encoded_item=create_encoded_struct(ic_address,calculated_memory_line);\
 		add_encoded_struct_to_list(encoded_list,encoded_item);\
 		ic_address++;
 
 
+/*
+ * This function encodes the file
+ * it receives the array of parsed structs, the size of it, symbols list, ic value, is of encoded structs to encode and add to it,
+ * the dc value, list of external-label appearances
+ *
+ * the funcion scans the array and for each line it encodes the command and also adds additional memory if required, based on the operand type.*
+ *
+ * if we encouter an instructional command we add the values into a separated array that is used especially for gathering
+ * data values.
+ *
+ * when we finish scanning the array, we copy each data value from the combined data array, and add it with it's address to the final encoded list
+ *
+ * return true if encountered no errors.
+ */
 Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, int ic,encoded_ptr* encoded_list,int DC,external_labels_ptr* external_labels_list){
 	int i,j, length;
 	int ic_address; /*tracks addresses when encoding and adding additional word memories*/
 	int combined_data_list_counter; /*counter for the combined lise*/
 	int parse_scanner;
 	int calculated_memory_line; /*stores the encoded word memory*/
-/*	int data_counter;*/
 	parsed_item current;
 	int opcode; /*stores the opcode received*/
 	Operand_type op1_type,op2_type;
-/*	int data_array[DC]; *//*remove this later keeping it for the orig function*/
-/*	encoded_ptr encoded_node;*/
 	encoded_ptr encoded_item; /*item that holds info about the encoded value and it's address, to be printed by output.c*/
 	command_type command_type;
 	symbol_ptr relevant_symbol; /*stores the symbol found when using the search_symbol function*/
@@ -45,8 +59,6 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 	Bool valid_file=TRUE;
 	encoded_ptr temp;
 
-
-	printf(KMAGENTA"SECOND SCAN STARTED\n\n");
 
 	/*preparations*/
 	combined_data_list=(int*)allocate_mem_general(DC,sizeof(int));
@@ -56,7 +68,11 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 	encoded_item=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
 
 
-	/*This loop makes sure that each label is difined*/
+	/*This loop makes sure that each label is defined and appears in the symbols list*/
+	/*
+	 * if label is external, we add it to the external list
+	 * if operand1 is a matrix, i extract the label and check if it appears in the symbols list as matrix
+	 */
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
 
@@ -145,6 +161,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 			op2_type=current.op2_type;
 
 			/*code the command and add it to the final list*/
+			/*these two commands do not have operands*/
 			if (opcode==15 || opcode==14){
 				calculated_memory_line=opcode;
 				calculated_memory_line<<=(WORD_SIZE-OPCODE_SIZE);
@@ -189,11 +206,8 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 					int label_length;
 
 
-					/*derive_label*/
-					/*reg_searcher=strchr(current.OPERAND1,'[');
-					label_length=CALCSIZE(current.OPERAND1,reg_searcher);
-					derived_label=allocate_mem_string(label_length+1);
-					strncy_safe(derived_label,current.OPERAND1,label_length);*/
+					/*derive matrix' label*/
+
 					derived_label=extract_mat_label(current.OPERAND1);
 
 					relevant_symbol=search_symbol(derived_label,*symbols);
@@ -214,15 +228,9 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 					reg_searcher=current.OPERAND1;
 					reg1=extract_reg_from_mat(reg_searcher);
 					reg_searcher+=label_length+REG_NAME_LENGTH;
-					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
+					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is a pointer that is used to extract reg names.*/
 					calculated_memory_line=encode_register(reg1,reg2);
 					ADD_CALCULATED_VALUE_TO_LIST
-
-
-
-						/*print label address*/
-					/*another memory word for the registers*/
-
 					/*end of op1_type == matrix*/
 				}
 
@@ -303,11 +311,6 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 					calculated_memory_line=encode_register(reg1,reg2);
 					ADD_CALCULATED_VALUE_TO_LIST
 
-
-
-						/*print label address*/
-					/*another memory word for the registers*/
-
 					/*end of op2_type == matrix*/
 				}
 
@@ -345,7 +348,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 		else {/*set as instruction*/
 
-			/*mark the symbol for future printing*/
+			/*mark the symbol for future printing to .ent file*/
 			if (strcmp(current.instruction,ENTRY)==0){
 				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
 			}
@@ -412,6 +415,14 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 	return TRUE;
 }
 
+/*
+ * This function codes a command line to binary.
+ * it receives the opcode, operand1 type, operand 2 type, and the rea value
+ * if the opcode <4 || =6, it means that this opcode can receive operand as a source.
+ * else, there will be zeros
+ *
+ * this function return an int, which is the encoded command in bits
+ */
 
 
 int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
@@ -422,7 +433,6 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 	result=opcode;
 	result<<=WORD_SIZE-OPCODE_SIZE;
-/*	printf("opcode received: %d result: ",opcode);*/
 
 
 
@@ -434,8 +444,6 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 		result|=op1_coded;
 		result|=op2_coded;
-
-/*		printf("operand1: %d\n",op1);*/
 
 	}
 
@@ -462,7 +470,9 @@ int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 
 
 
-
+/*
+ * This function codes returns the opcode based on the command
+ */
 
 
 int get_opcode(String command){
@@ -530,6 +540,12 @@ int get_opcode(String command){
 }
 
 
+/*
+ * this function return an int which represents the additional memory word required
+ * for registers
+ * op1 is the source, op2 is the destination.
+ * it is used only when both of the operands are of type register
+ */
 int encode_register(String op1,String op2){
 	int op1_n,op2_n;
 	int result;
@@ -549,7 +565,15 @@ int encode_register(String op1,String op2){
 	return result;
 }
 
-
+/*
+ * this function  take op type, name and converts it to a word
+ * bool is_source is used when encoding a register, because src and dest are coded to different bits
+ * if type is intermind, the result is the value itself
+ * if type is label, we need to find and return the address from the symbols list
+ * if its matrix - it's dealt in a different place
+ *
+ * function returns an int representing the encoded value
+ */
 
 int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_source){
 	int result;
@@ -592,12 +616,14 @@ int encode_operand(Operand_type type,String op, symbol_ptr symbols, Bool is_sour
 
 	}
 
-	/*MATRIX*/
 
 	return result;
 }
 
-
+/*
+ * this function receives stores each encoded value and it's address in a struct
+ * function return a pointer to this struct
+ */
 
 encoded_ptr create_encoded_struct(int address,int value){
 	encoded_ptr encoded_struct;
@@ -612,6 +638,8 @@ encoded_ptr create_encoded_struct(int address,int value){
 
 }
 
+/*
+
 void print_encoded_struct(encoded_ptr s){
 	encoded_ptr pointer;
 
@@ -623,7 +651,7 @@ void print_encoded_struct(encoded_ptr s){
 
 	pointer=s;
 	while (pointer->next != NULL){
-/*		n=pointer->address;*/
+		n=pointer->address;
 		print_bin(pointer->value);
 
 		pointer=pointer->next;
@@ -634,7 +662,11 @@ void print_encoded_struct(encoded_ptr s){
 
 	printf("\n");
 }
+*/
 
+/*
+ * Functin links the newly created encoded struct to a previous one in a list
+ */
 void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	encoded_ptr p;
 
@@ -653,20 +685,23 @@ void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	p->next=item;
 
 
-/*	printf(KRED"encoded to struct - item:%s, item:%s\n",p->value,item->value);*/
 }
 
 
+/*
+ * this function receives an operand string and extract a regiser from the one of the [][]
+ * it is done by finding '[', then ']', and extracting what's inside
+ * function return the extracted value as a string
+ *
+ */
 String extract_reg_from_mat(String oper){
 	String reg,pointer;
 
 	reg=allocate_mem_string(REG_NAME_LENGTH+1);
 	pointer=strchr(oper,'[');
 	pointer+=1; /*advancing 1 to skip the [*/
-	printf("found pointer: %s\n",pointer);
 
 	strncy_safe(reg,pointer,REG_NAME_LENGTH);
-	printf("found reg: %s\n",reg);
 	return reg;
 
 
