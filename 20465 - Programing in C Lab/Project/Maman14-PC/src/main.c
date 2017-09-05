@@ -41,6 +41,7 @@ int main(int argc, char** argv) {
 	String file_name;
 	parsed_item_ptr parsed;
 	int ic,dc,j;
+	symbol_ptr symbols;
 	int number_of_lines; /*counts the number of lines in the input file, including comments and blanks*/
 	encoded_ptr encoded_list_head; /*list of encoded line, ready to be printed. relevant for second scan*/
 	external_labels_ptr external_labels_list; /*list of all lines that include an external label as an operand. updated in the second scan*/
@@ -50,7 +51,6 @@ int main(int argc, char** argv) {
 
 
 
-	dc=ic=0;
 	/*this creates an array with info about operational commands. This is required for the validation stage.
 	 * For example, which operand types are allowed for a command
 	 *
@@ -58,22 +58,24 @@ int main(int argc, char** argv) {
 	create_operation_info_array();
 
 
-
-
 	if (argc==1){
-		fprintf(stderr, "File name was not received.\nUsage: [./application <file1> <file2> ...]\n");
+		fprintf(stderr, "File name was not received.\nUsage: [./assembler <file1> <file2> ...]\n");
+		exit(1);
 	}
 
 
 	for (j=1;j<argc;j++){
+		dc=ic=0;
+
 		file_name=allocate_mem_string(strlen(argv[j])+FILE_EXTENT_LENGTH);
 		number_of_lines=0;
 		strcpy(file_name,argv[j]);
 		strcat(file_name,AS);
 		encoded_list_head=NULL;
-		symbol_ptr symbols=NULL; /*this list includes info about the symbols - address, if external, if instruction, etc.*/
+		symbols=NULL; /*this list includes info about the symbols - address, if external, if instruction, etc.*/
 		external_labels_list=NULL;
 
+		printf("\nworking on %s\n\n",file_name);
 
 		if (!(input_file = fopen(file_name,"r"))){
 			fprintf(stderr, "Unable to find assembly file\n");
@@ -93,7 +95,7 @@ int main(int argc, char** argv) {
 		else
 		{
 			if (first_scan(parsed,parsed_size,&symbols,&ic,&dc)==FALSE){
-				fprintf(stderr,KBLUE "First scan failed for file %s, skipping to the next file\n",file_name);
+				fprintf(stderr, "First scan failed for file %s, skipping to the next file\n",file_name);
 			}
 			else
 			{
@@ -101,16 +103,9 @@ int main(int argc, char** argv) {
 				update_data_addresses(&symbols,ic);
 
 				if (second_scan(parsed,parsed_size,&symbols,ic,&encoded_list_head,dc,&external_labels_list)==FALSE ){
-					fprintf(stderr,KBLUE "Second scan failed for file %s, skipping to the next file\n",file_name);
+					fprintf(stderr, "Second scan failed for file %s, skipping to the next file\n",file_name);
 				}
 				else {
-/*					external_labels_ptr p;
-
-					p=external_labels_list;
-					while (p !=NULL){
-						p=p->next;
-					}*/
-
 					/*Create obj file*/
 					create_obj_file(encoded_list_head,argv[j],ic,dc);
 					create_entry_file(symbols,argv[j]);
@@ -121,11 +116,13 @@ int main(int argc, char** argv) {
 			}
 		}
 
-
 	}
 
 	free(encoded_list_head);
 	free(file_name);
+	free(external_labels_list);
+	free(encoded_list_head);
+
 	printf("\n\n---===GOODBYE!===---\n");
 
 	return 0;

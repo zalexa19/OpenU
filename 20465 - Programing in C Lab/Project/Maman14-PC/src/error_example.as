@@ -1,4 +1,8 @@
-main: add r4, M5[r1][r2]
+;error example
+; invalid label, invalid oprerational and instructional commands
+; 
+
+main$$$rrrrrrrrrrrrrrrrrrrrrrrr: adAd r4, M5[r1][r2]
 str: .string "bla bla"
 .entry main
 .extern external
@@ -13,5 +17,4 @@ cmp #-2, str
 label: red external2
 .extern external2
 jmp label
-lea main, M5[r2][r4]
-
+le4a main, M5[r2][r4]

@@ -47,15 +47,15 @@ parsed_item_ptr allocate_mem_struct (int size){
 }
 
 int increase_mem_struct (int size,parsed_item_ptr array){
-	size=size*2;
-	parsed_item_ptr tmp = (parsed_item_ptr)realloc(array,sizeof(parsed_item)*size);
+	int new_size=size*2;
+	parsed_item_ptr tmp = (parsed_item_ptr)realloc(array,sizeof(parsed_item)*new_size);
 	if (!tmp){
 		fprintf(stderr,"unable to increase memory to structs-array");
 		exit (0);
 	}
 
 	array=tmp;
-	return size;
+	return new_size;
 
 }
 
@@ -149,7 +149,7 @@ void print_structs(parsed_item_ptr array, int size){
 
 
 		if (strcmp(array[i].instruction,"mat")==0){
-			strcpy(tmp,array[i].OPERAND1);
+			strcpy(tmp,array[i].operand1);
 			add_spaces_print(tmp);
 			printf("%s",tmp);
 
@@ -181,9 +181,9 @@ void print_structs(parsed_item_ptr array, int size){
 
 			if (strcmp(array[i].instruction,"data")!=0){
 
-				if ((strcmp(array[i].OPERAND1,"\0") ) !=0)
+				if ((strcmp(array[i].operand1,"\0") ) !=0)
 				{
-						strcpy(tmp,array[i].OPERAND1);
+						strcpy(tmp,array[i].operand1);
 						add_spaces_print(tmp);
 						printf("%s",tmp);
 				}else printf("               ");
@@ -192,8 +192,8 @@ void print_structs(parsed_item_ptr array, int size){
 
 
 
-				if ((strcmp(array[i].OPERAND2,"\0")) !=0){
-						strcpy(tmp,array[i].OPERAND2);
+				if ((strcmp(array[i].operand2,"\0")) !=0){
+						strcpy(tmp,array[i].operand2);
 						add_spaces_print(tmp);
 						printf("%s",tmp);
 					}else printf("               ");
@@ -260,13 +260,13 @@ void print_line(parsed_item item){
 
 		}
 
-		if (strcmp(item.OPERAND1,"\0")!=0){
-			printf(" %s",item.OPERAND1);
+		if (strcmp(item.operand1,"\0")!=0){
+			printf(" %s",item.operand1);
 
 		}
 
-		if (strcmp(item.OPERAND2,"\0")!=0){
-			printf(" %s",item.OPERAND2);
+		if (strcmp(item.operand2,"\0")!=0){
+			printf(" %s",item.operand2);
 
 		}
 
@@ -337,7 +337,7 @@ void print_list(list_item_reference head){
 
 
 	while (head != NULL){
-		printf(KBLUE "%s",head->str);
+		printf("%s",head->str);
 		head=head->next;
 	}
 	printf("\n");
@@ -348,13 +348,6 @@ void free_list(list_item_reference *head){
 }
 
 
-String covert_int_to_string (int number){
-	int arraysize =12;
-	String result;
-	result = allocate_mem_string(arraysize);
-	sprintf(result,"%d",number);
-	return result;
-}
 
 void strncy_safe(String  dest, String  source, int size){
 

@@ -224,8 +224,8 @@ parsed_item parse_line(String str, int line_number){
 
 
 		/*EXTRACT OPERAND1*/
-		result.OPERAND1=allocate_mem_string(extracted_value_length);
-		strcpy(result.OPERAND1,extracted_value);
+		result.operand1=allocate_mem_string(extracted_value_length);
+		strcpy(result.operand1,extracted_value);
 		current_pointer+=extracted_value_length;
 
 		spaces=count_spaces(current_pointer);
@@ -256,9 +256,9 @@ parsed_item parse_line(String str, int line_number){
 			/*Extracting OPERAND1*/
 
 			if (strcmp(result.instruction,STR)==0){
-				result.OPERAND1=allocate_mem_string(strlen(current_pointer)+1);
-				strcpy(result.OPERAND1,current_pointer);
-				RETURN_NULL(result.OPERAND2)
+				result.operand1=allocate_mem_string(strlen(current_pointer)+1);
+				strcpy(result.operand1,current_pointer);
+				RETURN_NULL(result.operand2)
 				RETURN_NULL(result.leftovers)
 
 			}
@@ -267,8 +267,8 @@ parsed_item parse_line(String str, int line_number){
 				extracted_value=extract_operand(current_pointer);
 				extracted_value_length=strlen(extracted_value);
 
-				result.OPERAND1=allocate_mem_string(extracted_value_length+1);
-				strcpy(result.OPERAND1,extracted_value);
+				result.operand1=allocate_mem_string(extracted_value_length+1);
+				strcpy(result.operand1,extracted_value);
 
 
 				current_pointer+=extracted_value_length;
@@ -286,8 +286,8 @@ parsed_item parse_line(String str, int line_number){
 
 					extracted_value=extract_operand(current_pointer);
 					extracted_value_length=strlen(extracted_value);
-					result.OPERAND2=allocate_mem_string(extracted_value_length+1);
-					strcpy(result.OPERAND2,extracted_value);
+					result.operand2=allocate_mem_string(extracted_value_length+1);
+					strcpy(result.operand2,extracted_value);
 
 					if (extracted_value_length>0){
 						current_pointer+=extracted_value_length;
@@ -307,14 +307,14 @@ parsed_item parse_line(String str, int line_number){
 				}
 				else {
 					/*clear garbage from operand2, when we use STR*/
-					RETURN_NULL(result.OPERAND2)
+					RETURN_NULL(result.operand2)
 					RETURN_NULL(result.leftovers)
 				}
 			}
 		}
 		else {
-			RETURN_NULL(result.OPERAND1)
-			RETURN_NULL(result.OPERAND2)
+			RETURN_NULL(result.operand1)
+			RETURN_NULL(result.operand2)
 			RETURN_NULL(result.leftovers)
 
 		}

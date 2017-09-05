@@ -20,21 +20,14 @@ symbol_ptr search_symbol (String key, symbol_ptr list){
 		return NULL;
 	}
 
-	while ((current_pointer->next)!=NULL){
+	while (current_pointer != NULL){
+
 		if (strcmp(key,current_pointer->name) == 0){
 			return current_pointer;
 
 		}
 		current_pointer=current_pointer->next;
-
-		if (strcmp(current_pointer->name,key)==0){
-			return current_pointer;
-		}
 	}
-
-
-
-
 	return NULL;
 }
 /*
@@ -53,7 +46,6 @@ Bool first_scan(parsed_item_ptr items, int bodyarray_size, symbol_ptr* symbols_l
 	symbol_ptr current_symbol;
 	list_item_reference errors_list=NULL;
 	Bool valid_file=TRUE;
-
 
 	for (item_counter=0;item_counter<bodyarray_size;item_counter++){
 		current=items[item_counter];
@@ -143,7 +135,7 @@ symbol_ptr create_symbol(parsed_item item,int ic, int dc){
 		}
 
 		if (strcmp(item.instruction,"extern")==0){
-			sym->name=item.OPERAND1;
+			sym->name=item.operand1;
 			sym->address=0;
 			sym->declared_as=external;
 			sym->command_type=unknown;
@@ -214,7 +206,7 @@ int calc_new_ic(parsed_item item){
 
 	n++;
 	/*for the command itsef*/
-	if (strlen(item.OPERAND1)>0){
+	if (strlen(item.operand1)>0){
 
 		if (item.op1_type==type_matrix){
 			n+=2;
@@ -223,7 +215,7 @@ int calc_new_ic(parsed_item item){
 		n++;
 		}
 	}
-	if (strlen(item.OPERAND2)>0){
+	if (strlen(item.operand2)>0){
 		if (item.op1_type==type_register && item.op2_type==type_register){
 			return n;
 		}
@@ -247,7 +239,6 @@ int calc_new_dc(parsed_item item){
 	int n;
 	n=0;
 
-	printf("calculating dc for: %s, %s\n",item.instruction,item.operantion);
 	/*if it's instructional*/
 	if (strlen(item.instruction)>0){
 		if (strcmp(item.instruction,MAT)==0){
@@ -262,7 +253,7 @@ int calc_new_dc(parsed_item item){
 
 		if (strcmp(item.instruction,STR)==0){
 			/*string*/
-			n=strlen(item.OPERAND1);
+			n=strlen(item.operand1);
 			n++;/*save spaces for \0*/
 		}
 	}

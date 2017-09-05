@@ -38,8 +38,6 @@ Bool validate_file(parsed_item_ptr parsed, int array_size){
 	label_status_ref validated_label;
 	Bool error_found=FALSE;
 
-
-
 	error_list_head=NULL;
 
 	for (counter=0;counter<array_size;counter++){
@@ -322,36 +320,36 @@ void validate_ins_string (parsed_item* item, list_item_reference*  head){
 	/*checks that the string was received with ""*/
 
 	/*checks if enough operands were received*/
-	if ((strcmp(item->OPERAND2,TERMINATOR))!=0 ||(strcmp(item->leftovers,TERMINATOR))!=0 ){
+	if ((strcmp(item->operand2,TERMINATOR))!=0 ||(strcmp(item->leftovers,TERMINATOR))!=0 ){
 		item->valid=FALSE;
 
-		sprintf(error,"Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->OPERAND2);
+		sprintf(error,"Error in line %d: Excess operand for .string: <%s>.\n",item->line_number,item->operand2);
 		add_to_list(head,error);
 	}
 
 
-	if ((strcmp(item->OPERAND1,TERMINATOR))==0){
+	if ((strcmp(item->operand1,TERMINATOR))==0){
 		item->valid=FALSE;
 		sprintf(error,"Error in line %d: Missing operands for .string.\n",item->line_number);
 		add_to_list(head,error);
 		return;
 	}
 
-	length=strlen(item->OPERAND1);
+	length=strlen(item->operand1);
 
-	if (item->OPERAND1[strlen(item->OPERAND1)]!='\0'){
+	if (item->operand1[strlen(item->operand1)]!='\0'){
 		item->valid=FALSE;
-		sprintf(error,"Error in line %d: .string <%s> is not closed with a turminating char.\n",item->line_number,item->OPERAND1);
+		sprintf(error,"Error in line %d: .string <%s> is not closed with a turminating char.\n",item->line_number,item->operand1);
 		add_to_list(head,error);
 	}
 
 	if(item->valid==TRUE){
-		pointer=item->OPERAND1;
+		pointer=item->operand1;
 		length=strlen(pointer);
 
 		if (pointer[length-length]!= '"'){
 			item->valid=FALSE;
-			sprintf(error,"Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->OPERAND1);
+			sprintf(error,"Error in line %d: .string <%s> is missing opening <\">.\n",item->line_number,item->operand1);
 			add_to_list(head,error);
 		}else{
 			pointer++;
@@ -359,7 +357,7 @@ void validate_ins_string (parsed_item* item, list_item_reference*  head){
 		}
 		if (pointer[length-1] != '"'){
 			item->valid=FALSE;
-			sprintf(error,"Error in line %d: .string <%s> is missing closing <\">.\n",item->line_number,item->OPERAND1);
+			sprintf(error,"Error in line %d: .string <%s> is missing closing <\">.\n",item->line_number,item->operand1);
 			add_to_list(head,error);
 		}else{
 
@@ -371,15 +369,13 @@ void validate_ins_string (parsed_item* item, list_item_reference*  head){
 
 		strncy_safe(temp,pointer,length);
 
-		free(item->OPERAND1);
-		item->OPERAND1=allocate_mem_string(length+1);
+		free(item->operand1);
+		item->operand1=allocate_mem_string(length+1);
 
-		strcpy(item->OPERAND1,temp);
-
+		strcpy(item->operand1,temp);
+		free(temp);
 
 	}
-
-	free(temp);
 }
 
 
@@ -393,8 +389,8 @@ mat_status_report_ref validate_ins_mat (parsed_item* item){
 	mat_status_report_ref result;
 	int i,size,r,c;
 	int brackets_balance=0;
-	int op1_length=strlen(item->OPERAND1);
-	String oper1=item->OPERAND1;
+	int op1_length=strlen(item->operand1);
+	String oper1=item->operand1;
 	String pointer;
 	String extracted_n; /*pointer that is used for deriving matrix size*/
 	String copy;
@@ -415,10 +411,10 @@ mat_status_report_ref validate_ins_mat (parsed_item* item){
 /*	check number of brackets*/
 
 	for (i=0;i<op1_length;i++){
-		if (item->OPERAND1[i]=='['){
+		if (item->operand1[i]=='['){
 			brackets_balance++;
 		}
-		if(item->OPERAND1[i]==']'){
+		if(item->operand1[i]==']'){
 			brackets_balance--;
 		}
 	}
@@ -431,7 +427,7 @@ mat_status_report_ref validate_ins_mat (parsed_item* item){
 
 
 /*	check brackets structure is correct*/
-	if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(item->OPERAND1,"][")==NULL  ){
+	if( oper1[0]!='['|| oper1[op1_length-1]!=']' || strstr(item->operand1,"][")==NULL  ){
 		result->syntax_error=TRUE;
 		result->valid_mat=FALSE;
 		item->valid=FALSE;
@@ -597,27 +593,27 @@ void mat_validation_errors(mat_status_report_ref errors, parsed_item item)
 	int line=item.line_number;
 
 	if (errors->inv_char_in_brackets){
-		fprintf(stderr,"Error in line %d: inv char found inside mat brackets: %s\n",line,item.OPERAND1);
+		fprintf(stderr,"Error in line %d: inv char found inside mat brackets: %s\n",line,item.operand1);
 	}
 
 	if (errors->inv_label_found){
-		fprintf(stderr,"Error in line %d: inv label found inside mat brackets: %s\n",line,item.OPERAND1);
+		fprintf(stderr,"Error in line %d: inv label found inside mat brackets: %s\n",line,item.operand1);
 
 	}
 
 
 	if (errors->inv_n_brackets){
-		fprintf(stderr,"Error in line %d: missing brackets - %s\n",line,item.OPERAND1);
+		fprintf(stderr,"Error in line %d: missing brackets - %s\n",line,item.operand1);
 
 	}
 
 	if (errors->inv_registry_found){
-		fprintf(stderr,"Error in line %d:in registry provided %s.\n",line,item.OPERAND1);
+		fprintf(stderr,"Error in line %d:in registry provided %s.\n",line,item.operand1);
 
 	}
 
 	if (errors->syntax_error){
-		fprintf(stderr,"Error in line %d: invalid brackets %s.\n",line,item.OPERAND1);
+		fprintf(stderr,"Error in line %d: invalid brackets %s.\n",line,item.operand1);
 
 	}
 
@@ -640,22 +636,22 @@ void validate_ins_entry(parsed_item* item, list_item_reference*  head, char * er
 		add_to_list(head,error);
 	}
 
-	if (strcmp(item->OPERAND1,TERMINATOR)==0){
+	if (strcmp(item->operand1,TERMINATOR)==0){
 		item->valid=FALSE;
 		sprintf(error,"Error in line %d: Missing statement for .entry command .\n",line);
 		add_to_list(head,error);
 
 	}
 
-	if (strcmp(item->OPERAND2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
+	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
 		item->valid=FALSE;
-		sprintf(error,"Error in line %d: Too much data received for .entry command: %s %s .\n",line,item->OPERAND2,item->leftovers);
+		sprintf(error,"Error in line %d: Too much data received for .entry command: %s %s .\n",line,item->operand2,item->leftovers);
 		add_to_list(head,error);
 	}
 
-	if ((validate_label(item->OPERAND1)->VALID_LABEL)==FALSE){
+	if ((validate_label(item->operand1)->VALID_LABEL)==FALSE){
 		item->valid=FALSE;
-		sprintf(error,"Error in line %d: Invalid label received in operand1: %s .\n",line,item->OPERAND1);
+		sprintf(error,"Error in line %d: Invalid label received in operand1: %s .\n",line,item->operand1);
 		add_to_list(head,error);
 	}
 
@@ -678,23 +674,23 @@ void validate_ins_extern(parsed_item* item, list_item_reference*  head,String er
 		add_to_list(head,error);
 	}
 
-	if (strcmp(item->OPERAND1,TERMINATOR)==0){
+	if (strcmp(item->operand1,TERMINATOR)==0){
 		item->valid=FALSE;
 		sprintf(error,"24. Error in line %d: Missing statement for .extern command .\n",line);
 		add_to_list(head,error);
 
 	}
 
-	if (strcmp(item->OPERAND2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
+	if (strcmp(item->operand2,TERMINATOR)!=0 ||strcmp(item->leftovers,TERMINATOR)!=0 ){
 		item->valid=FALSE;
-		sprintf(error,"25. Error in line %d: Too much data received for .extern command: %s %s .\n",line,item->OPERAND2,item->leftovers);
+		sprintf(error,"25. Error in line %d: Too much data received for .extern command: %s %s .\n",line,item->operand2,item->leftovers);
 		add_to_list(head,error);
 	}
 
 
-	if ((validate_label(item->OPERAND1)->VALID_LABEL)==FALSE){
+	if ((validate_label(item->operand1)->VALID_LABEL)==FALSE){
 		item->valid=FALSE;
-		sprintf(error,"26. Error in line %d: Invalid label received in operand1: %s .\n",line,item->OPERAND1);
+		sprintf(error,"26. Error in line %d: Invalid label received in operand1: %s .\n",line,item->operand1);
 		add_to_list(head,error);
 	}
 
@@ -733,11 +729,11 @@ void validate_oper_operands (parsed_item* item, list_item_reference*  head, Stri
 
 	/*count number of operands*/
 	operand_count=0;
-	if (strlen(item->OPERAND1)>0){
+	if (strlen(item->operand1)>0){
 		operand_count++;
 	}
 
-	if (strlen(item->OPERAND2)>0){
+	if (strlen(item->operand2)>0){
 		operand_count++;
 	}
 
@@ -766,12 +762,12 @@ void validate_oper_operands (parsed_item* item, list_item_reference*  head, Stri
 
 	/*received a valid number of operands. now check that it's valid, depending on the command*/
 	if (command_info.num_of_operands>0){
-		operand_type=get_operand_type(item->OPERAND1);
+		operand_type=get_operand_type(item->operand1);
 		item->op1_type=operand_type;
 
 		if (operand_type==type_unrecognized){
 			/*ERROR*/
-			sprintf(error,"Error in line %d: received operand <%s> in unrecognized.\n",line,item->OPERAND1);
+			sprintf(error,"Error in line %d: received operand <%s> in unrecognized.\n",line,item->operand1);
 			add_to_list(head,error);
 			item->valid=FALSE;
 		}
@@ -779,19 +775,19 @@ void validate_oper_operands (parsed_item* item, list_item_reference*  head, Stri
 		/*check that operand type is allowed*/
 		if (is_operand1_allowed(command_info,command,operand_type)==FALSE){
 			/*ERROR*/
-			sprintf(error,"Error in line %d: received operand <%s> in not allowed for command <%s>.\n",line,item->OPERAND1,command);
+			sprintf(error,"Error in line %d: received operand <%s> in not allowed for command <%s>.\n",line,item->operand1,command);
 			add_to_list(head,error);
 			item->valid=FALSE;
 		}
 
 		/*checking the second operand*/
 		if (command_info.num_of_operands>1){
-			operand_type=get_operand_type(item->OPERAND2);
+			operand_type=get_operand_type(item->operand2);
 			item->op2_type=operand_type;
 
 			if (operand_type==type_unrecognized){
 				/*ERROR*/
-				sprintf(error,"Error in line %d: received operand2 <%s> in unrecognized.\n",line,item->OPERAND2);
+				sprintf(error,"Error in line %d: received operand2 <%s> in unrecognized.\n",line,item->operand2);
 				add_to_list(head,error);
 				item->valid=FALSE;
 			}
@@ -799,7 +795,7 @@ void validate_oper_operands (parsed_item* item, list_item_reference*  head, Stri
 
 			if (is_operand2_allowed(command_info,command,operand_type)==FALSE){
 				/*ERROR*/
-				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->OPERAND2,command);
+				sprintf(error,"Error in line %d: received operand2 <%s> in not allowed for command <%s>.\n",line,item->operand2,command);
 				add_to_list(head,error);
 				item->valid=FALSE;
 			}
@@ -1131,27 +1127,27 @@ void print_label_errors(label_status_ref status, parsed_item item, list_item_ref
 	String error =allocate_mem_string(MAXERRORSIZE);
 
 	if (status->TOO_LONG==TRUE){
-		sprintf(error,"1. Error in line %d: Label <%s> is too long.\n",item.line_number,item.label);
+		sprintf(error,"Error in line %d: Label <%s> is too long.\n",item.line_number,item.label);
 		add_to_list(head,error);
 
 	}
 
 	if (status->INV_FIRST_CHAR==TRUE){
-		sprintf(error,"2. Error in line %d: Label <%s> doesn't start with a letter.\n",item.line_number,item.label);
+		sprintf(error,"Error in line %d: Label <%s> doesn't start with a letter.\n",item.line_number,item.label);
 		add_to_list(head,error);
 
 
 	}
 
 	if (status->INV_CHAR_FOUND==TRUE){
-		sprintf(error,"3. Error found in line %d: invalid char was found in label <%s>.\n",item.line_number,item.label);
+		sprintf(error,"Error found in line %d: invalid char was found in label <%s>.\n",item.line_number,item.label);
 		add_to_list(head,error);
 
 
 	}
 
 	if (status->RESERVED==TRUE){
-		sprintf(error,"4. Error found in line %d: label <%s> is a preserved word.\n",item.line_number,item.label);
+		sprintf(error,"Error found in line %d: label <%s> is a preserved word.\n",item.line_number,item.label);
 		add_to_list(head,error);
 
 

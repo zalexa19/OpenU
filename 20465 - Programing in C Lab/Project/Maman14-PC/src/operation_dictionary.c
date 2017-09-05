@@ -40,16 +40,6 @@ void create_operation_info_array(){
 	}
 
 	i=0;
-/*	operational_dictionary[i].name="mov";
-	operational_dictionary[i].num_of_operands=2;
-	operational_dictionary[i].op1_intermid_allowed=TRUE;
-	operational_dictionary[i].op1_label_allowed=TRUE;
-	operational_dictionary[i].op1_type_register_allowed=TRUE;
-	operational_dictionary[i].op1_matrix_allowed=TRUE;
-	operational_dictionary[i].op2_intermid_allowed=FALSE;
-	operational_dictionary[i].op2_label_allowed=TRUE;
-	operational_dictionary[i].op2_register_allowed=TRUE;
-	operational_dictionary[i].op2_matrix_allowed=TRUE;*/
 
 	INITIALIZE_OPERATION("mov",2,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE)
 	INITIALIZE_OPERATION("cmp",2,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE)

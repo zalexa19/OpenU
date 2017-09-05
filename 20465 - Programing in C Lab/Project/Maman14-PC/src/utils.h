@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "constants.h"
-#include "tester_functions.c"
+
 
 
 #define NORMAL  "\x1B[0m"
@@ -53,16 +53,12 @@
 
 typedef char* String;
 
+
 typedef enum {
 	FALSE = 0,
 	TRUE = 1
 } Bool;
 
-typedef enum {
-	ACTION =0,
-	INSTRUCTION=1,
-	UNKNOWN=3
-}line_type;
 
 
 
@@ -96,26 +92,22 @@ typedef struct parsed_line {
 	String label;
 	String instruction;
 	String operantion;
-	String OPERAND1;
-	String OPERAND2;
+	String operand1;
+	String operand2;
 	String leftovers; /*This exists to hold additional operands (for validation)*/
 	String* data_string_array;
 	int * data_int_values;
 	int mat_size;
-/*	String * mat_params;*/ /*used when creating a new matrix with .mat*/
 	Bool valid;
 	Operand_type op1_type;
 	Operand_type op2_type;
-	/*decide on how to deal with .data*/
-
-
 } parsed_item;
 
 typedef  parsed_item * parsed_item_ptr;
 
-
 typedef struct symbol* symbol_ptr;
 
+/*for symbols list*/
 typedef struct symbol{
 	String name;
 	label_type command_type;
@@ -152,7 +144,7 @@ parsed_item_ptr allocate_mem_struct (int); /*dynamically allocates memory for a 
 /*String* allocate_mem_matrix(int size);*/
 String  allocate_mem_string(int);
 
-String covert_int_to_string (int);
+
 /**
  * For linked list
  */

@@ -67,7 +67,6 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 	ic_address=INITIAL_ADDRESS; /*starts with 100*/
 	encoded_item=(encoded_ptr)allocate_mem_general(1,sizeof(encoded));
 
-
 	/*This loop makes sure that each label is defined and appears in the symbols list*/
 	/*
 	 * if label is external, we add it to the external list
@@ -76,8 +75,8 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 	for (i=0;i<parsed_size;i++){
 		current=parsed[i];
 
-		if (strlen(current.label)>0){
-			if (! search_symbol(current.label,*symbols)){ /*label is not found*/
+		if (strlen(current.label) > 0){
+			if (search_symbol(current.label,*symbols) == NULL){ /*label is not found*/
 				fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.label);
 				valid_file=FALSE;
 			}
@@ -89,29 +88,28 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 			strcmp(current.instruction,MAT) !=0){
 
 			/*for everything that is not .extern*/
-			if (get_operand_type(current.OPERAND1)==type_label){
-				if (!search_symbol(current.OPERAND1,*symbols)){ /*label is not found*/
-					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
+			if (get_operand_type(current.operand1)==type_label){
+				if (!search_symbol(current.operand1,*symbols)){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.operand1);
 					valid_file=FALSE;
 				}
 
 			}
 
-			if (get_operand_type(current.OPERAND2)==type_label){
+			if (get_operand_type(current.operand2)==type_label){
 
-				if (!(search_symbol(current.OPERAND2,*symbols))){ /*label is not found*/
-					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
+				if (!(search_symbol(current.operand2,*symbols))){ /*label is not found*/
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.operand2);
 					valid_file=FALSE;
 				}
 
 			}
 
-			if (get_operand_type(current.OPERAND1)==type_matrix){
-				printf("current op1: %s\n",current.OPERAND1);
-				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND1),*symbols);
+			if (get_operand_type(current.operand1)==type_matrix){
+				relevant_symbol=search_symbol(extract_mat_label(current.operand1),*symbols);
 
 				if (!relevant_symbol){ /*label is not found*/
-					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND1);
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.operand1);
 					valid_file=FALSE;
 				}
 
@@ -119,19 +117,19 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 
 					 if(relevant_symbol->is_matrix==FALSE){
-						fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND1);
+						fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.operand1);
 						valid_file=FALSE;
 					}
 				}
 			}
-			if (get_operand_type(current.OPERAND2)==type_matrix){
-				relevant_symbol=search_symbol(extract_mat_label(current.OPERAND2),*symbols);
+			if (get_operand_type(current.operand2)==type_matrix){
+				relevant_symbol=search_symbol(extract_mat_label(current.operand2),*symbols);
 				if (!relevant_symbol){ /*label is not found*/
-					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.OPERAND2);
+					fprintf(stderr, "Error in line %d: Label %s is undefined\n",current.line_number,current.operand2);
 					valid_file=FALSE;
 				}
 				if(relevant_symbol->is_matrix==FALSE){
-					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.OPERAND2);
+					fprintf(stderr, "Error in line %d: Label %s is not defined as a matrix\n",current.line_number,current.operand2);
 					valid_file=FALSE;
 				}
 			}
@@ -183,17 +181,17 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 			 if (op1_type != type_unrecognized){
 				if (op1_type==type_label){
 
-					relevant_symbol=search_symbol(current.OPERAND1,*symbols);
+					relevant_symbol=search_symbol(current.operand1,*symbols);
 
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE; /*adding 0001*/
-						add_external_item_to_list(external_labels_list,current.OPERAND1,ic_address);
+						add_external_item_to_list(external_labels_list,current.operand1,ic_address);
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 
 					}
 					else {
-						calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						calculated_memory_line=encode_operand(op1_type,current.operand1,*symbols,FALSE); /*FALSE is relevant to registers only*/
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 					}
 					/*end of op1==label*/
@@ -208,7 +206,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 					/*derive matrix' label*/
 
-					derived_label=extract_mat_label(current.OPERAND1);
+					derived_label=extract_mat_label(current.operand1);
 
 					relevant_symbol=search_symbol(derived_label,*symbols);
 
@@ -225,7 +223,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 					}
 
 					/*extract registers*/
-					reg_searcher=current.OPERAND1;
+					reg_searcher=current.operand1;
 					reg1=extract_reg_from_mat(reg_searcher);
 					reg_searcher+=label_length+REG_NAME_LENGTH;
 					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is a pointer that is used to extract reg names.*/
@@ -237,11 +235,11 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 				else if (op1_type==type_register){
 
 					if (op2_type==type_register){
-						calculated_memory_line=encode_register(current.OPERAND1,current.OPERAND2);
+						calculated_memory_line=encode_register(current.operand1,current.operand2);
 						ADD_CALCULATED_VALUE_TO_LIST
 					}
 					else {
-						calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,TRUE);
+						calculated_memory_line=encode_operand(op1_type,current.operand1,*symbols,TRUE);
 						ADD_CALCULATED_VALUE_TO_LIST
 					}
 
@@ -250,7 +248,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 				}
 
 				else if (op1_type==type_intermid){
-					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
+					calculated_memory_line=encode_operand(op1_type,current.operand1,*symbols,FALSE);
 					ADD_CALCULATED_VALUE_TO_LIST
 
 					/*end of op1=direct*/
@@ -262,17 +260,17 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 			if (op2_type != type_unrecognized){
 				if (op2_type==type_label){
-					relevant_symbol=search_symbol(current.OPERAND2,*symbols);
+					relevant_symbol=search_symbol(current.operand2,*symbols);
 
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
-						add_external_item_to_list(external_labels_list,current.OPERAND2,ic_address);
+						add_external_item_to_list(external_labels_list,current.operand2,ic_address);
 
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 
 					}
 					else {
-						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE); /*FALSE is relevant to registers only*/
+						calculated_memory_line=encode_operand(op2_type,current.operand2,*symbols,FALSE); /*FALSE is relevant to registers only*/
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
 					}
 					/*end of op2==label*/
@@ -285,14 +283,12 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 
 					/*derive_label*/
-					derived_label=extract_mat_label(current.OPERAND2);
+					derived_label=extract_mat_label(current.operand2);
 					label_length=strlen(derived_label);
 
 
-					printf("derived matrix label: <%s>\n",derived_label);
-
 					relevant_symbol=search_symbol(derived_label,*symbols);
-					printf("found_symbol\n");
+
 					if (relevant_symbol->declared_as==external){
 						calculated_memory_line=EXTERNAL_VALUE;
 						ADD_CALCULATED_VALUE_TO_LIST /*creates encoded struct and adds to list*/
@@ -304,7 +300,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 					}
 
 					/*extract registers*/
-					reg_searcher=current.OPERAND2;
+					reg_searcher=current.operand2;
 					reg1=extract_reg_from_mat(reg_searcher);
 					reg_searcher+=label_length+REG_NAME_LENGTH;
 					reg2=extract_reg_from_mat(reg_searcher); /*reg_searcher is apointer that is used to extract reg names.*/
@@ -318,7 +314,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 				else if (op2_type==type_register){
 
 					if (op1_type !=type_register){
-						calculated_memory_line=encode_operand(op2_type,current.OPERAND2,*symbols,FALSE);
+						calculated_memory_line=encode_operand(op2_type,current.operand2,*symbols,FALSE);
 
 						ADD_CALCULATED_VALUE_TO_LIST
 					}
@@ -331,7 +327,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 
 				else if(op2_type==type_intermid){
-					calculated_memory_line=encode_operand(op1_type,current.OPERAND1,*symbols,FALSE);
+					calculated_memory_line=encode_operand(op1_type,current.operand1,*symbols,FALSE);
 					ADD_CALCULATED_VALUE_TO_LIST
 
 					/*end of op2=direct*/
@@ -350,7 +346,7 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 
 			/*mark the symbol for future printing to .ent file*/
 			if (strcmp(current.instruction,ENTRY)==0){
-				search_symbol(current.OPERAND1,*symbols)->is_entry=TRUE;
+				search_symbol(current.operand1,*symbols)->is_entry=TRUE;
 			}
 
 			if (strcmp(current.instruction,DATA)==0){
@@ -365,9 +361,9 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 			}
 
 			if (strcmp(current.instruction,STR)==0){
-				length=strlen(current.OPERAND1);
+				length=strlen(current.operand1);
 				for(j=0;j<length;j++){
-					combined_data_list[combined_data_list_counter]=current.OPERAND1[j];
+					combined_data_list[combined_data_list_counter]=current.operand1[j];
 					combined_data_list_counter++;
 				}
 
@@ -428,8 +424,6 @@ Bool second_scan (parsed_item_ptr parsed, int parsed_size, symbol_ptr*symbols, i
 int code_command_line(int opcode,Operand_type op1, Operand_type op2, int rea){
 	int op1_coded,op2_coded;
 	int result=0;
-
-	printf(KCYN);
 
 	result=opcode;
 	result<<=WORD_SIZE-OPCODE_SIZE;
@@ -638,34 +632,10 @@ encoded_ptr create_encoded_struct(int address,int value){
 
 }
 
-/*
 
-void print_encoded_struct(encoded_ptr s){
-	encoded_ptr pointer;
-
-	printf(BOLDWHITE"\n");
-	printf("%-15s|","ADDRESS");
-	printf("%-15s|","VALUE");
-	printf("\n");
-	NORMALCOLOR
-
-	pointer=s;
-	while (pointer->next != NULL){
-		n=pointer->address;
-		print_bin(pointer->value);
-
-		pointer=pointer->next;
-	}
-
-
-	print_bin(s->value);
-
-	printf("\n");
-}
-*/
 
 /*
- * Functin links the newly created encoded struct to a previous one in a list
+ * Function links the newly created encoded struct to a previous one in a list
  */
 void add_encoded_struct_to_list(encoded_ptr * list, encoded_ptr item){
 	encoded_ptr p;
