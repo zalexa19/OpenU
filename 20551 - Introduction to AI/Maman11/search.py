@@ -19,6 +19,39 @@ Pacman agents (in searchAgents.py).
 
 import util
 
+class Node:
+    def __init__(self,parent, state, successors, cost):
+        self.parent = parent
+        self.state = state
+        self.successors = successors
+        self.pathCost = cost
+
+"""
+Searches for a value inside a list
+"""
+def searchInNodeList(key, nodes_list):
+    for node in nodes_list:
+        print node.state
+        if node.state == key:
+            return True
+
+    return False
+
+"""
+This method receives a node object, and finds the path from current node to the root node.
+It returns a list of states
+"""
+def solution(node, startState):
+    current = node
+    path = []
+
+    while current != startState and current is not None:
+        path.insert(0, current.state)
+
+        current = current.parent
+
+    return path
+
 class SearchProblem:
     """
     This class outlines the structure of a search problem, but doesn't implement
@@ -87,7 +120,45 @@ def depthFirstSearch(problem):
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    print "Start:", problem.getStartState()
+    startState = problem.getStartState()
+
+    root = Node(None, startState, problem.getSuccessors(startState), 0)
+
+    frontier = util.Stack()
+    frontier.push(root)
+    explored = set()
+
+    if frontier.isEmpty():
+        return -1
+
+    while not frontier.isEmpty():
+        node = frontier.pop()
+        explored.add(node.state)
+
+        if problem.isGoalState(node.state):
+            print "found something - ", node.pathCost
+            return solution(node, startState)
+
+        for item in node.successors:
+            child_state = item[0]
+
+            if child_state not in explored:
+                cost = item[2]+node.pathCost
+                successors = problem.getSuccessors(child_state)
+
+                child = Node(node, child_state, successors, cost)
+
+                isChildInFrontier = searchInNodeList(child_state, frontier.list)
+                if not isChildInFrontier:
+                    frontier.push(child)
+
+
+
+
+
+
+    # util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
@@ -110,6 +181,9 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
     util.raiseNotDefined()
+
+
+
 
 
 # Abbreviations
