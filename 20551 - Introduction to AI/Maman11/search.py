@@ -19,38 +19,49 @@ Pacman agents (in searchAgents.py).
 
 import util
 
+
 class Node:
-    def __init__(self,parent, state, successors, cost):
+    def __init__(self, state, parent=None, cost=0, action=None):
         self.parent = parent
         self.state = state
-        self.successors = successors
         self.pathCost = cost
+        self.action = action
+        if parent:
+            self.pathCost = parent.pathCost+cost
 
-"""
-Searches for a value inside a list
-"""
-def searchInNodeList(key, nodes_list):
-    for node in nodes_list:
-        print node.state
-        if node.state == key:
-            return True
+    def getSuccessors(self, problem):
+        successors = []
+        for item in problem.getSuccessors(self.state):
+            successors.append(Node(item[0], self, item[2], item[1]))
+        return successors
 
-    return False
 
-"""
-This method receives a node object, and finds the path from current node to the root node.
-It returns a list of states
-"""
-def solution(node, startState):
-    current = node
-    path = []
+    """
+    page 79 in the book
+    """
+    def childNode(self, action):
+        return Node(action[0], self, action[2], action[1])
+    """
+    This method finds the path from current node to the root node.
+    It returns a list of states
+    """
 
-    while current != startState and current is not None:
-        path.insert(0, current.state)
+    def solution(self):
 
-        current = current.parent
+        actions = []
+        for node in self.pathBack():
+            actions.append(node.action)
+        return actions[1:]
 
-    return path
+    def pathBack(self):
+        node=self
+        path=[]
+
+        while node:
+            path.insert(0,node)
+            node = node.parent
+
+        return path
 
 class SearchProblem:
     """
@@ -120,58 +131,51 @@ def depthFirstSearch(problem):
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
     "*** YOUR CODE HERE ***"
-    print "Start:", problem.getStartState()
-    startState = problem.getStartState()
-
-    root = Node(None, startState, problem.getSuccessors(startState), 0)
-
     frontier = util.Stack()
-    frontier.push(root)
-    generalSearch(problem, frontier)
+    return generalSearch(problem, frontier)
 
-    # util.raiseNotDefined()
+
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-
-    startState = problem.getStartState()
-
-    root = Node(None, startState, problem.getSuccessors(startState), 0)
-
     frontier = util.Queue()
-    frontier.push(root)
-    generalSearch(problem, frontier)
+    return generalSearch(problem, frontier)
 
+"""
+This function recieves the problem and the frontier.
+It pop a node, checks if it's the goal state. If this node is not the goal state, this node
+is added to the explored set, and all the children of this node (which were not explored yet)  are pushed to the frontier
+"""
 
-def generalSearch(problem, frontier):
-    startState = problem.getStartState()
-    explored = set()
-
-    if frontier.isEmpty():
-        return -1
-
-    while not frontier.isEmpty():
-        node = frontier.pop()
-        explored.add(node.state)
-
-        if problem.isGoalState(node.state):
-            print "found goal state at a cost of:  ", node.pathCost
-            return solution(node, startState)
-
-        for item in node.successors:
-            child_state = item[0]
-
-            if child_state not in explored:
-                cost = item[2] + node.pathCost
-                successors = problem.getSuccessors(child_state)
-                child = Node(node, child_state, successors, cost)
-                frontier.push(child)
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    frontier = util.PriorityQueue()
+
+    return generalSearch(problem, frontier)
+
+
+def generalSearch(problem, frontier):
+
+    node = Node(problem.getStartState())
+    if problem.isGoalState(node): return node.solution()
+
+    frontier.push(node, node.pathCost)
+    explored = set()
+    while not frontier.isEmpty():
+        node = frontier.pop()
+        if problem.isGoalState(node.state): return node.solution()
+        explored.add(node.state)
+
+        actions = problem.getSuccessors(node.state)
+        for action in actions:
+            child = node.childNode(action)
+            if child.state not in explored:
+                frontier.push(child, child.pathCost)
+    return []
 
 def nullHeuristic(state, problem=None):
     """
