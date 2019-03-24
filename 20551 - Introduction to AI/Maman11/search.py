@@ -21,50 +21,27 @@ import util
 
 
 class Node:
-    def __init__(self, state, goalDistance, parent=None, cost=0, action=None):
-        self.parent = parent
+    def __init__(self, state, action, cost, parent):
         self.state = state
-        self.pathCost = cost
         self.action = action
-        self.goalDistance = goalDistance
-        if parent:
-            self.pathCost = parent.pathCost+cost
-
-    def getSuccessors(self, problem):
-        successors = []
-        for item in problem.getSuccessors(self.state):
-            successors.append(Node(item[0], self, item[2], item[1]))
-        return successors
-
+        self.parent = parent
+        self.cost = cost
 
     """
-    page 79 in the book
-    """
-    def childNode(self, action, goalState):
-        state = action[0]
-        distanceFromGoal = util.manhattanDistance(state, goalState)
-        return Node(state, distanceFromGoal, self, action[2], action[1])
-    """
-    This method finds the path from current node to the root node.
-    It returns a list of states
+    Returns the required actions to get to the goal state
     """
 
     def solution(self):
-
+        node = self
         actions = []
-        for node in self.pathBack():
-            actions.append(node.action)
-        return actions[1:]
-
-    def pathBack(self):
-        node=self
-        path=[]
 
         while node:
-            path.insert(0,node)
+            actions.append(node.action)
             node = node.parent
 
-        return path
+        actions.reverse()
+        return actions[1:]
+
 
 class SearchProblem:
     """
@@ -117,7 +94,8 @@ def tinyMazeSearch(problem):
     from game import Directions
     s = Directions.SOUTH
     w = Directions.WEST
-    return  [s, s, w, s, w, w, s, w]
+    return [s, s, w, s, w, w, s, w]
+
 
 def depthFirstSearch(problem):
     """
@@ -144,45 +122,13 @@ def breadthFirstSearch(problem):
     frontier = util.Queue()
     return generalSearch(problem, frontier)
 
-"""
-This function recieves the problem and the frontier.
-It pop a node, checks if it's the goal state. If this node is not the goal state, this node
-is added to the explored set, and all the children of this node (which were not explored yet)  are pushed to the frontier
-"""
-
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-
-    frontier = util.PriorityQueueWithFunction(lowestCost)
-
+    frontier = util.PriorityQueueWithFunction(lambda node: node.cost)
     return generalSearch(problem, frontier)
 
-
-#def newGeneralSearch(problem, frontier)
-
-def generalSearch(problem, frontier):
-
-    goal = problem.goal
-    goalDistance = util.manhattanDistance(problem.getStartState(), goal)
-    node = Node(problem.getStartState(), goalDistance)
-    if problem.isGoalState(node): return node.solution()
-
-    frontier.push(node)
-    explored = set()
-    while not frontier.isEmpty():
-        node = frontier.pop()
-        if problem.isGoalState(node.state): return node.solution()
-        explored.add(node.state)
-
-        actions = problem.getSuccessors(node.state)
-        for action in actions:
-            child = node.childNode(action, goal)
-            if child.state not in explored:
-                #frontier.push(child, child.pathCost)
-                frontier.push(child)
-    return []
 
 def nullHeuristic(state, problem=None):
     """
@@ -191,21 +137,41 @@ def nullHeuristic(state, problem=None):
     """
     return 0
 
+
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    frontier = util.PriorityQueueWithFunction(lowestCombinedCost)
-
-    return generalSearch(problem, frontier)
-
-
-def lowestCost(item):
-    return item.pathCost
-
-def lowestCombinedCost(item):
-    return item.pathCost + item.goalDistance
+    frontier = util.PriorityQueueWithFunction(lambda node: node.cost)
+    return generalSearch(problem, frontier, heuristic)
 
 
+def generalSearch(problem, frontier, costHeuristic=nullHeuristic):
+    node = Node(problem.getStartState(), [], 0, None)
+    if problem.isGoalState(node.state):
+        return node.solution()
+    frontier.push(node)
+    explored = set()
+
+    while not frontier.isEmpty():
+        node = frontier.pop()
+
+        if problem.isGoalState(node.state):
+            return node.solution()
+
+        explored.add(node.state)
+
+        successors = problem.getSuccessors(node.state)
+
+        for successor in successors:
+            nextState = successor[0]
+
+            if nextState not in explored:
+                action = successor[1]
+                cost = successor[2] + costHeuristic(nextState, problem)
+                child = Node(nextState, action, cost, node)
+                frontier.push(child)
+
+    return []
 
 # Abbreviations
 bfs = breadthFirstSearch
