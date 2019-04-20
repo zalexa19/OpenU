@@ -1,7 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff045ed1-bb11-4d93-95da-68bb4a09364b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ghostAgents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/graphicsDisplay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/graphicsUtils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/keyboardAgents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/multiAgents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/pacman.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/pacmanAgents.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/textDisplay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/util.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiAgents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multiagentProject.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pacman_multi_agent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maman11/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Maman11/search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Maman13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Maman13.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autograder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eightpuzzle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ghostAgents.py" beforeDir="false" afterPath="$PROJECT_DIR$/ghostAgents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grading.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphicsDisplay.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphicsDisplay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphicsUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphicsUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyboardAgents.py" beforeDir="false" afterPath="$PROJECT_DIR$/keyboardAgents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout.py" beforeDir="false" afterPath="$PROJECT_DIR$/layout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/bigCorners.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/bigMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/bigSafeSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/bigSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/boxSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/contoursMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/greedySearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumCorners.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumDottedMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumSafeSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumScaryMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/mediumSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/oddSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/openMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/openSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/powerClassic.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/smallMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/smallSafeSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/smallSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/testMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/testSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/tinyCorners.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/tinyMaze.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/tinySafeSearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/tinySearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/trickySearch.lay" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pacman.py" beforeDir="false" afterPath="$PROJECT_DIR$/pacman.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pacmanAgents.py" beforeDir="false" afterPath="$PROJECT_DIR$/pacmanAgents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectParams.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchAgents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchTestClasses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/submission_autograder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testClasses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testParser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_backtrack.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_backtrack.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_bfs_vs_dfs.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_bfs_vs_dfs.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_infinite.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_infinite.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_manypaths.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/graph_manypaths.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/pacman_1.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q1/pacman_1.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_backtrack.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_backtrack.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_bfs_vs_dfs.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_bfs_vs_dfs.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_infinite.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_infinite.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_manypaths.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/graph_manypaths.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/pacman_1.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q2/pacman_1.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_backtrack.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_backtrack.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_bfs_vs_dfs.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_bfs_vs_dfs.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_infinite.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_infinite.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_manypaths.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/graph_manypaths.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_0_graph.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_0_graph.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_1_problemC.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_1_problemC.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_2_problemE.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_2_problemE.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_3_problemW.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_3_problemW.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_4_testSearch.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_4_testSearch.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_5_goalAtDequeue.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q3/ucs_5_goalAtDequeue.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_0.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_0.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_1_graph_heuristic.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_1_graph_heuristic.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_2_manhattan.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_2_manhattan.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_3_goalAtDequeue.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/astar_3_goalAtDequeue.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/graph_backtrack.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/graph_backtrack.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/graph_manypaths.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q4/graph_manypaths.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q5/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q5/corner_tiny_corner.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q5/corner_tiny_corner.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_1.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_1.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_2.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_2.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_3.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/corner_sanity_3.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/medium_corners.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q6/medium_corners.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_1.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_1.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_10.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_10.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_11.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_11.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_12.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_12.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_13.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_13.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_14.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_14.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_15.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_15.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_16.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_16.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_17.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_17.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_2.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_2.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_3.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_3.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_4.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_4.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_5.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_5.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_6.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_6.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_7.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_7.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_8.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_8.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_9.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_9.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_grade_tricky.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q7/food_heuristic_grade_tricky.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/CONFIG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_1.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_1.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_10.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_10.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_11.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_11.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_12.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_12.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_13.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_13.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_2.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_2.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_3.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_3.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_4.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_4.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_5.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_5.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_6.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_6.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_7.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_7.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_8.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_8.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_9.solution" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_cases/q8/closest_dot_9.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/textDisplay.py" beforeDir="false" afterPath="$PROJECT_DIR$/textDisplay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graphicsUtils.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>reflex</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="407" />
+    <option name="y" value="23" />
+    <option name="width" value="1671" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Maman13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maman13" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maman13" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maman13" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff045ed1-bb11-4d93-95da-68bb4a09364b" name="Default Changelist" comment="" />
+      <created>1555777020805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555777020805</updated>
+      <workItem from="1555777031833" duration="1181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1181000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="407" y="23" width="1671" height="877" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21424186" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphicsUtils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
