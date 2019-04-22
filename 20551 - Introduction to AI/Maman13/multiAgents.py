@@ -53,7 +53,7 @@ class ReflexAgent(Agent):
     GameStates (pacman.py) and returns a number, where higher numbers are better.
 
     The code below extracts some useful information from the state, like the
-    remaining food (oldFood) and Pacman position after moving (newPos).
+    remaining food (oldFoo2d) and Pacman position after moving (newPos).
     newScaredTimes holds the number of moves that each ghost will remain
     scared because of Pacman having eaten a power pellet.
 
@@ -68,6 +68,12 @@ class ReflexAgent(Agent):
     newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
     "*** YOUR CODE HERE ***"
+    print successorGameState
+    print newPos,
+    print oldFood,
+    print newGhostStates,
+    print newScaredTimes
+
     return successorGameState.getScore()
 
 def scoreEvaluationFunction(currentGameState):
