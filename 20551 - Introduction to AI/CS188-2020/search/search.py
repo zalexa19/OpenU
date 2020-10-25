@@ -81,13 +81,14 @@ def depthFirstSearch(problem):
 
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
-
-    print("Start:", problem.getStartState())
-    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
-    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+    """
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    """
+    stack = util.Stack()
+
+    return graphSearch(problem,stack)
+    
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
@@ -117,3 +118,43 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+
+
+def graphSearch(problem, frontier):
+    
+    explored = set()
+
+    # check the starting state
+
+    node = { 'state': problem.getStartState(), 'cost': 0}
+
+    # if the starting state is the goal state, return no actions
+    if problem.isGoalState(node['state']): return []
+
+    frontier.push(node)
+
+    while not frontier.isEmpty():
+
+        node = frontier.pop()
+        explored.add(node['state']) 
+        succesors = problem.getSuccessors(node['state'])
+
+        for successor in succesors:
+            if successor[0] not in explored: 
+
+                # create a new child with a reference to the parent
+                childNode = {'state': successor[0], 'action': successor[1], 'cost': successor[2], 'parent': node}                
+                if(problem.isGoalState(childNode['state'])): 
+                    
+                    # traverse back and get the required actions
+                    actions = []
+                    currentNode = childNode
+                    while 'parent' in currentNode:
+                        actions.append(currentNode['action'])
+                        currentNode = currentNode['parent']
+                    actions.reverse()
+                    return actions
+
+                frontier.push(childNode)
+
+    raise Exception('Search failed')
