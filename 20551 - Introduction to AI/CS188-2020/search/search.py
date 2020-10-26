@@ -86,14 +86,12 @@ def depthFirstSearch(problem):
     "*** YOUR CODE HERE ***"
     """
     stack = util.Stack()
-
-    return graphSearch(problem,stack)
+    return graphSearch(problem, stack)    
     
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    return graphSearch(problem, util.Queue())
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
@@ -126,7 +124,7 @@ def graphSearch(problem, frontier):
 
     # check the starting state
 
-    node = { 'state': problem.getStartState(), 'cost': 0}
+    node = { 'state': problem.getStartState(), 'action': 'start', 'cost': 0}
 
     # if the starting state is the goal state, return no actions
     if problem.isGoalState(node['state']): return []
@@ -144,14 +142,13 @@ def graphSearch(problem, frontier):
 
                 # create a new child with a reference to the parent
                 childNode = {'state': successor[0], 'action': successor[1], 'cost': successor[2], 'parent': node}                
-                if(problem.isGoalState(childNode['state'])): 
-                    
-                    # traverse back and get the required actions
+                if(problem.isGoalState(childNode['state'])):
                     actions = []
                     currentNode = childNode
                     while 'parent' in currentNode:
                         actions.append(currentNode['action'])
                         currentNode = currentNode['parent']
+
                     actions.reverse()
                     return actions
 
