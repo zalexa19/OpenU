@@ -18,6 +18,7 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
+from node import Node
 
 class SearchProblem:
     """
@@ -86,7 +87,7 @@ def depthFirstSearch(problem):
     "*** YOUR CODE HERE ***"
     """
     stack = util.Stack()
-    return graphSearch(problem, stack)    
+    return generalGraphSearch(problem, stack)
     
 
 def breadthFirstSearch(problem):
@@ -96,7 +97,7 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    return graphSearch(problem, util.PriorityQueue())
 
 def nullHeuristic(state, problem=None):
     """
@@ -121,11 +122,8 @@ ucs = uniformCostSearch
 def graphSearch(problem, frontier):
     
     explored = set()
-
     # check the starting state
-
     node = { 'state': problem.getStartState(), 'action': 'start', 'cost': 0}
-
     # if the starting state is the goal state, return no actions
     if problem.isGoalState(node['state']): return []
 
@@ -139,7 +137,6 @@ def graphSearch(problem, frontier):
 
         for successor in succesors:
             if successor[0] not in explored: 
-
                 # create a new child with a reference to the parent
                 childNode = {'state': successor[0], 'action': successor[1], 'cost': successor[2], 'parent': node}                
                 if(problem.isGoalState(childNode['state'])):
@@ -155,3 +152,25 @@ def graphSearch(problem, frontier):
                 frontier.push(childNode)
 
     raise Exception('Search failed')
+
+def generalGraphSearch(problem, frontier):
+    explored = set()
+    node = Node(problem.getStartState(), None, 0, None)
+
+     # if the starting state is the goal state, return no actions
+    if problem.isGoalState(node.getState()): return []
+    frontier.push(node)
+
+    while not frontier.isEmpty():
+        parent = frontier.pop()
+        explored.add(parent.getState())
+        successors = problem.getSuccessors(parent.getState())
+
+        for successor in successors:
+            if successor[0] not in explored:
+                child = Node(successor[0], successor[1], successor[2], parent)
+                if problem.isGoalState(child.getState()):
+                    return child.getActions()
+                frontier.push(child)
+
+    raise Exception('End of frontier is reached')
