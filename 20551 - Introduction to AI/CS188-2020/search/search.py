@@ -97,7 +97,7 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    return graphSearch(problem, util.PriorityQueue())
+    return priorityGraphSearch(problem, util.PriorityQueue())
 
 def nullHeuristic(state, problem=None):
     """
@@ -168,9 +168,31 @@ def generalGraphSearch(problem, frontier):
 
         for successor in successors:
             if successor[0] not in explored:
-                child = Node(successor[0], successor[1], successor[2], parent)
+                child = Node(successor[0], successor[1], successor[2] , parent)
                 if problem.isGoalState(child.getState()):
                     return child.getActions()
                 frontier.push(child)
+
+    raise Exception('End of frontier is reached')
+
+def priorityGraphSearch(problem, frontier):
+    explored = set()
+    node = Node(problem.getStartState(), None, 0, None)
+
+     # if the starting state is the goal state, return no actions
+    if problem.isGoalState(node.getState()): return []
+    frontier.push(node, node.getCost())
+
+    while not frontier.isEmpty():
+        parent = frontier.pop()
+        explored.add(parent.getState())
+        successors = problem.getSuccessors(parent.getState())
+
+        for successor in successors:
+            if successor[0] not in explored:
+                child = Node(successor[0], successor[1], successor[2] , parent)
+                if problem.isGoalState(child.getState()):
+                    return child.getActions()
+                frontier.push(child, child.getCost())
 
     raise Exception('End of frontier is reached')
