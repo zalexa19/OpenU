@@ -86,18 +86,18 @@ def depthFirstSearch(problem):
     """
     "*** YOUR CODE HERE ***"
     """
-    stack = util.Stack()
-    return generalGraphSearch(problem, stack)
+    return generalGraphSearch(problem, util.Stack())
+
     
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
-    return graphSearch(problem, util.Queue())
+    return generalGraphSearch(problem, util.Queue())
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    return priorityGraphSearch(problem, util.PriorityQueue())
+    return heuricticGraphSearch(problem)
 
 def nullHeuristic(state, problem=None):
     """
@@ -109,7 +109,7 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    return heuricticGraphSearch(problem, heuristic)
 
 
 # Abbreviations
@@ -118,40 +118,6 @@ dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
 
-
-def graphSearch(problem, frontier):
-    
-    explored = set()
-    # check the starting state
-    node = { 'state': problem.getStartState(), 'action': 'start', 'cost': 0}
-    # if the starting state is the goal state, return no actions
-    if problem.isGoalState(node['state']): return []
-
-    frontier.push(node)
-
-    while not frontier.isEmpty():
-
-        node = frontier.pop()
-        explored.add(node['state']) 
-        succesors = problem.getSuccessors(node['state'])
-
-        for successor in succesors:
-            if successor[0] not in explored: 
-                # create a new child with a reference to the parent
-                childNode = {'state': successor[0], 'action': successor[1], 'cost': successor[2], 'parent': node}                
-                if(problem.isGoalState(childNode['state'])):
-                    actions = []
-                    currentNode = childNode
-                    while 'parent' in currentNode:
-                        actions.append(currentNode['action'])
-                        currentNode = currentNode['parent']
-
-                    actions.reverse()
-                    return actions
-
-                frontier.push(childNode)
-
-    raise Exception('Search failed')
 
 def generalGraphSearch(problem, frontier):
     explored = set()
@@ -175,13 +141,19 @@ def generalGraphSearch(problem, frontier):
 
     raise Exception('End of frontier is reached')
 
-def priorityGraphSearch(problem, frontier):
+def heuricticGraphSearch(problem, heuristic=nullHeuristic):
     explored = set()
     node = Node(problem.getStartState(), None, 0, None)
+    
+    def calculateCost(node):
+        return heuristic(node.getState(), problem) + node.getCost()
+
+    frontier = util.PriorityQueueWithFunction(calculateCost)
 
      # if the starting state is the goal state, return no actions
     if problem.isGoalState(node.getState()): return []
-    frontier.push(node, node.getCost())
+
+    frontier.push(node)
 
     while not frontier.isEmpty():
         parent = frontier.pop()
@@ -193,6 +165,6 @@ def priorityGraphSearch(problem, frontier):
                 child = Node(successor[0], successor[1], successor[2] , parent)
                 if problem.isGoalState(child.getState()):
                     return child.getActions()
-                frontier.push(child, child.getCost())
+                frontier.push(child)
 
     raise Exception('End of frontier is reached')
