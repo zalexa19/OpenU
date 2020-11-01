@@ -396,7 +396,7 @@ def cornersHeuristic(state, problem):
 
         # save distance to the closes point
         distance += closestPoint[1]
-        
+
         # remove the closest point from the list to find the next one
         unreachedCorners.remove(closestPoint[0])
     
@@ -494,7 +494,28 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return 0
+    problem.walls
+    print("foodgrid", foodGrid.asList())
+    problem.heuristicInfo #dictionary
+
+    #find closest food point
+    currentPoint = position
+    foodLocations = foodGrid.asList()
+    distance = 0
+
+    while foodLocations:
+        distances = list()
+        for location in foodLocations:
+            distances.append((location, util.manhattanDistance(currentPoint, location)))
+
+        distances.sort(key=lambda tup: tup[1])    
+        # closest point details
+        currentPoint, distanceToPoint = distances[0]
+        distance += distanceToPoint
+
+        foodLocations.remove(currentPoint) 
+
+    return distance
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
