@@ -438,10 +438,12 @@ class FoodSearchProblem:
             x,y = state[0]
             dx, dy = Actions.directionToVector(direction)
             nextx, nexty = int(x + dx), int(y + dy)
+
             if not self.walls[nextx][nexty]:
                 nextFood = state[1].copy()
                 nextFood[nextx][nexty] = False
                 successors.append( ( ((nextx, nexty), nextFood), direction, 1) )
+                
         return successors
 
     def getCostOfActions(self, actions):
@@ -493,9 +495,8 @@ def foodHeuristic(state, problem):
     problem.heuristicInfo['wallCount']
     """
     position, foodGrid = state
-    "*** YOUR CODE HERE ***"
+    
     problem.walls
-    print("foodgrid", foodGrid.asList())
     problem.heuristicInfo #dictionary
 
     #find closest food point
@@ -505,6 +506,7 @@ def foodHeuristic(state, problem):
 
     while foodLocations:
         distances = list()
+        # find closest food location
         for location in foodLocations:
             distances.append((location, util.manhattanDistance(currentPoint, location)))
 
@@ -544,9 +546,8 @@ class ClosestDotSearchAgent(SearchAgent):
         food = gameState.getFood()
         walls = gameState.getWalls()
         problem = AnyFoodSearchProblem(gameState)
-
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        
+        return search.bfs(problem)
 
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
@@ -581,8 +582,8 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         """
         x,y = state
 
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        foodLocations = self.food.asList()
+        return state in foodLocations
 
 def mazeDistance(point1, point2, gameState):
     """

@@ -83,9 +83,6 @@ def depthFirstSearch(problem):
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
     """
-    """
-    "*** YOUR CODE HERE ***"
-    """
     return generalGraphSearch(problem, util.Stack())
 
     
@@ -96,8 +93,7 @@ def breadthFirstSearch(problem):
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
-    "*** YOUR CODE HERE ***"
-    return heuricticGraphSearch(problem)
+    return heuristicGraphSearch(problem)
 
 def nullHeuristic(state, problem=None):
     """
@@ -108,8 +104,7 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    return heuricticGraphSearch(problem, heuristic)
+    return heuristicGraphSearch(problem, heuristic)
 
 
 # Abbreviations
@@ -139,9 +134,9 @@ def generalGraphSearch(problem, frontier):
                     return child.getActions()
                 frontier.push(child)
 
-    raise Exception('End of frontier is reached')
+    raise Exception('Reached the end of the frontier')
 
-def heuricticGraphSearch(problem, heuristic=nullHeuristic):
+def heuristicGraphSearch(problem, heuristic=nullHeuristic):
     explored = set()
     node = Node(problem.getStartState(), None, 0, None)
     
@@ -167,4 +162,4 @@ def heuricticGraphSearch(problem, heuristic=nullHeuristic):
                     return child.getActions()
                 frontier.push(child)
 
-    raise Exception('End of frontier is reached')
+    raise Exception('Reached the end of the frontier')
