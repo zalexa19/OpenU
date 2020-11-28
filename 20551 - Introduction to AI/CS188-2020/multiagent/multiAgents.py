@@ -69,28 +69,44 @@ class ReflexAgent(Agent):
         # Useful information you can extract from a GameState (pacman.py)
         successorGameState = currentGameState.generatePacmanSuccessor(action)
         newPos = successorGameState.getPacmanPosition()
-        newFood = successorGameState.getFood().asList()
+        currentFood = currentGameState.getFood().asList()
         newGhostStates = successorGameState.getGhostStates()
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
-        walls = successorGameState.getWalls()
-        currentFood = currentGameState.getFood().asList()
+        capsules = currentGameState.getCapsules()
+        walls = currentGameState.getWalls()
+        gridSize = walls.height * walls.width
+
         "*** YOUR CODE HERE ***"
         # starting with max score.
         score = successorGameState.getScore()
 
-        # check the positions of the ghosts.
-        # if a ghost is one step away, give penalty
+        # find the closest ghost
+        ghostDistances = list()
         for ghostState in newGhostStates:
             gPos = ghostState.getPosition()
-            distance = util.manhattanDistance(newPos, gPos)
-            if distance < 1:
+            ghostDistances.append(util.manhattanDistance(newPos, gPos))
+        closestGhost = min(ghostDistances)
+
+        if closestGhost < 2:
+            if min(newScaredTimes) < 2:
                 score -= float("inf")
+            else:
+                score += gridSize - closestGhost
+
+        # Check capsules
+        capsuleDistances = list()
+        for capsule in capsules:
+            capsuleDistances.append(util.manhattanDistance(newPos, capsule))
+
+        if len(capsuleDistances) > 0:
+            if min(capsuleDistances) < 2:
+                score += float("inf")
+            # prefer the closer capsule
+            score += gridSize - min(capsuleDistances)
 
         # find the closes food and subtract it from the score
-        # This way, the score for closest food will be higher
-
         foodDistances = list()
-        for food in newFood:
+        for food in currentFood:
             foodDistances.append(util.manhattanDistance(newPos, food))
         if len(foodDistances) > 0:
             score -= min(foodDistances)
