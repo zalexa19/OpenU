@@ -4,3 +4,9 @@ Is this a least cost solution? If not, think about what depth-first search is do
 אלגוריתם זה סורק את העץ לעומק ולכן לא בהכרח יבחר במסלול הקצר והזול ביותר.
 
 Question 2 (3 points): Breadth First Search
+Does BFS find a least cost solution? 
+אכן, חיפוש לרוחב הינו אופטימלי ומבטיח למצוא את הפתרון היעיל ביותר
+
+Question 4 (3 points): A* search
+
+

@@ -503,11 +503,12 @@ def foodHeuristic(state, problem):
     currentPoint = position
     foodLocations = foodGrid.asList()
     distance = 0
-
+    print(euclideanHeuristic(state, problem))
     while foodLocations:
         distances = list()
         # find closest food location
         for location in foodLocations:
+            
             distances.append((location, util.manhattanDistance(currentPoint, location)))
 
         distances.sort(key=lambda tup: tup[1])    
@@ -517,7 +518,7 @@ def foodHeuristic(state, problem):
 
         foodLocations.remove(currentPoint) 
 
-    return distance
+    return euclideanHeuristic(state,problem)
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
