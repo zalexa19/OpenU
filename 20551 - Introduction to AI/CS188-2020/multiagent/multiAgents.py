@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -222,7 +222,58 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         Returns the minimax action using self.depth and self.evaluationFunction
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        actions = gameState.getLegalActions(0)
+        options = {}
+
+        for action in actions:
+            alpha = -float("inf")
+            beta = float("inf")
+
+            nextState = gameState.generateSuccessor(0, action)
+            stateScore = self.minValue(nextState, self.depth, 1, alpha, beta)
+            options[action] = stateScore
+
+        chosenAction = max(options, key=options.get)
+        return chosenAction
+
+
+    def maxValue(self, gameState, depth, alpha, beta):
+        if depth == 0 or gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+
+        value = -float("inf")
+        actions = gameState.getLegalActions(0)
+        options = list()
+
+        for action in actions:
+            nextState = gameState.generateSuccessor(0, action)
+            value = max(value, self.minValue(nextState, depth, 1,  alpha, beta))
+            options.append(value)
+            if value > beta:
+                return beta
+            alpha = max(value, alpha)
+        return max(options)
+
+
+    def minValue(self, gameState, depth, ghost, alpha, beta):
+        if depth == 0 or gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+
+        value = float("inf")
+        actions = gameState.getLegalActions(ghost)
+        options = list()
+
+        for action in actions:
+            nextState = gameState.generateSuccessor(ghost, action)
+            if ghost == gameState.getNumAgents() - 1:
+                value = min(value, self.maxValue(nextState, depth - 1, alpha, beta))
+            else:
+                value = min(value, self.minValue(nextState, depth, ghost + 1, alpha, beta))
+            options.append(value)
+            if value < alpha:
+                return value
+            beta = min(value, beta)
+        return min(options)
 
 class ExpectimaxAgent(MultiAgentSearchAgent):
     """
