@@ -288,7 +288,45 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         legal moves.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        options = {}
+        pacmanActions = gameState.getLegalActions(0)
+
+        maxSCore = -float("inf")
+        maxAction = "Stop" # as default
+
+        for action in pacmanActions:
+            nextState = gameState.generateSuccessor(0, action)
+            score = self.expectimax(nextState, self.depth, 0)
+            if maxSCore < score:
+                maxSCore = score
+                maxAction = action
+        return maxAction
+
+
+    def expectimax(self, gameState, depth, agent):
+        if depth == 0 or gameState.isWin() or gameState.isLose():
+            return self.evaluationFunction(gameState)
+
+        actions = gameState.getLegalActions(agent)
+        options = list()
+        for action in actions:
+            nextGameState = gameState.generateSuccessor(agent, action)
+            if agent == 0:
+                options.append(self.expectimax(nextGameState, depth, 1))
+            if agent == gameState.getNumAgents() - 1:
+                options.append(self.expectimax(nextGameState, depth - 1, 0))
+            else:
+                options.append(self.expectimax(nextGameState, depth, agent + 1))
+        # if it's pacman, return the max move, otherwise a random value
+        if agent == 0:
+            return max(options) # best option for pacman
+        return random.choice(options)
+
+
+
+
+
+
 
 def betterEvaluationFunction(currentGameState):
     """
