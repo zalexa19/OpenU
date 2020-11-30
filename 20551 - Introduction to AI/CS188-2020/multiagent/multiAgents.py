@@ -339,13 +339,15 @@ def betterEvaluationFunction(currentGameState):
     inf = float('inf')
     score = currentGameState.getScore()
 
-    walls = currentGameState.getWalls()
-    gridSize = walls.height * walls.width
     position = currentGameState.getPacmanPosition()
     capsules = currentGameState.getCapsules()
     food = currentGameState.getFood().asList()
     ghostState = currentGameState.getGhostStates()
     scaredTimes = [ghostState.scaredTimer for ghostState in ghostState]
+    closestFoodDistance = 0
+    closestGhostDistance = 0
+    edibleGhostDistance = 0
+    closestCapsuleDistance = 0
 
     if currentGameState.isWin() or currentGameState.isLose():
         score += score
@@ -354,15 +356,10 @@ def betterEvaluationFunction(currentGameState):
 
     # find closest food:
     foodDistances = list()
-    closestFoodDistance = 0
-    closestGhostDistance = 0
-    edibleGhostDistance = 0
-    closestCapsuleDistance = 0
-
 
     if len(food) > 0:
-        for dot in food:
-            foodDistances.append(util.manhattanDistance(position, dot))
+        for foodDistance in food:
+            foodDistances.append(util.manhattanDistance(position, foodDistance))
 
         if len(foodDistances) > 0:
             closestFoodDistance = min(foodDistances)
@@ -385,7 +382,6 @@ def betterEvaluationFunction(currentGameState):
             return -inf # get away from the ghost
 
     # check capsules
-
     if len(capsules) > 0:
         capsuleDistances = list()
         for capsule in capsules:
