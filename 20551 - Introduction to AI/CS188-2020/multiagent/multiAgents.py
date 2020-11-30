@@ -336,7 +336,67 @@ def betterEvaluationFunction(currentGameState):
     DESCRIPTION: <write something here so we know what you did>
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    inf = float('inf')
+    score = currentGameState.getScore()
+
+    walls = currentGameState.getWalls()
+    gridSize = walls.height * walls.width
+    position = currentGameState.getPacmanPosition()
+    capsules = currentGameState.getCapsules()
+    food = currentGameState.getFood().asList()
+    ghostState = currentGameState.getGhostStates()
+    scaredTimes = [ghostState.scaredTimer for ghostState in ghostState]
+
+    if currentGameState.isWin() or currentGameState.isLose():
+        score += score
+    if currentGameState.isLose():
+        score += score / 2
+
+    # find closest food:
+    foodDistances = list()
+    closestFoodDistance = 0
+    closestGhostDistance = 0
+    edibleGhostDistance = 0
+    closestCapsuleDistance = 0
+
+
+    if len(food) > 0:
+        for dot in food:
+            foodDistances.append(util.manhattanDistance(position, dot))
+
+        if len(foodDistances) > 0:
+            closestFoodDistance = min(foodDistances)
+
+    # find the closest ghost:
+    if currentGameState.getNumAgents() > 0:
+        ghostDistances = list()
+        for ghostState in ghostState:
+            gPosition = ghostState.getPosition()
+            ghostDistances.append(util.manhattanDistance(position, gPosition))
+
+        if len(ghostDistances) > 0:
+            closestGhostDistance = min(ghostDistances)
+
+    if closestGhostDistance < 2:
+        if min(scaredTimes) > 2:
+            # eat the ghost!
+            edibleGhostDistance = closestGhostDistance
+        else:
+            return -inf # get away from the ghost
+
+    # check capsules
+
+    if len(capsules) > 0:
+        capsuleDistances = list()
+        for capsule in capsules:
+            capsuleDistances.append(util.manhattanDistance(position, capsule))
+        # score += min(capsuleDistances) * 2
+        if len(capsuleDistances) > 0:
+            closestCapsuleDistance = min(capsuleDistances)
+
+        score -= closestFoodDistance / 2 + closestCapsuleDistance / 3 + edibleGhostDistance
+
+    return score
 
 # Abbreviation
 better = betterEvaluationFunction
